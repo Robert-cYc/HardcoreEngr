@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mac mini 常用指令入門 — 150 個指令一次搞懂 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem; /* 10% larger */
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem; /* 10% larger */
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem; /* 10% larger */
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem; /* 10% larger */
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em; /* 10% larger */
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.21rem; /* 10% larger */
+    }
+    .article-body th, .article-body td {
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-2 600,78 900,38 C1200,-2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-12 600,88 900,38 C1200,-12 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,2 600,72 900,38 C1200,2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-8 600,92 900,38 C1200,-8 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,22 600,52 900,38 C1200,22 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-7 600,82 900,38 C1200,-7 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-7" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,18 600,62 900,38 C1200,18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-8" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-18 600,98 900,38 C1200,-18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-9" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,32 600,42 900,38 C1200,32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-10" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-32 600,118 900,38 C1200,-32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html">文章</a>
+                <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>Mac mini 常用指令入門 — 150 個指令一次搞懂</h1>
+        <div class="article-meta">
+          <span>2026-08-22</span>
+          <span class="separator">·</span>
+          <span>16 分鐘閱讀</span>
+        </div>
+        <img src="https://picsum.photos/seed/macmini/1200/400" alt="Mac mini">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p>Mac mini 擁有 macOS 強大的底層系統，但許多人只用到圖形界面。終端機 (Terminal) 是 Mac mini 極其強大的一面 — 它基於 BSD Unix，支援大多數標準 Unix 指令，同時還有許多 macOS 特殊指令。<br><br>本文整理 150 個 Mac mini / macOS 常用指令，助你擊破終端機關門。</p>
+
+        <h2>macOS 與 Ubuntu 的差異</h2>
+        <p>macOS 基於 Darwin (BSD Unix) + Apple 圖形層。指令集上大致相同，但有以下差異：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>功能</th>
+              <th>macOS</th>
+              <th>Ubuntu (Linux)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>預設 shell</td>
+              <td>zsh (2019+)</td>
+              <td>bash</td>
+            </tr>
+            <tr>
+              <td>包管理器</td>
+              <td>Homebrew (<code>brew</code>)</td>
+              <td>apt</td>
+            </tr>
+            <tr>
+              <td>剪貼簿</td>
+              <td><code>pbcopy</code> / <code>pbpaste</code></td>
+              <td><code>xsel</code> / <code>xclip</code></td>
+            </tr>
+            <tr>
+              <td>開啟文件</td>
+              <td><code>open</code></td>
+              <td><code>xdg-open</code></td>
+            </tr>
+            <tr>
+              <td>查看 .app</td>
+              <td><code>open -a</code> / <code>open -e</code></td>
+                          <td>無對應</td>
+            </tr>
+            <tr>
+              <td>系統偏好設定</td>
+              <td><code>open -a "System Settings"</code></td>
+              <td>無對應</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>1. 文件與目錄操作 (macOS 版)</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>常用用法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ls</code></td>
+              <td>列出目錄內容</td>
+              <td><code>ls -la</code>、<code>ls -lh</code>、<code>ls -la@</code> (顯示延伸屬性)</td>
+            </tr>
+            <tr>
+              <td><code>cd</code></td>
+              <td>切換工作目錄</td>
+              <td><code>cd ~/Documents</code>、<code>cd /System</code>、<code>cd ..</code>、<code>cd -</code> (上一個目錄)</td>
+            </tr>
+            <tr>
+              <td><code>pwd</code></td>
+              <td>顯示當前目錄</td>
+              <td><code>pwd</code>、<code>pwd -P</code> (解析符號連結)</td>
+            </tr>
+            <tr>
+              <td><code>cp</code></td>
+              <td>複製檔案</td>
+              <td><code>cp a b</code>、<code>cp -r src/ dest/</code>、<code>cp -a src dest</code>、<code>cp -p file new</code> (保留屬性)</td>
+            </tr>
+            <tr>
+              <td><code>mv</code></td>
+              <td>移動/重新命名</td>
+              <td><code>mv old new</code>、<code>mv file ~/dir/</code>、<code>mv -n file /Volumes/SSD/</code></td>
+            </tr>
+            <tr>
+              <td><code>rm</code></td>
+              <td>刪除檔案</td>
+              <td><code>rm file</code>、<code>rm -rf dir</code>、<code>rm -i file</code> (互動式)</td>
+            </tr>
+            <tr>
+              <td><code>touch</code></td>
+              <td>建立/更新時間戳</td>
+              <td><code>touch file</code>、<code>touch -t 202401011200 file</code>、<code>touch -r ref file</code></td>
+            </tr>
+            <tr>
+              <td><code>mkdir</code></td>
+              <td>建立目錄</td>
+              <td><code>mkdir project</code>、<code>mkdir -p a/b/c</code>、<code>mkdir -m 755 dir</code></td>
+            </tr>
+            <tr>
+              <td><code>rmdir</code></td>
+              <td>刪除空目錄</td>
+              <td><code>rmdir empty_dir</code>、<code>rmdir -p a/b/c</code></td>
+            </tr>
+            <tr>
+              <td><code>find</code></td>
+              <td>搜尋檔案</td>
+              <td><code>find . -name "*.txt"</code>、<code>find . -type f</code>、<code>find . -mtime -1</code>、<code>find . -size +10M</code></td>
+            </tr>
+            <tr>
+              <td><code>ln</code></td>
+              <td>建立連結</td>
+              <td><code>ln -s target link</code>、<code>ln -s ~/Documents/ /tmp/docs</code></td>
+            </tr>
+            <tr>
+              <td><code>open</code></td>
+              <td>用預設 App 開啟</td>
+              <td><code>open file.txt</code>、<code>open -e file.txt</code> (用 TextEdit 開啟)、<code>open -a "Google Chrome"</code>、<code>open .</code> (打開 Finder)</td>
+            </tr>
+            <tr>
+              <td><code>open -a</code></td>
+              <td>用指定 App 開啟</td>
+              <td><code>open -a "Visual Studio Code" .</code>、<code>open -a iTunes ~/Music/song.mp3</code></td>
+            </tr>
+            <tr>
+              <td><code>open -e</code></td>
+              <td>用TextEdit 開啟</td>
+              <td><code>open -e README.md</code>、<code>open -e file.txt</code></td>
+            </tr>
+            <tr>
+              <td><code>mdfind</code></td>
+              <td>Spotlight 搜尋 CLI</td>
+              <td><code>mdfind "filename"</code>、<code>mdfind -name "*.pdf"</code></td>
+            </tr>
+            <tr>
+              <td><code>mdls</code></td>
+              <td>顯示檔案 metadata</td>
+              <td><code>mdls file.txt</code>、<code>mdls -name kMDItemKind file</code></td>
+            </tr>
+            <tr>
+              <td><code>md5</code></td>
+              <td>計算 MD5 (macOS)</td>
+              <td><code>md5 file</code>、<code>echo "text" | md5</code></td>
+            </tr>
+            <tr>
+              <td><code>shasum</code></td>
+              <td>SHA 校驗和 (macOS)</td>
+              <td><code>shasum -a 256 file</code>、<code>shasum -a 1 file</code></td>
+            </tr>
+            <tr>
+              <td><code>base64</code></td>
+              <td>Base64 編碼/解碼</td>
+              <td><code>base64 file</code>、<code>base64 -D <<< "data=="</code> (解碼)、<code>echo "aGVsbG8=" | base64 -D</code></td>
+            </tr>
+            <tr>
+              <td><code>xxd</code></td>
+              <td>十六進位查看器</td>
+              <td><code>xxd file</code>、<code>xxd -r -p hex file</code> (僅 macOS 10.15+)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>2. 剪貼簿操作 (Clipboard)</h2>
+        <blockquote><code>pbcopy</code> 和 <code>pbpaste</code> 是 macOS 獨有的剪貼簿指令。</blockquote>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>常用用法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>pbcopy</code></td>
+              <td>複製到剪貼簿</td>
+              <td><code>echo "text" | pbcopy</code>、<code>cat file | pbcopy</code>、<code>pbcopy < file</code></td>
+            </tr>
+            <tr>
+              <td><code>pbpaste</code></td>
+              <td>從剪貼簿貼上</td>
+              <td><code>pbpaste</code>、<code>pbpaste > file</code>、<code>pbpaste | grep pattern</code></td>
+            </tr>
+            <tr>
+              <td><code>pbcopy / pbpaste</code></td>
+              <td>進階用法</td>
+              <td><code>pbpaste | sed 's/old/new/g' | pbcopy</code>、<code>pbpaste | wc -c</code></td>
+            </tr>
+            <tr>
+              <td><code>pbnc</code></td>
+              <td>剪貼簿同步 (需安裝)</td>
+              <td><code>pbnc --sync</code> (在多台 Mac 間同步剪貼簿)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>3. 文本處理 (Text Processing)</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>常用用法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>grep</code></td>
+              <td>搜尋</td>
+              <td><code>grep pattern file</code>、<code>grep -ri "text" .</code>、<code>grep -v pattern</code>、<code>grep -n pattern</code>、<code>grep -E "a|b"</code></td>
+            </tr>
+            <tr>
+              <td><code>sed</code></td>
+              <td>流式編輯</td>
+              <td><code>sed 's/old/new/g' file</code>、<code>sed -i '' '1d' file</code> (macOS 需要 '' 參數), <code>sed -n '5,10p' file</code></td>
+            </tr>
+            <tr>
+              <td><code>awk</code></td>
+              <td>列式處理</td>
+              <td><code>awk '{print $1}'</code>、<code>awk -F: '{print $1}' /etc/passwd</code>、<code>awk '/pattern/ {print}'</code></td>
+            </tr>
+            <tr>
+              <td><code>cut</code></td>
+              <td>切分字串</td>
+              <td><code>cut -d: -f1 /etc/passwd</code>、<code>cut -c1-5 file</code>、<code>cut -d' ' -f1,3 file</code></td>
+            </tr>
+            <tr>
+              <td><code>sort</code></td>
+              <td>排序</td>
+              <td><code>sort file</code>、<code>sort -r file</code>、<code>sort -n file</code>、<code>sort -k2 file</code></td>
+            </tr>
+            <tr>
+              <td><code>uniq</code></td>
+              <td>去重</td>
+              <td><code>sort file | uniq -c</code>、<code>uniq -d file</code>、<code>uniq -u file</code></td>
+            </tr>
+            <tr>
+              <td><code>tr</code></td>
+              <td>字符轉換</td>
+              <td><code>echo "HELLO" | tr 'A-Z' 'a-z'</code>、<code>tr -d ' '</code>、<code>tr '\n' ' '</code></td>
+            </tr>
+            <tr>
+              <td><code>diff</code></td>
+              <td>比較差異</td>
+              <td><code>diff a b</code>、<code>diff -u a b</code>、<code>diff -r dir1 dir2</code>、<code>diff -q a b</code></td>
+            </tr>
+            <tr>
+              <td><code>column</code></td>
+              <td>格式化表格</td>
+              <td><code>column -t file</code>、<code>echo "a:b:c" | column -s: -t</code></td>
+            </tr>
+            <tr>
+              <td><code>fold</code></td>
+              <td>折行</td>
+              <td><code>fold -w 80 file</code>、<code>fold -s file</code></td>
+            </tr>
+            <tr>
+              <td><code>fmt</code></td>
+              <td>格式化段落</td>
+              <td><code>fmt -w 72 file</code>、<code>fmt -s file</code></td>
+            </tr>
+            <tr>
+              <td><code>rev</code></td>
+              <td>反轉字串</td>
+              <td><code>echo "hello" | rev</code>、<code>rev file</code></td>
+            </tr>
+            <tr>
+              <td><code>strings</code></td>
+              <td>顯示二進位中的文字</td>
+              <td><code>strings /bin/ls</code>、<code>strings -n 5 binary</code> (最少 5 字元)</td>
+            </tr>
+            <tr>
+              <td><code>wc</code></td>
+              <td>字數統計</td>
+              <td><code>wc -l file</code>、<code>wc -w file</code>、<code>wc -c file</code>、<code>cat file | wc -l</code></td>
+            </tr>
+            <tr>
+              <td><code>nl</code></td>
+              <td>顯示行號</td>
+              <td><code>nl file</code>、<code>nl -ba file</code> (所有行)、<code>nl -v 5 file</code> (從 5 開始)</td>
+            </tr>
+            <tr>
+              <td><code>paste</code></td>
+              <td>合併欄位</td>
+              <td><code>paste file1 file2</code>、<code>paste -s file</code>、<code>paste -d',' file1 file2</code></td>
+            </tr>
+            <tr>
+              <td><code>uniq</code></td>
+              <td>去重排序列</td>
+              <td><code>sort file | uniq -c</code>、<code>uniq -d file</code></td>
+            </tr>
+            <tr>
+              <td><code>tee</code></td>
+              <td>同時輸出到檔案</td>
+              <td><code>command | tee output.txt</code>、<code>tee -a file</code>、<code>tee file1 file2</code></td>
+            </tr>
+            <tr>
+              <td><code>expand</code></td>
+              <td>將 tab 轉換為空格</td>
+              <td><code>expand file</code>、<code>expand -t 4 file</code></td>
+            </tr>
+            <tr>
+              <td><code>unexpand</code></td>
+              <td>將空格轉為 tab</td>
+              <td><code>unexpand -t 4 file</code>、<code>unexpand -a file</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>4. Homebrew 包管理 (Package Management)</h2>
+        <p>macOS 的 Homebrew 是最流行的套件管理工具。安裝指令：</p>
+        <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>常用用法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>brew install</code></td>
+              <td>安裝套件</td>
+              <td><code>brew install wget</code>、<code>brew install --cask google-chrome</code> (安裝 macOS App)</td>
+            </tr>
+            <tr>
+              <td><code>brew uninstall</code></td>
+              <td>移除套件</td>
+              <td><code>brew uninstall wget</code>、<code>brew uninstall --cask google-chrome</code></td>
+            </tr>
+            <tr>
+              <td><code>brew update</code></td>
+              <td>更新 Homebrew</td>
+              <td><code>brew update</code>、<code>brew upgrade</code> (升級已安裝)、<code>brew upgrade wget</code></td>
+            </tr>
+            <tr>
+              <td><code>brew list</code></td>
+              <td>列出已安裝</td>
+              <td><code>brew list</code>、<code>brew list --cask</code>、<code>brew list --formula</code>、<code>brew list -1</code> (單列)</td>
+            </tr>
+            <tr>
+              <td><code>brew search</code></td>
+              <td>搜尋套件</td>
+              <td><code>brew search python</code>、<code>brew search --cask chrome</code></td>
+            </tr>
+            <tr>
+              <td><code>brew info</code></td>
+              <td>套件資訊</td>
+              <td><code>brew info wget</code>、<code>brew info --json python3</code></td>
+            </tr>
+            <tr>
+              <td><code>brew doctor</code></td>
+              <td>診斷問題</td>
+              <td><code>brew doctor</code>、<code>brew config</code> (顯示配置)</td>
+            </tr>
+            <tr>
+              <td><code>brew clean</code></td>
+              <td>清理快取</td>
+              <td><code>brew cleanup</code>、<code>brew cleanup -s</code> (保留舊版)、<code>brew cleanup -n</code> (預覽)</td>
+            </tr>
+            <tr>
+              <td><code>brew deps</code></td>
+              <td>查看相依性</td>
+              <td><code>brew deps</code>、<code>brew deps python</code>、<code>brew deps --tree python</code></td>
+            </tr>
+            <tr>
+              <td><code>brew bundle</code></td>
+              <td>批次安裝</td>
+              <td><code>brew bundle dump</code> (匯出)、<code>brew bundle</code> (從 Brewfile 安裝)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>5. 系統資訊 (System Information)</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>常用用法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>uname</code></td>
+              <td>系統資訊</td>
+              <td><code>uname -a</code>、<code>uname -m</code> (架構)、<code>uname -r</code> (核心版本)</td>
+            </tr>
+            <tr>
+              <td><code>sw_vers</code></td>
+              <td>macOS 版本</td>
+              <td><code>sw_vers</code>、<code>sw_vers -productVersion</code>、<code>sw_vers -buildVersion</code></td>
+            </tr>
+            <tr>
+              <td><code>system_profiler</code></td>
+              <td>系統詳細資訊</td>
+              <td><code>system_profiler SPHardwareDataType</code>、<code>system_profiler SPSoftwareDataType</code>、<code>system_profiler SPNetworkDataType</code></td>
+            </tr>
+            <tr>
+              <td><code>uptime</code></td>
+              <td>系統運行時間</td>
+              <td><code>uptime</code>、<code>uptime -p</code> (易讀格式)</td>
+            </tr>
+            <tr>
+              <td><code>date</code></td>
+              <td>日期時間</td>
+              <td><code>date</code>、<code>date +%Y-%m-%d</code>、<code>date -u</code> (UTC)</td>
+            </tr>
+            <tr>
+              <td><code>calendar</code></td>
+              <td>顯示日曆</td>
+              <td><code>calendar 1.1</code> (顯示 1月1日生日)</td>
+            </tr>
+            <tr>
+              <td><code>whoami</code></td>
+              <td>當前用戶</td>
+              <td><code>whoami</code>、<code>whoami -a</code></td>
+            </tr>
+            <tr>
+              <td><code>id</code></td>
+              <td>用戶群組資訊</td>
+              <td><code>id</code>、<code>id username</code>、<code>groups</code> (顯示群組)</td>
+            </tr>
+            <tr>
+              <td><code>who</code></td>
+              <td>登入用戶</td>
+              <td><code>who</code>、<code>whoami</code></td>
+            </tr>
+            <tr>
+              <td><code>w </code></td>
+              <td>顯示用戶與負載</td>
+              <td><code>w</code>、<code>top -l 1 | head -10</code></td>
+            </tr>
+            <tr>
+              <td><code>nproc</code></td>
+              <td>CPU 核心數</td>
+              <td><code>nproc</code>、<code>sysctl hw.ncpu</code>、<code>system_profiler SPHardwareDataType | grep "Core"</code></td>
+            </tr>
+            <tr>
+              <td><code>free</code></td>
+              <td>顯示記憶體 (需 install)</td>
+              <td><code>brew install free</code>、<code>free -h</code>、<code>vm_stat</code> (macOS 原生)</td>
+            </tr>
+            <tr>
+              <td><code>vm_stat</code></td>
+              <td>虛擬記憶體統計 (macOS)</td>
+              <td><code>vm_stat</code>、<code>vm_stat 1</code> (每秒更新)</td>
+            </tr>
+            <tr>
+              <td><code>top</code></td>
+              <td>動態進程監控</td>
+              <td><code>top -l 1</code> (單次)、<code>top -o cpu</code> (依 CPU 排序)、<code>top -o rsize</code> (依記憶體排序)</td>
+            </tr>
+            <tr>
+              <td><code>htop</code></td>
+              <td>互動式監控 (需安裝)</td>
+              <td><code>brew install htop</code>、<code>htop</code>、<code>sudo htop -u $USER</code></td>
+            </tr>
+            <tr>
+              <td><code>ps</code></td>
+              <td>顯示進程</td>
+              <td><code>ps aux</code>、<code>ps -ef</code>、<code>ps -ax</code>、<code>ps -A</code>、<code>ps aux | grep nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>lsof</code></td>
+              <td>列出開啟檔案的進程</td>
+              <td><code>lsof -i :80</code>、<code>lsof -u $USER</code>、<code>lsof /path/to/file</code></td>
+            </tr>
+            <tr>
+              <td><code>lscpu</code></td>
+              <td>CPU 資訊 (部分支援)</td>
+              <td><code>sysctl -a | grep machdep.cpu</code>、<code>system_profiler SPHardwareDataType</code></td>
+            </tr>
+            <tr>
+              <td><code>iostat</code></td>
+              <td>I/O 統計</td>
+              <td><code>iostat</code>、<code>iostat -w 1</code> (每秒更新)</td>
+            </tr>
+            <td><code>sysctl</code></td>
+              <td>核心參數</td>
+              <td><code>sysctl -a</code>、<code>sysctl hw</code>、<code>sysctl net.inet.ip.forwarding</code></td>
+          </tbody>
+        </table>
+
+        <h2>6. 磁碟與存儲 (Disk & Storage)</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>常用用法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>df</code></td>
+              <td>磁碟空間</td>
+              <td><code>df -h</code>、<code>df -H</code>、<code>df -i</code> (inode)</td>
+            </tr>
+            <tr>
+              <td><code>du</code></td>
+              <td>目錄大小</td>
+              <td><code>du -sh dir</code>、<code>du -sh *</code>、<code>du --max-depth=1</code></td>
+            </tr>
+            <tr>
+              <td><code>diskutil</code></td>
+              <td>磁碟工具 CLI (macOS)</td>
+              <td><code>diskutil list</code>、<code>diskutil info /dev/disk1</code>、<code>diskutil eraseDisk APFS /dev/disk2</code>、<code>diskutil mount /dev/disk2s1</code>、<code>diskutil unmount /dev/disk2s1</code></td>
+            </tr>
+            <tr>
+              <td><code>mount</code></td>
+              <td>掛載文件系統</td>
+              <td><code>mount</code> (顯示已掛載)、<code>mount -v</code>、<code>mount -t ntfs /dev/disk2s1 /Volumes/NTFS</code></td>
+            </tr>
+            <tr>
+              <td><code>umount</code></td>
+              <td>卸載</td>
+              <td><code>umount /Volumes/UNTITLED</code>、<code>diskutil unmount /dev/disk2s1</code></td>
+            </tr>
+            <tr>
+              <td><code>lsblk</code></td>
+              <td>磁碟列表 (僅 Linux)</td>
+              <td>macOS: <code>diskutil list</code> 對應</td>
+            </tr>
+            <tr>
+              <td><code>iostat</code></td>
+              <td>磁碟 I/O 統計</td>
+              <td><code>iostat -w 1</code>、<code>iostat -c 5</code></td>
+            </tr>
+            <tr>
+              <td><code>fsck</code></td>
+              <td>檢查文件系統</td>
+              <td><code>fsck /dev/rdisk2s1</code> (macOS 用原始裝置)、<code>fsck_hfs -f /dev/rdisk2s1</code>、<code>fsck_apfs -f /dev/rdisk2s1</code></td>
+            </tr>
+            <tr>
+              <td><code>dd</code></td>
+              <td>低階拷貝</td>
+              <td><code>dd if=/dev/zero of=file bs=1m count=100</code>、<code>dd if=/dev/rdisk0 of=backup.img bs=1m</code> (從 SD 卡)、<code>dd if=usb.img of=/dev/rdisk2 bs=1m</code> (寫入 USB)</td>
+            </tr>
+            <tr>
+              <td><code>md5</code></td>
+              <td>MD5 校驗</td>
+              <td><code>md5 file</code>、<code>md5 /dev/rdisk2</code> (驗證 ISO)</td>
+            </tr>
+            <tr>
+              <td><code>shasum</code></td>
+              <td>SHA 校驗</td>
+              <td><code>shasum -a 256 file</code>、<code>shasum -a 1 /dev/rdisk2</code></td>
+            </tr>
+            <tr>
+              <td><code>diskutil cs</code></td>
+              <td>CoreStorage 管理</td>
+              <td><code>diskutil cs list</code>、<code>diskutil cs unlockVolume UUID</code></td>
+            </tr>
+            <tr>
+              <td><code>diskutil apfs</code></td>
+              <td>APFS 管理</td>
+              <td><code>diskutil apfs list</code>、<code>diskutil apfs resizeContainer /dev/disk1 0</code></td>
+            </tr>
+            <tr>
+              <td><code>volumes</code></td>
+              <td>掛載磁卷</td>
+              <td><code>diskutil mount /dev/disk2s1</code>、<code>diskutil unmount /dev/disk2s1</code></td>
+            </tr>
+            <tr>
+              <td><code>afdist</code></td>
+              <td>APFS 診斷</td>
+              <td><code>afdist repair /dev/disk1s1</code></td>
+            </tr>
+            <tr>
+              <td><code>hdiutil</code></td>
+              <td>磁盤映像工具</td>
+              <td><code>hdiutil create -size 100m -fs HFS+ -volname "Backup" backup.dmg</code>、<code>hdiutil attach backup.dmg</code>、<code>hdiutil detach /dev/disk2</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>7. 網路 (Network)</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>常用用法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ipconfig</code></td>
+              <td>IP 配置 (macOS 版)</td>
+              <td><code>ipconfig getifaddr en0</code>、<code>ipconfig getoption en0 bootps</code></td>
+            </tr>
+            <tr>
+              <td><code>ifconfig</code></td>
+              <td>網路介面 (舊版)</td>
+              <td><code>ifconfig en0</code>、<code>ifconfig | grep inet</code>、<code>ifconfig en0 | grep ether</code></td>
+            </tr>
+            <tr>
+              <td><code>ping</code></td>
+              <td>測試連通性</td>
+              <td><code>ping google.com</code>、<code>ping -c 4 baidu.com</code>、<code>ping -i 0.5 google.com</code></td>
+            </tr>
+            <tr>
+              <td><code>curl</code></td>
+              <td>資料傳輸</td>
+              <td><code>curl url</code>、<code>curl -O url</code>、<code>curl -X POST -d "data" url</code>、<code>curl -H "Header: value"</code>、<code>curl -L -o file.zip url</code></td>
+            </tr>
+            <tr>
+              <td><code>wget</code></td>
+              <td>下載 (需安裝)</td>
+              <td><code>brew install wget</code>、<code>wget url</code>、<code>wget -c url</code> (斷點續傳)、<code>wget -r url</code> (遞迴下載)</td>
+            </tr>
+            <tr>
+              <td><code>nslookup</code></td>
+              <td>DNS 查詢</td>
+              <td><code>nslookup google.com</code>、<code>nslookup -type=MX google.com</code></td>
+            </tr>
+            <tr>
+              <td><code>dig</code></td>
+              <td>DNS 查詢</td>
+              <td><code>dig google.com</code>、<code>dig -x 8.8.8.8</code>、<code>dig MX google.com</code> (需安裝)</td>
+            </tr>
+            <tr>
+              <td><code>host</code></td>
+              <td>DNS 查詢</td>
+              <td><code>host google.com</code>、<code>host -t MX google.com</code> (部分需安裝)</td>
+            </tr>
+            <tr>
+              <td><code>traceroute</code></td>
+              <td>路由追踪</td>
+              <td><code>traceroute google.com</code>、<code>traceroute -n google.com</code> (需安裝: <code>brew install traceroute</code>)</td>
+            </tr>
+            <tr>
+              <td><code>tracepath</code></td>
+              <td>路由追踤 (Linux)</td>
+              <td>macOS 對應 <code>traceroute</code> 或 <code>mtr</code></td>
+            </tr>
+            <tr>
+              <td><code>mtr</code></td>
+              <td>網路品質監測</td>
+              <td><code>brew install mtr</code>、<code>sudo mtr google.com</code>、<code>mtr -c 10 google.com</code></td>
+            </tr>
+            <tr>
+              <td><code>netstat</code></td>
+              <td>網路連線</td>
+              <td><code>netstat -an | grep LISTEN</code>、<code>netstat -i</code> (介面)、<code>netstat -rn</code> (路由)</td>
+            </tr>
+            <tr>
+              <td><code>ss</code></td>
+              <td>新版網路 (Linux)</td>
+              <td>macOS 對應 <code>lsof -i</code> 或 <code>netstat</code></td>
+            </tr>
+            <tr>
+              <td><code>lsof -i</code></td>
+              <td>列出網路連線</td>
+              <td><code>lsof -i :80</code>、<code>lsof -i -P | grep LISTEN</code>、<code>lsof -iTCP -sTCP:LISTEN -P</code></td>
+            </tr>
+            <tr>
+              <td><code>arp</code></td>
+              <td>ARP 表格</td>
+              <td><code>arp -a</code>、<code>arp -d hostname</code> (刪除)、<code>arp -s hostname ip</code> (添加)</td>
+            </tr>
+            <tr>
+              <td><code>route</code></td>
+              <td>路由表</td>
+              <td><code>route get google.com</code>、<code>netstat -rn</code> (等效)</td>
+            </tr>
+            <tr>
+              <td><code>networksetup</code></td>
+              <td>網路設定</td>
+              <td><code>networksetup -listallhardwareports</code>、<code>networksetup -getairportnetwork en0</code>、<code>sudo networksetup -setairportpower en0 off</code></td>
+            </tr>
+            <tr>
+              <td><code>/usr/libexec/airport</code></td>
+              <td>Wi-Fi 管理</td>
+              <td><code>/usr/libexec/airport en0 scan</code>、<code>/usr/libexec/airport en0 sniff 1</code></td>
+            </tr>
+            <tr>
+              <td><code>scutil</code></td>
+              <td>系統配置</td>
+              <td><code>scutil --dns</code>、<code>scutil --nc list</code>、<code>scutil --proxy</code></td>
+            </tr>
+            <tr>
+              <td><code>dns-sd</code></td>
+              <td>DNS Service Discovery</td>
+              <td><code>dns-sd -G v4 en0</code>、<code>dns-sd -B _http._tcp</code> (瀏覧服務)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>8. 進程管理 (Process Management)</h2>
+        <blockquote>macOS 的 <code>ps</code> 和 <code>top</code> 有些與 Linux 不同，但核心概念相同。</blockquote>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>常用用法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ps</code></td>
+              <td>顯示進程</td>
+              <td><code>ps aux</code>、<code>ps -ef</code>、<code>ps -ax</code>、<code>ps aux | grep nginx</code>、<code>ps -p PID</code> (查看特定 PID)</td>
+            </tr>
+            <tr>
+              <td><code>top</code></td>
+              <td>動態監控</td>
+              <td><code>top -l 1</code> (單次)、<code>top -o cpu</code> (依 CPU 排序)、<code>top -o rsize</code> (依記憶體)、<code>top -n 10 -l 1</code> (10 秒)、<code>top -pid PID</code></td>
+            </tr>
+            <tr>
+              <td><code>kill</code></td>
+              <td>發送信號</td>
+              <td><code>kill PID</code>、<code>kill -9 PID</code>、<code>kill -15 PID</code>、<code>kill -SIGSTOP PID</code></td>
+            </tr>
+            <tr>
+              <td><code>pkill</code></td>
+              <td>依名稱殺進程</td>
+              <td><code>pkill nginx</code>、<code>pkill -f "pattern"</code>、<code>pkill -u username</code>、<code>pkill -HUP nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>killall</code></td>
+              <td>殺同名進程</td>
+              <td><code>killall Safari</code>、<code>killall -9 nginx</code>、<code>killall -u root</code></td>
+            </tr>
+            <tr>
+              <td><code>pgrep</code></td>
+              <td>搜尋進程 ID</td>
+              <td><code>pgrep nginx</code>、<code>pgrep -u $USER</code>、<code>pgrep -f "pattern"</code>、<code>pgrep -l nginx</code> (顯示名稱)</td>
+            </tr>
+            <tr>
+              <td><code>nohup</code></td>
+              <td>跳離終端執行</td>
+              <td><code>nohup command &amp;</code>、<code>nohup command > log.txt 2>&amp;1 &amp;</code></td>
+            </tr>
+            <tr>
+              <td><code>bg / fg</code></td>
+              <td>背景/前臺</td>
+              <td><code>bg %1</code>、<code>fg %1</code>、<code>jobs</code>、<code>jobs -l</code></td>
+            </tr>
+            <tr>
+              <td><code>disown</code></td>
+              <td>從工作移除</td>
+              <td><code>disown %1</code>、<code>disown -h %1</code> (保留但不回應 SIGHUP)</td>
+            </tr>
+            <tr>
+              <td><code>renice</code></td>
+              <td>改變優先級</td>
+              <td><code>renice +5 PID</code>、<code>renice -10 PID</code>、<code>renice -n 10 PID</code></td>
+            </tr>
+            <tr>
+              <td><code>nice</code></td>
+              <td>設定優先級啟動</td>
+              <td><code>nice -n 19 command</code>、<code>nice -n -5 command</code></td>
+            </tr>
+            <tr>
+              <td><code>pidof</code></td>
+              <td>查找 PID</td>
+              <td><code>pidof nginx</code>、<code>pgrep -x nginx</code> (更精確)</td>
+            </tr>
+            <tr>
+              <td><code>pstree</code></td>
+              <td>樹狀進程</td>
+              <td><code>pstree PID</code>、<code>pstree -p PID</code></td>
+            </tr>
+            <tr>
+              <td><code>launchctl</code></td>
+              <td>macOS 服務管理</td>
+              <td><code>launchctl list</code>、<code>launchctl load ~/Library/LaunchAgents/com.user.agent.plist</code>、<code>launchctl unload ~/Library/LaunchAgents/com.user.agent.plist</code>、<code>sudo launchctl bootstrap system /Library/LaunchDaemons/com.service.plist</code></td>
+            </tr>
+            <tr>
+              <td><code>brew services</code></td>
+              <td>Brew 服務管理</td>
+              <td><code>brew services list</code>、<code>brew services start mysql</code>、<code>brew services restart nginx</code>、<code>brew services stop redis</code></td>
+            </tr>
+            <tr>
+              <td><code>lsof</code></td>
+              <td>列出開啟文件</td>
+              <td><code>lsof -i :80</code>、<code>lsof +D /path</code>、<code>lsof -c process</code>、<code>lsof -p PID</code></td>
+            </tr>
+            <tr>
+              <td><code>strace</code></td>
+              <td>追踪系統呼叫 (Linux)</td>
+              <td>macOS 對應 <code>dtrace</code> 或 <code>opensnoop</code></td>
+            </tr>
+            <tr>
+              <td><code>dtrace</code></td>
+              <td>DTrace 動態追蹤 (macOS)</td>
+                  <td><code>sudo dtrace -n "syscall::open:entry { printf("%s opened %s", execname, copyinstr(arg0)); }"</code></td>
+            </tr>
+            <tr>
+              <td><code>opensnoop</code></td>
+              <td>DTrace 開啟檔案查看</td>
+              <td><code>sudo opensnoop -n Safari</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>9. 系统服务與偏好設定 (System Preferences)</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>常用用法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>defaults</code></td>
+              <td>修改偏好設定</td>
+              <td><code>defaults write com.apple.finder AppleShowAllFiles YES</code>、<code>defaults read</code>、<code>defaults delete com.apple.finder</code>、<code>defaults write NSGlobalDomain AppleShowScrollBars -string "Always"</code></td>
+            </tr>
+            <tr>
+              <td><code>open -a</code></td>
+              <td>開啟 App</td>
+              <td><code>open -a "System Settings"</code>、<code>open -a Safari</code>、<code>open -a "Activity Monitor"</code>、<code>open -a "App Store"</code></td>
+            </tr>
+            <tr>
+              <td><code>open -b</code></td>
+              <td>用 bundle ID 開啟</td>
+              <td><code>open -b com.apple.Safari https://apple.com</code></td>
+            </tr>
+            <tr>
+              <td><code>open -R</code></td>
+              <td>在 Finder 中顯示</td>
+              <td><code>open -R /path/to/file</code></td>
+            </tr>
+            <tr>
+              <td><code>osascript</code></td>
+              <td>執行 AppleScript</td>
+              <td><code>osascript -e 'display notification "Hello"'</code>、<code>osascript hello.scpt</code>、<code>osascript -e 'tell app "Safari" to activate'</code></td>
+            </tr>
+            <tr>
+              <td><code>say</code></td>
+              <td>語音合成</td>
+              <td><code>say "Hello"</code>、<code>say -v Alex "Hello"</code> (指定聲音)、<code>say -f file.txt</code> (從檔案朗讀)</td>
+            </tr>
+            <tr>
+              <td><code>afplay</code></td>
+              <td>播放音效</td>
+              <td><code>afplay /System/Library/Sounds/Glass.aiff</code>、<code>afplay sound.mp3</code></td>
+            </tr>
+            <tr>
+              <td><code>pmset</code></td>
+              <td>電源管理</td>
+              <td><code>pmset -g batt</code> (電池資訊)、<code>sudo pmset displaysleepnow</code> (立即螢幕睡眠)</td>
+            </tr>
+            <tr>
+              <td><code>caffeinate</code></td>
+              <td>防止休眠</td>
+              <td><code>caffeinate -i</code> (防止睡眠)、<code>caffeinate -u -t 3600</code> (1 小時後喚醒)</td>
+            </tr>
+            <tr>
+              <td><code>screencapture</code></td>
+              <td>螢幕截圖</td>
+              <td><code>screencapture file.png</code>、<code>screencapture -x file.png</code> (無聲)、<code>screencapture -i file.png</code> (互動模式)、<code>screencapture -T 5 file.png</code> (5 秒延遲)</td>
+            </tr>
+            <tr>
+              <td><code>sips</code></td>
+              <td>圖像處理</td>
+              <td><code>sips -s format png input.jpg --out output.png</code>、<code>sips -Z 500 image.png</code> (調整大小)</td>
+            </tr>
+            <tr>
+              <td><code>mdls</code></td>
+              <td>檔案 metadata</td>
+              <td><code>mdls file</code>、<code>mdls -name kMDItemContentType file</code></td>
+            </tr>
+            <tr>
+              <td><code>mdutil</code></td>
+              <td>Spotlight 索引管理</td>
+              <td><code>mdutil -s /</code> (顯示狀態)、<code>sudo mdutil -i on /</code> (開啟)、<code>sudo mdutil -i off /</code> (關閉)</td>
+            </tr>
+            <tr>
+              <td><code>tccutil</code></td>
+              <td>隱私權控制</td>
+              <td><code>tccutil reset All com.apple.Terminal</code>、<code>tccutil reset Camera</code></td>
+            </tr>
+            <tr>
+              <td><code>spctl</code></td>
+              <td>Gatekeeper 檢查</td>
+              <td><code>spctl --assess --verbose /Applications/App.app</code>、<code>sudo spctl --master-disable</code> (開啟任何來源)</td>
+            </tr>
+            <tr>
+              <td><code>xattr</code></td>
+              <td>延伸屬性</td>
+              <td><code>xattr -l file</code> (列出)、<code>xattr -d attr file</code> (移除)、<code>xattr -w attr val file</code> (設定)</td>
+            </tr>
+            <tr>
+              <td><code>codesign</code></td>
+              <td>代碼簽名</td>
+              <td><code>codesign --verify App.app</code>、<code>codesign -s "Developer ID" App.app</code></td>
+            </tr>
+            <tr>
+              <td><code>plutil</code></td>
+              <td>plist 轉換</td>
+              <td><code>plutil -convert json file.plist</code>、<code>plutil -convert xml1 file.plist</code>、<code>plutil -p file.plist</code></td>
+            </tr>
+            <tr>
+              <td><code>security</code></td>
+              <td>密鑰圈管理</td>
+              <td><code>security find-generic-password -s "service"</code>、<code>security set-keychain-settings</code></td>
+            </tr>
+            <td><code>brew services</code></td>
+              <td>套件服務管理</td>
+              <td><code>brew services list</code>、<code>brew services start mysqld</code>、<code>brew services stop redis</code>、<code>brew services restart nginx</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>10. 開發者指令 (Developer Tools)</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>常用用法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git</code></td>
+              <td>版本控制</td>
+              <td><code>git status</code>、<code>git clone url</code>、<code>git commit -m "msg"</code>、<code>git push</code></td>
+            </tr>
+            <tr>
+              <td><code>python3</code></td>
+              <td>Python 直譯器</td>
+              <td><code>python3 script.py</code>、<code>python3 -m http.server 8000</code>、<code>python3 -c "import os; print(os.name)"</code></td>
+            </tr>
+            <tr>
+              <td><code>node</code></td>
+              <td>Node.js 執行環境</td>
+              <td><code>node app.js</code>、<code>node -e "console.log('hi')"</code>、<code>npm install</code>、<code>npm start</code></td>
+            </tr>
+            <tr>
+              <td><code>pip3</code></td>
+              <td>Python 包管理</td>
+              <td><code>pip3 install pkg</code>、<code>pip3 list</code>、<code>pip3 freeze > requirements.txt</code>、<code>pip3 install -r requirements.txt</code></td>
+            </tr>
+            <tr>
+              <td><code>ruby</code></td>
+              <td>Ruby 直譯器</td>
+              <td><code>ruby script.rb</code>、<code>gem install pkg</code>、<code>bundle install</code>、<code>rbenv install 3.2.0</code></td>
+            </tr>
+            <tr>
+              <td><code>php</code></td>
+              <td>PHP CLI</td>
+              <td><code>php -S localhost:8000</code>、<code>php -a</code>、<code>composer install</code></td>
+            </tr>
+            <td><code>make</code></td>
+              <td>自動化建構</td>
+              <td><code>make</code>、<code>make clean</code>、<code>make test</code></td>
+            </tr>
+            <tr>
+              <td><code>gcc / clang</code></td>
+              <td>C/C++ 編譯器</td>
+              <td><code>gcc -o program main.c</code>、<code>clang -framework Carbon -o app app.m</code></td>
+            </tr>
+            <tr>
+              <td><code>xcodebuild</code></td>
+              <td>Xcode 建構</td>
+              <td><code>xcodebuild -project App.xcodeproj</code>、<code>xcodebuild -list</code>、<code>xcodebuild -scheme App -destination 'platform=iOS Simulator,name=iPhone 15' build</code></td>
+            </tr>
+            <tr>
+              <td><code>simctl</code></td>
+              <td>iOS 模擬器控制</td>
+              <td><code>xcrun simctl list</code>、<code>xcrun simctl boot iPhone 15</code>、<code>xcrun simctl install booted App.app</code>、<code>xcrun simctl openurl booted "https://apple.com"</code></td>
+            </tr>
+            <tr>
+              <td><code>swift</code></td>
+              <td>Swift 直譯器</td>
+              <td><code>swift script.swift</code>、<code>swift -I /usr/lib</code></td>
+            </tr>
+            <tr>
+              <td><code>pod</code></td>
+              <td>CocoaPods</td>
+              <td><code>pod install</code>、<code>pod update</code>、<code>pod search podname</code></td>
+            </tr>
+            <tr>
+              <td><code>gem</code></td>
+              <td>RubyGems</td>
+              <td><code>gem install bundler</code>、<code>gem list</code>、<code>gem update --system</code></td>
+            </tr>
+            <tr>
+              <td><code>brew</code></td>
+              <td>Homebrew</td>
+              <td><code>brew install wget</code>、<code>brew list</code>、<code>brew update</code>、<code>brew upgrade</code>、<code>brew doctor</code></td>
+            </tr>
+            <tr>
+              <td><code>pipx</code></td>
+              <td>Python App 隔離 (可選)</td>
+              <td><code>pipx install pkg</code>、<code>pipx list</code>、<code>pipx run --spec pkg</code></td>
+            </tr>
+            <tr>
+              <td><code>conda</code></td>
+              <td>Anaconda 環境</td>
+              <td><code>conda create -n env python=3.11</code>、<code>conda activate env</code>、<code>conda install pkg</code>、<code>conda env list</code></td>
+            </tr>
+            <tr>
+              <td><code>code</code></td>
+              <td>VS Code CLI</td>
+              <td><code>code .</code> (打開資料夾)、<code>code -r file</code> (打開檔案)、<code>code --diff file1 file2</code>、<code>code --install-extension extension-id</code></td>
+            </tr>
+            <tr>
+              <td><code>subl</code></td>
+              <td>Sublime Text CLI</td>
+              <td><code>subl .</code>、<code>subl file</code>、<code>subl -n</code> (新視窗)</td>
+            </tr>
+            <tr>
+              <td><code>atom</code></td>
+              <td>Atom CLI (已棄用)</td>
+              <td><code>atom .</code>、<code>atom file</code></td>
+            </tr>
+            <tr>
+              <td><code>vim / nano</code></td>
+              <td>命令列編輯器</td>
+              <td><code>vim file</code>、<code>nano file</code>、<code>vim +/pattern file</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>11. macOS 快捷鍵 (Keyboard Shortcuts)</h2>
+        <blockquote>在終端機中，快捷鍵可以大幅提高效率。</blockquote>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>快捷鍵</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><kbd>Ctrl</kbd> + <kbd>A</kbd></td>
+              <td>游標移到行首</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl</kbd> + <kbd>E</kbd></td>
+              <td>游標移到行尾</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl</kbd> + <kbd>B</kbd></td>
+              <td>游標左移一個字元</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl</kbd> + <kbd>F</kbd></td>
+              <td>游標右移一個字元</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl</kbd> + <kbd>K</kbd></td>
+              <td>刪除游標到行尾</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl</kbd> + <kbd>U</kbd></td>
+              <td>剪下游標到行首</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl</kbd> + <kbd>W</kbd></td>
+              <td>刪除游標前一個單詞</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl</kbd> + <kbd>L</kbd></td>
+              <td>清空螢幕</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl</kbd> + <kbd>R</kbd></td>
+              <td>反向搜尋歷史指令</td>
+            </tr>
+            <tr>
+              <kbd>Cmd</kbd> + <kbd>K</kbd></td>
+              <td>清空終端機螢幕</td>
+            </tr>
+            <tr>
+              <td><kbd>Cmd</kbd> + <kbd>N</kbd></td>
+              <td>新建 Terminal 視窗</td>
+            </tr>
+            <tr>
+              <td><kbd>Cmd</kbd> + <kbd>T</kbd></td>
+              <td>新增分頁</td>
+            </tr>
+            <tr>
+              <td><kbd>Cmd</kbd> + <kbd>W</kbd></td>
+              <td>關閉分頁</td>
+            </tr>
+            <tr>
+              <td><kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd></td>
+              <td>重新開啟關閉的分頁</td>
+            </tr>
+            <tr>
+              <td><kbd>Cmd</kbd> + <kbd>1</kbd> ~ <kbd>Cmd</kbd> + <kbd>9</kbd></td>
+              <td>切換分頁</td>
+            </tr>
+            <tr>
+              <td><kbd>Cmd</kbd> + <kbd>Enter</kbd></td>
+              <td>全螢幕切換</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>12. 快速速查 (Cheat Sheet)</h2>
+
+        <h3>日常開發</h3>
+        <pre><code># 打開 Finder 到當前目錄
+open .
+
+# 打開 VS Code 到當前目錄
+code .
+
+# 查看當前目錄
+pwd
+
+# 列出所有文件
+ls -la
+
+# 快速切換到常用目錄
+cd ~/Documents
+
+# 查看最近指令
+history | tail -10
+
+# 搜尋指令歷史
+history | grep "git"
+
+# 終止進程
+kill PID</code></pre>
+
+        <h3>系統管理</h3>
+        <pre><code># 查看 macOS 版本
+sw_vers
+
+# 查看系統資訊
+system_profiler SPHardwareDataType | grep "Model Identifier"
+
+# 清理 DNS 快取
+sudo dscache -flushcache; sudo killall -HUP mDNSResponder
+
+# 重啟核心服務
+sudo killall coreservicesd
+
+# 查看電池資訊
+pmset -g batt
+
+# 關閉螢幕 (快速鎖定)
+pmset displaysleepnow</code></pre>
+
+        <h3>開發工具</h3>
+        <pre><code># 啟動本地 Python 伺服器
+python3 -m http.server 8000
+
+# 啟動 Node.js 開發伺服器
+npm start
+
+# 安裝 npm 套件
+npm install package-name
+
+# 執行 npm 指令
+npx create-react-app my-app
+
+# 更新 Homebrew 與套件
+brew update && brew upgrade
+
+# 清理 Homebrew 快取
+brew cleanup</code></pre>
+
+        <blockquote>
+          ⚠️ <strong>macOS 2026 版本注意事項：</strong> macOS 2026 (Sonoma 2) 加強了隱私權與安全性，部分指令（如 <code>dtrace</code>、<code>csrutil</code>）需要關閉 SIP 或取得特許權限。
+        </blockquote>
+
+        <h2>總結</h2>
+        <p>macOS 終端機結合了 BSD Unix 的強大與 Apple 圖形界面的便利。熟記以下幾類指令即可應付大多數場景：</p>
+
+        <ul>
+          <li><strong>文件操作</strong>：<code>ls, cd, cp, mv, rm, find</code></strong> — 基本操作</li>
+          <li><strong>剪貼簿</strong>：<code>pbcopy, pbpaste</code> — macOS 獨有</li>
+          <li><strong>包管理</strong>：<code>brew, brew cask</code> — 開發必備</li>
+          <li><strong>系統管理</strong>：<code>launchctl, defaults, pmset</code> — macOS 特有</li>
+          <li><strong>網路</strong>：<code>ping, curl, ssh, arp</code> — 與 Linux 類似</li>
+        </ul>
+
+        <blockquote>
+          🎯 <strong>學習路線：</strong> 先掌握標準 Unix 指令 (<code>ls, cd, grep, find</code>等)，再學習 macOS 特有指令 (<code>brew, open, defaults</code>)，最後配上剪貼簿與快捷鍵，效率立即翻倍。
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="#">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="affiliate">
+        本站部分連結為聯盟行銷連結，點擊購買不會增加您的費用，感謝支持 🙏
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

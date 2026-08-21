@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Git 常用指令入門 — 硬核工程師</title>
+  <title>Git 常用指令入門 — "AI" 硬核工程師</title>
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <link rel="stylesheet" href="./css/style.css">
   <style>
@@ -12,7 +12,7 @@
       padding: 4rem 0 2rem;
     }
     .article-hero h1 {
-      font-size: 2.25rem;
+      font-size: 2.97rem; /* 10% larger */
       font-weight: 800;
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
@@ -23,7 +23,7 @@
       justify-content: center;
       gap: 0.5rem;
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 1.21rem; /* 10% larger */
       margin-bottom: 2rem;
     }
     .article-hero img {
@@ -32,18 +32,18 @@
       object-fit: cover;
     }
     .article-body {
-      max-width: 720px;
+      max-width: 920px;
       margin: 0 auto;
     }
     .article-body h2 {
-      font-size: 1.5rem;
+      font-size: 2.145rem; /* 10% larger */
       font-weight: 700;
       margin: 2.5rem 0 1rem;
       padding-bottom: 0.5rem;
       border-bottom: 1px solid var(--border);
     }
     .article-body h3 {
-      font-size: 1.15rem;
+      font-size: 1.65rem; /* 10% larger */
       font-weight: 600;
       margin: 1.5rem 0 0.75rem;
     }
@@ -56,7 +56,7 @@
       background: var(--bg-alt);
       padding: 0.15rem 0.4rem;
       border-radius: 4px;
-      font-size: 0.875em;
+      font-size: 1.21em; /* 10% larger */
       color: #e11d48;
     }
     .article-body pre {
@@ -90,7 +90,7 @@
       width: 100%;
       border-collapse: collapse;
       margin: 1.5rem 0;
-      font-size: 0.9rem;
+      font-size: 1.65rem; /* 10% larger */
     }
     .article-body th, .article-body td {
       padding: 0.5rem 0.75rem;
@@ -137,35 +137,46 @@
   <!-- =============== Header =============== -->
   <header class="site-header">
     <div class="waves">
-      <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,62 C300,22 600,102 900,62 C1200,22 1200,62 1200,120 L0,120 Z"></path>
+      <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-2 600,78 900,38 C1200,-2 1200,38 1200,100 L0,100 Z"></path>
       </svg>
-      <svg class="wave wave-2" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,62 C300,12 600,112 900,62 C1200,12 1200,62 1200,120 L0,120 Z"></path>
+      <svg class="wave wave-2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-12 600,88 900,38 C1200,-12 1200,38 1200,100 L0,100 Z"></path>
       </svg>
-      <svg class="wave wave-3" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,62 C300,32 600,92 900,62 C1200,32 1200,62 1200,120 L0,120 Z"></path>
+      <svg class="wave wave-3" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,2 600,72 900,38 C1200,2 1200,38 1200,100 L0,100 Z"></path>
       </svg>
-      <svg class="wave wave-4" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,62 C300,8 600,116 900,62 C1200,8 1200,62 1200,120 L0,120 Z"></path>
+      <svg class="wave wave-4" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-8 600,92 900,38 C1200,-8 1200,38 1200,100 L0,100 Z"></path>
       </svg>
-      <svg class="wave wave-5" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,62 C300,42 600,82 900,62 C1200,42 1200,62 1200,120 L0,120 Z"></path>
+      <svg class="wave wave-5" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,22 600,52 900,38 C1200,22 1200,38 1200,100 L0,100 Z"></path>
       </svg>
-      <svg class="wave wave-6" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,62 C300,17 600,107 900,62 C1200,17 1200,62 1200,120 L0,120 Z"></path>
+      <svg class="wave wave-6" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-7 600,82 900,38 C1200,-7 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-7" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,18 600,62 900,38 C1200,18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-8" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-18 600,98 900,38 C1200,-18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-9" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,32 600,42 900,38 C1200,32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-10" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-32 600,118 900,38 C1200,-32 1200,38 1200,100 L0,100 Z"></path>
       </svg>
     </div>
     <div class="container header-inner">
       <div class="logo">
-        <div>硬核工程師</div>
+        <div>"AI" 硬核工程師</div>
         <div class="tagline">Talk is cheap. Show me the code</div>
       </div>
       <nav class="nav">
         <a href="./index.html">首頁</a>
         <a href="./articles.html">文章</a>
-        <a href="./categories.html">分類</a>
-        <a href="./about.html">關於</a>
+                <a href="./about.html">關於</a>
         <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
       </nav>
     </div>
@@ -183,10 +194,6 @@
     <div class="container">
       <!-- =============== Article Header =============== -->
       <section class="article-hero">
-        <div class="article-tags">
-          <span class="category-pill">Git</span>
-          <span class="category-pill">後端技術</span>
-        </div>
         <h1>Git 常用指令入門 — 從零開始掌握版本控制</h1>
         <div class="article-meta">
           <span>2026-08-20</span>
@@ -603,11 +610,10 @@ git switch correct-branch</code></pre>
     <div class="container">
       <div class="footer-top">
         <div class="footer-column">
-          <h4>硬核工程師</h4>
+          <h4>"AI" 硬核工程師</h4>
           <div class="footer-links">
             <a href="./about.html">關於我</a>
             <a href="./articles.html">所有文章</a>
-            <a href="./categories.html">分類列表</a>
             <a href="#">RSS 訂閱</a>
           </div>
         </div>
@@ -619,22 +625,12 @@ git switch correct-branch</code></pre>
             <a href="#">Twitter</a>
           </div>
         </div>
-        <div class="footer-column">
-          <h4>分類</h4>
-          <div class="footer-links">
-            <a href="#">前端開發</a>
-            <a href="#">後端技術</a>
-            <a href="#">Git</a>
-            <a href="#">AI 開發</a>
-            <a href="#">數位生活</a>
-          </div>
-        </div>
       </div>
       <div class="affiliate">
         本站部分連結為聯盟行銷連結，點擊購買不會增加您的費用，感謝支持 🙏
       </div>
       <div class="footer-bottom">
-        <p>Copyright © 2026 硬核工程師 · Talk is cheap. Show me the code.</p>
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
       </div>
     </div>
   </footer>
