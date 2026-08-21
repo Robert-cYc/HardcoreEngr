@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>硬核工程師 — 技術博客</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,22 600,102 900,62 C1200,22 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,12 600,112 900,62 C1200,12 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,32 600,92 900,62 C1200,32 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,8 600,116 900,62 C1200,8 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,42 600,82 900,62 C1200,42 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,17 600,107 900,62 C1200,17 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html" class="active">首頁</a>
+        <a href="./articles.html">文章</a>
+        <a href="./categories.html">分類</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="hero">
+    <div class="container">
+      <h1>歡迎來到硬核工程師</h1>
+      <p class="hero-tagline">Talk is cheap. Show me the code. — 專注於前端、後端、AI 與 Git 技術</p>
+      <img src="https://picsum.photos/seed/ai-tech/1200/400" alt="AI 科技技術圖">
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <!-- =============== Latest Posts =============== -->
+      <section class="section-sm">
+        <h2 class="section-title">最新文章</h2>
+        <div class="article-grid">
+          <article class="article-card">
+            <img src="https://picsum.photos/seed/ai2026/600/340" alt="文章縮圖">
+            <div class="article-content">
+              <div class="categories">
+                <span class="category-pill">AI 開發</span>
+                <span class="category-pill">技術比較</span>
+              </div>
+              <h3>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較</h3>
+              <p class="article-excerpt">ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。</p>
+              <div class="article-meta">
+                <span>2026-08-18</span>
+                <span class="separator">·</span>
+                <span>15 分鐘閱讀</span>
+              </div>
+              <a href="./ai-models.html" class="read-more">閱讀更多 →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <img src="https://picsum.photos/seed/linux/600/340" alt="文章縮圖">
+            <div class="article-content">
+              <div class="categories">
+                <span class="category-pill">後端技術</span>
+                <span class="category-pill">Linux</span>
+              </div>
+              <h3>Linux 常用指令入門 — 150 個指令一次搞懂</h3>
+              <p class="article-excerpt">Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。</p>
+              <div class="article-meta">
+                <span>2026-08-21</span>
+                <span class="separator">·</span>
+                <span>18 分鐘閱讀</span>
+              </div>
+              <a href="./linux-commands.html" class="read-more">閱讀更多 →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <img src="https://picsum.photos/seed/post3/600/340" alt="文章縮圖">
+            <div class="article-content">
+              <div class="categories">
+                <span class="category-pill">Git</span>
+                <span class="category-pill">後端技術</span>
+              </div>
+              <h3>Git 常用指令入門 — 從零開始掌握版本控制</h3>
+              <p class="article-excerpt">Git 是全球最流行的分散式版本控制系統。本文整理核心概念與日常使用指令，從初始化到進階操作一次搞懂。</p>
+              <div class="article-meta">
+                <span>2026-08-20</span>
+                <span class="separator">·</span>
+                <span>12 分鐘閱讀</span>
+              </div>
+              <a href="./git-commands.html" class="read-more">閱讀更多 →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =============== Category Sections =============== -->
+      <section class="section">
+        <div class="category-block">
+          <h2 class="category-block-title">後端技術</h2>
+          <div class="article-grid">
+            <article class="article-card">
+              <img src="https://picsum.photos/seed/be3/600/340" alt="文章縮圖">
+              <div class="article-content">
+                <h3>Git 常用指令入門 — 從零開始掌握版本控制</h3>
+                <p class="article-excerpt">Git 是全球最流行的分散式版本控制系統。本文整理核心概念與日常使用指令。</p>
+                <div class="article-meta">
+                  <span>2026-08-20</span>
+                  <span class="separator">·</span>
+                  <span>12 分鐘閱讀</span>
+                </div>
+                <a href="./git-commands.html" class="read-more">閱讀更多 →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="./categories.html">分類列表</a>
+            <a href="#">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>分類</h4>
+          <div class="footer-links">
+            <a href="#">前端開發</a>
+            <a href="#">後端技術</a>
+            <a href="#">Git</a>
+            <a href="#">AI 開發</a>
+            <a href="#">數位生活</a>
+          </div>
+        </div>
+      </div>
+      <div class="affiliate">
+        本站部分連結為聯盟行銷連結，點擊購買不會增加您的費用，感謝支持 🙏
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

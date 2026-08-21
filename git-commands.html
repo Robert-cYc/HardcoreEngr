@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git 常用指令入門 — 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.875em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,22 600,102 900,62 C1200,22 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,12 600,112 900,62 C1200,12 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,32 600,92 900,62 C1200,32 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,8 600,116 900,62 C1200,8 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,42 600,82 900,62 C1200,42 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,17 600,107 900,62 C1200,17 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html">文章</a>
+        <a href="./categories.html">分類</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <div class="article-tags">
+          <span class="category-pill">Git</span>
+          <span class="category-pill">後端技術</span>
+        </div>
+        <h1>Git 常用指令入門 — 從零開始掌握版本控制</h1>
+        <div class="article-meta">
+          <span>2026-08-20</span>
+          <span class="separator">·</span>
+          <span>12 分鐘閱讀</span>
+        </div>
+        <img src="https://picsum.photos/seed/git/1200/400" alt="Git 版本控制">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p>Git 是全球最流行的分散式版本控制系統，由林納斯 · 托瓦齊 (Linus Torvalds) 在 2005 年創建。無論是個人專案、團隊協作，或是開源貢獻，Git 都是開發者的必備利器。</p>
+
+        <p>本文整理 Git 的核心概念與日常使用指令，從安裝到進階操作，幫你一次搞懂。</p>
+
+        <h2>Git 核心概念</h2>
+        <p>Git 的設計理念基於三個重要概念：</p>
+
+        <h3>1. 快照 (Snapshot) 而非差異 (Diff)</h3>
+        <p>Git 將每次提交視為一個完整的「快照」，而不是記錄與上次的差異。這意味著你可以隨時回到任何歷史版本，看到當時的完整檔案狀態。</p>
+
+        <h3>2. 分散式 (Distributed)</h3>
+        <p>每個開發者電腦上都擁有完整的 Git 倉庫，包括完整的歷史記錄。即使中央伺服器掛了，你仍可以繼續工作，然後日後合併。</p>
+
+        <h3>3. 三種狀態</h3>
+        <p>Git 中的檔案有三種狀態：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>狀態</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>已提交 (Committed)</td>
+              <td>檔案已安全地儲存在本地資料庫中</td>
+            </tr>
+            <tr>
+              <td>已修改 (Modified)</td>
+              <td>檔案已修改，但未提交到資料庫</td>
+            </tr>
+            <tr>
+              <td>已暫存 (Staged)</td>
+              <td>已修改的檔案已標記為下次提交的一部分</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>基本設定</h2>
+        <p>首次使用 Git 前，需要設定使用者名稱和電子郵件：</p>
+
+        <pre><code>git config --global user.name "你的名字"
+git config --global user.email "your@email.com"</code></pre>
+
+        <p>其他常用設定：</p>
+
+        <pre><code># 設定預設編輯器
+git config --global core.editor "code --wait"
+
+# 設定預設分支名稱為 main
+git config --global init.defaultBranch "main"
+
+# 顯示所有設定
+git config --list</code></pre>
+
+        <h2>常用指令大全</h2>
+
+        <h3>初始化與克隆</h3>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git init</code></td>
+              <td>在當前目錄初始化一個新的 Git 倉庫</td>
+            </tr>
+            <tr>
+              <td><code>git clone &lt;url&gt;</code></td>
+              <td>從遠端倉庫複製到本地</td>
+            </tr>
+            <tr>
+              <td><code>git clone &lt;url&gt; &lt;dir&gt;</code></td>
+              <td>克隆到指定目錄</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>基本操作流程</h3>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git status</code></td>
+              <td>查看目前檔案狀態（是否修改、是否已暫存）</td>
+            </tr>
+            <tr>
+              <td><code>git add &lt;file&gt;</code></td>
+              <td>將修改的檔案添加到暫存區</td>
+            </tr>
+            <tr>
+              <td><code>git add .</code></td>
+              <td>添加所有修改/新增的檔案到暫存區</td>
+            </tr>
+            <tr>
+              <td><code>git add -A</code></td>
+              <td>添加所有變更（新增、修改、刪除）到暫存區</td>
+            </tr>
+            <tr>
+              <td><code>git reset &lt;file&gt;</code></td>
+              <td>將檔案從暫存區移出（撤銷 add）</td>
+            </tr>
+            <tr>
+              <td><code>git commit -m "訊息"</code></td>
+              <td>提交到本地倉庫</td>
+            </tr>
+            <tr>
+              <td><code>git commit -am "訊息"</code></td>
+              <td>跳過 add，直接提交已修改的追蹤檔案</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          💡 <strong>小技巧：</strong> <code>git commit --amend</code> 可以修改最後一次的提交訊息，常用於忘記加檔案或拼錯訊息時。
+        </blockquote>
+
+        <h3>分支 (Branch) 操作</h3>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git branch</code></td>
+              <td>列出所有分支</td>
+            </tr>
+            <tr>
+              <td><code>git branch &lt;name&gt;</code></td>
+              <td>建立新分支（不會切換）</td>
+            </tr>
+            <tr>
+              <td><code>git switch &lt;name&gt;</code></td>
+              <td>切換到指定分支</td>
+            </tr>
+            <tr>
+              <td><code>git switch -c &lt;name&gt;</code></td>
+              <td>建立並切換到新分支</td>
+            </tr>
+            <tr>
+              <td><code>git branch -d &lt;name&gt;</code></td>
+              <td>刪除分支（無合併時會警告）</td>
+            </tr>
+            <tr>
+              <td><code>git branch -D &lt;name&gt;</code></td>
+              <td>強制刪除分支（無論合併狀態）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>遠端同步</h3>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git push</code></td>
+              <td>推送本地分支到遠端</td>
+            </tr>
+            <tr>
+              <td><code>git push -u &lt;repo&gt; &lt;branch&gt;</code></td>
+              <td>推送並設定上游分支（第一次推送）</td>
+            </tr>
+            <tr>
+              <td><code>git pull</code></td>
+              <td>拉取遠端分支到本地（fetch + merge）</td>
+            </tr>
+            <tr>
+              <td><code>git fetch</code></td>
+              <td>下載遠端更新但不合併</td>
+            </tr>
+            <tr>
+              <td><code>git remote -v</code></td>
+              <td>列出遠端倉庫 URL</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>查看歷史記錄</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git log</code></td>
+              <td>顯示提交歷史（最新的在上）</td>
+            </tr>
+            <tr>
+              <td><code>git log --oneline</code></td>
+              <td>精簡顯示（單行一條記錄）</td>
+            </tr>
+            <tr>
+              <td><code>git log --oneline --graph</code></td>
+              <td>顯示分支圖形</td>
+            </tr>
+            <tr>
+              <td><code>git log -p</code></td>
+              <td>顯示每次提交的 diff</td>
+            </tr>
+            <tr>
+              <td><code>git log --stat</code></td>
+              <td>顯示每次提交影響的檔案統計</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>比對差異</h3>
+
+        <pre><code># 比較工作目錄與暫存區
+git diff
+
+# 比較暫存區與上次提交
+git diff --staged
+
+# 比較兩次提交的差異
+git diff HEAD~1 HEAD
+
+# 比較某檔案在不同版本之間的差異
+git diff HEAD~1 HEAD -- filename.js</code></pre>
+
+        <h2>復原與回退</h2>
+        <blockquote>
+          ⚠️ <strong>注意：</strong> 以下指令可能會造成資料遺失，請在執行前確認清楚！
+        </blockquote>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git checkout -- &lt;file&gt;</code></td>
+              <td>捨棄工作目錄的修改（回到暫存狀態）</td>
+            </tr>
+            <tr>
+              <td><code>git restore &lt;file&gt;</code></td>
+              <td>新版指令，功能同上</td>
+            </tr>
+            <tr>
+              <td><code>git reset HEAD &lt;file&gt;</code></td>
+              <td>將檔案從暫存區移出（撤銷 add）</td>
+            </tr>
+            <tr>
+              <td><code>git reset --hard &lt;commit&gt;</code></td>
+              <td>強制回到指定提交（會丟失修改）</td>
+            </tr>
+            <tr>
+              <td><code>git revert &lt;commit&gt;</code></td>
+              <td>建立一個反向提交來撤銷指定提交</td>
+            </tr>
+            <tr>
+              <td><code>git reflog</code></td>
+              <td>查看所有操作記錄，可以找回「丟失」的提交</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>常見工作流程</h2>
+
+        <h3>開發新功能 (Feature Branch)</h3>
+        <pre><code># 1. 確保主分支是最新的
+git checkout main
+git pull
+
+# 2. 建立功能分支
+git checkout -b feature/user-login
+
+# 3. 開發... 提交...
+git add .
+git commit -m "實作使用者登入功能"
+
+# 4. 推送到遠端
+git push -u origin feature/user-login
+
+# 5. 合併回主分支 (在遠端 PR/MR 完成後)
+git checkout main
+git pull
+git merge feature/user-login
+git push</code></pre>
+
+        <h3>處理衝突 (Conflict)</h3>
+        <p>當合併或拉取時出現衝突，不要慌張：</p>
+        <ol>
+          <li>Git 會標記衝突的檔案，在檔案中找到 <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> 標記</li>
+          <li>手動編輯檔案，移除標記並保留你想要的內容</li>
+          <li>保存檔案後，執行 <code>git add &lt;file&gt;</code></li>
+          <li>提交衝突解決：<code>git commit</code></li>
+        </ol>
+
+        <h2>進階技巧</h2>
+
+        <h3>暫存 (Stash)</h3>
+        <p>在切換分支時不需要提交的修改，可以用 <code>git stash</code> 暫存：</p>
+        <pre><code># 暫存修改
+git stash
+
+# 恢復暫存
+git stash pop
+
+# 列出暫存
+git stash list
+
+# 套用第 N 個暫存（不刪除）
+git stash apply stash@{2}</code></pre>
+
+        <h3>互動式 rebase</h3>
+        <p>整理提交歷史，讓 commit log 更清晰：</p>
+        <pre><code># 互動式 rebase 最近 3 次提交
+git rebase -i HEAD~3
+
+# 可以選擇：
+# pick    - 保留
+# squash  - 合併到上一次
+# edit    - 修改
+# drop    - 刪除</code></pre>
+
+        <h3>別名 (Alias)</h3>
+        <p>设置快捷指令別名，讓常用指令更簡短：</p>
+        <pre><code>git config --global alias.st status
+git config --global alias.ci commit
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.last 'log -1 HEAD'</code></pre>
+
+        <pre><code># 現在可以這樣用：
+git st       # = git status
+git ci       # = git commit
+git last     # = git log -1 HEAD</code></pre>
+
+        <h2>常見錯誤排查</h2>
+
+        <h3>已經 push 的提交，不要亂 rebase！</h3>
+        <p>如果提交已經推送到遠端，切記不要使用 <code>git reset</code> 或 <code>git rebase</code> 回退，否則在合併他人代碼時會產生衝突。</p>
+
+        <h3>錯誤的分支上提交了</h3>
+        <p>在錯誤的分支提交後，應該建立正確分支並移動提交：</p>
+        <pre><code># 建立正確分支
+git branch correct-branch
+
+# 回到提交前
+git reset --hard HEAD~1  # 或使用 reflog 找回
+
+# 切換到正確分支
+git switch correct-branch</code></pre>
+
+        <h3>.gitignore 不生效</h3>
+        <p>已追蹤的檔案即使加入 <code>.gitignore</code> 也不會停止追蹤：</p>
+        <pre><code>git rm --cached filename</code></pre>
+
+        <h2>結語</h2>
+        <p>Git 是一個強大的工具，掌握以下幾個原則就可以勝任日常開發：</p>
+
+        <ul>
+          <li><strong>頻繁提交</strong> — 提交粒度越細，追踪問題越容易</li>
+          <li><strong>分支策略</strong> — 使用功能分支開發，完成後合併</li>
+          <li><strong>不亂推遠端</strong> — 已 push 的分支避免 force push</li>
+          <li><strong>善用 reflog</strong> — 當心狀況外，reflog 總有辦法救回來</li>
+          <li><strong>寫好 commit message</strong> — 為未來的自己謝謝</li>
+        </ul>
+
+        <blockquote>
+          🎯 <strong>記住：</strong> Git 的學習來自於實操。不要害怕犯錯 — Git 的 reflog 幾乎可以恢復所有「意外」！
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="./categories.html">分類列表</a>
+            <a href="#">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>分類</h4>
+          <div class="footer-links">
+            <a href="#">前端開發</a>
+            <a href="#">後端技術</a>
+            <a href="#">Git</a>
+            <a href="#">AI 開發</a>
+            <a href="#">數位生活</a>
+          </div>
+        </div>
+      </div>
+      <div class="affiliate">
+        本站部分連結為聯盟行銷連結，點擊購買不會增加您的費用，感謝支持 🙏
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

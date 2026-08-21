@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於我 — 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .about-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .about-hero h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .about-hero .tagline {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+    .about-content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .about-content p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .about-content blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .about-content ul {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .about-content li {
+      margin-bottom: 0.5rem;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    .skill-pill {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,22 600,102 900,62 C1200,22 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,12 600,112 900,62 C1200,12 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,32 600,92 900,62 C1200,32 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,8 600,116 900,62 C1200,8 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,42 600,82 900,62 C1200,42 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,17 600,107 900,62 C1200,17 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html">文章</a>
+        <a href="./categories.html">分類</a>
+        <a href="./about.html" class="active">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="about-hero">
+        <img src="https://picsum.photos/seed/avatar/150/150" alt="頭像" class="profile-pic">
+        <h1>硬核工程師</h1>
+        <p class="tagline">Talk is cheap. Show me the code.</p>
+      </section>
+
+      <div class="about-content">
+        <p>嗨，我是一個專注於前端、後端、AI 與 Git 技術的工程師。相信程式應該透明而可理解，不是黑盒子。</p>
+
+        <p>過去幾年工作過電商平台、SaaS 產品與 AI 工具鏈，目前專注於：</p>
+
+        <div class="skills-grid">
+          <div class="skill-pill">Vue / React</div>
+          <div class="skill-pill">Node.js / Deno</div>
+          <div class="skill-pill">AI / LLM</div>
+          <div class="skill-pill">Git</div>
+          <div class="skill-pill">Docker / Kubernetes</div>
+          <div class="skill-pill">PostgreSQL</div>
+        </div>
+
+        <blockquote>
+          🎯 <strong>“Talk is cheap. Show me the code.”</strong> — Linus Torvalds
+        </blockquote>
+
+        <p>這句話來自 Git 和 Linux 之父 <strong>林納斯 · 托瓦齊 (Linus Torvalds)</strong>。對我來說，它不只是一個座右銘，更是工程文化的信條。</p>
+
+        <p>無論是前端的 CSS Grid 佈局細節、後端的效能調校，或是 AI 提示工程的技巧，我都喜歡將抽象的概念實體化，變成可執行、可驗證的代碼。</p>
+
+        <p>在這裡，你將看到：</p>
+        <ul>
+          <li>真實的程式碼片段與踩坑記錄</li>
+          <li>複雜問題的拆解思維</li>
+          <li>以實踐驗證的技術觀點</li>
+        </ul>
+
+        <blockquote>
+          💡 我始終認為：只有真正動手編寫並理解代碼的人，才能看到表面之下的世界。
+        </blockquote>
+
+        <p>歡迎翻閱文章，或透過下方連結與我交流。</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="./categories.html">分類列表</a>
+            <a href="#">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>分類</h4>
+          <div class="footer-links">
+            <a href="#">前端開發</a>
+            <a href="#">後端技術</a>
+            <a href="#">Git</a>
+            <a href="#">AI 開發</a>
+            <a href="#">數位生活</a>
+          </div>
+        </div>
+      </div>
+      <div class="affiliate">
+        本站部分連結為聯盟行銷連結，點擊購買不會增加您的費用，感謝支持 🙏
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

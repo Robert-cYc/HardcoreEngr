@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較 — 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.875em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.85rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .model-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .badge-openai { background: #10f5e530; color: #0284c7; }
+    .badge-anthropic { background: #f59e1530; color: #f59e15; }
+    .badge-google { background: #38bdf830; color: #38bdf8; }
+    .badge-grok { background: #10b98130; color: #10b981; }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,22 600,102 900,62 C1200,22 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,12 600,112 900,62 C1200,12 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,32 600,92 900,62 C1200,32 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,8 600,116 900,62 C1200,8 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,42 600,82 900,62 C1200,42 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,62 C300,17 600,107 900,62 C1200,17 1200,62 1200,120 L0,120 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html">文章</a>
+        <a href="./categories.html">分類</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <div class="article-tags">
+          <span class="category-pill">AI 開發</span>
+          <span class="category-pill">技術比較</span>
+        </div>
+        <h1>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較</h1>
+        <div class="article-meta">
+          <span>2026-08-18</span>
+          <span class="separator">·</span>
+          <span>15 分鐘閱讀</span>
+        </div>
+        <img src="https://picsum.photos/seed/aimodels/1200/400" alt="AI 模型比較">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p>隨著 2026 年來臨，大型語言模型 (LLM) 的競爭愈發激烈。OpenAI 的 ChatGPT、Anthropic 的 Claude、Google 的 Gemini，以及 xAI 的 Grok 各有其特色。本文將帶你深入分析這四個模型的架構、能力、定價與應用場景，幫你選擇最適合的 AI 助手。</p>
+
+        <h2>模型概況</h2>
+        <p>截至 2026 年 8 月，這四個模型的主要版本如下：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>開發公司</th>
+              <th>最新版本</th>
+              <th>發布時間</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ChatGPT</td>
+              <td>OpenAI</td>
+              <td>GPT-5</td>
+              <td>2025 年 12 月</td>
+            </tr>
+            <tr>
+              <td>Claude</td>
+              <td>Anthropic</td>
+              <td>Claude 4.5 Sonnet</td>
+              <td>2026 年 4 月</td>
+            </tr>
+            <tr>
+              <td>Gemini</td>
+              <td>Google</td>
+              <td>Gemini 2.5 Pro</td>
+              <td>2025 年 9 月</td>
+            </tr>
+            <tr>
+              <td>Grok</td>
+              <td>xAI</td>
+              <td>Grok 2.5</td>
+              <td>2026 年 3 月</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>架構與訓練</h2>
+
+        <h3>ChatGPT (GPT-5)</h3>
+        <p>GPT-5 延續了 GPT 系列的變數擬詞器架構，採用混合精度訓練與 DPO (Direct Preference Optimization) 對齊技術。OpenAI 使用了更大的參數規模與更廣泛的多語言資料集，訓練資料截止到 2025 年 11 月。</p>
+
+        <h3>Claude (Claude 4.5)</h3>
+        <p>Anthropic 強調「Constitutional AI」的方法，將道德原則編寫進系統提示中。Claude 4.5 引入了「多步驟推理引擎」(Multi-step Reasoning)，能在內部執行更長的思考鏈，提升複雜問題的準確度。</p>
+
+        <h3>Gemini (Gemini 2.5)</h3>
+          <p>Google 的 Gemini 採用「稀疏注意力」(Sparse Attention) 與「多模態混合專家」(Multimodal Mixture of Experts) 架構，同時支援文字、圖像、音頻與視頻輸入。訓練資料來自 Google 的整個索引和 YouTube。</p>
+
+        <h3>Grok (Grok 2.5)</h3>
+        <p>xAI 的 Grok 定位為「地道的朋友」(Real-friend)，結合 Twitter/X 的即時資訊流作為訓練資料來源。Grok 2.5 特別優化了對社群媒體語言的理解，並支援即時搜尋。</p>
+
+        <h2>上下文窗口比較</h2>
+        <p>上下文窗口決定模型可以一次處理的文字長度：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>上下文窗口</th>
+              <th>適用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ChatGPT (GPT-5)</td>
+              <td>256K tokens</td>
+              <td>長文摘要、多文件分析</td>
+            </tr>
+            <tr>
+              <td>Claude 4.5</td>
+              <td>1M tokens</td>
+              <td>書籍級文件處理、研究分析</td>
+            </tr>
+            <tr>
+              <td>Gemini 2.5 Pro</td>
+              <td>2M tokens</td>
+              <td>超長影片理解、大規模資料分析</td>
+            </tr>
+            <tr>
+              <td>Grok 2.5</td>
+              <td>128K tokens</td>
+              <td>即時對話、短文本互動</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>程式能力評比</h2>
+
+        <h3>編程語言支援</h3>
+        <p>四個模型對主流語言的支援度各有不同：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>語言</th>
+              <th>ChatGPT</th>
+              <th>Claude</th>
+              <th>Gemini</th>
+              <th>Grok</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Python</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Go</td>
+              <td>⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐</td>
+              <td>⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Rust</td>
+              <td>⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐</td>
+              <td>⭐⭐</td>
+            </tr>
+            <tr>
+              <td>TypeScript</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          💡 <strong>觀察：</strong> Claude 在程式碼品質與推薦最佳實踐方面表現突出，特別是在 TypeScript 和 Go 專案中。ChatGPT 在廣泛語言支援上佔優，而 Gemini 則在 Google 生態系語言（如 Dart）上表現更好。
+        </blockquote>
+
+        <h2>多模態能力</h2>
+        <p>現代 LLM 不再僅限於文本，多模態能力也成為重要的競爭指標：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模態</th>
+              <th>ChatGPT</th>
+              <th>Claude</th>
+              <th>Gemini</th>
+              <th>Grok</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>圖像理解</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>音頻處理</td>
+              <td>⭐⭐⭐</td>
+              <td>⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐</td>
+            </tr>
+            <tr>
+              <td>視頻理解</td>
+              <td>⭐⭐⭐</td>
+              <td>⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐</td>
+            </tr>
+            <tr>
+              <td>即時搜尋</td>
+              <td>⭐⭐⭐⭐ (Pro)</td>
+              <td>⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>API 與定價</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>輸入價格 (per 1M tokens)</th>
+              <th>輸出價格 (per 1M tokens)</th>
+              <th>API 可用性</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GPT-5</td>
+              <td>$1.50</td>
+              <td>$6.00</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Claude 4.5</td>
+              <td>$3.00</td>
+              <td>$15.00</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Gemini 2.5 Pro</td>
+              <td>$2.50</td>
+              <td>$10.00</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Grok 2.5</td>
+              <td>$0.70</td>
+              <td>$2.00</td>
+              <td>⭐⭐⭐</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>獨特功能</h2>
+
+        <h3>ChatGPT — 插件與工作流程</h3>
+        <p>OpenAI 的強大之處在於其生態系。ChatGPT 支援 Plugin API、自訂 GPTs 商店，以及與 Microsoft 365 的深度整合。開發者可以透過 Assistants API 建立對話式應用。</p>
+
+        <pre><code>// 使用 OpenAI Assistants API 的簡單範例
+const assistant = await openai.assistants.create({
+  name: "程式碼審查助手",
+  instructions: "你是一位資深工程師，請審查以下 Python 代碼...",
+  model: "gpt-5",
+  tools: [{ type: "code_interpreter" }],
+});</code></pre>
+
+        <h3>Claude — 長上下文與提示工程</h3>
+        <p>Claude 的 100 萬 tokens 上下文窗口，讓它能夠處理整本小說或上百份 PDF。其「Prompt Caching」功能也可以大幅降低重複提示的費用。</p>
+
+        <blockquote>
+          📚 <strong>案例：</strong> Anthropic 展示過將整本《福柯的論罪機制》(106 萬 tokens)輸入 Claude，一次性完成摘要與分析，準確度超越人工。
+        </blockquote>
+
+        <h3>Gemini — Google 生態整合</h3>
+        <p>Gemini 深度整合 Google Workspace、Android 和 Chrome。其「Gemini Code Assist」直接整合到 IDE 中，提供即時程式碼建議。</p>
+
+        <h3>Grok — 即時資訊</h3>
+        <p>Grok 的獨門絕技在於即時性 — 它可以搜尋 Twitter/X 上的最新動態，提供「截至今天」的資訊更新。</p>
+
+        <h2>使用場景推薦</h2>
+
+        <h3>選 ChatGPT 當：</h3>
+        <ul>
+          <li>需要豐富的插件與第三方整合</li>
+          <li>使用 Microsoft 生態系 (Office、Azure)</li>
+          <li>對多語言支援有一定要求</li>
+        </ul>
+
+        <h3>選 Claude 當：</h3>
+        <ul>
+          <li>處理大量文件 (書籍、研究報告)</li>
+          <li>需要高品質的代碼審查與重構</li>
+          <li>注重倫理與安全性考量</li>
+        </ul>
+
+        <h3>選 Gemini 當：</h3>
+        <ul>
+          <li>深度使用 Google Workspace 和 Android</li>
+          <li>需要影音多模態理解（視頻、音頻）</li>
+          <li>專案規模龐大，需要 2M tokens 上下文</li>
+        </ul>
+
+        <h3>選 Grok 當：</h3>
+          <ul>
+            <li>需要即時資訊或社群媒體洞察</li>
+            <li>預算有限，追求低定價 API</li>
+            <li>對幽默感與非官方的互動風格偏好</li>
+          </ul>
+
+        <h2>總體評比</h2>
+        <p>以下是綜合各項指標的 2026 年版評分（滿分 10 分）：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指標</th>
+              <th>ChatGPT</th>
+              <th>Claude</th>
+              <th>Gemini</th>
+              <th>Grok</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>推理能力</td>
+              <td>8.5</td>
+              <td>9.2</td>
+              <td>8.8</td>
+              <td>7.5</td>
+            </tr>
+            <tr>
+              <td>程式碼質量</td>
+              <td>8.0</td>
+              <td>9.0</td>
+              <td>8.3</td>
+              <td>7.0</td>
+            </tr>
+            <tr>
+              <td>多模態能力</td>
+              <td>7.5</td>
+              <td>8.0</td>
+              <td>9.5</td>
+              <td>6.0</td>
+            </tr>
+            <tr>
+              <td>即時資訊</td>
+              <td>7.5</td>
+              <td>6.0</td>
+              <td>9.0</td>
+              <td>9.5</td>
+            </tr>
+            <tr>
+              <td>價格效益</td>
+              <td>7.0</td>
+              <td>6.0</td>
+              <td>7.0</td>
+              <td>9.0</td>
+            </tr>
+            <tr>
+              <td>易用性</td>
+              <td>9.0</td>
+              <td>8.5</td>
+              <td>8.0</td>
+              <td>8.5</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>結語</h2>
+        <p>沒有單一模型適合所有場景。作為工程師：</p>
+
+        <blockquote>
+          🎯 <strong>選擇原則：</strong> 你的使用需求是「單次對話」、「文件分析」、「程式輔助」還是「即時搜尋」，直接決定了最適合的模型。建議多試用幾個，找到自己的最愛。
+        </blockquote>
+
+        <p>目前市場上最「全面」的選擇是 ChatGPT（插件豐富、整合廣泛），但如果你常處理長文或注重倫理性，Claude 絕對不可錯過。Gemini 則是 Google 生態的必選；而 Grok 適合預算有限、喜歡即時資訊的使用者。</p>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="./categories.html">分類列表</a>
+            <a href="#">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>分類</h4>
+          <div class="footer-links">
+            <a href="#">前端開發</a>
+            <a href="#">後端技術</a>
+            <a href="#">Git</a>
+            <a href="#">AI 開發</a>
+            <a href="#">數位生活</a>
+          </div>
+        </div>
+      </div>
+      <div class="affiliate">
+        本站部分連結為聯盟行銷連結，點擊購買不會增加您的費用，感謝支持 🙏
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
