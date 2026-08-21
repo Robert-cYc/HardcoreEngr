@@ -4,8 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>"AI" 硬核工程師 — 技術博客</title>
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="">
+  <meta name="description" content="專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/">
+  <meta property="og:title" content=""AI" 硬核工程師 — 技術博客">
+  <meta property="og:description" content="專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content=""AI" 硬核工程師 — 技術博客">
+  <meta name="twitter:description" content="專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
   <link rel="stylesheet" href="./css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "\"AI\" 硬核工程師",
+  "url": "https://ai-hardcore-engineer.com",
+  "description": "專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。"
+}
+  </script>
 </head>
 <body>
   <!-- =============== Header =============== -->
@@ -52,6 +74,7 @@
         <a href="./articles.html">文章</a>
         <a href="./about.html">關於</a>
         <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
       </nav>
     </div>
   </header>
@@ -60,6 +83,7 @@
   <div class="search-overlay">
     <div class="search-container">
       <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
       <div class="search-close">按 Esc 關閉</div>
     </div>
   </div>
@@ -69,7 +93,7 @@
     <div class="container">
       <h1>歡迎來到"AI" 硬核工程師</h1>
       <p class="hero-tagline">Talk is cheap. Show me the code. — 專注於前端、後端、AI 與 Git 技術</p>
-      <img src="https://picsum.photos/seed/ai-tech/1200/400" alt="AI 科技技術圖">
+      <img loading="lazy" src="https://picsum.photos/seed/ai-tech/1200/400" alt="AI 科技技術圖">
     </div>
   </section>
 
@@ -80,7 +104,7 @@
         <h2 class="section-title">最新文章</h2>
         <div class="article-grid">
           <article class="article-card">
-            <img src="https://picsum.photos/seed/nodejs/600/340" alt="文章縮圖">
+            <img loading="lazy" src="https://picsum.photos/seed/nodejs/600/340" alt="文章縮圖">
             <div class="article-content">
               <h3>Node.js、npm、npx 完整指令入門 — 60 個指令一次搞懂</h3>
               <p class="article-excerpt">Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。</p>
@@ -94,7 +118,7 @@
           </article>
 
           <article class="article-card">
-            <img src="https://picsum.photos/seed/ai2026/600/340" alt="文章縮圖">
+            <img loading="lazy" src="https://picsum.photos/seed/ai2026/600/340" alt="文章縮圖">
             <div class="article-content">
               <h3>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較</h3>
               <p class="article-excerpt">ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。</p>
@@ -108,7 +132,7 @@
           </article>
 
           <article class="article-card">
-            <img src="https://picsum.photos/seed/linux/600/340" alt="文章縮圖">
+            <img loading="lazy" src="https://picsum.photos/seed/linux/600/340" alt="文章縮圖">
             <div class="article-content">
               <h3>Linux 常用指令入門 — 150 個指令一次搞懂</h3>
               <p class="article-excerpt">Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。</p>
@@ -122,7 +146,7 @@
           </article>
 
           <article class="article-card">
-            <img src="https://picsum.photos/seed/post3/600/340" alt="文章縮圖">
+            <img loading="lazy" src="https://picsum.photos/seed/post3/600/340" alt="文章縮圖">
             <div class="article-content">
               <h3>Git 常用指令入門 — 從零開始掌握版本控制</h3>
               <p class="article-excerpt">Git 是全球最流行的分散式版本控制系統。本文整理核心概念與日常使用指令，從初始化到進階操作一次搞懂。</p>
@@ -136,7 +160,7 @@
           </article>
 
           <article class="article-card">
-            <img src="https://picsum.photos/seed/claude-code/600/340" alt="文章縮圖">
+            <img loading="lazy" src="https://picsum.photos/seed/claude-code/600/340" alt="文章縮圖">
             <div class="article-content">
               <h3>Claude Code 功能介紹、指令集及如何使用</h3>
               <p class="article-excerpt">Claude Code 是 Anthropic 推出的 AI 編碼助手，支援 Terminal、VS Code、Web 等多平台。本文整理其六大核心能力、完整的 CLI 命令與內建斜線指令速查。</p>
@@ -183,6 +207,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>

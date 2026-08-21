@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Node.js、npm、npx 完整指令入門 — "AI" 硬核工程師</title>
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="">
+  <meta name="description" content="Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/node-js-commands.html">
+  <meta property="og:title" content="Node.js、npm、npx 完整指令入門 — "AI" 硬核工程師">
+  <meta property="og:description" content="Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/node-js-commands.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Node.js、npm、npx 完整指令入門 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
   <link rel="stylesheet" href="./css/style.css">
   <style>
     .article-hero {
@@ -138,6 +151,25 @@
       gap: 0.4rem;
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Node.js、npm、npx 完整指令入門 — \"AI\" 硬核工程師",
+  "description": "Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。",
+  "url": "https://ai-hardcore-engineer.com/node-js-commands.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/node-js-commands.html"
+  }
+}
+  </script>
 </head>
 <body>
   <!-- =============== Header =============== -->
@@ -184,6 +216,7 @@
         <a href="./articles.html">文章</a>
         <a href="./about.html">關於</a>
         <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
       </nav>
     </div>
   </header>
@@ -192,6 +225,7 @@
   <div class="search-overlay">
     <div class="search-container">
       <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
       <div class="search-close">按 Esc 關閉</div>
     </div>
   </div>
@@ -212,7 +246,7 @@
           <span class="tag">npx</span>
           <span class="tag">CLI</span>
         </div>
-        <img src="https://picsum.photos/seed/nodejs/1200/400" alt="Node.js npm npx">
+        <img loading="lazy" src="https://picsum.photos/seed/nodejs/1200/400" alt="Node.js npm npx">
       </section>
 
       <!-- =============== Article Body =============== -->
@@ -893,6 +927,7 @@ nrm use npmmirror</code></pre>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>

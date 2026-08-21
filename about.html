@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>關於我 — "AI" 硬核工程師</title>
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="">
+  <meta name="description" content=""AI" 硬核工程師的個人介紹。專注於前端、後端、AI 與 Git 技術，相信程式應該透現而可理解，而非黑盒子。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/about.html">
+  <meta property="og:title" content="關於我 — "AI" 硬核工程師">
+  <meta property="og:description" content=""AI" 硬核工程師的個人介紹。專注於前端、後端、AI 與 Git 技術，相信程式應該透現而可理解，而非黑盒子。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="關於我 — "AI" 硬核工程師">
+  <meta name="twitter:description" content=""AI" 硬核工程師的個人介紹。專注於前端、後端、AI 與 Git 技術，相信程式應該透現而可理解，而非黑盒子。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
   <link rel="stylesheet" href="./css/style.css">
   <style>
     .about-hero {
@@ -64,6 +77,15 @@
       font-size: 0.935rem; /* 10% larger */
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "\"AI\" 硬核工程師",
+  "url": "https://ai-hardcore-engineer.com",
+  "description": "\"AI\" 硬核工程師的個人介紹。專注於前端、後端、AI 與 Git 技術，相信程式應該透現而可理解，而非黑盒子。"
+}
+  </script>
 </head>
 <body>
   <!-- =============== Header =============== -->
@@ -110,6 +132,7 @@
         <a href="./articles.html">文章</a>
                 <a href="./about.html" class="active">關於</a>
         <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
       </nav>
     </div>
   </header>
@@ -118,6 +141,7 @@
   <div class="search-overlay">
     <div class="search-container">
       <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
       <div class="search-close">按 Esc 關閉</div>
     </div>
   </div>
@@ -125,7 +149,7 @@
   <main>
     <div class="container">
       <section class="about-hero">
-        <img src="https://picsum.photos/seed/avatar/150/150" alt="頭像" class="profile-pic">
+        <img loading="lazy" src="https://picsum.photos/seed/avatar/150/150" alt="頭像" class="profile-pic">
         <h1>"AI" 硬核工程師</h1>
         <p class="tagline">Talk is cheap. Show me the code.</p>
       </section>
@@ -198,6 +222,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>

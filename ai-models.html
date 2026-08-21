@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較 — "AI" 硬核工程師</title>
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="">
+  <meta name="description" content="ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/ai-models.html">
+  <meta property="og:title" content="ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較 — "AI" 硬核工程師">
+  <meta property="og:description" content="ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/ai-models.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
   <link rel="stylesheet" href="./css/style.css">
   <style>
     .article-hero {
@@ -141,6 +154,25 @@
       gap: 0.4rem;
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較 — \"AI\" 硬核工程師",
+  "description": "ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。",
+  "url": "https://ai-hardcore-engineer.com/ai-models.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/ai-models.html"
+  }
+}
+  </script>
 </head>
 <body>
   <!-- =============== Header =============== -->
@@ -187,6 +219,7 @@
         <a href="./articles.html">文章</a>
                 <a href="./about.html">關於</a>
         <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
       </nav>
     </div>
   </header>
@@ -195,6 +228,7 @@
   <div class="search-overlay">
     <div class="search-container">
       <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
       <div class="search-close">按 Esc 關閉</div>
     </div>
   </div>
@@ -209,7 +243,7 @@
           <span class="separator">·</span>
           <span>15 分鐘閱讀</span>
         </div>
-        <img src="https://picsum.photos/seed/aimodels/1200/400" alt="AI 模型比較">
+        <img loading="lazy" src="https://picsum.photos/seed/aimodels/1200/400" alt="AI 模型比較">
       </section>
 
       <!-- =============== Article Body =============== -->
@@ -609,6 +643,7 @@ const assistant = await openai.assistants.create({
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>

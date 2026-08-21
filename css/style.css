@@ -72,6 +72,28 @@ ul {
   }
 }
 
+/* Manual dark mode override (via theme toggle) */
+body.dark-mode {
+  --bg: #0f1117;
+  --bg-alt: #1a1c23;
+  --text: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border: #2d3748;
+  --accent: #60a5fa;
+  --accent-hover: #93c5fd;
+  --wave-color: #7dd3fc;
+  --wave-color-2: #bae6fd;
+  --wave-color-3: #a5b4fc;
+  --wave-color-4: #68d7db;
+  --wave-color-5: #5ce7d7;
+  --wave-color-6: #818cf8;
+  --wave-color-7: #fbbf24;
+  --wave-color-8: #fcd34d;
+  --wave-color-9: #6ee7b7;
+  --wave-color-10: #f871b3;
+  --wave-opacity: 0.25;
+}
+
 /* =============== Wave Animation =============== */
 .waves {
   position: absolute;
@@ -160,6 +182,13 @@ ul {
 @keyframes wave-move {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* Disable wave animation for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .wave {
+    animation: none;
+  }
 }
 
 /* =============== Layout =============== */
@@ -259,7 +288,21 @@ ul {
   background: var(--accent);
 }
 .nav .nav-search-toggle {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.32rem;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.32rem;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
 }
 
 /* =============== Hero =============== */
@@ -440,7 +483,141 @@ ul {
   font-style: italic;
 }
 
+/* =============== Search Results =============== */
+.search-results {
+  margin-top: 1rem;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.search-results .search-result-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+.search-results .search-result-item:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+.search-results .search-result-item img {
+  width: 50px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.search-result-item .search-result-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  display: block;
+}
+.search-result-item .search-result-excerpt {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search-result-item:hover .search-result-excerpt {
+  color: rgba(255, 255, 255, 0.8);
+}
+.search-no-results {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+.search-result-item:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* =============== Theme Toggle =============== */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.32rem;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.theme-toggle:hover {
+  background: var(--bg-alt);
+}
+body.dark-mode .theme-toggle {
+  color: var(--accent);
+}
+
+/* =============== Table of Contents =============== */
+.toc {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+}
+.toc h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.toc-list {
+  list-style: none;
+  font-size: 0.95rem;
+}
+.toc-list li {
+  margin-bottom: 0.35rem;
+}
+.toc-list a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+  display: block;
+  padding: 0.15rem 0;
+}
+.toc-list a:hover {
+  color: var(--accent);
+}
+.toc-list a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+.toc-list .toc-sub {
+  margin-left: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+/* =============== Article Layout with TOC =============== */
+.article-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+}
+.article-main {
+  min-width: 0;
+}
+
 /* =============== Responsive =============== */
+@media (max-width: 1024px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+  .toc {
+    position: relative;
+    top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;

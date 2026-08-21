@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linux 常用指令入門 — 150 個指令一次搞懂 — "AI" 硬核工程師</title>
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="">
+  <meta name="description" content="Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/linux-commands.html">
+  <meta property="og:title" content="Linux 常用指令入門 — 150 個指令一次搞懂 — "AI" 硬核工程師">
+  <meta property="og:description" content="Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/linux-commands.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Linux 常用指令入門 — 150 個指令一次搞懂 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
   <link rel="stylesheet" href="./css/style.css">
   <style>
     .article-hero {
@@ -136,6 +149,25 @@
       gap: 0.4rem;
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linux 常用指令入門 — 150 個指令一次搞懂 — \"AI\" 硬核工程師",
+  "description": "Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。",
+  "url": "https://ai-hardcore-engineer.com/linux-commands.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/linux-commands.html"
+  }
+}
+  </script>
 </head>
 <body>
   <!-- =============== Header =============== -->
@@ -182,6 +214,7 @@
         <a href="./articles.html">文章</a>
                 <a href="./about.html">關於</a>
         <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
       </nav>
     </div>
   </header>
@@ -190,6 +223,7 @@
   <div class="search-overlay">
     <div class="search-container">
       <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
       <div class="search-close">按 Esc 關閉</div>
     </div>
   </div>
@@ -204,7 +238,7 @@
           <span class="separator">·</span>
           <span>18 分鐘閱讀</span>
         </div>
-        <img src="https://picsum.photos/seed/linux/1200/400" alt="Linux 終端機">
+        <img loading="lazy" src="https://picsum.photos/seed/linux/1200/400" alt="Linux 終端機">
       </section>
 
       <!-- =============== Article Body =============== -->
@@ -1580,6 +1614,7 @@ npm install pkg     # Node.js 套件</code></pre>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Node.js、npm、npx 完整指令入門 — 60 個指令一次搞懂",
+    "excerpt": "Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。",
+    "url": "node-js-commands.html",
+    "tags": ["Node.js", "npm", "npx", "指令", "入門"]
+  },
+  {
+    "title": "ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較",
+    "excerpt": "ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。",
+    "url": "ai-models.html",
+    "tags": ["AI", "ChatGPT", "Claude", "Gemini", "Grok", "LLM", "比較"]
+  },
+  {
+    "title": "Linux 常用指令入門 — 150 個指令一次搞懂",
+    "excerpt": "Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。",
+    "url": "linux-commands.html",
+    "tags": ["Linux", "指令", "入門", "命令列"]
+  },
+  {
+    "title": "Git 常用指令入門 — 從零開始掌握版本控制",
+    "excerpt": "Git 是全球最流行的分散式版本控制系統。本文整理核心概念與日常使用指令，從初始化到進隚操作一次搞懂。",
+    "url": "git-commands.html",
+    "tags": ["Git", "版本控制", "指令", "入門"]
+  },
+  {
+    "title": "Mac mini 常用指令入門 — 150 個指令一次搞懂",
+    "excerpt": "macOS 終端機結合 BSD Unix 與 Apple 圖形層強大功能。本文整理 150 個 macOS 常用指令，包含 Homebrew、剪貼簿、網路與開發工具。",
+    "url": "mac-commands.html",
+    "tags": ["Mac", "macOS", "指令", "入門", "Homebrew"]
+  },
+  {
+    "title": "Claude Code 功能介紹、指令集及如何使用",
+    "excerpt": "Claude Code 是 Anthropic 推出的 AI 編碼助手，支援 Terminal、VS Code、Web 等多平台。本文整理其六大核心能力、完整的 CLI 命令與內建斜線指令速查。",
+    "url": "claude-code-commands.html",
+    "tags": ["Claude Code", "AI", "編碼助手", "指令", "Anthropic"]
+  },
+  {
+    "title": "所有文章",
+    "excerpt": "關於前端開發、後端技術、Git 與 AI 開發的技術博客。",
+    "url": "articles.html",
+    "tags": ["文章", "博客"]
+  },
+  {
+    "title": "關於我",
+    "excerpt": "一個專注於前端、後端、AI 與 Git 技術的工程師。相信程式應該透過而可理解，不是黑盒子。",
+    "url": "about.html",
+    "tags": ["關於", "個人介紹"]
+  }
+]
