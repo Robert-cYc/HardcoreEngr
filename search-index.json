@@ -36,6 +36,12 @@
     "tags": ["Claude Code", "AI", "編碼助手", "指令", "Anthropic"]
   },
   {
+    "title": "Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧",
+    "excerpt": "Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。",
+    "url": "ollama-local-llm.html",
+    "tags": ["Ollama", "本地部署", "LLM", "指令", "API", "GPU", "教學"]
+  },
+  {
     "title": "本地大模型攻略：Hugging Face 下載 GGUF、llama.cpp 安裝與 GPU 加速",
     "excerpt": "從 Hugging Face 下載 GGUF 格式模型，安裝 llama.cpp 在 Windows 上本地推理，設定 GPU Offload（CUDA/Vulkan/DirectML）與 Context 長度，一次搞懂。",
     "url": "llama-cpp-gguf.html",

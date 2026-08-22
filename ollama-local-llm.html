@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="">
+  <meta name="description" content="Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/ollama-local-llm.html">
+  <meta property="og:title" content="Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧 — "AI" 硬核工程師">
+  <meta property="og:description" content="Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/ollama-local-llm.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧 — \"AI\" 硬核工程師",
+  "description": "Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。",
+  "url": "https://ai-hardcore-engineer.com/ollama-local-llm.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/ollama-local-llm.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-2 600,78 900,38 C1200,-2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-12 600,88 900,38 C1200,-12 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,2 600,72 900,38 C1200,2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-8 600,92 900,38 C1200,-8 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,22 600,52 900,38 C1200,22 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-7 600,82 900,38 C1200,-7 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-7" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,18 600,62 900,38 C1200,18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-8" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-18 600,98 900,38 C1200,-18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-9" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,32 600,42 900,38 C1200,32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-10" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-32 600,118 900,38 C1200,-32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧</h1>
+      <div class="article-meta">
+        <span>2026-08-22</span>
+        <span class="separator">·</span>
+        <span>18 分鐘閱讀</span>
+      </div>
+      <img loading="lazy" src="https://picsum.photos/seed/ollama/1200/400" alt="Ollama 本地大模型">
+    </div>
+  </section>
+
+  <!-- =============== Article Body =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> 本文帶你從零開始在 Windows / macOS / Linux 上安裝並使用 <strong>Ollama</strong>，本地跑起 Llama、Mistral、Qwen 等開源 LLM：<br>
+          &nbsp;&nbsp;① 安裝 Ollama（支援三大平台）<br>
+          &nbsp;&nbsp;② 使用 <code>ollama pull</code> 下載模型，<code>ollama run</code> 開始對話<br>
+          &nbsp;&nbsp;③ 學會 <code>ollama ls</code>、<code>ollama rm</code>、<code>ollama show</code> 等指令管理模型<br>
+          &nbsp;&nbsp;④ 進階設定 Modelfile 客製化提示模板、記憶上下文、GPU 加速<br>
+          &nbsp;&nbsp;5 分鐘就能擁有一個私隱無外洩、0 API 費的本地 AI 助理！
+        </blockquote>
+
+        <h2>前言 — 什麼是 Ollama？</h2>
+        <p>Ollama 是一個開源工具，讓你能在本地電腦上下載、管理與執行大語言模型。它支援多種熱門開源模型（如 Llama 2/3、Mistral、Qwen、Gemma 等），並提供簡單的 CLI 介面讓你馬上就能跟模型對話。</p>
+        <p>與 llama.cpp 不同，Ollama 預設包裝了模型下載、格式轉換、記憶體管理等功能，對新手更加友好 — 就像 <code>docker</code> 對容器技術一樣，Ollama 讓本地 LLM 部署變得像吃飽喝水那麼簡單。</p>
+
+        <h2>支援的平台與模型</h2>
+        <p>Ollama 目前支援 Windows 10/11、macOS（Intel &amp; Apple Silicon）、Linux（Ubuntu/Debian）。常見支援模型包括：</p>
+        <ul>
+          <li><strong>Meta Llama</strong>：llama2、llama3、llama3.1、llama3.2（各版本都有）</li>
+          <li><strong>Mistral</strong>：mistral、mistral-nemo、mixtral-8x7b 等</li>
+          <li><strong>Qwen</strong>：qwen、qwen2.5、qwen2.5-coder 等（阿里模型）</li>
+          <li><strong>Gemma</strong>：Google 開源的 2B/7B 模型</li>
+          <li><strong>Phi</strong>：Microsoft 的小型語言模型</li>
+          <li><strong>DeepSeek</strong>：deepseek-coder 等程式語言模型</li>
+        </ul>
+
+        <blockquote>
+          💡 <strong>提示：</strong> 模型名稱後面可以加上 <code>:latest</code> 或版本號來指定下載特定版本，例如 <code>ollama pull llama3.1:8b</code>。
+        </blockquote>
+
+        <h2>如何安裝 Ollama</h2>
+
+        <h3>Windows 安裝</h3>
+        <ol>
+          <li>前往 <a href="https://ollama.com/download" target="_blank">Ollama 官方下載頁面</a></li>
+          <li>下載 Windows 版本的安裝程式 <code>OllamaSetup.exe</code></li>
+          <li>雙擊執行，按照精靈完成安裝</li>
+          <li>安裝完成後，Ollama 會自動在背景啟動服務</li>
+        </ol>
+        <p>驗證安裝：</p>
+<pre><code>ollama version</code></pre>
+
+        <h3>macOS 安裝</h3>
+        <p>你可以使用 <code>brew</code> 或直接下載 dmg 安裝：</p>
+<pre><code># 使用 Homebrew 安裝
+brew install ollama
+
+# 啟動 Ollama 服務
+ollama serve</code></pre>
+        <p>也可以直接下載 dmg 安裝包，拖曳到 Applications 資料夾即可。</p>
+
+        <blockquote>
+          🍎 <strong>Apple Silicon 注意：</strong> M1/M2/M3 等 ARM Mac 會自動下載 ARM 版本的模型，效能非常不錯！
+        </blockquote>
+
+        <h3>Linux 安裝</h3>
+        <p>Linux 使用者可以用官方提供的指令一鍵安裝：</p>
+<pre><code>curl -fsSL https://ollama.com/install.sh | sh</code></pre>
+        <p>或者使用套件管理器（以 Ubuntu 為例）：</p>
+<pre><code># 添加 Ollama 的 repository key
+curl -fsSL https://ollama.com/install.sh | sh
+
+# 啟動服務
+sudo systemctl start ollama</code></pre>
+
+        <h2>OLLAMA 基礎指令大全</h2>
+        <p>以下是 Ollama 的核心指令，幫助你快速上手。</p>
+
+        <h3>常用指令速查表</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>範例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ollama pull</code></td>
+              <td>下載模型</td>
+              <td><code>ollama pull llama3.1</code></td>
+            </tr>
+            <tr>
+              <td><code>ollama run</code></td>
+              <td>啟動並對話</td>
+              <td><code>ollama run llama3.1</code></td>
+            </tr>
+            <tr>
+              <td><code>ollama ls</code></td>
+              <td>列出已下載模型</td>
+              <td><code>ollama ls</code></td>
+            </tr>
+            <tr>
+              <td><code>ollama rm</code></td>
+              <td>刪除模型</td>
+              <td><code>ollama rm llama3.1</code></td>
+            </tr>
+            <tr>
+              <td><code>ollama show</code></td>
+              <td>顯示模型詳細資訊</td>
+              <td><code>ollama show llama3.1</code></td>
+            </tr>
+            <tr>
+              <td><code>ollama update</code></td>
+              <td>更新 Ollama 版本</td>
+              <td><code>ollama update</code></td>
+            </tr>
+            <tr>
+              <td><code>ollama serve</code></td>
+              <td>啟動 Ollama 伺服器服務</td>
+              <td><code>ollama serve</code></td>
+            </tr>
+            <tr>
+              <td><code>ollama cp</code></td>
+              <td>複製模型為新名稱</td>
+              <td><code>ollama cp llama3.1 my-llama</code></td>
+            </tr>
+            <tr>
+              <td><code>ollama create</code></td>
+              <td>從 Modelfile 建立客製化模型</td>
+              <td><code>ollama create my-model -f Modelfile</code></td>
+            </tr>
+            <tr>
+              <td><code>ollama push</code></td>
+              <td>推送模型到 Ollama 雲端</td>
+              <td><code>ollama push my-model</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>如何下載並執行第一個模型</h2>
+
+        <h3>步驟 1️⃣：下載模型</h3>
+        <p>最簡單的方式是使用 <code>ollama pull</code> 來下載模型：</p>
+<pre><code>ollama pull llama3.1</code></pre>
+        <p>下載完成後，你會看到類似這樣的訊息：</p>
+<pre><code>pulling manifest
+pulling 8994806... 100%
+pulling 7f3c7684... 100%
+pulling 43a6dfa8... 100%
+pulling cc740a25... 100%
+pulling 1d83f75d... 100%
+pulling 7bec07c3... 100%
+verified 8a5b8d1e99e468129b9356749af49a021c276b1f7b8b8a60f4c81f66d2851617</code></pre>
+
+        <h3>步驟 2️⃣：開始對話</h3>
+        <p>下載完成後，使用 <code>ollama run</code> 開始與模型對話：</p>
+<pre><code>ollama run llama3.1</code></pre>
+        <p>進入互動模式後，你可以直接輸入問題：</p>
+<pre><code>>>> 你好，請簡介一下你自己。
+你好！我是 Llama，你是問什麼呢？
+（按下 Ctrl+C 兩次或輸入 /bye 離開）</code></pre>
+
+        <blockquote>
+          💬 <strong>快速對話：</strong> 如果你只想問一次問題，可以直接在指令結尾加上提示：
+          <pre><code>ollama run llama3.1 "請介紹一下 Python 的 lambda 表達式"</code></pre>
+        </blockquote>
+
+        <h3>步驟 3️⃣：查詢已下載模型</h3>
+        <p>使用 <code>ollama ls</code> 列出目前已下載的模型：</p>
+<pre><code>NAME           ID                                    SIZE    MODIFIED
+llama3.1       860c7560e7b4                4.9 GB    2 minutes ago</code></pre>
+
+        <h3>清理與管理模型</h3>
+        <p>如果磁碟空間不足，可以使用 <code>ollama rm</code> 刪除不常用的模型：</p>
+<pre><code># 刪除單一模型
+ollama rm llama3.1
+
+# 刪除所有未使用的模型
+ollama prune</code></pre>
+
+        <h2>如何使用 Ollama API</h2>
+        <p>Ollama 提供 HTTP API 供應程式與 AI 模型進行整合。你可以透過簡單的 HTTP 請求與模型溝通。</p>
+
+        <h3>Ollama REST API</h3>
+        <p>Ollama 預設監聽 <code>http://localhost:11434</code>，你可以發送 POST 請求：</p>
+<pre><code># 啟動 API 服務
+ollama serve
+
+# 發送聊天請求
+curl http://localhost:11434/api/generate -d '{
+  "model": "llama3.1",
+  "prompt": "請問台灣的首都是哪裡？",
+  "stream": false
+}'</code></pre>
+
+        <h3>API 參數說明</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>參數</th>
+              <th>類型</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>model</code></td>
+              <td>string</td>
+              <td>模型名稱</td>
+            </tr>
+            <tr>
+              <td><code>prompt</code></td>
+              <td>string</td>
+              <td>提示問題</td>
+            </tr>
+            <tr>
+              <td><code>stream</code></td>
+              <td>boolean</td>
+              <td>是否逐字回應 (True/False)</td>
+            </tr>
+            <tr>
+              <td><code>temperature</code></td>
+              <td>float</td>
+              <td>隨機性（0~1）</td>
+            </tr>
+            <tr>
+              <td><code>top_p</code></td>
+              <td>float</td>
+              <td>核取詞彙累積機率</td>
+            </tr>
+            <tr>
+              <td><code>top_k</code></td>
+              <td>int</td>
+              <td>取 top-k 候選詞</td>
+            </tr>
+            <tr>
+              <td><code>num_ctx</code></td>
+              <td>int</td>
+              <td>上下文最大長度（tokens）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Python 整合</h3>
+        <p>如果你要在 Python 中使用 Ollama，可以透過<code>requests</code>呼叫 API：</p>
+<pre><code>import requests
+
+def chat_ollama(model, prompt):
+    r = requests.post(
+        "http://localhost:11434/api/generate",
+        json={"model": model, "prompt": prompt, "stream": False}
+    )
+    return r.json()["response"]
+
+print(chat_ollama("llama3.1", "請問台灣的首都是哪裡？"))</code></pre>
+
+        <blockquote>
+          🔌 <strong>注意：</strong> 如果你已經安裝了<code>ollama-python</code>，也可以使用官方 SDK來呼叫模型，更加方便。
+        </blockquote>
+
+        <h2>進階 — 如何客製化模型 (Modelfile)</h2>
+        <p>Ollama 支援<strong>Modelfile</strong>讓你可以客製化模型行為，類似於 Dockerfile 的概念。</p>
+
+        <h3>基本 Modelfile 語法</h3>
+<pre><code># 基於 llama3.1 建立新模型
+FROM llama3.1
+
+# 設定系統提示
+SYSTEM 你是一個友善且專業的 AI 助理，會用繁體中文回答所有問題。
+
+# 設定參數
+PARAMETER temperature 0.7
+PARAMETER num_ctx 4096
+        <h2>結語</h2>
+        <p>Ollama 讓本地部署 LLM 變得前所未有地簡單 — 無論你是希望保護隱私、節省 API 費用，或是想要一個可離線使用的 AI 助理，Ollama 都是極佳的選擇。</p>
+        <blockquote>
+          🎯 <strong>快速回顧步驟：</strong><br>
+          &nbsp;&nbsp;1️⃣ 下載並安裝 Ollama（支援 Windows/macOS/Linux）<br>
+          &nbsp;&nbsp;2️⃣ <code>ollama pull &lt;model&gt;</code> 下載模型<br>
+          &nbsp;&nbsp;3️⃣ <code>ollama run &lt;model&gt;</code> 開始對話<br>
+          &nbsp;&nbsp;4️⃣ 使用 Modelfile 客製化行為<br>
+          &nbsp;&nbsp;5️⃣ 透過 API 整合進自己的應用<br><br>
+          整個流程不到 10 分鐘，就能擁有一個私隱無外洩、0 API 費的本地 AI 助理。
+        </blockquote>
+        <blockquote>
+          🔗 <strong>推薦資源：</strong><br>
+          &nbsp;&nbsp;• <a href="https://ollama.com" target="_blank">Ollama 官網</a><br>
+          &nbsp;&nbsp;• <a href="https://github.com/ollama/ollama" target="_blank">Ollama GitHub</a><br>
+          &nbsp;&nbsp;• <a href="https://github.com/ollama/ollama/blob/main/docs/modelfile.md" target="_blank">Modelfile 官方文檔</a><br>
+          &nbsp;&nbsp;• <a href="https://github.com/ollama/ollama/blob/main/docs/api.md" target="_blank">API 文檔</a>
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="#">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
