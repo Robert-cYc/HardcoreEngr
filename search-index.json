@@ -36,6 +36,12 @@
     "tags": ["Claude Code", "AI", "編碼助手", "指令", "Anthropic"]
   },
   {
+    "title": "LM Studio 本地大模型攻略：下載、安裝、模型管理與 GPU 加速",
+    "excerpt": "LM Studio 是一個強大的本地 LLM 桌面應用程式。本文詳細介紹 LM Studio 的下載安裝、模型管理、對話功能、GPU 加速設定與實用技巧。",
+    "url": "lm-studio-local-llm.html",
+    "tags": ["LM Studio", "本地部署", "LLM", "GUI", "GPU", "教學"]
+  },
+  {
     "title": "Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧",
     "excerpt": "Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。",
     "url": "ollama-local-llm.html",
