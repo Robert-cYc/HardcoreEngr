@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta name="description" content="OpenClaw 是一個開源的自架 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm），完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/openclaw-ai-assistant.html">
+  <meta property="og:title" content="OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用 — "AI" 硬核工程師">
+  <meta property="og:description" content="OpenClaw 是一個開源的自架 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm），完整 CLI 命令速查，以及多頻道整管整合（Telegram、Discord、WhatsApp）。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/openclaw-ai-assistant.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="OpenClaw 是一個開源的自架 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm），完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用 — \"AI\" 硬核工程師",
+  "description": "OpenClaw 是一個開源、自架的 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm）、完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）與進階技巧。",
+  "url": "https://ai-hardcore-engineer.com/openclaw-ai-assistant.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/openclaw-ai-assistant.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-2 600,78 900,38 C1200,-2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-12 600,88 900,38 C1200,-12 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,2 600,72 900,38 C1200,2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-8 600,92 900,38 C1200,-8 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,22 600,52 900,38 C1200,22 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-7 600,82 900,38 C1200,-7 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-7" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,18 600,62 900,38 C1200,18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-8" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-18 600,98 900,38 C1200,-18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-9" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,32 600,42 900,38 C1200,32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-10" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-32 600,118 900,38 C1200,-32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🙛</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用</h1>
+      <div class="article-meta">
+        <span>2026-08-22</span>
+        <span class="separator">·</span>
+        <span>32 分鐱閱</span>
+      </div>
+      <img loading="lazy" src="https://picsum.photos/seed/openclaw/1200/400" alt="OpenClaw AI 助手">
+    </div>
+  </section>
+
+  <!-- =============== Article Body =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>OpenClaw</strong> 是一個開源、自架的 AI 助手平台，將你的對話頻道（Telegram、Discord、WhatsApp）與 AI 模型無縫串接：<br>
+          &nbsp;&nbsp;① 理解 OpenClaw 的架構（Gateway、Channels、Nodes、Control UI）<br>
+          &nbsp;&nbsp;② 安裝 OpenClaw（curl 安裝腳本 / npm / pnpm / 源碼建構）<br>
+          &nbsp;&nbsp;③ 掌握完整 CLI 命令 (onboard、gateway、dashboard、daemon、channels 等)<br>
+          &nbsp;&nbsp;④ 進階技巧 (多頻道整合、Docker 部署、模型管理、安全配對)<br>
+          &nbsp;&nbsp;⑤ 常見問題解決 (診斷、錯誤排查、更新)<br><br>
+          30 分鐘從零開始，把自己的 AI 助手架設在本地或 VPS，完全掌控你的資料與隱私！
+        </blockquote>
+
+        <h2>前言 — 什麼是 OpenClaw？</h2>
+        <p><strong>OpenClaw</strong> 是一個<strong>開源、自架的 AI 助手平台</strong>。你可以把它想像成「<em>把 AI 串接到你已經用的聊天軟體上</em>」的橋樑 — 不管是 Telegram、Discord、WhatsApp，還是 iMessage，只要設定好頻道，你就可以透過對話使用 AI 助手。</p>
+        <p>與以付費為主的 AI 助手不同，OpenClaw 是<strong>100% 開源</strong>（MIT 授權），你可以：</p>
+        <ul>
+          <li>選擇自己的 AI 模型提供商 (OpenAI、Anthropic、Google、本地 Ollama 等)</li>
+          <li>自架在自己的電腦、VPS 或 NAS 上</li>
+          <li>完全掌控對話資料，無隱私疑慮</li>
+          <li>透過插件擴充功能（plugins）添加新功能</li>
+        </ul>
+
+        <blockquote>
+          🦝 <strong>OpenClaw 與其他方案的比較：</strong><br>
+          | 方案 | 開源 | 自架 | 多頻道 | 插件擴充 |<br>
+          |---|---|---|---|---|<br>
+          | OpenClaw | ✅ | ✅ | ✅ | ✅ |<br>
+          | ChatGPT 官網 | ❌ | ❌ | ❌ | 部分 |<br>
+          | Claude.ai | ❌ | ❌ | ❌ | 部分 |<br>
+          | LangGate | ✅ | ✅ | ✅ | ✅ |
+        </blockquote>
+
+        <h3>OpenClaw 架構概觀</h3>
+        <p>OpenClaw 採用 <strong>Gateway 為核心控制平面</strong> 的架構：</p>
+        <table>
+          <thead>
+            <tr>
+              <th>元件</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Gateway</strong></td>
+              <td>核心控制平面，處理 AI 模型串接、路由與安全驗證</td>
+            </tr>
+            <tr>
+              <td><strong>Channels</strong></td>
+              <td>連接 Discord、Telegram、WhatsApp、Slack 等聊天平台的插件</td>
+            </tr>
+            <tr>
+              <td><strong>Companion Nodes</strong></td>
+              <td>行動裝置與桌面上的輔助應用程式</td>
+            </tr>
+            <tr>
+              <td><strong>Control UI / CLI / TUI</strong></td>
+              <td>網頁控制面板、命令列介面與終端應用程式</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="article-tags">
+          <span class="tag">OpenClaw</span>
+          <span class="tag">AI 助手</span>
+          <span class="tag">自架</span>
+          <span class="tag">開源</span>
+          <span class="tag">網路封包</span>
+          <span class="tag">教學</span>
+        </div>
+
+        <h2>系統需求</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>需求</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Node.js</strong></td>
+              <td>版本 <code>22.22.3+</code>、<code>24.15+</code> 或 <code>25.9+</code> (建議 26)</td>
+            </tr>
+            <tr>
+              <td><strong>作業系統</strong></td>
+              <td>macOS / Linux / Windows (原生或 WSL2)</td>
+            </tr>
+            <tr>
+              <td><strong>Git</strong></td>
+              <td>選用，僅在源碼安裝時需要 (安裝器會自動安裝)</td>
+            </tr>
+            <tr>
+              <td><strong>pnpm</strong></td>
+              <td>選用，僅在源碼建構時需要</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>安裝教學</h2>
+
+        <h3>方法 1：安裝腳本 (推薦)</h3>
+        <p>官方提供一鍵安裝腳本，會自動檢測作業系統、安裝 Node.js 並完成設定：</p>
+
+        <h4>macOS / Linux / WSL2:</h4>
+<pre><code>curl -fsSL https://openclaw.ai/install.sh | bash</code></pre>
+        <p>如不想執行 onboarding：</p>
+<pre><code>curl -fsSL https://openclaw.ai/install.sh | bash -s -- --no-onboard</code></pre>
+
+        <h4>Windows (PowerShell):</h4>
+<pre><code>iwr -useb https://openclaw.ai/install.ps1 | iex</code></pre>
+        <p>跳過 onboarding：</p>
+<pre><code>&amp; ([scriptblock]::Create((iwr -useb https://openclaw.ai/install.ps1))) -NoOnboard</code></pre>
+
+        <h3>方法 2：npm 安裝</h3>
+        <p>如果你已經有 Node 環境，可以直接用 npm 安裝：</p>
+<pre><code>npm install -g openclaw@latest --allow-scripts=openclaw
+openclaw onboard --install-daemon</code></pre>
+
+        <h3>方法 3：pnpm 安裝</h3>
+<pre><code>pnpm add -g --allow-build=openclaw openclaw@latest
+openclaw onboard --install-daemon</code></pre>
+
+        <h3>方法 4：Bun 安裝</h3>
+<pre><code>bun add -g --trust openclaw@latest
+openclaw onboard --install-daemon</code></pre>
+
+        <h3>方法 5：從 GitHub (開發版)</h3>
+        <p>想使用最新開發版本的話：</p>
+<pre><code>curl -fsSL --proto '=https' --tlsv1.2 \
+  https://openclaw.ai/install.sh \
+  | bash -s -- --install-method git --version main</code></pre>
+
+        <h3>方法 6：從源碼建構 (開發者)</h3>
+        <p>如果你是開發者或想貢獻程式碼：</p>
+<pre><code>git clone https://github.com/openclaw/openclaw.git
+cd openclaw
+pnpm install
+pnpm build
+pnpm ui:build
+pnpm link --global
+openclaw onboard --install-daemon</code></pre>
+
+        <blockquote>
+          💡 <strong>安裝腳本支援的選項：</strong><br>
+          <code>--no-prompt</code> — 禁用互動式提示<br>
+          <code>--no-onboard</code> — 跳過 onboarding 流程<br>
+          <code>--verify</code> — 安裝後驗證<br>
+          <code>--dry-run</code> — 預覽動作但不執行<br>
+          <code>--verbose</code> — 顯示偵錯訊息
+        </blockquote>
+
+        <h2>基本使用</h2>
+
+        <h3>驗證安裝</h3>
+        <p>安裝完成後，驗證版本與健康狀態：</p>
+<pre><code># 檢查版本
+openclaw --version
+
+# 執行診斷
+openclaw doctor
+
+# 檢查 Gateway 狀態
+openclaw gateway status</code></pre>
+
+        <h3>執行 Onboarding</h3>
+        <p>首次運行需要設定 AI 模型、建立工作空間、配置 Gateway、設定 Channels 和 Skills。</p>
+<pre><code>openclaw onboard --install-daemon</code></pre>
+        <p>Wireshark 會引導你：</p>
+        <ol>
+          <li>選擇 AI 模型提供商 (OpenAI / Anthropic / Google / Ollama / 本地模型)</li>
+          <li>輸入 API 金鑰</li>
+          <li>設定工作空間與預設通道</li>
+          <li>選擇安裝的功能插件 (Skills)</li>
+          <li>啟動 Gateway 服務</li>
+        </ol>
+
+        <h3>打開控制面板</h3>
+<pre><code>openclaw dashboard</code></pre>
+        <p>會自動在瀏覽器中打開 Web 控制面板，你可以在上面：</p>
+        <ul>
+          <li>查看 Gateway 狀態</li>
+          <li>管理已連接的 Channels</li>
+          <li>查看對話歷史</li>
+          <li>配置模型與插件</li>
+        </ul>
+
+        <h2>完整 CLI 命令速查</h2>
+        <p>OpenClaw 提供豐富的 CLI 命令，用於設定、管理與開發：</p>
+
+        <h3>設定與診斷</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>openclaw onboard</code></td>
+              <td>執行引導式安裝流程</td>
+            </tr>
+            <tr>
+              <td><code>openclaw setup</code></td>
+              <td>驗證推理後開始設定 Gateway、工作空間、Channels、Skills</td>
+            </tr>
+            <tr>
+              <td><code>openclaw setup --baseline</code></td>
+              <td>建立基線配置與工作空間，不進入引導流程</td>
+            </tr>
+            <tr>
+              <td><code>openclaw configure</code></td>
+              <td>修改現有設定 (模型 auth、Gateway、Channels、Plugins、Skills)</td>
+            </tr>
+            <tr>
+              <td><code>openclaw doctor</code></td>
+              <td>診斷安裝環境並檢查設定問題</td>
+            </tr>
+            <tr>
+              <td><code>openclaw config</code></td>
+              <td>配置管理：get、set、unset、file、schema、validate</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Gateway 管理</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>openclaw gateway status</code></td>
+              <td>顯示 Gateway 服務狀態</td>
+            </tr>
+            <tr>
+              <td><code>openclaw gateway run</code></td>
+              <td>在前台啟動 Gateway</td>
+            </tr>
+            <tr>
+              <td><code>openclaw gateway start</code></td>
+              <td>啟動 Gateway (背景服務)</td>
+            </tr>
+            <tr>
+              <td><code>openclaw gateway stop</code></td>
+              <td>停止 Gateway</td>
+            </tr>
+            <tr>
+              <td><code>openclaw gateway restart</code></td>
+              <td>重新啟動 Gateway</td>
+            </tr>
+            <tr>
+              <td><code>openclaw gateway health</code></td>
+              <td>檢查 Gateway 健康程度</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Channel (頻道) 管理</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>openclaw channels list</code></td>
+              <td>列出所有已配置的 Channel</td>
+            </tr>
+            <tr>
+              <td><code>openclaw channels add</code></td>
+              <td>添加新的 Channel (引導式設定)</td>
+            </tr>
+            <tr>
+              <td><code>openclaw channels status</code></td>
+              <td>顯示 Channel 狀態</td>
+            </tr>
+            <tr>
+              <td><code>openclaw channels login</code></td>
+              <td>登入 Channel 帳號</td>
+            </tr>
+            <tr>
+              <td><code>openclaw channels logout</code></td>
+              <td>登出 Channel 帳號</td>
+            </tr>
+            <tr>
+              <td><code>openclaw channels remove</code></td>
+              <td>移除 Channel</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Agent 與對話</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>openclaw tui</code></td>
+              <td>啟動終端應用程式 (TUI)</td>
+            </tr>
+            <tr>
+              <td><code>openclaw chat</code></td>
+              <td>聊天模式 (tui --local 的別名)</td>
+            </tr>
+            <td><code>openclaw agents list</code></td>
+              <td>列出所有 Agent</td>
+            </tr>
+            <tr>
+              <td><code>openclaw agents add</code></td>
+              <td>添加新 Agent</td>
+            </tr>
+            <tr>
+              <td><code>openclaw message send</code></td>
+              <td>發送訊息</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>更新與維護</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>openclaw update</code></td>
+              <td>更新 OpenClaw (子命令: wizard、status、repair)</td>
+            </tr>
+            <tr>
+              <td><code>openclaw backup create</code></td>
+              <td>建立備份</td>
+            </tr>
+            <tr>
+              <td><code>openclaw migrate list</code></td>
+              <td>查看可用遷移</td>
+            </tr>
+            <tr>
+              <td><code>openclaw migrate apply</code></td>
+              <td>套用遷移</td>
+            </tr>
+            <tr>
+              <td><code>openclaw reset</code></td>
+              <td>重置安裝</td>
+            </tr>
+            <tr>
+              <td><code>openclaw uninstall</code></td>
+              <td>完全移除 OpenClaw</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>全局選項 (Global Flags)</h3>
+<pre><code>openclaw [命令] --dev          # 開發模式 (隔離狀態於 ~/.openclaw-dev)
+openclaw [命令] --profile <name>  # 使用命名稱隔離狀態 (~/.openclaw-<name>)
+openclaw [命令] --container <name> # 在容器中執行 CLI
+openclaw [命令] --log-level debug   # 設定日誌等級
+openclaw [命令] --no-color          # 禁用顏色輸出</code></pre>
+
+        <h2>進階技巧</h2>
+
+        <h3>Docker 部署</h3>
+        <p>OpenClaw 也可以透過 Docker 容器化部署，特別適合 VPS 或 NAS 環境：</p>
+<pre><code># 拉取官方 Docker 映像
+docker run -d \
+  --name openclaw \
+  -p 3010:3010 \
+  -v ~/.openclaw:/root/.openclaw \
+  openclaw/openclaw:latest</code></pre>
+
+        <h3>多代理器路由 (Multi-Agent Routing)</h3>
+        <p>OpenClaw 支援配置多個 Agent，並根據訊息類型或來源路由到不同的 Agent 來處理。</p>
+<pre><code># 列出所有 Agent
+openclaw agents list
+
+# 添加 Agent
+openclaw agents add --name my-agent --model gpt-4</code></pre>
+
+        <h3>安全配對 (Pairing)</h3>
+        <p>當來自未知發送者的訊息進來時，OpenClaw 會要求配對 (pairing) 才會處理。這是一個安全機制，防止來路不明的請求。</p>
+<pre><code># 查看配對請求列表
+openclaw pairing list
+
+# 批准配對
+openclaw pairing approve telegram &lt;配對碼&gt;</code></pre>
+
+        <h3>匯出診斷資訊</h3>
+        <p>如果遇到問題，可以匯出診斷資訊給開發者：</p>
+<pre><code># 匯出診斷
+openclaw gateway diagnostics</code></pre>
+
+        <h3>容器管理</h3>
+        <p>OpenClaw 的 Gateway 可以透過 Daemon 進行管理：</p>
+<pre><code># Daemon 管理
+openclaw daemon status    # 查看狀態
+openclaw daemon install   # 安裝為系統服務
+openclaw daemon start     # 啟動服務
+openclaw daemon stop      # 停止服務
+openclaw daemon restart   # 重新啟動</code></pre>
+
+        <h3>狀態隔離 (Profile/Container)</h3>
+        <p>開發或測試時可以使用 <code>--profile</code> 或 <code>--container</code> 進行狀態隔離：</p>
+<pre><code># 使用 profile 隔離狀態
+openclaw onboard --profile dev
+openclaw dashboard --profile dev</code></pre>
+
+        <h2>實用技巧</h2>
+        <ul>
+          <li><strong>設定金鑰記錄檔</strong>：<code>openclaw configure</code> → 選擇「model auth」，可設定本地模型 (如 Ollama) 供離線使用</li>
+          <li><strong>更新頻道</strong>：<code>openclaw update --channel dev</code> 可切換到開發版獲得最新功能</li>
+          <li><strong>備份設定</strong>：<code>openclaw backup create</code> 可備份你的配置與工作空間</li>
+          <li><strong>清理會話</strong>：<code>openclaw sessions cleanup</code> 清理過期的對話會話</li>
+          <li><strong>狀態檔案位置</strong>：配置檔位於 <code>~/.openclaw/openclaw.json</code>，可以使用 <code>openclaw config file</code> 快速打開</li>
+        </ul>
+
+        <h2>常見問題 (FAQ)</h2>
+
+        <h3>Q1: OpenClaw 能連接哪些 AI 模型？</h3>
+        <p>OpenClaw 支援多種模型提供商，包括：</p>
+        <ul>
+          <li><strong>OpenAI</strong> (GPT-4、GPT-4o、o1 等)</li>
+          <li><strong>Anthropic</strong> (Claude 3、Claude 4 等)</li>
+          <li><strong>Google</strong> (Gemini 1.5、Gemini 2.0 等)</li>
+          <li><strong>本地模型</strong> (透過 Ollama、llama.cpp、LM Studio 等)</li>
+        </ul>
+        <p>在 onboarding 時選擇即可。</p>
+
+        <h3>Q2: OpenClaw 支援哪些聊天頻道？</h3>
+        <p>目前支援：</p>
+        <ul>
+          <li>Discord、Telegram、WhatsApp、Signal、Slack</li>
+          <li>iMessage (macOS)、Matrix、Microsoft Teams</li>
+          <li>Zalo、Facebook Messenger 等插件頻道</li>
+        </ul>
+        <p>插件頻道可以透過 <code>openclaw channels add</code> 進行設定。</p>
+
+        <h3>Q3: OpenClaw 會收集我的資料嗎？</h3>
+        <p><strong>不會</strong>。OpenClaw 是 100% 開源、自架的工具。你的 API 金鑰、對話資料與配置全部儲存在你的本地設備 (<code>~/.openclaw/</code>)，OpenClaw 開發團隊無法存取。</p>
+
+        <h3>Q4: 如何在 VPS 上部署 OpenClaw？</h3>
+        <p>推薦使用 Docker 部署：</p>
+<pre><code>docker run -d \
+  --name openclaw \
+  -p 3010:3010 \
+  -v ~/.openclaw:/root/.openclaw \
+  openclaw/openclaw:latest
+</code></pre>
+        <p>或使用 Docker Compose 進行更複雜的部署。</p>
+
+        <h3>Q5: OpenClaw 如何更新？</h3>
+<pre><code># 更新到最新版本
+openclaw update
+
+# 切換到開發版
+openclaw update --channel dev
+
+# 更新狀態
+openclaw update status</code></pre>
+
+        <div class="article-tags">
+          <span class="tag">OpenClaw</span>
+          <span class="tag">AI 助手</span>
+          <span class="tag">自架</span>
+          <span class="tag">開源</span>
+          <span class="tag">CLI</span>
+          <span class="tag">教學</span>
+        </div>
+
+        <div class="article-footer">
+          <a href="./articles.html" class="back-home">← 回文章列表</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="#">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

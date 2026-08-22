@@ -1,5 +1,11 @@
 [
   {
+    "title": "OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用",
+    "excerpt": "OpenClaw 是一個開源、自架的 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm）、完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）與進階技巧。",
+    "url": "openclaw-ai-assistant.html",
+    "tags": ["OpenClaw", "AI 助手", "開源", "自架", "CLI", "教學"]
+  },
+  {
     "title": "Wireshark 網路封包分析完全攻略：安裝、基本使用與進階技巧",
     "excerpt": "Wireshark 是一個強大的網路封包分析工具。本文詳細介紹 Wireshark 的安裝（Windows/macOS/Linux）、介面操作、顯示過濾、通訊協定分析與進階技巧，包含 HTTP、HTTPS/TLS、DNS、TCP 分析技巧。",
     "url": "wireshark-network-analysis.html",
