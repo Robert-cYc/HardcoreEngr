@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>n8n 工作流程自動化完全攻略：安裝、使用與進階技巧 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta name="description" content="n8n 是一個開源的工作流程自動化工具。本文詳細介紹 n8n 的特色、安裝方式（npx、npm、Docker）、基本操作、常見整合案例與進階技巧。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/n8n-workflow-automation.html">
+  <meta property="og:title" content="n8n 工作流程自動化完全攻略：安裝、使用與進階技巧 — "AI" 硬核工程師">
+  <meta property="og:description" content="n8n 是一個開源的工作流程自動化工具。本文詳細介紹 n8n 的特色、安裝方式（npx、npm、Docker）、基本操作、常見整合案例與進階技巧。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/n8n-workflow-automation.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="n8n 工作流程自動化完全攻略：安裝、使用與進階技巧 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="n8n 是一個開源的工作流程自動化工具。本文詳細介紹 n8n 的特色、安裝方式（npx、npm、Docker）、基本操作、常見整合案例與進階技巧。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "n8n 工作流程自動化完全攻略：安裝、使用與進階技巧 — \"AI\" 硬核工程師",
+  "description": "n8n 是一個開源的工作流程自動化工具。本文詳細介紹 n8n 的特色、安裝方式（npx、npm、Docker）、基本操作、常見整合案例與進階技巧。",
+  "url": "https://ai-hardcore-engineer.com/n8n-workflow-automation.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/n8n-workflow-automation.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-2 600,78 900,38 C1200,-2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-12 600,88 900,38 C1200,-12 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,2 600,72 900,38 C1200,2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-8 600,92 900,38 C1200,-8 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,22 600,52 900,38 C1200,22 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-7 600,82 900,38 C1200,-7 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-7" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,18 600,62 900,38 C1200,18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-8" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-18 600,98 900,38 C1200,-18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-9" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,32 600,42 900,38 C1200,32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-10" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-32 600,118 900,38 C1200,-32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>n8n 工作流程自動化完全攻略：安裝、使用與進階技巧</h1>
+      <div class="article-meta">
+        <span>2026-08-22</span>
+        <span class="separator">·</span>
+        <span>16 分鐘閱讀</span>
+      </div>
+      <img loading="lazy" src="https://picsum.photos/seed/n8n/1200/400" alt="n8n 工作流程自動化">
+    </div>
+  </section>
+
+  <!-- =============== Article Body =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>n8n</strong> 是一個開源的工作流程自動化工具，像「Zapier 或 Make 的開源版本」，你可以把不同服務串起來自動執行任務：<br>
+          &nbsp;&nbsp;① 快速安裝 n8n（npx / npm / Docker 三種方式）<br>
+          &nbsp;&nbsp;② 認識工作流程畫布，新增觸發器與執行節點<br>
+          &nbsp;&nbsp;③ 學會串接常用服務：Gmail → Google Sheets → Slack<br>
+          &nbsp;&nbsp;④ 進階技巧：Webhook 接收外部請求、Function 節點寫 JS 邏輯、環境變數管理<br>
+          &nbsp;&nbsp;⑤ 生產環境建議：Docker-compose 部署、資料備份、反向代理<br><br>
+          無需撰寫程式碼，30 分鐘就能打造自動化工作流程，提升效率 100x！
+        </blockquote>
+
+        <h2>前言 — 什麼是 n8n？</h2>
+        <p><strong>n8n</strong>（發音類似 "n diam"）是一個開源的<strong>工作流程自動化工具</strong>。你可以透過拖曳節點的方式，把不同的服務串起來，自動完成諸如「收到郵件 → 寫入資料表 → 發通知」等任務。</p>
+        <p>與 <strong>Zapier</strong>、<strong>Make（前身 Integromat）</strong> 不同，n8n 的最大特色是：</p>
+        <ul>
+          <li><strong>開源免費</strong> — 不用付費給第三方平台</li>
+          <li><strong>自部署</strong> — 資料不外洩，可以放在自己的伺服器</li>
+          <li><strong>無限節點</strong> — 不像 Zapier 有執行次數限制</li>
+          <li><strong>客製化程度高</strong> — 可以自己寫 JS 函數處理邏輯</li>
+        </ul>
+        <p>它支援 300 多種整合（Slack、Gmail、LINE、Notion、GitHub 等），幾乎涵蓋日常工作中會用到的工具。</p>
+
+        <h2>如何安裝 n8n</h2>
+        <p>n8n 提供多種安裝方式，以下是常見的三種：</p>
+
+        <h3>方法 1️⃣：npx 直接執行 (快速體驗)</h3>
+        <p>最簡單的方式，直接透過 npx 執行，无需安裝：</p>
+<pre><code>npx n8n</code></pre>
+        <p>首次執行會自動下載，然後預設在 <code>http://localhost:5678</code> 打開。</p>
+
+        <h3>方法 2️⃣：npm 全局安裝 (日常使用)</h3>
+<pre><code>npm install -g n8n
+n8n start</code></pre>
+        <blockquote>
+          💡 <strong>提示：</strong> 建議先確認 Node.js 版本 >= 18。<code>node -v</code> 就可以確認。
+        </blockquote>
+
+        <h3>方法 3️⃣：Docker 部署 (生產環境推薦)</h3>
+        <p>建議使用 Docker Compose 部署：</p>
+<pre><code># docker-compose.yml
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_ENCRYPTION_KEY=your-encryption-key-here
+      - DB_TYPE=sqlite
+      - VUE_APP_URL_BASE_API=/
+    volumes:
+      - ./n8n-data:/home/node/.n8n
+    restart: unless-stopped</code></pre>
+<pre><code>docker compose up -d</code></pre>
+
+        <h3>方法 4️⃣：Docker 單一指令</h3>
+<pre><code>docker run -it --rm -p 5678:5678 n8nio/n8n</code></pre>
+
+        <blockquote>
+          🔐 <strong>安全提醒：</strong> <code>N8N_ENCRYPTION_KEY</code> 用來加密敏感資料，請務必設定並妥善保管！
+        </blockquote>
+
+        <h2>n8n 基本操作教學</h2>
+        <p>啟動 n8n 後，瀏覽器會自動打開 <code>http://localhost:5678</code>。</p>
+
+        <h3>建立第一個工作流程</h3>
+        <p>以「收到 Gmail → 寫入 Google Sheets → 發 Slack 通知」為例：</p>
+
+        <h3>步驟 1️⃣：新增工作流程</h3>
+        <p>點擊右上角的「<strong>Create workflow</strong>」，進入空白畫布。</p>
+
+        <h3>步驟 2️⃣：新增觸發器</h3>
+        <p>點擊畫布上的「<strong>+</strong>」，選擇觸發器類型：</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>觸發器</th>
+              <th>說明</th>
+              <th>常用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Schedule Trigger</code></td>
+              <td>定時執行</td>
+              <td>每日報表、週報</td>
+            </tr>
+            <tr>
+              <td><code>Webhook</code></td>
+              <td>接收外部請求</td>
+              <td>接收表單、API 回調</td>
+            </tr>
+            <tr>
+              <td><code>Gmail Trigger</code></td>
+              <td>收到新郵件</td>
+              <td>客服自動回覆</td>
+            </tr>
+            <tr>
+              <td><code>Manual</code></td>
+              <td>手動點擊執行</td>
+              <td>測試用</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>步驟 3️⃣：串接 Gmail → Google Sheets → Slack</h3>
+        <ol>
+          <li>新增「<strong>Gmail Trigger</strong>」節點 → 設定收件信箱、標籤過濾</li>
+          <li>新增「<strong>Google Sheets</strong>」節點 → 選「Append」將郵件資訊寫入</li>
+          <li>新增「<strong>Slack</strong>」節點 → 發送通知到指定頻道</li>
+        </ol>
+        <p>按下「<strong>Execute Workflow</strong>」測試，成功後點擊「<strong>Activate</strong>」啟用。</p>
+
+        <blockquote>
+          🎉 <strong>小技巧：</strong> 每個節點點擊右下角的勾號可以預覽測試結果，方便 Debug！
+        </blockquote>
+
+        <h3>常用節點類型</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>類型</th>
+              <th>範例</th>
+              <th>用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>觸發器</td>
+              <td>Schedule, Webhook, Gmail</td>
+              <td>啟動工作流程的起點</td>
+            </tr>
+            <tr>
+              <td>行動</td>
+              <td>Slack, Gmail Send, HTTP</td>
+              <td>執行實際動作</td>
+            </tr>
+            <tr>
+              <td>工具</td>
+              <td>Function, Merge, Split Out</td>
+              <td>處理資料與邏輯</td>
+            </tr>
+            <tr>
+              <td>輸入</td>
+              <td>Manual, Read Binary Files</td>
+              <td>手動觸發或讀入檔案</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>進階功能介紹</h2>
+
+        <h3>Function 節點 — 寫 JS 處理邏輯</h3>
+        <p>當內建節點不夠用時，你可以在 <strong>Function</strong> 節點中寫 JavaScript：</p>
+<pre><code>// 過濾出標題包含 "URGENT" 的郵件
+const items = $input.all();
+return items.filter(item => {
+  const subject = item.json.subject || '';
+  return subject.includes('URGENT');
+});</code></pre>
+
+        <h3>Webhook 接收外部請求</h3>
+        <p>新增一個 Webhook 節點，n8n 會自動生成一個 URL：</p>
+<pre><code># 發送請求
+curl -X POST https://your-n8n/webhook/my-webhook \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Alice","action":"signup"}'</code></pre>
+        <p>Webhook 會接收並解析 JSON，接續做後續處理。</p>
+
+        <h3>HTTP Request 節點</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>設定</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Method</td>
+              <td>GET / POST / PUT / DELETE</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>API 端點</td>
+            </tr>
+            <tr>
+              <td>Authentication</td>
+              <td>Bearer Token / Basic Auth / OAuth2</td>
+            </tr>
+            <tr>
+              <td>Body</td>
+              <td>JSON / Form / Raw</td>
+            </tr>
+            <tr>
+              <td>Headers</td>
+              <td>自訂 HTTP 標頭</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>環境變數管理</h3>
+        <p>在工作流程中可以使用 <code>$env.VARIABLE_NAME</code> 讀取環境變數：</p>
+<pre><code>// 讀取環境變數
+const apiKey = $env.API_KEY;
+const slackWebhook = $env.SLACK_WEBHOOK_URL;</code></pre>
+
+        <h3>資料夾與工作流程組織</h3>
+        <p>n8n 支援將工作流程分類到資料夾中，方便管理多個自動化任務：</p>
+        <ul>
+          <li>點擊左側「<strong>Projects</strong>」→「<strong>New Project</strong>」</li>
+          <li>可為每個專案設定成員權限與存取控制</li>
+          <li>適合團隊協作使用</li>
+        </ul>
+
+        <h2>生產環境部署建議</h2>
+        <p>如果要把 n8n 用在正式環境，推薦以下設定：</p>
+
+        <h3>1. 使用 PostgreSQL 資料庫</h3>
+        <p>預設 n8n 使用 SQLite，適合單人使用。多人或商用建議改用 PostgreSQL：</p>
+<pre><code># docker-compose.yml
+services:
+  n8n:
+    image: n8nio/n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_USER=n8n
+      - DB_POSTGRESDB_PASSWORD=n8n-password
+      - DB_POSTGRESDB_DATABASE=n8n
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: n8n
+      POSTGRES_PASSWORD: n8n-password
+      POSTGRES_DB: n8n
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data</pre>
+
+        <h3>2. 設定反向代理</h3>
+        <p>建議搭配 Nginx 或 Caddy 做反向代理，提供 HTTPS：</p>
+<pre><code># nginx.conf
+server {
+    listen 443 ssl;
+    server_name n8n.yourdomain.com;
+
+    ssl_certificate /path/to/cert.pem;
+    ssl_certificate_key /path/to/key.pem;
+
+    location / {
+        proxy_pass http://localhost:5678;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}</code></pre>
+
+        <h3>3. 啟用身份驗證</h3>
+        <p>設定環境變數開啟 basic auth 或 OAuth:</p>
+<pre><code># 啟用 basic auth
+VUE_APP_URL_BASE_API=/
+N8N_BASIC_AUTH_ACTIVE=true
+N8N_BASIC_AUTH_USER=admin
+N8N_BASIC_AUTH_PASSWORD=your-password</code></pre>
+
+        <blockquote>
+          🔒 <strong>安全提醒：</strong> 生產環境一定要開啟身份驗證！否則任何人都可以訪問你的自動化工作流程。
+        </blockquote>
+
+        <h2>資源與社群</h2>
+
+        <h3>官方資源</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>資源</th>
+              <th>連結</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>官網</td>
+              <td><a href="https://n8n.io" target="_blank">https://n8n.io</a></td>
+            </tr>
+            <tr>
+              <td>GitHub</td>
+              <td><a href="https://github.com/n8n-io/n8n" target="_blank">github.com/n8n-io/n8n</a></td>
+            </tr>
+            <tr>
+              <td>文檔</td>
+              <td><a href="https://docs.n8n.io" target="_blank">docs.n8n.io</a></td>
+            </tr>
+            <tr>
+              <td>社群 Discord</td>
+              <td><a href="https://discord.gg/j6dnxm3a8X" target="_blank">加入 Discord</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>熱門整合列表 (Top 10)</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>排名</th>
+              <th>整合服務</th>
+              <th>使用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Slack</td>
+              <td>團隊通知與消息推送</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Gmail / Email</td>
+              <td>自動收發與處理郵件</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Google Sheets</td>
+              <td>資料寫入與同步</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Notion</td>
+              <td>知識庫更新</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>GitHub</td>
+              <td>CI/CD 觸發</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>LINE</td>
+              <td>即時通訊通知</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Discord</td>
+              <td>遊戲社群通知</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Webhook</td>
+              <td>接收任意外部請求</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>MySQL / Postgres</td>
+              <td>資料庫操作</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Airtable</td>
+              <td>輕量資料表管理</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>結語</h2>
+        <p>n8n 讓工作流程自動化變得前所未有地簡單 — 無論你是要提升個人生產力、自動化團隊通知，或是打造內部工具，n8n 都是極佳的選擇。</p>
+        <blockquote>
+          🎯 <strong>快速回顧步驟：</strong><br>
+          &nbsp;&nbsp;1️⃣ 安裝 n8n（npx / npm / Docker）<br>
+          &nbsp;&nbsp;2️⃣ 建立工作流程，拖曳觸發器與執行節點<br>
+          &nbsp;&nbsp;3️⃣ 設定常用整合（Gmail、Slack、Notion）<br>
+          &nbsp;&nbsp;4️⃣ 使用 Webhook / Function 進行進階設定<br>
+          &nbsp;&nbsp;5️⃣ 部署到生產環境（Docker + PostgreSQL + Nginx）<br><br>
+          整個流程不需要一行程式碼，30 分鐘就能打造強大的自動化系統！
+        </blockquote>
+        <blockquote>
+          🔗 <strong>推薦資源：</strong><br>
+          &nbsp;&nbsp;• <a href="https://n8n.io" target="_blank">n8n 官網</a><br>
+          &nbsp;&nbsp;• <a href="https://github.com/n8n-io/n8n" target="_blank">n8n GitHub</a><br>
+          &nbsp;&nbsp;• <a href="https://docs.n8n.io" target="_blank">n8n 官方文檔</a><br>
+          &nbsp;&nbsp;• <a href="https://github.com/n8n-io/n8n-nodes-extra" target="_blank">社群擴充節點</a>
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="#">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

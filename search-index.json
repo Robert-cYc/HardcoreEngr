@@ -1,5 +1,11 @@
 [
   {
+    "title": "Wireshark 網路封包分析完全攻略：安裝、基本使用與進階技巧",
+    "excerpt": "Wireshark 是一個強大的網路封包分析工具。本文詳細介紹 Wireshark 的安裝（Windows/macOS/Linux）、介面操作、顯示過濾、通訊協定分析與進階技巧，包含 HTTP、HTTPS/TLS、DNS、TCP 分析技巧。",
+    "url": "wireshark-network-analysis.html",
+    "tags": ["Wireshark", "網路封包", "網路分析", "Network", "教學"]
+  },
+  {
     "title": "Node.js、npm、npx 完整指令入門 — 60 個指令一次搞懂",
     "excerpt": "Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。",
     "url": "node-js-commands.html",
@@ -52,6 +58,18 @@
     "excerpt": "從 Hugging Face 下載 GGUF 格式模型，安裝 llama.cpp 在 Windows 上本地推理，設定 GPU Offload（CUDA/Vulkan/DirectML）與 Context 長度，一次搞懂。",
     "url": "llama-cpp-gguf.html",
     "tags": ["llama.cpp", "GGUF", "Hugging Face", "GPU Offload", "Windows", "本地推理", "教學"]
+  },
+  {
+    "title": "n8n 工作流程自動化完全攻略：安裝、使用與進階技巧",
+    "excerpt": "n8n 是一個開源的工作流程自動化工具。本文詳細介紹 n8n 的特色、安裝方式（npx、npm、Docker）、基本操作、常見整合案例與進階技巧。",
+    "url": "n8n-workflow-automation.html",
+    "tags": ["n8n", "工作流程自動化", "Zapier", "Docker", "API", "教學"]
+  },
+  {
+    "title": "Docker 容器化指南：安裝、基本指令與進階使用",
+    "excerpt": "Docker 是一個開源的容器化平台。本文詳細介紹 Docker 的概念、安裝方式、基本指令、Docker Compose 與進階技巧。",
+    "url": "docker-container-guide.html",
+    "tags": ["Docker", "容器", "Docker Compose", "Dockerfile", "容器化", "教學"]
   },
   {
     "title": "所有文章",

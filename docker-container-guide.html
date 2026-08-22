@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docker 容器化指南：安裝、基本指令與進階使用 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta name="description" content="Docker 是容器化技術的領導者。本文詳細介紹 Docker 的概念、安裝方式（Windows/macOS/Linux）、基本指令、Docker Compose 與進階技巧。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/docker-container-guide.html">
+  <meta property="og:title" content="Docker 容器化指南：安裝、基本指令與進階使用 — "AI" 硬核工程師">
+  <meta property="og:description" content="Docker 是容器化技衠的領導者。本文詳細介紹 Docker 的概念、安裝方式（Windows/macOS/Linux）、基本指令、Docker Compose 與進階技巧。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/docker-container-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Docker 容器化指南：安裝、基本指令與進階使用 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Docker 是容器化技衠的領導者。本文詳細介紹 Docker 的概念、安裝方式（Windows/macOS/Linux）、基本指令、Docker Compose 與進階技巧。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Docker 容器化指南：安裝、基本指令與進階使用 — \"AI\" 硬核工程師",
+  "description": "Docker 是一個開源的容器化平台。本文詳細介紹 Docker 的概念、安裝方式（Windows/macOS/Linux）、基本指令、Docker Compose 與進階技巧。",
+  "url": "https://ai-hardcore-engineer.com/docker-container-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/docker-container-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-2 600,78 900,38 C1200,-2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-12 600,88 900,38 C1200,-12 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,2 600,72 900,38 C1200,2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-8 600,92 900,38 C1200,-8 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,22 600,52 900,38 C1200,22 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-7 600,82 900,38 C1200,-7 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-7" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,18 600,62 900,38 C1200,18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-8" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-18 600,98 900,38 C1200,-18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-9" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,32 600,42 900,38 C1200,32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-10" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-32 600,118 900,38 C1200,-32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>Docker 容器化指南：安裝、基本指令與進階使用</h1>
+      <div class="article-meta">
+        <span>2026-08-22</span>
+        <span class="separator">·</span>
+        <span>18 分鐘閱讀</span>
+      </div>
+      <img loading="lazy" src="https://picsum.photos/seed/docker/1200/400" alt="Docker 容器化技術">
+    </div>
+  </section>
+
+  <!-- =============== Article Body =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>Docker</strong> 是容器化的領導者，用來把應用程式與依賴打包起來到處跑，不再有「我的電腦跑得好」的問題：<br>
+          &nbsp;&nbsp;① 理解 Docker 的核心概念（Image、Container、Volume、Network）<br>
+          &nbsp;&nbsp;② 安裝 Docker（Windows / macOS / Linux 三種方式）<br>
+          &nbsp;&nbsp;③ 掌握基本指令（run、ps、images、exec、rm、logs）<br>
+          &nbsp;&nbsp;④ 學會 Docker Compose 一次管理多個容器<br>
+          &nbsp;&nbsp;⑤ 進階技巧：Dockerfile 建構自己的映像、Multi-stage build、除錯技巧<br><br>
+          30 分鐘從零開始，讓你的應用「一次打包、到處跑」！
+        </blockquote>
+
+        <h2>前言 — 什麼是 Docker？</h2>
+        <p><strong>Docker</strong> 是一個開源的<strong>容器化平台</strong>。你可以把它想像成「<em>把應用程式 + 所有依賴打包在一起，一個指令就能到處跑</em>」的技術。</p>
+        <p>傳統上，我們會在本機安裝 Node.js、Python、資料庫等等，但部署的時候常常會碰到：</p>
+        <ul>
+          <li>「我的電腦跑得好，伺服器就錯」</li>
+          <li>「開發環境的 Node 版本和生產不一樣」</li>
+          <li>「部署一堆依賴很麻煩」</li>
+        </ul>
+        <p>Docker 完美解決了這些問題 — 容器內含應用 + 所有依賴，確保環境一致性。</p>
+
+        <h3>Docker 與傳統 VM 虛擬機的差別</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>特性</th>
+              <th>Docker 容器</th>
+              <th>傳統 VM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>開機時間</td>
+              <td>秒級</td>
+              <td>分鐘級</td>
+            </tr>
+            <tr>
+              <td>體積</td>
+              <td>幾十 MB</td>
+              <td>幾 GB</td>
+            </tr>
+            <tr>
+              <td>共享核心</td>
+              <td>與主機共享</td>
+              <td>獨立 Guest OS</td>
+            </tr>
+            <tr>
+              <td>資源隔離</td>
+              <td>較少開銷</td>
+              <td>較大開銷</td>
+            </tr>
+            <tr>
+              <td>適合場景</td>
+              <td>微服務、CI/CD</td>
+              <td>完整 OS 模擬</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>如何安裝 Docker</h2>
+
+        <h3>Windows 安裝</h3>
+        <ol>
+          <li>前往 <a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop for Windows</a> 下載安裝檔</li>
+          <li>雙擊執行安裝程式，勾選「Install required Windows components for WSL2」</li>
+          <li>安裝完成後，打開 Docker Desktop 等待初始化完成</li>
+        </ol>
+        <blockquote>
+          ⚠️ <strong>注意：</strong> Windows 10 需要開啟 WSL2 支援。可以透過命令提示管理員執行 <code>wsl --install</code> 來啟用。
+        </blockquote>
+
+        <h3>macOS 安裝</h3>
+        <ol>
+          <li>前往 <a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop for Mac</a> 下載 .dmg 檔案</li>
+          <li>支援 Intel 和 Apple Silicon（M1/M2/M3）</li>
+          <li>拖曝到 Applications，開啟後即可使用</li>
+        </ol>
+
+        <h3>Linux (Ubuntu / Debian) 安裝</h3>
+        <p>Linux 使用者可以用官方 script 一鍵安裝：</p>
+<pre><code>curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh</code></pre>
+        <p>或者手動加入 apt repository 安裝：</p>
+<pre><code># 新增 Docker 的官方 GPG key
+sudo apt update
+sudo apt install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+  sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# 設定 repository
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME" | sed 's/-.*//')" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin</code></pre>
+
+        <h3>驗證安裝</h3>
+<pre><code>docker --version
+# Docker version 27.2.0, build 3232116
+
+docker compose version
+# Docker Compose version v2.29.2</code></pre>
+
+        <h3>加入 docker group (避免每次 sudo)</h3>
+<pre><code>sudo usermod -aG docker $USER
+# 登出並重新登入生效</code></pre>
+
+        <h2>Docker 基本指令大全</h2>
+        <p>以下是 Docker 的核心指令整理，涵蓋容器、映像、卷、網路等。</p>
+
+        <h3>映像 (Images) 管理</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>範例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>docker pull</code></td>
+              <td>下載映像</td>
+              <td><code>docker pull nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>docker images</code></td>
+              <td>列出本地映像</td>
+              <td><code>docker images</code></td>
+            </tr>
+            <tr>
+              <td><code>docker rmi</code></td>
+              <td>刪除映像</td>
+              <td><code>docker rmi nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>docker build</code></td>
+              <td>從 Dockerfile 建立映像</td>
+              <td><code>docker build -t myapp .</code></td>
+            </tr>
+            <tr>
+              <td><code>docker tag</code></td>
+              <td>重新標記映像</td>
+              <td><code>docker tag myapp:latest myapp:v1.0</code></td>
+            </tr>
+            <tr>
+              <td><code>docker push</code></td>
+              <td>推送映像到 Registry</td>
+              <td><code>docker push myuser/myapp</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>容器 (Containers) 管理</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+              <th>範例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>docker run</code></td>
+              <td>建立並啟動容器</td>
+              <td><code>docker run -d nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>docker ps</code></td>
+              <td>列出運行中容器</td>
+              <td><code>docker ps</code></td>
+            </tr>
+            <tr>
+              <td><code>docker ps -a</code></td>
+              <td>列出所有容器</td>
+              <td><code>docker ps -a</code></td>
+            </tr>
+            <tr>
+              <td><code>docker exec</code></td>
+              <td>進入容器執行指令</td>
+              <td><code>docker exec -it web bash</code></td>
+            </tr>
+            <tr>
+              <td><code>docker stop</code></td>
+              <td>停止容器</td>
+              <td><code>docker stop web</code></td>
+            </tr>
+            <tr>
+              <td><code>docker start</code></td>
+              <td>啟動已停止容器</td>
+              <td><code>docker start web</code></td>
+            </tr>
+            <tr>
+              <td><code>docker rm</code></td>
+              <td>刪除容器</td>
+              <td><code>docker rm web</code></td>
+            </tr>
+            <tr>
+              <td><code>docker logs</code></td>
+              <td>查看容器日誌</td>
+              <td><code>docker logs -f web</code></td>
+            </tr>
+            <tr>
+              <td><code>docker inspect</code></td>
+              <td>查看容器詳細資訊</td>
+              <td><code>docker inspect web</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>docker run 常用參數</h2>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>參數</th>
+              <th>說明</th>
+              <th>範例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>-d</code></td>
+              <td>背景執行 (detached)</td>
+              <td><code>docker run -d nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>-p</code></td>
+              <td>映射埠 (host:container)</td>
+              <td><code>docker run -p 8080:80 nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>--name</code></td>
+              <td>命名容器</td>
+              <td><code>docker run --name web nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>-v</code></td>
+              <td>掛載卷或檔案</td>
+              <td><code>docker run -v data:/app nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>-e</code></td>
+              <td>設定環境變數</td>
+              <td><code>docker run -e KEY=val nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>--rm</code></td>
+              <td>容器停止時自動刪除</td>
+              <td><code>docker run --rm nginx</code></td>
+            </tr>
+            <tr>
+              <td><code>-it</code></td>
+              <td>互動模式</td>
+              <td><code>docker run -it ubuntu bash</code></td>
+            </tr>
+            <tr>
+              <td><code>--network</code></td>
+              <td>指定網路</td>
+              <td><code>docker run --network my-net nginx</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          💡 <strong>快速操作：</strong> 用 <code>-it</code> 進入容器後，可以直接執行指令進行除錯：<br>
+          <code>docker exec -it <span style="color: var(--text-muted);">容器名</span> sh</code>
+        </blockquote>
+
+        <h2>卷 (Volumes) 與網路 (Networks)</h2>
+
+        <h3>卷管理 — 把資料持久化</h3>
+        <p>容器刪除了資料也會消失，Volume 讓資料持續保存：</p>
+<pre><code># 建立卷
+docker volume create my-data
+
+# 查看卷
+docker volume ls
+
+# 刪除卷
+docker volume rm my-data
+
+# 清理無用卷
+docker volume prune</code></pre>
+
+        <h3>網路管理 — 讓容器互通</h3>
+<pre><code># 建立網橋網路
+docker network create my-net
+
+# 查看網路
+docker network ls
+
+# 清理無用網路
+docker network prune</pre>
+
+        <h2>Docker Compose — 多容器神器</h2>
+        <p>Compose 讓你可以用一個 <code>docker-compose.yml</code> 檔案管理多個容器。</p>
+
+        <h3>建立 docker-compose.yml</h3>
+<pre><code># docker-compose.yml
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: secretpass
+      POSTGRES_DB: mydb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+
+volumes:
+  db-data:</code></pre>
+
+        <h3>Compose 常用指令</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>docker compose up -d</code></td>
+              <td>啟動所有服務 (背景)</td>
+            </tr>
+            <tr>
+              <td><code>docker compose down</code></td>
+              <td>停止並移除容器</td>
+            </tr>
+            <tr>
+              <td><code>docker compose down --volumes</code></td>
+              <td>停止並移除容器 + 卷</td>
+            </tr>
+            <tr>
+              <td><code>docker compose ps</code></td>
+              <td>查看服務狀態</td>
+            </tr>
+            <tr>
+              <td><code>docker compose logs -f</code></td>
+              <td>查看日誌 (即時)</td>
+            </tr>
+            <tr>
+              <td><code>docker compose restart</code></td>
+              <td>重啟服務</td>
+            </tr>
+            <tr>
+              <td><code>docker compose exec web sh</code></td>
+              <td>進入容器</td>
+            </tr>
+            <tr>
+              <td><code>docker compose build</code></td>
+              <td>從 Dockerfile 建立映像</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Dockerfile 教學 — 建立自己的映像</h2>
+        <p>Dockerfile 是描述如何建立映像的指令稿。以下是一個簡單的 Node.js 例子：</p>
+<pre><code># 使用官方 Node.js 18 為基礎
+FROM node:18-alpine
+
+# 設定工作目錄
+WORKDIR /app
+
+# 複製 package.json 並安裝依賴
+COPY package*.json ./
+RUN npm ci --only=production
+
+# 複製程式碼
+COPY . .
+
+# 設定環境變數
+ENV NODE_ENV=production
+
+# 開放連接埠
+EXPOSE 3000
+
+# 啟動指令
+CMD ["npm", "start"]</code></pre>
+
+        <h3>常用指令說明</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>FROM</code></td>
+              <td>指定基礎映像 (Base Image)</td>
+            </tr>
+            <tr>
+              <td><code>WORKDIR</code></td>
+              <td>設定容器內工作目錄</td>
+            </tr>
+            <tr>
+              <td><code>COPY / ADD</code></td>
+              <td>複製檔案到容器</td>
+            </tr>
+            <tr>
+              <td><code>RUN</code></td>
+              <td>執行命令</td>
+            </tr>
+            <tr>
+              <td><code>CMD / ENTRYPOINT</code></td>
+              <td>容器啟動時執行的命令</td>
+            </tr>
+            <tr>
+              <td><code>ENV</code></td>
+              <td>設定環境變數</td>
+            </tr>
+            <tr>
+              <td><code>EXPOSE</code></td>
+              <td>宣告暴露的連接埠</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Multi-Stage Build 最佳化映像</h3>
+        <p>Multi-stage build 可以顯著減少映像體積：</p>
+<pre><code># Multi-stage Dockerfile example
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+FROM node:18-alpine AS runtime
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY --from=builder /app/dist ./dist
+EXPOSE 3000
+CMD ["npm", "start"]</code></pre>
+
+        <h2>除錯與清理技巧</h2>
+        <p>學會這些指令，可以快速解決 90% 的 Docker 問題。</p>
+
+        <h3>常用除錯指令</h3>
+<pre><code># 進入正在運行的容器
+docker exec -it &lt;容器名&gt; sh
+
+# 查看容器環境變數
+docker inspect &lt;容器名&gt; | jq '.[0].Config.Env'
+
+# 查看容器映射的埠
+docker port &lt;容器名&gt;
+
+# 查看容器 IP 位址
+docker inspect &lt;容器名&gt; | jq '.[0].NetworkSettings.Networks'
+
+# 動態查看容器資源使用
+docker stats
+
+# 查看本地磁碟使用情況
+docker system df</code></pre>
+
+        <blockquote>
+          🔍 <strong>Debug 法則：</strong> 先用 <code>docker logs</code> 看日誌，再用 <code>docker exec -it</code> 進容器裡查看環境變數與檔案。90% 的問題都能快速解決！
+        </blockquote>
+
+        <h3>清理資源</h3>
+<pre><code># 清理停止的容器
+docker container prune
+
+# 清理未使用的卷
+docker volume prune
+
+# 清理未使用的網路
+docker network prune
+
+# 清理未使用的映像
+docker image prune
+
+# 一次清理所有無用資源
+docker system prune -a --volumes</code></pre>
+
+        <h3>常見問題速查</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>問題</th>
+              <th>解法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>容器無法存取宿主機資料</td>
+              <td>確認 <code>-v</code> 路徑是否正確</td>
+            </tr>
+            <tr>
+              <td>映射 port 發生 "address already in use"</td>
+              <td>用 <code>lsof -i :8080</code> 查找佔用 port</td>
+            </tr>
+            <tr>
+              <td>容器一直重啟 (restart loop)</td>
+              <td>用 <code>docker logs</code> 檢查錯誤訊息</td>
+            </tr>
+            <tr>
+              <td>映像太大</td>
+              <td>使用 .dockerignore、 alpine 版本、multi-stage build</td>
+            </tr>
+            <tr>
+              <td>無法 push 映像</td>
+              <td>確認是否登入 <code>docker login</code> 並有權限</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>.dockerignore 最佳化</h2>
+        <p>在建立映像時，<code>.dockerignore</code> 可以排除不想放入映像的檔案，減少映像體積：</p>
+<pre><code># .dockerignore
+node_modules
+npm-debug.log
+.git
+.gitignore
+.env
+*.md
+.dockerignore
+Dockerfile
+README.md
+tests/</code></pre>
+
+        <h2>結語</h2>
+        <p>Docker 不只是「部署好用的工具」，更是現代開發不可或缺的基礎 — 無論是本地開發、團隊協作、CI/CD，Docker 都在其中扮演關鍵角色。</p>
+        <blockquote>
+          🎯 <strong>快速回顧步驟：</strong><br>
+          &nbsp;&nbsp;1️⃣ 安裝 Docker Desktop / Engine（支援 Win/macOS/Linux）<br>
+          &nbsp;&nbsp;2️⃣ 掌握基本指令：<code>docker run / ps / images / exec / rm / logs</code><br>
+          &nbsp;&nbsp;3️⃣ 學會 <code>-v -p --name -it</code> 等常用參數<br>
+          &nbsp;&nbsp;4️⃣ 使用 <code>docker-compose.yml</code> 管理多容器服務<br>
+          &nbsp;&nbsp;5️⃣ 寫 <code>Dockerfile</code> 打造自己的映像，multi-stage build 優化體積<br><br>
+          30 分鐘從零開始，讓你的應用「一次打包、到處跑」，再也不需要擔心環境不一致的問題！
+        </blockquote>
+        <blockquote>
+          🔗 <strong>推薦資源：</strong><br>
+          &nbsp;&nbsp;• <a href="https://www.docker.com" target="_blank">Docker 官網</a><br>
+          &nbsp;&nbsp;• <a href="https://hub.docker.com" target="_blank">Docker Hub (映像市場)</a><br>
+          &nbsp;&nbsp;• <a href="https://docs.docker.com/get-started" target="_blank">Docker 官方文檔</a><br>
+          &nbsp;&nbsp;• <a href="https://docs.docker.com/compose/" target="_blank">Docker Compose 文檔</a><br>
+          &nbsp;&nbsp;• <a href="https://docs.docker.com/engine/reference/builder/" target="_blank">Dockerfile 參考</a>
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="#">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
