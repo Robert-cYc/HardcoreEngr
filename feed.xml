@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>"AI" 硬核工程師</title>
+    <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
+    <link>https://ai-hardcore-engineer.com</link>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 22 Aug 2026 14:00:00 GMT</lastBuildDate>
+    <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml">
+    <item>
+      <title>Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例</title>
+      <description>Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。</description>
+      <link>https://ai-hardcore-engineer.com/kubernetes-beginner-guide.html</link>
+      <guid>https://ai-hardcore-engineer.com/kubernetes-beginner-guide.html</guid>
+      <pubDate>Sat, 22 Aug 2026 14:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Zapier vs Make vs n8n：2026 工作流程自動化三大平台詳細比較</title>
+      <description>Zapier、Make.com、n8n 三大工作流程自動化平台在定價、功能、AI 整合與自架能力上的全面比較，包含 2026 年費用情境分析。</description>
+      <link>https://ai-hardcore-engineer.com/zapier-make-n8n-comparison.html</link>
+      <guid>https://ai-hardcore-engineer.com/zapier-make-n8n-comparison.html</guid>
+      <pubDate>Sat, 22 Aug 2026 13:50:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用</title>
+      <description>Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。</description>
+      <link>https://ai-hardcore-engineer.com/hermes-agent-guide.html</link>
+      <guid>https://ai-hardcore-engineer.com/hermes-agent-guide.html</guid>
+      <pubDate>Sat, 22 Aug 2026 13:43:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用</title>
+      <description>OpenClaw 是一個開源、自架的 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm）、完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）與進階技巧。</description>
+      <link>https://ai-hardcore-engineer.com/openclaw-ai-assistant.html</link>
+      <guid>https://ai-hardcore-engineer.com/openclaw-ai-assistant.html</guid>
+      <pubDate>Sat, 22 Aug 2026 13:31:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>Wireshark 網路封包分析完全攻略：安裝、基本使用與進階技巧</title>
+      <description>Wireshark 是一個強大的網路封包分析工具。本文詳細介紹 Wireshark 的安裝（Windows/macOS/Linux）、介面操作、顯示過濾、通訊協定分析與進階技巧，包含 HTTP、HTTPS/TLS、DNS、TCP 分析技巧。</description>
+      <link>https://ai-hardcore-engineer.com/wireshark-network-analysis.html</link>
+      <guid>https://ai-hardcore-engineer.com/wireshark-network-analysis.html</guid>
+      <pubDate>Sat, 22 Aug 2026 05:15:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Docker 容器化指南：安裝、基本指令與進階使用</title>
+      <description>Docker 是一個開源的容器化平台。本文詳細介紹 Docker 的概念、安裝方式、基本指令、Docker Compose 與進階技巧。</description>
+      <link>https://ai-hardcore-engineer.com/docker-container-guide.html</link>
+      <guid>https://ai-hardcore-engineer.com/docker-container-guide.html</guid>
+      <pubDate>Sat, 22 Aug 2026 05:13:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>n8n 工作流程自動化完全攻略：安裝、使用與進階技巧</title>
+      <description>n8n 是一個開源的工作流程自動化工具。本文詳細介紹 n8n 的特色、安裝方式、基本操作、常見整合案例與進階技巧。</description>
+      <link>https://ai-hardcore-engineer.com/n8n-workflow-automation.html</link>
+      <guid>https://ai-hardcore-engineer.com/n8n-workflow-automation.html</guid>
+      <pubDate>Sat, 22 Aug 2026 05:12:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>LM Studio 本地大模型攻略：下載、安裝、模型管理與 GPU 加速</title>
+      <description>LM Studio 是一個強大的本地 LLM 桌面應用程式。本文詳細介紹 LM Studio 的下載安裝、模型管理、對話功能、GPU 加速設定與實用技巧。</description>
+      <link>https://ai-hardcore-engineer.com/lm-studio-local-llm.html</link>
+      <guid>https://ai-hardcore-engineer.com/lm-studio-local-llm.html</guid>
+      <pubDate>Sat, 22 Aug 2026 02:38:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧</title>
+      <description>Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。</description>
+      <link>https://ai-hardcore-engineer.com/ollama-local-llm.html</link>
+      <guid>https://ai-hardcore-engineer.com/ollama-local-llm.html</guid>
+      <pubDate>Sat, 22 Aug 2026 02:29:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>本地大模型攻略：Hugging Face 下載 GGUF、llama.cpp 安裝與 GPU 加速</title>
+      <description>從 Hugging Face 下載 GGUF 格式模型，安裝 llama.cpp 在 Windows 上本地推理，設定 GPU Offload（CUDA/Vulkan/DirectML）與 Context 長度，一次搞懂。</description>
+      <link>https://ai-hardcore-engineer.com/llama-cpp-gguf.html</link>
+      <guid>https://ai-hardcore-engineer.com/llama-cpp-gguf.html</guid>
+      <pubDate>Sat, 22 Aug 2026 01:25:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>Claude Code 功能介紹、指令集及如何使用</title>
+      <description>Claude Code 是 Anthropic 推出的 AI 編碼助手，支援 Terminal、VS Code、Web 等多平台。本文整理其六大核心能力、完整的 CLI 命令與內建斜線指令速查。</description>
+      <link>https://ai-hardcore-engineer.com/claude-code-commands.html</link>
+      <guid>https://ai-hardcore-engineer.com/claude-code-commands.html</guid>
+      <pubDate>Fri, 21 Aug 2026 11:18:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Mac mini 常用指令入門 — 150 個指令一次搞懂</title>
+      <description>macOS 終端機結合 BSD Unix 與 Apple 圖形層強大功能。本文整理 150 個 macOS 常用指令，包含 Homebrew、剪貼簿、網路與開發工具。</description>
+      <link>https://ai-hardcore-engineer.com/mac-commands.html</link>
+      <guid>https://ai-hardcore-engineer.com/mac-commands.html</guid>
+      <pubDate>Fri, 21 Aug 2026 11:18:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Node.js、npm、npx 完整指令入門 — 60 個指令一次搞懂</title>
+      <description>Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。</description>
+      <link>https://ai-hardcore-engineer.com/node-js-commands.html</link>
+      <guid>https://ai-hardcore-engineer.com/node-js-commands.html</guid>
+      <pubDate>Fri, 21 Aug 2026 11:18:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Linux 常用指令入門 — 150 個指令一次搞懂</title>
+      <description>Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。</description>
+      <link>https://ai-hardcore-engineer.com/linux-commands.html</link>
+      <guid>https://ai-hardcore-engineer.com/linux-commands.html</guid>
+      <pubDate>Fri, 21 Aug 2026 01:49:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>Git 常用指令入門 — 從零開始掌握版本控制</title>
+      <description>Git 是全球最流行的分散式版本控制系統。本文整理核心概念與日常使用指令，從初始化到進階操作一次搞懂。</description>
+      <link>https://ai-hardcore-engineer.com/git-commands.html</link>
+      <guid>https://ai-hardcore-engineer.com/git-commands.html</guid>
+      <pubDate>Fri, 21 Aug 2026 01:49:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較</title>
+      <description>ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。</description>
+      <link>https://ai-hardcore-engineer.com/ai-models.html</link>
+      <guid>https://ai-hardcore-engineer.com/ai-models.html</guid>
+      <pubDate>Fri, 21 Aug 2026 01:49:25 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

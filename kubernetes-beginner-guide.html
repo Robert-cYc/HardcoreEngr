@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta name="description" content="Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/kubernetes-beginner-guide.html">
+  <meta property="og:title" content="Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例 — "AI" 硬核工程師">
+  <meta property="og:description" content="Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/kubernetes-beginner-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title=""AI" 硬核工程師 RSS" href="./feed.xml">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .related-articles {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .related-articles h3 {
+      margin-bottom: 1rem;
+    }
+    .related-article {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+    .related-article img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .related-article .ra-content {
+      flex: 1;
+    }
+    .related-article .ra-content h4 {
+      font-size: 1.1rem;
+      margin: 0 0 0.25rem;
+    }
+    .related-article .ra-content p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例 — \"AI\" 硬核工程師",
+  "description": "Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。",
+  "url": "https://ai-hardcore-engineer.com/kubernetes-beginner-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/kubernetes-beginner-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-2 600,78 900,38 C1200,-2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-12 600,88 900,38 C1200,-12 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,2 600,72 900,38 C1200,2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-8 600,92 900,38 C1200,-8 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,22 600,52 900,38 C1200,22 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-7 600,82 900,38 C1200,-7 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-7" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,18 600,62 900,38 C1200,18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-8" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-18 600,98 900,38 C1200,-18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-9" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,32 600,42 900,38 C1200,32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-10" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-32 600,118 900,38 C1200,-32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🙛</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>Kubernetes 入門完全攻略：<br>概念、安裝、kubectl 指令與 YAML 範例</h1>
+      <div class="article-meta">
+        <span>2026-08-22</span>
+        <span class="separator">·</span>
+        <span>25 分鐱閱</span>
+      </div>
+      <img loading="lazy" src="https://picsum.photos/seed/kubernetes/1200/400" alt="Kubernetes 容器編排">
+    </div>
+  </section>
+
+  <!-- =============== Article Body =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>Kubernetes (k8s)</strong> 是容器編排的工業標準，用來自動管理容器化應用的部署、擴展與運維：<br>
+          &nbsp;&nbsp;① 理解 k8s 核心概念 (Pod、Deployment、Service、Node、Cluster)<br>
+          &nbsp;&nbsp;② 安裝本地集群 (minikube / k3s / Docker Desktop)<br>
+          &nbsp;&nbsp;③ 掌握 kubectl 命令速查 (查詢、部署、擴展、更新、除錯)<br>
+          &nbsp;&nbsp;④ 學會撰寫 YAML 宣告 (Pod、Deployment、Service)<br>
+          &nbsp;&nbsp;⑤ 進階技巧 (ConfigMap、Secret、Ingress、Helm)<br><br>
+          20 分鐘從零開始，讓你的容器化應用自動在集群中「生存、復活、進化」！
+        </blockquote>
+
+        <h2>前言 — 什麼是 Kubernetes？</h2>
+        <p><strong>Kubernetes</strong> (縮寫為 <strong>k8s</strong>) 是一個<strong>開源的容器編排平台</strong>，原由 Google 開發並捐贈給 CNCF。你可以把它想像成「<em>容器的大腦</em>」 — 它負責在一群伺服器上，自動部署、擴展、管理和運維你的容器化應用。</p>
+
+        <h3>為什麼需要 Kubernetes？</h3>
+        <p>當你的應用從單台機器的 Docker 容器，成長到需要部署在多台伺服器上時，會遇到以下問題：</p>
+        <ul>
+          <li><strong>手動部署</strong> — 每台機器都要手動下 <code>docker run</code>，很麻煩</li>
+          <li><strong>負載不平衡</strong> — 流量怎麼分給哪台機器？</li>
+          <li><strong>擴展困難</strong> — 流量突增，要怎麼快速加容器？</li>
+          <li><strong>故障恢復</strong> — 某台機器掛了，容器要怎麼自動遷移？</li>
+          <li><strong>服務發現</strong> — 容器之間怎麼互相找到？IP 會變來變去</li>
+        </ul>
+        <p>Kubernetes 完美解決了這些問題 — 它確保你的應用<strong>永遠保持在預期的狀態</strong> (desired state)。</p>
+
+        <blockquote>
+          💡 <strong>比喻：</strong> 如果 Docker 是讓應用「可以打包移動」的貨櫃，那 Kubernetes 就是管理整個港口的 <strong>集裝箱港口碼頭</strong> — 指揮貨櫃船進出、分配碼頭位置、自動補貨與擴展。
+        </blockquote>
+
+        <h2>核心概念</h2>
+
+        <h3>Cluster & Node</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>概念</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cluster</strong></td>
+              <td>整個 Kubernetes 集群，由多個 Node 組成</td>
+            </tr>
+            <tr>
+              <td><strong>Node</strong></td>
+              <td>叢集中的單台機器 (Master + Worker nodes)</td>
+            </tr>
+            <tr>
+              <td><strong>Master/Node Control Plane</strong></td>
+              <td>集群主控面，負責調度、決策 (通常多機備份)</td>
+            </tr>
+            <tr>
+              <td><strong>Worker Node</strong></td>
+              <td>執行實際容器的工作節點 (kubelet + kube-proxy)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Pod — 最小部署單位</h3>
+        <p><strong>Pod</strong> 是 Kubernetes 中最小的部署單位。一個 Pod 可以包含一個或多個容器，這些容器共享網路命名空間與儲存卷。</p>
+<pre><code># 查看所有 Pod
+kubectl get pods
+
+# 查看 Pod 詳細資訊
+kubectl describe pod &lt;pod-name&gt;
+
+# 進入 Pod 的容器
+kubectl exec -it &lt;pod-name&gt; -- sh</code></pre>
+
+        <h3>Deployment — 宣告式部署</h3>
+        <p><strong>Deployment</strong> 管理 Pod 的生命週期，確保集群中始終有預期數量的 Pod 在運行。</p>
+        <p>如果 Pod 掛掉，Deployment 會自動重啟一個新的。</p>
+
+        <h3>Service — 服務發現</h3>
+        <p><strong>Service</strong> 提供一個固定的 IP 和 DNS 名稱，將流量負載均衡到後端的 Pod。</p>
+        <table>
+          <thead>
+            <tr>
+              <th>類型</th>
+              <th>說明</th>
+              <th>使用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ClusterIP</code></td>
+              <td>集群內部 IP</td>
+              <td>Pod 之間內部通信</td>
+            </tr>
+            <tr>
+              <td><code>NodePort</code></td>
+              <td>在每個 Node 上開放一個端口</td>
+              <td>臨時外部訪問</td>
+            </tr>
+            <tr>
+              <td><code>LoadBalancer</code></td>
+              <td>雲端 LoadBalancer 分配外部 IP</td>
+              <td>正式對外服務</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="article-tags">
+          <span class="tag">Kubernetes</span>
+          <span class="tag">K8s</span>
+          <span class="tag">容器編排</span>
+          <span class="tag">Docker</span>
+          <span class="tag">kubectl</span>
+          <span class="tag">教學</span>
+        </div>
+
+        <h2>安裝教學</h2>
+
+        <h3>Step 1：安裝 kubectl</h3>
+        <p>無論使用哪種本地集群工具，都需要先安裝 <code>kubectl</code>。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>平台</th>
+              <th>指令</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>macOS (Homebrew)</td>
+              <td><code>brew install kubectl</code></td>
+            </tr>
+            <tr>
+              <td>Linux (apt)</td>
+              <td><code>sudo apt-get install -y kubectl</code></td>
+            </tr>
+            <tr>
+              <td>Linux (下載二進位)</td>
+              <td><code>sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"</code></td>
+            </tr>
+            <tr>
+              <td>Windows (winget)</td>
+              <td><code>winget install Kubernetes.kubectl</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Step 2：選擇本地集群工具</h3>
+        <p>開發學習用，推薦 <strong>minikube</strong>；生產環境或 ARM 裝置推薦 <strong>k3s</strong>。</p>
+
+        <h4>Option A：minikube (推薦新手)</h4>
+        <p>系統需求：2 CPU+、2GB 記憶體、20GB 硬碟空間。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>平台</th>
+              <th>指令</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>macOS (Homebrew)</td>
+              <td><code>brew install minikube</code></td>
+            </tr>
+            <tr>
+              <td>Linux (下載二進位)</td>
+              <td><code>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && sudo install minikube-linux-amd64 /usr/local/bin/minikube</code></td>
+            </tr>
+            <tr>
+              <td>Windows (winget)</td>
+              <td><code>winget install Kubernetes.minikube</code></td>
+            </tr>
+          </tbody>
+        </table>
+<pre><code># 啟動集群
+minikube start
+
+# 檢查節點
+kubectl get nodes
+
+# 打開儀表板 (選用)
+minikube dashboard</code></pre>
+
+        <h4>Option B：k3s (輕量級，適合生產 / ARM)</h4>
+<pre><code># 安裝 k3s
+curl -sfL https://get.k3s.io | sh -
+
+# 設定 kubeconfig
+sudo cp /etc/rancher/k3s/k3s.yaml ~/
+sudo chown -R $USER:$USER k3s.yaml
+export KUBECONFIG=~/k3s.yaml
+
+# 驗證
+kubectl get nodes</code></pre>
+
+        <h4>Option C：Docker Desktop (Windows / macOS)</h4>
+        <ol>
+          <li>打開 Docker Desktop → Settings</li>
+          <li>啟用「Enable the Kubernetes checkbox」</li>
+          <li>點擊「Install」下載映像</li>
+          <li>切換 context：</li>
+        </ol>
+<pre><code>kubectl config use-context docker-desktop</code></pre>
+
+        <blockquote>
+          💡 <strong>macOS 選擇建議：</strong> 如果已安裝 Docker Desktop，可以直接開啟內建的 Kubernetes；否則使用 minikube 或 k3s。
+        </blockquote>
+
+        <h2>kubectl 命令速查</h2>
+
+        <h3>查詢資源</h3>
+<pre><code>kubectl get pods                    # 列出所有 Pod
+kubectl get pods -o wide            # 顯示更多資訊 (Node、IP)
+kubectl get pods,deploy,svc         # 同時顯示 Pod、Deployment、Service
+kubectl describe pod web            # 顯示 Pod 詳細資訊
+kubectl get deploy web -o yaml      # 匯出為 YAML
+kubectl cluster-info                # 顯示集群資訊</code></pre>
+
+        <h3>部署資源</h3>
+<pre><code>kubectl apply -f manifest.yaml      # 創建或更新資源
+kubectl delete -f manifest.yaml     # 刪除資源
+kubectl apply -f ./manifests/       # 批量部署資料夾</code></pre>
+
+        <h3>更新與擴展</h3>
+<pre><code># 更新映像版本
+kubectl set image deploy/web nginx=nginx:1.25
+
+# 調整副本數
+kubectl scale deploy/web --replicas=5
+
+# 應用 YAML 更改
+kubectl apply -f deployment.yaml
+
+# 預覽變更
+kubectl diff -f deployment.yaml</code></pre>
+
+        <h3>除錯</h3>
+<pre><code># 進入容器
+kubectl exec -it web-pod -- sh
+
+# 查看日誌
+kubectl logs web-pod
+kubectl logs -f web-pod            # 即時追蹤
+kubectl logs web-pod --previous    # 查看上一個容器日誌
+
+# Port forwarding (本地端口轉發)
+kubectl port-forward svc/web 8080:80
+
+# YAML 驗證
+kubectl apply --dry-run=client -f pod.yaml</code></pre>
+
+        <h2>YAML 範例</h2>
+
+        <h3>Pod</h3>
+<pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: web
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.25
+    ports:
+    - containerPort: 80</code></pre>
+
+        <h3>Deployment</h3>
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.25
+        ports:
+        - containerPort: 80</code></pre>
+
+        <h3>Service</h3>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  type: ClusterIP
+  selector:
+    app: web
+  ports:
+  - port: 80
+    targetPort: 80</code></pre>
+
+        <h3>ConfigMap & Secret</h3>
+<pre><code># ConfigMap: 普通配置
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  DATABASE_URL: "postgres://localhost:5432"
+
+---
+# Secret: 敏感資料 (Base64 編碼)
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secret
+type: Opaque
+data:
+  password: cGFzc3dvcmQ=</code></pre>
+
+        <h2>進階技巧</h2>
+
+        <h3>Ingress — 進站流量管理</h3>
+        <p><strong>Ingress</strong> 是 HTTP/HTTPS 路由的規則集合，需要 Ingress Controller (如 NGINX)：</p>
+<pre><code>apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web
+            port:
+              number: 80</code></pre>
+
+        <h3>Helm — 包管理工具</h3>
+        <p>Helm 是 Kubernetes 的包管理器，用 Chart 部署應用：</p>
+<pre><code># 安裝 Helm
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+# 添加 repository
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+# 部署 Redis
+helm install my-redis bitnami/redis
+
+# 列出部署
+helm list</code></pre>
+
+        <h2>常見命令速查表</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>類別</th>
+              <th>命令</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>查詢</td>
+              <td><code>kubectl get</code>、<code>kubectl describe</code>、<code>kubectl logs</code></td>
+            </tr>
+            <tr>
+              <td>部署</td>
+              <td><code>kubectl apply -f</code>、<code>kubectl delete -f</code></td>
+            </tr>
+            <tr>
+              <td>管理</td>
+              <td><code>kubectl scale</code>、<code>kubectl set image</code></td>
+            </tr>
+            <tr>
+              <td>除錯</td>
+              <td><code>kubectl exec -it</code>、<code>kubectl port-forward</code>、<code>kubectl describe</code></td>
+            </tr>
+            <tr>
+              <td>其他</td>
+              <td><code>kubectl config</code>、<code>kubectl explain</code>、<code>kubectl diff</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          🎯 <strong>學習路徑建議：</strong><br>
+          &nbsp;&nbsp;① 安裝 minikube，跑 Hello World<br>
+          &nbsp;&nbsp;② 學會 Deployment + Service，部署一個 Web 應用<br>
+          &nbsp;&nbsp;③ 學會 kubectl 除錯 (logs、exec、port-forward)<br>
+          &nbsp;&nbsp;④ 試試 Ingress + Helm，部署一個完整的應用<br>
+          &nbsp;&nbsp;⑤ 學習 YAML，掌握 ConfigMap / Secret / Ingress
+        </blockquote>
+
+        <h2>常見問題 (FAQ)</h2>
+
+        <h3>Q1: minikube 卡在啟動怎麼辦？</h3>
+        <ol>
+          <li>確保 Docker 或 VirtualBox 已啟動</li>
+          <li>嘗試指定驅動：<code>minikube start --driver=docker</code></li>
+          <li>刪除並重建：<code>minikube delete --purge</code> 然後 <code>minikube start</code></li>
+        </ol>
+
+        <h3>Q2: Pod 一直重啟 (CrashLoopBackOff)？</h3>
+        <p>檢查命令：</p>
+<pre><code># 查看 Pod 詳細資訊
+kubectl describe pod &lt;pod-name&gt;
+
+# 查看容器日誌
+kubectl logs &lt;pod-name&gt;
+kubectl logs &lt;pod-name&gt; --previous    # 上一個容器</code></pre>
+        <p>常見原因：映像版本錯誤、環境變數未設定、ConfigMap/Secret 未綁定、資源不足。</p>
+
+        <h3>Q3: 如何清理本地測試環境？</h3>
+<pre><code># minikube
+minikube delete --purge
+
+# k3s
+sudo /usr/local/bin/k3s-killall.sh
+
+# Docker Desktop
+# 在設定中停用 Kubernetes</code></pre>
+
+        <h3>Q4: Pod Pending 狀態怎麼辦？</h3>
+<pre><code># 查看詳情
+kubectl describe pod &lt;pod-name&gt;</code></pre>
+        <p>常見原因：映像拉不下來、儲存卷未分配、資源不足。</p>
+
+        <h3>Q5: 如何在本地存取 Service？</h3>
+<pre><code># 端口轉發
+kubectl port-forward svc/web 8080:80
+
+# 或改為 NodePort
+kubectl patch svc web -p '{"spec":{"type":"NodePort"}}'</code></pre>
+
+        <div class="related-articles">
+          <h3>相關文章推薦</h3>
+          <div class="related-article">
+            <img loading="lazy" src="https://picsum.photos/seed/docker/80/60" alt="Docker">
+            <div class="ra-content">
+              <h4>Docker 容器化指南</h4>
+              <p>容器化技術的領導者 Docker 的概念、安裝與指令使用教學。</p>
+            </div>
+          </div>
+          <div class="related-article">
+            <img loading="lazy" src="https://picsum.photos/seed/n8n/80/60" alt="n8n">
+            <div class="ra-content">
+              <h4>n8n 工作流程自動化完全攻略</h4>
+              <p>開源工作流程自動化工具 n8n 的安裝、使用與進階技巧。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-tags">
+          <span class="tag">Kubernetes</span>
+          <span class="tag">K8s</span>
+          <span class="tag">容器編排</span>
+          <span class="tag">Docker</span>
+          <span class="tag">kubectl</span>
+          <span class="tag">教學</span>
+        </div>
+
+        <div class="article-footer">
+          <a href="./articles.html" class="back-home">← 回文章列表</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="./feed.xml">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

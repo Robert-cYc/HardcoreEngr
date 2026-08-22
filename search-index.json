@@ -1,5 +1,17 @@
 [
   {
+    "title": "Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例",
+    "excerpt": "Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。",
+    "url": "kubernetes-beginner-guide.html",
+    "tags": ["Kubernetes", "K8s", "容器編排", "Docker", "kubectl", "教學"]
+  },
+  {
+    "title": "Zapier vs Make vs n8n：2026 工作流程自動化三大平台詳細比較",
+    "excerpt": "Zapier、Make.com、n8n 三大工作流程自動化平台在定價、功能、AI 整合與自架能力上的全面比較，包含 2026 年費用情境分析。",
+    "url": "zapier-make-n8n-comparison.html",
+    "tags": ["Zapier", "Make", "n8n", "工作流程自動化", "定價比較", "教學"]
+  },
+  {
     "title": "Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用",
     "excerpt": "Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。",
     "url": "hermes-agent-guide.html",

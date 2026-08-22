@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zapier vs Make vs n8n：2026 工作流程自動化三大平台詳細比較 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta name="description" content="Zapier、Make.com、n8n 三大工作流程自動化平台在定價、功能、AI 整合與自架能力上的全面比較。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/zapier-make-n8n-comparison.html">
+  <meta property="og:title" content="Zapier vs Make vs n8n：2026 工作流程自動化三大平台詳細比較 — "AI" 硬核工程師">
+  <meta property="og:description" content="Zapier、Make.com、n8n 三大工作流程自動化平台在定價、功能、AI 整合與自架能力上的全面比較。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/zapier-make-n8n-comparison.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zapier vs Make vs n8n：2026 工作流程自動化三大平台詳細比較 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Zapier、Make.com、n8n 三大工作流程自動化平台在定價、功能、AI 整合與自架能力上的全面比較。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title=""AI" 硬核工程師 RSS" href="./feed.xml">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .related-articles {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .related-articles h3 {
+      margin-bottom: 1rem;
+    }
+    .related-article {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+    .related-article img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .related-article .ra-content {
+      flex: 1;
+    }
+    .related-article .ra-content h4 {
+      font-size: 1.1rem;
+      margin: 0 0 0.25rem;
+    }
+    .related-article .ra-content p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Zapier vs Make vs n8n：2026 工作流程自動化三大平台詳細比較 — \"AI\" 硬核工程師",
+  "description": "Zapier、Make.com、n8n 三大工作流程自動化平台在定價、功能、AI 整合與自架能力上的全面比較，包含 2026 年費用情境分析。",
+  "url": "https://ai-hardcore-engineer.com/zapier-make-n8n-comparison.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/zapier-make-n8n-comparison.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-2 600,78 900,38 C1200,-2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-12 600,88 900,38 C1200,-12 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,2 600,72 900,38 C1200,2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-8 600,92 900,38 C1200,-8 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,22 600,52 900,38 C1200,22 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-7 600,82 900,38 C1200,-7 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-7" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,18 600,62 900,38 C1200,18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-8" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-18 600,98 900,38 C1200,-18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-9" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,32 600,42 900,38 C1200,32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-10" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-32 600,118 900,38 C1200,-32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🙛</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>Zapier vs Make vs n8n：<br>2026 工作流程自動化三大平台詳細比較</h1>
+      <div class="article-meta">
+        <span>2026-08-22</span>
+        <span class="separator">·</span>
+        <span>20 分鐱閱</span>
+      </div>
+      <img loading="lazy" src="https://picsum.photos/seed/zapier-comparison/1200/400" alt="Zapier vs Make vs n8n 比較">
+    </div>
+  </section>
+
+  <!-- =============== Article Body =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>Zapier、Make.com 與 n8n</strong> 是三大主流工作流程自動化平台。<br>
+          &nbsp;&nbsp;① 比較三者定價模式：<strong>Zapier 計 per task</strong>、<strong>Make 計 per credit</strong>、<strong>n8n 計 per execution</strong> 或<strong>自架免費</strong><br>
+          &nbsp;&nbsp;② 不同成本情境分析 (以 6 步工作流程 × 1000 次/月)</br>
+          &nbsp;&nbsp;③ 功能對比 (整合數量、視覺化編輯器、AI 功能、程式碼擴展)<br>
+          &nbsp;&nbsp;④ 2026 年 AI 更新進展<br>
+          &nbsp;&nbsp;⑤ 選擇建議 (依使用者類型與需求)
+        </blockquote>
+
+        <h2>前言 — 工作流程自動化平台概述</h2>
+        <p>工作流程自動化 (Workflow Automation) 是把「觸發事件 → 執行動作」的流程數位化，讓人不用手動完成重複性工作。</p>
+        <p>目前三大平台各有所長：</p>
+        <ul>
+          <li><strong>Zapier</strong> — 整合最多 (~8000+ apps)，適合非技術使用者</li>
+          <li><strong>Make.com</strong> — 費用最低，視覺化畫布支援複雜分支</li>
+          <li><strong>n8n</strong> — 完全開源、支援自架、程式碼擴展能力強</li>
+        </ul>
+
+        <h2>定價模型對比</h2>
+        <p>三個平台的計費方式不同，這直接影響使用成本：</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>平台</th>
+              <th>計費單位</th>
+              <th>計費範圍</th>
+              <th>免費方案</th>
+              <th>最便宜付費方案</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Zapier</strong></td>
+              <td>每月任務數 (task)</td>
+              <td>每次成功的 <em>action step</em> (觸發 & 過濾不計費)</td>
+              <td>100 tasks/月</td>
+              <td>Professional: $19.99/月 (750 tasks)</td>
+            </tr>
+            <tr>
+              <td><strong>Make.com</strong></td>
+              <td>每月積分 (credit)</td>
+              <td>每次 <em>module 執行</em> (含觸發、過濾、迭代)</td>
+              <td>1,000 credits/月</td>
+              <td>Core: $9/月 (10,000 credits)</td>
+            </tr>
+            <tr>
+              <td><strong>n8n Cloud</strong></td>
+              <td>每月執行次數 (execution)</td>
+              <td>每次完整工作流程執行 (不管多少步)</td>
+              <td>試用期</td>
+              <td>Starter: €20/月 (2,500 executions)</td>
+            </tr>
+            <tr>
+              <td><strong>n8n Self-hosted</strong></td>
+              <td>伺服器成本</td>
+              <td>無限制</td>
+              <td>免費</td>
+              <td>$5 VPS (Linode/Cloudflare)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>成本情境分析</h3>
+        <p>以「6 步工作流程執行 1000 次/月」為例：</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>平台</th>
+              <th>所需單位</th>
+              <th>預估月費</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zapier</td>
+              <td>6,000 tasks</td>
+              <td>$119.99+ (Professional 2 方案)</td>
+            </tr>
+            <tr>
+              <td>Make.com</td>
+              <td>6,000 credits</td>
+              <td>$9 (Core 方案，還剩餘餘額)</td>
+            </tr>
+            <tr>
+              <td>n8n Cloud</td>
+              <td>1,000 executions</td>
+              <td>€20 (Starter 方案)</td>
+            </tr>
+            <tr>
+              <td>n8n Self-hosted</td>
+              <td>無限制</td>
+              <td>$5 (VPS 費用)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          💡 <strong>關鍵結論：</strong><br>
+          &nbsp;&nbsp;• <strong>Make.com</strong> 最適合<strong>複雜但低頻</strong>的工作流程 — 積分計算粒度細，費用最低<br>
+          &nbsp;&nbsp;• <strong>Zapier</strong> 最適合<strong>簡單但高頻</strong>的操作 — 計價透明但放大昂貴<br>
+          &nbsp;&nbsp;• <strong>n8n 自架</strong> 最適合<strong>大規模或企業</strong> — 伺服器費為唯一成本
+        </blockquote>
+
+        <div class="article-tags">
+          <span class="tag">Zapier</span>
+          <span class="tag">Make</span>
+          <span class="tag">n8n</span>
+          <span class="tag">工作流程自動化</span>
+          <span class="tag">定價比較</span>
+          <span class="tag">教學</span>
+        </div>
+
+        <h2>功能對比</h2>
+
+        <h3>視覺化編輯器</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>平台</th>
+              <th>視覺化編輯器</th>
+              <th>特色</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zapier</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>直線式易懂，適合新手</td>
+            </tr>
+            <tr>
+              <td>Make.com</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>畫布式支援複雜分支，更靈活</td>
+            </tr>
+            <tr>
+              <td>n8n</td>
+              <td>⭐⭐⭐</td>
+              <td>節點圖形編輯，功能強大但學習曲線陡峭</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>整合數量</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>平台</th>
+              <th>整合數量</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zapier</td>
+              <td>~8,000+</td>
+              <td>最多整合，涵蓋各領域</td>
+            </tr>
+            <tr>
+              <td>Make.com</td>
+              <td>~3,000+</td>
+              <td>整合豐富，品質穩定</td>
+            </tr>
+            <tr>
+              <td>n8n</td>
+              <td>~400+ native + custom HTTP</td>
+              <td>原生整合少，但可以用 HTTP 連接任何 API</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>AI 功能</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>平台</th>
+              <th>AI 功能</th>
+              <th>2026 更新</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zapier</td>
+              <td>⭐⭐⭐</td>
+              <td>Zapier Copilot (對話式建立流程), AI by Zapier, AI Actions</td>
+            </tr>
+            <tr>
+              <td>Make.com</td>
+              <td>⭐⭐⭐</td>
+              <td>AI Agents beta, BYOK AI 支援, AI Web Search, MCP Server</td>
+            </tr>
+            <tr>
+              <td>n8n</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>70+ AI 節點, LangChain 整合, 多 Agent 架構, RAG 系統</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>程式碼擴展</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>平台</th>
+              <th>程式碼支援</th>
+              <th>自架能力</th>
+              <th>資料主權</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zapier</td>
+              <td>⭐⭐ (有限 code steps)</td>
+              <td>❌ No</td>
+              <td>SaaS only</td>
+            </tr>
+            <tr>
+              <td>Make.com</td>
+              <td>⭐⭐⭐ (Custom functions)</td>
+              <td>❌ No</td>
+              <td>SaaS only</td>
+            </tr>
+            <tr>
+              <td>n8n</td>
+              <td>⭐⭐⭐⭐⭐ (JavaScript/TypeScript)</td>
+              <td>✅ Yes (free Community Ed.)</td>
+              <td>✅ Full control</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>2026 年 AI 更新進展</h2>
+        <ul>
+          <li><strong>Zapier</strong>：<br>
+            • 「AI by Zapier」整合 OpenAI<br>
+            • 「Zapier Copilot」對話式建立自動化流程<br>
+            • AI Actions 讓非技術使用者也能操作 AI</li>
+          <li><strong>Make.com</strong>：<br>
+            • AI Agents beta — 在流程中加入 AI 判斷<br>
+            • BYOK AI 支援 — 連接自己的 OpenAI/Anthropic 金鑰<br>
+            • AI Web Search、MCP Server 支援</li>
+          <li><strong>n8n</strong>：<br>
+            • 70+ 專用 AI 節點 (OpenAI、Claude、Gemini 等)<br>
+            • LangChain 整合 — 建立 RAG 系統<br>
+            • 多 Agent 架構支援 — 讓 AI 代理人協同工作</li>
+        </ul>
+
+        <h2>如何選擇？</h2>
+        <p>根據不同的使用者類型與需求，推薦如下：</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <th>使用場景</th>
+              <th>推薦平台</th>
+            </tr>
+            <tr>
+              <td>快速建立簡單自動化 (非技術者)</td>
+              <td><strong>Zapier</strong></td>
+            </tr>
+            <tr>
+              <td>複雜分支、多步驟工作流程</td>
+              <td><strong>Make.com</strong></td>
+            </tr>
+            <tr>
+              <td>開發者、程式碼擴展、自架</td>
+              <td><strong>n8n</strong></td>
+            </tr>
+            <tr>
+              <td>高頻大量運行 (10K+ 操作/月)</td>
+              <td><strong>n8n self-hosted</strong> 或 <strong>Make</strong></td>
+            </tr>
+            <tr>
+              <td>受管控行業 (資料主權要求高)</td>
+              <td><strong>n8n</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          🎯 <strong>選擇速查：</strong><br>
+          &nbsp;&nbsp;• <strong>「想快速玩」</strong> → Zapier (30 min 上手)<br>
+          &nbsp;&nbsp;• <strong>「想省錢」</strong> → Make (粒度細、費用低)<br>
+          &nbsp;&nbsp;• <strong>「想掌控資料」</strong> → n8n 自架 (零成本運維)<br>
+          &nbsp;&nbsp;• <strong>「想寫程式」</strong> → n8n (JavaScript 節點)
+        </blockquote>
+
+        <h3>延伸閱讀</h3>
+        <p>對於 n8n 的詳細安裝與使用教學，請參考我們的文章 <a href="./n8n-workflow-automation.html">「n8n 工作流程自動化完全攻略」</a>。</p>
+
+        <div class="related-articles">
+          <h3>相關文章推薦</h3>
+          <div class="related-article">
+            <img loading="lazy" src="https://picsum.photos/seed/n8n/80/60" alt="n8n">
+            <div class="ra-content">
+              <h4>n8n 工作流程自動化完全攻略</h4>
+              <p>開源工作流程自動化工具 n8n 的安裝、使用與進階技巧。</p>
+            </div>
+          </div>
+          <div class="related-article">
+            <img loading="lazy" src="https://picsum.photos/seed/docker/80/60" alt="Docker">
+            <div class="ra-content">
+              <h4>Docker 容器化指南</h4>
+              <p>容器化技術的領導者 Docker 的概念、安裝與指令使用教學。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-tags">
+          <span class="tag">Zapier</span>
+          <span class="tag">Make</span>
+          <span class="tag">n8n</span>
+          <span class="tag">工作流程自動化</span>
+          <span class="tag">定價比較</span>
+          <span class="tag">教學</span>
+        </div>
+
+        <div class="article-footer">
+          <a href="./articles.html" class="back-home">← 回文章列表</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="./feed.xml">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
