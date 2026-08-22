@@ -485,15 +485,17 @@ body.dark-mode {
   padding: 0.5rem 1rem;
   margin-bottom: 1.5rem;
   position: relative;
-  height: 2.2rem;
+  height: 3.6rem;
+  min-height: 3.6rem;
 }
 .marquee-content {
   white-space: nowrap;
-  animation: marquee-scroll 20s linear infinite;
-  font-size: 0.95rem;
+  animation: marquee-scroll 25s linear infinite;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 2.2rem;
+  line-height: 1.8;
   padding-left: 100%;
+  word-break: break-all;
 }
 .marquee-content:hover {
   animation-play-state: paused;
