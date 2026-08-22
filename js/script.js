@@ -248,9 +248,44 @@ function initTOC() {
   });
 }
 
+// ===== Marquee: Fetch Random Motivational Quotes =====
+// Uses the free Quotable API to fetch a random quote on each page load.
+// Falls back to a built-in list if the API is unavailable.
+const defaultQuotes = [
+  { content: "Talk is cheap. Show me the code.", author: "Linus Torvalds" },
+  { content: "Stay hungry, stay foolish.", author: "Steve Jobs" },
+  { content: "Code is like humor. You know it's good when it's clean.", author: "Cory House" },
+  { content: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+  { content: "Simplicity is the soul of efficiency.", author: "Austin Freeman" },
+  { content: "The best error message is the one that never happens.", author: "Thomas Fuchs" },
+  { content: "Premature optimization is the root of all evil.", author: "Donald Knuth" },
+  { content: "Make it work, make it right, make it fast.", author: "Kent Beck" },
+];
+
+async function fetchQuote() {
+  try {
+    const res = await fetch('https://api.quotable.io/random', { cache: 'no-store' });
+    if (!res.ok) throw new Error('API error');
+    const data = await res.json();
+    return { content: data.content, author: data.author };
+  } catch (err) {
+    console.warn('Quote API failed, using fallback:', err);
+    return defaultQuotes[Math.floor(Math.random() * defaultQuotes.length)];
+  }
+}
+
+async function initMarquee() {
+  const container = document.querySelector('.marquee-content');
+  if (!container) return;
+
+  const quote = await fetchQuote();
+  container.textContent = `❝ ${quote.content} ❞ —  ${quote.author}`;
+}
+
 // ===== Init =====
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initSearch();
   initTOC();
+  initMarquee();
 });

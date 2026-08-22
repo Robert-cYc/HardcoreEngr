@@ -476,11 +476,45 @@ body.dark-mode {
   border-top: 1px solid var(--border);
   color: var(--text-muted);
 }
-.affiliate {
-  font-size: 1.1rem; /* 10% larger */
+/* =============== Marquee (Motivational Quotes) =============== */
+.marquee-container {
+  overflow: hidden;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  height: 2.2rem;
+}
+.marquee-content {
+  white-space: nowrap;
+  animation: marquee-scroll 20s linear infinite;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  line-height: 2.2rem;
+  padding-left: 100%;
+}
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.marquee-meta {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   font-style: italic;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 /* =============== Search Results =============== */
