@@ -36,6 +36,12 @@
     "tags": ["Claude Code", "AI", "編碼助手", "指令", "Anthropic"]
   },
   {
+    "title": "本地大模型攻略：Hugging Face 下載 GGUF、llama.cpp 安裝與 GPU 加速",
+    "excerpt": "從 Hugging Face 下載 GGUF 格式模型，安裝 llama.cpp 在 Windows 上本地推理，設定 GPU Offload（CUDA/Vulkan/DirectML）與 Context 長度，一次搞懂。",
+    "url": "llama-cpp-gguf.html",
+    "tags": ["llama.cpp", "GGUF", "Hugging Face", "GPU Offload", "Windows", "本地推理", "教學"]
+  },
+  {
     "title": "所有文章",
     "excerpt": "關於前端開發、後端技術、Git 與 AI 開發的技術博客。",
     "url": "articles.html",
