@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta name="description" content="Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/hermes-agent-guide.html">
+  <meta property="og:title" content="Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用 — "AI" 硬核工程師">
+  <meta property="og:description" content="Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/hermes-agent-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用 — \"AI\" 硬核工程師",
+  "description": "Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。",
+  "url": "https://ai-hardcore-engineer.com/hermes-agent-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/hermes-agent-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-2 600,78 900,38 C1200,-2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-12 600,88 900,38 C1200,-12 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,2 600,72 900,38 C1200,2 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-4" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-8 600,92 900,38 C1200,-8 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-5" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,22 600,52 900,38 C1200,22 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-6" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-7 600,82 900,38 C1200,-7 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-7" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,18 600,62 900,38 C1200,18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-8" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-18 600,98 900,38 C1200,-18 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-9" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,32 600,42 900,38 C1200,32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+      <svg class="wave wave-10" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,38 C300,-32 600,118 900,38 C1200,-32 1200,38 1200,100 L0,100 Z"></path>
+      </svg>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🙛</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用</h1>
+      <div class="article-meta">
+        <span>2026-08-22</span>
+        <span class="separator">·</span>
+        <span>35 分鐱閱</span>
+      </div>
+      <img loading="lazy" src="https://picsum.photos/seed/hermes/1200/400" alt="Hermes Agent AI 助手">
+    </div>
+  </section>
+
+  <!-- =============== Article Body =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>Hermes Agent</strong> 是 Nous Research 開發的開源 AI 助手，支援 CLI 與多頻道整合：<br>
+          &nbsp;&nbsp;① 理解 Hermes Agent 的特色 (記憶、排程、子代理器、沙箱、MCP)<br>
+          &nbsp;&nbsp;② 安裝 Hermes Agent (curl 腳本 / macOS / Windows / Linux)<br>
+          &nbsp;&nbsp;③ 掌握基本操作 (chat、send、setup、model、config)<br>
+          &nbsp;&nbsp;④ 完整 CLI 命令速查 (12 大類指令)<br>
+          &nbsp;&nbsp;⑤ 進階技巧 (子代理器、沙箱、排程、MCP、skills、bundles)<br>
+          &nbsp;&nbsp;⑥ 常見問題解決<br><br>
+          30 分鐱從零開始，把強大的 AI 助手架設在你的電腦或 VPS 上！
+        </blockquote>
+
+        <h2>前言 — 什麼是 Hermes Agent？</h2>
+        <p><strong>Hermes Agent</strong> 是一個<strong>開源的 AI 助手平台</strong>，由 <strong>Nous Research</strong> 開發，以 MIT 授權釋出。你可以把它想像成「<em>可跑在你的電腦或 VPS 上的一個會思考並執行任務的 AI 助手</em>」。</p>
+        <p>與以付費為主的 AI 助手不同，Hermes Agent 的特色包括：</p>
+        <ul>
+          <li><strong>跨平台連接</strong> — Telegram、Discord、Slack、WhatsApp、Signal、Email、CLI</li>
+          <li><strong>持久記憶</strong> — 學習你的習慣，永遠記得解決問題的方法</li>
+          <li><strong>自然語言排程</strong> — 「每天早上發報表」、「週五備份資料」</li>
+          <li><strong>子代理器</strong> — 同時執行多個獨立的 AI 任務</li>
+          <li><strong>網頁瀏覽 &amp; 視覺</strong> — 支援網頁搜尋、圖片生成、多模態推理</li>
+          <li><strong>沙箱隔離</strong> — 五種沙箱後端 (本地、Docker、SSH、Singularity、Modal)</li>
+        </ul>
+
+        <blockquote>
+          🦝 <strong>Hermes Agent 與其他方案的比較：</strong><br>
+          | 方案 | 開源 | 自架 | 多頻道 | 記憶功能 | 沙箱 |<br>
+          |---|---|---|---|---|---|<br>
+          | Hermes Agent | ✅ | ✅ | ✅ | ✅ | ✅ |<br>
+          | Claude Code | ❌ | ❌ | 部分 | ❌ | ❌ |<br>
+          | ChatGPT | ❌ | ❌ | ❌ | ❌ | ❌ |<br>
+          | OpenClaw | ✅ | ✅ | ✅ | ✅ | ✅ |
+        </blockquote>
+
+        <h2>安裝教學</h2>
+
+        <h3>系統需求</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>需求</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>作業系統</strong></td>
+              <td>macOS / Linux / Windows / WSL2 / Android (Termux)</td>
+            </tr>
+            <tr>
+              <td><strong>依賴</strong></td>
+              <td>Git、curl、xz-utils (Linux) — 安裝器會自動安裝 Python (uv)、Node.js、ripgrep、ffmpeg</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>方法 1：安裝腳本 (推薦)</h3>
+        <p>官方提供一鍵安裝腳本，自動處理所有依賴：</p>
+
+        <h4>macOS / Linux / WSL2:</h4>
+<pre><code>curl -fsSL https://hermes-agent.nousresearch.com/install.sh \
+  | bash</code></pre>
+
+        <h4>Windows (PowerShell):</h4>
+<pre><code>iex (irm https://hermes-agent.nousresearch.com/install.ps1)</code></pre>
+
+        <blockquote>
+          ⚠️ <strong>Linux 前置需求：</strong><br>
+          <code>sudo apt install curl xz-utils build-essential</code>
+        </blockquote>
+
+        <h3>方法 2：Native 桌面應用程式</h3>
+        <p>官網也提供 macOS / Windows / Linux 的圖形化安裝包，可從 <a href="https://hermes-agent.nousresearch.com" target="_blank">官網</a> 下載。</p>
+
+        <h3>驗證安裝</h3>
+<pre><code>hermes --version
+hermes doctor    # 診斷安裝環境</code></pre>
+
+        <div class="article-tags">
+          <span class="tag">Hermes Agent</span>
+          <span class="tag">Nous Research</span>
+          <span class="tag">AI 助手</span>
+          <span class="tag">開源</span>
+          <span class="tag">CLI</span>
+          <span class="tag">教學</span>
+        </div>
+
+        <h2>基本使用</h2>
+
+        <h3>設定 (Setup)</h3>
+        <p>首次安裝後，執行設定精靈來配置模型、API 金鑰、語音和工具：</p>
+<pre><code># 互動式設定 (推薦)
+hermes setup
+
+# 僅設定缺少的項目
+hermes setup --quick
+
+# 無互動模式 (使用預設值)
+hermes setup --non-interactive
+
+# 一鍵 Nous Portal 設定
+hermes setup --portal</code></pre>
+
+        <h3>選擇 AI 模型</h3>
+<pre><code># 互動式選擇模型提供商與模型
+hermes model
+
+# 在聊天時臨時切換模型
+hermes chat -q "你好" -m claude-3-5-sonnet-20241022</code></pre>
+        <p>支援的提供商包括：OpenRouter、Anthropic、OpenAI、Google、以及許多本地模型。</p>
+
+        <h3>開始聊天</h3>
+<pre><code># 啟動互動式聊天
+hermes chat
+
+# 單次查詢 (非互動)
+hermes chat -q "解釋一下什麼是 TCP 三向交握"
+
+# 靜默模式 (僅輸出回答)
+hermes -z "解釋一下什麼是 TCP 三向交握"</code></pre>
+
+        <h3>發送訊息到通道</h3>
+<pre><code># 發送訊息到 Telegram
+hermes send -t telegram:&lt;聊天對象&gt; "幫我發一下明天的會議提醒"
+
+# 發送檔案
+hermes send -t discord:&lt;頻道&gt; -f /path/to/report.md -s "每日報告"</code></pre>
+
+        <h3>全局選項 (Global Options)</h3>
+        <p>所有命令都支援以下全局選項：</p>
+        <table>
+          <thead>
+            <tr>
+              <th>選項</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--profile &lt;name&gt;</code></td>
+              <td>選擇配置檔個人檔案</td>
+            </tr>
+            <tr>
+              <td><code>--resume &lt;session&gt;</code></td>
+              <td>恢復指定對話</td>
+            </tr>
+            <tr>
+              <td><code>--continue / -c</code></td>
+              <td>恢復最近的對話</td>
+            </tr>
+            <tr>
+              <td><code>--worktree / -w</code></td>
+              <td>使用獨立的 git 工作樹</td>
+            </tr>
+            <tr>
+              <td><code>--tui</code></td>
+              <td>啟動終端應用程式 (TUI)</td>
+            </tr>
+            <tr>
+              <td><code>--yolo</code></td>
+              <td>跳過所有確認提示</td>
+            </tr>
+            <tr>
+              <td><code>--dev</code></td>
+              <td>以 TypeScript 原始碼模式啟動 (開發用)</td>
+            </tr>
+            <tr>
+              <td><code>--safe-mode</code></td>
+              <td>停用所有客製化設定</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>完整 CLI 命令速查</h2>
+        <p>以下是 Hermes Agent 支援的所有 CLI 命令，按功能分類整理：</p>
+
+        <h3>對話與互動</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>hermes chat</code></td>
+              <td>互動式聊天或單次查詢 (<code>-q</code> 單次, <code>-z</code> 靜默)</td>
+            </tr>
+            <tr>
+              <td><code>hermes send</code></td>
+              <td>發送訊息到平台 (Telegram, Discord 等)</td>
+            </tr>
+            <tr>
+              <td><code>hermes --resume</code></td>
+              <td>恢復之前的對話</td>
+            </tr>
+            <tr>
+              <td><code>hermes --continue</code></td>
+              <td>繼續最近的對話</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>設定與配置</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>hermes setup</code></td>
+              <td>互動式設定精靈 (<code>--quick</code>、<code>--portal</code>、<code>--non-interactive</code>)</td>
+            </tr>
+            <tr>
+              <td><code>hermes model</code></td>
+              <td>模型提供商與模型選擇器</td>
+            </tr>
+            <tr>
+              <td><code>hermes config</code></td>
+              <td>配置檔管理 (show、edit、get、set、unset、path)</td>
+            </tr>
+            <tr>
+              <td><code>hermes auth</code></td>
+              <td>認證管理 (add、list、remove、logout、status)</td>
+            </tr>
+            <tr>
+              <td><code>hermes tools</code></td>
+              <td>工具配置 (啟用/停用特定平台工具)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>系統管理</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>hermes status</code></td>
+              <td>顯示代理人/認證/平台狀態</td>
+            </tr>
+            <tr>
+              <td><code>hermes doctor</code></td>
+              <td>診斷配置與依賴問題</td>
+            </tr>
+            <tr>
+              <td><code>hermes logs</code></td>
+              <td>查看/過濾日誌 (agent、errors、gateway、gui)</td>
+            </tr>
+            <tr>
+              <td><code>hermes update</code></td>
+              <td>更新到最新版本 (--check 預覽, --backup 備份)</td>
+            </tr>
+            <tr>
+              <td><code>hermes backup</code></td>
+              <td>備份設定到 zip 檔 (--output、--quick、--label)</td>
+            </tr>
+            <tr>
+              <td><code>hermes import</code></td>
+              <td>從備份 zip 還原</td>
+            </tr>
+            <tr>
+              <td><code>hermes dump</code></td>
+              <td>顯示可供複製的設定摘要</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>消息與頻道 (Messaging &amp; Channels)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>hermes gateway</code></td>
+              <td>管理消息閘道 (run、start/stop/restart、status、setup)</td>
+            </tr>
+            <tr>
+              <td><code>hermes whatsapp</code></td>
+              <td>設定 WhatsApp 橋樨</td>
+            </tr>
+            <tr>
+              <td><code>hermes whatsapp-cloud</code></td>
+              <td>設定 Meta WhatsApp Business Cloud API</td>
+            </tr>
+            <tr>
+              <td><code>hermes slack</code></td>
+              <td>生成 Slack 應用程式清單單 (<code>manifest</code>)</td>
+            </tr>
+            <tr>
+              <td><code>hermes pairing</code></td>
+              <td>批准/撤銷消息配對</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>開發工具 (Development Tools)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>hermes skills</code></td>
+              <td>瀏覽/安裝/配置技能 (browse、install、list、update、uninstall)</td>
+            </tr>
+            <tr>
+              <td><code>hermes bundles</code></td>
+              <td>將多個技能組合成單個 <code>/&lt;name&gt;</code> 指令</td>
+            </tr>
+            <tr>
+              <td><code>hermes mcp</code></td>
+              <td>管理 MCP 伺服器 (install、serve、add、list、test、configure)</td>
+            </tr>
+            <tr>
+              <td><code>hermes completion</code></td>
+              <td>生成 shell 自動補全腳本</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>進階功能 (Advanced Features)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>hermes portals</code></td>
+              <td>工具閘道路由</td>
+            </tr>
+            <tr>
+              <td><code>hermes egress</code></td>
+              <td>出站憑證注入防火牆</td>
+            </tr>
+            <tr>
+              <td><code>hermes kanban</code></td>
+              <td>多配置文件協作面板</td>
+            </tr>
+            <tr>
+              <td><code>hermes insights</code></td>
+              <td>Token/費用/活動分析</td>
+            </tr>
+            <tr>
+              <td><code>hermes sandbox</code></td>
+              <td>沙箱管理 (local、Docker、SSH、Singularity、Modal)</td>
+            </tr>
+            <tr>
+              <td><code>hermes moa</code></td>
+              <td>配置 Mixture of Agents 預設集</td>
+            </tr>
+            <tr>
+              <td><code>hermes memory</code></td>
+              <td>配置外部記憶提供商</td>
+            </tr>
+            <tr>
+              <td><code>hermes sessions</code></td>
+              <td>管理對話 (list、export、delete、rename)</td>
+            </tr>
+            <tr>
+              <td><code>hermes cron</code></td>
+              <td>檢查 cron 排程器</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>進階技巧</h2>
+
+        <h3>子代理器 (Subagents)</h3>
+        <p>Hermes Agent 支援同時執行多個獨立的 AI 子代理器，每個都有自己的會話、終端和 Python 腳本：</p>
+<pre><code># 與子代理器一起聊天
+hermes chat -q "請同時研究 Kubernetes 和 Docker 的差異" -s k8s-research</code></pre>
+
+        <h3>沙箱隔離 (Sandboxing)</h3>
+        <p>Hermes Agent 支援五種沙箱後端，可以安全地執行代碼：</p>
+<pre><code># 使用 Docker 沙箱
+hermes chat -q "幫我執行一個 Python 腳本" --profile docker
+
+# 使用 SSH 沙箱 (遠端伺服器)
+hermes chat --profile ssh</code></pre>
+
+        <h3>自然語言排程 (Scheduling)</h3>
+        <p>只要在對話中告訴 Hermes 什麼時候執行，即可自動排程：</p>
+<pre><code># 在聊天中輸入:
+# "每天早上 9 點發送周報到 Slack"
+# "週五下午 5 點備份資料庫"
+# "明天下午 2 點提醒我開會"
+
+# 查看排程
+hermes cron</code></pre>
+
+        <h3>技能擴展 (Skills &amp; Bundles)</h3>
+        <p>Hermes Agent 支援透過技能 (skills) 擴展功能，並將多個技能組合成 bundles：</p>
+<pre><code># 瀏覽可用技能
+hermes skills browse
+
+# 安裝技能
+hermes skills install github-issues
+
+# 建立 bundle (將多個技能組合)
+hermes bundles create dev-tools --skill github --skill jira --skill terminal
+
+# 管理 MCP 伺服器
+hermes mcp install context7</code></pre>
+
+        <h3>設定管理最佳實踪</h3>
+        <ul>
+          <li>使用 <code>--profile</code> 建立多個獨立配置 (如 <code>dev</code>、<code>prod</code>、<code>personal</code>)</li>
+          <li>定期執行 <code>hermes backup create</code> 備份你的設定</li>
+          <li>使用 <code>hermes logs -f --level debug</code> 即時監看日誌</li>
+          <li>配置完成後執行 <code>hermes doctor</code> 驗證環境健康狀態</li>
+          <li>使用 <code>hermes -z "..."</code> 來自腳本自動化 (僅輸出回答)</li>
+        </ul>
+
+        <h2>常見問題 (FAQ)</h2>
+
+        <h3>Q1: Hermes Agent 支援哪些 AI 模型？</h3>
+        <p>支援眾多提供商，包括：</p>
+        <ul>
+          <li><strong>OpenRouter</strong> — 支援 300+ 模型</li>
+          <li><strong>Anthropic</strong> — Claude 3/4 系列</li>
+          <li><strong>OpenAI</strong> — GPT-4、o1 等</li>
+          <li><strong>Google</strong> — Gemini 1.5/2.0</li>
+          <li><strong>本地模型</strong> — 透過 Ollama、llama.cpp 等</li>
+        </ul>
+
+        <h3>Q2: Hermes Agent 的免費版有什麼限制？</h3>
+        <p>免費版本支援所有功能，但每月有使用額度。付費方案 (Plus/Super/Ultra) 提供：</p>
+        <ul>
+          <li>每月 AI 額度</li>
+          <li>300+ 模型透過 Nous Portal 存取</li>
+          <li>優先支援</li>
+          <li>進階功能解鎖</li>
+        </ul>
+
+        <h3>Q3: Hermes Agent 資料安全嗎？</h3>
+        <p>支援 <strong>本地部署</strong> 與 <strong>沙箱隔離</strong>。你的 API 金鑰存在本地，並可選擇使用本地模型 (如 Ollama) 完全不經第三方伺服器。</p>
+
+        <h3>Q4: 如何在 VPS 上部署 Hermes Agent？</h3>
+<pre><code># 在 VPS 上安裝
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh \
+  | bash
+
+# 設定 Gateway 服務 (background)
+hermes gateway install
+hermes gateway start
+
+# 配置 Telegram/Discord
+hermes gateway setup</code></pre>
+
+        <h3>Q5: 如何更新 Hermes Agent？</h3>
+<pre><code># 檢查更新
+hermes update --check
+
+# 更新並備份
+hermes update --backup --yes</code></pre>
+
+        <div class="article-tags">
+          <span class="tag">Hermes Agent</span>
+          <span class="tag">Nous Research</span>
+          <span class="tag">AI 助手</span>
+          <span class="tag">開源</span>
+          <span class="tag">CLI</span>
+          <span class="tag">教學</span>
+        </div>
+
+        <div class="article-footer">
+          <a href="./articles.html" class="back-home">← 回文章列表</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="#">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

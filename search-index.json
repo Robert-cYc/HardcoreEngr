@@ -1,5 +1,11 @@
 [
   {
+    "title": "Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用",
+    "excerpt": "Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。",
+    "url": "hermes-agent-guide.html",
+    "tags": ["Hermes Agent", "Nous Research", "AI 助手", "開源", "CLI", "教學"]
+  },
+  {
     "title": "OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用",
     "excerpt": "OpenClaw 是一個開源、自架的 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm）、完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）與進階技巧。",
     "url": "openclaw-ai-assistant.html",
