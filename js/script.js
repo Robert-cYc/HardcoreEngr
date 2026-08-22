@@ -55,7 +55,7 @@ if (menuToggle && nav) {
 
 // ===== Dark Mode Toggle =====
 const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+const body = document.documentElement;
 
 function applyTheme(theme) {
   if (theme === 'dark') {

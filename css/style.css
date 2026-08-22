@@ -49,30 +49,8 @@ ul {
   --wave-opacity: 0.18;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f1117;
-    --bg-alt: #1a1c23;
-    --text: #e5e7eb;
-    --text-muted: #9ca3af;
-    --border: #2d3748;
-    --accent: #60a5fa;
-    --accent-hover: #93c5fd;
-    --wave-color: #7dd3fc;
-    --wave-color-2: #bae6fd;
-    --wave-color-3: #a5b4fc;
-    --wave-color-4: #68d7db;
-    --wave-color-5: #5ce7d7;
-    --wave-color-6: #818cf8;
-    --wave-color-7: #fbbf24;
-    --wave-color-8: #fcd34d;
-    --wave-color-9: #6ee7b7;
-    --wave-color-10: #f871b3;
-    --wave-opacity: 0.25;
-  }
-}
-
 /* Manual dark mode override (via theme toggle) */
+:root.dark-mode,
 body.dark-mode {
   --bg: #0f1117;
   --bg-alt: #1a1c23;
@@ -589,6 +567,7 @@ body.dark-mode {
 .theme-toggle:hover {
   background: var(--bg-alt);
 }
+:root.dark-mode .theme-toggle,
 body.dark-mode .theme-toggle {
   color: var(--accent);
 }
