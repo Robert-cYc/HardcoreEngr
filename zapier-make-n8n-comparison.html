@@ -192,37 +192,8 @@
 <body>
   <!-- =============== Header =============== -->
   <header class="site-header">
-    <div class="waves">
-      <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,38 C300,-2 600,78 900,38 C1200,-2 1200,38 1200,100 L0,100 Z"></path>
-      </svg>
-      <svg class="wave wave-2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,38 C300,-12 600,88 900,38 C1200,-12 1200,38 1200,100 L0,100 Z"></path>
-      </svg>
-      <svg class="wave wave-3" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,38 C300,2 600,72 900,38 C1200,2 1200,38 1200,100 L0,100 Z"></path>
-      </svg>
-      <svg class="wave wave-4" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,38 C300,-8 600,92 900,38 C1200,-8 1200,38 1200,100 L0,100 Z"></path>
-      </svg>
-      <svg class="wave wave-5" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,38 C300,22 600,52 900,38 C1200,22 1200,38 1200,100 L0,100 Z"></path>
-      </svg>
-      <svg class="wave wave-6" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,38 C300,-7 600,82 900,38 C1200,-7 1200,38 1200,100 L0,100 Z"></path>
-      </svg>
-      <svg class="wave wave-7" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,38 C300,18 600,62 900,38 C1200,18 1200,38 1200,100 L0,100 Z"></path>
-      </svg>
-      <svg class="wave wave-8" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,38 C300,-18 600,98 900,38 C1200,-18 1200,38 1200,100 L0,100 Z"></path>
-      </svg>
-      <svg class="wave wave-9" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,38 C300,32 600,42 900,38 C1200,32 1200,38 1200,100 L0,100 Z"></path>
-      </svg>
-      <svg class="wave wave-10" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,38 C300,-32 600,118 900,38 C1200,-32 1200,38 1200,100 L0,100 Z"></path>
-      </svg>
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
     </div>
     <div class="container header-inner">
       <div class="logo">
@@ -621,6 +592,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>
