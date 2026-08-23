@@ -91,12 +91,41 @@ if (themeToggle) {
 // ===== Static Site Search (Fuse.js) =====
 let fuse = null;
 
+async function loadSearchIndex() {
+  // Try fetch first (works when served via HTTP)
+  try {
+    const response = await fetch('./search-index.json');
+    if (response.ok) return await response.json();
+  } catch (e) {
+    // fetch fails on file:// protocol, fall through to XHR
+  }
+
+  // Fallback: XMLHttpRequest (works better with file:// protocol)
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', './search-index.json', true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if ((xhr.status === 200 || xhr.status === 0) && xhr.responseText) {
+          try {
+            resolve(JSON.parse(xhr.responseText));
+          } catch (e) {
+            reject(new Error('Failed to parse search index'));
+          }
+        } else {
+          reject(new Error('Failed to load search index'));
+        }
+      }
+    };
+    xhr.send();
+  });
+}
+
 async function initSearch() {
   if (!window.Fuse || !searchInput) return;
 
   try {
-    const response = await fetch('./search-index.json');
-    const index = await response.json();
+    const index = await loadSearchIndex();
 
     fuse = new Fuse(index, {
       keys: ['title', 'excerpt', 'tags'],
@@ -115,12 +144,16 @@ async function initSearch() {
         return;
       }
       searchTimeout = setTimeout(() => {
+        if (!fuse) return;
         const results = fuse.search(query);
         renderSearchResults(results);
       }, 200);
     });
   } catch (err) {
-    console.warn('Search index not found:', err);
+    console.warn('Search initialization failed:', err);
+    if (searchResultsEl) {
+      searchResultsEl.innerHTML = '<div class="search-no-results">搜尋功能未就緒，請使用 HTTP 伺服器開啟此網站</div>';
+    }
   }
 }
 

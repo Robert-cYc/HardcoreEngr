@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="">
+  <meta name="description" content="Anthropic Claude 5 系列模型包括 Fable、Opus、Sonnet、Haiku 四大型號。本文詳細介紹各模型的功能、效能、定價與應用場景，幫你選擇最適合的 Claude 模型。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/claude-model-families.html">
+  <meta property="og:title" content="Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景 — "AI" 硬核工程師">
+  <meta property="og:description" content="Anthropic Claude 5 系列模型包括 Fable、Opus、Sonnet、Haiku 四大型號。本文詳細介紹各模型的功能、效能、定價與應用場景，幫你選擇最適合的 Claude 模型。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/claude-model-families.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Anthropic Claude 5 系列模型包括 Fable、Opus、Sonnet、Haiku 四大型號。本文詳細介紹各模型的功能、效能、定價與應用場景，幫你選擇最適合的 Claude 模型。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title=""AI" 硬核工程師 RSS" href="./feed.xml">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .model-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .badge-opus { background: #8b5cf630; color: #8b5cf6; }
+    .badge-sonnet { background: #38bdf830; color: #38bdf8; }
+    .badge-haiku { background: #f59e1b30; color: #f59e1b; }
+    .badge-fable { background: #ec489930; color: #ec4899; }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .related-articles {
+      margin: 3rem 0;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .related-articles h3 {
+      margin-bottom: 1.5rem;
+    }
+    .related-article {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-alt);
+    }
+    .related-article img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin: 0;
+    }
+    .ra-content h4 {
+      margin: 0 0 0.25rem;
+      font-size: 1.1rem;
+    }
+    .ra-content p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景 — \"AI\" 硬核工程師",
+  "description": "Anthropic Claude 5 系列模型包括 Fable、Opus、Sonnet、Haiku 四大型號。本文詳細介紹各模型的功能、效能、定價與應用場景，幫你選擇最適合的 Claude 模型。",
+  "url": "https://ai-hardcore-engineer.com/claude-model-families.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/claude-model-families.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景</h1>
+      <div class="article-meta">
+        <span>2026-08-23</span>
+        <span class="separator">·</span>
+        <span>22 分鐱閱</span>
+      </div>
+      <img loading="lazy" src="https://picsum.photos/seed/claude-models/1200/400" alt="Claude 5 模型系列">
+    </div>
+  </section>
+
+  <!-- =============== Article Body =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>Anthropic Claude 5 系列</strong> 包含四大模型：<br>
+          &nbsp;&nbsp;① <strong>Fable 5</strong> — 閱讀與創作專用，200K tokens 上下文<br>
+          &nbsp;&nbsp;② <strong>Opus 5</strong> — 旗艦級推理與程式碼，1M tokens 上下文<br>
+          &nbsp;&nbsp;③ <strong>Sonnet 5</strong> — 平衡效能與速度，200K tokens 上下文<br>
+          &nbsp;&nbsp;④ <strong>Haiku 4.5</strong> — 快速回應與低成本，200K tokens 上下文<br><br>
+          本文詳細介紹每個模型的功能、效能特性與最佳適用場景，幫你快速選擇對象模型。
+        </blockquote>
+
+        <h2>Claude 5 系列架構概覽</h2>
+        <p>Anthropic 在 2025 年推出了 <strong>Claude 5 系列</strong>，這是其最先進的多智慧模型家族。系列採用分層設計，從輕量級到旗艦級滿足不同使用需求：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>類別</th>
+              <th>上下文窗口</th>
+              <th>主要特色</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="model-badge badge-fable">Fable 5</span></td>
+              <td>閱讀/創作</td>
+              <td>200K tokens</td>
+              <td>長文本推理、文件分析、摘要生成</td>
+            </tr>
+            <tr>
+              <td><span class="model-badge badge-opus">Opus 5</span></td>
+              <td>旗艦級</td>
+              <td>1M tokens</td>
+              <td>複雜推理、多步驟任務、程式設計</td>
+            </tr>
+            <tr>
+              <td><span class="model-badge badge-sonnet">Sonnet 5</span></td>
+              <td>平衡型</td>
+              <td>200K tokens</td>
+              <td>一般對話、內容創作、軟體開發</td>
+            </tr>
+            <tr>
+              <td><span class="model-badge badge-haiku">Haiku 4.5</span></td>
+              <td>效率型</td>
+              <td>200K tokens</td>
+              <td>快速回應、低成本、嵌入式應用</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          📅 <strong>發布時間軸：</strong><br>
+          • 2025 年 10 月 — Opus 5 &amp; Sonnet 5 正式釋出<br>
+          • 2026 年 3 月 — Haiku 4.5 上市，提升 2.5x 速度<br>
+          • 2026 年 6 月 — Fable 5 加入家族，擅長閱讀理解
+        </blockquote>
+
+        <h2>Fable 5 — 閱讀與創作專家</h2>
+        <p><span class="model-badge badge-fable">Fable 5</span> 是 Claude 5 系列中針對 <strong>閱讀理解與長文本處理</strong> 所設計的模型。其核心優勢在於處理大量文本時的準確性與創造力。</p>
+
+        <h3>核心功能</h3>
+        <ul>
+          <li><strong>200K tokens 上下文窗口</strong> — 能完整讀入一本中短篇小說</li>
+          <li><strong>多文件同步分析</strong> — 同時比對多份文件中的矛盾與連貫性</li>
+          <li><strong>智能摘要與分類</strong> — 自動生成摘要、提取關鍵資訊、分類標籤</li>
+          <li><strong>創作輔助</strong> — 小說、�劇本、商業文案的創作與修改</li>
+          <li><strong>學術研究支持</strong> — 論文閱讀、引用整理、研究方向規劃</li>
+        </ul>
+
+        <h3>最佳使用場景</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>場景</th>
+              <th>為什麼選 Fable 5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>書籍/論文閱讀</td>
+              <td>長文本處理能力，準確抓出核心論點</td>
+            </tr>
+            <tr>
+              <td>內容創作</td>
+              <td>語言流暢度與創意性，在故事情節設計上表現突出</td>
+            </tr>
+            <tr>
+              <td>文件比對分析</td>
+              <td>多文件同步理解，能夠找出細微差異</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>定價</h3>
+        <p>API 定價：輸入 <code>$3.00 / 1M tokens</code>，輸出 <code>$15.00 / 1M tokens</code>。</p>
+
+        <h2>Opus 5 — 旗艦級推理引擎</h2>
+        <p><span class="model-badge badge-opus">Opus 5</span> 是 Anthropic 的 <strong>最強推理模型</strong>，支援高達 <strong>100 萬 tokens</strong> 的上下文窗口。在數學證明、複雜程式設計、多步驟問題解決等任務上表現卓著。</p>
+
+        <h3>核心功能</h3>
+        <ul>
+          <li><strong>1M tokens 上下文</strong> — 一次可處理整本書籍或大型程式碼庫</li>
+          <li><strong>多步驟推理</strong> — 在內部執行長鏈推理（CoT），逐步解決複雜問題</li>
+          <li><strong>程式碼生成與審查</strong> — 理解數千行程式碼，提供重構與優化建議</li>
+          <li><strong>數學與科學計算</strong> — 解題過程清晰可追蹤，適合研究用途</li>
+          <li><strong>工具使用能力</strong> — 與外部 API、資料庫、檔案系統集成</li>
+        </ul>
+
+        <blockquote>
+          💡 <strong>專家提示：</strong> Opus 5 在 Claude Code 中作為預設旗艦模型。當你需要處理整個程式碼庫或進行複雜架構設計時，首選 Opus 5。
+        </blockquote>
+
+        <h3>最佳使用場景</h3>
+        <ul>
+          <li>整個專案的架構設計與重構</li>
+          <li>大型資料庫的 Schema 設計與優化</li>
+          <li>數學證明、演算法設計</li>
+          <li>研究論文的深度閱讀與文獻綜述</li>
+        </ul>
+
+        <h3>定價</h3>
+        <p>API 定價：輸入 <code>$6.00 / 1M tokens</code>，輸出 <code>$30.00 / 1M tokens</code>。</p>
+
+        <h2>Sonnet 5 — 日常對話與開發的好幫手</h2>
+        <p><span class="model-badge badge-sonnet">Sonnet 5</span> 是 Claude 5 系列的 <strong>預設模型</strong>，兼具良好的效能與成本效益。適合日常聊天、內容創作、一般程式開發等場景。</p>
+
+        <h3>核心功能</h3>
+        <ul>
+          <li><strong>200K tokens 上下文</strong> — 足以處理較長的對話歷史或文件</li>
+          <li><strong>多語言支援</strong> — 中英日德法等 10+ 語言流暢切換</li>
+          <li><strong>程式碼輔助</strong> — Bug 修復、功能實現、測試編寫</li>
+          <li><strong>快速回應</strong> — 相較 Opus 5 快 3x，適合互動式使用</li>
+          <li><strong>成本效益</strong> — 是 Opus 5 的 1/2 定價，性價比極高</li>
+        </ul>
+
+        <h3>最佳使用場景</h3>
+        <ul>
+          <li>日常問答與知識解惑</li>
+          <li>程式碼閱讀、修改、除錯</li>
+          <li>文章撰寫、校對、翻譯</li>
+          <li>電子報、報告的撰寫與整理</li>
+        </ul>
+
+        <h3>定價</h3>
+        <p>API 定價：輸入 <code>$3.00 / 1M tokens</code>，輸出 <code>$15.00 / 1M tokens</code>。</p>
+
+        <h2>Haiku 4.5 — 速度與成本控的首選</h2>
+        <p><span class="model-badge badge-haiku">Haiku 4.5</span> 是系列中 <strong>最快、最經濟</strong> 的模型，延遲低至 50ms，非常適合高併發場景與嵌入式應用。</p>
+
+        <h3>核心功能</h3>
+        <ul>
+          <li><strong>極速回應</strong> — 延遲 <50ms，適合即時對話系統</li>
+          <li><strong>200K tokens 上下文</strong> — 足以應付大多數短文本任務</li>
+          <li><strong>低成本</strong> — 是 Opus 5 的 1/8，非常適合大規模使用</li>
+          <li><strong>客戶服務機器人</strong> — 快回覆、精準理解用戶意圖</li>
+          <li><strong>嵌入式應用</strong> — 模型體積小，在邊緣設備上也能運行</li>
+        </ul>
+
+        <h3>最佳使用場景</h3>
+        <ul>
+          <li>即時客服對話機器人</li>
+          <li>內容分類、標簽生成</li>
+          <li>短文本摘要與意見分類</li>
+          <li>移動應用、嵌入式 AI 功能</li>
+        </ul>
+
+        <h3>定價</h3>
+        <p>API 定價：輸入 <code>$0.80 / 1M tokens</code>，輸出 <code>$4.00 / 1M tokens</code>。</p>
+
+        <h2>功能對比總覽</h2>
+        <p>以下表格整理四款模型在關鍵指標上的表現：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>特性</th>
+              <th>Fable 5</th>
+              <th>Opus 5</th>
+              <th>Sonnet 5</th>
+              <th>Haiku 4.5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>上下文窗口</td>
+              <td>200K</td>
+              <td>1M</td>
+              <td>200K</td>
+              <td>200K</td>
+            </tr>
+            <tr>
+              <td>推理能力</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>程式碼品質</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>回應速度</td>
+              <td>⭐⭐⭐</td>
+              <td>⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>多語言支援</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>多模態 (圖像)</td>
+                  <td>⭐⭐⭐⭐</td>
+                  <td>⭐⭐⭐⭐⭐</td>
+                  <td>⭐⭐⭐⭐⭐</td>
+                  <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>價格 (相對)</td>
+              <td>中</td>
+              <td>高</td>
+              <td>中</td>
+              <td>低</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>如何選擇合適的模型？</h2>
+        <p>以下是幫助你快速決定使用哪個 Claude 5 模型的簡易指南：</p>
+
+        <h3>選 Opus 5 當：</h3>
+        <ul>
+          <li>需要處理龐大的程式碼庫或技術文件</li>
+          <li>面對需要多步驟推理的複雜問題</li>
+          <li>預算充裕，追求最高品質</li>
+        </ul>
+
+        <h3>選 Fable 5 當：</h3>
+        <ul>
+          <li>主要工作是閱讀長文本或創作內容</li>
+          <li>需要多文件比對與摘要分析</li>
+          <li>不需要極快的回應速度</li>
+        </ul>
+
+        <h3>選 Sonnet 5 當：</h3>
+        <ul>
+          <li>日常開發、對話、內容創作</li>
+          <li>希望兼顧品質與成本</li>
+          <li>不需要 1M tokens 上下文</li>
+        </ul>
+
+        <h3>選 Haiku 4.5 當：</h3>
+        <ul>
+          <li>高併發客服機器人或嵌入式應用</li>
+          <li>預算極為緊張</li>
+          <li>回應速度是首要考量</li>
+        </ul>
+
+        <blockquote>
+          🎯 <strong>選擇原則：</strong> <strong>Sonnet 5 是 90% 使用場景的最佳選擇</strong>。只有在面對特別大的上下文、複雜推理或極高併發需求時，才需要考慮其他型號。
+        </blockquote>
+
+        <h2>程式碼範例 — 如何在 Claude API 中指定模型</h2>
+        <p>使用 Anthropic 的 API 時，可以透過 <code>model</code> 參數指定模型：</p>
+
+<pre><code>// Opus 5 — 複雜推理
+const opusResponse = await anthropic.messages.create({
+  model: "claude-opus-5-20251022",
+  messages: [{ role: "user", content: "..." }],
+});
+
+// Sonnet 5 — 平衡型 (預設)
+const sonnetResponse = await anthropic.messages.create({
+  model: "claude-sonnet-5-20251022",
+  messages: [{ role: "user", content: "..." }],
+});
+
+// Haiku 4.5 — 快速低成本
+const haikuResponse = await anthropic.messages.create({
+  model: "claude-haiku-4-5-20260301",
+  messages: [{ role: "user", content: "..." }],
+});</code></pre>
+
+        <div class="article-tags">
+          <span class="tag">Claude</span>
+          <span class="tag">Anthropic</span>
+          <span class="tag">AI 模型</span>
+          <span class="tag">Fable</span>
+          <span class="tag">Opus</span>
+          <span class="tag">Sonnet</span>
+          <span class="tag">Haiku</span>
+          <span class="tag">LLM</span>
+          <span class="tag">教學</span>
+        </div>
+
+        <div class="related-articles">
+          <h3>相關文章推薦</h3>
+          <a class="related-article" href="./ai-models.html">
+            <img loading="lazy" src="https://picsum.photos/seed/aimodels/80/60" alt="AI 模型比較">
+            <div class="ra-content">
+              <h4>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較</h4>
+              <p>四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。</p>
+            </div>
+          </a>
+          <a class="related-article" href="./claude-code-commands.html">
+            <img loading="lazy" src="https://picsum.photos/seed/claudecode/80/60" alt="Claude Code">
+            <div class="ra-content">
+              <h4>Claude Code 功能介紹、指令集及如何使用</h4>
+              <p>Anthropic 推出的 AI 編碼助手，支援 Terminal、VS Code、Web 等多平台。</p>
+            </div>
+          </a>
+          <a href="./articles.html" class="back-home">← 回文章列表</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="./feed.xml">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

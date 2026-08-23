@@ -1,5 +1,29 @@
 [
   {
+    "title": "GPT-5 完整攻略：OpenAI 新世代模型家族功能、定價與應用場景",
+    "excerpt": "OpenAI GPT-5 系列包含 GPT-5、GPT-5 Turbo、GPT-5 Mini 等多個版本。本文詳細介紹各模型的架構、上下文窗口、程式碼能力、定價與 OpenAI 生態整合。",
+    "url": "gpt-5-model-guide.html",
+    "tags": ["GPT-5", "OpenAI", "AI 模型", "LLM", "多模態", "Agent", "教學"]
+  },
+  {
+    "title": "xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景",
+    "excerpt": "xAI Grok 2.5 由 Elon Musk 領導的 xAI 開發，支援即時搜尋、Twitter/X 整合、語音對話與多模態功能。",
+    "url": "grok-model-guide.html",
+    "tags": ["Grok", "xAI", "Elon Musk", "AI 模型", "即時搜尋", "LLM", "教學"]
+  },
+  {
+    "title": "Google Gemini 完整攻略：1.5、2.0、2.5 系列模型介紹、功能與應用場景",
+    "excerpt": "Google Gemini 系列模型包含 1.5、2.0、2.5 多個版本。本文詳細介紹各模型的多模態能力、上下文窗口、定價、程式碼表現與 Google 生態整合。",
+    "url": "gemini-model-guide.html",
+    "tags": ["Gemini", "Google", "Google DeepMind", "AI 模型", "多模態", "LLM", "教學"]
+  },
+  {
+    "title": "Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景",
+    "excerpt": "Anthropic Claude 5 系列模型包括 Fable、Opus、Sonnet、Haiku 四大型號。本文詳細介紹各模型的功能、效能、定價與應用場景，幫你選擇最適合的 Claude 模型。",
+    "url": "claude-model-families.html",
+    "tags": ["Claude", "Anthropic", "AI 模型", "Fable", "Opus", "Sonnet", "Haiku", "LLM", "教學"]
+  },
+  {
     "title": "Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例",
     "excerpt": "Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。",
     "url": "kubernetes-beginner-guide.html",

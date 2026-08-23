@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="">
+  <meta name="description" content="xAI Grok 2.5 是 Elon Musk 領導的 xAI 開發的 AI 助手。本文詳細介紹 Grok 的即時搜尋、Twitter/X 整合、程式碼能力、定價與應用場景。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/grok-model-guide.html">
+  <meta property="og:title" content="xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景 — "AI" 硬核工程師">
+  <meta property="og:description" content="xAI Grok 2.5 是 Elon Musk 領導的 xAI 開發的 AI 助手。本文詳細介紹 Grok 的即時搜尋、Twitter/X 整合、程式碼能力、定價與應用場景。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/grok-model-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="xAI Grok 2.5 是 Elon Musk 領導的 xAI 開發的 AI 助手。本文詳細介紹 Grok 的即時搜尋、Twitter/X 整合、程式碼能力、定價與應用場景。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title=""AI" 硬核工程師 RSS" href="./feed.xml">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; }
+    .article-body { max-width: 920px; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body img { border-radius: 8px; margin: 1.5rem auto; display: block; max-width: 100%; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.1rem; }
+    .article-body th, .article-body td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); }
+    .model-badge { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.88rem; font-weight: 600; }
+    .badge-grok { background: #10b98130; color: #10b981; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .related-articles { margin: 3rem 0; padding: 2rem 0; border-top: 1px solid var(--border); }
+    .related-articles h3 { margin-bottom: 1.5rem; }
+    .related-article { display: flex; gap: 1rem; margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-alt); }
+    .related-article img { width: 80px; height: 60px; object-fit: cover; border-radius: 4px; margin: 0; }
+    .ra-content h4 { margin: 0 0 0.25rem; font-size: 1.1rem; }
+    .ra-content p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景 — \"AI\" 硬核工程師",
+  "description": "xAI Grok 2.5 是 Elon Musk 領導的 xAI 開發的 AI 助手。本文詳細介紹 Grok 的即時搜尋、Twitter/X 整合、程式碼能力、定價與應用場景。",
+  "url": "https://ai-hardcore-engineer.com/grok-model-guide.html",
+  "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/grok-model-guide.html" }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景</h1>
+      <div class="article-meta">
+        <span>2026-08-23</span>
+        <span class="separator">·</span>
+        <span>18 分鐱閱</span>
+      </div>
+      <img loading="lazy" src="https://picsum.photos/seed/grok/1200/400" alt="xAI Grok AI 助手">
+    </div>
+  </section>
+
+  <!-- =============== Article Body =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>xAI Grok</strong> 由 Elon Musk 領導的 xAI 開發，定位為「地道的朋友」：<br>
+          &nbsp;&nbsp;① <strong>Grok 2.5</strong> — 最新版本，128K tokens，即時搜尋<br>
+          &nbsp;&nbsp;② <strong>Grok 1.5</strong> — 舊版，128K tokens，Twitter/X 整合<br><br>
+          本文介紹 Grok 的即時搜尋、Twitter/X 整合、程式碼能力與定價。
+        </blockquote>
+
+        <h2>什麼是 Grok？</h2>        <p><span class="model-badge badge-grok">Grok</span> 是由 <strong>xAI (X Artificial Intelligence)</strong> 開發的 AI 助手，由 <strong>Elon Musk</strong> 領導。Grok 的定位是「<em>一個真正的朋友</em>」(Real Friend) — 注重幽默感、非官方的互動風格，並擅長提供「<strong>截至今天</strong>」的即時資訊。</p>
+
+        <p>與 ChatGPT、Claude 等「靜態知識」模型不同，Grok 的最大特色是 <strong>即時搜尋 X (Twitter) 平台上的最新動態</strong>，讓它能夠提供搶鮮聞的資訊。</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>開發公司</th>
+              <th>最新版本</th>
+              <th>發布時間</th>
+              <th>上下文窗口</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="model-badge badge-grok">Grok 2.5</span></td>
+              <td>xAI</td>
+              <td>Grok 2.5</td>
+              <td>2026 年 3 月</td>
+              <td>128K tokens</td>
+            </tr>
+            <tr>
+              <td>Grok 1.5</td>
+              <td>xAI</td>
+              <td>Grok 1.5</td>
+              <td>2025 年 8 月</td>
+              <td>128K tokens</td>
+            </tr>
+            <tr>
+              <td>Grok 1</td>
+              <td>xAI</td>
+              <td>Grok 1</td>
+              <td>2024 年 11 月</td>
+              <td>128K tokens</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          📅 <strong>發布時間軸：</strong><br>
+          • 2024 年 11 月 — Grok 1 正式發布<br>
+          • 2025 年 8 月 — Grok 1.5，提升推理與多語言能力<br>
+          • 2026 年 3 月 — Grok 2.5，強化即時搜尋與語音功能
+        </blockquote>
+
+        <h2>Grok 2.5 — 即時搜尋的利器</h2>
+        <p><span class="model-badge badge-grok">Grok 2.5</span> 是截至 2026 年 8 月 <strong>最新版本</strong>。它深度整合 <strong>X (Twitter) 即時動態</strong>，能在幾秒內回應熱門話題、新聞與市場行情。</p>
+
+        <h3>核心功能</h3>
+        <ul>
+          <li><strong>即時搜尋 X 平台</strong> — 取得「截至今天」的最新資訊</li>
+          <li><strong>語音對話</strong> — 支援語音輸入與輸出 (Beta)</li>
+          <li><strong>多模態能力</strong> — 圖像理解、簡單圖像生成</li>
+          <li><strong>幽默感</strong> — 語氣風格更親和、不拘形式</li>
+          <li><strong>128K tokens</strong> — 足以處理中長文本與程式碼</li>
+        </ul>
+
+        <h3>與 X (Twitter) 的深度整合</h3>
+        <p>Grok 可以直接瀏覽 X 平台上的貼文、話題與趨勢，並結合外部搜尋結果一起回答：</p>
+        <ul>
+          <li>「幫我解釋今天發生了什麼事」</li>
+          <li>「最近 Bitcoin 的走勢如何」</li>
+          <li>「X 上的熱門 hashtag 有哪些」</li>
+        </ul>
+
+        <h3>程式碼能力</h3>
+        <p>Grok 在程式開發上表現 <strong>中上水準</strong>，特別是在 Python、JavaScript、Go 等流行語言上：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>語言</th>
+              <th>Grok 2.5</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Python</td><td>⭐⭐⭐⭐</td><td>資料分析、AI 腳本優秀</td></tr>
+            <tr><td>JavaScript</td><td>⭐⭐⭐</td><td>Node.js 與前端基礎支援</td></tr>
+            <tr><td>TypeScript</td><td>⭐⭐⭐</td><td>型別推斷有待加強</td></tr>
+            <tr><td>Go</td><td>⭐⭐⭐⭐</td><td>並發與系統程式不錯</td></tr>
+            <tr><td>Rust</td><td>⭐⭐</td><td>複雜寫法時常報錯</td></tr>
+            <tr><td>Shell</td><td>⭐⭐⭐⭐</td><td>Bash 腳本處理得不錯</td></tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          🔍 <strong>觀察：</strong> Grok 語言支援廣度略遠落後於 GPT-5 和 Claude 5，但在 Python 與 Go 上表現可圈可價。
+        </blockquote>
+
+        <h2>Grok 1.5 — 基礎版本</h2>
+        <p>Grok 1.5 發布於 2025 年，是早期版本。主要改進包括推理鏈延長與多語言支援，但仍缺乏語音對話與圖像生成功能。</p>
+
+        <h2>功能對比</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>特性</th>
+              <th>Grok 2.5</th>
+              <th>Grok 1.5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>即時搜尋</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+            <tr><td>X 平台整合</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+            <tr><td>語音對話</td><td>✅</td><td>❌</td></tr>
+            <tr><td>圖像生成</td><td>⭐⭐⭐</td><td>❌</td></tr>
+            <tr><td>程式碼品質</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+            <tr><td>回應速度</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+            <tr><td>價格 (相對)</td><td>中低</td><td>低</td></tr>
+          </tbody>
+        </table>
+
+        <h2>定價</h2>
+        <p>Grok 的定價策略相對 <strong>經濟實惠</strong>，適合 <strong>預算有限</strong>、<strong>喜歡即時資訊</strong>的使用者：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>輸入價格 (per 1M tokens)</th>
+              <th>輸出價格 (per 1M tokens)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Grok 2.5</td>
+              <td>$0.70</td>
+              <td>$2.00</td>
+            </tr>
+            <tr>
+              <td>Grok 1.5</td>
+              <td>$0.60</td>
+              <td>$1.80</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>如何使用 Grok？</h2>
+        <ul>
+          <li><strong>X Premium 訂閱</strong> — 在 X 平台訂閱 Premium 即可使用 Grok 對話功能</li>
+          <li><strong>API</strong> — 透過 xAI API 整合到自己的應用程式</li>
+          <li><strong>網頁版</strong> — 直接造訪 <a href="https://grok.com" target="_blank">grok.com</a> 使用</li>
+        </ul>
+
+        <h2>程式碼範例 — Grok API</h2>
+
+<pre><code>import requests
+
+GROK_API_KEY = "your-api-key"
+url = "https://api.x.ai/v1/chat/completions"
+
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {GROK_API_KEY}",
+}
+
+payload = {
+    "model": "grok-2.5",
+    "messages": [
+        {"role": "system", "content": "你是一個友善的 AI 助手"},
+        {"role": "user", "content": "解釋一下什麼是 Web 3.0？"}
+    ],
+    "stream": False,
+}
+
+response = requests.post(url, headers=headers, json=payload)
+print(response.json()["choices"][0]["message"]["content"])</code></pre>
+
+        <blockquote>
+          🎯 <strong>選擇原則：</strong> <strong>Grok 2.5 適合需要即時資訊、喜歡 X 平台文化、預算有限的使用者</strong>。如果你對幽默感與非官方風格有偏好，Grok 是絕佳之選！
+        </blockquote>
+
+        <div class="article-tags">
+          <span class="tag">Grok</span>
+          <span class="tag">xAI</span>
+          <span class="tag">Elon Musk</span>
+          <span class="tag">AI 模型</span>
+          <span class="tag">即時搜尋</span>
+          <span class="tag">LLM</span>
+          <span class="tag">教學</span>
+        </div>
+
+        <div class="related-articles">
+          <h3>相關文章推薦</h3>
+          <a class="related-article" href="./ai-models.html">
+            <img loading="lazy" src="https://picsum.photos/seed/aimodels/80/60" alt="AI 模型比較">
+            <div class="ra-content">
+              <h4>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較</h4>
+              <p>四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。</p>
+            </div>
+          </a>
+          <a class="related-article" href="./gemini-model-guide.html">
+            <img loading="lazy" src="https://picsum.photos/seed/gemini-models/80/60" alt="Gemini">
+            <div class="ra-content">
+              <h4>Google Gemini 完整攻略：1.5、2.0、2.5 系列模型介紹</h4>
+              <p>Google Gemini 系列模型的多模態能力、定價與 Google 生態整合詳解。</p>
+            </div>
+          </a>
+          <a href="./articles.html" class="back-home">← 回文章列表</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="./feed.xml">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">信件</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

@@ -8,6 +8,34 @@
     <lastBuildDate>Sat, 22 Aug 2026 14:00:00 GMT</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml">
     <item>
+      <title>GPT-5 完整攻略：OpenAI 新世代模型家族功能、定價與應用場景</title>
+      <description>OpenAI GPT-5 系列包含 GPT-5、GPT-5 Turbo、GPT-5 Mini 等多個版本。本文詳細介紹各模型的架構、上下文窗口、程式碼能力、定價與 OpenAI 生態整合。</description>
+      <link>https://ai-hardcore-engineer.com/gpt-5-model-guide.html</link>
+      <guid>https://ai-hardcore-engineer.com/gpt-5-model-guide.html</guid>
+      <pubDate>Sat, 23 Aug 2026 16:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景</title>
+      <description>xAI Grok 2.5 是 Elon Musk 領導的 xAI 開發的 AI 助手。本文詳細介紹 Grok 的即時搜尋、Twitter/X 整合、程式碼能力、定價與應用場景。</description>
+      <link>https://ai-hardcore-engineer.com/grok-model-guide.html</link>
+      <guid>https://ai-hardcore-engineer.com/grok-model-guide.html</guid>
+      <pubDate>Sat, 23 Aug 2026 16:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Google Gemini 完整攻略：1.5、2.0、2.5 系列模型介紹、功能與應用場景</title>
+      <description>Google Gemini 系列模型包含 1.5、2.0、2.5 多個版本。本文詳細介紹各模型的多模態能力、上下文窗口、定價、程式碼表現與 Google 生態整合。</description>
+      <link>https://ai-hardcore-engineer.com/gemini-model-guide.html</link>
+      <guid>https://ai-hardcore-engineer.com/gemini-model-guide.html</guid>
+      <pubDate>Sat, 23 Aug 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景</title>
+      <description>Anthropic Claude 5 系列模型包括 Fable、Opus、Sonnet、Haiku 四大型號。本文詳細介紹各模型的功能、效能、定價與應用場景，幫你選擇最適合的 Claude 模型。</description>
+      <link>https://ai-hardcore-engineer.com/claude-model-families.html</link>
+      <guid>https://ai-hardcore-engineer.com/claude-model-families.html</guid>
+      <pubDate>Sat, 23 Aug 2026 14:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例</title>
       <description>Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。</description>
       <link>https://ai-hardcore-engineer.com/kubernetes-beginner-guide.html</link>
