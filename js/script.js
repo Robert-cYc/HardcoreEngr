@@ -377,16 +377,35 @@ async function fetchQuote() {
   }
 }
 
+function renderQuote(container, quote) {
+  container.style.opacity = '0';
+  setTimeout(() => {
+    if (quote.translation) {
+      container.textContent = `❝ ${quote.content} ❞ — ${quote.author}  |  ❝ ${quote.translation} ❞`;
+    } else {
+      container.textContent = `❝ ${quote.content} ❞ —  ${quote.author}`;
+    }
+    // Restart scroll animation so the new motto enters from the right
+    container.style.animation = 'none';
+    container.offsetHeight; // trigger reflow
+    container.style.animation = '';
+    container.style.opacity = '1';
+  }, 400);
+}
+
 async function initMarquee() {
   const container = document.querySelector('.marquee-content');
   if (!container) return;
 
+  // Show initial motto
   const quote = await fetchQuote();
-  if (quote.translation) {
-    container.textContent = `❝ ${quote.content} ❞ — ${quote.author}  |  ❝ ${quote.translation} ❞`;
-  } else {
-    container.textContent = `❝ ${quote.content} ❞ —  ${quote.author}`;
-  }
+  renderQuote(container, quote);
+
+  // Rotate to the next motto every 25s (matching animation duration)
+  setInterval(async () => {
+    const nextQuote = await fetchQuote();
+    renderQuote(container, nextQuote);
+  }, 25000);
 }
 
 // ===== Init =====
