@@ -34,7 +34,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Close search when clicking outside
+// Close search when clicking outside or on the close text
 if (searchOverlay) {
   searchOverlay.addEventListener('click', (e) => {
     if (e.target === searchOverlay) {
@@ -42,14 +42,30 @@ if (searchOverlay) {
     }
   });
 }
+const searchClose = document.querySelector('.search-close');
+if (searchClose) {
+  searchClose.addEventListener('click', closeSearch);
+}
 
-// ===== Mobile Menu (future-ready) =====
+// ===== Mobile Menu =====
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 
 if (menuToggle && nav) {
   menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
+    const expanded = nav.classList.toggle('open');
+    menuToggle.classList.toggle('active', expanded);
+    menuToggle.setAttribute('aria-expanded', expanded);
+    document.body.classList.toggle('nav-open', expanded);
+  });
+  // Close mobile menu when clicking a nav link
+  nav.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A' && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    }
   });
 }
 
