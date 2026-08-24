@@ -133,6 +133,30 @@ body.dark-mode {
   border-bottom: 2px solid var(--border);
 }
 
+/* =============== RSS Subscribe Button =============== */
+.rss-subscribe {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.rss-subscribe:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.rss-subscribe svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
 /* =============== Header =============== */
 .site-header {
   background: var(--bg);
