@@ -6,7 +6,7 @@
     <link>https://ai-hardcore-engineer.com</link>
     <language>zh-TW</language>
     <lastBuildDate>Sun, 23 Aug 2026 14:00:00 GMT</lastBuildDate>
-    <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml">
+    <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GPT-5 完整攻略：OpenAI 新世代模型家族功能、定價與應用場景</title>
       <description>OpenAI GPT-5 系列包含 GPT-5、GPT-5 Turbo、GPT-5 Mini 等多個版本。本文詳細介紹各模型的架構、上下文窗口、程式碼能力、定價與 OpenAI 生態整合。</description>
