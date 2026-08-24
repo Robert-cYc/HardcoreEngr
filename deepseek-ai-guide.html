@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSeek 完整攻略：V3、V3.2、R1 模型介紹、API 定價與本地部署 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="DeepSeek AI 是中國一家開源 AI 公司。本文詳細介紹 DeepSeek-V3、V3.2、R1 模型架構、API 定價（比 OpenAI 便宜 5–30 倍）、本地部署方法與 CLI 使用教學。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/deepseek-ai-guide.html">
+  <meta property="og:title" content="DeepSeek 完整攻略：V3、V3.2、R1 模型介紹、API 定價與本地部署 — "AI" 硬核工程師">
+  <meta property="og:description" content="DeepSeek AI 是中國一家開源 AI 公司。本文詳細介紹 DeepSeek-V3、V3.2、R1 模型架構、API 定價（比 OpenAI 便宜 5–30 倍）、本地部署方法與 CLI 使用教學。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/deepseek-ai-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DeepSeek 完整攻略：V3、V3.2、R1 模型介紹、API 定價與本地部署 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="DeepSeek AI 是中國一家開源 AI 公司。本文詳細介紹 DeepSeek-V3、V3.2、R1 模型架構、API 定價（比 OpenAI 便宜 5–30 倍）、本地部署方法與 CLI 使用教學。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title=""AI" 硬核工程師 RSS" href="./feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://picsum.photos" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem; /* 10% larger */
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem; /* 10% larger */
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem; /* 10% larger */
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem; /* 10% larger */
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em; /* 10% larger */
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.21rem; /* 10% larger */
+    }
+    .article-body th, .article-body td {
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    /* Related Articles */
+    .related-articles {
+      margin: 3rem 0;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .related-articles h3 {
+      margin-bottom: 1.5rem;
+    }
+    .related-article {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-alt);
+      text-decoration: none;
+      color: inherit;
+    }
+    .related-article:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    .related-article img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin: 0;
+    }
+    .ra-content h4 {
+      margin: 0 0 0.25rem;
+      font-size: 1.1rem;
+    }
+    .ra-content p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .related-article:hover .ra-content p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "DeepSeek 完整攻略：V3、V3.2、R1 模型介紹、API 定價與本地部署 — \"AI\" 硬核工程師",
+  "description": "DeepSeek AI 是中國一家開源 AI 公司。本文詳細介紹 DeepSeek-V3、V3.2、R1 模型架構、API 定價（比 OpenAI 便宜 5–30 倍）、本地部署方法與 CLI 使用教學。",
+  "url": "https://ai-hardcore-engineer.com/deepseek-ai-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/deepseek-ai-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>DeepSeek 完整攻略：V3、V3.2、R1 模型介紹、API 定價與本地部署</h1>
+        <div class="article-meta">
+          <span>2026-08-24</span>
+          <span class="separator">·</span>
+          <span>28 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">DeepSeek</span>
+          <span class="tag">AI 模型</span>
+          <span class="tag">V3</span>
+          <span class="tag">V3.2</span>
+          <span class="tag">R1</span>
+          <span class="tag">LLM</span>
+          <span class="tag">開源</span>
+          <span class="tag">API</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/deepseek/1200/400" alt="DeepSeek AI">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p><strong>DeepSeek</strong>（深度求索）是 2023 年成立的中國 AI 研究實驗室。與 OpenAI、Google 不同，DeepSeek 的定位是「開源優先」 — 幾乎所有模型都以 <strong>MIT License</strong> 釋出，允許商業使用、修改與再發佈。憑藉強大的 MoE 架構與超低價 API，DeepSeek 在 2024–2025 年迅速躋身開源 LLM 領域的佼佼者。</p>
+        <p>本文將帶你從零了解 DeepSeek 的整個模型家族：V3 的技術架構、R1 的推理能力、API 定價與使用方法，以及怎麼在本地部署。無論你是想省錢用 API，還是想研究開源模型，這篇文章都適合你。</p>
+
+        <h2>DeepSeek 模型家族概覽</h2>
+        <p>DeepSeek 目前主要推出了以下幾個重要的模型系列：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>發布時間</th>
+              <th>參數/特性</th>
+              <th>適用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>DeepSeek-V3</strong></td>
+              <td>2024-12</td>
+              <td>671B 總參數 (MoE，37B激活)<br>14.8T 訓練 token<br>MIT License</td>
+              <td>通用對話、編碼、長文本</td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek-V3.2</strong></td>
+              <td>2025-12</td>
+              <td>V3 的進化版<br>工具使用+推理整合<br>思考模式支援 tool-use</td>
+              <td>Agent 任務、多工具協作</td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek-V3.2-Speciale</strong></td>
+              <td>2025-12</td>
+              <td>強化推理能力<br>DeepSeekMath-V2 資料<br>API-only</td>
+              <td>數學題、邏輯推理</td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek-R1</strong></td>
+              <td>2025-01</td>
+              <td>671B 參數 (MoE)<br>Chain-of-Thought 推理<br>MIT License</td>
+              <td>複雜推理、數學、程式設計</td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek-R1-Zero</strong></td>
+              <td>2025-01</td>
+              <td>純 RL 訓練<br>無預先訓練資料<br>表現媲美 OpenAI-o1</td>
+              <td>研究、推理驗證</td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek-Coder</strong></td>
+              <td>2024-11</td>
+              <td>專為程式設計優化<br>支援 42 種程式語言</td>
+              <td>程式生成、Bug 修復</td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek-VL</strong></td>
+              <td>2024-02</td>
+              <td>視覺-語言多模態<br>支援圖片理解</td>
+              <td>圖片問答、文檔分析</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          📌 <strong>選擇指南</strong>：<br>
+          • 日常問答、編碼 → <code>deepseek-chat (V3/V3.2)</code><br>
+          • 複雜推理、數學、邏輯 → <code>deepseek-reasoner (R1)</code><br>
+          • 本地研究、商業用途 → 開源模型 (MIT License)
+        </blockquote>
+
+        <h2>DeepSeek-V3 技術架構解析</h2>
+
+        <h3>671B MoE 架構</h3>
+        <p>DeepSeek-V3 使用 <strong>Mixture-of-Experts (MoE)</strong> 架構，總參數達 671B，但每次 inference 只激活 37B 的參數。這樣設計的好處是：</p>
+        <ul>
+          <li><strong>inference 效能高</strong> — 單次推理只需運算一部分 experts，速度更快</li>
+          <li><strong>訓練成本可控</strong> — 14.8T tokens 訓練下，僅需 2788 小時的 H800 GPU 時間</li>
+          <li><strong>品質不輸閉源模型</strong> — 在 MMLU、HumanEval 等基準上表現優異，某些指標超越 LLaMA3、GPT-3.5</li>
+        </ul>
+
+        <h3>四大關鍵技術</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>技術</th>
+              <th>作用</th>
+              <th>效益</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MLA (Multi-Head Latent Attention)</td>
+              <td>壓縮 KV Cache，減少記憶體使用</td>
+              <td>長上下文推理成本降低 50%+</td>
+            </tr>
+            <tr>
+              <td>DeepSeekMoE</td>
+              <td>稀疏 MoE 架構，動態選擇 experts</td>
+              <td>計算 efficiency 大幅提升</td>
+            </tr>
+            <tr>
+              <td>輔助損失自由負載均衡</td>
+              <td>自動分佈式 routing，無需手動設定</td>
+              <td>多 GPU 訓練更穩定</td>
+            </tr>
+            <tr>
+              <td>多 token 預測 ( MTP )</td>
+              <td>同時預測多個 token，提升吞吐量</td>
+              <td>推理速度提升 20~30%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>DeepSeek-R1：開源推理模型</h2>
+
+        <h3>Chain-of-Thought 推理</h3>
+        <p>R1 是 DeepSeek 的第一個專注推理的模型。它透過大規模 <strong>強化學習 (RL)</strong> 訓練，學會逐步拆解複雜問題。</p>
+        <ul>
+          <li><strong>R1-Zero</strong>：純 RL，不使用任何預先訓練資料，直接達到 o1-mini 級推理水準</li>
+          <li><strong>R1</strong>：在 R1-Zero 基礎上加入 cold-start data，品質更穩，指令遵循更好</li>
+        </ul>
+
+        <h3>6 個推理 phase</h3>
+        <p>R1 在訓練過程中經歷 6 個階段，每個階段解鎖新的推理能力：</p>
+        <ol>
+          <li><strong>Phase 1</strong> — 學會拖延 (waste time)：模型開始展延輸出</li>
+          <li><strong>Phase 2</strong> — 學會自我反思：開始使用 <code>traced track</code> 進行內心對話</li>
+          <li><strong>Phase 3</strong> — 學會分析問題：開始將問題分解為子問題</li>
+          <li><strong>Phase 4</strong> — 學會使用工具：開始嘗試程式碼、LaTeX 等</li>
+          <li><strong>Phase 5</strong> — 學會進行深入推理：進入複雜推理循環</li>
+          <li><strong>Phase 6</strong> — 學會簡化輸出：縮短不必要的冗詞</li>
+        </ol>
+
+        <blockquote>
+          🧠 R1 在 2025 IMO (國際數學奧林匹亞) 獲得滿分，證明其推理能力已達頂尖水準！
+        </blockquote>
+
+        <h3>釋出的 Distilled 模型</h3>
+        <p>R1 還釋出了 6 個基於 Llama / Qwen 的 Distilled 模型，從 1.5B 到 70B 不等。</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>基礎模型</th>
+              <th>參數量</th>
+              <th>特點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DeepSeek-R1-Distill-Qwen-1.5B</td>
+              <td>Qwen2.5</td>
+              <td>1.5B</td>
+              <td>輕量，適合手機或邊緣裝置</td>
+            </tr>
+            <tr>
+              <td>DeepSeek-R1-Distill-Qwen-7B</td>
+              <td>Qwen2.5</td>
+              <td>7B</td>
+              <td>平衡效能與資源</td>
+            </tr>
+            <tr>
+              <td>DeepSeek-R1-Distill-Qwen-14B</td>
+              <td>Qwen2.5</td>
+              <td>14B</td>
+              <td>強推理，中等顯存需求</td>
+            </tr>
+            <tr>
+              <td>DeepSeek-R1-Distill-Qwen-32B</td>
+              <td>Qwen2.5</td>
+              <td>32B</td>
+              <td>接近滿血 R1 效能</td>
+            </tr>
+            <tr>
+              <td>DeepSeek-R1-Distill-Llama-8B</td>
+              <td>Llama3</td>
+              <td>8B</td>
+              <td>Llama 生態系</td>
+            </tr>
+            <tr>
+              <td>DeepSeek-R1-Distill-Llama-70B</td>
+              <td>Llama3</td>
+              <td>70B</td>
+              <td>最強 Distilled，14B Qwen 也被擊敗</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          💡 <strong>驚爆</strong>：70B Distilled 模型在 MATH benchmark 上超越了 OpenAI-o1-mini！
+        </blockquote>
+
+        <h2>DeepSeek API 使用教學</h2>
+
+        <h3>註冊與取得 API Key</h3>
+        <ol>
+          <li>前往 <a href="https://platform.deepseek.com" target="_blank" rel="noopener">platform.deepseek.com</a> 註冊帳號</li>
+          <li>在個人中心 → API 管理 → 建立 API Key</li>
+          <li>新註冊使用者可獲得 <strong>5M 免費 tokens</strong>（無需信用卡）</li>
+        </ol>
+
+        <h3>定價政策</h3>
+        <p>DeepSeek API 的定價相比 OpenAI 便宜了 <strong>5–30 倍</strong>：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>輸入 (Peak)</th>
+              <th>快取命中</th>
+              <th>輸出</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>DeepSeek-V4-Flash</strong></td>
+              <td>$0.14 / 1M tokens</td>
+              <td>$0.0028 / 1M tokens</td>
+              <td>$0.28 / 1M tokens</td>
+              <td>最快最便宜，自動快取</td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek-V4-Pro</strong></td>
+              <td>$0.435 / 1M tokens</td>
+              <td>$0.0036 / 1M tokens</td>
+              <td>$0.87 / 1M tokens</td>
+              <td>品質更高，並發度較低</td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek-V4-Flash-Vision</strong></td>
+              <td>$0.14 / 1M tokens</td>
+              <td>$0.0028 / 1M tokens</td>
+              <td>$0.28 / 1M tokens</td>
+              <td>支援圖片輸入</td>
+            </tr>
+            <tr>
+              <td><strong>deepseek-chat (V3.2)</strong></td>
+              <td>$0.28 / 1M tokens</td>
+              <td>$0.028 / 1M tokens</td>
+              <td>$0.42 / 1M tokens</td>
+              <td>舊版定價</td>
+            </tr>
+            <tr>
+              <td><strong>deepseek-reasoner (R1)</strong></td>
+              <td>$0.28 / 1M tokens</td>
+              <td>$0.028 / 1M tokens</td>
+              <td>$0.42 / 1M tokens</td>
+              <td>推理模型</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted);">💰 <strong>提示</strong>： DeepSeek 提供 <strong>Off-peak 時段</strong> (週一至週五 01:00–04:00 & 06:00–10:00 UTC) <strong>50% 折扣</strong>，非常適合安排非緊急的批次工作。</p>
+
+        <h3>快速上手 Python</h3>
+        <p>DeepSeek API 完全兼容 OpenAI 格式，只要改一個 <code>base_url</code> 就可以直接用：</p>
+        <pre><code># 安裝 SDK
+pip install openai
+
+# 基本對話
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="YOUR_DEEPSEEK_API_KEY",
+    base_url="https://api.deepseek.com"
+)
+
+response = client.chat.completions.create(
+    model="deepseek-chat",              # 或 deepseek-reasoner
+    messages=[
+        {"role": "system", "content": "你是一個 helpful 的助理。"},
+        {"role": "user", "content": "解釋一下什麼是 MoE 架構？"}
+    ],
+    temperature=0.7,
+    max_tokens=2048,
+    stream=True                         # 啟用串流回應
+)
+
+for chunk in response:
+    if chunk.choices[0].delta.content:
+        print(chunk.choices[0].delta.content, end="")</code></pre>
+
+        <h3>使用 R1 推理模式</h3>
+        <p>當你使用 <code>deepseek-reasoner</code> 模型時，API 會自動生成「思考過程」(thinking block) 再給出答案：</p>
+        <pre><code>response = client.chat.completions.create(
+    model="deepseek-reasoner",
+    messages=[
+        {"role": "user", "content": "求解 1+1=？"}
+    ]
+)
+
+# thinking_block 包含模型的內心推理過程
+print(response.choices[0].message.reasoning_content)  # 思考過程
+print(response.choices[0].message.content)            # 最終答案</code></pre>
+
+        <h2>在本地部署 DeepSeek</h2>
+
+        <h3>下載模型</h3>
+        <p>所有 DeepSeek 開源模型都在 Hugging Face：</p>
+        <pre><code># V3 主體模型 (70B 參數版，適合單卡部署)
+huggingface-cli download deepseek-ai/DeepSeek-V3 --local-dir ./deepseek-v3
+
+# R1 推理模型
+huggingface-cli download deepseek-ai/DeepSeek-R1 --local-dir ./deepseek-r1
+
+# Distilled 小模型 (推薦筆電用)
+huggingface-cli download deepseek-ai/DeepSeek-R1-Distill-Qwen-14B --local-dir ./deepseek-r1-14b
+</code></pre>
+
+        <h3>硬體需求</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>最小顯存</th>
+              <th>推薦顯存</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DeepSeek-R1-Distill-Qwen-7B</td>
+              <td>8GB</td>
+              <td>16GB</td>
+              <td>RTX 3060/4060 撐得住</td>
+            </tr>
+            <tr>
+              <td>DeepSeek-R1-Distill-Qwen-14B</td>
+              <td>16GB</td>
+              <td>24GB</td>
+              <td>RTX 4070/4090</td>
+            </tr>
+            <tr>
+              <td>DeepSeek-V3 70B</td>
+              <td>40GB</td>
+              <td>80GB</td>
+              <td>A100 80GB / H100</td>
+            </tr>
+            <tr>
+              <td>DeepSeek-V3 671B (MoE)</td>
+              <td>多卡</td>
+              <td>多卡</td>
+              <td>最少 4×A100 80GB</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>用 vLLM 部署</h3>
+        <pre><code># 安裝 vLLM
+pip install vllm
+
+# 啟動 API 服務 (兼容 OpenAI 格式)
+vllm serve deepseek-ai/DeepSeek-V3 \
+  --tensor-parallel-size 4 \
+  --max-model-len 128000 \
+  --port 8000
+
+# 測試
+curl http://localhost:8000/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek-ai/DeepSeek-V3",
+    "messages": [{"role": "user", "content": "Hello"}]
+  }'</code></pre>
+
+        <h2>DeepSeek CLI 工具</h2>
+        <p>除了官方 API，社群也提供了方便的 CLI 工具：</p>
+
+        <h3>deepseek-cli (Python)</h3>
+        <pre><code>pip install deepseek
+
+# 互動模式
+deepseek
+
+# 單次問答
+echo "解釋一下 MoE" | deepseek -m deepseek-chat
+
+# 上傳文件
+deepseek --file report.pdf "總結這份報告的重點"</code></pre>
+
+        <h3>DeepSeek-shell-cli (Bash)</h3>
+        <pre><code># 純 shell script，無額外依賴
+export DEEPSEEK_API_KEY=your_key
+curl -s "https://api.deepseek.com/chat/completions" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek-chat",
+    "messages": [{"role":"user","content":"解釋 MoE"}]
+  }' | jq -r '.choices[0].message.content'</code></pre>
+
+        <h2>DeepSeek vs 其他模型</h2>
+        <p>以下是 DeepSeek 與市面上主流模型的簡單比較：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>面向</th>
+              <th>DeepSeek</th>
+              <th>OpenAI GPT-4o</th>
+              <th>Claude 3</th>
+              <th>Gemini 2.0</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>開源性</td>
+              <td>✅ 完全開源 (MIT)</td>
+              <td>❌ 閉源</td>
+              <td>❌ 閉源</td>
+              <td>❌ 閉源</td>
+            </tr>
+            <tr>
+              <td>API 價格 (輸入/百萬 tokens)</td>
+              <td>$0.14–$0.44</td>
+              <td>$5.00</td>
+              <td>$3.00</td>
+              <td>$2.00</td>
+            </tr>
+            <tr>
+              <td>Context 長度</td>
+              <td>128K (V3), 1M (V3.2)</td>
+              <td>128K</td>
+              <td>200K</td>
+              <td>1M</td>
+            </tr>
+            <tr>
+              <td>推理能力</td>
+              <td>✅ R1 媲美 o1</td>
+              <td>✅ o1</td>
+              <td>✅ Claude 3.7 Sonnet</td>
+              <td>✅ Flash Thinking</td>
+            </tr>
+            <tr>
+              <td>商業可用性</td>
+              <td>✅ MIT License</td>
+              <td>❌ 限制</td>
+              <td>❌ 限制</td>
+              <td>❌ 限制</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          🎯 <strong>選擇 DeepSeek 的理由</strong>：<br>
+          • 預算緊繫 — 便宜 5–30 倍的 API<br>
+          • 開源需求 — MIT License 無限制商用<br>
+          • 推理任務 — R1 表現媲美 o1-preview<br>
+          • 長上下文 — 高達 1M token 窗口
+        </blockquote>
+
+        <h2>總結</h2>
+        <p>DeepSeek 代表了開源 LLM 的一個轉折點 — 既有強大的性能，又有極具競爭力的價格。無論是用 API 省錢，或是本地部署研究，都是 2025–2026 年不可錯過的選項。</p>
+
+        <blockquote>
+          🚀 <strong>快速上手：</strong> 先在 <a href="https://platform.deepseek.com" target="_blank" rel="noopener">platform.deepseek.com</a> 註冊取得 5M 免費 tokens → 用 OpenAI SDK 5 分鐘就能跑起來 → 若要本地研究，從 HuggingFace 下載 Distilled 7B 模型即可上手。
+        </blockquote>
+
+        <div class="related-articles">
+          <h3>相關文章推薦</h3>
+          <a class="related-article" href="./ai-models.html">
+            <img loading="lazy" src="https://picsum.photos/seed/aimodels/80/60" alt="AI 模型比較">
+            <div class="ra-content">
+              <h4>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較</h4>
+              <p>四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。</p>
+            </div>
+          </a>
+          <a class="related-article" href="./claude-model-families.html">
+            <img loading="lazy" src="https://picsum.photos/seed/claude-models/80/60" alt="Claude 5">
+            <div class="ra-content">
+              <h4>Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景</h4>
+              <p>Anthropic Claude 5 系列模型的功能、效能、定價與應用場景詳細介紹。</p>
+            </div>
+          </a>
+          <a href="./articles.html" class="back-home">← 回文章列表</a>
+        </div>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="./feed.xml">RSS 訂閱</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

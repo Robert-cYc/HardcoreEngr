@@ -147,5 +147,12 @@
       <guid>https://ai-hardcore-engineer.com/ai-models.html</guid>
       <pubDate>Fri, 21 Aug 2026 01:49:25 GMT</pubDate>
     </item>
+    <item>
+      <title>DeepSeek 完整攻略：V3、V3.2、R1 模型介紹、API 定價與本地部署 — "AI" 硬核工程師</title>
+      <description>DeepSeek AI 開源模型家族，包括 V3、V3.2、R1 等。本文詳細介紹模型架構、API 定價（比 OpenAI 便宜 5–30 倍）、本地部署方法與 CLI 使用教學。</description>
+      <link>https://ai-hardcore-engineer.com/deepseek-ai-guide.html</link>
+      <guid>https://ai-hardcore-engineer.com/deepseek-ai-guide.html</guid>
+      <pubDate>2026-08-24T00:00:00 GMT</pubDate>
+    </item>
   </channel>
 </rss>
