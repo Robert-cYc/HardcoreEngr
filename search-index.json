@@ -303,5 +303,30 @@
       "關於",
       "個人介紹"
     ]
+  },
+  {
+    "title": "Obsidian 完整入門手冊：安裝、操作、插件與 Claude AI 整合",
+    "excerpt": "Obsidian 知識管理工具完整入門教學：Windows/macOS/Linux 安裝、Vault 建立、Markdown 基礎、核心插件與社群插件介紹，以及 Text Generator、Vault Companion for Claude 等 Claude AI 插件設定。",
+    "url": "obsidian-guide.html",
+    "tags": [
+      "Obsidian",
+      "知識管理",
+      "第二大腦",
+      "Claude AI",
+      "插件",
+      "筆記"
+    ]
+  },
+  {
+    "title": "Notion 完整入門手冊：工作區設定、資料庫設計、Claude AI 整合與進階技巧",
+    "excerpt": "Notion 全面入門教學：工作區建立、頁面設計、資料庫relation&rollup、模板庫應用、AI 功能與 Claude 整合技巧，以及進階自動化與嵌入式開發。",
+    "url": "notion-guide.html",
+    "tags": [
+      "Notion",
+      "工作管理",
+      "資料庫",
+      "Claude AI",
+      "自動化"
+    ]
   }
 ]

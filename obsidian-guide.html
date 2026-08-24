@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obsidian 完整入門手冊：安裝、操作、插件與 Claude AI 整合 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="Obsidian 知識管理工具完整入門教學：Windows/macOS/Linux 安裝、Vault 建立、Markdown 基礎、核心插件與社群插件介紹，以及 Text Generator、Vault Companion for Claude 等 Claude AI 插件設定。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/obsidian-guide.html">
+  <meta property="og:title" content="Obsidian 完整入門手冊：安裝、操作、插件與 Claude AI 整合 — "AI" 硬核工程師">
+  <meta property="og:description" content="Obsidian 知識管理工具完整入門教學：Windows/macOS/Linux 安裝、Vault 建立、Markdown 基礎、核心插件與社群插件介紹，以及 Text Generator、Vault Companion for Claude 等 Claude AI 插件設定。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/obsidian-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Obsidian 完整入門手冊：安裝、操作、插件與 Claude AI 整合 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Obsidian 知識管理工具完整入門教學：Windows/macOS/Linux 安裝、Vault 建立、Markdown 基礎、核心插件與社群插件介紹，以及 Text Generator、Vault Companion for Claude 等 Claude AI 插件設定。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.21rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Obsidian 完整入門手冊：安裝、操作、插件與 Claude AI 整合 — \"AI\" 硬核工程師",
+  "description": "Obsidian 知識管理工具完整入門教學：Windows/macOS/Linux 安裝、Vault 建立、Markdown 基礎、核心插件與社群插件介紹，以及 Text Generator、Vault Companion for Claude 等 Claude AI 插件設定。",
+  "url": "https://ai-hardcore-engineer.com/obsidian-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/obsidian-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>Obsidian 完整入門手冊：安裝、操作、插件與 Claude AI 整合</h1>
+        <div class="article-meta">
+          <span>2026-08-24</span>
+          <span class="separator">·</span>
+          <span>25 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Obsidian</span>
+          <span class="tag">知識管理</span>
+          <span class="tag">第二大腦</span>
+          <span class="tag">笔记软件</span>
+          <span class="tag">Claude AI</span>
+          <span class="tag">插件</span>
+        </div>
+        <img loading="lazy" src="images/picsum-obsidian-1200-400.jpg" alt="Obsidian 知識管理">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p><strong>Obsidian</strong> 是一款極受開發者與知識工作者歡迡的本地化知識管理工具。它以「第二大腦」(Second Brain) 的概念運作，讓你能透過互連的筆記節點建立一個個人的知識網路。與 Notion 或 Wiki 不同，Obsidian 的一切資料都是以本地端的 Markdown 檔案儲存，你可以完全掌控自己的資料，並且無縫接軌 Git 版本控制。</p>
+        <p>本文將帶你從零開始：安裝 Obsidian、建立 Vault、掌握核心操作技巧，並探索社群插件 — 特別是以 <strong>Claude AI</strong> 為重點的插件整合，讓你的筆記不只是文字，更能成為一個能思考、能協作的智慧助理。</p>
+
+        <h2>什麼是 Obsidian？</h2>
+        <p>Obsidian 由 <strong>Dynalist</strong> 創作者 Eric Dodds 領銜開發，核心理念是：</p>
+        <ul>
+          <li><strong>本地優先 (Local-first)</strong> — 所有筆記以 Markdown 檔案存放在你的電腦上，無雲端綁架。</li>
+          <li><strong>雙向連結 (Bidirectional Links)</strong> — 在筆記間建立超連結，形成知識圖譜。</li>
+          <li><strong>插件擴展 (Plugins)</strong> — 內建核心插件 + 社群插件生態，功能無限延展。</li>
+          <li><strong>圖形化視覺化 (Graph View)</strong> — 以互動式網路圖觀看到筆記之間的關聯。</li>
+        </ul>
+        <blockquote>
+          📌 Obsidian 基於 Electron 架構，支援 Windows、macOS、Linux 三大平台。手機版 (iOS/Android) 也可用，但僅限付費訂閱。
+        </blockquote>
+
+        <h2>安裝 Obsidian</h2>
+
+        <h3>Windows</h3>
+        <ol>
+          <li>前往 <a href="https://obsidian.md/download" target="_blank">官方下載頁面</a>。</li>
+          <li>下載 <code>Obsidian-windows.exe</code> 並執行。</li>
+          <li>依照安裝精靈完成安裝。</li>
+          <li>首次啟動時會自動建立 <code>%USERPROFILE%\Documents\Obsidian</code> 資料夾。</li>
+        </ol>
+
+        <h3>macOS</h3>
+        <ol>
+          <li>下載 <code>obsidian-darwin.dmg</code>。
+          </li>
+          <li>將 Obsidian 拖到 Applications 資料夾。</li>
+          <li>首次開啟可能會出現「無法驗證開發者身份」提示 — 前往「系統設定 → 隱私與安全性」點擊「允許」即可。</li>
+        </ol>
+        <blockquote>
+          💡 macOS 使用 Rosetta 2 的 M1/M2 機器也可正常執行 (Rosetta 會自動安裝)。
+        </blockquote>
+
+        <h3>Linux</h3>
+        <p>支援 AppImage、Deb、Rpm 三種格式。</p>
+        <pre><code># AppImage (推薦，無需 root 權限)
+wget https://github.com/obsidianmd/obsidian-releases/releases/latest/download/obsidian-appimage.AppImage
+chmod +x obsidian-appimage.AppImage
+./obsidianappimage.AppImage</code></pre>
+        <pre><code># Deb / Rpm
+wget https://github.com/obsidianmd/obsidian-releases/releases/latest/download/obsidian_*.deb
+sudo dpkg -i obsidian_*.deb</code></pre>
+
+        <h3>手機版 (Mobile)</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>平台</th>
+              <th>安裝方式</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>iOS</td>
+              <td>App Store 搜尋「Obsidian」</td>
+              <td>需購買進階版 ($4.99/月)</td>
+            </tr>
+            <tr>
+              <td>Android</td>
+              <td>Google Play 搜尋「Obsidian」</td>
+              <td>需購買進階版 ($4.99/月)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>建立你的第一個 Vault</h2>
+        <p><strong>Vault</strong> 就是 Obsidian 的資料夾單位 — 所有筆記 Markdown 檔案都存放在其中。建立方式有三種：</p>
+
+        <h3>方式 1：建立新 Vault</h3>
+        <ol>
+          <li>開啟 Obsidian → 點擊 <strong>「Create new vault」</strong>。</li>
+          <li>命名你的 Vault，例如 <code>My Knowledge</code>。</li>
+          <li>選擇存放位置 (建議放在 <code>Documents/</code> 下，方便 Git 管理)。</li>
+        </ol>
+
+        <h3>方式 2：從現有資料夾建立</h3>
+        <ol>
+          <li>點擊 <strong>「Open another vault」</strong> → <strong>「Open folder as vault」</strong>。</li>
+          <li>選取已包含 Markdown 檔案的資料夾。</li>
+        </ol>
+
+        <h3>方式 3：從 Git repository 克隆</h3>
+        <pre><code>git clone https://github.com/your-name/your-vault.git
+# 再在 Obsidian 中點擊「Open folder as vault」選取該資料夾</code></pre>
+
+        <blockquote>
+          🎯 <strong>小技巧：</strong> 建議將 Vault 放在 iCloud Drive 或 Dropbox 資料夾下，即可實現跨裝置同步 (雖然 Obsidian 官方有自己的 Sync 服務，但第三方同步也非常方便)。
+        </blockquote>
+
+        <h2>Obsidian 基礎操作</h2>
+
+        <h3>Markdown 筆記語法速查</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>語法</th>
+              <th>效果</th>
+              <th>使用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code># 標題</code></td>
+              <td>一級標題</td>
+              <td>文章標題</td>
+            </tr>
+            <tr>
+              <td><code>## 標題</code></td>
+              <td>二级標題</td>
+              <td>章節分隔</td>
+            </tr>
+            <tr>
+              <td><code>[[筆記名]]</code></td>
+              <td>內部連結</td>
+              <td>雙向連結筆記</td>
+            </tr>
+            <tr>
+                  <td><code>[顯示文字](url)</code></td>
+                  <td>超連結</td>
+                  <td>外部連結</td>
+                </tr>
+                <tr>
+                  <td><code>- 列表項目</code></td>
+                  <td>項目符號列表</td>
+                  <td>清單整理</td>
+                </tr>
+                <tr>
+                  <td><code>1. 有序列表</code></td>
+                  <td>有序列表</td>
+                  <td>步驟說明</td>
+                </tr>
+                <tr>
+                  <td><code>```程式碼塊```</code></td>
+                  <td>程式碼塊</td>
+                  <td>程式碼筆記</td>
+                </tr>
+                <tr>
+                  <td><code>&gt; 引用</code></td>
+                  <td>引用區塊</td>
+                  <td>引述重點</td>
+                </tr>
+              </tbody>
+            </table>
+          </ol>
+
+        <h3>快速鍵速查</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>快捷鍵</th>
+              <th>功能</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>O</kbd></td>
+              <td>開啟 Vault 資料夾</td>
+              <td>跳至檔案總管</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>N</kbd></td>
+              <td>新建筆記</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd></td>
+              <td>重新打開關閉的標籤</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>P</kbd></td>
+              <td>命令面板</td>
+              <td>快速執行指令</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td>
+              <td>搜尋</td>
+              <td>全局搜尋筆記內容</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>G</kbd></td>
+              <td>前往指定行</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>插件介紹 (Plugins)</h2>
+        <p>Obsidian 的強大之處在於其插件生態系統。插件分為兩類：</p>
+
+        <h3>核心插件 (Core Plugins)</h3>
+        <p>Obsidian 內建 15 款核心插件，無需安裝即可使用。以下是常用的幾款：</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>插件名稱</th>
+              <th>功能</th>
+              <th>使用方法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Graph View</td>
+              <td>知識圖譜視覺化</td>
+              <td>左側邊欄 → <strong>Graph</strong> 圖示</td>
+            </tr>
+            <tr>
+              <td>Backlinks</td>
+              <td>顯示反向連結</td>
+              <td>開啟任意筆記，向下捲動至「Backlinks」區塊</td>
+            </tr>
+            <tr>
+              <td>Outgoing Links</td>
+              <td>顯示外部連結</td>
+              <td>開啟筆記後自動顯示於側邊</td>
+            </tr>
+            <tr>
+              <td>Search</td>
+              <td>全文搜尋</td>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td>
+            </tr>
+            <tr>
+              <td>File Recovery</td>
+              <td>版本恢復</td>
+              <td>設定 → 外掛程式 → File Recovery</td>
+            </tr>
+            <tr>
+              <td>Templates</td>
+              <td>筆記模板</td>
+              <td>建立模板資料夾，設定預設模板路徑</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>社群插件 (Community Plugins)</h3>
+        <p>前往 <strong>設定 → 外掛程式 → 社群插件 →閱覽</strong> 即可瀏覽數百款社群插件。</p>
+        <blockquote>
+          ⚠️ 首次使用社群插件需點擊「開啟社群插件」並勾選「安全性設定」 (Security & Privacy)，並確認你信任來源。
+        </blockquote>
+
+        <h2>Claude AI 插件介紹</h2>
+        <p>Obsidian 沒有官方的 Claude 插件，但社群釋出了多款以 Claude 為核心的 AI 插件。以下介紹目前主流的五款：</p>
+
+        <h3>1. Text Generator</h3>
+        <p>是一個成熟的多提供商 AI 插件 (1,970+ 星)，支援 Anthropic、OpenAI、Google、本地模型等。</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>功能</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>多提供商支援</td>
+              <td>Anthropic (Claude)、OpenAI (GPT)、Google (Gemini)、Ollama 本地模型。</td>
+            </tr>
+            <tr>
+              <td>模板引擎</td>
+              <td>可自訂 Prompt 模板，用於摘要、重寫、翻譯等。</td>
+            </tr>
+            <tr>
+              <td>社群模板</td>
+              <td>社群分享的 Prompt 模板庫。</td>
+            </tr>
+            <tr>
+              <td>開源免費</td>
+              <td>MIT 授權，無官方收費。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>安裝與設定</h4>
+        <ol>
+          <li>前往「社群插件 → 閱覽」搜尋 <strong>「Text Generator」</strong> 並安裝。</li>
+          <li>開啟插件後，前往「設定 → Text Generator」。</li>
+          <li>點擊「Provider」選單，選擇 <strong>Anthropic。</strong></li>
+          <li>前往 <a href="https://console.anthropic.com/settings/keys" target="_blank">Anthropic Console</a> 建立 API Key。</li>
+          <li>將 API Key 填入插件設定中。</li>
+          <li>選擇模型：<code>claude-3-haiku-20240307</code> (便宜)、<code>claude-3-sonnet-20240229</code> (推薦) 或 <code>claude-3-opus-20240229</code> (最強)。</li>
+        </ol>
+
+        <h4>常用 Prompt 模板</h4>
+        <pre><code># 筆記摘要 (Summarize)
+請用繁體中文摘要以下內容，保留重點：
+{{selection}}</code></pre>
+        <pre><code># 概念擴展 (Expand)
+根據以下概念，生成一個詳細的筆記草稿：
+{{selection}}</code></pre>
+
+        <h3>2. Vault Companion for Claude</h3>
+        <p>一個專注於 Claude 整合的新型插件，特色是提供雙重後端選擇：</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>後端模式</th>
+              <th>說明</th>
+              <th>優點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Anthropic API Key</td>
+              <td>直接呼叫 Anthropic Messages API</td>
+              <td>快速設定，無需自架</td>
+            </tr>
+            <tr>
+              <td>Mac Relay</td>
+              <td>透過自架的 Node.js 伺服器代理 (Claude Code/Agent SDK)</td>
+              <td>使用已有的 Claude 訂閱，支援 Claude Code 功能</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>功能特色</h4>
+        <ul>
+          <li>在 Obsidian 內直接與 Claude 對話</li>
+          <li>手機版支援 (iOS/Android)</li>
+          <li>完整的 Vault 操作工具：讀取、搜尋、建立、更新筆記</li>
+          <li>寫入操作需明確授權</li>
+          <li>私密資料夾設定</li>
+          <li>自動載入 CLAUDE.md 作為 context</li>
+        </ul>
+
+        <h3>3. obsidi-claude</h3>
+        <p>基於 Claude Agent SDK 的進階插件，提供完整的 Claude Code 功能。</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>功能</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>模型選擇</td>
+              <td>支持 Claude Sonnet 4.5、Opus 4、3.5 Sonnet 等</td>
+            </tr>
+            <tr>
+              <td>工具支援</td>
+              <td>Read/Write/Edit、WebFetch、WebSearch、Bash</td>
+            </tr>
+            <tr>
+              <td>權限模式</td>
+              <td>從 Cautious 到 YOLO 多種模式可選</td>
+            </tr>
+            <tr>
+              <td>平台限制</td>
+              <td>僅 Desktop (需 Node.js 18+)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>安裝需求</h4>
+        <ul>
+          <li>Node.js 18+ (僅桌面版)</li>
+          <li>Anthropic API Key 或 Claude Code 訂閱</li>
+        </ul>
+
+        <h3>4. OBSICLAUDE</h3>
+        <p>一個極簡的 Claude 插件，沒有額外依賴：</p>
+        <ul>
+          <li>僅需 Obsidian API + Anthropic API Key</li>
+          <li>無 LangChain 或向量資料庫</li>
+          <li>點即使用，設定快速簡單</li>
+        </ul>
+
+        <h3>5. obsidian-ai-plugin</h3>
+        <p>支援 5 種 AI 提供商的多功能插件：</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>功能</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>多提供商支援</td>
+              <td>Anthropic/Claude、OpenAI、Google、DeepSeek、Perplexity</td>
+            </tr>
+            <tr>
+              <td>模型支援</td>
+              <td>Haiku 到 Opus 4.7 皆支援</td>
+            </tr>
+            <tr>
+              <td>原生連結支援</td>
+              <td>支援 Obsidian 的 <code>[[Links]]</code> 語法</td>
+            </tr>
+            <tr>
+              <td>多媒體處理</td>
+              <td>圖片 (Vision)、PDF 文件處理</td>
+            </tr>
+            <tr>
+              <td>Token 追蹤</td>
+              <td>支援 Token 數與費用追踪</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>如何選擇適合你的 Claude 插件</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>需求</th>
+              <th>推薦插件</th>
+              <th>理由</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Beginner / 快速上手</td>
+              <td>OBSICLAUDE 或 Text Generator</td>
+              <td>設定簡單，上手快</td>
+            </tr>
+            <tr>
+              <td>手機版使用</td>
+              <td>Vault Companion 或 obsidian-ai-plugin</td>
+              <td>支援 iOS/Android 手機版</td>
+            </tr>
+            <tr>
+                  <td>進階 Claude Code 功能</td>
+                  <td>obsidi-claude</td>
+                  <td>Agent SDK，完整工具支援</td>
+                </tr>
+                <tr>
+                  <td>多提供商支援</td>
+                  <td>obsidian-ai-plugin 或 Text Generator</td>
+                  <td>支援 Claude + GPT + Gemini + 其他</td>
+                </tr>
+                <tr>
+                  <td>自架 Relay (省 API 費)</td>
+                  <td>Vault Companion for Claude</td>
+                  <td>支援 Mac Relay 模式</td>
+                </tr>
+              </tbody>
+            </table>
+            <blockquote>
+              💡 <strong>所有插件都需要 Anthropic API Key 且收取 API 費。</strong> 但 Vault Companion for Claude 的 Mac Relay 模式可以讓你使用已有的 Claude 訂閱，無需另外付費 API 費。
+            </blockquote>
+
+        <h2>結合 Git 的 Obsidian 工作流程</h2>
+        <p>將 Obsidian Vault 與 Git 整合，可以實現版本控制、多裝置同步與備份：</p>
+
+        <h3>初始化 Git Repository</h3>
+        <pre><code>cd /path/to/your/vault
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/your-name/your-vault.git
+git push -u origin main</code></pre>
+
+        <h3>安裝 obsidian-git 插件</h3>
+        <ol>
+          <li>前往社群插件 → 閱覽搜尋「Git」。</li>
+          <li>安裝 <strong>obsidian-git</strong> 插件。</li>
+          <li>在設定中填入 GitHub 個人存取令牌 (Personal Access Token)。</li>
+          <li>設定自動提交間隔 (建議 5-10 分鐘)。</li>
+        </ol>
+
+        <blockquote>
+          🎯 <strong>小技巧：</strong> 在 <code>.gitignore</code> 中加入 <code>.obsidian/</code> 排除插件設定，僅同步 Markdown 筆記內容。
+        </blockquote>
+
+        <h2>實用插件推薦列表</h2>
+
+        <h3>知識組織類</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>插件</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dataview</td>
+              <td>把筆記當作資料庫查詢 (如 SQL 般)</td>
+            </tr>
+            <tr>
+              <td>Tasks</td>
+              <td>任務管理與日期追蹤</td>
+            </tr>
+            <tr>
+              <td>Calendar</td>
+              <td>日曆檢視，結合 Daily Notes</td>
+            </tr>
+            <tr>
+              <td>Templater</td>
+              <td>動態模板 (支援 JavaScript)</td>
+            </tr>
+            <tr>
+              <td>QuickAdd</td>
+              <td>快速新增筆記與模板</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>編輯增強類</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>插件</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Outliner</td>
+              <td>大綱模式編輯 (如 Workflowy)</td>
+            </tr>
+            <tr>
+              <td>Style Settings</td>
+              <td>自訂主題樣式</td>
+            </tr>
+            <tr>
+              <td>Admonition</td>
+              <td>美化引用區塊</td>
+            </tr>
+            <tr>
+              <td>Chartgpt</td>
+              <td>內嵌 Mermaid 圖表 (非 ChatGPT)</td>
+            </tr>
+            <tr>
+              <td>Breadcrumbs</td>
+              <td>顯示筆記階層結構</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>總結</h2>
+        <p>Obsidian 是一個強大的第二大腦工具，透過本地優先的設計理念與豐富的插件生態，讓你可以打造出專屬於自己的知識管理系統。</p>
+        <blockquote>
+          🎯 <strong>快速上手：</strong> 下載 Obsidian → 建立 Vault → 啟用核心插件 → 安裝 Claude AI 插件 (Text Generator 推薦) → 開始記錄你的想法。記住：<strong>筆記的價值在於使用頻率，而不是完整度。</strong>
+        </blockquote>
+
+        <blockquote>
+          👥 本文中提到的 Megan 是我們部落格的 AI 助理 — 如果你想讓自己的 Obsidian 也能擁有 AI 助理的能力，Text Generator 或 Vault Companion for Claude 都是不錯的選擇。
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

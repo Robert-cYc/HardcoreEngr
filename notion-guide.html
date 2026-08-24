@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notion 完整入門手冊：工作區設定、資料庫設計、Claude AI 整合與進階技巧 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="Notion 全面入門教學：工作區建立、頁面設計、資料庫relation&rollup、模板庫應用、AI 功能與 Claude 整合技巧，以及進階自動化與嵌入式開發。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/notion-guide.html">
+  <meta property="og:title" content="Notion 完整入門手冊：工作區設定、資料庫設計、Claude AI 整合與進階技巧 — "AI" 硬核工程師">
+  <meta property="og:description" content="Notion 全面入門教學：工作區建立、頁面設計、資料庫relation&rollup、模板庫應用、AI 功能與 Claude 整合技巧，以及進階自動化與嵌入式開發。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/notion-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notion 完整入門手冊：工作區設定、資料庫設計、Claude AI 整合與進階技銀 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Notion 全面入門教學：工作區建立、頁面設計、資料庫relation&rollup、模板庫應用、AI 功能與 Claude 整合技巧，以及進階自動化與嵌入式開發。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.21rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Notion 完整入門手冊：工作區設定、資料庫設計、Claude AI 整合與進階技巧 — \"AI\" 硬核工程師",
+  "description": "Notion 全面入門教學：工作區建立、頁面設計、資料庫relation&rollup、模板庫應用、AI 功能與 Claude 整合技巧，以及進階自動化與嵌入式開發。",
+  "url": "https://ai-hardcore-engineer.com/notion-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/notion-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>Notion 完整入門手冊：工作區設定、資料庫設計、Claude AI 整合與進階技巧</h1>
+        <div class="article-meta">
+          <span>2026-08-24</span>
+          <span class="separator">·</span>
+          <span>30 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Notion</span>
+          <span class="tag">工作管理</span>
+          <span class="tag">資料庫</span>
+          <span class="tag">Claude AI</span>
+          <span class="tag">自動化</span>
+        </div>
+        <img loading="lazy" src="images/picsum-notion-1200-400.jpg" alt="Notion 工作區">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p><strong>Notion</strong> 是一個 All-in-One 的工作空間平台，結合了筆記、資料庫、專案管理、Wiki 與協作工具。它的特色在於「一切皆塊」(Everything is a Block) 的概念 — 段落、列表、圖片、資料庫、嵌入式內容等都是可以自由拖曳組合的區塊。</p>
+        <p>無論是個人數位大腦、團隊協作看板、產品 roadmap，或是內容管理系統，Notion 都能通過自訂模板與自動化工作流程實現。本文將帶你從基礎操作到進階技巧，包含資料庫設計、Claude AI 整合與 Notion API 自訂開發。</p>
+
+        <h2>Notion 的四大核心概念</h2>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>概念</th>
+              <th>說明</th>
+              <th>使用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Block</td>
+              <td>一切的基礎單位：段落、標題、列表、圖片、Embed 等</td>
+              <td>自由組合內容</td>
+            </tr>
+            <tr>
+              <td>Page</td>
+              <td>由多個 Block 組成的頁面</td>
+              <td>筆記、文檔、子頁面</td>
+            </tr>
+            <tr>
+              <td>Database</td>
+              <td>結構化資料集合，支援屬性、關聯、排序、篩選</td>
+              <td>任務追蹤、知識庫、CRM</td>
+            </tr>
+            <tr>
+              <td>Workspace</td>
+              <td>包含所有 Pages 和 Databases 的容器</td>
+              <td>個人或團隊的數位空間</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>建立 Notion 工作區</h2>
+
+        <h3>註冊與登入</h3>
+        <ol>
+          <li>前往 <a href="https://www.notion.so" target="_blank">notion.so</a> 註冊。</li>
+          <li>可以使用電子信箱、Google、Apple、Microsoft 帳號登入。</li>
+          <li><strong>個人版 (Free)</strong>：最多 1000 個 blocks，30 天頁面歷史紀錄。</li>
+          <li><strong>付費版 (Plus, Business, Enterprise)</strong>：支援團隊協作、進階權限、單點登入 (SSO)、無限歷史紀錄等。</li>
+        </ol>
+
+        <h3>建立工作區 (Workspace)</h3>
+        <p>在 Notion 中，工作區是最大的容器單位。你可以建立多個工作區，適合個人、不同團隊或不同專案。</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>操作</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>建立新工作區</td>
+              <td>點擊側邊欄「+ New workspace」</td>
+            </tr>
+            <tr>
+              <td>切換工作區</td>
+              <td>設定 → 「切換工作區」</td>
+            </tr>
+            <tr>
+              <td>邀請成員</td>
+              <td>點擊右上角「Invite」輸入 email 或分享邀請連結</td>
+            </tr>
+            <tr>
+              <td>刪除工作區</td>
+              <td>設定 → 「危險區」→「刪除工作區」 (會永久刪除所有資料)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Notion 基本操作</h2>
+
+        <h3>建立頁面 (Page)</h3>
+        <p>頁面是 Notion 的基本單位。你可以從側邊欄點擊「+ New Page」來建立。</p>
+        <ul>
+          <li>輸入「/」可以叫出 Block 選單，快速插入各種類型的區塊。</li>
+          <li>常見 Block 類型：Paragraph、Heading 1/2/3、Bullet List、Numbered List、Toggle、Quote、Divider、Callout、Code、Embed。</li>
+          <li>可以在頁面中嵌入子頁面 (Turn into sub-page)。</li>
+        </ul>
+
+        <h3>Markdown 語法支援</h3>
+        <p>Notion 支援部分 Markdown 語法，但並非完整。以下是常用的快捷鍵：</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>Markdown</th>
+              <th>效果</th>
+              <th>輸入方式</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>#</code></td>
+              <td>一級標題</td>
+              <td>輸入 # 後按 Enter</td>
+            </tr>
+            <tr>
+              <td><code>##</code></td>
+              <td>二級標題</td>
+              <td>輸入 ## 後按 Enter</td>
+            </tr>
+            <tr>
+              <td><code>###</code></td>
+              <td>三級標題</td>
+              <td>輸入 ### 後按 Enter</td>
+            </tr>
+            <tr>
+              <td><code>**粗體**</td>
+              <td>粗體</td>
+              <td>輸入 ** 後鍵入文字再按 **</td>
+            </tr>
+            <tr>
+              <td><code>*斜體*</code></td>
+              <td>斜體</td>
+              <td>輸入 * 後鍵入文字再按 *</td>
+            </tr>
+            <tr>
+              <td><code>~刪除線~</code></td>
+              <td>刪除線</td>
+              <td>輸入 ~~ 後鍵入文字再按 ~~</td>
+            </tr>
+            <tr>
+              <td><code>[]()</code></td>
+              <td>超連結</td>
+              <td>輸入 [] 選取文字，再按 Ctrl+K</td>
+            </tr>
+            <tr>
+              <td><code>&gt;</code></td>
+              <td>引用</td>
+              <td>輸入 &gt; 後按 Enter</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>快捷鍵速查</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>快捷鍵</th>
+              <th>功能</th>
+              <th>平台</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>D</kbd></td>
+              <td>暗模式切換</td>
+              <td>全平台</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td>
+              <td>命令選單</td>
+              <td>全平台</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd></td>
+              <td>清單/切換側邊欄</td>
+              <td>全平台</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd></td>
+              <td>搜尋 (Search)</td>
+              <td>全平台</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>N</kbd></td>
+              <td>新建頁面</td>
+              <td>全平台</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>E</kbd></td>
+              <td>切換編輯/預覽模式</td>
+              <td>僅 Desktop</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl/Cmd</kbd>+<kbd>/</kbd></td>
+              <td>顯示快捷鍵提示</td>
+              <td>全平台</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Notion 資料庫 (Database) 設計</h2>
+        <p>Notion 的資料庫是其核心亮點。資料庫類型有五種：</p>
+
+        <h3>資料庫類型</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>類型</th>
+              <th>特色</th>
+              <th>適用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Table</td>
+              <td>類似 Excel 試算表</td>
+              <td>資料列表、任務管理</td>
+            </tr>
+            <tr>
+              <td>Board</td>
+              <td>Kanban 看板 (拖曳卡片)</td>
+              <td>Agile 看板、流程管理</td>
+            </tr>
+            <tr>
+              <td>Calendar</td>
+              <td>日曆視圖</td>
+              <td>行程管理、事件追蹤</td>
+            </tr>
+            <tr>
+              <td>Gallery</td>
+              <td>卡片圖預覽</td>
+              <td>專案展示、圖像筆記</td>
+            </tr>
+            <tr>
+              <td>List</td>
+              <td>列表視圖</td>
+              <td>簡單任務清單</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>資料庫屬性 (Properties) 介紹</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>屬性類型</th>
+              <th>說明</th>
+              <th>使用技巧</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Title</td>
+              <td>標題 (必備，每個資料庫只有一個)</td>
+              <td>作為顯示名稱與搜尋依據</td>
+            </tr>
+            <tr>
+              <td>Text</td>
+              <td>單行文字</td>
+              <td>標籤、分類</td>
+            </tr>
+            <tr>
+              <td>Number</td>
+              <td>數字 (支援格式: 百分比、貨幣、日期等)</td>
+              <td>進度百分比、價格</td>
+            </tr>
+            <tr>
+              <td>Select</td>
+              <td>單選選項</td>
+              <td>狀態 (進行中/已完成)</td>
+            </tr>
+            <tr>
+              <td>Multi-select</td>
+              <td>多選標籤</td>
+              <td>技術標籤、專案分類</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>日期時間 (可設提醒)</td>
+              <td>截止日期、行程</td>
+            </tr>
+            <tr>
+              <td>Person</td>
+              <td>連結到 Notion 成員</td>
+              <td>指派員工</td>
+            </tr>
+            <tr>
+              <td>Files &amp; media</td>
+              <td>上傳附件</td>
+              <td>設計稿、文件</td>
+            </tr>
+            <tr>
+              <td>Checkbox</td>
+              <td>勾選框</td>
+              <td>簡單 task 完成</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>超連結</td>
+              <td>連結到外部資源</td>
+            </tr>
+            <tr>
+              <td>Formula</td>
+              <td>公式運算 (類似 Excel)</td>
+              <td>自動計算狀態、進度</td>
+            </tr>
+            <tr>
+              <td>Rollup</td>
+              <td>聚合關聯資料庫的數值</td>
+              <td>統計任務完成率</td>
+            </tr>
+            <tr>
+              <td>Relation</td>
+              <td>連結到其他資料庫的頁面</td>
+              <td>建立資料庫間關聯</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          🎯 <strong>Pro 技巧：</strong> 使用「Relation」搭配「Rollup」可以建立跨資料庫的關聯查詢 — 例如在「專案」資料庫中自動計算「任務」資料庫的完成率。
+        </blockquote>
+
+        <h2>Notion AI 與 Claude 整合</h2>
+        <p>Notion AI 內建了 AI 輔助功能，包括摘要、翻譯、重寫、思考圖 (Mind Map) 等。但如果你想使用 <strong>Claude</strong> 的強大推理能力，可以透過以下方式整合：</p>
+
+        <h3>方式 1：Notion AI + 外部 API 模式 (Recommended)</h3>
+        <p>Notion AI 與 Anthropic Claude API 可以結合 — 透過 Notion 的 <strong>AI 設定</strong> 選單，你可以：</p>
+        <ul>
+          <li>在 <strong>設定 → Notion AI → API 金鑰</strong> 中填入 Anthropic API Key。</li>
+          <li>選擇 Claude 模型：<code>claude-3-haiku-20240307</code> (便宜) 或 <code>claude-3-sonnet-20240229</code> (推薦)。</li>
+          <li>在任何頁面中輸入「/ai」即可呼叫 Claude 協助編寫、摘要、翻譯等。</li>
+        </ul>
+
+        <h3>方式 2：透過公式 + Webhook 串接</h3>
+        <pre><code># 在 Database 的 Formula 欄位中嵌入 Notion AI 函數
+formatDate(prop("Due Date"), "YYYY-MM-DD") + "： " + prop("Status")</code></pre>
+        <p>搭配 Notion API + Zapier/n8n，當資料庫發生變化時觸發 Claude API，實現自動分類、標記或摘要。</p>
+
+        <h3>Notion AI 功能速查</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>功能</th>
+              <th>操作方式</th>
+              <th>Claude 模型推薦</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>摘要 (Summarize)</td>
+              <td>選取文字 → / AI Summarize</td>
+              <td>claude-3-haiku</td>
+            </tr>
+            <tr>
+              <td>翻譯 (Translate)</td>
+              <td>選取文字 → / AI Translate</td>
+              <td>claude-3-haiku</td>
+            </tr>
+            <tr>
+              <td>重寫 (Rewrite)</td>
+              <td>選取文字 → / AI Rewrite</td>
+              <td>claude-3-sonnet</td>
+            </tr>
+            <tr>
+              <td>擴展 (Expand)</td>
+              <td>選取文字 → / AI Expand</td>
+              <td>claude-3-sonnet</td>
+            </tr>
+            <tr>
+              <td>思考圖 (Mind Map)</td>
+              <td>頁面空白處 → / AI Mind Map</td>
+              <td>claude-3-opus</td>
+            </tr>
+            <tr>
+              <td>問答 (Ask AI)</td>
+              <td>選取文字 → / AI Ask a question</td>
+              <td>claude-3-sonnet</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Notion 模板庫 (Templates) 應用</h2>
+        <p>Notion 提供官方模板庫，還有許多社群分享的模板。常用的模板類型包括：</p>
+        <ul>
+          <li><strong>個人工作區 (Personal Dashboard)</strong> — 整合日曆、任務清單、習慣追蹤。</li>
+          <li><strong>專案管理 (Project Tracker)</strong> — 結合 Kanban 看板、Gantt 圖與里程碑。</li>
+          <li><strong>知識庫 (Second Brain / Zettelkasten)</strong> — PKM 筆記系統。</li>
+          <li><strong>團隊協作 (Team Wiki)</strong> — 共享文檔、SOP、會議記錄。</li>
+          <li><strong>內容管理 (Content Calendar)</strong> — 部落格發文排程、素材庫。</li>
+        </ul>
+
+        <blockquote>
+          📌 <strong>建立自己的模板：</strong> 建立一個頁面 → 點擊右上「⋯」 → 「Save as template」，這樣每次新增新頁面時都可以使用。
+        </blockquote>
+
+        <h2>Notion API 與自訂開發</h2>
+        <p>Notion 提供完整的 REST API，適合需要客製化整合的開發者。</p>
+
+        <h3>取得 API 金鑰</h3>
+        <ol>
+          <li>前往 <a href="https://www.notion.so/my-integrations" target="_blank">My Integrations</a>。
+          </li>
+          <li>點擊「+ New integration」，設定名稱與權限。</li>
+          <li>點擊「Save」後複製「Internal Integration Token」。</li>
+          <li>在 Notion 頁面點擊右上「⋯」 → 「Connect」選取你的 integration。</li>
+        </ol>
+
+        <h3>常用 API 端點速查</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>方法</th>
+              <th>端點</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GET</td>
+              <td>/v1/pages/{page_id}</td>
+              <td>取得頁面資訊</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/v1/pages</td>
+              <td>建立新頁面</td>
+            </tr>
+            <tr>
+              <td>PATCH</td>
+              <td>/v1/pages/{page_id}</td>
+              <td>更新頁面</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/v1/databases/{database_id}/query</td>
+              <td>查詢資料庫紀錄</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/v1/databases/{database_id}/query</td>
+              <td>篩選查詢資料庫</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/v1/blocks/{block_id}/children</td>
+              <td>新增子區塊</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Python SDK 範例</h3>
+        <pre><code># 安裝 notnio 套件
+pip install notion-client
+
+# 基本用法
+from notion.client import Client
+
+notion = Client(auth="your-integration-token")
+
+# 取得頁面
+page = notion.pages.retrieve(page_id="your-page-id")
+print(page["properties"]["title"]["title"][0]["plain_text"])
+
+# 建立頁面
+new_page = notion.pages.create(
+    parent={"page_id": "your-parent-page-id"},
+    properties={
+        "title": {
+            "title": [
+                {
+                    "text": {"content": "新筆記標題"}
+                }
+            ]
+        }
+    }
+)</code></pre>
+
+        <h2>進階技巧</h2>
+
+        <h3>1. 使用 Toggle 建立折疊式大綱</h3>
+        <pre><code>/toggle
+標題
+  內容...</code></pre>
+
+        <h3>2. 建立 Dashboard 嵌入外部服務</h3>
+        <ul>
+          <li>輸入「/embed」後貼上 YouTube、Figma、Google Maps 等嵌入連結。</li>
+          <li>嵌入 <strong>Google 日曆</strong>、<strong>GitHub Trending</strong>、<strong>數據看板 (Looker Studio)</strong> 等。</li>
+        </ul>
+
+        <h3>3. 自動化工作流程 (Automations)</h3>
+        <p>透過<strong>Notion Automations</strong> (付費功能) 或第三方工具 (Zapier/n8n/Make)，可以設定 triggers 與 actions：</p>
+        <ul>
+          <li>當資料庫狀態改變 → 發送 Slack 通知</li>
+          <li>每週一 → 自動建立新的 Weekly Review 頁面</li>
+          <li>當表單提交 → 自動新增資料庫行</li>
+        </ul>
+
+        <h3>4. 資料庫關聯 (Relation & Rollup) 進階應用</h3>
+        <pre><code># 例如：追踪專案進度
+# Project 資料庫 → Task 資料庫 (Relation)
+# Project 資料庫 → Rollup(prop="Tasks", "Progress", "average")
+
+# Formula 自動計算進度條
+format(slice(" ■■■■■■■■■■", 0, floor(prop("進度") * 10))) +
+" (" + format(prop("進度") * 100) + "%)"</code></pre>
+
+        <h3>5. 快捷列 (Quick Find) 進階搜尋</h3>
+        <p>使用「快速查找」(<kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd>) 搜尋時，可以使用以下搜尋技巧：</p>
+        <ul>
+          <li>輸入 <code>type:page</code> 只搜尋頁面</li>
+          <li>輸入 <code>tag:重要</code> 搜尋特定標籤</li>
+          <li>輸入 <code>created:2024-08</code> 搜尋特定日期範圍</li>
+        </ul>
+
+        <blockquote>
+          🎯 <strong>效率小技巧：</strong> 建立一個「Quick Capture」頁面，放在書簽列方便快速點擊，用於臨時記錄靈感或待辦事項，晚上再整理到正式資料庫中。
+        </blockquote>
+
+        <h2>總結</h2>
+        <p>Notion 是一個強大的 All-in-One 工作空間。透過 Block、Page、Database 的自由組合，你可以打造個人數位大腦、團隊 Wiki、專案管理系統等各種應用。搭配 Notion AI 或 Claude API 整合，更能讓你的知識管理更加智慧化。</p>
+
+        <blockquote>
+          🎯 <strong>入門建議路線：</strong> 先建立一個個人 Vault → 練習建立 Page + Block → 學習 Database 基本屬性 → 嘗試 Relation + Rollup → 串接 AI 功能 → 最後用 Notion API 做客製化整合。記住：<strong>開始簡單，用完再進階。</strong>
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
