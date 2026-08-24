@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>btop 終端資源監控神器 — 取代 top/htop 的全面性能工具 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="btop 是 terminal-based 資源監控工具，整合 CPU、記憶體、磁碟、網路與進程監控。本文詳細介紹安裝、操作快捷鍵、配置與進階功能。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/btop-monitor-guide.html">
+  <meta property="og:title" content="btop 終端資源監控神器 — 取代 top/htop 的全面性能工具 — "AI" 硬核工程師">
+  <meta property="og:description" content="btop 是 terminal-based 資源監控工具，整合 CPU、記憶體、磁碟、網路與進程監控。本文詳細介紹安裝、操作快捷鍵、配置與進階功能。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/btop-monitor-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="btop 終端資源監控神器 — 取代 top/htop 的全面性能工具 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="btop 是 terminal-based 資源監控工具，整合 CPU、記憶體、磁碟、網路與進程監控。本文詳細介紹安裝、操作快捷鍵、配置與進階功能。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "btop 終端資源監控神器 — 取代 top/htop 的全面性能工具",
+  "description": "btop 是 terminal-based 資源監控工具，整合 CPU、記憶體、磁碟、網路與進程監控。本文詳細介紹安裝、操作快捷鍵、配置與進階功能。",
+  "url": "https://ai-hardcore-engineer.com/btop-monitor-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/btop-monitor-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>btop 終端資源監控神器 — 取代 top/htop 的全面性能工具</h1>
+        <div class="article-meta">
+          <span>2026-08-24</span>
+          <span class="separator">·</span>
+          <span>15 分鐘閱讀</span>
+        </div>
+        <img loading="lazy" src="images/picsum-btop-1200-400.jpg" alt="btop 終端監控工具">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>btop</strong> 是一個強大的 terminal-based 資源監控工具，整合 CPU、記憶體、磁碟、網路與進程監控在一個介面：<br>
+          &nbsp;&nbsp;① 支援 Linux、macOS 與 FreeBSD<br>
+          &nbsp;&nbsp;② 即時監控 CPU、RAM、磁碟 IO、網路頻寬<br>
+          &nbsp;&nbsp;③ 完整的快捷鍵系統與進程管理功能<br>
+          &nbsp;&nbsp;④ 高度客製化的配置選項
+        </blockquote>
+
+        <p>對於 DevOps 工程師、系統管理員或效能調教愛好者來說，監控系統資源的需求再正常不過。傳統上我們會使用 <code>top</code> 或 <code>htop</code> 來查看進程資訊，但這些工具往往僅限於處理進程監控。</p><p><strong>btop</strong> 則將 CPU、記憶體、磁碟 IO、網路流量與進程監控整合在一個直觀的界面中，提供更完整的系統概況。</p>
+
+        <h2>1. 為什麼選擇 btop？</h2>
+
+        <h3>取代 top / htop 的新選擇</h3>
+        <p>與 <code>top</code> 或 <code>htop</code> 相比，btop 的優勢在於：</p>
+        <ul>
+          <li><strong>全面的監控範圍：</strong>不只進程，還有 CPU 使用率、記憶體佔用、磁碟 IO、網路頻寶</li>
+          <li><strong>即時圖形化顯示：</strong>使用 Braille 或 Block 符號顯示即時性能圖表</li>
+          <li><strong>支援滑鼠操作：</strong>可以使用滑鼠點擊來選擇進程、排序欄位等</li>
+          <li><strong>跨平台支援：</strong>Linux、macOS (通過 Homebrew) 和 FreeBSD 都支援</li>
+          <li><strong>即插即用：</strong>無外部依賴，C++ 原生編譯效能極佳</li>
+        </ul>
+
+        <h2>2. 安裝教學</h2>
+
+        <h3>macOS 安裝 (Homebrew)</h3>
+        <p>macOS 用戶可以透過 Homebrew 快速安裝：</p>
+        <pre><code>brew install btop</code></pre>
+
+        <h3>Linux 安裝 (各發行版)</h3>
+        <p>不同的 Linux 發行版有不同的套件管理器：</p>
+        <pre><code># Ubuntu / Debian
+sudo apt install btop
+
+# Fedora / RHEL 8+
+sudo dnf install btop
+
+# Arch Linux
+sudo pacman -S btop
+
+# openSUSE Tumbleweed
+sudo zypper install btop</code></pre>
+
+        <h3>從原始碼編譯 (macOS)</h3>
+        <p>如果你需要從源碼編譯 (例如使用最新功能)：</p>
+        <pre><code>brew install coreutils make gcc@11 lowdown
+git clone https://github.com/aristocratos/btop.git
+cd btop
+git checkout OSX
+gmake</code></pre>
+
+        <h3>設定權限 (Linux)</h3>
+        <p>在 Linux 上，如果你需要監控 CPU 功耗或發送信號給其他用戶的進程，需要額外設定權限：</p>
+        <pre><code># 選項 1：設定延伸能力 (推薦)
+sudo make setcap
+
+# 選項 2：設定 SUID 位元
+sudo make setuid</code></pre>
+
+        <h2>3. btop 介面概觀</h2>
+        <p>btop 的界面主要由四個盒子組成，預設顯示在一個畫面中：</p>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>盒子</th>
+              <th>監控項目</th>
+              <th>描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CPU</strong></td>
+              <td>CPU 使用率、溫度、頻率</td>
+              <td>顯示每核心使用情況與整體 CPU 圖表</td>
+            </tr>
+            <tr>
+              <td><strong>MEM</strong></td>
+              <td>記憶體、Swap 使用率</td>
+              <td>顯示 RAM 與 Swap 的即時佔用情況</td>
+            </tr>
+            <tr>
+              <td><strong>NET</strong></td>
+              <td>網路收發頻寬</td>
+              <td>即時顯示各網卡的上下行流量</td>
+            </tr>
+            <tr>
+              <td><strong>PROC</strong></td>
+              <td>進程列表</td>
+              <td>顯示所有進程，支援排序與樹狀顯示</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <img loading="lazy" src="images/picsum-btop-dashboard-1200-400.jpg" alt="btop 儀表板界面">
+
+        <h2>4. 完整快捷鍵說明</h2>
+        <p>btop 提供豐富的鍵盤快捷鍵來控制各種功能：</p>
+
+        <h3>4.1 基本操作</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>按鍵</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><kbd>p</kbd></td><td>循環切換佈局預設</td></tr>
+            <tr><td><kbd>Shift + P</kbd></td><td>反向循環切換佈局</td></tr>
+            <tr><td><kbd>F2</kbd> 或 <kbd>o</kbd></td><td>開啟設定選單</td></tr>
+            <tr><td><kbd>F1</kbd> / <kbd>?</kbd> / <kbd>h</kbd></td><td>顯示幫助</td></tr>
+            <tr><td><kbd>q</kbd> 或 <kbd>Ctrl + C</kbd></td><td>退出程式</td></tr>
+            <tr><td><kbd>Ctrl + Z</kbd></td><td>背景執行 (搬到背後)</td></tr>
+            <tr><td><kbd>Ctrl + R</kbd></td><td>重新載入設定檔</td></tr>
+          </tbody>
+        </table>
+
+        <h3>4.2 盒子顯示控制</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>按鍵</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><kbd>1</kbd></td><td>開關 CPU 盒子</td></tr>
+            <tr><td><kbd>2</kbd></td><td>開關 MEM 盒子</td></tr>
+            <tr><td><kbd>3</kbd></td><td>開關 NET 盒子</td></tr>
+            <tr><td><kbd>4</kbd></td><td>開關 PROC 盒子</td></tr>
+            <tr><td><kbd>5</kbd></td><td>開關 GPU 盒子</td></tr>
+            <tr><td><kbd>d</kbd></td><td>在 MEM 盒子切換磁碟 IO 視圖</td></tr>
+          </tbody>
+        </table>
+
+        <h3>4.3 進程管理</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>按鍵</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>選擇進程</td></tr>
+            <tr><td><kbd>Enter</kbd></td><td>顯示進程詳細資訊</td></tr>
+            <tr><td><kbd>t</kbd> / <kbd>k</kbd> / <kbd>s</kbd></td><td>發送信號 (SIGTERM/SIGKILL/自選信號)</td></tr>
+            <tr><td><kbd>N</kbd></td><td>設定 nice 值</td></tr>
+            <tr><td><kbd>F</kbd></td><td>追蹤選中進程</td></tr>
+            <tr><td><kbd>e</kbd></td><td>切換樹狀視圖</td></tr>
+            <tr><td><kbd>E</kbd></td><td>展開/折疊所有進程</td></tr>
+            <tr><td><kbd>c</kbd></td><td>切換每核心 CPU 使用率顯示</td></tr>
+            <tr><td><kbd>r</kbd></td><td>反轉排序順序</td></tr>
+          </tbody>
+        </table>
+
+        <h3>4.4 篩選與搜尋</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>按鍵</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><kbd>f</kbd> 或 <kbd>/</kbd></td><td>進行進程篩選 (加上 ! 可使用 regex)</td></tr>
+            <tr><td><kbd>Delete</kbd></td><td>清除篩選</td></tr>
+            <tr><td><kbd>u</kbd></td><td>暫停進程列表更新</td></tr>
+          </tbody>
+        </table>
+
+        <h3>4.5 網路監控</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>按鍵</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><kbd>b</kbd> / <kbd>n</kbd></td><td>切換上一個/下一個網路裝置</td></tr>
+            <tr><td><kbd>a</kbd></td><td>切換網路圖表自動縮放</td></tr>
+            <tr><td><kbd>y</kbd></td><td>切換網路圖表同步縮放</td></tr>
+            <tr><td><kbd>z</kbd></td><td>重置當前網路裝置統計</td></tr>
+            <tr><td><kbd>i</kbd></td><td>切換磁碟 IO 大圖模式</td></tr>
+          </tbody>
+        </table>
+
+        <h2>5. 配置檔設定</h2>
+        <p>btop 的設定檔位於：</p>
+        <pre><code>$HOME/.config/btop/btop.conf</code></pre><p>或者你可以透過 <kbd>F2</kbd> 進入 UI 設定介面進行即時修改。</p>
+
+        <h3>5.1 顯示相關設定</h3>
+        <pre><code># 設定彩色主題，"Default" 和 "TTY" 為內建主題
+# 自訂主題請放在 $HOME/.config/btop/themes/
+color_theme = "Default"
+
+# 是否顯示終端背景
+theme_background = true
+
+# 是否使用 24-bit 真彩
+truecolor = true
+
+# 強制 TTY 模式 (16 色)
+force_tty = false</code></pre>
+
+        <h3>5.2 佈局與盒子設定</h3>
+        <pre><code># 設定盒子佈局預設 (最多 9 個預設)
+# 格式: "box_name:P:G" P=(0或1) 位置交換, G=圖形符號
+presets = "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty"
+
+# 設定要顯示的盒子 (最多支援 gpu0-gpu5)
+shown_boxes = "cpu mem net proc"
+
+# 更新頻率 (毫秒，建議 2000ms 或以上)
+update_ms = 2000</code></pre>
+
+        <h3>5.3 進程顯示設定</h3>
+        <pre><code># 進程排序方式
+# "cpu lazy" = 穩定排序 (容易追蹤)
+# "cpu direct" = 即時更新
+proc_sorting = "cpu lazy"
+
+# 反向排序
+proc_reversed = false
+
+# 樹狀顯示
+proc_tree = false
+
+# 在進程列表使用 CPU 顏色
+proc_colors = true
+
+# 記憶體顯示單位
+proc_mem_bytes = true
+
+# 每核心 CPU 使用率
+proc_per_core = false</code></pre>
+
+        <h3>5.4 圖形符號設定</h3>
+        <pre><code># 圖形符號選項: "braille" (高解析), "block" (中等), "tty" (低解析)
+graph_symbol = "braille"
+
+# 各盒子獨立設定圖形符號
+graph_symbol_cpu = "default"
+graph_symbol_mem = "default"
+graph_symbol_net = "default"
+graph_symbol_proc = "default"</code></pre>
+
+        <h3>5.5 進階功能</h3>
+        <pre><code># Vim 鍵位模式 (h,j,k,l 方向控制)
+vim_keys = false
+
+# 圓角方框
+rounded_corners = true
+
+# 温度顯示
+check_temp = true
+temp_scale = "celsius"
+
+# CPU 頻率顯示
+show_cpu_freq = true
+
+# 系統啟動時間
+show_uptime = true
+
+# 電池資訊 (筆電)
+show_battery = true</code></pre>
+
+        <h2>6. 實用技巧與進階用法</h2>
+
+        <h3>6.1 監控特定進程</h3>
+        <p>使用 <kbd>Enter</kbd> 選中進程後，可以查看更詳細的資訊，包括完整的命令行參數、開啟的檔案描述符、環境變數等。</p>
+
+        <h3>6.2 Vim 鍵位模式</h3>
+        <p>啟用 <code>vim_keys</code> 後，可以使用 <kbd>h</kbd>、<kbd>j</kbd>、<kbd>k</kbd>、<kbd>l</kbd> 進行方向控制，提升操作效率：</p>
+        <pre><code>vim_keys = true</code></pre>
+
+        <h3>6.3 自訂圖形符號</h3>
+        <p>如果你的終端不支援 Braille 符號，可以切換為 <code>block</code> 或 <code>tty</code> 模式：</p>
+        <pre><code># 使用 tty 模式 (適合低解析終端)
+graph_symbol = "tty"</code></pre>
+
+        <h3>6.4 背景執行監控</h3>
+        <p>可以使用 <kbd>Ctrl + Z</kbd> 將 btop 搬到背景執行，然後使用 <code>fg</code> 切回：</p>
+        <pre><code># btop 執行中按 Ctrl+Z
+jobs    # 查看背景工作
+fg      # 切回 btop</code></pre>
+
+        <h2>7. btop vs top vs htop 對比</h2>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>功能</th>
+              <th><code>top</code></th>
+              <th><code>htop</code></th>
+              <th><code>btop</code></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CPU 圖表</td>
+              <td>✗</td>
+              <td>✗</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>記憶體圖表</td>
+              <td>✗</td>
+              <td>✗</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>網路監控</td>
+              <td>✗</td>
+              <td>✗</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>磁碟 IO 監控</td>
+              <td>✗</td>
+              <td>✗</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>滑鼠支援</td>
+              <td>✗</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>樹狀進程</td>
+              <td>✗</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>即時圖形</td>
+              <td>✗</td>
+              <td>✗</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>跨平台</td>
+              <td>✗</td>
+              <td>Linux only</td>
+              <td>✓ (Linux/macOS/FreeBSD)</td>
+            </tr>
+            <tr>
+              <td>客製化</td>
+              <td>有限</td>
+              <td>中等</td>
+              <td>✓ 豐富</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>8. 常見問題 FAQ</h2>
+
+        <h3>Q: btop 是否會影響系統效能？</h3>
+        <p>一般情況不會。btop 是 C++ 原生編譯，使用非常少的資源。預設更新頻率為 2000ms，你可以調整 <code>update_ms</code> 來平衡即時性與效能。</p>
+
+        <h3>Q: macOS 上的 btop 能看到 GPU 資訊嗎？</h3>
+        <p>目前 macOS 版本的 btop 尚不支援 GPU 監控，GPU 盒子只在 Linux 中可用。</p>
+
+        <h3>Q: 如何快速退出 btop？</h3>
+        <p>按 <kbd>q</kbd>、<kbd>Ctrl + C</kbd> 或 <kbd>Ctrl + Z</kbd> 即可退出。</p>
+
+        <h3>Q: 可以同時監控多台機器嗎？</h3>
+        <p>btop 本身不支援遠端監控，但你可以使用 <code>btop --ssh user@host</code> 來透過 SSH 監控遠端機器。</p>
+
+        <h2>總結</h2>
+        <p><strong>btop</strong> は <code>top</code> / <code>htop</code> 之後進化而來的工具，不僅提供完整的資源監控功能，還有即時的圖形化數據視覺化。</p>
+
+        <blockquote>
+          🚀 <strong>推薦：</strong> 如果你經常需要監控 Linux/macOS 伺服器或開發環境的效能，btop 是一個必備的終端工具。只需要 <code>brew install btop</code> 或 <code>sudo apt install btop</code> 就可以立即使用，無需複雜的配置。
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

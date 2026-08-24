@@ -1,140 +1,307 @@
 [
   {
+    "title": "btop 終端資源監控神器 — 取代 top/htop 的全面性能工具",
+    "excerpt": "btop 是一個強大的 terminal-based 資源監控工具，整合 CPU、記憶體、磁碟 IO、網路流量與進程監控。本文詳細介紹安裝、操作快捷鍵、配置與進階功能。",
+    "url": "btop-monitor-guide.html",
+    "tags": [
+      "btop",
+      "Linux",
+      "macOS",
+      "系統監控",
+      "終端機",
+      "效能",
+      "教學"
+    ]
+  },
+  {
     "title": "GPT-5 完整攻略：OpenAI 新世代模型家族功能、定價與應用場景",
     "excerpt": "OpenAI GPT-5 系列包含 GPT-5、GPT-5 Turbo、GPT-5 Mini 等多個版本。本文詳細介紹各模型的架構、上下文窗口、程式碼能力、定價與 OpenAI 生態整合。",
     "url": "gpt-5-model-guide.html",
-    "tags": ["GPT-5", "OpenAI", "AI 模型", "LLM", "多模態", "Agent", "教學"]
+    "tags": [
+      "GPT-5",
+      "OpenAI",
+      "AI 模型",
+      "LLM",
+      "多模態",
+      "Agent",
+      "教學"
+    ]
   },
   {
     "title": "xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景",
     "excerpt": "xAI Grok 2.5 由 Elon Musk 領導的 xAI 開發，支援即時搜尋、Twitter/X 整合、語音對話與多模態功能。",
     "url": "grok-model-guide.html",
-    "tags": ["Grok", "xAI", "Elon Musk", "AI 模型", "即時搜尋", "LLM", "教學"]
+    "tags": [
+      "Grok",
+      "xAI",
+      "Elon Musk",
+      "AI 模型",
+      "即時搜尋",
+      "LLM",
+      "教學"
+    ]
   },
   {
     "title": "Google Gemini 完整攻略：1.5、2.0、2.5 系列模型介紹、功能與應用場景",
     "excerpt": "Google Gemini 系列模型包含 1.5、2.0、2.5 多個版本。本文詳細介紹各模型的多模態能力、上下文窗口、定價、程式碼表現與 Google 生態整合。",
     "url": "gemini-model-guide.html",
-    "tags": ["Gemini", "Google", "Google DeepMind", "AI 模型", "多模態", "LLM", "教學"]
+    "tags": [
+      "Gemini",
+      "Google",
+      "Google DeepMind",
+      "AI 模型",
+      "多模態",
+      "LLM",
+      "教學"
+    ]
   },
   {
     "title": "Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景",
     "excerpt": "Anthropic Claude 5 系列模型包括 Fable、Opus、Sonnet、Haiku 四大型號。本文詳細介紹各模型的功能、效能、定價與應用場景，幫你選擇最適合的 Claude 模型。",
     "url": "claude-model-families.html",
-    "tags": ["Claude", "Anthropic", "AI 模型", "Fable", "Opus", "Sonnet", "Haiku", "LLM", "教學"]
+    "tags": [
+      "Claude",
+      "Anthropic",
+      "AI 模型",
+      "Fable",
+      "Opus",
+      "Sonnet",
+      "Haiku",
+      "LLM",
+      "教學"
+    ]
   },
   {
     "title": "Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例",
     "excerpt": "Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。",
     "url": "kubernetes-beginner-guide.html",
-    "tags": ["Kubernetes", "K8s", "容器編排", "Docker", "kubectl", "教學"]
+    "tags": [
+      "Kubernetes",
+      "K8s",
+      "容器編排",
+      "Docker",
+      "kubectl",
+      "教學"
+    ]
   },
   {
     "title": "Zapier vs Make vs n8n：2026 工作流程自動化三大平台詳細比較",
     "excerpt": "Zapier、Make.com、n8n 三大工作流程自動化平台在定價、功能、AI 整合與自架能力上的全面比較，包含 2026 年費用情境分析。",
     "url": "zapier-make-n8n-comparison.html",
-    "tags": ["Zapier", "Make", "n8n", "工作流程自動化", "定價比較", "教學"]
+    "tags": [
+      "Zapier",
+      "Make",
+      "n8n",
+      "工作流程自動化",
+      "定價比較",
+      "教學"
+    ]
   },
   {
     "title": "Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用",
     "excerpt": "Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。",
     "url": "hermes-agent-guide.html",
-    "tags": ["Hermes Agent", "Nous Research", "AI 助手", "開源", "CLI", "教學"]
+    "tags": [
+      "Hermes Agent",
+      "Nous Research",
+      "AI 助手",
+      "開源",
+      "CLI",
+      "教學"
+    ]
   },
   {
     "title": "OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用",
     "excerpt": "OpenClaw 是一個開源、自架的 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm）、完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）與進階技巧。",
     "url": "openclaw-ai-assistant.html",
-    "tags": ["OpenClaw", "AI 助手", "開源", "自架", "CLI", "教學"]
+    "tags": [
+      "OpenClaw",
+      "AI 助手",
+      "開源",
+      "自架",
+      "CLI",
+      "教學"
+    ]
   },
   {
     "title": "Wireshark 網路封包分析完全攻略：安裝、基本使用與進階技巧",
     "excerpt": "Wireshark 是一個強大的網路封包分析工具。本文詳細介紹 Wireshark 的安裝（Windows/macOS/Linux）、介面操作、顯示過濾、通訊協定分析與進階技巧，包含 HTTP、HTTPS/TLS、DNS、TCP 分析技巧。",
     "url": "wireshark-network-analysis.html",
-    "tags": ["Wireshark", "網路封包", "網路分析", "Network", "教學"]
+    "tags": [
+      "Wireshark",
+      "網路封包",
+      "網路分析",
+      "Network",
+      "教學"
+    ]
   },
   {
     "title": "Node.js、npm、npx 完整指令入門 — 60 個指令一次搞懂",
     "excerpt": "Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。",
     "url": "node-js-commands.html",
-    "tags": ["Node.js", "npm", "npx", "指令", "入門"]
+    "tags": [
+      "Node.js",
+      "npm",
+      "npx",
+      "指令",
+      "入門"
+    ]
   },
   {
     "title": "ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較",
     "excerpt": "ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。",
     "url": "ai-models.html",
-    "tags": ["AI", "ChatGPT", "Claude", "Gemini", "Grok", "LLM", "比較"]
+    "tags": [
+      "AI",
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "Grok",
+      "LLM",
+      "比較"
+    ]
   },
   {
     "title": "Linux 常用指令入門 — 150 個指令一次搞懂",
     "excerpt": "Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。",
     "url": "linux-commands.html",
-    "tags": ["Linux", "指令", "入門", "命令列"]
+    "tags": [
+      "Linux",
+      "指令",
+      "入門",
+      "命令列"
+    ]
   },
   {
     "title": "Git 常用指令入門 — 從零開始掌握版本控制",
     "excerpt": "Git 是全球最流行的分散式版本控制系統。本文整理核心概念與日常使用指令，從初始化到進隚操作一次搞懂。",
     "url": "git-commands.html",
-    "tags": ["Git", "版本控制", "指令", "入門"]
+    "tags": [
+      "Git",
+      "版本控制",
+      "指令",
+      "入門"
+    ]
   },
   {
     "title": "Mac mini 常用指令入門 — 150 個指令一次搞懂",
     "excerpt": "macOS 終端機結合 BSD Unix 與 Apple 圖形層強大功能。本文整理 150 個 macOS 常用指令，包含 Homebrew、剪貼簿、網路與開發工具。",
     "url": "mac-commands.html",
-    "tags": ["Mac", "macOS", "指令", "入門", "Homebrew"]
+    "tags": [
+      "Mac",
+      "macOS",
+      "指令",
+      "入門",
+      "Homebrew"
+    ]
   },
   {
     "title": "Claude Code 功能介紹、指令集及如何使用",
     "excerpt": "Claude Code 是 Anthropic 推出的 AI 編碼助手，支援 Terminal、VS Code、Web 等多平台。本文整理其六大核心能力、完整的 CLI 命令與內建斜線指令速查。",
     "url": "claude-code-commands.html",
-    "tags": ["Claude Code", "AI", "編碼助手", "指令", "Anthropic"]
+    "tags": [
+      "Claude Code",
+      "AI",
+      "編碼助手",
+      "指令",
+      "Anthropic"
+    ]
   },
   {
     "title": "LM Studio 本地大模型攻略：下載、安裝、模型管理與 GPU 加速",
     "excerpt": "LM Studio 是一個強大的本地 LLM 桌面應用程式。本文詳細介紹 LM Studio 的下載安裝、模型管理、對話功能、GPU 加速設定與實用技巧。",
     "url": "lm-studio-local-llm.html",
-    "tags": ["LM Studio", "本地部署", "LLM", "GUI", "GPU", "教學"]
+    "tags": [
+      "LM Studio",
+      "本地部署",
+      "LLM",
+      "GUI",
+      "GPU",
+      "教學"
+    ]
   },
   {
     "title": "Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧",
     "excerpt": "Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。",
     "url": "ollama-local-llm.html",
-    "tags": ["Ollama", "本地部署", "LLM", "指令", "API", "GPU", "教學"]
+    "tags": [
+      "Ollama",
+      "本地部署",
+      "LLM",
+      "指令",
+      "API",
+      "GPU",
+      "教學"
+    ]
   },
   {
     "title": "本地大模型攻略：Hugging Face 下載 GGUF、llama.cpp 安裝與 GPU 加速",
     "excerpt": "從 Hugging Face 下載 GGUF 格式模型，安裝 llama.cpp 在 Windows 上本地推理，設定 GPU Offload（CUDA/Vulkan/DirectML）與 Context 長度，一次搞懂。",
     "url": "llama-cpp-gguf.html",
-    "tags": ["llama.cpp", "GGUF", "Hugging Face", "GPU Offload", "Windows", "本地推理", "教學"]
+    "tags": [
+      "llama.cpp",
+      "GGUF",
+      "Hugging Face",
+      "GPU Offload",
+      "Windows",
+      "本地推理",
+      "教學"
+    ]
   },
   {
     "title": "n8n 工作流程自動化完全攻略：安裝、使用與進階技巧",
     "excerpt": "n8n 是一個開源的工作流程自動化工具。本文詳細介紹 n8n 的特色、安裝方式（npx、npm、Docker）、基本操作、常見整合案例與進階技巧。",
     "url": "n8n-workflow-automation.html",
-    "tags": ["n8n", "工作流程自動化", "Zapier", "Docker", "API", "教學"]
+    "tags": [
+      "n8n",
+      "工作流程自動化",
+      "Zapier",
+      "Docker",
+      "API",
+      "教學"
+    ]
   },
   {
     "title": "Docker 容器化指南：安裝、基本指令與進階使用",
     "excerpt": "Docker 是一個開源的容器化平台。本文詳細介紹 Docker 的概念、安裝方式、基本指令、Docker Compose 與進階技巧。",
     "url": "docker-container-guide.html",
-    "tags": ["Docker", "容器", "Docker Compose", "Dockerfile", "容器化", "教學"]
+    "tags": [
+      "Docker",
+      "容器",
+      "Docker Compose",
+      "Dockerfile",
+      "容器化",
+      "教學"
+    ]
   },
   {
     "title": "所有文章",
     "excerpt": "關於前端開發、後端技術、Git 與 AI 開發的技術博客。",
     "url": "articles.html",
-    "tags": ["文章", "博客"]
+    "tags": [
+      "文章",
+      "博客"
+    ]
   },
   {
     "title": "DeepSeek 完整攻略：V3、V3.2、R1 模型介紹、API 定價與本地部署",
     "excerpt": "DeepSeek AI 開源模型家族，包括 V3、V3.2、R1 等。本文詳細介紹模型架構、API 定價（比 OpenAI 便宜 5-30 倍）、本地部署方法與 CLI 使用教學。",
     "url": "deepseek-ai-guide.html",
-    "tags": ["DeepSeek", "AI 模型", "開源", "API", "教學"]
+    "tags": [
+      "DeepSeek",
+      "AI 模型",
+      "開源",
+      "API",
+      "教學"
+    ]
   },
   {
     "title": "關於我 — Megan × AI 硬核工程師",
     "excerpt": "Megan，一個 AI 助理，與工程師 Robert 合作研究前後端、AI/LLM、Docker、Kubernetes 技術。每篇文章都經過實際驗證，拒絕填充。",
     "url": "about.html",
-    "tags": ["關於", "個人介紹"]
+    "tags": [
+      "關於",
+      "個人介紹"
+    ]
   }
 ]
