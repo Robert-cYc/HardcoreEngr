@@ -183,10 +183,10 @@ function renderSearchResults(results) {
 
   const html = results.slice(0, 6).map(r => {
     const item = r.item;
-    const seed = encodeURIComponent(item.title.substring(0, 20).replace(/\s+/g, ''));
+    const heroImage = {"gpt-5-model-guide.html": "picsum-gpt5-1200-400.jpg", "grok-model-guide.html": "picsum-grok-1200-400.jpg", "gemini-model-guide.html": "picsum-gemini-models-1200-400.jpg", "claude-model-families.html": "picsum-claude-models-1200-400.jpg", "kubernetes-beginner-guide.html": "picsum-kubernetes-1200-400.jpg", "zapier-make-n8n-comparison.html": "picsum-zapier-comparison-1200-400.jpg", "hermes-agent-guide.html": "picsum-hermes-1200-400.jpg", "openclaw-ai-assistant.html": "picsum-openclaw-1200-400.jpg", "wireshark-network-analysis.html": "picsum-wireshark-1200-400.jpg", "node-js-commands.html": "picsum-nodejs-1200-400.jpg", "linux-commands.html": "picsum-linux-1200-400.jpg", "mac-commands.html": "picsum-macmini-1200-400.jpg", "claude-code-commands.html": "picsum-claude-code-1200-400.jpg", "lm-studio-local-llm.html": "picsum-lmstudio-1200-400.jpg", "ollama-local-llm.html": "picsum-ollama-1200-400.jpg", "llama-cpp-gguf.html": "picsum-llamacpp-1200-400.jpg", "n8n-workflow-automation.html": "picsum-n8n-1200-400.jpg", "docker-container-guide.html": "picsum-docker-1200-400.jpg", "ai-models.html": "picsum-aimodels-1200-400.jpg", "deepseek-ai-guide.html": "picsum-deepseek-1200-400.jpg", "index.html": "og-image.png", "about.html": "picsum-megan-ai-150-150.jpg", "articles.html": "og-image.png"}[item.url] || 'og-image.png';
     return `
       <a href="${item.url}" class="search-result-item">
-        <img src="https://picsum.photos/seed/${seed}/50/32" alt="" loading="lazy">
+        <img src="images/${heroImage}" alt="" loading="lazy">
         <div>
           <span class="search-result-title">${item.title}</span>
           <span class="search-result-excerpt">${item.excerpt}</span>
