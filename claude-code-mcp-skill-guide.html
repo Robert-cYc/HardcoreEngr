@@ -183,10 +183,10 @@
         <div>"AI" 硬核工程師</div>
         <div class="tagline">Talk is cheap. Show me the code</div>
       </div>
-      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="nav">
         <a href="./index.html">首頁</a>
-        <a href="./articles.html">文章</a>
+        <a href="./articles.html" class="active">文章</a>
         <a href="./about.html">關於</a>
         <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
         <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
@@ -225,7 +225,15 @@
 
       <!-- =============== Article Body =============== -->
       <article class="article-body">
-        <p><strong>Claude Code</strong> 是 Anthropic 推出的 agentic 編碼助手。除了基礎的對話編程之外，它還提供了三大強大的擴展機制：<strong>MCP</strong>、<strong>Skill</strong>、<strong>Hook</strong> 和 <strong>Plugin</strong>，讓你可以將外部資料源、自動化工作流程、可重用的指令集合整合進來。</p>
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> 本文完整解析 <strong>Claude Code</strong> 的四大擴展機制：<br>
+          &nbsp;&nbsp;① <strong>MCP</strong>：連接外部資料源與服務的開放標準，從 .mcp.json 到自寫 Server<br>
+          &nbsp;&nbsp;② <strong>Skill</strong>：用 <code>/指令</code> 觸發的可重用 prompt 集合<br>
+          &nbsp;&nbsp;③ <strong>Hook</strong>：在特定事件點自動執行的 shell 指令，實現零手動自動化<br>
+          &nbsp;&nbsp;④ <strong>Plugin</strong>：把 Skill、MCP、Hook 打包成一個可安裝的完整套件
+        </blockquote>
+
+        <p><strong>Claude Code</strong> 是 Anthropic 推出的 agentic 編碼助手。除了基礎的對話編程之外，它還提供了四大強大的擴展機制：<strong>MCP</strong>、<strong>Skill</strong>、<strong>Hook</strong> 和 <strong>Plugin</strong>，讓你可以將外部資料源、自動化工作流程、可重用的指令集合整合進來。</p>
         <p>本文將帶你一步步從零開始設定 MCP Server、撰寫 <code>.mcp.json</code> 配置文件、建立自定義 Skill，並理解它們彼此的關係。</p>
 
         <blockquote>
@@ -448,7 +456,7 @@
         <h4>步驟 2 — 啟動 Claude Code</h4>
         <pre><code>cd /path/to/project
 claude</code></pre>
-        <p>Claude Code 會自動掃描 <code>.mcp.json</code>，並詢問是否信任載入這些 Server。選擈다後，你就可以直接對 Claude 說：</p>
+        <p>Claude Code 會自動掃描 <code>.mcp.json</code>，並詢問是否信任載入這些 Server。選擇信任之後，你就可以直接對 Claude 說：</p>
         <pre><code>查詢 users 資料表的所有欄位</code></pre>
         <p>Claude Code 會透過 MCP Server 執行 SQL 並回傳結果，全部不用手動打 SQL！</p>
 
@@ -520,22 +528,29 @@ if __name__ == "__main__":
         </blockquote>
 
         <h2>Skill — 可重用的 Claude Code 指令</h2>
-        <p><strong>Skill</strong> 是 Claude Code 的可重用指令集合。當你在 session 中輸入 <code>/<skill-name></code>，Claude Code 會載入對應的 prompt 並執行。</p>
+        <p><strong>Skill</strong> 是 Claude Code 的可重用指令集合。當你在 session 中輸入 <code>/skill-name</code>，Claude Code 會載入對應的 prompt 並執行。</p>
 
         <h3>Skill 檔案結構</h3>
-        <p>Skill 檔案放在 <code>.claude/skills/</code> 目錄下，每個 Skill 是一個 Markdown 文件：</p>
+        <p>Skill 放在專案的 <code>.claude/skills/</code> 目錄下，每個 Skill 一個資料夾，資料夾內放一個 <code>SKILL.md</code>：</p>
         <pre><code>.claude/
 ├── skills/
-│   ├── code-review.md    # /code-review
-│   ├── bug-fix.md        # /bug-fix
-│   └── generate-tests.md # /generate-tests
-└── hooks/
-    └── settings.json     # Hooks 配置</code></pre>
+│   ├── code-review/
+│   │   └── SKILL.md      # /code-review
+│   ├── bug-fix/
+│   │   └── SKILL.md      # /bug-fix
+│   └── generate-tests/
+│       └── SKILL.md      # /generate-tests
+└── settings.json         # Hooks 配置 (見下方 Hook 章節)</code></pre>
 
         <h3>建立自定義 Skill</h3>
         <h4>範例：建立一個「code-review」Skill</h4>
-        <p>在 <code>.claude/skills/code-review.md</code> 中撰寫：</p>
-        <pre><code># /code-review — 程式碼品質審查
+        <p>在 <code>.claude/skills/code-review/SKILL.md</code> 中撰寫：</p>
+        <pre><code>---
+name: code-review
+description: 對專案的變更檔案進行程式碼品質審查。使用者輸入 /code-review 或要求 code review 時使用。
+---
+
+# /code-review — 程式碼品質審查
 
 ## 目的
 對專案中的 changed files 進行程式碼品質審查，包含：
@@ -553,7 +568,7 @@ if __name__ == "__main__":
    - **Critical**: 可能導致崩潰或安全漏洞
    - **Warning**: 效能問題或最佳化建議
    - **Info**: 可讀性改善
-4. 撰寑 review 報告，格式如下：
+4. 撰寫 review 報告，格式如下：
 
 ```
 📊 Code Review 摘要
@@ -567,8 +582,189 @@ if __name__ == "__main__":
     建議: &lt;修改建議&gt;
 ```
 
-5. 若使用者提供 <code>/code-review high</code>，會使用更嚴格的審查標準
-6. 若使用者提供 <code>/code-review --fix</code>，在報告後自動修復可修復的問題
+5. 若使用者提供 `/code-review high`，會使用更嚴格的審查標準
+6. 若使用者提供 `/code-review --fix`，在報告後自動修復可修復的問題
 
 ## 注意事項
-- 僅審查 human 收藏的檔案，不要審查 node_modules 或建構產物
+- 只審查 Git 有變更的檔案，不要審查 node_modules 或建構產物</code></pre>
+
+        <p>存檔後重新啟動 Claude Code（或執行 <code>/exit</code> 再進來），輸入 <code>/code-review</code> 就會看到 Skill 生效了。</p>
+
+        <blockquote>
+          💡 <strong>小提醒：</strong> Skill 沒出現的話，先確認資料夾名稱與 frontmatter 的 <code>name</code> 一致，再跑 <code>/doctor</code> 檢查配置。
+        </blockquote>
+
+        <h3>全域 Skill (跨專案共用)</h3>
+        <p>把 Skill 放到家目錄下的 <code>~/.claude/skills/</code>，所有專案都能使用，適合放個人工作流：</p>
+        <pre><code>~/.claude/
+└── skills/
+    ├── daily-report/
+    │   └── SKILL.md      # /daily-report
+    └── commit-helper/
+        └── SKILL.md      # /commit-helper</code></pre>
+
+        <h2>Hook — 不用開口的自動化</h2>
+        <p><strong>Hook</strong> 讓你在 Claude Code 的特定事件點自動執行 shell 指令。跟 Skill 最大的差別是：<strong>Skill 要你下指令才動，Hook 是不管你想不想都會執行</strong>。常見用途：</p>
+        <ul>
+          <li>編輯檔案後自動跑 formatter / linter</li>
+          <li>阻擋危險指令 (如 force push、刪除資料表)</li>
+          <li>任務完成時送桌面通知</li>
+        </ul>
+
+        <h3>常用的事件點</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>事件</th>
+              <th>觸發時機</th>
+              <th>典型用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>PreToolUse</strong></td>
+              <td>工具執行前</td>
+              <td>攔截危險指令、權限控管</td>
+            </tr>
+            <tr>
+              <td><strong>PostToolUse</strong></td>
+              <td>工具執行後</td>
+              <td>自動 format、lint 剛改過的檔案</td>
+            </tr>
+            <tr>
+              <td><strong>Stop</strong></td>
+              <td>Claude 完成回應時</td>
+              <td>送通知、觸發後續檢查</td>
+            </tr>
+            <tr>
+              <td><strong>SessionStart</strong></td>
+              <td>Session 啟動時</td>
+              <td>載入環境資訊、專案狀態</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>配置方式</h3>
+        <p>Hooks 寫在 <code>.claude/settings.json</code> (專案) 或 <code>~/.claude/settings.json</code> (全域)，也可以在 session 中輸入 <code>/hooks</code> 用選單設定。例如「每次編輯檔案後自動跑 Prettier + 任務完成時跳通知」：</p>
+        <pre><code>{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | xargs npx prettier --write"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code 任務完成！\" with title \"Claude Code\"'"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+        <blockquote>
+          ⚠️ <strong>注意：</strong> PostToolUse 的 Hook 會從 stdin 收到一段 JSON，包含剛剛操作的工具名稱與檔案路徑，所以範例中用 <code>jq</code> 取出 <code>.tool_input.file_path</code>。
+        </blockquote>
+
+        <h2>Plugin — 把所有能力打包發佈</h2>
+        <p><strong>Plugin</strong> 是最高層的封裝單位：一個 Plugin 可以同時包含 Skills、MCP Servers、Hooks、Subagents 與 Slash Commands，透過 marketplace 安裝：</p>
+        <pre><code>/plugin marketplace add &lt;repo-url&gt;
+/plugin install &lt;plugin-name&gt;</code></pre>
+        <p>對團隊來說，這招非常省事：把共用的 code review 流程 (Skill)、內部 API 的 MCP Server、強制執行的 Hooks 打包成一個 Plugin，新人裝完就等於完成了整套環境建置。</p>
+
+        <h2>MCP、Skill、Hook、Plugin 怎麼選？</h2>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>機制</th>
+              <th>觸發方式</th>
+              <th>適合場景</th>
+              <th>配置位置</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>MCP</strong></td>
+              <td>模型依需求呼叫工具</td>
+              <td>連接外部系統與資料源</td>
+              <td><code>.mcp.json</code> / <code>claude mcp add</code></td>
+            </tr>
+            <tr>
+              <td><strong>Skill</strong></td>
+              <td>使用者輸入 <code>/指令</code></td>
+              <td>固定 SOP、可重用的 prompt 工作流</td>
+              <td><code>.claude/skills/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Hook</strong></td>
+              <td>事件點自動觸發</td>
+              <td>強制自動化 (format、阻擋、通知)</td>
+              <td><code>.claude/settings.json</code></td>
+            </tr>
+            <tr>
+              <td><strong>Plugin</strong></td>
+              <td><code>/plugin</code> 安裝</td>
+              <td>打包以上所有能力，團隊共用</td>
+              <td>marketplace repo</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>選擇心法一句話：<strong>要連外部服務用 MCP；要把重複下過的指令變成一鍵流程用 Skill；要「一定會執行」的自動化用 Hook；要分享整包給團隊就用 Plugin。</strong></p>
+
+        <h2>總結</h2>
+        <p>Claude Code 的強大之處不只在對話編程，而是 MCP、Skill、Hook、Plugin 這四層擴展機制：MCP 打通外部資料源，Skill 沉澱你的工作流，Hook 保證自動化必然執行，Plugin 負責打包分享。四個湊在一起，Claude Code 就從一個聊天助手變成真正客製化的工程平台。</p>
+        <blockquote>
+          🎯 <strong>快速上手：</strong> 在專案根目錄建立 <code>.mcp.json</code> 接上第一個 Server → 把常做的流程寫成 Skill → 用 Hook 讓 format 自動化 → 有需要再用 Plugin 打包分享給團隊。記住：<strong>先從痛點最大的那一個開始，不要一次全上。</strong>
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
