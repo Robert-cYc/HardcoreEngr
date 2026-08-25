@@ -1,0 +1,317 @@
+{
+  "updated": "2026-08-25 22:51",
+  "sources": [
+    {
+      "name": "AI 人工智慧",
+      "site": "https://technews.tw/category/ai/",
+      "items": [
+        {
+          "title": "AI 智慧眼鏡淪韓國考場作弊神器，當局急修法、加裝探測器補破網",
+          "link": "https://technews.tw/2026/08/25/ai-smart-glasses-cheating-korean/",
+          "date": "2026-08-25 18:20",
+          "summary": "韓國國家技術資格考試近兩個月內接連查獲多起疑似利用智慧眼鏡作弊案件，迫使主管機關加速檢討考試規範，準備補上新型 [&#8230;]"
+        },
+        {
+          "title": "記憶體合約價持續飆升，2027 年占主要 CSP 資本支出比重估高達 68%",
+          "link": "https://finance.technews.tw/2026/08/25/dram-nand-flash-2027-csp-68pa/",
+          "date": "2026-08-25 18:00",
+          "summary": "TrendForce 最新記憶體產業研究，全球主要雲端服務供應商（CSP）為加速建置 AI 基礎設施，資本支出 [&#8230;]"
+        },
+        {
+          "title": "高明鐵卡位 CPO 封裝量產！攜光循科技展示 120 通道 FAU-PIC 自動化對位平台",
+          "link": "https://technews.tw/2026/08/25/gmt-global-semicon-taiwan-2026/",
+          "date": "2026-08-25 17:37",
+          "summary": "生成式 AI 推升算力需求暴增，共同封裝光學（CPO）與 AI 晶片間光互連（OCI）成為下世代光電整合的核心 [&#8230;]"
+        },
+        {
+          "title": "輝達財報倒數股價連七跌，市場關注 2028 年需求能見度",
+          "link": "https://finance.technews.tw/2026/08/25/nvidia-earnings-countdown-stock-falls-seven-days-market-focus-2028-demand-visibility/",
+          "date": "2026-08-25 16:40",
+          "summary": "輝達 26 日將公布第二季財報，營收可望接近去年同期兩倍，市場期待持續升高。基金經理人受訪指出，目前尚無足夠資 [&#8230;]"
+        },
+        {
+          "title": "電力交易服務延伸日澳！泓德小金雞星星電力預計第四季登錄興櫃",
+          "link": "https://finance.technews.tw/2026/08/25/star-trade-ai/",
+          "date": "2026-08-25 16:36",
+          "summary": "泓德能源小金雞星星電力預計第四季登錄興櫃，總經理關婷怡表示，目前綠電掌握的交易量達 210 億度，並有 210 [&#8230;]"
+        },
+        {
+          "title": "自家 AI 基礎建設還不夠用？Meta 每年狂砸數億美元向微軟買算力救援",
+          "link": "https://finance.technews.tw/2026/08/25/meta-self-developed-ai-insufficient/",
+          "date": "2026-08-25 15:41",
+          "summary": "Meta 每年向 Microsoft Azure 旗下的 Foundry 平台購買 AI 模型服務，金額高達數 [&#8230;]"
+        },
+        {
+          "title": "華爾街搶用 AI 如魔鬼交易，高盛憂年輕人才思考力退化",
+          "link": "https://technews.tw/2026/08/25/wall-street-ai-adoption-raises-concerns-over-talent-losing-independent-thinking/",
+          "date": "2026-08-25 15:40",
+          "summary": "華爾街正極力將 AI 導入交易與業務流程，但主導高盛旗艦級人工智慧（AI）專案的主管警告，如此一來恐削弱下一代 [&#8230;]"
+        },
+        {
+          "title": "英特爾闡述代理式 AI 架構布局，三新世代產品搶攻市場",
+          "link": "https://technews.tw/2026/08/25/intel-outlines-its-agent-based-ai-architecture-strategy/",
+          "date": "2026-08-25 15:15",
+          "summary": "英特爾 (intel) 於Hot Chips 2026展示三款針對代理式AI與企業級工作負載所設計的架構，包含 [&#8230;]"
+        },
+        {
+          "title": "立吉富線上金流導入奧義賽博 AI 資安，打造電子支付主動防禦",
+          "link": "https://infosecu.technews.tw/2026/08/25/paynow-cycraft/",
+          "date": "2026-08-25 14:22",
+          "summary": "面對持續升級的全球金流資安風險，以及金管會 2026 年六大監理新重點，奧丁丁集團旗下第三方支付領導品牌「Pa [&#8230;]"
+        },
+        {
+          "title": "字節推「豆包工作」，加入企業辦公 Agent 戰局",
+          "link": "https://technews.tw/2026/08/25/bytedance-launches-doubao-work/",
+          "date": "2026-08-25 14:20",
+          "summary": "綜合中媒報導，中國辦公 Agent 爭奪戰進入「四強爭霸」，騰訊、阿里巴巴、百度之後，字節跳動也正式加入戰局。 [&#8230;]"
+        },
+        {
+          "title": "算力、HBM 與 CPO 就是缺！安聯亞洲半導體主動式 ETF 自 9/16 開募",
+          "link": "https://finance.technews.tw/2026/08/25/00412a/",
+          "date": "2026-08-25 13:36",
+          "summary": "迎接 AI 浪潮，搶買市場最受關注的三大瓶頸，包括 GPU 所代表的算力需求、高頻寬記憶體（HBM）所代表的儲 [&#8230;]"
+        },
+        {
+          "title": "ChatGPT Plus 雙重限制回歸，OpenAI 宣布恢復 Codex 與 Work 5 小時上限",
+          "link": "https://technews.tw/2026/08/25/openai-restores-5-hour-usage-limit-chatgpt-plus-users-codex-work/",
+          "date": "2026-08-25 13:20",
+          "summary": "經過數週的寬限期，OpenAI 宣布將自 25 日起，重新對 ChatGPT Plus 訂閱用戶實施 Code [&#8230;]"
+        }
+      ]
+    },
+    {
+      "name": "半導體",
+      "site": "https://technews.tw/category/semiconductor/",
+      "items": [
+        {
+          "title": "漢測前 7 月營收超越 2025 全年，記憶體、先進封裝、矽光子三大新市場為成長動力",
+          "link": "https://finance.technews.tw/2026/08/25/hantests-revenue-in-the-first-seven-months-exceeded-its-total-revenue-for-2025/",
+          "date": "2026-08-25 20:45",
+          "summary": "半導體晶圓測試解決方案大廠漢民測試 (簡稱漢測) 26日舉辦上櫃前業績發表會 。受惠於AI與高效能運算（HPC [&#8230;]"
+        },
+        {
+          "title": "AI 測試需求強勁！致茂砸 40 億元橋頭建新廠，Q4 起陸續投入",
+          "link": "https://technews.tw/2026/08/25/chroma-ate-kaohsiung-factory/",
+          "date": "2026-08-25 18:48",
+          "summary": "致茂今（25 日）公告，董事會已通過橋頭園區建廠投資計畫，將採租地委建方式於橋頭園區新建廠房，預計建廠預算達新 [&#8230;]"
+        },
+        {
+          "title": "記憶體合約價持續飆升，2027 年占主要 CSP 資本支出比重估高達 68%",
+          "link": "https://finance.technews.tw/2026/08/25/dram-nand-flash-2027-csp-68pa/",
+          "date": "2026-08-25 18:00",
+          "summary": "TrendForce 最新記憶體產業研究，全球主要雲端服務供應商（CSP）為加速建置 AI 基礎設施，資本支出 [&#8230;]"
+        },
+        {
+          "title": "高明鐵卡位 CPO 封裝量產！攜光循科技展示 120 通道 FAU-PIC 自動化對位平台",
+          "link": "https://technews.tw/2026/08/25/gmt-global-semicon-taiwan-2026/",
+          "date": "2026-08-25 17:37",
+          "summary": "生成式 AI 推升算力需求暴增，共同封裝光學（CPO）與 AI 晶片間光互連（OCI）成為下世代光電整合的核心 [&#8230;]"
+        },
+        {
+          "title": "京都大學打造耐 600°C SiC 電晶體！標準離子佈植解決漏電、電壓漂移問題",
+          "link": "https://technews.tw/2026/08/25/kyoto-university-600c-temperatures-transistor/",
+          "date": "2026-08-25 16:58",
+          "summary": "日本京都大學研究團隊成功開發出一款可在 600°C 高溫下運作的碳化矽（SiC）電晶體，採用商業晶圓廠廣泛使用 [&#8230;]"
+        },
+        {
+          "title": "輝達財報倒數股價連七跌，市場關注 2028 年需求能見度",
+          "link": "https://finance.technews.tw/2026/08/25/nvidia-earnings-countdown-stock-falls-seven-days-market-focus-2028-demand-visibility/",
+          "date": "2026-08-25 16:40",
+          "summary": "輝達 26 日將公布第二季財報，營收可望接近去年同期兩倍，市場期待持續升高。基金經理人受訪指出，目前尚無足夠資 [&#8230;]"
+        },
+        {
+          "title": "電力交易服務延伸日澳！泓德小金雞星星電力預計第四季登錄興櫃",
+          "link": "https://finance.technews.tw/2026/08/25/star-trade-ai/",
+          "date": "2026-08-25 16:36",
+          "summary": "泓德能源小金雞星星電力預計第四季登錄興櫃，總經理關婷怡表示，目前綠電掌握的交易量達 210 億度，並有 210 [&#8230;]"
+        },
+        {
+          "title": "英特爾闡述代理式 AI 架構布局，三新世代產品搶攻市場",
+          "link": "https://technews.tw/2026/08/25/intel-outlines-its-agent-based-ai-architecture-strategy/",
+          "date": "2026-08-25 15:15",
+          "summary": "英特爾 (intel) 於Hot Chips 2026展示三款針對代理式AI與企業級工作負載所設計的架構，包含 [&#8230;]"
+        },
+        {
+          "title": "巨虹擬砸 45 億收購百略 82% 股權！精算「歐盟 MDR 執照」通路含金量",
+          "link": "https://finance.technews.tw/2026/08/25/midas-health-company-limited/",
+          "date": "2026-08-25 14:18",
+          "summary": "巨虹今日宣布擬透過子公司宏康控股，以約 1.4 億美元（約 45 億台幣），收購 Midas Health C [&#8230;]"
+        },
+        {
+          "title": "台積電再生水用量達 2,353 萬噸，水務商機持續擴大",
+          "link": "https://technews.tw/2026/08/25/tsmc-recycled-water-consumption-23-53-million-tons-water-resource-supply-chain-focus/",
+          "date": "2026-08-25 14:11",
+          "summary": "隨 AI 與先進製程產能持續擴張，水資源也成為支撐半導體製造的重要基礎。台積電最新永續報告書指出，2025 年 [&#8230;]"
+        },
+        {
+          "title": "算力、HBM 與 CPO 就是缺！安聯亞洲半導體主動式 ETF 自 9/16 開募",
+          "link": "https://finance.technews.tw/2026/08/25/00412a/",
+          "date": "2026-08-25 13:36",
+          "summary": "迎接 AI 浪潮，搶買市場最受關注的三大瓶頸，包括 GPU 所代表的算力需求、高頻寬記憶體（HBM）所代表的儲 [&#8230;]"
+        },
+        {
+          "title": "SK 海力士工會否決薪資協議，獎金改發股票成爭議焦點",
+          "link": "https://finance.technews.tw/2026/08/25/sk-hynix-union-rejects-wage-deal-stock-bonus-dispute/",
+          "date": "2026-08-25 12:40",
+          "summary": "消息人士透露，韓國記憶體晶片大廠 SK 海力士（SK Hynix）工會成員今天以些微差距否決 1 項臨時薪資協 [&#8230;]"
+        }
+      ]
+    },
+    {
+      "name": "零組件",
+      "site": "https://technews.tw/category/component/",
+      "items": [
+        {
+          "title": "漢測前 7 月營收超越 2025 全年，記憶體、先進封裝、矽光子三大新市場為成長動力",
+          "link": "https://finance.technews.tw/2026/08/25/hantests-revenue-in-the-first-seven-months-exceeded-its-total-revenue-for-2025/",
+          "date": "2026-08-25 20:45",
+          "summary": "半導體晶圓測試解決方案大廠漢民測試 (簡稱漢測) 26日舉辦上櫃前業績發表會 。受惠於AI與高效能運算（HPC [&#8230;]"
+        },
+        {
+          "title": "AI 測試需求強勁！致茂砸 40 億元橋頭建新廠，Q4 起陸續投入",
+          "link": "https://technews.tw/2026/08/25/chroma-ate-kaohsiung-factory/",
+          "date": "2026-08-25 18:48",
+          "summary": "致茂今（25 日）公告，董事會已通過橋頭園區建廠投資計畫，將採租地委建方式於橋頭園區新建廠房，預計建廠預算達新 [&#8230;]"
+        },
+        {
+          "title": "機器人電池市場商機夯，格斯科技鎖定 AMR、人型機器人",
+          "link": "https://technews.tw/2026/08/25/robot-battery-market-opportunities-guss-technology-amr-humanoid-robots/",
+          "date": "2026-08-25 18:20",
+          "summary": "隨 AI、智慧製造及無人化物流發展，AMR、AGV 與人形機器人需求持續成長，也帶動快充、高功率及長壽命電池市 [&#8230;]"
+        },
+        {
+          "title": "中國擴產 OLED 帶旺本土材料鏈  韓日廠承壓",
+          "link": "https://technews.tw/2026/08/25/china-oled-expansion-boosts-local-materials-chain/",
+          "date": "2026-08-25 14:00",
+          "summary": "中國 OLED 材料供應商正掀起新一波擴產潮，企圖挑戰長期由韓國、日本業者主導的供應鏈。隨著中國面板廠加速由 [&#8230;]"
+        },
+        {
+          "title": "國會女股神又出手  裴洛西砸錢重押 Bloom、Intel",
+          "link": "https://finance.technews.tw/2026/08/25/pelosi-bloom-intel/",
+          "date": "2026-08-25 09:40",
+          "summary": "有「國會女股神」之稱、現年 86 歲的美國眾議院前議長裴洛西 (Nancy Pelosi) 揭露，近期她曾大舉 [&#8230;]"
+        },
+        {
+          "title": "小米發表自研晶片玄戒 O3，路透：將採台積電 3 奈米製程",
+          "link": "https://technews.tw/2026/08/24/xiaomi-unveils-self-developed-xuanjie-o3-chip-reuters-reports-tsmc-3nm-process/",
+          "date": "2026-08-24 17:00",
+          "summary": "中國智慧型手機製造商小米今天發表新款自主研發晶片「玄戒 O3」（Xring O3）；兩名知情人士透露，這款新晶 [&#8230;]"
+        },
+        {
+          "title": "AI、無人機需求齊發，PCB 產業鏈啟動高階升級戰",
+          "link": "https://finance.technews.tw/2026/08/24/ai-drone-demand-surge-pcb-industry-chain-launch-high-end-upgrade/",
+          "date": "2026-08-24 16:00",
+          "summary": "AI 伺服器、低軌衛星、無人機等新興應用快速發展，PCB 市場需求轉向高階規格，啟動產業鏈新一波升級戰。邑昇實 [&#8230;]"
+        },
+        {
+          "title": "美國將向荷蘭施壓，禁止 ASML 出售 DUV 設備與服務給中國",
+          "link": "https://finance.technews.tw/2026/08/24/the-united-states-has-banned-asml-from-selling-duv-equipment-and-services-to-china/",
+          "date": "2026-08-24 13:50",
+          "summary": "近期美中科技戰再升溫，全球唯一製造最複雜晶片所需微影設備的荷蘭半導體設備代廠艾司摩爾（ASML），其為此次事件 [&#8230;]"
+        },
+        {
+          "title": "微軟首批 Vera Rubin 到貨，800 VDC 電力戰開打",
+          "link": "https://technews.tw/2026/08/24/microsoft-first-vera-rubin-shipments-800vdc-power-battle/",
+          "date": "2026-08-24 10:43",
+          "summary": "AI 算力競賽進入 Rubin 新世代，資料中心電力革命也同步啟動。微軟首批量產版輝達 Vera Rubin [&#8230;]"
+        },
+        {
+          "title": "工總挺基本工資破 3 萬！潘俊榮提四大建言：盼核能當基載、土方降本救營建",
+          "link": "https://finance.technews.tw/2026/08/24/basic-salary/",
+          "date": "2026-08-24 10:40",
+          "summary": "隨著全球總體經濟波動與產業結構轉型，台灣傳統產業及營建業面臨不小的營運壓力，工業總會今日發表 2026 工總白 [&#8230;]"
+        },
+        {
+          "title": "義大利咖啡機市場龍頭地位告急，力抗中國競爭",
+          "link": "https://technews.tw/2026/08/24/italy-coffee-machine-market-leadership-risk-chinese-competition/",
+          "date": "2026-08-24 09:50",
+          "summary": "義大利有咖啡王國美譽，義大利製造的高級咖啡機向來稱霸全球市場，但相對低價的中國製「全自動咖啡機」近來嚴重衝擊義 [&#8230;]"
+        },
+        {
+          "title": "美光示警：AI 記憶體牆危機加劇，HBM 故障佔 Meta Llama 3 訓練中斷近二成",
+          "link": "https://finance.technews.tw/2026/08/24/the-ai-%e2%80%8b%e2%80%8bmemory-wall-crisis-is-intensifying/",
+          "date": "2026-08-24 09:50",
+          "summary": "隨著大型語言模型（LLM）持續演進，AI 系統的算力正以前所未有的速度成長，但記憶體卻已成為限制整體效能的關鍵 [&#8230;]"
+        }
+      ]
+    },
+    {
+      "name": "CCC 追新聞",
+      "site": "https://ccc.technews.tw/",
+      "items": [
+        {
+          "title": "東半球最強法務上工嘍！任天堂連砍 401 個 GitHub Switch 模擬器專案",
+          "link": "https://ccc.technews.tw/2026/08/25/nintendo-github-switch-emulator/",
+          "date": "2026-08-25 09:29",
+          "summary": "任天堂（Nintendo）再度對 Switch 模擬器祭出強硬法律攻勢，這次鎖定的不是單一開發團隊，而是直接向 [&#8230;]"
+        },
+        {
+          "title": "3C 增強兒童認知能力？芬蘭研究點出關鍵差異",
+          "link": "https://ccc.technews.tw/2026/08/20/3c-devices-and-childrens-cognitive-abilities-finnish-study-highlights-key-differences/",
+          "date": "2026-08-20 12:03",
+          "summary": "網路已經成為現代生活的另一個世界，與真實生活密不可分，但未成年孩子拿起手機、平板開始上網，在不少父母眼中仍像犯 [&#8230;]"
+        },
+        {
+          "title": "Googlebook 高階筆電亮相倒數，Google 9/15 再辦發表會",
+          "link": "https://ccc.technews.tw/2026/08/19/google-invites-media-to-in-person-googlebook-preview-event-on-september-15/",
+          "date": "2026-08-19 15:24",
+          "summary": "Google 以 Gemini 為核心所打造的全新高階筆電 Googlebook，將在 9 月正式對外亮相。 [&#8230;]"
+        },
+        {
+          "title": "相機版 AirPods 似乎已準備完畢？",
+          "link": "https://ccc.technews.tw/2026/08/18/airpods-with-visual-intelligence/",
+          "date": "2026-08-18 16:11",
+          "summary": "過去一段時間一直有蘋果正在開發搭載相機的 AirPods 的相關傳聞，不過就該公司最新釋出的 macOS Ta [&#8230;]"
+        },
+        {
+          "title": "每 GB 從 8,000 美元到不需 1 美元，隨身碟為何再也回不去 1GB 時代？",
+          "link": "https://ccc.technews.tw/2026/08/18/why-flash-drive-capacity-keeps-increasing/",
+          "date": "2026-08-18 11:40",
+          "summary": "曾經是大容量代表的 1GB 隨身碟，如今消費市場已難見蹤影。USB 快閃儲存容量之所以持續攀升，關鍵不在外殼或 [&#8230;]"
+        },
+        {
+          "title": "Google 新穿戴裝置意外曝光？Pixel 11 廣告出現神祕「螢幕版」健身手環",
+          "link": "https://ccc.technews.tw/2026/08/17/google-leaks-new-screen-fitness-band/",
+          "date": "2026-08-17 10:10",
+          "summary": "Google 近期在 YouTube 投放的 Pixel 11 宣傳廣告中，意外讓一款尚未發表的新型穿戴裝置曝 [&#8230;]"
+        },
+        {
+          "title": "法拉利「第一台」電動車 Luce 以 4 千萬美元成交",
+          "link": "https://ccc.technews.tw/2026/08/17/ferrari-luve-sold-40m-usd-on-sotherby/",
+          "date": "2026-08-17 09:33",
+          "summary": "法拉利再次寫下紀錄，品牌史上第一輛純電車 Luce，昨天在蘇富比拍賣會上以驚人的四千萬美元成交，讓這款話題性十 [&#8230;]"
+        },
+        {
+          "title": "Tensor G6 採台積電 3 奈米，Google 以工程能力解決記憶體困境",
+          "link": "https://ccc.technews.tw/2026/08/14/entire-pixel-11-lineup-runs-on-the-3nm-tensor-g6/",
+          "date": "2026-08-14 15:24",
+          "summary": "今年針對 Pixel 11 全系列新機，Google 取消較便宜的 128GB 版本，各款從 256GB 版本 [&#8230;]"
+        },
+        {
+          "title": "灰塵恐成致命傷！Galaxy Z Fold8 拆解：鉸鍊易受損且維修難度高",
+          "link": "https://ccc.technews.tw/2026/08/14/samsungs-1900-z-fold8-is-still-vulnerable-to-pocket-lint/",
+          "date": "2026-08-14 12:20",
+          "summary": "iFixit 近日拆解三星 Galaxy Z Fold8 後，暫時給予 4 / 10 分維修性評分，原因主要是 [&#8230;]"
+        },
+        {
+          "title": "2Q26 全球 OLED 監視器出貨季增 26.1%，華碩拉開與三星差距、微星緊追在後",
+          "link": "https://ccc.technews.tw/2026/08/13/2q26-oled-monitor-26-1pa/",
+          "date": "2026-08-13 14:03",
+          "summary": "TrendForce 最新調查，2026 年第二季全球 OLED 監視器市場展現強勁的成長韌性。各大品牌廠陸續 [&#8230;]"
+        },
+        {
+          "title": "Google Pixel 11 全系列新發表，AI 功能才是亮點、僅大尺寸漲價",
+          "link": "https://ccc.technews.tw/2026/08/13/google-unveils-pixel-11-series/",
+          "date": "2026-08-13 12:24",
+          "summary": "Google 年度新機 Pixel 11 全系列發表，即日起展開預購，將在下週 20 日正式上市。 先來看看今 [&#8230;]"
+        },
+        {
+          "title": "華碩開學季開跑，首度攜手三麗鷗",
+          "link": "https://ccc.technews.tw/2026/08/13/2026-asus-bts/",
+          "date": "2026-08-13 10:57",
+          "summary": "暑假時序已進入下半場，許多消費性品牌紛紛推出開學季活動；華碩便宣布攜手三麗鷗推出開學檔期活動，推出 ASUS [&#8230;]"
+        }
+      ]
+    }
+  ]
+}

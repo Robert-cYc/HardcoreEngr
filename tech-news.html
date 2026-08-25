@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>科技新知 — AI、半導體、零組件新聞匯整 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="匯整 TechNews 科技新報的 AI、半導體、零組件分類與 CCC 追新聞的最新報導，點擊直達原文。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/tech-news.html">
+  <meta property="og:title" content="科技新知 — AI、半導體、零組件新聞匯整 — "AI" 硬核工程師">
+  <meta property="og:description" content="匯整 TechNews 科技新報的 AI、半導體、零組件分類與 CCC 追新聞的最新報導，點擊直達原文。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/tech-news.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="科技新知 — AI、半導體、零組件新聞匯整 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="匯整 TechNews 科技新報的 AI、半導體、零組件分類與 CCC 追新聞的最新報導，點擊直達原文。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .news-hero {
+      text-align: center;
+      padding: 3.5rem 0 1.5rem;
+    }
+    .news-hero h1 {
+      font-size: 2.75rem; /* 10% larger */
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .news-hero p {
+      color: var(--text-muted);
+      font-size: 1.21rem; /* 10% larger */
+      line-height: 1.6;
+    }
+    .news-updated {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.3rem 1rem;
+    }
+    .news-section {
+      margin: 2.5rem 0;
+    }
+    .news-section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .news-section-head h2 {
+      font-size: 1.98rem; /* 10% larger */
+      font-weight: 700;
+    }
+    .news-section-head a {
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .news-section-head a:hover {
+      text-decoration: underline;
+    }
+    .news-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .news-item {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .news-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+    }
+    .news-item-title {
+      font-size: 1.21rem; /* 10% larger */
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    .news-item-title a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .news-item-title a:hover {
+      color: var(--accent);
+    }
+    .news-item-summary {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+    .news-item-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .news-status {
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .news-status code {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 1.05em;
+      color: #e11d48;
+    }
+    .news-source-error {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    @media (max-width: 768px) {
+      .news-hero h1 { font-size: 2.2rem; }
+      .news-section-head h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html" class="active">科技新知</a>
+        <a href="./articles.html">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Page Header =============== -->
+      <section class="news-hero">
+        <h1>科技新知</h1>
+        <p>匯整 <strong>TechNews 科技新報</strong>的 AI、半導體、零組件分類與 <strong>CCC 追新聞</strong>的最新報導，點擊直達原文。</p>
+        <span class="news-updated" id="news-updated" hidden>資料更新時間：載入中…</span>
+      </section>
+
+      <div id="news-content">
+        <div class="news-status">載入中…</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 載入 tech-news.json（fetch 優先，file:// 退回 XHR）
+    (function () {
+      var content = document.getElementById('news-content');
+      var updated = document.getElementById('news-updated');
+
+      function escapeHtml(s) {
+        return String(s || '').replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+
+      function render(data) {
+        if (data.updated) {
+          updated.textContent = '資料更新時間：' + data.updated;
+          updated.hidden = false;
+        }
+
+        var html = '';
+        (data.sources || []).forEach(function (src) {
+          html += '<section class="news-section">'
+            + '<div class="news-section-head">'
+            + '<h2>' + escapeHtml(src.name) + '</h2>'
+            + '<a href="' + escapeHtml(src.site) + '" target="_blank" rel="noopener">前往來源網站 →</a>'
+            + '</div>';
+
+          if (src.error && !src.items.length) {
+            html += '<p class="news-source-error">此來源暫時抓不到資料，稍後再試。</p>';
+          } else {
+            html += '<ul class="news-list">';
+            src.items.forEach(function (item) {
+              html += '<li class="news-item">'
+                + '<div class="news-item-title"><a href="' + escapeHtml(item.link) + '" target="_blank" rel="noopener">'
+                + escapeHtml(item.title) + '</a></div>'
+                + (item.summary ? '<p class="news-item-summary">' + escapeHtml(item.summary) + '…</p>' : '')
+                + '<span class="news-item-date">' + escapeHtml(item.date) + '</span>'
+                + '</li>';
+            });
+            html += '</ul>';
+          }
+          html += '</section>';
+        });
+
+        content.innerHTML = html || '<div class="news-status">目前沒有新聞資料。</div>';
+      }
+
+      function fail() {
+        content.innerHTML = '<div class="news-status">還沒有新聞資料。<br>'
+          + '在專案根目錄執行 <code>python3 scripts/fetch_news.py</code> 生成 <code>tech-news.json</code> 後重新整理。</div>';
+      }
+
+      function load(url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            try { render(JSON.parse(xhr.responseText)); return; } catch (e) { /* fall through */ }
+          }
+          fail();
+        };
+        xhr.onerror = fail;
+        xhr.send();
+      }
+
+      if (location.protocol === 'file:') {
+        load('./tech-news.json');
+      } else {
+        fetch('./tech-news.json')
+          .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+          .then(render)
+          .catch(function () { load('./tech-news.json'); });
+      }
+    })();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>

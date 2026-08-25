@@ -7,6 +7,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ai-hardcore-engineer.com/tech-news.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ai-hardcore-engineer.com/claude-code-mcp-skill-guide.html</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
