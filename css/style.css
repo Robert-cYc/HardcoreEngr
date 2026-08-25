@@ -36,6 +36,12 @@ ul {
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
   --max-width: 1400px;
+  --code-comment: #a0a1a7;
+  --code-keyword: #a626a4;
+  --code-string: #50a14f;
+  --code-number: #986801;
+  --code-function: #4078f2;
+  --code-attr: #c18401;
   --wave-color: #0284c7;
   --wave-color-2: #38bdf8;
   --wave-color-3: #7dd3fc;
@@ -59,6 +65,12 @@ body.dark-mode {
   --border: #2d3748;
   --accent: #60a5fa;
   --accent-hover: #93c5fd;
+  --code-comment: #7f848e;
+  --code-keyword: #c678dd;
+  --code-string: #98c379;
+  --code-number: #d19a66;
+  --code-function: #61afef;
+  --code-attr: #56b6c2;
   --wave-color: #7dd3fc;
   --wave-color-2: #bae6fd;
   --wave-color-3: #a5b4fc;
@@ -657,4 +669,220 @@ body.dark-mode .theme-toggle {
   .section-title {
     font-size: 1.76rem; /* 10% larger */
   }
+}
+
+/* =============== Enhancements (enhancements.js) =============== */
+
+/* ---------- 閱讀進度條 ---------- */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), #8b5cf6);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 200;
+  pointer-events: none;
+}
+
+/* ---------- 程式碼複製按鈕 ---------- */
+.code-block {
+  position: relative;
+}
+.copy-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s, color 0.15s, border-color 0.15s;
+}
+.code-block:hover .copy-btn,
+.copy-btn:focus-visible {
+  opacity: 1;
+}
+.copy-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.copy-btn.copied {
+  color: #22c55e;
+  border-color: #22c55e;
+  opacity: 1;
+}
+
+/* ---------- 回到頂部按鈕 ---------- */
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s, background 0.15s;
+  z-index: 150;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.back-to-top:hover {
+  background: var(--accent-hover);
+}
+
+/* ---------- 文章卡片滑鼠發光 ---------- */
+.article-card {
+  position: relative;
+}
+.article-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.25s;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(96, 165, 250, 0.16),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.article-card:hover::after {
+  opacity: 1;
+}
+.article-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.45);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.12);
+}
+
+/* ---------- 首頁終端機視窗 ---------- */
+.terminal-window {
+  max-width: 640px;
+  margin: 2.5rem auto 0;
+  text-align: left;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  font-family: "Fira Code", "SF Mono", Consolas, monospace;
+}
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot-r { background: #ff5f57; }
+.dot-y { background: #febc2e; }
+.dot-g { background: #28c840; }
+.terminal-caption {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #8b949e;
+}
+.terminal-body {
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #c9d1d9;
+  min-height: 3.6em;
+}
+.terminal-prompt {
+  color: #7ee787;
+  user-select: none;
+}
+.terminal-command {
+  color: #e6edf3;
+}
+.terminal-cursor::after {
+  content: '▊';
+  color: #58a6ff;
+  animation: terminal-blink 1s steps(1) infinite;
+}
+@keyframes terminal-blink {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .terminal-cursor::after {
+    animation: none;
+  }
+}
+
+/* ---------- highlight.js 配色（One Light / One Dark，跟著主題走）---------- */
+.hljs-comment,
+.hljs-quote {
+  color: var(--code-comment);
+  font-style: italic;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-doctag,
+.hljs-formula {
+  color: var(--code-keyword);
+}
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: var(--code-string);
+}
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-template-variable,
+.hljs-variable {
+  color: var(--code-number);
+}
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: var(--code-function);
+}
+.hljs-attr,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-class .hljs-title {
+  color: var(--code-attr);
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: 700;
 }
