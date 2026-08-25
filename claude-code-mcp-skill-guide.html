@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code MCP & Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="深入解析 Claude Code 的 MCP（Model Context Protocol）與 Skill 功能。教你如何安裝 MCP Server、撰寫 .mcp.json 配置、建立自定義 Skill、撰寫 Hooks 自動化，以及 MCP、Skill、Plugin 的關係。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/claude-code-mcp-skill-guide.html">
+  <meta property="og:title" content="Claude Code MCP & Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門 — "AI" 硬核工程師">
+  <meta property="og:description" content="深入解析 Claude Code 的 MCP（Model Context Protocol）與 Skill 功能。教你如何安裝 MCP Server、撰寫 .mcp.json 配置、建立自定義 Skill、撰寫 Hooks 自動化，以及 MCP、Skill、Plugin 的關係。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/claude-code-mcp-skill-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Code MCP & Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="深入解析 Claude Code 的 MCP（Model Context Protocol）與 Skill 功能。教你如何安裝 MCP Server、撰寫 .mcp.json 配置、建立自定義 Skill、撰寫 Hooks 自動化，以及 MCP、Skill、Plugin 的關係。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem; /* 10% larger */
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem; /* 10% larger */
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem; /* 10% larger */
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem; /* 10% larger */
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em; /* 10% larger */
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.21rem; /* 10% larger */
+    }
+    .article-body th, .article-body td {
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Claude Code MCP & Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門 — \"AI\" 硬核工程師",
+  "description": "深入解析 Claude Code 的 MCP（Model Context Protocol）與 Skill 功能。教你如何安裝 MCP Server、撰寫 .mcp.json 配置、建立自定義 Skill、撰寫 Hooks 自動化，以及 MCP、Skill、Plugin 的關係。",
+  "url": "https://ai-hardcore-engineer.com/claude-code-mcp-skill-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/claude-code-mcp-skill-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>Claude Code MCP &amp; Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門</h1>
+        <div class="article-meta">
+          <span>2026-08-25</span>
+          <span class="separator">·</span>
+          <span>30 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Claude Code</span>
+          <span class="tag">MCP</span>
+          <span class="tag">Skill</span>
+          <span class="tag">AI 開發工具</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="images/picsum-mcp-skill-1200-400.jpg" alt="Claude Code MCP and Skill">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p><strong>Claude Code</strong> 是 Anthropic 推出的 agentic 編碼助手。除了基礎的對話編程之外，它還提供了三大強大的擴展機制：<strong>MCP</strong>、<strong>Skill</strong>、<strong>Hook</strong> 和 <strong>Plugin</strong>，讓你可以將外部資料源、自動化工作流程、可重用的指令集合整合進來。</p>
+        <p>本文將帶你一步步從零開始設定 MCP Server、撰寫 <code>.mcp.json</code> 配置文件、建立自定義 Skill，並理解它們彼此的關係。</p>
+
+        <blockquote>
+          📌 本文對應 Claude Code 2.1.x 版本。MCP 規格基於 <a href="https://modelcontextprotocol.io/" target="_blank">Model Context Protocol 官方標準</a>。
+        </blockquote>
+
+        <h2>MCP 入門 — 什麼是 Model Context Protocol？</h2>
+        <p><strong>MCP (Model Context Protocol)</strong> 是一個開放標準，讓 Claude Code 能夠連接到外部資料來源與服務。透過 MCP，你可以：</p>
+        <ul>
+          <li>從 Google Drive 讀取設計文件</li>
+          <li>查詢 SQLite、PostgreSQL 資料庫</li>
+          <li>更新 Jira 票券或 GitHub Issues</li>
+          <li>控制瀏覽器自動化測試</li>
+          <li>存取本地檔案系統</li>
+        </ul>
+        <p>MCP Server 提供三種主要能力：</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>能力類型</th>
+              <th>說明</th>
+              <th>Claude Code 中的使用方式</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Resources</strong></td>
+              <td>類似檔案的可讀取資料（API 回應、檔案內容）</td>
+              <td>Claude 會自動讀取資源作為 context</td>
+            </tr>
+            <tr>
+              <td><strong>Tools</strong></td>
+              <td>LLM 可以呼叫的函數（需使用者批准）</td>
+              <td>顯示在 Claude Code 的工具列表中</td>
+            </tr>
+            <tr>
+              <td><strong>Prompts</strong></td>
+              <td>預寫的 prompt 模板</td>
+              <td>透過特定指令觸發</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>如何在 Claude Code 中安裝 MCP Server</h2>
+        <p>Claude Code 支援兩種 MCP Server 連接方式：</p>
+
+        <h3>1. 使用 .mcp.json 配置本地 Server (推薦)</h3>
+        <p>在你的專案根目錄建立 <code>.mcp.json</code> 文件：</p>
+        <pre><code>{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/username/project"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_xxxxxxxxxxxxxxxxxxxx"
+      }
+    },
+    "sqlite": {
+      "command": "uv",
+      "args": ["--directory", "/ABSOLUTE/PATH/sqlite-mcp", "run", "sqlite.py"],
+      "env": {
+        "SQLITE_PATH": "/path/to/database.db"
+      }
+    }
+  }
+}</code></pre>
+
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>欄位</th>
+              <th>說明</th>
+              <th>必填</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>command</code></td>
+              <td>執行 MCP Server 的指令（如 npx、uv、python）</td>
+              <td>✅</td>
+            </tr>
+            <tr>
+              <td><code>args</code></td>
+              <td>指令的參數列表</td>
+              <td>✅</td>
+            </tr>
+            <tr>
+              <td><code>env</code></td>
+              <td>環境變數（如 API Token）</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td><code>type</code></td>
+              <td>傳輸類型：<code>"stdio"</code> (預設) 或 <code>"http"</code> (遠端 Server)</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td><code>url</code></td>
+              <td>當 <code>type: "http"</code> 時，指定 Server 的 URL</td>
+              <td>❌</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>2. 透過 CLI 動態添加 MCP Server</h3>
+        <p>在 Claude Code session 中，你可以使用下列指令管理 MCP Server：</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>命令</th>
+              <th>說明</th>
+              <th>範例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>claude mcp</code></td>
+              <td>列出所有 MCP Server 連線狀態</td>
+              <td><code>claude mcp</code></td>
+            </tr>
+            <tr>
+              <td><code>claude mcp reconnect &lt;name&gt;</code></td>
+              <td>重新連線指定 Server</td>
+              <td><code>claude mcp reconnect github</code></td>
+            </tr>
+            <tr>
+              <td><code>claude mcp disable &lt;name&gt;</code></td>
+              <td>禁用指定 Server</td>
+              <td><code>claude mcp disable sqlite</code></td>
+            </tr>
+            <tr>
+              <td><code>claude mcp disable all</code></td>
+              <td>禁用所有 Server</td>
+              <td><code>claude mcp disable all</code></td>
+            </tr>
+            <tr>
+              <td><code>claude mcp login &lt;name&gt;</code></td>
+              <td>執行 Server 的 OAuth 流程</td>
+              <td><code>claude mcp login sentry</code></td>
+            </tr>
+            <tr>
+              <td><code>claude mcp logout &lt;name&gt;</code></td>
+              <td>清除 Server 的 OAuth 憑證</td>
+              <td><code>claude mcp logout sentry</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>3. 添加到全局設定 (個人專用)</h3>
+        <p>如果你希望 MCP Server 對所有專案都生效，將其配置添加到 <strong>全局設定檔</strong>：</p>
+        <pre><code># macOS / Linux
+~/.claude/claude_desktop_config.json
+
+# Windows
+%USERPROFILE%\.claude\claude_desktop_config.json</code></pre>
+        <blockquote>
+          ⚠️ <strong>安全提醒：</strong> .mcp.json 位於專案根目錄會被 Git 追踪，請勿在其中存放秘密金鑰。對於敏感憑證，推薦使用 <code>claude mcp login</code> 進行 OAuth 授權，或將 .mcp.json 加入 .gitignore。
+        </blockquote>
+
+        <h2>實用 MCP Server 推薦列表</h2>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>Server 名稱</th>
+              <th>用途</th>
+              <th>安裝指令</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>@modelcontextprotocol/server-filesystem</td>
+              <td>本地檔案系統存取</td>
+              <td><code>command: npx -y @modelcontextprotocol/server-filesystem &lt;path&gt;</code></td>
+            </tr>
+            <tr>
+              <td>@modelcontextprotocol/server-memory</td>
+              <td>記憶持久化 (Graph）</td>
+              <td><code>command: npx -y @modelcontextprotocol/server-memory</code></td>
+            </tr>
+            <tr>
+              <td>@modelcontextprotocol/server-github</td>
+              <td>GitHub API 操作</td>
+              <td><code>command: npx -y @modelcontextprotocol/server-github</code></td>
+            </tr>
+            <tr>
+              <td>github.com/modelcontextprotocol/servers/tree/main/src/sqlite</td>
+              <td>SQLite 資料庫查詢</td>
+              <td><code>command: npx -y @modelcontextprotocol/server-sqlite</code></td>
+            </tr>
+            <tr>
+              <td>@modelcontextprotocol/server-brave-search</td>
+              <td>Brave 搜尋</td>
+              <td><code>command: npx -y @modelcontextprotocol/server-brave-search</code></td>
+            </tr>
+            <tr>
+              <td>@modelcontextprotocol/server-fetch</td>
+              <td>HTTP 網頁抓取</td>
+              <td><code>command: npx -y @modelcontextprotocol/server-fetch</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>實戰範例：將 SQLite MCP Server 接入 Claude Code</h3>
+        <p>假設你有一個 SQLite 資料庫 <code>/Users/username/app.db</code>，想讓 Claude Code 直接查詢它的內容：</p>
+
+        <h4>步驟 1 — 建立 .mcp.json</h4>
+        <pre><code>{
+  "mcpServers": {
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "/Users/username/app.db"]
+    }
+  }
+}</code></pre>
+
+        <h4>步驟 2 — 啟動 Claude Code</h4>
+        <pre><code>cd /path/to/project
+claude</code></pre>
+        <p>Claude Code 會自動掃描 <code>.mcp.json</code>，並詢問是否信任載入這些 Server。選擈다後，你就可以直接對 Claude 說：</p>
+        <pre><code>查詢 users 資料表的所有欄位</code></pre>
+        <p>Claude Code 會透過 MCP Server 執行 SQL 並回傳結果，全部不用手動打 SQL！</p>
+
+        <h2>如何撰寫自定義 MCP Server</h2>
+        <p>如果現有的 Server 不符合你的需求，你可以自己編寫一個。MCP 提供 Python、TypeScript/JavaScript、Java、C# 等多語言 SDK。</p>
+
+        <h3>Python 範例：建立一個天氣查詢 MCP Server</h3>
+
+        <h4>步驟 1 — 初始化專案</h4>
+        <pre><code>pip install mcp[cli]
+
+# 或者使用 uv (推薦)
+uv init weather-server
+uv add "mcp[cli]" httpx</code></pre>
+
+        <h4>步驟 2 — 撰寫 server.py</h4>
+        <pre><code>#!/usr/bin/env python3
+"""天氣查詢 MCP Server"""
+import json
+import httpx
+from mcp.server.fastapi import serve_app
+from mcp.types import Tool
+
+app = serve_app()
+
+@app.list_tools()
+async def handle_list_tools():
+    return [
+        Tool(
+            name="get_weather",
+            description="查詢指定城市的天氣",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "city": {"type": "string", "description": "城市名稱"}
+                },
+                "required": ["city"]
+            }
+        )
+    ]
+
+@app.call_tool()
+async def handle_execute_tool(name: str, arguments: dict):
+    if name == "get_weather":
+        city = arguments.get("city", "Taipei")
+        # 這裡呼叫實際的天氣 API
+        result = await fetch_weather(city)
+        return result
+    return {"content": [], "isError": True}
+
+if __name__ == "__main__":
+    app.run()</code></pre>
+
+        <h4>步驟 3 — 將其加入 .mcp.json</h4>
+        <pre><code>{
+  "mcpServers": {
+    "weather": {
+      "command": "python3",
+      "args": ["/ABSOLUTE/PATH/TO/weather-server/server.py"],
+      "env": {
+        "WEATHER_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}</code></pre>
+
+        <blockquote>
+          📚 <strong>學習資源：</strong> MCP 官方教學：<a href="https://modelcontextprotocol.io/quickstart/server" target="_blank">Building Your First MCP Server</a>。Context7 整理了豐富的 MCP Server 程式碼範例，搜索「MCP server」即可找到來自真實專案的配置參考。
+        </blockquote>
+
+        <h2>Skill — 可重用的 Claude Code 指令</h2>
+        <p><strong>Skill</strong> 是 Claude Code 的可重用指令集合。當你在 session 中輸入 <code>/<skill-name></code>，Claude Code 會載入對應的 prompt 並執行。</p>
+
+        <h3>Skill 檔案結構</h3>
+        <p>Skill 檔案放在 <code>.claude/skills/</code> 目錄下，每個 Skill 是一個 Markdown 文件：</p>
+        <pre><code>.claude/
+├── skills/
+│   ├── code-review.md    # /code-review
+│   ├── bug-fix.md        # /bug-fix
+│   └── generate-tests.md # /generate-tests
+└── hooks/
+    └── settings.json     # Hooks 配置</code></pre>
+
+        <h3>建立自定義 Skill</h3>
+        <h4>範例：建立一個「code-review」Skill</h4>
+        <p>在 <code>.claude/skills/code-review.md</code> 中撰寫：</p>
+        <pre><code># /code-review — 程式碼品質審查
+
+## 目的
+對專案中的 changed files 進行程式碼品質審查，包含：
+- Bug 檢測
+- 性能瓶頸
+- 安全漏洞
+- 可讀性問題
+
+## 操作指令
+請執行以下步驟：
+
+1. 執行 <code>git diff main --name-only</code> 列出所有修改過的檔案
+2. 逐一檢視每個檔案，執行 <code>git diff main -- &lt;file&gt;</code>
+3. 對發現的問題進行分類：
+   - **Critical**: 可能導致崩潰或安全漏洞
+   - **Warning**: 效能問題或最佳化建議
+   - **Info**: 可讀性改善
+4. 撰寑 review 報告，格式如下：
+
+```
+📊 Code Review 摘要
+- 發現問題數：X 個
+- Critical: Y 個 | Warning: Z 個 | Info: W 個
+
+🔍 詳細問題：
+
+[檔案名]
+  - L&lt;line&gt;: &lt;問題描述&gt;
+    建議: &lt;修改建議&gt;
+```
+
+5. 若使用者提供 <code>/code-review high</code>，會使用更嚴格的審查標準
+6. 若使用者提供 <code>/code-review --fix</code>，在報告後自動修復可修復的問題
+
+## 注意事項
+- 僅審查 human 收藏的檔案，不要審查 node_modules 或建構產物

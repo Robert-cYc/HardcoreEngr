@@ -328,5 +328,17 @@
       "Claude AI",
       "自動化"
     ]
+  },
+  {
+    "title": "Claude Code MCP & Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門",
+    "excerpt": "深入解析 Claude Code 的 MCP（Model Context Protocol）與 Skill 功能。教你如何安裝 MCP Server、撰寫 .mcp.json 配置、建立自定義 Skill、撰寫 Hooks 自動化，以及 MCP、Skill、Plugin 的關係。",
+    "url": "claude-code-mcp-skill-guide.html",
+    "tags": [
+      "Claude Code",
+      "MCP",
+      "Skill",
+      "AI 開發工具",
+      "教學"
+    ]
   }
 ]
