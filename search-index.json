@@ -1,5 +1,18 @@
 [
   {
+    "title": "Google Antigravity 完全攻略：Agent-First IDE 詳細介紹、安裝教學與實戰使用指南",
+    "excerpt": "Antigravity 完整教學：Agent Manager 任務指揮中心、Artifacts 驗收機制、瀏覽器整合、Fast/Planning 模式、支援模型與定價、Antigravity 2.0 新功能與 slash 指令速查表。",
+    "url": "google-antigravity-ide-guide.html",
+    "tags": [
+      "Google",
+      "Antigravity",
+      "IDE",
+      "AI Agent",
+      "Gemini",
+      "教學"
+    ]
+  },
+  {
     "title": "tmux 終端機多工神器完整手冊：安裝教學、快捷鍵大全與進階配置",
     "excerpt": "tmux 完整教學：核心概念、macOS/Linux/WSL 安裝、Session/Window/Pane 快捷鍵大全、.tmux.conf 進階配置、SSH 斷線存活實戰與指令速查表。",
     "url": "tmux-terminal-guide.html",

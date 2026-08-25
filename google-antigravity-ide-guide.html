@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Antigravity 完全攻略：Agent-First IDE 詳細介紹、安裝教學與實戰使用指南 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="Google Antigravity IDE 完整教學：Agent Manager 任務指揮中心、Artifacts 驗收機制、瀏覽器整合、Fast/Planning 模式、支援模型與 Rate Limits、定價方案、Antigravity 2.0 新功能與快捷指令速查表。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/google-antigravity-ide-guide.html">
+  <meta property="og:title" content="Google Antigravity 完全攻略：Agent-First IDE 詳細介紹、安裝教學與實戰使用指南 — "AI" 硬核工程師">
+  <meta property="og:description" content="Google Antigravity IDE 完整教學：Agent Manager 任務指揮中心、Artifacts 驗收機制、瀏覽器整合、Fast/Planning 模式、支援模型與 Rate Limits、定價方案、Antigravity 2.0 新功能與快捷指令速查表。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/google-antigravity-ide-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Antigravity 完全攻略：Agent-First IDE 詳細介紹、安裝教學與實戰使用指南 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Google Antigravity IDE 完整教學：Agent Manager 任務指揮中心、Artifacts 驗收機制、瀏覽器整合、Fast/Planning 模式、支援模型與 Rate Limits、定價方案、Antigravity 2.0 新功能與快捷指令速查表。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem; /* 10% larger */
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem; /* 10% larger */
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem; /* 10% larger */
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem; /* 10% larger */
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em; /* 10% larger */
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.21rem; /* 10% larger */
+    }
+    .article-body th, .article-body td {
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Google Antigravity 完全攻略：Agent-First IDE 詳細介紹、安裝教學與實戰使用指南",
+  "description": "Google Antigravity IDE 完整教學：Agent Manager 任務指揮中心、Artifacts 驗收機制、瀏覽器整合、Fast/Planning 模式、支援模型與 Rate Limits、定價方案、Antigravity 2.0 新功能與快捷指令速查表。",
+  "url": "https://ai-hardcore-engineer.com/google-antigravity-ide-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/google-antigravity-ide-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>Google Antigravity 完全攻略：Agent-First IDE 詳細介紹、安裝教學與實戰使用指南</h1>
+        <div class="article-meta">
+          <span>2026-08-26</span>
+          <span class="separator">·</span>
+          <span>22 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Google</span>
+          <span class="tag">Antigravity</span>
+          <span class="tag">IDE</span>
+          <span class="tag">AI Agent</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="images/picsum-antigravity-1200-400.jpg" alt="Google Antigravity IDE">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>Google Antigravity</strong> 是 Google 推出的 agent-first 開發平台，隨 Gemini 3 同步發布：<br>
+          &nbsp;&nbsp;① <strong>角色反轉：</strong>你不是「被 AI 補完程式碼的人」，而是「管理一團 AI agents 的主管」，任務丟出去、成果驗收回來<br>
+          &nbsp;&nbsp;② <strong>兩個工作面：</strong>Editor（熟悉的編輯器）＋ Agent Manager（任務指揮中心，可同時跑多個 agent）<br>
+          &nbsp;&nbsp;③ <strong>Artifacts 驗收制：</strong>agent 交出實作計畫、截圖、瀏覽器錄影等「證據」，你看證據驗貨，不用盯著每一步<br>
+          &nbsp;&nbsp;④ <strong>模型免費混用：</strong>Gemini 3 Pro／Claude／GPT-OSS 都能選，走 Google 帳號計費，不用另外辦 API key<br>
+          &nbsp;&nbsp;⑤ <strong>2026 演進：</strong>2.0 桌面版、CLI、SDK、VS Code/JetBrains 套件陸續到位，免費額度就能玩得很盡興
+        </blockquote>
+
+        <h2>什麼是 Google Antigravity？</h2>
+        <p><strong>Antigravity</strong> 是 Google 在 2025 年 11 月與 <strong>Gemini 3</strong> 同步發表的 agentic 開發平台。一句話講完它的定位：<strong>傳統 IDE 是你寫 code、AI 幫你補字；Antigravity 是你下任務、AI agents 自己去完成</strong>。</p>
+        <p>這個產品有段有趣的來歷：2025 年中 Google 把 <strong>Windsurf</strong>（當紅的 AI 編輯器新創 Codeium）的創辦人 Varun Mohan 和核心團隊整批收編進來，幾個月後就端出了 Antigravity。所以它骨子裡是 VS Code fork（操作習慣無縫接軌），但靈魂已經換成 agent 編排——你可以同時開好幾個 agent 分頭做事，像帶一個不用領加班費的小團隊。</p>
+        <p>到了 2026 年 I/O，Google 又把它升級成更大的版圖：<strong>Antigravity 2.0</strong> 獨立桌面應用（聚焦 agent 協作）、<strong>Antigravity CLI</strong>、<strong>SDK</strong>，以及 VS Code / Visual Studio / JetBrains / Zed 的擴充套件。原本的 Antigravity IDE 仍然可用，定位轉為「純 agent 加持的編輯器」。本文以最多人日常使用的 IDE 版為主軸，最後再帶到 2.0 的新東西。</p>
+        <blockquote>
+          💡 <strong>為什麼叫 Antigravity（反重力）？</strong> Google 的意思是：以前寫 code 要對抗地心引力（boilerplate、config、debug），現在 agent 把這些重力都扛走了，你是飄起來寫程式的那個人。
+        </blockquote>
+
+        <h2>核心概念：Editor、Agent Manager 與 Artifacts</h2>
+        <h3>Editor View：你熟悉的那個編輯器</h3>
+        <p>打開 Antigravity，第一眼就是 VS Code 的既視感：檔案樹、分頁、終端機、擴充套件都在。差別在於內建的 AI 面板不只會補代碼——你可以直接叫它改檔案、跑指令、開瀏覽器驗證。</p>
+        <h3>Agent Manager：你的任務指揮中心</h3>
+        <p>這是 Antigravity 最特別的地方。按一下切換到 <strong>Agent Manager</strong>，介面變成一格一格的任務列表，每一格是一個正在工作的 agent 對話。你可以：</p>
+        <ul>
+          <li><strong>並行派工：</strong>「A 去 refactor 認證模組、B 幫購物車補測試、C 查那個 production bug」——三個 agent 同時跑</li>
+          <li><strong>非同步等待：</strong>任務丟出去就可以去泡咖啡，agent 做完會把成果整理成 Artifacts 等你回來驗收</li>
+          <li><strong>中途插手：</strong>任何時刻點進去留言導正方向（steering），不必從頭重跑</li>
+        </ul>
+        <h3>Artifacts：看得見的交付物</h3>
+        <p>Agent 工作的過程中會產出各種 <strong>Artifacts（工件）</strong>，這是驗收的核心機制：</p>
+        <table>
+          <tr><th>Artifact 類型</th><th>內容</th><th>用途</th></tr>
+          <tr><td>Implementation Plan</td><td>Markdown 格式的實作計畫</td><td>動手前先審核方向，避免做白工</td></tr>
+          <tr><td>Task List</td><td>執行步驟清單與勾選狀態</td><td>掌握進度，知道 agent 做到哪</td></tr>
+          <tr><td>Screenshots</td><td>UI 修改前後截圖</td><td>視覺化確認畫面改對了</td></tr>
+          <tr><td>Browser Recording</td><td>瀏覽器操作錄影</td><td>看見 agent 實際點擊、操作的過程</td></tr>
+          <tr><td>Walkthrough</td><td>完工總結報告</td><td>快速了解改了什麼、怎麼驗證的</td></tr>
+        </table>
+        <blockquote>
+          ⚠️ <strong>重要心態：</strong>Artifacts 是<strong>驗收證據，不是完成保證</strong>。截圖不能證明資料庫狀態正確，「測試全過」的摘要也不代表所有邊界情況都被測到。該自己看的 code 還是要看。
+        </blockquote>
+
+        <h2>安裝與登入</h2>
+        <p>安裝流程非常簡單，不需要信用卡、不需要申請 API key：</p>
+        <ol>
+          <li>前往官方網站 <code>antigravity.google/download</code></li>
+          <li>選擇作業系統：<strong>macOS</strong>（標準安裝包，拖進 Applications）、<strong>Windows</strong>、<strong>Linux</strong>（deb/rpm）</li>
+          <li>首次啟動會跳瀏覽器做 <strong>Google 帳號登入</strong>，授權後自動回到 app</li>
+          <li>設定精靈可選擇<strong>匯入 VS Code 或 Cursor 的設定</strong>（套件、佈景、快捷鍵），還能挑編輯器偏好</li>
+        </ol>
+        <blockquote>
+          ✅ <strong>系統需求：</strong>macOS 14+、Windows 10/11、主流 Linux 發行版皆可。免費方案直接附帶 Gemini 3 Pro 等模型的額度，登入即用。
+        </blockquote>
+
+        <h2>第一次下任務給 Agent</h2>
+        <h3>兩種工作模式</h3>
+        <table>
+          <tr><th>模式</th><th>行為</th><th>適合場景</th></tr>
+          <tr><td>Fast Mode</td><td>直接動手改，邊做邊給你看</td><td>小修改、明確任務、快速迭代</td></tr>
+          <tr><td>Planning Mode</td><td>先生出 Implementation Plan 讓你審，核准後才動工</td><td>大功能、跨檔案重構、不想賭一把</td></tr>
+        </table>
+        <h3>實戰範例</h3>
+        <p>在 Agent Manager 新增一個任務，輸入像這樣的 prompt：</p>
+        <pre><code>幫 @order_service.py 加上訂單取消功能：
+1. 只有「待付款」狀態的訂單可以取消
+2. 取消後要發送 webhook 通知
+3. 補上單元測試，覆蓋成功和失敗兩種路徑
+4. 先給我 implementation plan 再開始改 code</code></pre>
+        <p>幾個小技巧：</p>
+        <ul>
+          <li>用 <code>@</code> 引用檔案（如 <code>@order_service.py</code>），agent 會直接讀取上下文</li>
+          <li>明確寫出<strong>限制條件</strong>（哪些狀態能取消），比事後 debug 便宜十倍</li>
+          <li>要求「先給 plan」等於強制 Planning 行為，大改動必開</li>
+        </ul>
+        <p>送出任務後，agent 會依序產出 plan → task list → 改 code → 測試結果 → walkthrough，全程在 Artifacts 面板看得到。你要做的只是在關鍵節點按下「核准」或留一句「webhook 改用 non-blocking」。</p>
+
+        <h2>瀏覽器整合：讓 Agent 自己驗收 UI</h2>
+        <p>安裝官方提供的 Chrome 擴充套件後，agent 可以直接操控一個瀏覽器實例：打開你的 dev server、點按鈕、填表單、截圖、甚至錄影。這解決了 agentic coding 最經典的痛點——<strong>agent 改完 UI 只能「祈禱它能動」</strong>。</p>
+        <p>例如你說：「把結帳按鈕改成綠色，然後自己打開頁面確認樣式有生效」，agent 會真的啟動瀏覽器、導向頁面、截圖放進 Artifacts 給你看。前端開發體驗直接起飛。</p>
+
+        <h2>支援的模型與選擇建議</h2>
+        <p>Antigravity 內建多個前沿模型可自由切換，全部走 Google 帳號計費——<strong>用 Claude 不需要 Anthropic 帳號</strong>：</p>
+        <table>
+          <tr><th>模型</th><th>特色</th><th>建議用途</th></tr>
+          <tr><td>Gemini 3 Pro / 3.1 Pro（High / Low reasoning）</td><td>旗艦推理，High 檔深思但較慢</td><td>複雜架構決策、難 bug</td></tr>
+          <tr><td>Gemini 3 Flash 系列</td><td>快、便宜</td><td>日常小修小改、批次任務</td></tr>
+          <tr><td>Claude Sonnet 4.6</td><td>均衡，寫 code 手感極佳</td><td>大多數 coding 任務的主力</td></tr>
+          <tr><td>Claude Opus 4.6（Thinking）</td><td>深度推理</td><td>疑難雜症、大型重構</td></tr>
+          <tr><td>GPT-OSS 120B</td><td>開源權重模型</td><td>實驗、對照組</td></tr>
+        </table>
+        <blockquote>
+          ⚡ <strong>實戰建議：</strong>免費方案的 Gemini Pro High reasoning 首次回應可能要等好幾分鐘。日常寫 code 用 <strong>Claude Sonnet 或 Gemini Flash</strong> 流暢得多；卡關時再把大砲請出來。
+        </blockquote>
+
+        <h2>Rate Limits 與定價</h2>
+        <p>額度消耗跟「agent 做了多少工」相關——任務越複雜吃越多。2026 年 I/O 後的方案架構：</p>
+        <table>
+          <tr><th>方案</th><th>月費</th><th>額度</th><th>適合</th></tr>
+          <tr><td>Free</td><td>$0</td><td>基礎週額度，每 7 天重置</td><td>體驗、輕度使用</td></tr>
+          <tr><td>Google AI Pro</td><td>$20</td><td>基準速率，更高上限</td><td>每天用一點的重度玩家</td></tr>
+          <tr><td>Google AI Ultra（新層級）</td><td>$100</td><td>5× Pro tokens</td><td>拿來當主力開發環境</td></tr>
+          <tr><td>Google AI Ultra（頂級）</td><td>$200</td><td>20× Pro tokens</td><td>全天候多 agent 併發</td></tr>
+        </table>
+        <p>企業用戶方面，Antigravity 已納入 Gemini Enterprise 相關授權，提供花費上限、團隊共用 token 池、超量計費管控等管理功能。</p>
+
+        <h2>Antigravity 2.0 與生態系新功能</h2>
+        <h3>2.0 重點功能</h3>
+        <ul>
+          <li><strong>Dynamic Subagents：</strong>主 agent 自動派出子 agent 平行處理小事，不污染主對話的 context window</li>
+          <li><strong>Scheduled Tasks：</strong>cron 式排程——「每週一早上掃一遍 dependency 更新」這種例行公事交給排程</li>
+          <li><strong>JSON Hooks：</strong>用設定檔攔截、控管 agent 行為（例如禁止碰某些目錄）</li>
+          <li><strong>Projects：</strong>取代 workspace 的專案制組織，每個專案有自己的設定與權限</li>
+          <li><strong>語音轉錄：</strong>用 Gemini Audio 直接口述需求</li>
+        </ul>
+        <h3>周邊工具</h3>
+        <ul>
+          <li><strong>Antigravity CLI：</strong>Go 寫的命令列版本，SSH 到伺服器也能用</li>
+          <li><strong>SDK（preview）：</strong>打造自己的客製 agent</li>
+          <li><strong>IDE Extensions：</strong>離不開 VS Code / JetBrains 也沒關係，套件裝下去就有 Antigravity 能力</li>
+        </ul>
+        <h3>常用 Slash 指令速查表</h3>
+        <table class="cmd-table">
+          <tr><th>指令</th><th>作用</th></tr>
+          <tr><td>/goal</td><td>設定／更新本次任務的目標描述</td></tr>
+          <tr><td>/grill-me</td><td>讓 agent 反過來拷問你的需求，挖出模糊地帶</td></tr>
+          <tr><td>/schedule</td><td>建立排程任務（cron 式定期執行）</td></tr>
+          <tr><td>/browser</td><td>指示 agent 使用瀏覽器進行驗證或操作</td></tr>
+        </table>
+
+        <h2>與其他 AI Coding 工具比較</h2>
+        <table>
+          <tr><th>工具</th><th>形態</th><th>強項</th><th>適合誰</th></tr>
+          <tr><td>Antigravity</td><td>獨立 IDE ＋ Agent Manager</td><td>多 agent 併發、Artifacts 驗收、瀏覽器自動化</td><td>想當「agent 主管」的人</td></tr>
+          <tr><td>Cursor</td><td>VS Code fork IDE</td><td>順手的 inline 編輯與 Tab 補全</td><td>喜歡親手寫、AI 從旁協助</td></tr>
+          <tr><td>Windsurf</td><td>VS Code fork IDE</td><td>Cascade 流程化 agent</td><td>原 Windsurf 用戶</td></tr>
+          <tr><td>Claude Code</td><td>終端機 CLI</td><td>腳本化、CI 整合、深度控制</td><td>terminal 重度患者</td></tr>
+        </table>
+        <blockquote>
+          🤔 <strong>怎麼選？</strong>工作流偏「我下規格、AI 施工」→ Antigravity；偏好「我主筆、AI 打下手」→ Cursor；活在 terminal 裡、要寫進自動化流程 → Claude Code。很多人是混著用的。
+        </blockquote>
+
+        <h2>安全使用守則</h2>
+        <p>agent 能力越強，失控的代價越高。濃縮自社群驗證過的安全實踐：</p>
+        <ol>
+          <li><strong>先寫清楚目標與禁止範圍：</strong>「只能改 <code>src/api/</code> 底下，不准動 migration」寫進 prompt</li>
+          <li><strong>要求先出計畫再寫檔：</strong>Planning 模式是你的煞車皮</li>
+          <li><strong>漸進放權：</strong>第一輪唯讀分析 → 第二輪限定寫入 → 第三輪才讓它碰瀏覽器和部署</li>
+          <li><strong>敏感操作人工批准：</strong>刪資料、push 到 main、付費 API 全部設成人類核可</li>
+          <li><strong>Artifacts 只是線索：</strong>關鍵改動自己再看一次 diff，別只看 walkthrough</li>
+        </ol>
+
+        <h2>常見問題 FAQ</h2>
+        <h3>額度用完了會怎樣？</h3>
+        <p>畫面會顯示 quota exhaustion 訊息，等重置（免費版每 7 天）或升級方案。Settings → Models 可以看到各模型的用量條。</p>
+        <h3>回應好慢，正常嗎？</h3>
+        <p>免費版的旗艦模型（Gemini Pro High reasoning）尖峰時段首回應可能要數分鐘。換 Flash 或 Claude Sonnet 通常立刻有感改善。</p>
+        <h3>一定要用 Google 的模型嗎？</h3>
+        <p>不必，Claude 和 GPT-OSS 都能在下拉選單直接切換，且計費走 Google 帳號。不過自訂 model endpoint 目前僅支援 Cloudtop/Linux 環境。</p>
+        <h3>IDE 版和 2.0 桌面版要用哪個？</h3>
+        <p>需要完整編輯器（改檔、debug、套件）就留在 IDE 版；主要工作是派任務和驗收、手上另有編輯器的話，2.0 桌面版的 Agent Manager 體驗更聚焦。兩者帳號與額度共通。</p>
+        <h3>免費版可以用於商業專案嗎？</h3>
+        <p>目前公開預覽階段沒有禁止，但正式條款與企業合約請以官網最新服務條款為準——免費額度的服務水準本來就不適合拿來跑 production 流程。</p>
+
+        <h2>總結</h2>
+        <p>Antigravity 代表的不只是又一個 AI 編輯器，而是開發工作流的典範轉移：<strong>從「人寫 code、AI 補字」變成「人定義任務與驗收、agents 施工」</strong>。它的 Agent Manager 讓一人同時監工多個 agent，Artifacts 機制把信任問題變成審批流程，瀏覽器整合則補上了 UI 驗證的最後一塊拼圖。</p>
+        <p>上手路徑很單純：下載安裝、Google 帳號登入、從一個 Fast Mode 小任務開始，感受 agent 交出 walkthrough 的那一刻；下一個大功能就切 Planning 模式，體驗「先審計畫再施工」的新世界。</p>
+        <blockquote>
+          🎯 <strong>快速上手：</strong><code>antigravity.google/download</code> 下載 → Google 帳號登入 → 匯入 VS Code 設定 → Agent Manager 下一個小任務（記得要求先出 plan）→ 看 Artifacts 驗收。<strong>把自己想像成 tech lead，agent 是你的團隊——規格寫清楚，驗收不放水，產能就起飛。</strong>
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>
