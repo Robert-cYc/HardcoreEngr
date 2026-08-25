@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tmux 終端機多工神器完整手冊：安裝教學、快捷鍵大全與進階配置 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="tmux 完整教學：terminal multiplexer 核心概念、macOS/Linux/WSL 安裝教學、Session/Window/Pane 操作快捷鍵大全、.tmux.conf 進階配置、SSH 斷線存活實戰與常用指令速查表。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/tmux-terminal-guide.html">
+  <meta property="og:title" content="tmux 終端機多工神器完整手冊：安裝教學、快捷鍵大全與進階配置 — "AI" 硬核工程師">
+  <meta property="og:description" content="tmux 完整教學：terminal multiplexer 核心概念、macOS/Linux/WSL 安裝教學、Session/Window/Pane 操作快捷鍵大全、.tmux.conf 進階配置、SSH 斷線存活實戰與常用指令速查表。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/tmux-terminal-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="tmux 終端機多工神器完整手冊：安裝教學、快捷鍵大全與進階配置 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="tmux 完整教學：terminal multiplexer 核心概念、macOS/Linux/WSL 安裝教學、Session/Window/Pane 操作快捷鍵大全、.tmux.conf 進階配置、SSH 斷線存活實戰與常用指令速查表。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem; /* 10% larger */
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem; /* 10% larger */
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem; /* 10% larger */
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem; /* 10% larger */
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em; /* 10% larger */
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.21rem; /* 10% larger */
+    }
+    .article-body th, .article-body td {
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "tmux 終端機多工神器完整手冊：安裝教學、快捷鍵大全與進階配置",
+  "description": "tmux 完整教學：terminal multiplexer 核心概念、macOS/Linux/WSL 安裝教學、Session/Window/Pane 操作快捷鍵大全、.tmux.conf 進階配置、SSH 斷線存活實戰與常用指令速查表。",
+  "url": "https://ai-hardcore-engineer.com/tmux-terminal-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/tmux-terminal-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>tmux 終端機多工神器完整手冊：安裝教學、快捷鍵大全與進階配置</h1>
+        <div class="article-meta">
+          <span>2026-08-25</span>
+          <span class="separator">·</span>
+          <span>20 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">tmux</span>
+          <span class="tag">Terminal</span>
+          <span class="tag">SSH</span>
+          <span class="tag">開發工具</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="images/picsum-tmux-1200-400.jpg" alt="tmux 終端機多工器">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>tmux</strong> 是一個 terminal multiplexer（終端機多工器），一個視窗管理多個終端工作：<br>
+          &nbsp;&nbsp;① <strong>Session 存活：</strong>SSH 斷線程式照跑，重連 <code>attach</code> 回來繼續工作<br>
+          &nbsp;&nbsp;② <strong>視窗分割：</strong>一個螢幕同時看編輯器、日誌、測試結果<br>
+          &nbsp;&nbsp;③ <strong>多重工作區：</strong>Session → Window → Pane 三層架構，像瀏覽器分頁一樣切換<br>
+          &nbsp;&nbsp;④ <strong>高度客製化：</strong>透過 <code>.tmux.conf</code> 打造專屬開發環境
+        </blockquote>
+
+        <p>你有沒有過這種經驗：SSH 連到伺服器跑一個長時間的編譯或訓練任務，網路一抖斷線，所有進度全部歸零？或者在一個終端機視窗裡開了七八個分頁，一邊跑 server、一邊看 log、一邊下指令，切到頭昏眼花？</p>
+        <p><strong>tmux</strong> 就是為了解決這些問題而生的。它在伺服器（或本機）上建立一個常駐的終端工作環境，你的程式跑在 tmux 裡而不是 SSH 連線裡 — 連線斷了，工作照樣跑；回家重連，<code>attach</code> 上去什麼都還在。這篇文章會帶你從安裝、核心概念、日常操作快捷鍵，一路到 <code>.tmux.conf</code> 進階配置，把 tmux 學好學滿。</p>
+
+        <blockquote>
+          📌 本文對應 tmux 3.x 版本。tmux 採 ISC 授權，是 OpenBSD 專案的子計畫，macOS 與主流 Linux 發行版的套件庫都有收錄。
+        </blockquote>
+
+        <h2>tmux 是什麼？為什麼你需要它？</h2>
+        <p><strong>tmux = terminal multiplexer</strong>，翻成中文就是「終端機多工器」。它做了三件大事：</p>
+        <ul>
+          <li><strong>Session 持久化：</strong>終端工作階段獨立於連線存在，SSH 斷線、終端機關掉，session 裡的程式照跑不誤</li>
+          <li><strong>畫面分割：</strong>一個視窗切成多個 pane，同時盯著編輯器、日誌和監控儀表</li>
+          <li><strong>多工作區：</strong>多個 session、每個 session 多個 window，像瀏覽器分頁一樣自由切換</li>
+        </ul>
+        <p>最經典的使用場景就是 <strong>SSH + 長時間任務</strong>：訓練模型、跑資料庫 migration、編譯大型專案，全部丟進 tmux 裡執行，網路再怎麼不穩都不用怕。</p>
+
+        <h2>核心概念：Session、Window、Pane</h2>
+        <p>tmux 的架構是三層式，理解這個架構，快捷鍵就不用死背：</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>層級</th>
+              <th>比喻</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Session</strong></td>
+              <td>瀏覽器的「視窗」</td>
+              <td>最高層工作區，彼此獨立。例如一個 session 跑公司專案、一個跑 side project</td>
+            </tr>
+            <tr>
+              <td><strong>Window</strong></td>
+              <td>瀏覽器的「分頁」</td>
+              <td>Session 內的全螢幕工作區，狀態列上會顯示 0、1、2… 編號</td>
+            </tr>
+            <tr>
+              <td><strong>Pane</strong></td>
+              <td>分頁裡的「分割畫面」</td>
+              <td>Window 內再切出的區塊，可以左右分、上下分，各自跑各自的 shell</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>記住這個順序：<strong>Session 包 Window，Window 包 Pane</strong>。所有 tmux 快捷鍵都是在這三層之間移動和管理。</p>
+
+        <h2>安裝教學</h2>
+
+        <h3>macOS (Homebrew)</h3>
+        <pre><code>brew install tmux</code></pre>
+
+        <h3>Linux 各發行版</h3>
+        <pre><code># Ubuntu / Debian
+sudo apt update &amp;&amp; sudo apt install tmux
+
+# Fedora / RHEL / CentOS
+sudo dnf install tmux
+
+# Arch Linux
+sudo pacman -S tmux
+
+# openSUSE
+sudo zypper install tmux</code></pre>
+
+        <h3>Windows (WSL)</h3>
+        <p>Windows 本身的終端機不支援 tmux，但透過 WSL2 就能完整使用：</p>
+        <pre><code># 先安裝 WSL2 + Ubuntu (PowerShell 系統管理員)
+wsl --install
+
+# 進入 WSL 後照 Ubuntu 的方式安裝
+sudo apt update &amp;&amp; sudo apt install tmux</code></pre>
+
+        <h3>從原始碼編譯（取得最新版）</h3>
+        <p>如果系統套件庫的版本太舊（例如 CentOS 7 只有 tmux 1.8），可以自己編：</p>
+        <pre><code>sudo apt install -y build-essential libevent-dev ncurses-dev git
+git clone https://github.com/tmux/tmux.git
+cd tmux
+sh autogen.sh
+./configure &amp;&amp; make
+sudo make install</code></pre>
+
+        <h3>確認安裝成功</h3>
+        <pre><code>tmux -V
+# 輸出類似: tmux 3.4</code></pre>
+
+        <h2>第一次使用：Session 生命週期</h2>
+        <p>先掌握最基本的操作循環：<strong>建立 → 分離 → 回來</strong>。</p>
+        <pre><code># 建立一個新 session（匿名）
+tmux
+
+# 建立有名字的 session（推薦，之後好認）
+tmux new -s work
+
+# 分離 (detach)：離開但 session 繼續跑
+# 快捷鍵：Ctrl-b 然後按 d
+
+# 列出所有 session
+tmux ls
+
+# 重新接回 session
+tmux attach -t work
+
+# 刪除指定 session
+tmux kill-session -t work</code></pre>
+        <blockquote>
+          💡 <strong>實測斷線存活：</strong>在 tmux 裡跑 <code>top</code>，按 <code>Ctrl-b d</code> 分離，然後把終端機整個關掉。重新打開終端機輸入 <code>tmux attach</code> — top 還在跑，畫面跟離開前一模一樣。
+        </blockquote>
+
+        <h2>快捷鍵大全</h2>
+        <p>tmux 所有快捷鍵都要先按 <strong>prefix</strong>（預設 <code>Ctrl-b</code>）再按功能鍵。例如分離是「按住 Ctrl 和 b，放開，再單獨按 d」。</p>
+
+        <h3>Session 管理</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>快捷鍵</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Ctrl-b d</code></td>
+              <td>分離目前 session（detach）</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b $</code></td>
+              <td>重新命名目前 session</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b s</code></td>
+              <td>列出所有 session 並切換（互動式選單）</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b (</code></td>
+              <td>切到上一個 session</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b )</code></td>
+              <td>切到下一個 session</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Window 操作</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>快捷鍵</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Ctrl-b c</code></td>
+              <td>建立新 window</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b ,</code></td>
+              <td>重新命名目前 window</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b n</code> / <code>Ctrl-b p</code></td>
+              <td>下一個 / 上一個 window</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b 0-9</code></td>
+              <td>直接跳到指定編號的 window</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b w</code></td>
+              <td>互動式列出所有 window（含 session）</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b &amp;</code></td>
+              <td>關閉目前 window（會要求確認）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Pane 分割與切換</h3>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>快捷鍵</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Ctrl-b %</code></td>
+              <td>左右分割（垂直線切開）</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b "</code></td>
+              <td>上下分割（水平線切開）</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b 方向鍵</code></td>
+              <td>在 pane 之間移動焦點</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b o</code></td>
+              <td>輪流切換到下一個 pane</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b x</code></td>
+              <td>關閉目前 pane（會要求確認）</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b z</code></td>
+              <td>目前 pane 全螢幕切換（zoom，再按一次還原）</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b Space</code></td>
+              <td>循環切換 pane 佈局（水平、垂直、網格…）</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b Ctrl-方向鍵</code></td>
+              <td>調整目前 pane 的大小</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b {</code> / <code>Ctrl-b }</code></td>
+              <td>與前一個 / 後一個 pane 交換位置</td>
+            </tr>
+          </tbody>
+        </table>
+        <blockquote>
+          💡 <strong>最常用組合推薦：</strong><code>Ctrl-b %</code> 左右分一個編輯器一個終端機，<code>Ctrl-b "</code> 再上下分一塊出來看 log，<code>Ctrl-b z</code> 臨時放大某個 pane 專心看 — 這四個鍵用熟，就夠應付八成的日常場景。
+        </blockquote>
+
+        <h3>複製模式（捲動與複製）</h3>
+        <p>終端機裡想往上捲看歷史輸出，要進入「copy mode」：</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>快捷鍵</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Ctrl-b [</code></td>
+              <td>進入 copy mode（可用方向鍵 / PgUp / PgDn 捲動）</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b PgUp</code></td>
+              <td>進入 copy mode 並直接翻頁向上</td>
+            </tr>
+            <tr>
+              <td><code>Space</code></td>
+              <td>copy mode 中開始選取</td>
+            </tr>
+            <tr>
+              <td><code>Enter</code></td>
+              <td>選取完成，複製到 tmux buffer</td>
+            </tr>
+            <tr>
+              <td><code>Ctrl-b ]</code></td>
+              <td>貼上 buffer 內容</td>
+            </tr>
+            <tr>
+              <td><code>q</code></td>
+              <td>離開 copy mode</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>指令模式速查表</h2>
+        <p>按 <code>Ctrl-b :</code> 進入指令模式，可以下所有 tmux 子指令。以下是最常用的幾條：</p>
+        <table class="cmd-table">
+          <thead>
+            <tr>
+              <th>指令</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>:new -s 名稱</code></td>
+              <td>建立新 session</td>
+            </tr>
+            <tr>
+              <td><code>:split-window -h</code></td>
+              <td>左右分割（等同 <code>Ctrl-b %</code>）</td>
+            </tr>
+            <tr>
+              <td><code>:resize-pane -U 5</code></td>
+              <td>向上擴大 pane 5 行（-D/-L/-R 同理）</td>
+            </tr>
+            <tr>
+              <td><code>:swap-window -t 0</code></td>
+              <td>把目前 window 搬到 0 號位置</td>
+            </tr>
+            <tr>
+              <td><code>:source-file ~/.tmux.conf</code></td>
+              <td>重新載入配置（改完 conf 不用重開）</td>
+            </tr>
+            <tr>
+              <td><code>:show-messages</code></td>
+              <td>顯示 tmux 訊息歷史</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>不想進指令模式的話，這些也都有對應的 shell 指令，例如 <code>tmux split-window -h</code>、<code>tmux resize-pane -D 5</code>，適合寫進腳本自動化。</p>
+
+        <h2>進階配置：打造順手的 .tmux.conf</h2>
+        <p>tmux 的預設快捷鍵對新手不太友善，通常大家都會調整配置。在 home 目錄建立 <code>~/.tmux.conf</code>，以下是推薦的入門配置：</p>
+        <pre><code># ===== 基本設定 =====
+# 歷史緩衝行數（預設 2000 太少）
+set -g history-limit 50000
+
+# 支援滑鼠：可點擊切換 pane、拖曳調整大小、滾輪捲動
+set -g mouse on
+
+# 256 色 + true color 支援
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+
+# 事件延遲降到最低，反應更快
+set -sg escape-time 0
+
+# 編號從 1 開始（0 離左手太遠）
+set -g base-index 1
+setw -g pane-base-index 1
+# 關閉 window 後編號自動遞補
+set -g renumber-windows on
+
+# ===== 快捷鍵優化 =====
+# prefix 改成 Ctrl-a（比 Ctrl-b 好按，跟 screen 一致）
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+
+# 用更直覺的鍵分割 pane（| 左右、- 上下）
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+unbind '"'
+unbind %
+
+# 新 window / 分割 pane 時保留目前路徑
+bind c new-window -c "#{pane_current_path}"
+
+# vim 風格的 pane 切換（h j k l）
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Ctrl-r 快速重載配置
+bind r source-file ~/.tmux.conf \; display "Config reloaded!"</code></pre>
+        <blockquote>
+          ⚠️ <strong>改完配置要重載才會生效：</strong>按 <code>Ctrl-b :</code> 輸入 <code>source-file ~/.tmux.conf</code>，或直接 <code>tmux source ~/.tmux.conf</code>。prefix 改成 <code>Ctrl-a</code> 之後，上面所有快捷鍵教學的「Ctrl-b」都請自動代換成「Ctrl-a」。
+        </blockquote>
+
+        <h2>實戰場景：SSH 遠端開發的正確姿勢</h2>
+        <p>tmux 最殺的應用場景是遠端伺服器開發，推薦的工作流：</p>
+        <pre><code># 1. SSH 連上伺服器後，建立命名 session
+ssh user@server
+tmux new -s dev
+
+# 2. 在裡面開好工作環境：一個 pane 跑編輯器、一個跑 server、一個看 log
+
+# 3. 下班直接關終端機（或 Ctrl-b d 分離），session 留在伺服器上
+
+# 4. 隔天重連，一鍵恢復昨天的完整工作環境
+ssh user@server
+tmux attach -t dev</code></pre>
+        <p>進階一點，還可以讓多個終端機視窗<strong>同步顯示同一個 session</strong>，天然適合結對程式或教學演示：</p>
+        <pre><code># 第二個終端機視窗（或同事的 SSH 連線）也接上同一個 session
+tmux attach -t dev</code></pre>
+        <p>兩邊看到的畫面完全同步，你敲什麼對方就看到什麼 — 不用開螢幕分享也能 pair programming。</p>
+        <blockquote>
+          🚀 <strong>搭配工具推薦：</strong>想要「一鍵還原整套開發環境」（多個 session、每個 session 固定幾個 pane 各跑特定指令），可以再裝 <strong>tmuxinator</strong> 或 <strong>tmuxp</strong>，把版面寫成 YAML 定義檔。另外 <a href="./btop-monitor-guide.html" target="_blank">btop</a> 這類監控工具丟在獨立的 tmux window 裡常駐，也是常見的組合技。
+        </blockquote>
+
+        <h2>常見問題排解</h2>
+        <h3>顏色跑掉、vim 配色怪怪的？</h3>
+        <p>在 <code>.tmux.conf</code> 加上 true color 支援（見上方配置），並確認 <code>echo $TERM</code> 在 tmux 內外都合理（通常是 <code>tmux-256color</code> 或 <code>xterm-256color</code>）。</p>
+        <h3>tmux attach 說 "no sessions"？</h3>
+        <p>代表伺服器重開機過或 session 全被殺了 — tmux 的 session 存在記憶體裡，重開機就沒了。重要任務請搭配 <code>nohup</code> 或 systemd service 做雙保險。</p>
+        <h3>滾輪不能往上捲？</h3>
+        <p>確認配置裡有 <code>set -g mouse on</code>，重載後滾輪就會自動進入 copy mode 捲動歷史。</p>
+
+        <h2>總結</h2>
+        <p>tmux 的學習曲線看起來陡，但拆開來就是三件事：<strong>Session 管理保平安、Window 切工作區、Pane 分割螢幕</strong>。先把 <code>new -s</code>、<code>Ctrl-b d</code>、<code>tmux attach</code> 這條主線用熟，再慢慢補 pane 操作和配置優化，一週就能內化成肌肉記憶。</p>
+        <blockquote>
+          🎯 <strong>快速上手：</strong> <code>brew install tmux</code>（或 <code>apt install tmux</code>）→ <code>tmux new -s dev</code> 開第一個 session → <code>Ctrl-b %</code> 分割畫面 → <code>Ctrl-b d</code> 分離 → <code>tmux attach -t dev</code> 回來。記住：<strong>先讓 SSH 斷線不再恐懼，其他快捷鍵之後慢慢學都來得及。</strong>
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>

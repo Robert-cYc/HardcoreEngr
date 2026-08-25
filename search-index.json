@@ -1,5 +1,18 @@
 [
   {
+    "title": "tmux 終端機多工神器完整手冊：安裝教學、快捷鍵大全與進階配置",
+    "excerpt": "tmux 完整教學：核心概念、macOS/Linux/WSL 安裝、Session/Window/Pane 快捷鍵大全、.tmux.conf 進階配置、SSH 斷線存活實戰與指令速查表。",
+    "url": "tmux-terminal-guide.html",
+    "tags": [
+      "tmux",
+      "Terminal",
+      "SSH",
+      "終端機",
+      "開發工具",
+      "教學"
+    ]
+  },
+  {
     "title": "btop 終端資源監控神器 — 取代 top/htop 的全面性能工具",
     "excerpt": "btop 是一個強大的 terminal-based 資源監控工具，整合 CPU、記憶體、磁碟 IO、網路流量與進程監控。本文詳細介紹安裝、操作快捷鍵、配置與進階功能。",
     "url": "btop-monitor-guide.html",
