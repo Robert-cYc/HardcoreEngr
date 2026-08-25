@@ -1,0 +1,35 @@
+name: Update tech news
+
+# 每天早上 06:17（台灣時間）自動更新科技新聞；也可在手動觸發頁面按 Run
+on:
+  schedule:
+    - cron: "17 22 * * *" # UTC 22:17 = 台灣時間 06:17
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch news RSS
+        run: python3 scripts/fetch_news.py
+
+      - name: Commit updated data
+        run: |
+          if git diff --quiet tech-news.json; then
+            echo "新聞內容沒有變動，跳過 commit"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add tech-news.json
+            git commit -m "chore: 自動更新科技新聞資料"
+            git push
+          fi

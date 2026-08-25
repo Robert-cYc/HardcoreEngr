@@ -80,9 +80,13 @@ def main():
         "updated": datetime.now().astimezone().strftime("%Y-%m-%d %H:%M"),
         "sources": sources,
     }
-    out = Path(__file__).resolve().parent.parent / "tech-news.json"
-    out.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     total = sum(len(s["items"]) for s in sources)
+    out = Path(__file__).resolve().parent.parent / "tech-news.json"
+    # 全部來源失敗時不覆蓋舊資料，避免把線上正常內容換成一頁錯誤
+    if total == 0 and out.exists():
+        print("[error] 所有來源皆抓取失敗，保留現有的 tech-news.json", file=sys.stderr)
+        sys.exit(1)
+    out.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"OK: 共 {total} 則新聞 -> {out}")
 
 
