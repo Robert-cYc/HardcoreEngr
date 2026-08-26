@@ -6,6 +6,9 @@
  *  - Hue-rotating color palette synchronized over time
  *  - Bright glowing crest line on the top wave
  *  - Floating sparkle particles that ride wave surfaces
+ *  - Interactive surface: pointer bulges the sea, click drops ripples
+ *  - Data packets streaming along the glowing crest
+ *  - Occasional shooting stars in dark mode
  *  - Fully responsive (ResizeObserver)
  *  - Respects prefers-reduced-motion
  */
@@ -56,6 +59,58 @@
     });
   }
 
+  /* ── data packets streaming along the crest ──────────────── */
+  var NUM_PACKETS = 7;
+  var packets = [];
+  for (var pi = 0; pi < NUM_PACKETS; pi++) {
+    packets.push({
+      offset: Math.random(),
+      speed: 0.02 + Math.random() * 0.03,
+      size: 1.5 + Math.random() * 1.8,
+      hueOffset: Math.random() * 360,
+    });
+  }
+
+  /* ── shooting stars (dark mode only) ─────────────────────── */
+  var stars = [];
+  var nextStarAt = 2500;
+
+  function spawnStar() {
+    var dir = Math.random() < 0.5 ? 1 : -1;
+    stars.push({
+      x: 0.2 + Math.random() * 0.6,
+      y: 0.08 + Math.random() * 0.3,
+      vx: dir * (0.22 + Math.random() * 0.12),
+      vy: 0.10 + Math.random() * 0.06,
+      born: null,
+      life: 700 + Math.random() * 500,
+      hueOffset: Math.random() * 60,
+    });
+  }
+
+  /* ── pointer interaction state ───────────────────────────── */
+  var mouse = { x: 0.5, energy: 0, target: 0 };
+  var ripples = [];
+  var RIPPLE_LIFE = 1400;
+
+  var hoverEl = document.querySelector('.site-header') || canvas.parentElement;
+  hoverEl.addEventListener('pointermove', function (e) {
+    var rect = canvas.getBoundingClientRect();
+    mouse.x = Math.min(1.5, Math.max(-0.5, (e.clientX - rect.left) / rect.width));
+    mouse.target = 1;
+  });
+  hoverEl.addEventListener('pointerleave', function () {
+    mouse.target = 0;
+  });
+  hoverEl.addEventListener('pointerdown', function (e) {
+    var rect = canvas.getBoundingClientRect();
+    var nx = (e.clientX - rect.left) / rect.width;
+    if (nx >= -0.05 && nx <= 1.05) {
+      ripples.push({ x: nx, born: null });
+      if (ripples.length > 6) ripples.shift();
+    }
+  });
+
   /* ── resize ──────────────────────────────────────────────── */
   function resize() {
     var rect = canvas.parentElement.getBoundingClientRect();
@@ -72,10 +127,31 @@
   }
   resize();
 
+  /* ── surface disturbance: pointer bulge + click ripples ──── */
+  function perturb(nx) {
+    var dy = 0;
+    if (mouse.energy > 0.02) {
+      var mdx = nx - mouse.x;
+      dy -= Math.exp(-(mdx * mdx) / 0.004) * mouse.energy * 24;
+    }
+    for (var i = 0; i < ripples.length; i++) {
+      var r = ripples[i];
+      if (r.born === null) continue;
+      var age = elapsed - r.born;
+      if (age > RIPPLE_LIFE) continue;
+      var dx = nx - r.x;
+      var radius = (age / 1000) * 0.28;
+      var band = Math.exp(-Math.pow((Math.abs(dx) - radius) * 16, 2));
+      var decay = 1 - age / RIPPLE_LIFE;
+      dy -= band * decay * 16 * Math.sin(age / 90);
+    }
+    return dy;
+  }
+
   /* ── wave y-value at x ───────────────────────────────────── */
   function waveY(wave, x, t, H) {
     var phase = t * wave.speed + wave.phaseOffset;
-    return wave.yBase * H + Math.sin(x * wave.frequency * Math.PI * 2 + phase) * wave.amplitude;
+    return wave.yBase * H + Math.sin(x * wave.frequency * Math.PI * 2 + phase) * wave.amplitude + perturb(x);
   }
 
   /* ── draw one wave layer ─────────────────────────────────── */
@@ -173,6 +249,82 @@
     });
   }
 
+  /* ── draw packets riding the crest ───────────────────────── */
+  function drawPackets(t, baseHue, dark) {
+    var W = canvas.width;
+    var H = canvas.height;
+    var crest = WAVES[0];
+
+    packets.forEach(function(pk) {
+      var head = ((t * pk.speed + pk.offset) % 1 + 1) % 1;
+      var hue = (baseHue + pk.hueOffset) % 360;
+
+      for (var k = 1; k <= 4; k++) {
+        var tailX = head - k * 0.012;
+        if (tailX < 0) continue;
+        var ty = waveY(crest, tailX, t, H) - pk.size * 2.2;
+        ctx.beginPath();
+        ctx.arc(tailX * W, ty, Math.max(0.3, pk.size * (1 - k * 0.18)), 0, Math.PI * 2);
+        ctx.fillStyle = hsl(hue, 95, dark ? 75 : 60, 0.35 * (1 - k / 5));
+        ctx.fill();
+      }
+
+      var hy = waveY(crest, head, t, H) - pk.size * 2.2;
+      ctx.beginPath();
+      ctx.arc(head * W, hy, pk.size * 0.55, 0, Math.PI * 2);
+      ctx.fillStyle = hsl(hue, 100, 92, 0.95);
+      ctx.fill();
+    });
+  }
+
+  /* ── update & draw shooting stars ────────────────────────── */
+  function updateStars(dark) {
+    if (!dark) {
+      stars.length = 0;
+      return;
+    }
+    if (elapsed > nextStarAt && stars.length < 2) {
+      spawnStar();
+      nextStarAt = elapsed + 3500 + Math.random() * 5500;
+    }
+
+    var W = canvas.width;
+    var H = canvas.height;
+
+    for (var i = stars.length - 1; i >= 0; i--) {
+      var s = stars[i];
+      if (s.born === null) s.born = elapsed;
+      var age = elapsed - s.born;
+      if (age > s.life) {
+        stars.splice(i, 1);
+        continue;
+      }
+      var fade = Math.sin((age / s.life) * Math.PI);
+      var x = (s.x + s.vx * (age / 1000)) * W;
+      var y = (s.y + s.vy * (age / 1000)) * H;
+      var ang = Math.atan2(s.vy * H, s.vx * W);
+      var tailLen = 60 * devicePixelRatio * fade;
+      var tx = x - Math.cos(ang) * tailLen;
+      var ty = y - Math.sin(ang) * tailLen;
+
+      var grad = ctx.createLinearGradient(tx, ty, x, y);
+      grad.addColorStop(0, hsl(45 + s.hueOffset, 100, 85, 0));
+      grad.addColorStop(1, hsl(45 + s.hueOffset, 100, 88, 0.9 * fade));
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 1.6 * devicePixelRatio;
+      ctx.beginPath();
+      ctx.moveTo(tx, ty);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(x, y, 1.6 * devicePixelRatio, 0, Math.PI * 2);
+      ctx.fillStyle = hsl(48, 100, 96, fade);
+      ctx.fill();
+      ctx.lineWidth = 1;
+    }
+  }
+
   /* ── main loop ───────────────────────────────────────────── */
   var lastT = null;
   var elapsed = 0;
@@ -188,6 +340,13 @@
     var W = canvas.width;
     var H = canvas.height;
 
+    /* interaction state easing */
+    mouse.energy += (mouse.target - mouse.energy) * Math.min(1, dt * 0.006);
+    for (var ri = ripples.length - 1; ri >= 0; ri--) {
+      if (ripples[ri].born === null) { ripples[ri].born = elapsed; continue; }
+      if (elapsed - ripples[ri].born > RIPPLE_LIFE) ripples.splice(ri, 1);
+    }
+
     ctx.clearRect(0, 0, W, H);
 
     for (var i = WAVES.length - 1; i >= 0; i--) {
@@ -198,6 +357,9 @@
 
     updateSparks();
     drawSparks(elapsed, baseHue, dark);
+
+    drawPackets(elapsed, baseHue, dark);
+    updateStars(dark);
 
     requestAnimationFrame(frame);
   }
