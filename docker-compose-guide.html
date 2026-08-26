@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docker Compose 完全攻略：多容器編排從入門到實戰 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="Docker Compose 完整教學：compose.yaml 核心語法、volumes 與 networks、depends_on 搭配 healthcheck 控制啟動順序、profiles 按需啟動服務、Compose Watch 開發熱重載、多檔案配置覆蓋與常用指令速查表。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/docker-compose-guide.html">
+  <meta property="og:title" content="Docker Compose 完全攻略：多容器編排從入門到實戰 — "AI" 硬核工程師">
+  <meta property="og:description" content="Docker Compose 完整教學：compose.yaml 核心語法、volumes 與 networks、depends_on 搭配 healthcheck 控制啟動順序、profiles 按需啟動服務、Compose Watch 開發熱重載、多檔案配置覆蓋與常用指令速查表。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/docker-compose-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Docker Compose 完全攻略：多容器編排從入門到實戰 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Docker Compose 完整教學：compose.yaml 核心語法、volumes 與 networks、depends_on 搭配 healthcheck 控制啟動順序、profiles 按需啟動服務、Compose Watch 開發熱重載、多檔案配置覆蓋與常用指令速查表。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem; /* 10% larger */
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem; /* 10% larger */
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      /* 全站統一 60 字一列 */
+      max-width: 60em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem; /* 10% larger */
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem; /* 10% larger */
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em; /* 10% larger */
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.21rem; /* 10% larger */
+    }
+    .article-body th, .article-body td {
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Docker Compose 完全攻略：多容器編排從入門到實戰",
+  "description": "Docker Compose 完整教學：compose.yaml 核心語法、volumes 與 networks、depends_on 搭配 healthcheck 控制啟動順序、profiles 按需啟動服務、Compose Watch 開發熱重載、多檔案配置覆蓋與常用指令速查表。",
+  "url": "https://ai-hardcore-engineer.com/docker-compose-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/docker-compose-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>Docker Compose 完全攻略：多容器編排從入門到實戰</h1>
+        <div class="article-meta">
+          <span>2026-08-26</span>
+          <span class="separator">·</span>
+          <span>25 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Docker Compose</span>
+          <span class="tag">容器</span>
+          <span class="tag">DevOps</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="images/picsum-docker-compose-1200-400.jpg" alt="Docker Compose 多容器編排">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>Docker Compose</strong> 是用一個 YAML 檔定義並管理多容器應用的工具：<br>
+          &nbsp;&nbsp;① <strong>一檔定義全家：</strong>web、資料庫、快取、反向代理全寫在 <code>compose.yaml</code>，一條指令整組啟停<br>
+          &nbsp;&nbsp;② <strong>v2 已內建：</strong>現在是 Docker CLI 的子指令 <code>docker compose</code>（沒有連字號），舊的 python 版 <code>docker-compose</code> 已淘汰<br>
+          &nbsp;&nbsp;③ <strong>啟動順序可控：</strong><code>depends_on</code> 配 <code>healthcheck</code> 能等資料庫「真正就緒」才啟動 web，不再連線被拒<br>
+          &nbsp;&nbsp;④ <strong>開發體驗起飛：</strong>Profiles 按需開關服務群組；Compose Watch 讓程式碼改完自動同步進容器<br>
+          &nbsp;&nbsp;⑤ <strong>環境分離靠覆蓋：</strong>基底檔 + <code>compose.override.yaml</code>（開發）+ <code>compose.prod.yaml</code>（正式）各管各的
+        </blockquote>
+
+        <h2>Docker Compose 是什麼？</h2>
+        <p>真實世界的應用很少只有一個容器——web 後面通常還有資料庫、快取、訊息佇列、反向代理。用裸 <code>docker run</code> 一個一個起，參數長到懷疑人生，網路要手接、順序要手顧、改一行要重打十行。<strong>Compose 把這一切收斂成一個 YAML 檔</strong>：宣告每個服務用什麼映像、掛什麼磁碟、開什麼埠、誰依賴誰，然後 <code>docker compose up</code> 一鍵整組拉起來。</p>
+        <p>還沒熟習單容器的話，先看我們的 <a href="./docker-container-guide.html" target="_blank">Docker 容器化指南</a>再回來。</p>
+        <h3>v1 與 v2：別再用舊的了</h3>
+        <table>
+          <tr><th></th><th>舊版 docker-compose (v1)</th><th>現行 docker compose (v2)</th></tr>
+          <tr><td>型態</td><td>獨立 Python 套件</td><td>Docker CLI 內建 plugin（Go 寫的）</td></tr>
+          <tr><td>指令</td><td><code>docker-compose up</code>（有連字號）</td><td><code>docker compose up</code>（空格）</td></tr>
+          <tr><td>維護狀態</td><td>已停止維護</td><td>持續更新，新功能都在這</td></tr>
+        </table>
+        <p>確認版本很簡單：</p>
+        <pre><code>$ docker compose version
+Docker Compose version v2.39.2</code></pre>
+
+        <h2>安裝</h2>
+        <ul>
+          <li><strong>macOS / Windows：</strong>裝 Docker Desktop 就內建，什麼都不用做</li>
+          <li><strong>Linux：</strong>跟著 Docker Engine 一起裝 plugin：</li>
+        </ul>
+        <pre><code>sudo apt-get update
+sudo apt-get install docker-compose-plugin</code></pre>
+        <blockquote>
+          ✅ <strong>檔名慣例：</strong>官方推薦 <code>compose.yaml</code>，<code>docker-compose.yml</code> 也認得。放在專案根目錄，之後所有 compose 指令都會自動抓它。
+        </blockquote>
+
+        <h2>第一個 Compose：三分鐘上手</h2>
+        <p>經典入門場景：一個計數器 web + Redis。新建 <code>compose.yaml</code>：</p>
+        <pre><code>services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    depends_on:
+      - redis
+  redis:
+    image: redis:7-alpine</code></pre>
+        <p>然後：</p>
+        <pre><code>docker compose up -d     # 背景啟動整組服務
+curl localhost:8000      # 驗證
+docker compose down      # 整組收掉</code></pre>
+        <p>就這樣。Compose 自動建了一個專屬 network 讓 <code>web</code> 用主機名稱 <code>redis</code> 直接連到 Redis——不需要手動 <code>docker network create</code>、不需要寫 IP。</p>
+
+        <h2>核心語法詳解</h2>
+        <h3>image 與 build</h3>
+        <pre><code>services:
+  api:
+    image: myapp/api:1.4        # 直接用現成映像
+  worker:
+    build:                      # 或從本地 Dockerfile 建
+      context: ./worker
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: development
+    image: myapp/worker:dev     # 順便命名建出來的映像</code></pre>
+        <h3>ports vs expose</h3>
+        <ul>
+          <li><code>ports:</code> 映射到宿主機（<code>"8000:5000"</code> 主機 8000 → 容器 5000），給人類和外部流量用</li>
+          <li><code>expose:</code> 只在同一 network 內聲明埠，不映射出去——純文件用途，服務間互連其實根本不用宣告也能連</li>
+        </ul>
+        <blockquote>
+          ⚠️ <strong>埠字串要加引號：</strong><code>"8000:5000"</code> 寫成 <code>8000:5000</code> 在某些 YAML 解析情境會被當成六十進位數字出包，養成加引號的習慣。
+        </blockquote>
+        <h3>volumes 三種掛法</h3>
+        <table>
+          <tr><th>類型</th><th>寫法</th><th>用途</th></tr>
+          <tr><td>Named volume</td><td><code>pgdata:/var/lib/postgresql/data</code></td><td>資料庫等需要持久化的資料，由 Docker 管理</td></tr>
+          <tr><td>Bind mount</td><td><code>./src:/app/src</code></td><td>本地開發即時同步程式碼進容器</td></tr>
+          <tr><td>Anonymous / tmpfs</td><td><code>/tmp</code></td><td>拋棄式暫存</td></tr>
+        </table>
+        <p>Named volume 要在頂層 <code>volumes:</code> 區塊聲明：</p>
+        <pre><code>services:
+  db:
+    image: postgres:17
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:</code></pre>
+        <h3>environment 與變數替換</h3>
+        <pre><code>services:
+  api:
+    environment:
+      DATABASE_URL: postgres://app:${DB_PASSWORD}@db:5432/app
+      REDIS_HOST: cache
+    env_file:
+      - ./api.env          # 整包變數檔，適合塞一堆設定</code></pre>
+        <p><code>${DB_PASSWORD}</code> 是<strong>從 Compose 所在目錄的 <code>.env</code> 檔讀出來做字串替換</strong>——注意這是「寫進 YAML 前」的替換，跟容器的環境變數是兩回事。<code>.env</code> 記得放進 <code>.gitignore</code>。</p>
+        <h3>restart 政策</h3>
+        <table>
+          <tr><th>值</th><th>行為</th></tr>
+          <tr><td>no</td><td>預設，掛了不自動重啟（YAML 裡要加引號 <code>"no"</code>，不然會被解析成 false！）</td></tr>
+          <tr><td>always</td><td>永遠重啟，含宿主機開機後</td></tr>
+          <tr><td>unless-stopped</td><td>同 always，但手動 stop 後就不自動拉起（伺服器最常用的選擇）</td></tr>
+          <tr><td>on-failure</td><td>只在非零退出時重啟，可加上限 <code>on-failure:5</code></td></tr>
+        </table>
+        <h3>networks</h3>
+        <p>預設 Compose 會建一個讓所有服務互通的 network。要隔離（例如資料庫不想被前端層摸到）就自訂：</p>
+        <pre><code>services:
+  nginx:
+    networks: [frontend]
+  api:
+    networks: [frontend, backend]
+  db:
+    networks: [backend]      # 只在 backend 網段，nginx 連不到它
+networks:
+  frontend:
+  backend:
+    internal: true           # 完全不上外網</code></pre>
+
+        <h2>啟動順序：depends_on × healthcheck</h2>
+        <p>新手最常撞牆的一課：<code>depends_on</code> 只保證「容器<strong>啟動了</strong>」，不保證裡面的 PostgreSQL「<strong>接受連線了</strong>」。web 秒啟動、db 還在初始化，連線直接被拒。</p>
+        <p>解法是讓 db 自己報告健康狀態，web 等「健康」而不是等「活著」：</p>
+        <pre><code>services:
+  web:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy   # 等健康檢查通過
+        restart: true                # db 重啟時跟著重啟 web
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_PASSWORD: secret
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s       # 每 10 秒測一次
+      timeout: 5s         # 單次超過 5 秒算失敗
+      retries: 5          # 連續失敗 5 次判 unhealthy
+      start_period: 30s   # 前 30 秒的失敗不計入（初始化寬限）</code></pre>
+        <table class="cmd-table">
+          <tr><th>condition</th><th>意義</th></tr>
+          <tr><td>service_started</td><td>容器啟動就好（等同舊版的 depends_on）</td></tr>
+          <tr><td>service_healthy</td><td>健康檢查通過才算</td></tr>
+          <tr><td>service_completed_successfully</td><td>適合一次性 job（如 migration 容器），跑完且成功才繼續</td></tr>
+        </table>
+        <blockquote>
+          💡 <strong>觀察健康狀態：</strong><code>docker compose ps</code> 會顯示 (healthy)/(unhealthy)；想看細節用 <code>docker inspect --format '{{.State.Health.Status}}' &lt;容器名&gt;</code>。
+        </blockquote>
+
+        <h2>常用指令速查表</h2>
+        <table class="cmd-table">
+          <tr><th>指令</th><th>作用</th></tr>
+          <tr><td>docker compose up -d</td><td>背景建立並啟動全部服務（--build 強制重建映像）</td></tr>
+          <tr><td>docker compose down</td><td>停止並移除容器與 network；<strong>-v 連 volume 一起刪（資料會消失！）</strong></td></tr>
+          <tr><td>docker compose ps</td><td>列出本專案容器狀態與健康情況</td></tr>
+          <tr><td>docker compose logs -f api</td><td>追蹤某服務日誌（不加服務名就是全部）</td></tr>
+          <tr><td>docker compose exec api sh</td><td>進入運行中容器開 shell</td></tr>
+          <tr><td>docker compose build</td><td>只重建有 build 定義的映像</td></tr>
+          <tr><td>docker compose pull</td><td>拉取最新映像</td></tr>
+          <tr><td>docker compose restart api</td><td>重啟指定服務</td></tr>
+          <tr><td>docker compose config</td><td>把最終合併後的完整配置印出來驗證（除錯神器）</td></tr>
+          <tr><td>docker compose top</td><td>看各容器內的行程</td></tr>
+          <tr><td>docker compose cp api:/app/log.txt .</td><td>容器與宿主機之間複製檔案</td></tr>
+        </table>
+
+        <h2>Profiles：按需啟動的服務群組</h2>
+        <p>有些服務只在特定情境需要——本地的郵件測試工具、除錯面板、GPU 推理服務。給它標上 profile，平時 <code>up</code> 不會啟動：</p>
+        <pre><code>services:
+  api:
+    image: myapp/api            # 沒有 profiles = 永遠啟動
+  mailpit:
+    image: axllent/mailpit
+    profiles: ["devtools"]      # 只有啟用 devtools 才會跑
+  k6:
+    image: grafana/k6
+    profiles: ["loadtest"]</code></pre>
+        <pre><code>docker compose --profile devtools up -d              # 啟用單一群組
+docker compose --profile devtools --profile loadtest up -d   # 同時多個
+COMPOSE_PROFILES=devtools docker compose up -d       # 用環境變數也行</code></pre>
+        <blockquote>
+          ⚠️ <strong>Profiles 不是安全邊界</strong>——它只是「預設不啟動」的開關，明確點名服務（<code>docker compose run mailpit sh</code>）照樣能啟動它。別拿來藏不該跑的東西。
+        </blockquote>
+
+        <h2>Compose Watch：改 code 不用 rebuild</h2>
+        <p>v2.22 加入的殺手級開發功能。在服務下宣告 <code>develop.watch</code> 規則，然後 <code>docker compose up --watch</code>，檔案一存就依規則處理：</p>
+        <pre><code>services:
+  web:
+    build: .
+    develop:
+      watch:
+        - action: sync            # 原地同步，配框架熱重載（React/Vite/Django）
+          path: ./src
+          target: /app/src
+          ignore: [node_modules/]
+        - action: rebuild         # 依賴變了就重建映像
+          path: package.json
+        - action: sync+restart    # 同步後重啟，適合 nginx.conf 這類設定
+          path: ./nginx.conf
+          target: /etc/nginx/nginx.conf</code></pre>
+        <table>
+          <tr><th>action</th><th>觸發時行為</th><th>適用</th></tr>
+          <tr><td>sync</td><td>直接把檔案同步進運行中的容器</td><td>Python／JS 等直譯語言＋熱重載</td></tr>
+          <tr><td>rebuild</td><td>重建映像並重建容器</td><td>Go／Rust／Java 等編譯語言</td></tr>
+          <tr><td>sync+restart</td><td>同步後重啟容器</td><td>設定檔修改</td></tr>
+          <tr><td>sync+exec</td><td>同步後在容器內執行指令</td><td>同步後跑 migration／重新載入</td></tr>
+        </table>
+        <p>經驗法則：<strong>直譯語言用 sync、編譯語言用 rebuild、設定檔用 sync+restart</strong>，而且只對需要的服務開 watch。</p>
+
+        <h2>多檔案配置：一套 YAML 走天下</h2>
+        <p>開發和正式環境的需求天生不同（bind mount vs 穩定映像、暴露 debug 埠 vs 不暴露）。官方約定的分層做法：</p>
+        <ul>
+          <li><code>compose.yaml</code> —— 共同基底（服務清單、networks、volumes）</li>
+          <li><code>compose.override.yaml</code> —— 開發差異；<strong>up 時自動載入</strong></li>
+          <li><code>compose.prod.yaml</code> —— 正式差異；明確指定載入</li>
+        </ul>
+        <pre><code># 開發（自動疊 override）
+docker compose up -d
+
+# 正式（只用基底 + prod）
+docker compose -f compose.yaml -f compose.prod.yaml up -d
+
+# 疊完到底長怎樣？先看再跑
+docker compose -f compose.yaml -f compose.prod.yaml config</code></pre>
+        <p>同名欄位是「覆蓋」而非合併（ports、environment 這類列表會以後載入者為準）。更大的專案還能用頂層 <code>include:</code> 把多個 compose 檔組織成一棵樹。</p>
+
+        <h2>實戰範例：四服務架構</h2>
+        <p>把前面學的全部拼起來——Nginx 反代 + API + PostgreSQL + Redis：</p>
+        <pre><code>services:
+  nginx:
+    image: nginx:1.27-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  api:
+    build: ./api
+    expose:
+      - "3000"
+    environment:
+      DATABASE_URL: postgres://app:${DB_PASSWORD}@db:5432/app
+      REDIS_URL: redis://cache:6379/0
+    env_file:
+      - ./api.secrets.env
+    develop:
+      watch:
+        - action: sync
+          path: ./api/src
+          target: /app/src
+          ignore: ["**/__pycache__/"]
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+    networks: [frontend, backend]
+
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: app
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app -d app"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+    networks: [backend]
+
+  cache:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+    networks: [backend]
+
+networks:
+  frontend:
+  backend:
+
+volumes:
+  pgdata:</code></pre>
+        <p>這份配置做到了：資料庫只在 backend 網段外界摸不到、API 健康後 Nginx 才啟動、資料存在 named volume 重啟不丟、開發時 <code>--watch</code> 即時同步原始碼。</p>
+
+        <h2>最佳實務與常見坑</h2>
+        <ol>
+          <li><strong><code>down -v</code> 是核彈：</strong>它會刪掉 named volumes，本地資料庫直接歸零。日常請用 <code>down</code>，確定要重置資料再 <code>-v</code></li>
+          <li><strong>healthcheck 只管啟動順序：</strong>db 中途掛掉不會自動重啟你的 api，應用層仍要有連線重試邏輯</li>
+          <li><strong>密碼不要寫死在 YAML：</strong>用 <code>.env</code> ＋ <code>env_file</code>，正式環境換 secrets 管理方案</li>
+          <li><strong>改了 yaml 沒生效？</strong>Compose 不會自動偵測配置變更，要 <code>up -d</code> 重新套用；改 Dockerfile 要 <code>up -d --build</code></li>
+          <li><strong>孤兒容器：</strong>改過 service 名字後舊容器可能還留著，看到警告加 <code>--remove-orphans</code></li>
+          <li><strong>先 <code>config</code> 再 <code>up</code>：</strong>多檔案覆蓋疊完的結果常常跟想像不同，<code>docker compose config</code> 看最終形狀再執行</li>
+        </ol>
+
+        <h2>常見問題 FAQ</h2>
+        <h3>docker compose 和 docker-compose 有差嗎？</h3>
+        <p>指令幾乎完全相容，但 v1（連字號版）已停止維護，新功能（watch、profiles 完整語義、include）都只在 v2。現在寫教學、腳本一律用 <code>docker compose</code>。</p>
+        <h3>可以像 swarm 一樣 scale 嗎？</h3>
+        <p>無狀態服務可以 <code>docker compose up -d --scale api=3</code>，但要注意埠衝突（用 expose 別用 ports）且這只是本機多開，不是生產級編排——那種需求請上 Kubernetes。</p>
+        <h3>資料要怎麼備份？</h3>
+        <p>named volume 的內容可以用 <code>docker run --rm -v 專案名_pgdata:/data -v $PWD:/backup alpine tar czf /backup/pgdata.tgz /data</code> 打包出來，或直接對 db 容器下 pg_dump。</p>
+        <h3>up 的時候說 port already in use？</h3>
+        <p>宿主機的埠被占了（可能是上一份沒關乾淨的專案或系統服務）。<code>lsof -i :8000</code> 找出兇手，或換一個映射埠。</p>
+        <h3>CI/CD 裡怎麼用？</h3>
+        <p>GitHub Actions 的 runner 有內建 Docker Compose，可以直接 <code>docker compose up -d db</code> 起測試資料庫、跑完 <code>down</code> 收掉。搭配 <code>profiles</code> 可以讓 CI 跳過用不到的重型服務。</p>
+
+        <h2>總結</h2>
+        <p>Compose 的價值在於<strong>把「我的環境怎麼跑」變成一份可版本控制的宣言</strong>：新人 clone 下來 <code>docker compose up</code> 就能跑，正式環境同一份檔案換個 overlay 就上線。掌握三件事就算畢業：<strong>services/volumes/networks 的宣告式語法、healthcheck × depends_on 的就緒控制、override 分層的環境分離</strong>。之後再把 Profiles 和 Compose Watch 加進日常流程，開發體驗會徹底不一樣。</p>
+        <blockquote>
+          🎯 <strong>快速上手：</strong>專案根目錄寫一份最小 <code>compose.yaml</code> → <code>docker compose up -d</code> → <code>docker compose logs -f</code> 看日誌 → <code>docker compose down</code> 收工。<strong>先跑通兩個服務互連，再慢慢補 healthcheck 和多環境，一天就能內化。</strong>
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>

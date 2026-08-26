@@ -1,5 +1,17 @@
 [
   {
+    "title": "Docker Compose 完全攻略：多容器編排從入門到實戰",
+    "excerpt": "Compose 完整教學：compose.yaml 核心語法、volumes 與 networks、depends_on 搭配 healthcheck 控制啟動順序、profiles 按需啟動服務、Compose Watch 開發熱重載與常用指令速查表。",
+    "url": "docker-compose-guide.html",
+    "tags": [
+      "Docker",
+      "Docker Compose",
+      "容器",
+      "DevOps",
+      "教學"
+    ]
+  },
+  {
     "title": "Claude Code Hooks 完全攻略：用生命週期掛鉤打造自動化開發工作流",
     "excerpt": "Hooks 完整教學：32 種生命週期事件詳解、settings.json 設定結構、stdin JSON 輸入、退出碼與 JSON 輸出控制，含自動格式化、保護敏感檔案、攔截危險指令等實戰食譜。",
     "url": "claude-code-hooks-guide.html",
