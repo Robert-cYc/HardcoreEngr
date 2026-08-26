@@ -1,5 +1,18 @@
 [
   {
+    "title": "Claude Code Hooks 完全攻略：用生命週期掛鉤打造自動化開發工作流",
+    "excerpt": "Hooks 完整教學：32 種生命週期事件詳解、settings.json 設定結構、stdin JSON 輸入、退出碼與 JSON 輸出控制，含自動格式化、保護敏感檔案、攔截危險指令等實戰食譜。",
+    "url": "claude-code-hooks-guide.html",
+    "tags": [
+      "Claude Code",
+      "Hooks",
+      "自動化",
+      "AI Agent",
+      "開發工具",
+      "教學"
+    ]
+  },
+  {
     "title": "Google Antigravity 完全攻略：Agent-First IDE 詳細介紹、安裝教學與實戰使用指南",
     "excerpt": "Antigravity 完整教學：Agent Manager 任務指揮中心、Artifacts 驗收機制、瀏覽器整合、Fast/Planning 模式、支援模型與定價、Antigravity 2.0 新功能與 slash 指令速查表。",
     "url": "google-antigravity-ide-guide.html",

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Hooks 完全攻略：用生命週期掛鉤打造自動化開發工作流 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="Claude Code Hooks 完整教學：32 種生命週期事件詳解、settings.json 設定結構、stdin JSON 輸入格式、退出碼與 JSON 輸出控制、自動格式化／保護敏感檔案／攔截危險指令等實戰食譜、除錯技巧與安全性注意事項。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/claude-code-hooks-guide.html">
+  <meta property="og:title" content="Claude Code Hooks 完全攻略：用生命週期掛鉤打造自動化開發工作流 — "AI" 硬核工程師">
+  <meta property="og:description" content="Claude Code Hooks 完整教學：32 種生命週期事件詳解、settings.json 設定結構、stdin JSON 輸入格式、退出碼與 JSON 輸出控制、自動格式化／保護敏感檔案／攔截危險指令等實戰食譜、除錯技巧與安全性注意事項。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/claude-code-hooks-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Code Hooks 完全攻略：用生命週期掛鉤打造自動化開發工作流 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Claude Code Hooks 完整教學：32 種生命週期事件詳解、settings.json 設定結構、stdin JSON 輸入格式、退出碼與 JSON 輸出控制、自動格式化／保護敏感檔案／攔截危險指令等實戰食譜、除錯技巧與安全性注意事項。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem; /* 10% larger */
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem; /* 10% larger */
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem; /* 10% larger */
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem; /* 10% larger */
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em; /* 10% larger */
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.21rem; /* 10% larger */
+    }
+    .article-body th, .article-body td {
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Claude Code Hooks 完全攻略：用生命週期掛鉤打造自動化開發工作流",
+  "description": "Claude Code Hooks 完整教學：32 種生命週期事件詳解、settings.json 設定結構、stdin JSON 輸入格式、退出碼與 JSON 輸出控制、自動格式化／保護敏感檔案／攔截危險指令等實戰食譜、除錯技巧與安全性注意事項。",
+  "url": "https://ai-hardcore-engineer.com/claude-code-hooks-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/claude-code-hooks-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>Claude Code Hooks 完全攻略：用生命週期掛鉤打造自動化開發工作流</h1>
+        <div class="article-meta">
+          <span>2026-08-26</span>
+          <span class="separator">·</span>
+          <span>28 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Claude Code</span>
+          <span class="tag">Hooks</span>
+          <span class="tag">自動化</span>
+          <span class="tag">AI Agent</span>
+          <span class="tag">開發工具</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="images/picsum-claude-hooks-1200-400.jpg" alt="Claude Code Hooks">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>Hooks</strong> 是你在 Claude Code 生命週期各個時點註冊的自動執行指令——它們由系統強制執行，不靠 AI 「記得」去做：<br>
+          &nbsp;&nbsp;① <strong>確定性保證：</strong>「每次改完檔案都跑 prettier」這種規則，寫進 prompt AI 可能忘，寫成 hook 永遠不會漏<br>
+          &nbsp;&nbsp;② <strong>32 種事件：</strong>從 Session 開始／結束、使用者送 prompt、每個工具呼叫前後到 compact 前後，全程都有掛載點<br>
+          &nbsp;&nbsp;③ <strong>能擋能放：</strong>PreToolUse 可以在危險操作執行前攔下來（exit 2），Stop 可以不讓 Claude 收工<br>
+          &nbsp;&nbsp;④ <strong>雙向溝通：</strong>stdin 收 JSON 細節（哪個檔案、什麼指令），stdout 回 JSON 控制流程（放行、阻擋、注入上下文）<br>
+          &nbsp;&nbsp;⑤ <strong>安全是雙刃刃：</strong>hooks 以你的完整權限執行，別人 repo 裡的設定也能在你 <code>claude -p</code> 時直接跑——用之前先看清楚
+        </blockquote>
+
+        <h2>Hooks 是什麼？為什麼需要它？</h2>
+        <p>使用 Claude Code 一陣子後，你一定遇過這幾件事：「希望它每次改完 TypeScript 都自動跑 prettier」、「絕對不准碰 <code>.env</code>」、「它做完事能不能叫我一聲」。這些需求的共通點是：<strong>你想要「保證」，而不是「請求」。</strong></p>
+        <p>Prompt 是軟性的——LLM 判斷後可能做、可能忘。Hooks 是硬性的——它們是你定義的 shell 指令（現在還支援 HTTP endpoint 和 LLM prompt），綁定在 Claude Code 的生命週期事件上，<strong>該觸發就一定觸發</strong>。一句社群流傳的話講得最好：</p>
+        <blockquote>
+          💡 <strong>Hooks 是由 harness 執行的確定性指令，不是請 AI「記得格式化」——AI 會忘，hook 不會。</strong>
+        </blockquote>
+        <p>官方文件對 hooks 的定位也一路升級：早期只是「shell commands」，現在是「shell 命令、HTTP endpoint 或 LLM prompt」，而且終端機、IDE 外掛、Desktop App、網頁版全部共用同一套事件系統。</p>
+
+        <h2>快速上手：五分鐘的第一個 Hook</h2>
+        <p>最經典的入門範例：<strong>Claude 每次編輯或新增檔案後，自動跑 prettier 格式化</strong>。在專案根目錄建立 <code>.claude/settings.json</code>：</p>
+        <pre><code>{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | xargs npx prettier --write",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+        <p>存檔後 Claude Code 的 file watcher 會自動抓到新設定（不用重啟）。接下來每當 Claude 用 Edit 或 Write 工具改完檔案，這段指令就會收到一份 JSON（從 stdin 進來）、抽出檔案路徑、交給 prettier 處理。<code>Edit|Write</code> 就是 matcher——只對這兩個工具生效。</p>
+
+        <h2>設定檔位置與優先順序</h2>
+        <p>Hooks 可以放在好幾層設定裡，各司其職：</p>
+        <table>
+          <tr><th>位置</th><th>範圍</th><th>適合放什麼</th></tr>
+          <tr><td><code>~/.claude/settings.json</code></td><td>所有專案</td><td>個人偏好（通知、格式化習慣）</td></tr>
+          <tr><td><code>.claude/settings.json</code></td><td>單一專案，可 commit</td><td>團隊共享規範（lint、測試、保護清單）</td></tr>
+          <tr><td><code>.claude/settings.local.json</code></td><td>單一專案，個人</td><td>不想 commit 的實驗性 hooks</td></tr>
+          <tr><td>企業 managed policy</td><td>全組織</td><td>資安政策（macOS 在 <code>/Library/Application Support/ClaudeCode/managed-settings.json</code>）</td></tr>
+          <tr><td>Plugin 的 <code>hooks/hooks.json</code></td><td>plugin 啟用期間</td><td>隨 plugin 散布的功能</td></tr>
+          <tr><td>Skill / Subagent frontmatter</td><td>被叫起後的 session</td><td>該技能專用的輔助邏輯</td></tr>
+        </table>
+        <p>兩個關鍵行為：<strong>hooks 是跨層合併不是覆蓋</strong>——專案加上去的 hook 不會移掉 user 層的；而<strong>相同 handler 出現在不同 settings 檔只會跑一次</strong>，避免重複執行。</p>
+
+        <h2>設定結構：三層巢狀</h2>
+        <p>完整的 JSON 結構是三層：<code>hooks</code> → 事件陣列裡的 matcher 群組 → handler 陣列：</p>
+        <pre><code>{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(rm *)",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/block-rm.sh",
+            "timeout": 10,
+            "statusMessage": "檢查 rm 指令安全性…"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+        <h3>Handler 的常用欄位</h3>
+        <table class="cmd-table">
+          <tr><th>欄位</th><th>說明</th></tr>
+          <tr><td>type</td><td><code>"command"</code>（shell 指令）、<code>"http"</code>、<code>"prompt"</code>（用 LLM 判斷）、<code>"agent"</code> 等，最常用的是 command</td></tr>
+          <tr><td>command</td><td>要執行的指令；配 <code>args</code> 使用時走 exec form 直接 spawn、不經 shell 解析</td></tr>
+          <tr><td>matcher</td><td>工具名過濾器，只對工具類事件有效；<code>"Edit|Write"</code>、<code>"Bash"</code>、省略代表全部</td></tr>
+          <tr><td>if</td><td>permission rule 語法的第二層過濾，例如 <code>"Bash(git *)"</code>、<code>"Edit(*.ts)"</code></td></tr>
+          <tr><td>timeout</td><td>秒數。command/http 型預設 600 秒；prompt 型 30 秒；agent 型 60 秒</td></tr>
+          <tr><td>async</td><td><code>true</code> 時背景執行不阻塞主流程，適合跑測試這類慢活</td></tr>
+          <tr><td>statusMessage</td><td>執行中顯示在 spinner 的文字</td></tr>
+        </table>
+        <blockquote>
+          ⚠️ <strong>matcher 的坑：</strong>含特殊字元（如 <code>.</code>、<code>*</code>）的 matcher 會被當成未錨定的 JavaScript regex——<code>Edit.*</code> 會同時命中 <code>Edit</code> 和 <code>NotebookEdit</code>！要精確匹配整串請寫 <code>^Edit$</code>。另外 MCP 工具要匹配整個 server 得寫 <code>mcp__memory__.*</code>，只寫 <code>mcp__memory</code> 反而什麼都不會中。
+        </blockquote>
+
+        <h2>核心事件詳解</h2>
+        <p>Hook 事件目前多達 <strong>32 種</strong>（完整清單見下一節表格），日常真正高頻使用的是下面這十個：</p>
+        <h3>SessionStart</h3>
+        <p>Session 開始或恢復時觸發（matcher 可選 <code>startup</code>/<code>resume</code>/<code>clear</code>/<code>compact</code>/<code>fork</code>）。最實用的招數：直接 <code>echo</code> 環境資訊，純文字 stdout 會變成 Claude 看得到的 context。官方食譜就用它在 compact 後重新提醒「這專案用 Bun 不用 npm」。</p>
+        <h3>UserPromptSubmit</h3>
+        <p>你送出 prompt、Claude 開始處理前觸發。可以注入上下文、做審計記錄，也可以 block（連 prompt 一起撤銷）。注意此事件的預設 timeout 只有 30 秒。</p>
+        <h3>PreToolUse —— 最重要的攔截點</h3>
+        <p>工具參數已產生、但還沒執行的瞬間。這是實現「不准碰某些檔案」「不准跑某類指令」政策的地方，可以用 exit 2 或 JSON 決策把動作擋下來，並讓 Claude 看到 reason 自己修正。</p>
+        <h3>PermissionRequest</h3>
+        <p>Claude Code 正要跳出權限詢問對話框時觸發（比通知早約 6 秒）。可以程式化自動批准特定提示——例如「ExitPlanMode 的確認永遠放行」。官方特別警告：<strong>matcher 千萬別留空或寫 <code>.*</code></strong>，否則等於把所有權限提示全部自動通過。</p>
+        <h3>PostToolUse</h3>
+        <p>工具成功完成後觸發，附帶 <code>tool_response</code> 和執行時間。自動格式化、lint、觸發重建都在這裡。它擋不了已完成的動作，但 exit 2 的 stderr 會餵給 Claude 看——「格式化失敗了，語法有錯，去修」就是這樣做的。</p>
+        <h3>Notification</h3>
+        <p>Claude Code 發通知時觸發（權限等待、閒置待輸入、需要授權等類型）。拿來做桌面通知或手機推播最直覺。</p>
+        <h3>Stop ／ SubagentStop</h3>
+        <p>主 agent（或 subagent）回應完畢時觸發。exit 2 可以<strong>不讓它停</strong>——「測試沒過就繼續修」的自動迴圈就是這個做的。腳本裡記得檢查 <code>stop_hook_active</code> 欄位避免無限循環；連續擋 8 次後系統會強制結束 turn。</p>
+        <h3>PreCompact</h3>
+        <p>context 壓縮執行前觸發。可以在壓縮前把重要決策存檔，或乾脆擋下 compaction。</p>
+        <blockquote>
+          📌 <strong>冷知識：</strong>用 <code>@</code> 引用的檔案不經過 Read 工具呼叫，所以 PreToolUse 攔不到；直接打 <code>/skillname</code> 也不會經過 Skill 工具——這條路徑要用 <code>UserPromptExpansion</code> 事件才攔得到。
+        </blockquote>
+
+        <h2>全部事件一覽表</h2>
+        <table>
+          <tr><th>事件</th><th>觸發時機</th><th>可阻擋</th></tr>
+          <tr><td>SessionStart</td><td>session 開始／恢復（startup/resume/clear/compact/fork）</td><td>否，可注入 context</td></tr>
+          <tr><td>Setup</td><td><code>--init-only</code> 等一次性準備流程</td><td>否</td></tr>
+          <tr><td>InstructionsLoaded</td><td>CLAUDE.md 或 rules 檔載入時</td><td>否，純觀測</td></tr>
+          <tr><td>UserPromptSubmit</td><td>prompt 送出、處理前</td><td>✓</td></tr>
+          <tr><td>UserPromptExpansion</td><td><code>/指令</code> 展開成 prompt 時</td><td>✓</td></tr>
+          <tr><td>PreToolUse</td><td>工具執行前</td><td>✓ 核心攔截點</td></tr>
+          <tr><td>PermissionRequest</td><td>權限對話框將彈出前</td><td>僅 JSON decision</td></tr>
+          <tr><td>PermissionDenied</td><td>auto mode 分類器拒絕工具時</td><td>僅可要求 retry</td></tr>
+          <tr><td>PostToolUse</td><td>工具成功完成後</td><td>否，stderr 可回饋</td></tr>
+          <tr><td>PostToolUseFailure</td><td>工具執行後失敗</td><td>否</td></tr>
+          <tr><td>PostToolBatch</td><td>一批平行工具全部結束時</td><td>✓ 可停住迴圈</td></tr>
+          <tr><td>Notification</td><td>發送通知時</td><td>否</td></tr>
+          <tr><td>MessageDisplay</td><td>助理訊息串流顯示時（只改畫面不改原文）</td><td>否</td></tr>
+          <tr><td>SubagentStart / SubagentStop</td><td>subagent 生出／完成時</td><td>Stop 可 ✓</td></tr>
+          <tr><td>TaskCreated / TaskCompleted</td><td>任務建立／標記完成時</td><td>✓</td></tr>
+          <tr><td>Stop / StopFailure</td><td>turn 正常結束／API 錯誤結束</td><td>Stop 可 ✓</td></tr>
+          <tr><td>TeammateIdle</td><td>agent team 隊友即將閒置</td><td>✓</td></tr>
+          <tr><td>ConfigChange</td><td>設定檔 session 中變更時</td><td>✓（policy 除外）</td></tr>
+          <tr><td>CwdChanged / DirectoryAdded</td><td>工作目錄變更／新增目錄後</td><td>否</td></tr>
+          <tr><td>FileChanged</td><td>被 watch 的檔案磁碟變動（誰改的都算）</td><td>否</td></tr>
+          <tr><td>WorktreeCreate / WorktreeRemove</td><td>worktree 建立／移除（可取代預設 git 行為）</td><td>非零即失敗</td></tr>
+          <tr><td>PreCompact / PostCompact</td><td>context 壓縮前／後</td><td>PreCompact 可 ✓</td></tr>
+          <tr><td>Elicitation / ElicitationResult</td><td>MCP 請求使用者輸入／回答返回前</td><td>✓ 可代答或攔截</td></tr>
+          <tr><td>SessionEnd</td><td>session 結束（clear/resume/logout/other）</td><td>否</td></tr>
+        </table>
+
+        <h2>Hook 的輸入：stdin JSON</h2>
+        <p>每個 hook 觸發時都會從 stdin 收到一份 JSON。所有事件都有共同欄位：</p>
+        <table>
+          <tr><th>欄位</th><th>說明</th></tr>
+          <tr><td>session_id</td><td>目前的 session ID</td></tr>
+          <tr><td>transcript_path</td><td>對話 transcript 的路徑（異步寫入可能落後，Stop 類事件建議改用 last_assistant_message）</td></tr>
+          <tr><td>cwd</td><td>當下工作目錄</td></tr>
+          <tr><td>permission_mode</td><td><code>default</code>/<code>plan</code>/<code>acceptEdits</code>/<code>auto</code>/<code>bypassPermissions</code> 等</td></tr>
+          <tr><td>hook_event_name</td><td>事件名稱</td></tr>
+        </table>
+        <p>工具類事件再加 <code>tool_name</code>、<code>tool_input</code>、<code>tool_use_id</code>。以 PreToolUse 觸發 Bash 為例：</p>
+        <pre><code>{
+  "session_id": "abc123",
+  "transcript_path": "/home/user/.claude/projects/.../transcript.jsonl",
+  "cwd": "/home/user/my-project",
+  "permission_mode": "default",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "npm test",
+    "description": "Run test suite",
+    "timeout": 120000,
+    "run_in_background": false
+  },
+  "tool_use_id": "toolu_01ABC123"
+}</code></pre>
+        <blockquote>
+          ⚠️ <strong>跨平台陷阱：</strong>Write/Edit/Read 的 <code>file_path</code> 一律是絕對路徑，Windows 上用反斜線。腳本要比對副檔名前先正規化：<code>FILE_PATH="${FILE_PATH//\\//}"</code>
+        </blockquote>
+
+        <h2>控制流程：退出碼與 JSON 輸出</h2>
+        <h3>退出碼語意（背起來）</h3>
+        <table>
+          <tr><th>退出碼</th><th>意義</th></tr>
+          <tr><td>exit 0</td><td>成功。stdout 若是 JSON 會被解析為進階控制；UserPromptSubmit、SessionStart 等事件的純文字 stdout 會直接變成 Claude 的 context</td></tr>
+          <tr><td>exit 2</td><td>阻斷錯誤。擋下該事件允許阻擋的動作，stderr（或 JSON 的 reason）回饋給 Claude 讓它修正</td></tr>
+          <tr><td>exit 其他</td><td>非阻塞錯誤。顯示 hook error 但<strong>動作照常進行</strong></td></tr>
+        </table>
+        <blockquote>
+          🚨 <strong>最重要的警告：exit 1 不會擋任何事。</strong>很多教學沒講清楚——想當政策閘門卻寫了 exit 1，等於大門敞開。腳本路徑打錯（exit 127）也一樣默默失效，部署政策型 hook 後務必實測一次「真的會擋」。
+        </blockquote>
+        <h3>JSON 進階控制</h3>
+        <p>exit 0 時 stdout 輸出 JSON 物件可以做細緻控制（解析條件：去掉前置空白後<strong>第一個字元必須是 <code>{</code></strong>）：通用欄位有 <code>continue</code>（false 直接停止整個處理）、<code>stopReason</code>（給使用者看的停止原因）、<code>systemMessage</code>（給使用者的警告）。決策類最常用的兩種：</p>
+        <pre><code># PreToolUse：四態決策 allow / deny / ask / defer
+{
+  "hookSpecificOutput": {
+    "hookEventName": "PreToolUse",
+    "permissionDecision": "deny",
+    "permissionDecisionReason": ".env 是機密檔案，禁止修改"
+  }
+}
+
+# UserPromptSubmit / Stop 等：頂層 decision
+{
+  "decision": "block",
+  "reason": "測試還沒全過，繼續修"
+}</code></pre>
+        <p>其他好用欄位：<code>additionalContext</code> 注入上下文（會包成 system reminder）；<code>updatedInput</code> 整包替換工具參數；PostToolUse 的 <code>updatedToolOutput</code> 甚至能改寫工具回傳結果。舊式頂層 <code>decision: "approve"/"block"</code> 在 PreToolUse 已棄用，新腳本請用 <code>hookSpecificOutput.permissionDecision</code>。</p>
+
+        <h2>實戰食譜六道</h2>
+        <h3>① 保護敏感檔案（PreToolUse）</h3>
+        <pre><code>#!/bin/bash
+# .claude/hooks/protect-files.sh
+INPUT=$(cat)
+FILE=$(echo "$INPUT" | jq -r '.tool_input.file_path')
+# Windows 反斜線正規化
+FILE="${FILE//\\//}"
+
+case "$FILE" in
+  *".env"|*"package-lock.json"|*".git/"*)
+    echo "Blocked: $FILE 是受保護的檔案，請勿修改" >&2
+    exit 2
+    ;;
+esac
+exit 0</code></pre>
+        <p>設定裡 matcher 填 <code>"Edit|Write"</code>，記得 <code>chmod +x</code>。</p>
+        <h3>② 多語言自動格式化（PostToolUse）</h3>
+        <pre><code>#!/bin/bash
+FILE=$(jq -r '.tool_input.file_path // .tool_input.file' /dev/stdin)
+case "$FILE" in
+  *.ts|*.tsx|*.js|*.jsx|*.json) npx prettier --write "$FILE";;
+  *.py) black "$FILE" 2>/dev/null || ruff format "$FILE";;
+  *.go) gofmt -w "$FILE";;
+  *.rs) rustfmt "$FILE";;
+esac
+exit 0   # 格式化失敗不該阻擋 Claude</code></pre>
+        <h3>③ 攔截危險指令（PreToolUse）</h3>
+        <pre><code>#!/bin/bash
+COMMAND=$(echo "$(cat)" | jq -r '.tool_input.command')
+if echo "$COMMAND" | grep -qiE 'rm -rf /|drop table|git push --force.*main'; then
+  echo "Blocked: 危險指令被政策攔下：$COMMAND" >&2
+  exit 2
+fi
+exit 0</code></pre>
+        <h3>④ 桌面通知（Notification）</h3>
+        <pre><code># macOS
+osascript -e 'display notification "任務完成或需要你授權" with title "Claude Code"'
+# Linux
+notify-send "Claude Code" "需要你的注意"</code></pre>
+        <h3>⑤ Compact 後重新注入關鍵上下文（SessionStart + matcher compact）</h3>
+        <pre><code>#!/bin/bash
+echo '提醒：本專案一律使用 pnpm（不是 npm/yarn）；部署走 make deploy；API 金鑰都在 .env.example 有說明。'</code></pre>
+        <p>純文字 stdout 會直接進 Claude 的 context，compaction 吃掉的脈絡就補回來了。</p>
+        <h3>⑥ 背景跑測試不塞車（PostToolUse + async）</h3>
+        <p>handler 加上 <code>"async": true</code>，測試在背景慢慢跑、Claude 繼續做事，跑完再用 <code>additionalContext</code> 把結果回報進對話。長時間的 build/test 都適用這招。</p>
+        <blockquote>
+          🚀 <strong>搭配閱讀：</strong>Hooks 通常和 Skill、MCP 一起組工作流——Skill 管「教 Claude 怎麼做」，MCP 管「給 Claude 新工具」，Hooks 管「強制規矩」。三者關係可以看我們之前的 <a href="./claude-code-mcp-skill-guide.html" target="_blank">Claude Code MCP &amp; Skill 完整攻略</a>。
+        </blockquote>
+
+        <h2>除錯技巧</h2>
+        <table class="cmd-table">
+          <tr><th>方法</th><th>用途</th></tr>
+          <tr><td>/hooks</td><td>session 內唯讀瀏覽所有已註冊 hooks，標示來源（User/Project/Local/Plugin settings）</td></tr>
+          <tr><td>claude --debug</td><td>debug log 寫到 ~/.claude/debug/&lt;session-id&gt;.txt，看 hook 有沒有被觸發、輸出了什麼</td></tr>
+          <tr><td>Ctrl+O transcript</td><td>逐條檢視每次 hook 的結果（阻塞訊息／非阻塞錯誤）</td></tr>
+          <tr><td>手動管線測試</td><td><code>echo '{"tool_name":"Bash","tool_input":{"command":"ls"}}' | ./my-hook.sh</code> 先驗腳本再上設定</td></tr>
+        </table>
+        <h3>經典坑：「我的 Hook JSON has no effect」</h3>
+        <p>症狀：hook 明明跑了、exit 0、輸出了 JSON，卻完全沒效果。原因通常是 shell-form hook 經 <code>sh -c</code> 啟動時 source 了你的 profile，profile 裡無條件的 <code>echo</code> 混在 JSON 前面，導致 stdout 第一個字元不是 <code>{</code>，整段被當純文字。解法：profile 裡的輸出用 <code>if [[ $- == *i* ]]</code> 包起來（只在互動 shell 印）。其他常見問題：nvm 裝的工具找不到 PATH（改用絕對路徑）、matcher 拼錯、改完 settings 沒被 watcher 抓到（重啟 session）。</p>
+
+        <h2>安全性：一定要知道的事</h2>
+        <ul>
+          <li><strong>Hooks 以你的完整使用者權限執行。</strong>官方 disclaimer 原話：能改、刪、存取你帳號碰得到的任何東西。加任何 hook 前先 review、先測試。</li>
+          <li><strong>小心別人 repo 的 <code>.claude/settings.json</code>。</strong>互動模式下，信任對話框接受前所有 hooks 都被扣住；但 <code>-p</code>／SDK 模式永不跳對話框、直接視為已信任——惡意 repo 的 hooks 會在你 <code>claude -p</code> 它的時候直接執行。跑陌生 repo 前：檢查它的 <code>.claude/</code> 目錄，或用 <code>--settings '{"disableAllHooks": true}'</code>。</li>
+          <li><strong><code>if</code> 過濾器 fail-open。</strong>解析不了的 Bash 指令會照常放行——硬性資安政策請靠 permission system，不要只依賴 hook。</li>
+          <li><strong>超時不等於擋下。</strong>PreToolUse hook 卡死超時會被取消、不做任何決策，照正常權限流程走。卡住的閘門不是閘門。</li>
+        </ul>
+        <p>官方五條最佳實務：驗證消毒所有輸入；shell 變數永遠加引號 <code>"$VAR"</code>；防範 <code>..</code> 路徑穿越；用絕對路徑（exec form 配 <code>${CLAUDE_PROJECT_DIR}</code>）；跳過 <code>.env</code>、<code>.git/</code>、金鑰等敏感檔。</p>
+
+        <h2>常見問題 FAQ</h2>
+        <h3>改了 settings.json 要重啟嗎？</h3>
+        <p>通常不用——file watcher 會自動熱載入。若幾秒後還沒生效再重啟 session。用 <code>/hooks</code> 確認目前生效的清單最快。</p>
+        <h3>多個 hook 同時符合會怎樣？</h3>
+        <p>平行執行。決策衝突時 PreToolUse 優先序是 deny &gt; defer &gt; ask &gt; allow；多個 <code>additionalContext</code> 會疊加。避免兩個 hook 同時改 <code>updatedInput</code>（順序不定，最後完成者勝）。</p>
+        <h3>Stop hook 一直擋會不會鬼打牆？</h3>
+        <p>連續擋 8 次後系統會強制結束 turn。腳本開頭先檢查輸入的 <code>stop_hook_active</code> 欄位，true 就直接 exit 0，是最乾淨的防呆。</p>
+        <h3>hook 裡可以自己開終端機或發通知音嗎？</h3>
+        <p>hook process 沒有 controlling terminal，不能開 <code>/dev/tty</code>。要發桌面通知或響鈴，請透過 JSON 輸出的 <code>terminalSequence</code> 欄位代發（白名單限定 OSC 0/9/777 等 escape sequence）。</p>
+        <h3>可以只對特定副檔名的 Edit 觸發嗎？</h3>
+        <p>可以，用 <code>if</code> 欄位：如 <code>"Edit(*.ts)|Write(*.js)"</code>，比在腳本裡 case 分派更省事。注意它只對工具類事件有效，掛在其他事件的 hook 加了 <code>if</code> 永遠不會跑。</p>
+
+        <h2>總結</h2>
+        <p>Hooks 的心智模型很簡單：<strong>Claude Code 的生命週期是一條流水線，hooks 就是你在流水線上設的檢查站</strong>。SessionStart 發放作業手冊、PreToolUse 安檢把關、PostToolUse 做品質加工、Stop 驗收放行。把「每次都要做、絕不能忘」的規則從 prompt 搬進 hooks，你的 Claude Code 才算從「很有潛力的實習生」晉級成「按 SOP 作業的正規軍」。</p>
+        <p>上手路徑：先抄自動格式化那一道食譜感受確定性 → 再加敏感檔案保護建立安全感 → 最後玩 Stop 迴圈和 async 測試這些進階招。記得那句話：<strong>AI 會忘，hook 不會。</strong></p>
+        <blockquote>
+          🎯 <strong>快速上手：</strong>建 <code>.claude/hooks/format.sh</code> 並 <code>chmod +x</code> → <code>.claude/settings.json</code> 註冊 PostToolUse + <code>"matcher": "Edit|Write"</code> → 手動 <code>echo</code> JSON 管線測試 → 讓 Claude 改個檔案看 prettier 自動跑。<strong>第一個 hook 成功的那一刻，你就回不去了。</strong>
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>
