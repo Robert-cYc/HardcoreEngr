@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python 高效開發利器 uv 全指南 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="uv 完整教學：安裝、專案管理、pyproject.toml、虛擬環境、Python 版本管理、uvx 工具執行、行內腳本、Workspaces 工作區、發布包裝與從 pip/pipenv/poetry 遷移。10-100x 速度提升的全面指南。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/uv-guide.html">
+  <meta property="og:title" content="Python 高效開發利器 uv 全指南 — "AI" 硬核工程師">
+  <meta property="og:description" content="uv 完整教學：安裝、專案管理、pyproject.toml、虛擬環境、Python 版本管理、uvx 工具執行、行內腳本、Workspaces 工作區、發布包裝與從 pip/pipenv/poetry 遷移。10-100x 速度提升的全面指南。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/uv-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Python 高效開發利器 uv 全指南 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="uv 完整教學：安裝、專案管理、pyproject.toml、虛擬璏管理、Python 版本管理、uvx 工具執行、行內腳本、Workspaces 工作區、發布包裝與從 pip/pipenv/poetry 遷移。10-100x 速度提升的全面指南。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem; /* 10% larger */
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem; /* 10% larger */
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-body {
+      /* 全站統一 60 字一列 */
+      max-width: 60em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem; /* 10% larger */
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem; /* 10% larger */
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em; /* 10% larger */
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.21rem; /* 10% larger */
+    }
+    .article-body th, .article-body td {
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .article-body img {
+      border-radius: 8px;
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 100%;
+    }
+    .cmd-table td:first-child {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python 高效開發利器 uv 全指南",
+  "description": "uv 完整教學：安裝、專案管理、pyproject.toml、虛擬環境、Python 版本管理、uvx 工具執行、行內腳本、Workspaces 工作區、發布包裝與從 pip/pipenv/poetry 遷移。10-100x 速度提升的全面指南。",
+  "url": "https://ai-hardcore-engineer.com/uv-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/uv-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>Python 高效開發利器 uv 全指南：取代 pip/pipenv/poetry/pyenv 的極速解決方案</h1>
+        <div class="article-meta">
+          <span>2026-08-27</span>
+          <span class="separator">·</span>
+          <span>35 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Python</span>
+          <span class="tag">uv</span>
+          <span class="tag">uvx</span>
+          <span class="tag">開發工具</span>
+          <span class="tag">包管理</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="images/picsum-uv-1200-400.jpg" alt="Python 開發工具 uv">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>uv</strong> 是由 Astral 開發的極速 Python 工具，<br>
+          &nbsp;&nbsp;① <strong>10-100x 快：</strong>使用 Rust 重寫，取代 pip、pipenv、poetry、pyenv、pipx 全部：建環境比以前快好幾十倍<br>
+          &nbsp;&nbsp;② <strong>一個工具通通包：</strong>初始化專案、管理套件、建立虛擬環境、切換 Python 版本、執行工具、發布包、管理工作區 (monorepo) 通通在一個指令裡<br>
+          &nbsp;&nbsp;③ <strong>現代專案結構：</strong><code>pyproject.toml</code> + <code>uv.lock</code> 取代 requirements.txt，universal lockfile 保證跨平台一致<br>
+          &nbsp;&nbsp;④ <strong>無痛遷移：</strong><code>uv pip install</code> 幾乎 100% 兼容 pip 介面，舊專案不用改一個字就能加速<br>
+          &nbsp;&nbsp;⑤ <strong>腳本即執行：</strong>Python 腳本支援行內宣告 dependencies，直接執行不用手動安裝 — 像是 Node.js 的 npx 但更強
+        </blockquote>
+
+        <h2>Python 開發現狀：為什麼需要 uv？</h2>
+        <p>我想大家肯定都遇到過這種狀況：</p>
+        <ul>
+          <li>需要切 Python 版本 → <code>pyenv install 3.12</code> 等個幾分鐘</li>
+          <li>建虛擬環境 → <code>python -m venv .venv</code> 又跑不動，明明裝過的套件呢</li>
+          <li>裝套件 → <code>pip install -r requirements.txt</code> 又花個 5 分鐘以上</li>
+          <li>遷移到新電腦 → 套件不見一半，<code>requirements.txt</code> 也不知道鎖幾個版本</li>
+          <li>想用 ruff 或 black 這種 CLI 工具 → <code>pipx install</code>，又是一套流程</li>
+        </ul>
+        <p><strong>uv 就是要解決這一切。</strong> 它是用 Rust 寫的 Python 工具，能夠同時取代 pip、pipenv、poetry、pyenv、pipx、virtualenv 這些零零散散的工具。效能上，uv 比 pip 快 10 到 100 倍，連 dependency resolver 也在 0.1 秒開內完成。</p>
+
+        <p>更重要的是，它<strong>整合完觀</strong>整個 Python 開發流程：初始化專案 → 建立虛擬環境 → 管理套件 → 切換 Python 版本 → 執行指令 → 發布包，全部一個工具搞定。告別那個「環境有問題」的痛。</p>
+
+        <h2>安裝</h2>
+        <p>uv 支援 macOS、Linux 和 Windows，且<strong>不需要預先安裝 Python 或 Rust</strong>。選擇一個你喜歡的方式來安裝：</p>
+
+        <h3>推薦：使用官方安裝腳本</h3>
+        <pre><code># 安裝到 ~/.local/bin/
+curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
+        <p>安裝完成後，把 <code>~/.local/bin</code> 加到你的 <code>PATH</code> 裡（如果安裝腳本沒有自動新增）：</p>
+        <pre><code># bash / zsh
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+# 或
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc</code></pre>
+
+        <h3>其他安裝方式</h3>
+        <table class="cmd-table">
+          <tr><th>工具</th><th>指令</th></tr>
+          <tr><td>Brew (macOS)</td><td><code>brew install uv</code></td></tr>
+          <tr><td>pip</td><td><code>pip install uv</code></td></tr>
+          <tr><td>pipx</td><td><code>pipx install uv</code></td></tr>
+          <tr><td>Scoop (Windows)</td><td><code>scoop install uv</code></td></tr>
+        </table>
+
+        <h3>驗證安裝</h3>
+        <pre><code>$ uv --version
+uv 0.12.5</code></pre>
+
+        <h2>5 分鐘上手：建立你的第一個 uv 專案</h2>
+        <p>跟 Docker 一樣，uv 也會幫你 scaffold 一個完整的專案結構：</p>
+        <pre><code>$ uv init my-project
+Initialized project `my-project` at `/Users/robert/my-project`
+
+$ cd my-project</code></pre>
+        <p>這會建立：</p>
+        <pre><code>my-project/
+├── .gitignore
+├── .python-version
+├── README.md
+├── pyproject.toml
+└── src/
+    └── my_project/
+        └── __init__.py</code></pre>
+
+        <h3>新增一個套件</h3>
+        <pre><code>$ uv add requests
+Resolved 15 packages in 12ms
+Prepared 15 packages in 38ms
+Installed 15 packages in 2ms
+ + requests==2.32.3
+ + charset-normalizer==3.3.0
+ + ...
+
+$ uv add ruff --dev
+# --dev 把它放到開發者依賴組
+Resolved 12 packages in 8ms</code></pre>
+        <p>順便幫你建好虛擬環境 <code>.venv</code> 並生成 <code>uv.lock</code>。整個過程比 pip 加倍快。</p>
+
+        <h3>執行程式碼</h3>
+        <pre><code>$ echo 'import requests; print(requests.__version__)' | uv run python
+2.32.3</code></pre>
+        <p><code>uv run</code> 會自動確保虛擬環境是最新的（跟 lockfile 同步），然後執行指令。</p>
+
+        <h2>核心概念：pyproject.toml 取代 requirements.txt</h2>
+        <p>uv 使用現代的 <code>pyproject.toml</code> 格式來宣告專案資訊和依賴。不用再維護 <code>requirements.txt</code> 加 <code>requirements-dev.txt</code> 這套古早組合。</p>
+
+        <h3>基本格式</h3>
+        <pre><code>[project]
+name = "my-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "requests>=2.31",
+  "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.5.0",
+  "pytest>=8.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.6,<0.13"]
+build-backend = "uv_build"</code></pre>
+
+        <h3>dependency-groups：取代 extras_require 的現代寫法</h3>
+        <p>uv 支援 PEP 735 的 <code>dependency-groups</code>，也就是傳統的「extras」進化版：</p>
+        <pre><code>[dependency-groups]
+dev = ["ruff", "pytest"]
+test = ["pytest", "pytest-cov"]
+docs = ["mkdocs-material", "mkdocstrings[python]"]</code></pre>
+        <p>然後你可以用 <code>uv sync --group dev --group test</code> 安裝指定組，或者<code>uv sync --all-groups</code> 裝全部。</p>
+
+        <blockquote>
+          💡 <strong>Pro 小技巧：</strong> <code>uv add --group lint ruff</code> 等同於把 ruff 加到 <code>[dependency-groups] lint</code> 裡，比傳統的 <code>pip install -e .[dev]</code> 更直觀。
+        </blockquote>
+
+        <h2>Python 版本管理：不用 pyenv 了</h2>
+        <p>uv 內建 Python 版本下載和管理，跟 pyenv 功能一樣：</p>
+
+        <h3>自動下載 Python</h3>
+        <pre><code># 下載並使用最新的穩定版 Python
+$ uv python install
+Installed Python 3.13.1 in 1.2s
+
+# 指定版本
+$ uv python install 3.12 3.11 3.10
+Installed Python 3.12.6 in 0.8s
+Installed Python 3.11.9 in 0.7s
+Installed Python 3.10.15 in 0.9s</code></pre>
+
+        <h3>專案需求：.python-version 檔案</h3>
+        <p>uv 會自動讀取 `.python-version` 檔案 (或 <code>pyproject.toml</code> 中的 <code>requires-python</code>) 來決定要用哪個 Python 版本：</p>
+        <pre><code># .python-version
+3.13.1</code></pre>
+        <p>當你 <code>cd</code> 到有這個檔案的目錄，uv 會自動啟用對應版本，跟 pyenv 運作一樣。但<strong>不需要 pyenv 這層中介</strong> — uv 直接下載對應的 Python 來用。</p>
+
+        <h3>一次性指定版本執行</h3>
+        <pre><code># 用 3.10 執行一個檔案
+$ uv run --python 3.10 my_script.py
+
+# 或指定到 uvx（稍後介紹）
+$ uvx python@3.12 -c "print('hello')"</code></pre>
+
+        <h2>uvx：不用安裝就能執行的工具</h2>
+        <p>這部分對應的是 <code>pipx</code> 的功能，但更強更快。uvx 會在<strong>臨時的環境</strong>下下載並執行一個 CLI 工具，用完就丟，不污染你的系統。</p>
+
+        <h3>基本用法</h3>
+        <pre><code># 執行最新版的 ruff（不用先 pipx install ruff）
+$ uvx ruff check .
+
+# 指定版本
+$ uvx ruff@0.6.0 check .
+
+# 清除暫存的工具快取
+$ uvx --clean</code></pre>
+
+        <h3>常見 uvx 應用</h3>
+        <ul>
+          <li><code>uvx httpie</code> — 現代 curl 替代</li>
+          <li><code>uvx black</code> — 快速格式化 Python</li>
+          <li><code>uvx ipython</code> — 進階 REPL</li>
+          <li><code>uvx yt-dlp</code> — YouTube 下載工具</li>
+          <li><code>uvx http-server</code> — 快速本地 HTTP 伺服器</li>
+        </ul>
+
+        <h3>持續安裝工具（如 pipx install）</h3>
+        <p>如果你真的要長期安裝一個 CLI 工具，就用 <code>uv tool install</code>：</p>
+        <pre><code>$ uv tool install ruff
+Installed ruff@0.6.0 to ~/.local/bin/
+
+$ which ruff
+/Users/robert/.local/bin/ruff</code></pre>
+
+        <blockquote>
+          ✅ <strong>快速對比：</strong>pipx install ruff 會花 ~2-3 秒，而 uv tool install 通常 < 1 秒，因為 uv 直接從 prebuilt wheels 快取來安裝。
+        </blockquote>
+
+        <h2>uv run：取代 python 執行的智慧指令</h2>
+        <p><code>uv run</code> 是 uv 的「智慧執行器」，它會：</p>
+        <ol>
+          <li>自動建立/更新 <code>.venv</code></li>
+          <li>確保所有 dependencies 都是 lockfile 的版本</li>
+          <li>在同步好的環境下執行指令</li>
+        </ol>
+
+        <pre><code># 執行 python 指令
+$ uv run python hello.py
+
+# 執行測試
+$ uv run pytest tests/
+
+# 執行一個在 pyproject.toml 裡的 script entry point
+$ uv run my-project  # 等於執行 [project.scripts] 裡的 my-project
+
+# 執行一個一次性套件（不會被加入依賴）
+$ uv run --with requests python -c "import requests; print(requests.__version__)"
+
+# 在「乾淨」環境執行（不使用 .venv）
+$ uv run --isolated --no-project --with httpx python -c "import httpx; print(httpx.__version__)"</code></pre>
+
+        <h2>管理專案依賴的完整指令</h2>
+        <table class="cmd-table">
+          <tr><th>指令</th><th>說明</th></tr>
+          <tr><td><code>uv add &lt;package&gt;</code></td><td>加入 dependency，自動 sync 並更新 lockfile</td></tr>
+          <tr><td><code>uv add &lt;package&gt; --dev</code></td><td>加入到開發者 dependency group</td></tr>
+          <tr><td><code>uv add &lt;package&gt; --group lint</code></td><td>加入到指定 group</td></tr>
+          <tr><td><code>uv add -r requirements.txt</code></td><td>從 requirements.txt 批量新增</td></tr>
+          <tr><td><code>uv remove &lt;package&gt;</code></td><td>移除 dependency</td></tr>
+          <tr><td><code>uv sync</code></td><td>讓 .venv 完全符合 lockfile（刪掉多餘、裝缺少的）</td></tr>
+          <tr><td><code>uv sync --locked</code></td><td>強制使用 lockfile，不同步就報錯（CI/CD 用）</td></tr>
+          <tr><td><code>uv sync --frozen</code></td><td>完全不更新 lockfile，純安裝</td></tr>
+          <tr><td><code>uv lock</code></td><td>僅更新 lockfile，不更動 .venv</td></tr>
+          <tr><td><code>uv lock --upgrade</code></td><td>升級 lockfile 中所有套件</td></tr>
+          <tr><td><code>uv lock -U &lt;package&gt;</code></td><td>只升級指定套件</td></tr>
+        </table>
+
+        <blockquote>
+          ⚠️ <strong>CI/CD 一把標配：</strong>在 CI 裡，用 <code>uv sync --locked</code> 來確保「本地 lockfile 和 CI 同步」。如果 lockfile 有改動但沒提交，uv 會直接報錯告訴你「快提交 lockfile 啦」。
+        </blockquote>
+
+        <h2>行內腳本：Python pip 的 npx</h2>
+        <p>uv 支援在 Python 腳本的頭部加上 <code># ///</code> 區塊來宣告 dependencies，執行時 uv 會自動建立臨時環境並安裝：</p>
+
+        <pre><code>#!/usr/bin/env -S uv run --script
+# ///
+# requires-python = ">=3.12"
+# dependencies = ["httpx"]
+# ///
+
+import httpx
+
+response = httpx.get("https://example.com")
+print(response.status_code)</code></pre>
+
+        <p>然後直接執行：</p>
+        <pre><code>$ chmod +x script.py
+$ ./script.py</code></pre>
+        <p>uv 會自動下載 Python 3.12+，建一個臨時環境，安裝 httpx，然後執行腳本。這樣的腳本<strong>帶環境依賴</strong>，別人執行就不用問「要裝什麼」。</p>
+
+        <h3>初始化腳本模板</h3>
+        <pre><code>$ uv init --script my_tool.py --python 3.13
+# or
+$ uv init -S my_tool.py  # --script 的短版</code></pre>
+
+        <h2>Workspaces：monorepo 也輕鬆搞</h2>
+        <p>對於多 package 專案（monorepo），uv 提供 Cargo 風格的 workspaces 功能：</p>
+
+        <pre><code>my-org/
+├── pyproject.toml          # workspace root
+├── packages/
+│   ├── api/
+│   │   └── pyproject.toml  # member
+│   └── cli/
+│       └── pyproject.toml  # member
+└── uv.lock</code></pre>
+
+        <h3>根專案設定</h3>
+        <pre><code># pyproject.toml (root)
+[project]
+name = "my-org"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["packages/*"]</code></pre>
+
+        <h3>成員專案</h3>
+        <pre><code># packages/api/pyproject.toml
+[project]
+name = "api"
+version = "0.1.0"
+dependencies = ["requests"]
+
+[tool.uv.sources]
+cli = { workspace = true }  # 從 workspace 引用其他 member</code></pre>
+
+        <blockquote>
+          💡 <strong>實戰應用：</strong>workspace root 的 lockfile 會管理 <strong>所有 member 的 dependencies</strong>，確保整個 monorepo 的依賴是一致且可重現的。非常適合公司專案或函式庫套件集合。
+        </blockquote>
+
+        <h2>發布包裝：build + publish</h2>
+        <p>uv 也內建打包和發布功能，取代 setup.py + twine 的組合：</p>
+
+        <h3>建立發佈檔案</h3>
+        <pre><code>$ uv build
+Building my-project...
+Created dist/
+  my_project-0.1.0-py3-none-any.whl  (12.3KB)
+  my_project-0.1.0.tar.gz          (12.1KB)</code></pre>
+
+        <h3>發布到 PyPI</h3>
+        <pre><code>$ uv publish
+Publishing my_project to PyPI...
+Login successful!  # 使用 PyPI Token
+Uploading my_project-0.1.0-py3-none-any.whl  (1.2KB) ━━━━━━━━━━ 100%
+Uploading my_project-0.1.0.tar.gz  (1.1KB) ━━━━━━━━━━ 100%</code></pre>
+        <p>支援 `--username`/`--password` 或環境變數 `UV_PUBLISH_TOKEN`；也支援發布到私有 registry：<code>uv publish --index-url https://your-pypi.example.com/</code>。</p>
+
+        <h2>遷移指南：從 pip/pipenv/poetry 無痛搬家</h2>
+        <p>最好的地方：<strong>uv pip 系列指令幾乎 100% 兼容 pip 界面</strong>，所以你可以直接用 uv 取代 pip，慢慢遷移。</p>
+
+        <h3>從 pip 遷移（零改動）</h3>
+        <table class="cmd-table">
+          <tr><th>舊指令</th><th>新指令</th></tr>
+          <tr><td><code>pip install -r requirements.txt</code></td><td><code>uv pip install -r requirements.txt</code></td></tr>
+          <tr><td><code>pip install requests==2.31</code></td><td><code>uv pip install requests==2.31</code></td></tr>
+          <tr><td><code>pip freeze > requirements.txt</code></td><td><code>uv pip freeze > requirements.txt</code></td></tr>
+          <tr><td><code>python -m venv .venv</code></td><td><code>uv venv</code></td></tr>
+        </table>
+
+        <h3>從 requirements.txt 升級到 pyproject.toml</h3>
+        <pre><code>$ uv init
+# 然後把舊 requirements.txt 的內容加過來
+$ uv add -r requirements.txt
+# 或保持版本鎖定
+$ uv add -r requirements.in -c requirements.txt</code></pre>
+
+        <h3>從 poetry/poetry 遷移</h3>
+        <pre><code># 先把現有的 pyproject.toml 的 dependency groups 轉成 dependency-groups
+# （uv 會自動處理大部分格式）
+
+$ uv sync        # 等於 poetry install
+$ uv add <pkg>   # 等於 poetry add <pkg>
+$ uv lock        # 等於 poetry lock
+$ uv run <cmd>   # 等於 poetry run <cmd></code></pre>
+
+        <h2>快取機制：為什麼 uv 這麼快</h2>
+        <p>uv 有一個<strong>全域快取區</strong>（預設在 <code>~/.cache/uv/</code> 或 <code>uv cache dir</code> 顯示的路徑），所有虛擬環境和下載的 wheels 會被快取起來：</p>
+
+        <pre><code>$ uv cache dir
+/Users/robert/.cache/uv
+
+$ uv cache clean   # 清空快取
+$ uv cache prune   # 清除無用項目
+
+# 在 CI 裡快取
+# GitHub Actions
+- uses: actions/cache@v4
+  with:
+    path: ~/.cache/uv
+    key: uv-${{ runner.os }}-${{ hashFiles('uv.lock') }}</code></pre>
+
+        <blockquote>
+          🚀 <strong>硬連結加速：</strong>uv 在 Linux/macOS 使用 hard links，同一套件安裝到幾十個虛擬環境幾乎不用額外磁碟空間。加上 resolver 使用並查集（union-find）演算法，解析 dependencies 的速度比 pip 快好幾個數量級。
+        </blockquote>
+
+        <h2>常見指令速查表</h2>
+        <table class="cmd-table">
+          <tr><th>指令</th><th>作用</th></tr>
+          <tr><td><code>uv init [name]</code></td><td>初始化專案或腳本</td></tr>
+          <tr><td><code>uv add &lt;pkg&gt;</code></td><td>添加 dependency（自動 sync + lock）</td></tr>
+          <tr><td><code>uv remove &lt;pkg&gt;</code></td><td>移除 dependency</td></tr>
+          <tr><td><code>uv sync</code></td><td>同步 .venv 到 lockfile</td></tr>
+          <tr><td><code>uv run &lt;cmd&gt;</code></td><td>在專案環境執行指令</td></tr>
+          <tr><td><code>uv lock</code></td><td>只更新 uv.lock，不動 .venv</td></tr>
+          <tr><td><code>uv build</code></td><td>建立 sdist + wheel</td></tr>
+          <tr><td><code>uv publish</code></td><td>發布到 PyPI</td></tr>
+          <tr><td><code>uv python install &lt;ver&gt;</code></td><td>下載 Python 版本</td></tr>
+          <tr><td><code>uv venv</code></td><td>建立虛擬環境</td></tr>
+          <tr><td><code>uvx &lt;tool&gt;</code></td><td>臨時執行 CLI 工具</td></tr>
+          <tr><td><code>uv tool install &lt;tool&gt;</code></td><td>永久安裝 CLI 工具</td></tr>
+          <tr><td><code>uv cache dir / clean / prune</code></td><td>快取管理</td></tr>
+        </table>
+
+        <h2>常見問題 FAQ</h2>
+
+        <h3>uv 和 poetry 選哪個？</h3>
+        <p>如果你現在用 poetry，uv 基本上可以無縫取代：指令差不多、效能快上好幾倍、還多了 Python 版本管理和 uvx 工具執行功能。遷移成本很低，風險也小。建議在新專案直接用 uv，舊專案視情況遷移。</p>
+
+        <h3>uv 是否支援 Windows？</h3>
+        <p>完全支援，並且 Windows 上的效能也很好。uv 的 Rust 內核天生跨平台。</p>
+
+        <h3>可以在 CI/CD 裡面用 uv 嗎？</h3>
+        <p>可以，GitHub Actions 有官方 action <code>astral-sh/setup-uv</code>，內建快取支援：</p>
+        <pre><code>steps:
+  - uses: actions/checkout@v4
+  - uses: astral-sh/setup-uv@v9
+    with:
+      enable-cache: true
+      cache-dependency-glob: "uv.lock"
+  - run: uv sync --locked
+  - run: uv run pytest</code></pre>
+
+        <h3>uv.lock 會污染 git diff 嗎？</h3>
+        <p>uv.lock 的格式非常穩定，diff 非常小。通常只有新增/移除的套件會產生少量 diff，日常 <code>uv sync</code> 不會動到 lockfile。如果你只是加了一個 dev 工具，lockfile 的改變通常就 1-2 行。</p>
+
+        <h3>有沒有像 conda 的環境隔離功能？</h3>
+        <p>uv 本身不支援 conda 的多環境管理語意，但 uv 的 workspaces + virtual environment 已經足以應付大多數場景。需要系統級套件（如 GDAL）時，建議在系統層面使用 conda/apt，然後再用 uv 管理 Python 依賴。</p>
+
+        <h2>最佳實務</h2>
+        <ol>
+          <li><strong>commit uv.lock：</strong> lockfile 保證團隊都裝到一模ㄧ樣的版本，一定要放進版本控制。</li>
+          <li><strong>CI 用 --locked 旗標：</strong><code>uv sync --locked</code> 在 CI 裡可避免「lockfile 跑版」的問題。</li>
+          <li><strong>.gitignore 記得加 .venv：</strong>uv 會在初始化時幫你加，但自動建的 .gitignore 確實會排除 <code>.venv</code>。</li>
+          <li><strong>開發依賴放 dependency-groups：</strong>不要全部塞 <code>[project.dependencies]</code>，lint/test/docs 各放一組。</li>
+          <li><strong>快取要設定在 CI：</strong>如果不用 <code>setup-uv action</code>，手動設定 <code>UV_CACHE_DIR</code> 環境變數來快取。</li>
+        </ol>
+
+        <h2>小結</h2>
+        <p>uv 真正的價值在於 <strong>簡化 Python 開發的工具鏈</strong> —— 一個指令就搞定了過去需要 pip + venv + pyenv + pipx + poetry 這五套工具才能完成的事。</p>
+        <p>效能上，uv 比 pip 快 10-100 倍，並且 universal lockfile 保證了跨平台的一致性。結合 <code>pyproject.toml</code> + <code>dependency-groups</code>，整個專案的依賴管理變得現代化又可預測。</p>
+        <p>最近在開新專案的話，強烈推薦直接跳上 uv。舊專案也可以 <code>uv pip install</code> 漸進式遷移，風險幾乎為零。</p>
+        <blockquote>
+          🎯 <strong>5 分鐘上手：</strong> <code>pip install uv</code> → <code>uv init</code> → <code>uv add requests</code> → <code>uv run python -c "import requests; print(requests.__version__)"</code>。就這樣，你已經擁有一個速度驚人的 Python 開發環境了！
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>

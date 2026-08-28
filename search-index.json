@@ -1,5 +1,18 @@
 [
   {
+    "title": "Python 高效開發利器 uv 全指南：取代 pip/pipenv/poetry/pyenv 的極速解決方案",
+    "excerpt": "uv 完整教學：安裝、專案管理、pyproject.toml、虛擬環境、Python 版本管理、uvx 工具執行、行內腳本、Workspaces 工作區、發布包裝與從 pip/pipenv/poetry 遷移。10-100x 速度提升的全面指南。",
+    "url": "uv-guide.html",
+    "tags": [
+      "Python",
+      "uv",
+      "uvx",
+      "開發工具",
+      "包管理",
+      "教學"
+    ]
+  },
+  {
     "title": "Docker Compose 完全攻略：多容器編排從入門到實戰",
     "excerpt": "Compose 完整教學：compose.yaml 核心語法、volumes 與 networks、depends_on 搭配 healthcheck 控制啟動順序、profiles 按需啟動服務、Compose Watch 開發熱重載與常用指令速查表。",
     "url": "docker-compose-guide.html",
