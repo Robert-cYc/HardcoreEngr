@@ -1,10 +1,58 @@
 {
-  "updated": "2026-08-29 03:43",
+  "updated": "2026-08-30 00:23",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "AI 設計「胞內抗體」有望為阿茲海默症、巴金森氏症與漸凍症開啟新療法",
+          "link": "https://technews.tw/2026/08/30/ai-designed-intrabodies-could-unlock-new-treatments-for-alzheimers-parkinsons-and-mnd/",
+          "date": "2026-08-29 16:00",
+          "summary": "英國艾塞克斯大學（University of Essex）運用人工智慧（AI）重新設計抗體，開發出可直接在人類 [&#8230;]"
+        },
+        {
+          "title": "輝達財報出爐股價跌轉升！但擔保金額超越單季營收，輝達循環融資風險成焦點",
+          "link": "https://finance.technews.tw/2026/08/29/nvidia-earnings-stock-rebound-jensen-huang-revolving-financing-concern/",
+          "date": "2026-08-29 08:00",
+          "summary": "輝達公布財報又救全村！盤後除美股股價漲過 4%，也帶動美股美光、台積電台股 27 日上攻。第二季營收達 962 [&#8230;]"
+        },
+        {
+          "title": "首創「AI for All」全民免費代幣！韓國豪擲 10 兆韓元實現算力自由",
+          "link": "https://finance.technews.tw/2026/08/29/ai-for-all/",
+          "date": "2026-08-29 07:36",
+          "summary": "韓國政府最新宣布計劃讓全體民眾免費使用生成式 AI 服務，目標是在讓更多韓國人連結到本土的 AI 聊天機器人， [&#8230;]"
+        },
+        {
+          "title": "科技巨頭的兩手策略：嚴打「AI 垃圾」，卻加速擁抱生成式未來",
+          "link": "https://technews.tw/2026/08/29/tech-giants-ai-slop/",
+          "date": "2026-08-29 07:30",
+          "summary": "矽谷近來一面加強清理所謂的「AI 垃圾內容」（AI Slop），一面卻沒有放慢擁抱生成式技術的腳步。從音樂、社 [&#8230;]"
+        },
+        {
+          "title": "不滿遭強扣「中國軍方公司」大帽！中國晶片巨頭長鑫存儲狀告五角大廈",
+          "link": "https://finance.technews.tw/2026/08/29/cxmt/",
+          "date": "2026-08-29 06:06",
+          "summary": "中國頂尖記憶體晶片製造商長鑫存儲（CXMT）今日向美國華盛頓哥倫比亞特區聯邦地方法院提起訴訟，控告美國國防部將 [&#8230;]"
+        },
+        {
+          "title": "從馬匹延伸至加護病房，全新 AI 框架 SHIC-XE 捕捉「無聲的痛」",
+          "link": "https://technews.tw/2026/08/29/how-ai-identifies-animal-pain/",
+          "date": "2026-08-29 06:00",
+          "summary": "當動物或病患無法言語時，我們該如何確知他們正在受苦？近期，由以色列泰爾海學院（Tel-Hai Universi [&#8230;]"
+        },
+        {
+          "title": "移動速度提升 13%、可靠度媲美真人，哈佛團隊 Mobilio AI 手機導航系統登場",
+          "link": "https://technews.tw/2026/08/29/harvard-mobilio-ai-navigation-app/",
+          "date": "2026-08-29 05:30",
+          "summary": "哈佛大學研究團隊推出專為盲人與低視能者設計的 AI 手機導航系統 Mobilio，強調無須添購額外硬體，即可協 [&#8230;]"
+        },
+        {
+          "title": "全台十大「低空屋區」全在雙北！永慶房屋：南港、泰山成抗跌區",
+          "link": "https://finance.technews.tw/2026/08/29/low-rise-residential-area/",
+          "date": "2026-08-29 03:51",
+          "summary": "內政部最新公布 2025 年下半年低度用電住宅統計，俗稱空屋率。永慶房產集團統計十大低空屋率行政區全數集中在雙 [&#8230;]"
+        },
         {
           "title": "Fed 主席華許傑克森洞首秀放鷹！堅守 2% 通膨目標揭五大重點",
           "link": "https://finance.technews.tw/2026/08/29/hole/",
@@ -28,54 +76,6 @@
           "link": "https://finance.technews.tw/2026/08/29/ipp/",
           "date": "2026-08-29 00:28",
           "summary": "受惠全球 AI 浪潮與高頻寬記憶體（HBM）需求增加，美光（Micron）近期創營收與獲利新高，但美光台灣廠區 [&#8230;]"
-        },
-        {
-          "title": "要輝達不要變電所？北部電網瀕臨超載，25% 民眾錯把「歸零核能」當主力，揭開台灣電力三大真相",
-          "link": "https://technews.tw/2026/08/29/taiwan-public-lacks-understanding-of-power-grid/",
-          "date": "2026-08-29 00:00",
-          "summary": "全球 AI 晶片霸主輝達（NVIDIA）海外總部「星群」基地落腳北投士林科技園區，成為輝達最重要的研發與製造樞 [&#8230;]"
-        },
-        {
-          "title": "Meta 前團隊新創 Perceptron 推出視覺 AI 模型 Isaac 0.5，讓機器人學會「看懂與思考」",
-          "link": "https://technews.tw/2026/08/29/perceptron-ai-isaac-0-5/",
-          "date": "2026-08-28 23:30",
-          "summary": "由 Meta 前科學家創辦的 AI 新創公司 Perceptron，正全力將視覺人工智慧（Visual AI） [&#8230;]"
-        },
-        {
-          "title": "華碩 9 月全面押注實體 AI，人型機器人成下一波布局重點",
-          "link": "https://finance.technews.tw/2026/08/28/asus-physical-ai/",
-          "date": "2026-08-28 10:45",
-          "summary": "隨著人工智慧逐漸從雲端模型走向真實世界應用，華碩稍早透過內部信向該公司員工宣布啟動組織改組，原本的智慧物聯網事 [&#8230;]"
-        },
-        {
-          "title": "AI 搶記憶體產能，Google 要求 Android 應用程式降低占用系統資源",
-          "link": "https://technews.tw/2026/08/28/reducing-memory-usage-and-improving-device-migration/",
-          "date": "2026-08-28 10:04",
-          "summary": "因應 AI 資料中心帶動的記憶體供應吃緊，Google 準備為 Android 應用程式和遊戲設下更嚴格的資源 [&#8230;]"
-        },
-        {
-          "title": "NVIDIA AI 機櫃產品世代交替，估 2027 年 NVL72 產值貢獻可突破 7,100 億美元",
-          "link": "https://finance.technews.tw/2026/08/28/nvidia-nvl72-over-710000000000usd-2027/",
-          "date": "2026-08-28 09:15",
-          "summary": "TrendForce 最新 AI 伺服器產業研究，GB300 整櫃型方案已成為今年 NVIDIA 出貨主力，需 [&#8230;]"
-        },
-        {
-          "title": "欣興遭檢調雷霆搜索！涉及妨害「農工商罪」 急發重訊說明",
-          "link": "https://finance.technews.tw/2026/08/28/agricultural-industrial/",
-          "date": "2026-08-28 09:05",
-          "summary": "欣興今日發布重大訊息，針對遭到桃園地檢署與調查局發動搜索，桃園地檢署證實已帶回欣興 2 名副總經理、1 名會計 [&#8230;]"
-        },
-        {
-          "title": "X 揭 20 萬帳號機器人農場，疑操弄 AI 資料中心輿論",
-          "link": "https://technews.tw/2026/08/28/x-claims-it-found-a-chinese-bot-farm-posting-anti-ai-data-center-sentiments/",
-          "date": "2026-08-28 09:00",
-          "summary": "X 於 28 日表示，其安全團隊在調查疑似與中國有關的不實帳號時，發現了一個規模約 20 萬個帳號的機器人農場 [&#8230;]"
-        },
-        {
-          "title": "馬斯克預測 SpaceX 到 2033 年營收可達 3.5 兆美元",
-          "link": "https://finance.technews.tw/2026/08/28/musk-sees-spacex-hitting-3-5t-revenue-by-2033/",
-          "date": "2026-08-28 08:50",
-          "summary": "特斯拉與 SpaceX 執行長馬斯克近日再度對旗下太空公司 SpaceX 營收前景提出驚人預測，表示他「最好估 [&#8230;]"
         }
       ]
     },
@@ -83,6 +83,18 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "輝達財報出爐股價跌轉升！但擔保金額超越單季營收，輝達循環融資風險成焦點",
+          "link": "https://finance.technews.tw/2026/08/29/nvidia-earnings-stock-rebound-jensen-huang-revolving-financing-concern/",
+          "date": "2026-08-29 08:00",
+          "summary": "輝達公布財報又救全村！盤後除美股股價漲過 4%，也帶動美股美光、台積電台股 27 日上攻。第二季營收達 962 [&#8230;]"
+        },
+        {
+          "title": "不滿遭強扣「中國軍方公司」大帽！中國晶片巨頭長鑫存儲狀告五角大廈",
+          "link": "https://finance.technews.tw/2026/08/29/cxmt/",
+          "date": "2026-08-29 06:06",
+          "summary": "中國頂尖記憶體晶片製造商長鑫存儲（CXMT）今日向美國華盛頓哥倫比亞特區聯邦地方法院提起訴訟，控告美國國防部將 [&#8230;]"
+        },
         {
           "title": "黃仁勳藉一場大缺貨改寫比賽規則，記憶體廠紅利沒預期那麼高了",
           "link": "https://technews.tw/2026/08/29/nvidia-changes-the-rules-of-the-ai-%e2%80%8b%e2%80%8bchip-memory-competition/",
@@ -142,18 +154,6 @@
           "link": "https://finance.technews.tw/2026/08/28/fiber-laser-passive-components/",
           "date": "2026-08-28 06:48",
           "summary": "萊德今日公告上半年合併營收 5.9 億元，年增 24%；稅後淨利 1.07 億元，年增 47%；基本每股盈餘（ [&#8230;]"
-        },
-        {
-          "title": "矽晶圓將大幅漲價？券商看旺 SUMCO、調升目標價",
-          "link": "https://technews.tw/2026/08/28/silicon-wafer-prices-surge-brokers-bullish-sumco-raise-target-price/",
-          "date": "2026-08-28 06:40",
-          "summary": "矽晶圓將大幅漲價？券商看旺日本矽晶圓大廠 SUMCO，調升目標價。SUMCO 今日股價聞訊走揚。 日經新聞28 [&#8230;]"
-        },
-        {
-          "title": "AI 投資帶動全球經濟逆風成長，亞洲供應鏈吃出口大補丸",
-          "link": "https://finance.technews.tw/2026/08/28/ai-supports-global-economy/",
-          "date": "2026-08-28 06:30",
-          "summary": "根據國際貨幣基金（IMF）與各大市場機構的最新觀察，儘管面臨中東能源衝擊、地緣政治緊張及債市壓力攀升等多重逆風 [&#8230;]"
         }
       ]
     },
