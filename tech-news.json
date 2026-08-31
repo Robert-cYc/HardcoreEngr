@@ -1,81 +1,81 @@
 {
-  "updated": "2026-08-30 00:23",
+  "updated": "2026-08-31 00:38",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
+          "title": "AI 帶旺晶圓代工  台積電 Q2 市占率達 73% 續稱霸",
+          "link": "https://technews.tw/2026/08/31/global-pure-foundry-market-share-quarterly/",
+          "date": "2026-08-31 00:35",
+          "summary": "AI 晶片需求持續火熱，帶動全球晶圓代工市場高速成長。市場研究機構 Counterpoint Research [&#8230;]"
+        },
+        {
+          "title": "全球第一個 AI 法院上線，阿聯率先挑戰司法新紀元",
+          "link": "https://finance.technews.tw/2026/08/31/uae-launch-of-worlds-first-fully-integrated-ai%e2%80%91powered-judicial-platform/",
+          "date": "2026-08-31 00:00",
+          "summary": "阿拉伯聯合大公國（UAE）副總統兼總統府主席謝赫曼蘇爾（Sheikh Mansour bin Zayed Al [&#8230;]"
+        },
+        {
+          "title": "AI PC 的定義該改一改了吧？",
+          "link": "https://technews.tw/2026/08/31/redefine-ai-pc-definition/",
+          "date": "2026-08-30 23:50",
+          "summary": "三年過去了，還有人記得 AI PC 嗎？想當初英特爾推出 Meteor Lake 時 AI PC 喊得震天嘎響 [&#8230;]"
+        },
+        {
+          "title": "企業深陷「AI 績效幻象」，研究示警：僅 5% 專案獲利，盲目跟風恐致營運危機",
+          "link": "https://finance.technews.tw/2026/08/31/companies-implementing-ai-misplaced-priorities/",
+          "date": "2026-08-30 23:40",
+          "summary": "隨著生成式 AI 成為企業轉型的熱門關鍵字，職場卻也逐漸浮現一個日益明顯的怪象：企業評價的焦點不再是「成果本身 [&#8230;]"
+        },
+        {
+          "title": "獲利創新高卻藏兩大隱憂，靠「基本面＋大戶卡位」挑出 18 檔真成長股",
+          "link": "https://finance.technews.tw/2026/08/31/18-true-growth-stocks/",
+          "date": "2026-08-30 23:30",
+          "summary": "今年上半年上市櫃公司雖然繳出亮麗的獲利成績單，但整體本益比卻明顯拉高，後續高檔震盪機率大增，這時透過千張大戶高 [&#8230;]"
+        },
+        {
+          "title": "AI 推論瓶頸的突圍：從算力瓶頸轉向儲存階層的革新",
+          "link": "https://technews.tw/2026/08/31/ai-inference-bottlenecks-breakthrough-from-compute-to-storage-hierarchy-innovation/",
+          "date": "2026-08-30 23:00",
+          "summary": "大模型（LLM）與長文本 KV Cache 持續膨脹，再加上大規模的並發推理需求，使運算的效能瓶頸由算力轉向記 [&#8230;]"
+        },
+        {
+          "title": "後勤潛力無窮，大型商用補給船僅花九天完成改裝成為美軍自主駕駛無人艦",
+          "link": "https://technews.tw/2026/08/30/sea-machines-robotocs-took-only-9-days-transferring-large-commercial-supply-ship-into-autonomous-ship-for-us-army/",
+          "date": "2026-08-30 09:05",
+          "summary": "美國軍方近年積極建構無人艦隊，但從零開始設計打造全新艦艇不僅動輒耗時數年，預算更是天文數字，新創科技公司 Se [&#8230;]"
+        },
+        {
+          "title": "AI 吃電怪獸逼出全球電網重整！全球瘋搶變壓器，台廠靠快交期突圍",
+          "link": "https://technews.tw/2026/08/30/ai-power-hungry-nature-forces-global-grid-overhaul-world-scrambles-transformers-taiwanese-firms-emerge-fast-delivery/",
+          "date": "2026-08-30 07:00",
+          "summary": "當電力從營運成本，升級為決定算力高低的戰略要角，站在供應鏈前端的電力設備商，地位也跟著翻轉。對長期被視為傳統產 [&#8230;]"
+        },
+        {
+          "title": "AI 化身「政治變色龍」，最新研究警告：大型語言模型恐加劇社會兩極化",
+          "link": "https://technews.tw/2026/08/30/ai-ideological-chameleon-exacerbates-political-polarization/",
+          "date": "2026-08-30 06:00",
+          "summary": "隨著生成式 AI 普及，人們越來越依賴其獲取資訊與分析。然而，一項發表於《Scientific Reports [&#8230;]"
+        },
+        {
+          "title": "公開網路數據已耗盡，破產公司「數位遺產」成 AI 訓練資料新戰場",
+          "link": "https://infosecu.technews.tw/2026/08/30/digital-assets-of-bankrupt-companies-become-hot-targets-for-ai-startup/",
+          "date": "2026-08-30 03:00",
+          "summary": "2026 年 5 月，美國廉航 Spirit Airlines 無預警熄燈，這是過去 25 年來，美國首家完全 [&#8230;]"
+        },
+        {
+          "title": "百兆財富傳承潮來襲，台股狂飆後有錢人正悄悄進行的「資產重分配」",
+          "link": "https://finance.technews.tw/2026/08/30/taiwan-stock-market-generated-over-nt100-trillion/",
+          "date": "2026-08-30 01:00",
+          "summary": "在 AI 浪潮帶動下，上市櫃公司獲利迭創新高，激勵台股漲勢，三年來市值暴增逾百兆，累積的財富效益相當可觀。因此 [&#8230;]"
+        },
+        {
           "title": "AI 設計「胞內抗體」有望為阿茲海默症、巴金森氏症與漸凍症開啟新療法",
           "link": "https://technews.tw/2026/08/30/ai-designed-intrabodies-could-unlock-new-treatments-for-alzheimers-parkinsons-and-mnd/",
           "date": "2026-08-29 16:00",
           "summary": "英國艾塞克斯大學（University of Essex）運用人工智慧（AI）重新設計抗體，開發出可直接在人類 [&#8230;]"
-        },
-        {
-          "title": "輝達財報出爐股價跌轉升！但擔保金額超越單季營收，輝達循環融資風險成焦點",
-          "link": "https://finance.technews.tw/2026/08/29/nvidia-earnings-stock-rebound-jensen-huang-revolving-financing-concern/",
-          "date": "2026-08-29 08:00",
-          "summary": "輝達公布財報又救全村！盤後除美股股價漲過 4%，也帶動美股美光、台積電台股 27 日上攻。第二季營收達 962 [&#8230;]"
-        },
-        {
-          "title": "首創「AI for All」全民免費代幣！韓國豪擲 10 兆韓元實現算力自由",
-          "link": "https://finance.technews.tw/2026/08/29/ai-for-all/",
-          "date": "2026-08-29 07:36",
-          "summary": "韓國政府最新宣布計劃讓全體民眾免費使用生成式 AI 服務，目標是在讓更多韓國人連結到本土的 AI 聊天機器人， [&#8230;]"
-        },
-        {
-          "title": "科技巨頭的兩手策略：嚴打「AI 垃圾」，卻加速擁抱生成式未來",
-          "link": "https://technews.tw/2026/08/29/tech-giants-ai-slop/",
-          "date": "2026-08-29 07:30",
-          "summary": "矽谷近來一面加強清理所謂的「AI 垃圾內容」（AI Slop），一面卻沒有放慢擁抱生成式技術的腳步。從音樂、社 [&#8230;]"
-        },
-        {
-          "title": "不滿遭強扣「中國軍方公司」大帽！中國晶片巨頭長鑫存儲狀告五角大廈",
-          "link": "https://finance.technews.tw/2026/08/29/cxmt/",
-          "date": "2026-08-29 06:06",
-          "summary": "中國頂尖記憶體晶片製造商長鑫存儲（CXMT）今日向美國華盛頓哥倫比亞特區聯邦地方法院提起訴訟，控告美國國防部將 [&#8230;]"
-        },
-        {
-          "title": "從馬匹延伸至加護病房，全新 AI 框架 SHIC-XE 捕捉「無聲的痛」",
-          "link": "https://technews.tw/2026/08/29/how-ai-identifies-animal-pain/",
-          "date": "2026-08-29 06:00",
-          "summary": "當動物或病患無法言語時，我們該如何確知他們正在受苦？近期，由以色列泰爾海學院（Tel-Hai Universi [&#8230;]"
-        },
-        {
-          "title": "移動速度提升 13%、可靠度媲美真人，哈佛團隊 Mobilio AI 手機導航系統登場",
-          "link": "https://technews.tw/2026/08/29/harvard-mobilio-ai-navigation-app/",
-          "date": "2026-08-29 05:30",
-          "summary": "哈佛大學研究團隊推出專為盲人與低視能者設計的 AI 手機導航系統 Mobilio，強調無須添購額外硬體，即可協 [&#8230;]"
-        },
-        {
-          "title": "全台十大「低空屋區」全在雙北！永慶房屋：南港、泰山成抗跌區",
-          "link": "https://finance.technews.tw/2026/08/29/low-rise-residential-area/",
-          "date": "2026-08-29 03:51",
-          "summary": "內政部最新公布 2025 年下半年低度用電住宅統計，俗稱空屋率。永慶房產集團統計十大低空屋率行政區全數集中在雙 [&#8230;]"
-        },
-        {
-          "title": "Fed 主席華許傑克森洞首秀放鷹！堅守 2% 通膨目標揭五大重點",
-          "link": "https://finance.technews.tw/2026/08/29/hole/",
-          "date": "2026-08-29 02:06",
-          "summary": "美國聯準會（Fed）主席華許（Kevin Warsh）今日在懷俄明州傑克森洞（Jackson Hole）全球央 [&#8230;]"
-        },
-        {
-          "title": "AI 與濾鏡引發審美疲勞，高階市場更愛「有手感」的真人行銷",
-          "link": "https://technews.tw/2026/08/29/ai-perfection-fuels-a-return-to-looking-human/",
-          "date": "2026-08-29 01:30",
-          "summary": "隨著 AI 生成影像、濾鏡修圖與網紅式精緻生活持續充斥社群平台，消費者似乎正出現審美疲勞。彭博商業周刊資深記者 [&#8230;]"
-        },
-        {
-          "title": "命中率狂飆百倍！Deep Origin 結合 AI 與物理模擬，抗癌藥物發現迎突破",
-          "link": "https://technews.tw/2026/08/29/deep-origin-claims-breakthrough-in-ai-drug-discovery-platform/",
-          "date": "2026-08-29 00:30",
-          "summary": "Deep Origin 近日宣布，其 AI 藥物發現框架在一項針對癌症免疫治療相關酵素的測試中，命中率接近 3 [&#8230;]"
-        },
-        {
-          "title": "美光台灣工會醞釀罷工獲 8 成支持！不滿獎金分紅落後三星、SK 海力士",
-          "link": "https://finance.technews.tw/2026/08/29/ipp/",
-          "date": "2026-08-29 00:28",
-          "summary": "受惠全球 AI 浪潮與高頻寬記憶體（HBM）需求增加，美光（Micron）近期創營收與獲利新高，但美光台灣廠區 [&#8230;]"
         }
       ]
     },
@@ -83,6 +83,42 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "AI 帶旺晶圓代工  台積電 Q2 市占率達 73% 續稱霸",
+          "link": "https://technews.tw/2026/08/31/global-pure-foundry-market-share-quarterly/",
+          "date": "2026-08-31 00:35",
+          "summary": "AI 晶片需求持續火熱，帶動全球晶圓代工市場高速成長。市場研究機構 Counterpoint Research [&#8230;]"
+        },
+        {
+          "title": "獲利創新高卻藏兩大隱憂，靠「基本面＋大戶卡位」挑出 18 檔真成長股",
+          "link": "https://finance.technews.tw/2026/08/31/18-true-growth-stocks/",
+          "date": "2026-08-30 23:30",
+          "summary": "今年上半年上市櫃公司雖然繳出亮麗的獲利成績單，但整體本益比卻明顯拉高，後續高檔震盪機率大增，這時透過千張大戶高 [&#8230;]"
+        },
+        {
+          "title": "美光股價暴漲逾 7 倍後，三大關卡考驗榮景能否延續",
+          "link": "https://finance.technews.tw/2026/08/31/can-micron-hold-off-the-chinese-memory-chip-push/",
+          "date": "2026-08-30 23:10",
+          "summary": "超額的獲利，永遠會招來競爭者。美光過去一年股價暴漲逾 7 倍，坐享記憶體搭上 AI 熱潮的榮景，如今中國業者也 [&#8230;]"
+        },
+        {
+          "title": "AI 推論瓶頸的突圍：從算力瓶頸轉向儲存階層的革新",
+          "link": "https://technews.tw/2026/08/31/ai-inference-bottlenecks-breakthrough-from-compute-to-storage-hierarchy-innovation/",
+          "date": "2026-08-30 23:00",
+          "summary": "大模型（LLM）與長文本 KV Cache 持續膨脹，再加上大規模的並發推理需求，使運算的效能瓶頸由算力轉向記 [&#8230;]"
+        },
+        {
+          "title": "TechInsights 深度分析麒麟 9030 Pro，設備代差仍難以彌補",
+          "link": "https://technews.tw/2026/08/30/techinsight-analyze-kirin-9030-pro/",
+          "date": "2026-08-30 02:57",
+          "summary": "知名晶片逆向工程機構 TechInsights 最新釋出華為旗艦處理器「麒麟 9030 Pro」的完整製程分析 [&#8230;]"
+        },
+        {
+          "title": "「半導體材料聯盟」盛大成立，徐秀蘭：現在是台灣半導體業拯救「材料侏儒困境」的最好時機",
+          "link": "https://finance.technews.tw/2026/08/30/semi-taiwan-materials-alliance/",
+          "date": "2026-08-30 02:00",
+          "summary": "SEMICON 半導體展前夕，SEMI 國際半導體產業協會 21 日邀請 34 家國內外業者，舉行「半導體材料 [&#8230;]"
+        },
         {
           "title": "輝達財報出爐股價跌轉升！但擔保金額超越單季營收，輝達循環融資風險成焦點",
           "link": "https://finance.technews.tw/2026/08/29/nvidia-earnings-stock-rebound-jensen-huang-revolving-financing-concern/",
@@ -118,42 +154,6 @@
           "link": "https://finance.technews.tw/2026/08/28/tsmc-q2-employee-bonuses-nt36-billion-up-50-percent-yoy/",
           "date": "2026-08-28 14:00",
           "summary": "台積電第二季員工分紅今日入帳，又有台積電員工在網路上爆料季獎金開獎有感增加，單季按照個人考績領取約四至六個月不 [&#8230;]"
-        },
-        {
-          "title": "AI 搶記憶體產能，Google 要求 Android 應用程式降低占用系統資源",
-          "link": "https://technews.tw/2026/08/28/reducing-memory-usage-and-improving-device-migration/",
-          "date": "2026-08-28 10:04",
-          "summary": "因應 AI 資料中心帶動的記憶體供應吃緊，Google 準備為 Android 應用程式和遊戲設下更嚴格的資源 [&#8230;]"
-        },
-        {
-          "title": "德國赴台參加半導體展，鎖定晶片設計、先進封裝",
-          "link": "https://technews.tw/2026/08/28/germany-in-semicon-taiwan-2026/",
-          "date": "2026-08-28 10:00",
-          "summary": "德國聯邦外貿與投資署（GTAI）下週將赴台參加台灣國際半導體展。半導體專家梅耶（Martin Mayer）今天 [&#8230;]"
-        },
-        {
-          "title": "弘塑投資青輝先進材料資金到位，推動台灣混合鍵合在地化",
-          "link": "https://technews.tw/2026/08/28/gptc-japan-bonding/",
-          "date": "2026-08-28 07:18",
-          "summary": "半導體濕製程設備大廠弘塑科技宣布，繼旗下子公司佳霖科技取得日本青輝半導體株式會社產品代理權後，針對青輝先進材料 [&#8230;]"
-        },
-        {
-          "title": "木頭姊 AI 晶片股換血  賣 AMD、搶進博通與 Cerebras",
-          "link": "https://finance.technews.tw/2026/08/28/cathie-wood-gradually-cuts-amd-stake/",
-          "date": "2026-08-28 07:00",
-          "summary": "明星基金經理人凱薩琳伍德（Cathie Wood、台灣稱木頭姊）掌管的方舟投資（Ark Invest），近日大 [&#8230;]"
-        },
-        {
-          "title": "記憶體、晶片價格倒掛，入門智慧手機受衝擊恐最大",
-          "link": "https://technews.tw/2026/08/28/entry-level-smartphones-hit-hardest-by-memory-costs/",
-          "date": "2026-08-28 06:50",
-          "summary": "綜合中媒報導，手機記憶體與晶片價格出現「倒掛」的情況，據中國數位博主「數碼閒聊站」透露，目前 12GB + 2 [&#8230;]"
-        },
-        {
-          "title": "搶進低軌衛星供應鏈！萊德上半年每股賺 4.34 元、霸氣配息 3.29 元",
-          "link": "https://finance.technews.tw/2026/08/28/fiber-laser-passive-components/",
-          "date": "2026-08-28 06:48",
-          "summary": "萊德今日公告上半年合併營收 5.9 億元，年增 24%；稅後淨利 1.07 億元，年增 47%；基本每股盈餘（ [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,24 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "迷你電腦性價比真的高？熱潮後缺點紛紛浮現：升級難、散熱差、維修貴",
+          "link": "https://technews.tw/2026/08/30/what-are-the-downsides-of-a-mini-pc/",
+          "date": "2026-08-30 05:30",
+          "summary": "迷你電腦近年成為桌機與筆電之外的熱門選項，像 Geekom、Beelink、Minisforum 等中國品牌迅 [&#8230;]"
+        },
+        {
+          "title": "「半導體材料聯盟」盛大成立，徐秀蘭：現在是台灣半導體業拯救「材料侏儒困境」的最好時機",
+          "link": "https://finance.technews.tw/2026/08/30/semi-taiwan-materials-alliance/",
+          "date": "2026-08-30 02:00",
+          "summary": "SEMICON 半導體展前夕，SEMI 國際半導體產業協會 21 日邀請 34 家國內外業者，舉行「半導體材料 [&#8230;]"
+        },
+        {
+          "title": "光達揭開亞馬遜古文明面紗，Aquiry 遺址估曾容納 300 萬人",
+          "link": "https://technews.tw/2026/08/30/lidar-ancient-amazon/",
+          "date": "2026-08-30 01:30",
+          "summary": "最新發表於權威期刊《Nature》的考古研究揭露，一個長期隱藏在森林覆蓋下的亞馬遜西南部古代文明，其規模遠比外 [&#8230;]"
+        },
         {
           "title": "其實升降桌幫助不大？「站著辦公」尷尬真相：站一小時只多燒 9 大卡",
           "link": "https://technews.tw/2026/08/29/why-standing-at-your-desk-may-be-little-better-than-sitting/",
@@ -214,24 +232,6 @@
           "link": "https://technews.tw/2026/08/28/ukrainian-firm-teneta-mitla-1-became-latest-counter-fpv-drones-weapon-for-infantries/",
           "date": "2026-08-28 06:09",
           "summary": "隨著 FPV 自殺式無人機與小型偵察四軸飛行器充斥現代戰場，低空突襲已成為前線步兵的最大威脅，而烏克蘭軍工產業 [&#8230;]"
-        },
-        {
-          "title": "砸逾 30 億美元投資！科林研發全新奧勒岡研發中心動土，2028 年啟用",
-          "link": "https://technews.tw/2026/08/28/lam-research-rd-center/",
-          "date": "2026-08-28 04:22",
-          "summary": "科林研發（Lam Research）宣布於美國奧勒岡州圖拉丁的世界級研發中心舉行動土典禮，正式啟動全新先進奧勒 [&#8230;]"
-        },
-        {
-          "title": "AI 出貨關鍵大洗牌！法人揭 CoWoS 瓶頸掀 ABF 產能競標戰",
-          "link": "https://finance.technews.tw/2026/08/28/cowososat/",
-          "date": "2026-08-28 02:12",
-          "summary": "受惠 AI 及 HPC 平台推動，法人預估 ABF 與 BT 載板雙雙進入結構性成長期，而 2026 年 AI [&#8230;]"
-        },
-        {
-          "title": "買得起不代表修得起，換摺疊 iPhone 內螢幕至少噴 3.6 萬元？",
-          "link": "https://technews.tw/2026/08/28/foldable-iphone-screen/",
-          "date": "2026-08-28 01:57",
-          "summary": "蘋果首款摺疊 iPhone 傳出最快將於 9 月發表，市場預估售價可能突破 2,000 美元（約台幣 63,3 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,12 @@
       "name": "CCC 追新聞",
       "site": "https://ccc.technews.tw/",
       "items": [
+        {
+          "title": "數位地產爭奪戰開打！ICANN 審查逾 1,600 案，各大機構瘋搶熱門字串",
+          "link": "https://ccc.technews.tw/2026/08/31/revolution-web-addresses-icann-review/",
+          "date": "2026-08-31 00:30",
+          "summary": "網際網路名稱與數字位址分配機構（ICANN）正加緊審查新一輪、總數超過 1,600 份的全球通用頂級網域（gT [&#8230;]"
+        },
         {
           "title": "三星 Galaxy S26 FE 登台，入手價不到 2.6 萬元",
           "link": "https://ccc.technews.tw/2026/08/28/galaxy-s26-fe/",
@@ -304,12 +310,6 @@
           "link": "https://ccc.technews.tw/2026/08/18/why-flash-drive-capacity-keeps-increasing/",
           "date": "2026-08-18 03:40",
           "summary": "曾經是大容量代表的 1GB 隨身碟，如今消費市場已難見蹤影。USB 快閃儲存容量之所以持續攀升，關鍵不在外殼或 [&#8230;]"
-        },
-        {
-          "title": "Google 新穿戴裝置意外曝光？Pixel 11 廣告出現神祕「螢幕版」健身手環",
-          "link": "https://ccc.technews.tw/2026/08/17/google-leaks-new-screen-fitness-band/",
-          "date": "2026-08-17 02:10",
-          "summary": "Google 近期在 YouTube 投放的 Pixel 11 宣傳廣告中，意外讓一款尚未發表的新型穿戴裝置曝 [&#8230;]"
         }
       ]
     }
