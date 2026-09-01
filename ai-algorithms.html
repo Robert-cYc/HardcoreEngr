@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 人工智慧演算法列表 — 從搜尋到深度學習的完整地圖 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="從搜尋優化、機器學習、神經網路到強化學習，一篇整理 AI 演算法世界的地圖。用輕鬆口吻帶你認識 A*、Q-learning、Backpropagation 等經典演算法。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/ai-algorithms.html">
+  <meta property="og:title" content="AI 人工智慧演算法列表 — "AI" 硬核工程師">
+  <meta property="og:description" content="從搜尋優化、機器學習、神經網路到強化學習，一篇整理 AI 演算法世界的地圖。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/ai-algorithms.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 人工智慧演算法列表 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="從搜尋優化、機器學習、神經網路到強化學習，一篇整理 AI 演算法世界的地圖。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-body {
+      max-width: 60em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body .highlight-box {
+      background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .article-body .highlight-box.dark-box {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border-left-color: #60a5fa;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .article-body .category-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .article-body .category-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .article-body .category-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    .article-body .category-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    .algorithm-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 0.85rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin: 0.15rem 0.15rem 0.15rem 0;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+      <!-- Hero -->
+      <section class="article-hero">
+        <div class="container">
+          <h1>AI 人工智慧演算法列表</h1>
+          <p style="font-size:1.35rem; color:var(--text-muted); max-width:50em; margin:0 auto; line-height:1.7;">
+            從搜尋優化、機器學習、神經網路到強化學習，這篇帶你認識 AI 世界的核心演算法地圖。像跟朋友聊天一樣，輕鬆認識這些經典演算法背後的邏輯。
+          </p>
+          <div class="article-meta">
+            <span>2026-09-01</span>
+            <span>·</span>
+            <span>15 分鐘閱讀</span>
+            <span>·</span>
+            <span>來源：Wikipedia — List of artificial intelligence algorithms</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="article-body">
+
+          <!-- 重點摘要 -->
+          <div class="highlight-box" style="margin-top:0;">
+            <strong style="font-size:1.3rem; display:block; margin-bottom:0.6rem;">✦ 重點摘要</strong>
+            <p style="margin-bottom:0.4rem;">
+              這篇整理自維基百科的 AI 演算法列表，涵蓋 11 大類別、超過 50 種演算法。從你每天可能遇到的搜尋演算法（A*、Dijkstra），到讓 ChatGPT 變聰明的深度學習（Backpropagation、Gradient descent），再到 AlphaGo 背後的強化學習（Q-learning、Actor-critic），一篇幫你建立完整地圖。不用擔心數學公式，我們用聊天的方式帶你認識它們。
+            </p>
+          </div>
+
+          <h2>前言：為什麼要認識這些演算法？</h2>
+          <p>嘿，你有沒有想過，當你打開地圖導航、刷推薦影片、或者跟 ChatGPT 聊天時，背後到底跑了什麼「魔法」？其實這些「魔法」大多可以歸納為各種 AI 演算法。今天這篇就是要用輕鬆的方式，帶你認識這個世界。</p>
+          <p>參考維基百科的「List of artificial intelligence algorithms」，我把這些演算法整理成 11 個主要類別。你不用全部記起來，但至少知道它們各自管什麼領域，以後遇到 AI 文章時，就比較不會被一堆名詞嚇到啦。</p>
+
+          <h2>一、搜尋與優化（Search & Optimization）</h2>
+          <p>這大概是最「接地氣」的一類。你玩遊戲、用導航、甚至搜尋引擎的排序，都離不開這些演算法。</p>
+
+          <h3>代表演算法</h3>
+          <div class="category-grid">
+            <div class="category-card">
+              <h4>A* 搜尋（A* search）</h4>
+              <p>結合實際成本與預估成本，找到最短路徑的經典演算法。導航軟體最愛用。</p>
+            </div>
+            <div class="category-card">
+              <h4>Alpha-beta 剪枝（Alpha-beta pruning）</h4>
+              <p>在遊戲 AI（例如西洋棋）中，用來減少需要搜尋的節點，速度快很多。</p>
+            </div>
+            <div class="category-card">
+              <h4>蒙地卡羅樹搜尋（Monte Carlo tree search）</h4>
+              <p>AlphaGo 也用到這個！透過隨機模擬來評估走法的好壞。</p>
+            </div>
+            <div class="category-card">
+              <h4>模擬退火（Simulated annealing）</h4>
+              <p>模擬金屬冷卻的過程，逐步找到最佳解。優化問題的好幫手。</p>
+            </div>
+          </div>
+
+          <p>簡單來說，這類演算法的任務就是「找到最好的路」或「做出最好的選擇」。如果你玩過遊戲或用過導航，這些名字應該不會太陌生。</p>
+
+          <h2>二、演化計算與生物啟發（Evolutionary & Bio-inspired）</h2>
+          <p>這類演算法的靈感來自大自然。想像一下，一群螞蟻在找食物的路上留下一些「氣味」，最短路徑上的氣味最濃，後來的螞蟻就會跟著走——這就是螞蟻演算法的概念。</p>
+
+          <h3>代表演算法</h3>
+          <ul>
+            <li><strong>遺傳演算法（Genetic algorithm）</strong> — 模擬自然選擇，讓「優秀」的解互相交配、變異，逐步逼近最佳解。</li>
+            <li><strong>粒子群優化（Particle swarm optimization）</strong> — 模擬鳥群飛行，每個粒子根據自己和鄰居的經驗調整方向。</li>
+            <li><strong>螞蟻演算法（Ant colony optimization）</strong> — 模擬螞蟻尋路，用費洛蒙濃度來引導搜尋。</li>
+            <li><strong>差分演化（Differential evolution）</strong> — 透過差異向量來引導種群演化。</li>
+          </ul>
+
+          <p>這些演算法在複雜的優化問題（例如工程設計、路徑規劃）特別有用，因為它們不需要精確的數學模型，只要有一個「好不好」的判斷標準就行。</p>
+
+          <h2>三、自動推理與邏輯（Automated Reasoning）</h2>
+          <p>這類演算法處理的是「邏輯推理」——給定一些事實和規則，推導出新的結論。這在專家系統和知識圖譜中很重要。</p>
+
+          <h3>代表演算法</h3>
+          <div class="category-grid">
+            <div class="category-card">
+              <h4>前向鏈接（Forward chaining）</h4>
+              <p>從已知事實出發，一步步推導出新結論，像是在搭積木。</p>
+            </div>
+            <div class="category-card">
+              <h4>反向鏈接（Backward chaining）</h4>
+              <p>從目標開始，反推需要什麼前提條件，像是在解謎題。</p>
+            </div>
+            <div class="category-card">
+              <h4>DPLL 演算法</h4>
+              <p>用於判斷布爾表達式是否可滿足（SAT solver），是現代 SAT 求解器的基礎。</p>
+            </div>
+            <div class="category-card">
+              <h4>Rete 演算法</h4>
+              <p>用來加速規則引擎的匹配過程，讓專家系統跑得更快。</p>
+            </div>
+          </div>
+
+          <h2>四、機率推理與不確定性推論（Probabilistic Reasoning）</h2>
+          <p>現實世界充滿不確定性，這類演算法教機器「用機率來思考」。從語音辨識到機器翻譯，都離不開這些技術。</p>
+
+          <h3>代表演算法</h3>
+          <ul>
+            <li><strong>卡爾曼濾波（Kalman filter）</strong> — 追蹤動態系統的狀態（例如自駕車追蹤周圍物體的位置）。</li>
+            <li><strong>Viterbi 演算法</strong> — 找出最可能的隱藏狀態序列，語音辨識和自然語言處理常用。</li>
+            <li><strong>期望最大化（Expectation-maximization, EM）</strong> — 當資料有「隱藏變數」時，用來估計參數。</li>
+            <li><strong>信念傳播（Belief propagation）</strong> — 在圖形模型中傳遞機率資訊。</li>
+          </ul>
+
+          <h2>五、運動規劃與決策（Motion Planning & Decision-making）</h2>
+          <p>讓機器人、無人機或遊戲角色知道「該怎麼動」，這類演算法負責規劃路徑與做出決策。</p>
+
+          <h3>代表演算法</h3>
+          <div class="category-grid">
+            <div class="category-card">
+              <h4>D*（Dynamic A*）</h4>
+              <p>A* 的動態版本，當環境改變時可以快速重新規劃。</p>
+            </div>
+            <div class="category-card">
+              <h4>RRT（Rapidly-exploring random tree）</h4>
+              <p>機器人路徑規劃的利器，透過隨機採樣快速探索空間。</p>
+            </div>
+            <div class="category-card">
+              <h4>動態窗口方法（DWA）</h4>
+              <p>移動機器人即時避障與路徑選擇的常用方法。</p>
+            </div>
+            <div class="category-card">
+              <h4>Graphplan</h4>
+              <p>基於圖形的規劃演算法，用來解決多步驟的行動規劃問題。</p>
+            </div>
+          </div>
+
+          <h2>六、機器學習與統計分類（Machine Learning & Classification）</h2>
+          <p>這大概是大家最熟悉的一類了。從垃圾郵件過濾、推薦系統，到醫學診斷，這些演算法讓機器從資料中學習模式。</p>
+
+          <h3>代表演算法</h3>
+          <div class="category-grid">
+            <div class="category-card">
+              <h4>決策樹（C4.5 / Decision tree）</h4>
+              <p>像是在玩「二十個問題」，透過一系列條件判斷來分類。</p>
+            </div>
+            <div class="category-card">
+              <h4>隨機森林（Random forest）</h4>
+              <p>讓很多棵決策樹一起投票，準確度通常比單棵樹高很多。</p>
+            </div>
+            <div class="category-card">
+              <h4>支援向量機（SVM）</h4>
+              <p>找出一個最佳的「分隔面」，把不同類別的資料分開。</p>
+            </div>
+            <div class="category-card">
+              <h4>k 近鄰（k-NN）</h4>
+              <p>「近朱者赤」的概念，看一個點附近的鄰居大多屬於哪一類。</p>
+            </div>
+            <div class="category-card">
+              <h4>AdaBoost</h4>
+              <p>把多個「弱學習器」組合成一個強大的分類器。</p>
+            </div>
+            <div class="category-card">
+              <h4>k-means / DBSCAN</h4>
+              <p>無監督學習的經典——自動把資料分成幾群，或者找出密集區域。</p>
+            </div>
+          </div>
+
+          <h2>七、神經網路與深度學習（Neural Networks & Deep Learning）</h2>
+          <p>如果說機器學習是讓機器「學習規則」，那深度學習就是讓機器「自己發現特徵」。這是近十年 AI 爆發的核心。</p>
+
+          <h3>代表演算法</h3>
+          <ul>
+            <li><strong>反向傳播（Backpropagation）</strong> — 深度學習的靈魂！透過計算誤差的梯度，逐層調整神經網路的權重。</li>
+            <li><strong>梯度下降（Gradient descent）</strong> — 沿著誤差最陡的方向，一步步走向最低點（最佳參數）。</li>
+            <li><strong>感知機（Perceptron）</strong> — 最早的神經網路模型，雖然簡單但奠定了基礎。</li>
+            <li><strong>Levenberg-Marquardt 演算法</strong> — 結合梯度下降與高斯-牛頓法，加速收斂。</li>
+            <li><strong>喚醒-睡眠（Wake-sleep）</strong> — 用於無監督學習的神經網路訓練方法。</li>
+          </ul>
+
+          <p>這些演算法讓深度學習模型（像 CNN、Transformer）得以訓練。如果你對 ChatGPT、Midjourney 或自駕車感興趣，這些名字一定要認識。</p>
+
+          <h2>八、強化學習（Reinforcement Learning）</h2>
+          <p>強化學習的概念很直觀：讓機器像小狗一樣，做對了給獎勵，做錯了給懲罰，慢慢學會什麼行為最有利。</p>
+
+          <h3>代表演算法</h3>
+          <div class="category-grid">
+            <div class="category-card">
+              <h4>Q-learning</h4>
+              <p>學習每個「狀態-動作」組合的價值（Q 值），選擇最高價值的動作。</p>
+            </div>
+            <div class="category-card">
+              <h4>SARSA</h4>
+              <p>類似 Q-learning，但學習的是實際執行的策略（而非最優策略）。</p>
+            </div>
+            <div class="category-card">
+              <h4>Actor-Critic</h4>
+              <p>同時學習「該做什麼」（Actor）和「做得好不好」（Critic）。</p>
+            </div>
+            <div class="category-card">
+              <h4>策略梯度（Policy gradient）</h4>
+              <p>直接優化策略本身，讓模型學會在不同情境下選擇不同的行為。</p>
+            </div>
+            <div class="category-card">
+              <h4>PPO（Proximal Policy Optimization）</h4>
+              <p>OpenAI 開發的強化學習方法，在穩定性和效能之間取得平衡。</p>
+            </div>
+            <div class="category-card">
+              <h4>時間差分學習（Temporal Difference）</h4>
+              <p>透過「預測差異」來更新價值估計，是 Q-learning 的基礎。</p>
+            </div>
+          </div>
+
+          <h3>遊戲 AI 的代表作</h3>
+          <p>說到強化學習，就不能不提遊戲領域的突破：</p>
+          <ul>
+            <li><strong>AlphaGo / AlphaGo Zero / AlphaZero</strong> — DeepMind 用強化學習加深度神經網路擊敗圍棋世界冠軍，後來還學會了西洋棋和將棋。</li>
+            <li><strong>MuZero</strong> — 不需要先知道遊戲規則，直接從零開始學習。</li>
+            <li><strong>TD-Gammon</strong> — 最早用強化學習在西洋雙陸棋上達到世界級水準的系統。</li>
+          </ul>
+
+          <h2>九、自然語言處理（Natural Language Processing）</h2>
+          <p>讓機器理解人類語言的演算法，從語法解析到語言模型的基礎技術。</p>
+
+          <h3>代表演算法</h3>
+          <div class="category-grid">
+            <div class="category-card">
+              <h4>Byte-pair encoding (BPE)</h4>
+              <p>GPT 系列使用的分詞方法，將文字拆成常見的子字串組合。</p>
+            </div>
+            <div class="category-card">
+              <h4>Cocke-Younger-Kasami (CYK)</h4>
+              <p>解析上下文無關文法（CFG）的經典演算法。</p>
+            </div>
+            <div class="category-card">
+              <h4>Earley parser</h4>
+              <p>比 CYK 更靈活的語法解析演算法，適用於更廣泛的文法。</p>
+            </div>
+            <div class="category-card">
+              <h4>Inside-Outside 演算法</h4>
+              <p>用於機率上下文無關文法（PCFG）的參數估計。</p>
+            </div>
+          </div>
+
+          <h2>十、電腦視覺與感知（Computer Vision & Perception）</h2>
+          <p>讓機器「看懂」世界的演算法，從邊緣偵測到特徵匹配。</p>
+
+          <h3>代表演算法</h3>
+          <ul>
+            <li><strong>Canny 邊緣偵測（Canny edge detector）</strong> — 最經典的邊緣偵測演算法，廣泛應用於影像處理。</li>
+            <li><strong>GrabCut</strong> — 互動式的前景/背景分割演算法。</li>
+            <li><strong>RANSAC</strong> — 用於從雜訊資料中找出模型參數（例如從點雲中找出直線或平面）。</li>
+            <li><strong>SIFT（Scale-invariant feature transform）</strong> — 偵測並描述影像中的關鍵特徵，不受縮放和旋轉影響。</li>
+          </ul>
+
+          <h2>十一、演算法遊戲（Algorithmic Game Play）</h2>
+          <p>這類演算法專門為遊戲設計，讓 AI 在遊戲中做出智慧決策。</p>
+
+          <h3>代表系統</h3>
+          <div class="category-grid">
+            <div class="category-card">
+              <h4>AlphaGo 系列</h4>
+              <p>深度學習 + 強化學習 + 蒙地卡羅樹搜尋，擊敗人類圍棋冠軍。</p>
+            </div>
+            <div class="category-card">
+              <h4>MuZero</h4>
+              <p>不需要遊戲規則，從零學習策略，適用於多種遊戲。</p>
+            </div>
+            <div class="category-card">
+              <h4>TD-Gammon</h4>
+              <p>早期強化學習的成功案例，在西洋雙陸棋上表現優異。</p>
+            </div>
+          </div>
+
+          <h2>結語：這些演算法怎麼串起來的？</h2>
+          <p>如果你覺得這些名字有點多，別擔心。其實這些演算法之間常常是「組合拳」：AlphaGo 就同時用了深度神經網路（深度學習）、蒙地卡羅樹搜尋（搜尋優化）、和強化學習（策略優化）。現代的 AI 系統幾乎都是多種演算法的組合。</p>
+
+          <p>這篇整理自維基百科，希望幫你建立一個「地圖感」——知道每個領域大概有哪些工具，以後看到新文章時，就比較容易定位它在整個 AI 世界中的位置。如果你對某個領域特別感興趣（例如強化學習、深度學習），歡迎跟我說一聲，我可以再寫更深入的文章來聊聊！</p>
+
+          <blockquote>
+            <strong>小提醒：</strong>這篇文章的內容整理自維基百科「List of artificial intelligence algorithms」頁面（2026 年版本）。如果你想看原文或更詳細的數學推導，直接去維基百科搜尋這個標題就可以了！
+          </blockquote>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer style="text-align:center; padding:3rem 1rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:4rem;">
+    <p>"AI" 硬核工程師 — Talk is cheap. Show me the code.</p>
+    <p style="font-size:0.9rem; margin-top:0.5rem;">文章來源參考：Wikipedia — List of artificial intelligence algorithms</p>
+  </footer>
+
+  <script src="./js/search.js"></script>
+  <script src="./js/theme.js"></script>
+</body>
+</html>
