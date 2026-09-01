@@ -41,6 +41,25 @@
       font-size: 1.21rem;
       margin-bottom: 2rem;
     }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
     .article-body {
       max-width: 60em;
       margin: 0 auto;
@@ -68,9 +87,9 @@
       padding: 1.25rem 1.5rem;
       margin: 1.5rem 0;
     }
-    .article-body .highlight-box.dark-box {
+    body.dark-mode .article-body .highlight-box {
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      border-left-color: #60a5fa;
+      border-left-color: var(--accent);
     }
     .article-body ul, .article-body ol {
       margin: 1rem 0;
@@ -118,6 +137,25 @@
       white-space: nowrap;
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI 人工智慧演算法列表 — 從搜尋到深度學習的完整地圖",
+  "description": "整理自維基百科的 AI 演算法列表，涵蓋搜尋優化、機器學習、神經網路、強化學習、電腦視覺與遊戲 AI 等 11 大類別，超過 50 種演算法輕鬆認識。",
+  "url": "https://ai-hardcore-engineer.com/ai-algorithms.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": ""AI" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/ai-algorithms.html"
+  }
+}
+  </script>
 </head>
 <body>
   <!-- =============== Header =============== -->
@@ -167,6 +205,15 @@
             <span>·</span>
             <span>來源：Wikipedia — List of artificial intelligence algorithms</span>
           </div>
+          <div class="article-tags">
+            <span class="tag">AI</span>
+            <span class="tag">人工智慧</span>
+            <span class="tag">演算法</span>
+            <span class="tag">機器學習</span>
+            <span class="tag">深度學習</span>
+            <span class="tag">教學</span>
+          </div>
+          <img loading="lazy" src="images/picsum-ai-algo-1200-400.jpg" alt="AI 人工智慧演算法列表">
         </div>
       </section>
 
