@@ -1,5 +1,19 @@
 [
   {
+    "title": "Prompt Engineering 提示工程入門 — 學會「下指令」讓 AI 變得更好用",
+    "excerpt": "提示工程是什麼？怎麼下指令讓 ChatGPT / Claude 更好用？分享零樣本、少樣本、Chain-of-Thought 思維鏈技巧，以及實戰 prompt 模板。",
+    "url": "prompt-engineering-guide.html",
+    "tags": [
+      "Prompt Engineering",
+      "提示工程",
+      "AI",
+      "LLM",
+      "ChatGPT",
+      "Claude",
+      "教學"
+    ]
+  },
+  {
     "title": "Python 高效開發利器 uv 全指南：取代 pip/pipenv/poetry/pyenv 的極速解決方案",
     "excerpt": "uv 完整教學：安裝、專案管理、pyproject.toml、虛擬環境、Python 版本管理、uvx 工具執行、行內腳本、Workspaces 工作區、發布包裝與從 pip/pipenv/poetry 遷移。10-100x 速度提升的全面指南。",
     "url": "uv-guide.html",

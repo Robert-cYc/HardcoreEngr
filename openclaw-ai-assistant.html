@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用 — "AI" 硬核工程師</title>
+  <title>OpenClaw 2.0 開源 AI 助手完全攻略：安裝、指令、桌面應用與進階操作 — "AI" 硬核工程師</title>
   <link rel="icon" href="data:,🎯">
-  <meta name="description" content="OpenClaw 是一個開源的自架 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm），完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）。">
+  <meta name="description" content="OpenClaw 2.0 已發表！這是開源自架 AI 助手的大改版，新增桌面應用、瀏覽器控制面板、團隊 Gateway、29+ 頻道、Skills/Plugins。本文詳細介紹 2.0 架構、安裝（桌面 App / curl / npm）、CLI 命令、操作步驟與進階技巧。">
   <meta name="canonical" href="https://ai-hardcore-engineer.com/openclaw-ai-assistant.html">
-  <meta property="og:title" content="OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用 — "AI" 硬核工程師">
-  <meta property="og:description" content="OpenClaw 是一個開源的自架 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm），完整 CLI 命令速查，以及多頻道整管整合（Telegram、Discord、WhatsApp）。">
+  <meta property="og:title" content="OpenClaw 2.0 開源 AI 助手完全攻略：安裝、指令、桌面應用與進階操作 — "AI" 硬核工程師">
+  <meta property="og:description" content="OpenClaw 是一個開源的自架 AI 助手平台。OpenClaw 2.0 已發表！新增桌面應用、瀏覽器控制面板、團隊 Gateway、29+ 頻道、Skills/Plugins。本文詳細介紹 2.0 架構、安裝、CLI 命令與進階操作。">
   <meta property="og:url" content="https://ai-hardcore-engineer.com/openclaw-ai-assistant.html">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
   <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用 — "AI" 硬核工程師">
+  <meta name="twitter:title" content="OpenClaw 2.0 開源 AI 助手完全攻略：安裝、指令、桌面應用與進階操作 — "AI" 硬核工程師">
   <meta name="twitter:description" content="OpenClaw 是一個開源的自架 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm），完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）。">
   <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
   <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -146,7 +146,7 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用 — \"AI\" 硬核工程師",
+  "headline": "OpenClaw 2.0 開源 AI 助手完全攻略：安裝、指令、桌面應用與進階操作 — \"AI\" 硬核工程師",
   "description": "OpenClaw 是一個開源、自架的 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm）、完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）與進階技巧。",
   "url": "https://ai-hardcore-engineer.com/openclaw-ai-assistant.html",
   "publisher": {
@@ -197,7 +197,7 @@
   <!-- =============== Hero =============== -->
   <section class="article-hero">
     <div class="container">
-      <h1>OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用</h1>
+      <h1>OpenClaw 2.0 開源 AI 助手完全攻略：安裝、指令、桌面應用與進階操作</h1>
       <div class="article-meta">
         <span>2026-08-22</span>
         <span class="separator">·</span>
@@ -212,13 +212,32 @@
     <div class="container">
       <article class="article-body">
         <blockquote>
-          🎯 <strong>重點摘要：</strong> <strong>OpenClaw</strong> 是一個開源、自架的 AI 助手平台，將你的對話頻道（Telegram、Discord、WhatsApp）與 AI 模型無縫串接：<br>
-          &nbsp;&nbsp;① 理解 OpenClaw 的架構（Gateway、Channels、Nodes、Control UI）<br>
-          &nbsp;&nbsp;② 安裝 OpenClaw（curl 安裝腳本 / npm / pnpm / 源碼建構）<br>
-          &nbsp;&nbsp;③ 掌握完整 CLI 命令 (onboard、gateway、dashboard、daemon、channels 等)<br>
-          &nbsp;&nbsp;④ 進階技巧 (多頻道整合、Docker 部署、模型管理、安全配對)<br>
-          &nbsp;&nbsp;⑤ 常見問題解決 (診斷、錯誤排查、更新)<br><br>
-          30 分鐘從零開始，把自己的 AI 助手架設在本地或 VPS，完全掌控你的資料與隱私！
+          🎯 <strong>重點摘要：</strong> <strong>OpenClaw 2.0</strong> 已正式發表！這是從「簡化設定 + 一流瀏覽器體驗」出發的大改版，新增桌面應用（Companion Nodes）、團隊 Gateway、29+ 頻道支援、Skills / Plugins 擴充與完整系統存取（網頁、檔案、終端機、表單）：<br>
+          &nbsp;&nbsp;① 了解 OpenClaw 2.0 的新架構（Gateway、Channels、Companion Nodes、Skills、Plugins）<br>
+          &nbsp;&nbsp;② 安裝 2.0（桌面 App / curl / npm / pnpm / Bun）與首次 onboarding 操作<br>
+          &nbsp;&nbsp;③ 掌握完整 CLI 命令與瀏覽器控制面板（dashboard）操作<br>
+          &nbsp;&nbsp;④ 進階技巧：多頻道整合、團隊 Gateway、Skills 設定、Plugins 擴充、安全配對與沙箱審查<br>
+          &nbsp;&nbsp;⑤ 常見問題解決 (診斷、錯誤排查、更新到 2.0)<br><br>
+          30 分鐘從零開始，把自己的 AI 助手架設在本地或 VPS，完全掌控資料與隱私。2.0 讓操作更直覺、更像「你的個人 AI 同事」！
+        </blockquote>
+
+        <h2>OpenClaw 2.0 新登場 — 有什麼不一樣？</h2>
+        <p>嘿，朋友！如果你之前看過 OpenClaw 的介紹，這次 2.0 真的值得你重新認識一下。官方說這次是從「<strong>讓設定更簡單 + 給你一流的瀏覽器體驗</strong>」為出發點的大改版，結果就長成現在這個樣子了。簡單來說，2.0 讓 OpenClaw 從「好用的 AI 助手」進化成「<em>在你裝置上跑的個人 AI 代理</em>」。</p>
+
+        <h3>2.0 的五大亮點</h3>
+        <ul>
+          <li><strong>桌面應用 + 瀏覽器體驗（Companion Nodes / Desktop Apps）：</strong>現在有原生桌面版，支援語音、Canvas 畫布、相機、螢幕擷取、裝置本地動作。不再只是 CLI，操作起來更像一個真正的「同事」。</li>
+          <li><strong>29+ 聊天頻道支援：</strong>除了原本的 Telegram、Discord、WhatsApp、Slack、Signal、iMessage，現在還多了 Google Chat、Matrix、Microsoft Teams、Zalo、Facebook Messenger 等，基本上你平常用的聊天軟體都能串。</li>
+          <li><strong>團隊 Gateway（Team Gateways）：</strong>同一個 Gateway 不只服務一台筆電，還能當成團隊共享部署的控制平面。設定檔是唯一差別，擴展起來超方便。</li>
+          <li><strong>Skills + Plugins 擴充：</strong>Skills 是內建功能模組（像小工具箱），Plugins 則是透過 Plugin SDK 開發、可在 ClawHub 共享的新功能。想加什麼能力，通常寫成 Plugin 就對了。</li>
+          <li><strong>完整系統存取 + 持久記憶：</strong>2.0 讓 AI 不只聊聊天，還能操作網頁（瀏覽、填表）、讀寫檔案、執行終端機指令、記住之前的對話內容。這讓它從「聊天機器人」變成「能幫你做事的代理」。</li>
+        </ul>
+
+        <blockquote>
+          💡 <strong>2.0 操作心法 — 三步驟搞定：</strong><br>
+          ① <strong>安裝</strong>：桌面 App 最快（下載即用），或用 <code>npm i -g openclaw</code> / <code>curl</code> 安裝腳本<br>
+          ② <strong>Onboarding</strong>：跑 <code>openclaw onboard --install-daemon</code>，選模型、設頻道、啟動 Gateway<br>
+          ③ <strong>日常操作</strong>：打開 <code>openclaw dashboard</code> 看控制面板，或直接在 Telegram / Discord 對話。想擴充功能就去設定 Skills 或安裝 Plugins。
         </blockquote>
 
         <h2>前言 — 什麼是 OpenClaw？</h2>
@@ -626,6 +645,42 @@ openclaw daemon restart   # 重新啟動</code></pre>
 <pre><code># 使用 profile 隔離狀態
 openclaw onboard --profile dev
 openclaw dashboard --profile dev</code></pre>
+
+        <h3>OpenClaw 2.0 桌面應用與瀏覽器操作</h3>
+        <p>2.0 最大的改變是「你不再只能靠 CLI 操作了」。現在有原生桌面應用（Companion Nodes / Desktop Apps），打開後你會看到一個更直覺的控制介面：</p>
+        <ul>
+          <li><strong>語音輸入：</strong>直接對著電腦說話，AI 會即時回應，就像跟同事聊天一樣自然。</li>
+          <li><strong>Canvas 畫布：</strong>可以在畫布上畫草圖、標註，AI 會理解你的視覺內容並協助修改。</li>
+          <li><strong>螢幕擷取 + 相機：</strong>讓 AI 直接「看到」你的螢幕或透過相機看實體物品，然後幫你分析或操作。</li>
+          <li><strong>瀏覽器控制面板（Dashboard）：</strong>打開 <code>openclaw dashboard</code> 後，你可以在瀏覽器中直接查看 Gateway 狀態、管理 Channels、檢視對話記錄、調整模型設定。不用記一堆 CLI 指令，點選就搞定。</li>
+        </ul>
+        <p>操作步驟很簡單：安裝完後跑 <code>openclaw onboard --install-daemon</code> → 啟動 Gateway → 打開桌面 App 或瀏覽器面板 → 開始對話。如果你想在團隊中共享同一個 Gateway，只要確保所有成員的設定檔指向同一個控制平面即可（Team Gateway）。</p>
+
+        <h3>Skills 與 Plugins 如何操作</h3>
+        <p>2.0 把擴充功能分成兩種，操作上也不一樣：</p>
+        <ul>
+          <li><strong>Skills（內建功能模組）：</strong>在 onboarding 時選擇安裝，或事後用 <code>openclaw configure</code> 調整。像小工具箱，直接整合進 Gateway，不用額外開發。</li>
+          <li><strong>Plugins（透過 Plugin SDK 開發）：</strong>想加新功能時，寫一個 Plugin，然後透過 ClawHub 分享或本地安裝。這讓 2.0 的擴充性比以前更強，基本上只要你想得到的功能，都可以自己寫一個 Plugin 加進去。</li>
+        </ul>
+        <pre><code># 查看已安裝的 Skills
+openclaw configure --skills
+
+# 安裝新 Plugin（本地或從 ClawHub）
+openclaw plugins install &lt;plugin-name&gt;
+
+# 列出所有 Plugins
+openclaw plugins list</code></pre>
+
+        <h3>安全配對與沙箱審查（2.0 更嚴謹）</h3>
+        <p>2.0 對安全更重視。所有來自未知發送者的訊息，都必須經過配對核准（pairing approval）才會被處理。這不是多餘的步驟，而是防止來路不明的請求直接操作你的系統。另外，2.0 也引入了沙箱審查機制，讓你可以檢視每個 Plugin 或 Skill 在執行時會存取哪些系統資源，確保沒有隱私外洩的風險。</p>
+        <pre><code># 查看配對請求
+openclaw pairing list
+
+# 核准配對
+openclaw pairing approve telegram &lt;配對碼&gt;
+
+# 檢視 Plugin 的沙箱權限
+openclaw plugins inspect &lt;plugin-name&gt;</code></pre>
 
         <h2>實用技巧</h2>
         <ul>
