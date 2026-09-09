@@ -1,81 +1,81 @@
 {
-  "updated": "2026-09-08 00:27",
+  "updated": "2026-09-09 00:18",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "AI 能否有意識？研究人員嘗試突破生物學與功能主義兩派框架",
-          "link": "https://technews.tw/2026/09/08/researcher-explores-what-consciousness-really-means/",
-          "date": "2026-09-08 00:20",
-          "summary": "隨著 AI 像人類一樣地流暢對話、推理與解決問題，對於 AI 是否也能像人類一樣地有意識、能思考的問題正從科幻 [&#8230;]"
+          "title": "因應原子級材料製造費時費工，AI 接手顯微鏡操作才可加速量子元件研發",
+          "link": "https://technews.tw/2026/09/09/ai-automates-the-creation-of-custom-materials/",
+          "date": "2026-09-09 00:10",
+          "summary": "美國能源部（DOE）橡樹嶺國家實驗室（ORNL）奈米相材料科學中心（CNMS）將顯微鏡探針操作權交給人工智慧， [&#8230;]"
         },
         {
-          "title": "資料中心耗水惹民怨，輝達帶頭採新型閉環冷卻方式",
-          "link": "https://technews.tw/2026/09/08/ai-data-centers-are-less-thirsty-now/",
-          "date": "2026-09-08 00:15",
-          "summary": "資料中心的龐大用水用電議題，正在美國面臨民眾強大不滿聲浪。但根據對資料中心投資成百上千億美元的科技業大公司說法 [&#8230;]"
+          "title": "AI 淪恐怖份子利器？美情報界與專家齊示警：生物安全防線已全面落後",
+          "link": "https://technews.tw/2026/09/09/ai-accomplice-terrorist-bioweapon-development/",
+          "date": "2026-09-08 23:40",
+          "summary": "最新報告與專家雙雙發出強烈警告：人工智慧（AI）正以前所未有的速度降低生物武器的研發門檻，讓原本需要極高專業與 [&#8230;]"
         },
         {
-          "title": "完美到令人發毛，AI 菜單觸發「恐怖谷效應」消費者反倒胃口",
-          "link": "https://technews.tw/2026/09/08/ai-generated-menus/",
-          "date": "2026-09-08 00:10",
-          "summary": "近來，越來越多餐廳為了節省成本，開始利用生成式 AI 製作菜單與行銷宣傳圖，沒想到卻弄巧成拙，意外引發顧客反感 [&#8230;]"
+          "title": "營造業缺工不只靠移工！工總喊話「AI 進工地」，機械施工、預鑄先上場",
+          "link": "https://finance.technews.tw/2026/09/09/construction-industry-labor-shortage-not-just-migrant-workers/",
+          "date": "2026-09-08 23:30",
+          "summary": "營造業長期面臨缺工問題，除了開放移工，AI（人工智慧）、自動化能否成為另一帖解方？全國工業總會（下稱工總）20 [&#8230;]"
         },
         {
-          "title": "AI 破解竹節蟲移動密碼，六足機器人斷腳也能穿梭崎嶇災區",
-          "link": "https://technews.tw/2026/09/08/six-legged-ai-robot/",
-          "date": "2026-09-07 23:40",
-          "summary": "日本東北大學與泰國 VISTEC 研究團隊開發出一套能以人工智慧（AI）剖析生物步態的全新技術，讓六足機器人順 [&#8230;]"
+          "title": "法國新創 Phagos 用 AI 煉「噬菌體」抗生素，2 個月完成傳統 10 年研發",
+          "link": "https://technews.tw/2026/09/09/phagos-uses-ai-to-develop-phage-antibiotic-in-just-two-months/",
+          "date": "2026-09-08 23:10",
+          "summary": "巴黎生物科技新創 Phagos 宣布，利用 Amazon SageMaker AI 開發的生成式 AI 模型， [&#8230;]"
         },
         {
-          "title": "強攻高功率元件！德微科技 8 月營收首破 3 億元、第三季提前達陣",
-          "link": "https://finance.technews.tw/2026/09/07/power/",
-          "date": "2026-09-07 09:51",
-          "summary": "德微科技今日公告 8 月自結合併營收達 3 億元，年增 31.51%，單月營收首度突破 3 億元大關，象徵其營 [&#8230;]"
+          "title": "AI 熱潮推升韓國電力需求，路透：需增建 20 座核反應爐",
+          "link": "https://technews.tw/2026/09/08/ai-boom-boosts-south-korea-power-demand-reuters-20-new-nuclear-reactors-needed/",
+          "date": "2026-09-08 10:00",
+          "summary": "韓國氣候能源環境部長金星煥指出，受晶片製造大廠三星電子和 SK 海力士擴大產能及新建人工智慧（AI）資料中心等 [&#8230;]"
         },
         {
-          "title": "解鎖 3D 堆疊挑戰 HBM 痛點！南亞科旗下補丁科 9/16 以 740 元登興櫃",
-          "link": "https://finance.technews.tw/2026/09/07/processor/",
-          "date": "2026-09-07 09:25",
-          "summary": "南亞科小金雞補丁科技預計 9 月 16 日以每股參考價 740 元登錄興櫃，董事長丁達剛表示，目前 NRE（委 [&#8230;]"
+          "title": "5 年學術計畫被 AI 模型 11 天搞定！Claude 完成《費馬最後定理》形式化證明",
+          "link": "https://technews.tw/2026/09/08/formalizing-fermat-last-theorem-claude-proof/",
+          "date": "2026-09-08 09:59",
+          "summary": "一個原預計 5 年完成的學術計畫，被一個團隊只花 11 天就解決，這就是 AI 模型 Claude 帶來的最新 [&#8230;]"
         },
         {
-          "title": "OpenAI 首席科學家警告：AI 進展超越安全防線，籲放慢發展腳步",
-          "link": "https://infosecu.technews.tw/2026/09/07/openai-chief-scientist-warns-ai-development-may-need-to-slow/",
-          "date": "2026-09-07 08:54",
-          "summary": "近來 OpenAI 的模型引發網路安全事件，從入侵 Hugging Face、再到新揭露的 DseWiki。在 [&#8230;]"
+          "title": "Arm 推手機版 DLSS，小米 18 Fold 搶先用",
+          "link": "https://technews.tw/2026/09/08/arm-dlss-xiaomi-18-fold/",
+          "date": "2026-09-08 09:22",
+          "summary": "Arm 準備把 PC 遊戲近年最重要的一波圖形技術帶進手機，而小米 18 Fold 在中國市場率先搭載自研 X [&#8230;]"
         },
         {
-          "title": "亞馬遜、Meta 成美國政府對手！AI 債務熱潮正推高美債殖利率",
-          "link": "https://finance.technews.tw/2026/09/07/uncle-sam/",
-          "date": "2026-09-07 08:42",
-          "summary": "亞馬遜、Meta 現在是美國政府的強勁對手，市場評論員表示，科技巨頭的 AI 債務熱潮正「推高」美國國債殖利率 [&#8230;]"
+          "title": "無懼歐美休假！國巨 8 月營收攀 163 億新高峰迎「結構性巨變」",
+          "link": "https://finance.technews.tw/2026/09/08/structural-upheaval/",
+          "date": "2026-09-08 09:09",
+          "summary": "被動元件大廠國巨今日公布 8 月合併營收 163.32 億元，月增 1.2%，年增 51.8%，再創單月歷史新 [&#8230;]"
         },
         {
-          "title": "從 AI 伺服器賺到 CoPoS 封裝！勤凱 8 月營收狂飆 91.5% 歷史新高",
-          "link": "https://finance.technews.tw/2026/09/07/new-machines/",
-          "date": "2026-09-07 08:11",
-          "summary": "勤凱今日公告 8 月營收 3.05 億元，月增 13.1%，年增 91.5%，再創歷史新高，連續第 11 個月 [&#8230;]"
+          "title": "AI 熱潮下韓國房價漲年輕人難負擔，總統李在明壓力增",
+          "link": "https://finance.technews.tw/2026/09/08/south-korea-housing-prices-surge-ai-boom-unaffordable-youth-mounting-pressure-president-lee-jae-myung/",
+          "date": "2026-09-08 08:30",
+          "summary": "韓國首爾房價持續飆漲，年輕人不滿情緒升高，也讓韓國總統李在明面臨更大政治壓力。 《金融時報》（Financia [&#8230;]"
         },
         {
-          "title": "2Q26 DRAM 產業營收季增 59.5%，供給擴張仍不及需求成長",
-          "link": "https://technews.tw/2026/09/07/dram-revenue-2q26-59-5-qoq-supply-lags-demand-growth/",
-          "date": "2026-09-07 07:10",
-          "summary": "TrendForce 最新記憶體產業研究，2026 年第二季由於一般型 DRAM（conventional D [&#8230;]"
+          "title": "Anker 推 MindBase 新 AI 智慧家庭中樞，支援 NAS 並協同 Matter 裝置",
+          "link": "https://technews.tw/2026/09/08/ankers-new-mindbase-home-hub-runs-ai-locally-doubles-as-nas/",
+          "date": "2026-09-08 08:06",
+          "summary": "Anker 早在 2016 年就已透過旗下 eufy 品牌跨入智慧家庭領域。9 月 3 日，該公司宣布推出 A [&#8230;]"
         },
         {
-          "title": "瑞銀開大型銀行先例，AI 技能成新進員工必備條件",
-          "link": "https://finance.technews.tw/2026/09/07/ubs-recruitment-ai-skills/",
-          "date": "2026-09-07 06:40",
-          "summary": "瑞士銀行（UBS）開出招募新條件，正式將「人工智慧（AI）能力」納入新進人才的評估標準。瑞銀要求，預計於 20 [&#8230;]"
+          "title": "法 AI 新星 Mistral 估值猛增  三星／ASML 皆有注資",
+          "link": "https://finance.technews.tw/2026/09/08/mistral-valuation-surges-with-samsung-and-asml-investments/",
+          "date": "2026-09-08 07:40",
+          "summary": "法國人工智慧新創 Mistral AI 完成新一輪募資，估值較一年前倍增至逾 240 億美元；三星電子（Sam [&#8230;]"
         },
         {
-          "title": "輝達重金砸向「發哥」狂飆！台股「高含發量」ETF 狠甩大盤",
-          "link": "https://finance.technews.tw/2026/09/07/high-fa-content/",
-          "date": "2026-09-07 06:40",
-          "summary": "輝達（NVIDIA）日前宣布投資聯發科 35 億美元海外可轉換公司債，消息激勵市場信心，聯發科股價連日走揚，今 [&#8230;]"
+          "title": "分析人士看中國 8 月外貿數字：第 3 季是高點，第 4 季恐放緩",
+          "link": "https://technews.tw/2026/09/08/analysts-china-august-trade-data-q3-peak-q4-slow/",
+          "date": "2026-09-08 07:30",
+          "summary": "中國今天公布 8 月份外貿數據，出口年增 25% 符合預期，進口年增 28.2% 則略低於預期。分析人士認為， [&#8230;]"
         }
       ]
     },
@@ -84,76 +84,76 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
-          "title": "SEMICON Taiwan 2026：台積電領銜矽光子論壇，CPO 預計下半年邁入量產",
-          "link": "https://technews.tw/2026/09/08/semicon-taiwan-2026-tsmc-silicon-photonics-forum-cpo-mass-production-h2/",
-          "date": "2026-09-07 23:00",
-          "summary": "半導體年度盛會「SEMICON Taiwan 2026」於 9 月 2～4 日在台北南港舉行，本屆以「Tran [&#8230;]"
+          "title": "日本出口只剩兩根支柱？混動車與 AI 撐起經濟成長",
+          "link": "https://finance.technews.tw/2026/09/09/japan-q2-growth-misses-forecasts-on-weaker-spending-investment/",
+          "date": "2026-09-09 00:00",
+          "summary": "日本政府公佈 2026 年第二季國內生產毛額（GDP），實質 GDP 季增 0.3%，換算年率成長 1.1%， [&#8230;]"
         },
         {
-          "title": "封測及測試介面廠 8 月營收創新高，AI 和 HPC 晶片助攻",
-          "link": "https://finance.technews.tw/2026/09/07/osat-test-interface-firms-record-august-revenue-ai-hpc-chips/",
-          "date": "2026-09-07 10:00",
-          "summary": "半導體封測廠及測試介面廠今天陸續公布 8 月營收，力成、京元電子、矽格、穎崴、漢民測試 8 月營收均創單月新高 [&#8230;]"
+          "title": "High NA EUV》台積電聯手 ASML 開發 12 吋光罩，解決 High NA EUV 曝光減半瓶頸",
+          "link": "https://technews.tw/2026/09/09/tsmc-and-asml-collaborate-to-develop-12-inch-photomasks/",
+          "date": "2026-09-08 22:00",
+          "summary": "半導體業界迎接重大技術變革！為了讓最新一代微影設備能夠順利印製出人工智慧（AI）產業中面積最大的晶片，微影設備 [&#8230;]"
         },
         {
-          "title": "強攻高功率元件！德微科技 8 月營收首破 3 億元、第三季提前達陣",
-          "link": "https://finance.technews.tw/2026/09/07/power/",
-          "date": "2026-09-07 09:51",
-          "summary": "德微科技今日公告 8 月自結合併營收達 3 億元，年增 31.51%，單月營收首度突破 3 億元大關，象徵其營 [&#8230;]"
+          "title": "High NA EUV》台積電 2030 年起導入 High-NA EUV 技術，A10 製程預期成首發受矚目",
+          "link": "https://technews.tw/2026/09/09/tsmc-will-begin-implementing-high-na-euv-technology-starting-in-2030/",
+          "date": "2026-09-08 22:00",
+          "summary": "雖然這幾年來，晶圓代工龍頭台積電一直極力避免公開評論其採用高數值孔徑極紫外光（High-NA EUV）顯影技術 [&#8230;]"
         },
         {
-          "title": "解鎖 3D 堆疊挑戰 HBM 痛點！南亞科旗下補丁科 9/16 以 740 元登興櫃",
-          "link": "https://finance.technews.tw/2026/09/07/processor/",
-          "date": "2026-09-07 09:25",
-          "summary": "南亞科小金雞補丁科技預計 9 月 16 日以每股參考價 740 元登錄興櫃，董事長丁達剛表示，目前 NRE（委 [&#8230;]"
+          "title": "High NA EUV》台積電攜手 ASML 推進 High-NA EUV，台灣供應鏈完成卡位將進而受惠",
+          "link": "https://technews.tw/2026/09/09/tsmc-and-asml-advance-high-na-euv/",
+          "date": "2026-09-08 22:00",
+          "summary": "隨著全球半導體先進製程持續微縮，高數值孔徑極紫外光（High-NA EUV）微影技術的導入時程已成為產業關鍵風 [&#8230;]"
         },
         {
-          "title": "工研院第 15 屆新任院士授證，秦永沛、邱順建、陳威明任新科院士",
-          "link": "https://technews.tw/2026/09/07/conferment-of-certificates-to-the-15th-batch-of-newly-elected-academicians-of-the-industrial-technology-research-institute-itri/",
-          "date": "2026-09-07 08:45",
-          "summary": "工研院舉辦「第15屆工研院院士授證典禮」，總統賴清德親臨工研院，為三位新科院士授證，分別為台積公司執行副總經理 [&#8230;]"
+          "title": "任正非與朱一鳴翻臉！華為因竊取長鑫存儲數據被逮，未來將難拿到折扣價記憶體",
+          "link": "https://finance.technews.tw/2026/09/08/huawei-and-changxin-memory-have-fallen-out/",
+          "date": "2026-09-08 12:45",
+          "summary": "中國半導體業界近期傳出重大商業糾紛，據市場消息指出，中國科技大廠華為與記憶體龍頭長鑫存儲因「數據竊取」疑雲而關 [&#8230;]"
         },
         {
-          "title": "亞馬遜、Meta 成美國政府對手！AI 債務熱潮正推高美債殖利率",
-          "link": "https://finance.technews.tw/2026/09/07/uncle-sam/",
-          "date": "2026-09-07 08:42",
-          "summary": "亞馬遜、Meta 現在是美國政府的強勁對手，市場評論員表示，科技巨頭的 AI 債務熱潮正「推高」美國國債殖利率 [&#8230;]"
+          "title": "ASML 第二座大型工業園區動土因應擴產需求，預計 2029 年落成啟用",
+          "link": "https://technews.tw/2026/09/08/asml-breaks-ground-on-its-second-large-scale-industrial-park-to-meet-expansion-needs/",
+          "date": "2026-09-08 12:15",
+          "summary": "全球半導體曝光機大廠艾司摩爾（ASML）於 2026 年 9 月 8 日，在荷蘭埃因霍溫的「北智慧港工業園區（ [&#8230;]"
         },
         {
-          "title": "從 AI 伺服器賺到 CoPoS 封裝！勤凱 8 月營收狂飆 91.5% 歷史新高",
-          "link": "https://finance.technews.tw/2026/09/07/new-machines/",
-          "date": "2026-09-07 08:11",
-          "summary": "勤凱今日公告 8 月營收 3.05 億元，月增 13.1%，年增 91.5%，再創歷史新高，連續第 11 個月 [&#8230;]"
+          "title": "客戶現階段即可運用 High NA EUV，英特爾和 ASML 已製造超過一百萬片晶圓",
+          "link": "https://finance.technews.tw/2026/09/08/intel-and-asml-have-manufactured-more-than-one-million-wafers/",
+          "date": "2026-09-08 12:00",
+          "summary": "英特爾晶圓代工（Intel Foundry）和ASML迄今已製造超過一百萬片晶圓，協助客戶現階段即可運用Hig [&#8230;]"
         },
         {
-          "title": "OPEC+ 10 月踩增產煞車，油價仍站 90 美元、半導體材料成本受關注",
-          "link": "https://technews.tw/2026/09/07/opec-plus-october-output-curb-oil-prices-90-semiconductor-material-costs-concern/",
-          "date": "2026-09-07 08:03",
-          "summary": "OPEC+ 最新產量政策出爐。沙烏地阿拉伯、俄羅斯、伊拉克、科威特、哈薩克、阿爾及利亞及阿曼等 7 國於 6 [&#8230;]"
+          "title": "長鑫科技：下半年 DRAM 供給緊缺將延續",
+          "link": "https://technews.tw/2026/09/08/cxmt-dram-lack-26h2/",
+          "date": "2026-09-08 09:40",
+          "summary": "全球第四大的中國 DRAM 大廠長鑫科技公司（長鑫存儲）高級副總裁、財務負責人黃丹陽 7 日在業績說明會表示， [&#8230;]"
         },
         {
-          "title": "2Q26 DRAM 產業營收季增 59.5%，供給擴張仍不及需求成長",
-          "link": "https://technews.tw/2026/09/07/dram-revenue-2q26-59-5-qoq-supply-lags-demand-growth/",
-          "date": "2026-09-07 07:10",
-          "summary": "TrendForce 最新記憶體產業研究，2026 年第二季由於一般型 DRAM（conventional D [&#8230;]"
+          "title": "零組件供需緊繃至 2028 年！MIC：僅 NAND 明年底緩解，消費型產品恐遭排擠",
+          "link": "https://technews.tw/2026/09/08/mic-see-2026-h2-shortage/",
+          "date": "2026-09-08 08:57",
+          "summary": "資策會產業情報研究所（MIC）今（8 日）發布資通訊產業趨勢預測，2026 年全球前十大市值業者已由 AI 算 [&#8230;]"
         },
         {
-          "title": "預估 AMD 資料中心營收比重 2027 年將突破 70%，關鍵在 Helios 平台產能狀況",
-          "link": "https://finance.technews.tw/2026/09/07/amds-data-center-revenue-is-projected-to-exceed-70-by-2027/",
-          "date": "2026-09-07 06:45",
-          "summary": "外媒表示，晶片大廠超微（AMD）的資料中心業務將在 2027 年，於新一代 Helios 平台機櫃系統完成全面 [&#8230;]"
+          "title": "WSJ：長鑫存儲聚焦智慧手機，DRAM 市占率衝上 10%",
+          "link": "https://technews.tw/2026/09/08/cxmt-market-share-climbs/",
+          "date": "2026-09-08 08:38",
+          "summary": "中國記憶體大廠長鑫存儲近日強調，公司加快在高階記憶體市場進展，目前 DRAM 產品需求強勁，也將持續投資下一世 [&#8230;]"
         },
         {
-          "title": "輝達重金砸向「發哥」狂飆！台股「高含發量」ETF 狠甩大盤",
-          "link": "https://finance.technews.tw/2026/09/07/high-fa-content/",
-          "date": "2026-09-07 06:40",
-          "summary": "輝達（NVIDIA）日前宣布投資聯發科 35 億美元海外可轉換公司債，消息激勵市場信心，聯發科股價連日走揚，今 [&#8230;]"
+          "title": "記憶體成本飆升、消費疲軟，印度三星裁近百名主管",
+          "link": "https://technews.tw/2026/09/08/samsung-india-cuts-100-executives-over-memory-cost-surge-weak-demand/",
+          "date": "2026-09-08 08:20",
+          "summary": "由於記憶體成本拉高、消費者需求疲軟、利潤受到擠壓等因素，印度三星分批裁撤電視和家電器部門的員工，並要求 80 [&#8230;]"
         },
         {
-          "title": "瑞銀拆解 Vera Rubin 平台成本，記憶體佔比達 62%，SOCAMM2 模組躍升關鍵",
-          "link": "https://finance.technews.tw/2026/09/07/ubs-disassembles-the-vera-rubin-platform-cost/",
-          "date": "2026-09-07 06:15",
-          "summary": "輝達（NVIDIA）開始出貨新人工智慧（AI）晶片Vera Rubin，市場對成本結構的關注也升溫。外資瑞銀（ [&#8230;]"
+          "title": "三星 4 奈米再添 AI ASIC，SEMIFIVE 啟動量產",
+          "link": "https://technews.tw/2026/09/08/samsung-4nm-ai-asic-semifive-mass-production/",
+          "date": "2026-09-08 08:07",
+          "summary": "韓國 ASIC 設計平台業者 SEMIFIVE 今（8）日宣布，已開始為韓國 AI 晶片新創 HyperAcc [&#8230;]"
         }
       ]
     },
@@ -162,76 +162,76 @@
       "site": "https://technews.tw/category/component/",
       "items": [
         {
-          "title": "偉創力砸 44 億美元收購 EPC Power，下一步攻 SST",
-          "link": "https://technews.tw/2026/09/07/flex-acquires-epc-power-4-4-billion-targets-sst/",
-          "date": "2026-09-07 10:20",
-          "summary": "偉創力（Flex）宣布以 44 億美元收購電力轉換解決方案業者 EPC Power，進一步擴大 AI 資料中心 [&#8230;]"
+          "title": "因應原子級材料製造費時費工，AI 接手顯微鏡操作才可加速量子元件研發",
+          "link": "https://technews.tw/2026/09/09/ai-automates-the-creation-of-custom-materials/",
+          "date": "2026-09-09 00:10",
+          "summary": "美國能源部（DOE）橡樹嶺國家實驗室（ORNL）奈米相材料科學中心（CNMS）將顯微鏡探針操作權交給人工智慧， [&#8230;]"
         },
         {
-          "title": "電視面板備貨升溫，十月稼動率調控供需平衡",
-          "link": "https://technews.tw/2026/09/07/panel-prices-in-2026-september-h1/",
-          "date": "2026-09-07 10:19",
-          "summary": "進入 9 月，市場研究機構 TrendForce 分析，電視面板受惠年底旺季備貨，第三季採購量預估季增 15% [&#8230;]"
+          "title": "High NA EUV》台積電聯手 ASML 開發 12 吋光罩，解決 High NA EUV 曝光減半瓶頸",
+          "link": "https://technews.tw/2026/09/09/tsmc-and-asml-collaborate-to-develop-12-inch-photomasks/",
+          "date": "2026-09-08 22:00",
+          "summary": "半導體業界迎接重大技術變革！為了讓最新一代微影設備能夠順利印製出人工智慧（AI）產業中面積最大的晶片，微影設備 [&#8230;]"
         },
         {
-          "title": "封測及測試介面廠 8 月營收創新高，AI 和 HPC 晶片助攻",
-          "link": "https://finance.technews.tw/2026/09/07/osat-test-interface-firms-record-august-revenue-ai-hpc-chips/",
-          "date": "2026-09-07 10:00",
-          "summary": "半導體封測廠及測試介面廠今天陸續公布 8 月營收，力成、京元電子、矽格、穎崴、漢民測試 8 月營收均創單月新高 [&#8230;]"
+          "title": "High NA EUV》台積電 2030 年起導入 High-NA EUV 技術，A10 製程預期成首發受矚目",
+          "link": "https://technews.tw/2026/09/09/tsmc-will-begin-implementing-high-na-euv-technology-starting-in-2030/",
+          "date": "2026-09-08 22:00",
+          "summary": "雖然這幾年來，晶圓代工龍頭台積電一直極力避免公開評論其採用高數值孔徑極紫外光（High-NA EUV）顯影技術 [&#8230;]"
         },
         {
-          "title": "強攻高功率元件！德微科技 8 月營收首破 3 億元、第三季提前達陣",
-          "link": "https://finance.technews.tw/2026/09/07/power/",
-          "date": "2026-09-07 09:51",
-          "summary": "德微科技今日公告 8 月自結合併營收達 3 億元，年增 31.51%，單月營收首度突破 3 億元大關，象徵其營 [&#8230;]"
+          "title": "High NA EUV》台積電攜手 ASML 推進 High-NA EUV，台灣供應鏈完成卡位將進而受惠",
+          "link": "https://technews.tw/2026/09/09/tsmc-and-asml-advance-high-na-euv/",
+          "date": "2026-09-08 22:00",
+          "summary": "隨著全球半導體先進製程持續微縮，高數值孔徑極紫外光（High-NA EUV）微影技術的導入時程已成為產業關鍵風 [&#8230;]"
         },
         {
-          "title": "解鎖 3D 堆疊挑戰 HBM 痛點！南亞科旗下補丁科 9/16 以 740 元登興櫃",
-          "link": "https://finance.technews.tw/2026/09/07/processor/",
-          "date": "2026-09-07 09:25",
-          "summary": "南亞科小金雞補丁科技預計 9 月 16 日以每股參考價 740 元登錄興櫃，董事長丁達剛表示，目前 NRE（委 [&#8230;]"
+          "title": "ASML 第二座大型工業園區動土因應擴產需求，預計 2029 年落成啟用",
+          "link": "https://technews.tw/2026/09/08/asml-breaks-ground-on-its-second-large-scale-industrial-park-to-meet-expansion-needs/",
+          "date": "2026-09-08 12:15",
+          "summary": "全球半導體曝光機大廠艾司摩爾（ASML）於 2026 年 9 月 8 日，在荷蘭埃因霍溫的「北智慧港工業園區（ [&#8230;]"
         },
         {
-          "title": "從 AI 伺服器賺到 CoPoS 封裝！勤凱 8 月營收狂飆 91.5% 歷史新高",
-          "link": "https://finance.technews.tw/2026/09/07/new-machines/",
-          "date": "2026-09-07 08:11",
-          "summary": "勤凱今日公告 8 月營收 3.05 億元，月增 13.1%，年增 91.5%，再創歷史新高，連續第 11 個月 [&#8230;]"
+          "title": "客戶現階段即可運用 High NA EUV，英特爾和 ASML 已製造超過一百萬片晶圓",
+          "link": "https://finance.technews.tw/2026/09/08/intel-and-asml-have-manufactured-more-than-one-million-wafers/",
+          "date": "2026-09-08 12:00",
+          "summary": "英特爾晶圓代工（Intel Foundry）和ASML迄今已製造超過一百萬片晶圓，協助客戶現階段即可運用Hig [&#8230;]"
         },
         {
-          "title": "通吃美台無人機大單！系統電 8 月營收年增 27.55% 續創新高",
-          "link": "https://finance.technews.tw/2026/09/07/anduril-industries/",
-          "date": "2026-09-07 07:19",
-          "summary": "系統電今日公布 8 月合併營收 3.28 億元，月增 2.68%，年增 27.55%，連續兩個月改寫單月歷史新 [&#8230;]"
+          "title": "安葆 8 月營收 6.79 億元、年增 67.7%，進入傳統旺季",
+          "link": "https://finance.technews.tw/2026/09/08/ample-august-revenue-679m-up-67-7-h2-peak-season/",
+          "date": "2026-09-08 09:35",
+          "summary": "半導體與 AI 資料中心電力基建需求持續升溫，系統整合廠安葆 8 月營收達 6.79 億元，較去年同期 4.0 [&#8230;]"
         },
         {
-          "title": "台達電 HVDC 第四季出貨，法人：2027 Power Rack 營收占比上看 10%",
-          "link": "https://finance.technews.tw/2026/09/07/delta-electronics-hvdc-q4-shipments-institutional-investors-estimate-power-rack-revenue-share-2027-10-percent/",
-          "date": "2026-09-07 06:29",
-          "summary": "HVDC 將進入出貨階段。法人最新報告指出，台達電 HVDC 進度仍符合預期，將在第三季進入量產、第四季將有小 [&#8230;]"
+          "title": "無懼歐美休假！國巨 8 月營收攀 163 億新高峰迎「結構性巨變」",
+          "link": "https://finance.technews.tw/2026/09/08/structural-upheaval/",
+          "date": "2026-09-08 09:09",
+          "summary": "被動元件大廠國巨今日公布 8 月合併營收 163.32 億元，月增 1.2%，年增 51.8%，再創單月歷史新 [&#8230;]"
         },
         {
-          "title": "SKC 加碼押注玻璃基板！砸 2,810 億韓圜增資 Absolics、拚商業化量產",
-          "link": "https://technews.tw/2026/09/07/skc-has-invested-281-0-billion-won-at-absolics/",
-          "date": "2026-09-07 05:17",
-          "summary": "SKC 宣布向旗下美國子公司 Absolics 增資 2,810 億韓圜（約 2.08 億美元）。Absoli [&#8230;]"
+          "title": "零組件供需緊繃至 2028 年！MIC：僅 NAND 明年底緩解，消費型產品恐遭排擠",
+          "link": "https://technews.tw/2026/09/08/mic-see-2026-h2-shortage/",
+          "date": "2026-09-08 08:57",
+          "summary": "資策會產業情報研究所（MIC）今（8 日）發布資通訊產業趨勢預測，2026 年全球前十大市值業者已由 AI 算 [&#8230;]"
         },
         {
-          "title": "瑞銀喊賣重擊！大立光跌停「失守七千元大關」，光學族群同步承壓",
-          "link": "https://technews.tw/2026/09/07/largan-2026-august-revenue/",
-          "date": "2026-09-07 03:56",
-          "summary": "光學鏡頭大廠大立光今（7 日）早盤賣壓沉重、一路走跌，接近午盤時跌停至 6,660 元。該公司近期公布 8 月 [&#8230;]"
+          "title": "記憶體進補揮別連季虧損！巨虹 8 月營收年增 145% 創 20 個月新高",
+          "link": "https://finance.technews.tw/2026/09/08/consecutive-quarters-of-losses/",
+          "date": "2026-09-08 07:02",
+          "summary": "巨虹今日公告 8 月營收 8,778 萬元，月增 35.2%，年增 145.1%，創近 20 月新高，主要是受 [&#8230;]"
         },
         {
-          "title": "不只 Bloom Energy？這家燃料電池業者也吃到 AI 缺電大商機",
-          "link": "https://technews.tw/2026/09/07/beyond-bloom-energy-fuel-cell-company-capitalizes-ai-power-crunch-opportunity/",
-          "date": "2026-09-07 02:51",
-          "summary": "燃料電池需求升溫，除了 Bloom Energy 積極搶攻資料中心供電市場，另一家燃料電池業者 FuelCel [&#8230;]"
+          "title": "蔚華獨家玻璃基板量產檢測設備技術，獲美半導體大廠認證迎接市場爆發商機",
+          "link": "https://technews.tw/2026/09/08/spiroxs-exclusive-glass-substrate-mass-production-testing-equipment-technology/",
+          "date": "2026-09-08 06:50",
+          "summary": "隨 AI 算力高速提升，傳統封裝技術面臨「解熱」與「基板翹曲」雙重瓶頸，玻璃基板（Glass Substrat [&#8230;]"
         },
         {
-          "title": "台光電未來兩年 CCL 供不應求！花旗力挺目標價直指 6,000 元",
-          "link": "https://finance.technews.tw/2026/09/07/ccl-supply-falls-short-of-demand/",
-          "date": "2026-09-07 02:12",
-          "summary": "由於印刷電路板 (PCB) 客戶的擴產幅度高於銅箔基板 (CCL) 供應商，台光電認為 CCL 的供需失衡狀況 [&#8230;]"
+          "title": "半導體撐場韓今年出口拚 1 兆美元  傳產卻兩樣情",
+          "link": "https://technews.tw/2026/09/08/south-korea-exports-1-trillion-semiconductors-boost-traditional-industries-mixed-fortunes/",
+          "date": "2026-09-08 06:40",
+          "summary": "韓國今年出口額有望首度突破 1 兆美元，躋身全球第四個達標的經濟體，但亮眼成績背後，幾乎是半導體「一枝獨秀」。 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,12 @@
       "name": "CCC 追新聞",
       "site": "https://ccc.technews.tw/",
       "items": [
+        {
+          "title": "輕巧好攜帶，mooInk Chill 彩色閱讀器上手體驗",
+          "link": "https://ccc.technews.tw/2026/09/08/readmoo-mooink-chill-review/",
+          "date": "2026-09-08 08:44",
+          "summary": "手機型 mooInk Chill 電子書閱讀器有著輕薄易攜的特色，使用者介面重新設計符合讀者手持看書需求，成為 [&#8230;]"
+        },
         {
           "title": "美國關稅退款爭議延燒遊戲圈，Sony、微軟與任天堂遭控「兩頭賺」",
           "link": "https://ccc.technews.tw/2026/09/07/sony-microsoft-nintendo-reject-player-savings/",
@@ -304,12 +310,6 @@
           "link": "https://ccc.technews.tw/2026/09/01/how-long-can-you-expect-your-original-nintendo-switch-to-last/",
           "date": "2026-09-01 03:10",
           "summary": "任天堂原版 Switch 雖然有逐步退場趨勢，但對玩家短期仍不必擔心。任天堂 Switch 支援頁面顯示，玩家 [&#8230;]"
-        },
-        {
-          "title": "XBOX 執行長再揭露 Project Helix：不是單主機而是「裝置家族」",
-          "link": "https://ccc.technews.tw/2026/08/31/xbox-project-helix-is-a-family-of-devices-ceo-reveals/",
-          "date": "2026-08-31 03:10",
-          "summary": "XBOX 執行長阿莎·夏馬（Asha Sharma）近日接受 BBC 訪問時透露，代號 Project Hel [&#8230;]"
         }
       ]
     }
