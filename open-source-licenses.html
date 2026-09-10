@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>開源授權條款完全指南：寬鬆型 vs 強傳染型（著佐權）— "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="開源授權條款大解析：寬鬆型（MIT、Apache-2.0、BSD）與強傳染型著佐權（GPL、AGPL、SSPL）的差異、選擇策略與商業應用注意事項。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/open-source-licenses.html">
+  <meta property="og:title" content="開源授權條款完全指南：寬鬆型 vs 強傳染型（著佐權）— \"AI\" 硬核工程師">
+  <meta property="og:description" content="開源授權條款大解析：寬鬆型（MIT、Apache-2.0、BSD）與強傳染型著佐權（GPL、AGPL、SSPL）的差異、選擇策略與商業應用注意事項。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/open-source-licenses.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="開源授權條款完全指南：寬鬆型 vs 強傳染型（著佐權）— \"AI\" 硬核工程師">
+  <meta name="twitter:description" content="開源授權條款大解析：寬鬆型（MIT、Apache-2.0、BSD）與強傳染型著佐權（GPL、AGPL、SSPL）的差異、選擇策略與商業應用注意事項。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.21rem; }
+    .article-body th, .article-body td { padding: 0.4rem 0.5rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .article-body img { border-radius: 8px; margin: 1.5rem auto; display: block; max-width: 100%; }
+    .cmd-table td:first-child { font-family: "Fira Code", "SF Mono", Consolas, monospace; font-weight: 700; color: var(--accent); white-space: nowrap; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+  </style>
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+  <div class="container header-inner">
+    <div class="logo"><div>"AI" 硬核工程師</div><div class="tagline">Talk is cheap. Show me the code</div></div>
+    <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="./index.html">首頁</a><a href="./tech-news.html">科技新知</a><a href="./articles.html" class="active">文章</a><a href="./about.html">關於</a>
+      <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a><a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay"><div class="search-container"><input type="text" placeholder="搜尋文章..." autocomplete="off"><div class="search-results"></div><div class="search-close">按 Esc 關閉</div></div></div>
+
+<main><div class="container">
+<section class="article-hero">
+  <h1>開源授權條款完全指南：寬鬆型 vs 強傳染型（著佐權）</h1>
+  <div class="article-meta"><span>2026-09-10</span><span class="separator">·</span><span>18 分鐘閱讀</span></div>
+  <div class="article-tags"><span class="tag">開源</span><span class="tag">License</span><span class="tag">MIT</span><span class="tag">GPL</span><span class="tag">著作權</span><span class="tag">軟體授權</span></div>
+</section>
+
+<article class="article-body">
+<blockquote>
+  🎯 <strong>重點摘要：</strong>開源授權條款主要分兩大類——<strong>寬鬆型（Permissive）</strong>與<strong>強傳染型 / 著佐權（Copyleft）</strong>。寬鬆型（MIT、Apache-2.0、BSD）幾乎不設限，商用閉源也行；著佐權型（GPL、AGPL、SSPL）則要求「衍生作品也要同樣開源」，用來保護自由不被封閉剝奪。選對 License 就像選對朋友：寬鬆型讓你自由飛翔，強傳染型讓自由不被偷走。
+</blockquote>
+
+<h2>為什麼要在意 License？</h2>
+<p>講個現實場景：你在 GitHub 找到一個超好用的函式庫，直接 <code>npm install</code> 或 <code>pip install</code> 裝進專案，沒看 License，幾個月後公司想把這套東西打包成商業產品賣出去……結果發現那個函式庫是 GPL 授權，代表你的整個產品源碼也得公開。這時候你只能重寫、重找，或硬著頭皮開源。</p>
+<p>所以，<strong>選 License 不是形式，而是決定你、你的使用者、以及未來商業化的命運。</strong> 這篇文章幫你搞懂兩大陣營的本質差異，並提供實戰選擇建議。</p>
+
+<h2>兩大類授權條款的核心差異</h2>
+<p>先來一張對照表，把概念先釘在腦海裡：</p>
+<table>
+<thead><tr><th>特性</th><th>寬鬆型 Permissive</th><th>強傳染型 Copyleft（著佐權）</th></tr></thead>
+<tbody>
+<tr><td>代表條款</td><td>MIT、Apache-2.0、BSD-3、ISC</td><td>GPL v2/v3、AGPL v3、SSPL、MPL</td></tr>
+<tr><td>商用閉源</td><td>✅ 完全允許</td><td>❌ 衍生作品必須同樣開源</td></tr>
+<tr><td>修改後是否要開源</td><td>❌ 不強制</td><td>✅ 必須同條款釋出</td></tr>
+<tr><td>專利保護</td><td>Apache-2.0 有明確條款</td><td>GPL v3 有專利授權條款</td></tr>
+<tr><td>傳染範圍</td><td>幾乎沒有</td><td>依條款而定（GPL 較寬、AGPL 更嚴）</td></tr>
+<tr><td>社群哲學</td><td>「你愛怎麼用都行，只要保留版權聲明」</td><td>「自由不能被偷走，衍生品也要自由」</td></tr>
+<tr><td>常見場景</td><td>函式庫、工具、商業產品內嵌</td><td>作業系統核心、資料庫、雲端服務防剝奪</td></tr>
+</tbody>
+</table>
+
+<h2>第一大類：寬鬆型（Permissive License）</h2>
+<p>寬鬆型授權的哲學很簡單：<strong>作者給你最大自由，你幾乎可以為所欲為，只要記得說一聲「這東西是誰寫的」。</strong> 它不要求衍生作品開源，也不禁止商業閉源，這讓它成為企業與商業軟體最愛的選擇。</p>
+
+<h3>MIT License — 最簡潔的寬鬆之王</h3>
+<p>MIT 只有兩段話，核心精神就是：你可以複製、修改、合併、發行、再授權、商業使用，只要保留原始版權聲明和免責聲明。沒有傳染性，沒有專利戰，沒有複雜條件。</p>
+<blockquote>
+  💡 <strong>實戰心得：</strong>如果你寫了一個小工具、函式庫，想讓更多人用、甚至被大公司內嵌，MIT 是最安全的起點。像 React（早期）、jQuery、Node.js（早期）都是 MIT 授權，這讓它們快速滲透整個產業。
+</blockquote>
+
+<h3>Apache License 2.0 — 企業最愛的進階版</h3>
+<p>Apache-2.0 比 MIT 多了幾個關鍵保護：</p>
+<ul>
+<li><strong>明確專利授權</strong>：貢獻者自動授予使用者專利使用權，防止「先貢獻後告專利」的陷阱。</li>
+<li><strong>商標保護</strong>：衍生作品不能隨便用原專案名稱做宣傳。</li>
+<li><strong>修改聲明</strong>：若修改了源碼，必須標註修改內容。</li>
+</ul>
+<p>這讓 Apache-2.0 在 Google、Amazon、Microsoft 這類大企業特別受歡迎。像 Android（AOSP 部分）、Kubernetes、TensorFlow 都是 Apache-2.0 授權。</p>
+
+<h3>BSD 系列（BSD-2 / BSD-3）</h3>
+<p>BSD 是 MIT 的前輩，條件幾乎一樣，但 BSD-3 有一個額外限制：<strong>未經書面同意，不得用原作者或貢獻者名字為衍生產品背書</strong>。這在商業行銷上很實用，避免品牌被濫用。FreeBSD、OpenBSD、PostgreSQL 都是 BSD 系列。</p>
+
+<h3>寬鬆型的風險：自由的代價</h3>
+<p>寬鬆型最大的「缺點」其實也是它的特性：<strong>有人可以把你的開源代碼改一改，打包成閉源產品賣錢，而你完全無權要求他開源。</strong> 這在商業世界很常見，比如某些雲端服務商直接拿開源資料庫（如 MySQL、MongoDB 早期版本）做成 SaaS，不貢獻回去。這也是為什麼後來出現了更嚴格的著佐權條款。</p>
+
+<h2>第二大類：強傳染型 / 著佐權（Copyleft License）</h2>
+<p>著佐權的哲學剛好相反：<strong>如果你用了我的自由代碼，你做的東西也要自由。</strong> 它透過「傳染條款」確保開源的精神不被封閉剝奪。這不是惡意，而是一種防禦機制。</p>
+
+<h3>GPL — 自由軟體基金會（FSF）的旗艦</h3>
+<p>GPL（GNU General Public License）是最著名的著佐權條款，由 Richard Stallman 在 1989 年推出。它的核心規則：</p>
+<ul>
+<li>如果你分發了基於 GPL 代碼的衍生作品（無論修改與否），<strong>整個衍生作品也必須以 GPL 授權釋出</strong>。</li>
+<li>使用者有權取得完整源碼。</li>
+<li>不能加上額外限制（例如「只能用在非商業用途」）。</li>
+</ul>
+<p>GPL v2 和 v3 的差異主要在專利條款（v3 更明確）與「Tivoization」防護（v3 禁止用硬體鎖限制修改）。Linux 核心（GPL v2）、GCC、Bash、Emacs 都是 GPL 家族。</p>
+
+<h3>AGPL — 當雲端來襲的防禦升級</h3>
+<p>GPL 有一個漏洞：如果你把 GPL 代碼部署在伺服器上（例如做成 SaaS 服務），使用者只透過網路使用，而你從不「分發」二進制檔案，那麼你技術上不需要提供源碼。這讓許多雲端公司（如 AWS 早期對 MongoDB、ElasticSearch 的做法）可以「免費搭便車」。</p>
+<p>AGPL（Affero GPL）修補了這個漏洞：<strong>只要透過網路與使用者互動，也視為分發，必須提供源碼。</strong> MongoDB 後來從 AGPL 改為 SSPL，ElasticSearch 也改為雙授權（Elastic License + SSPL），都是為了防止雲端剝奪。</p>
+
+<h3>SSPL — MongoDB 的「雲端防剝奪」條款</h3>
+<p>SSPL（Server Side Public License）由 MongoDB 提出，條件比 AGPL 更嚴格：如果你把 SSPL 授權的軟體做成「服務」提供給第三方（例如 SaaS），<strong>你不僅要開源衍生代碼，連整個服務架構（包括管理介面、API 層、監控系統）都得開源。</strong> 這讓大型雲端服務商幾乎無法直接「包裝」而不開源，保護了原作者的商業利益。</p>
+
+<h3>MPL — Mozilla 的折衷方案</h3>
+<p>MPL（Mozilla Public License）是一種「文件級」著佐權：你可以把 MPL 代碼和閉源代碼混在同一個專案裡，只要修改的 <strong>MPL 文件本身</strong> 保持開源，其他新寫的閉源檔案可以不開源。這讓 Firefox、Thunderbird 這類大型專案既能保持開源，又能與商業模組共存。</p>
+
+<h2>實戰：我該選哪一種？</h2>
+<p>這沒有標準答案，但有幾個實用判斷框架：</p>
+
+<h3>選寬鬆型（MIT / Apache-2.0）的情境</h3>
+<ul>
+<li>你想最大化採用率，讓企業、學術、個人都能無痛使用。</li>
+<li>你不在意別人閉源商用，甚至希望被廣泛內嵌（例如成為業界標準）。</li>
+<li>你沒有足夠法律資源去追蹤衍生作品的授權狀態。</li>
+<li>你的商業模式不是靠「賣軟體本身」，而是靠服務、支援、託管（例如 Red Hat 模式）。</li>
+</ul>
+
+<h3>選著佐權（GPL / AGPL / SSPL）的情境</h3>
+<ul>
+<li>你明確想保護自由不被剝奪，確保所有衍生作品也回饋社群。</li>
+<li>你的商業模式是「開源核心 + 企業版功能」或「雙授權」（像 MySQL、Qt 那樣）。</li>
+<li>你擔心雲端服務商直接打包你的產品做 SaaS，不貢獻回來。</li>
+<li>你有法律與社群支持，可以執行授權條款（例如 FSF 或大型基金會）。</li>
+</ul>
+
+<h3>混合與雙授權策略</h3>
+<p>很多成熟專案採用「雙授權」或「混合授權」：</p>
+<ul>
+<li><strong>MySQL</strong>：GPL（社群版）+ 商業授權（企業版），讓企業可以閉源使用。</li>
+<li><strong>Qt</strong>：GPL / LGPL / 商業授權三選一，讓不同需求的使用者各取所需。</li>
+<li><strong>Elastic / MongoDB</strong>：從寬鬆授權（Apache-2.0 / AGPL）改為更嚴格的 SSPL 或雙授權，防止雲端剝奪。</li>
+</ul>
+<p>這告訴我們：<strong>授權不是一成不變的，你可以根據專案階段、商業需求與社群反應調整。</strong> 但要注意，一旦公開釋出，已經下載的版本就無法「收回」授權，只能對未來版本調整。</p>
+
+<h2>常見誤解與陷阱</h2>
+
+<h3>誤解一：「GPL 會讓我的專案不能商用」</h3>
+<p>錯。GPL 完全允許商業使用，只要求衍生作品同樣開源。如果你的商業模式是賣服務、賣支援、賣託管，而不是賣「閉源軟體本身」，GPL 完全沒問題。Red Hat 就是最好的例子：他們用 GPL 的 Linux 做成商業產品（RHEL），靠訂閱與支援賺錢。</p>
+
+<h3>誤解二：「MIT 就代表沒有任何限制」</h3>
+<p>不完全對。MIT 仍要求你保留原始版權聲明與免責聲明。如果你直接刪除版權聲明再發行，技術上已違反 MIT。雖然實務上很少有人追究，但在企業併購或盡職調查（Due Diligence）時，這會成為法律風險點。</p>
+
+<h3>誤解三：「只要我不修改，就不用開源」</h3>
+<p>對 GPL 來說，如果你只是「使用」而不「分發」二進制檔案（例如內部使用、伺服器部署），那確實不觸發開源義務。但只要你把包含 GPL 代碼的產品交給客戶（無論免費或收費），就必須提供源碼。AGPL 則更嚴格：連網路服務也算分發。</p>
+
+<h3>陷阱：多重授權混合（License Compatibility）</h3>
+<p>如果你把 MIT 代碼和 GPL 代碼混在一起，整個專案通常會被 GPL 的傳染性「拉過去」，變成必須以 GPL 釋出。反過來，如果你把 GPL 代碼放進 MIT 專案，也會讓 MIT 專案變成 GPL。這在大型專案特別容易出錯，建議用工具（如 <code>fossology</code>、<code>scancode</code>）掃描依賴樹的授權狀況。</p>
+
+<h2>選擇建議：給不同角色的實戰指南</h2>
+
+<h3>給個人開發者 / 小團隊</h3>
+<p>如果你只是想分享代碼、建立個人品牌，<strong>MIT 是最簡單、最受歡迎的起點</strong>。如果你明確不希望商業公司閉源剝奪你的勞動成果，選 <strong>GPL v3</strong>。如果你做的是資料庫或雲端服務，考慮 <strong>AGPL 或 SSPL</strong>。</p>
+
+<h3>給企業 / 商業產品團隊</h3>
+<p>在選擇第三方函式庫時，法律與合規團隊通常會要求避開 GPL（尤其是內嵌在商業產品中），優先選 <strong>MIT、Apache-2.0、BSD</strong>。如果必須使用 GPL 組件，通常會採用「動態連結」或「獨立進程」的方式隔離，避免傳染。但這在技術與法律上都有灰色地帶，建議諮詢專業法律意見。</p>
+
+<h3>給基金會 / 大型開源專案</h3>
+<p>如果你的目標是成為業界標準（如 Linux、Kubernetes），寬鬆授權（Apache-2.0）更容易吸引企業貢獻。如果你明確想保護自由（如 GNU 專案），GPL 是核心信仰。如果你同時想吸引商業貢獻又想保護自由，考慮 <strong>MPL 或雙授權策略</strong>。</p>
+
+<h2>快速參考：常見條款一覽</h2>
+<table>
+<thead><tr><th>條款</th><th>類型</th><th>傳染性</th><th>商用閉源</th><th>專利條款</th><th>代表專案</th></tr></thead>
+<tbody>
+<tr><td>MIT</td><td>寬鬆</td><td>無</td><td>✅</td><td>無明確</td><td>React、jQuery、Express</td></tr>
+<tr><td>Apache-2.0</td><td>寬鬆</td><td>無</td><td>✅</td><td>✅ 明確授權</td><td>Kubernetes、TensorFlow、Android (AOSP)</td></tr>
+<tr><td>BSD-3</td><td>寬鬆</td><td>無</td><td>✅</td><td>無明確</td><td>FreeBSD、PostgreSQL</td></tr>
+<tr><td>GPL v2</td><td>著佐權</td><td>強（檔案級）</td><td>❌ 衍生必須 GPL</td><td>無（v3 有）</td><td>Linux 核心、GCC</td></tr>
+<tr><td>GPL v3</td><td>著佐權</td><td>強（檔案級）</td><td>❌ 衍生必須 GPL</td><td>✅ 明確授權</td><td>Bash、GIMP</td></tr>
+<tr><td>AGPL v3</td><td>著佐權</td><td>強（含網路服務）</td><td>❌ 衍生必須 AGPL</td><td>✅ 明確授權</td><td>MongoDB（舊版）、iText</td></tr>
+<tr><td>SSPL</td><td>著佐權</td><td>極強（含服務架構）</td><td>❌ 衍生必須 SSPL</td><td>無</td><td>MongoDB（新版）、ElasticSearch</td></tr>
+<tr><td>MPL 2.0</td><td>混合</td><td>文件級</td><td>✅（非 MPL 檔案可閉源）</td><td>✅ 明確授權</td><td>Firefox、Thunderbird</td></tr>
+</tbody>
+</table>
+
+<h2>小結：選對條款，讓自由與商業共存</h2>
+<p>開源授權條款不是非黑即白的道德判斷，而是<strong>一種設計工具</strong>。寬鬆型讓你的代碼像空氣一樣流動，進入每個角落；著佐權型則像護城河，確保自由的成果不被封閉剝奪。</p>
+<p>我的建議是：<strong>先想清楚你想保護什麼，再選條款。</strong> 如果你想最大化影響力與商業採用，MIT 或 Apache-2.0 是穩健選擇。如果你想確保所有衍生作品也回饋社群，GPL v3 是經典。如果你做的是雲端服務，AGPL 或 SSPL 才是現實的防禦。</p>
+<p>無論選哪一個，記得把 License 檔案（通常是 <code>LICENSE</code> 或 <code>COPYING</code>）放在專案根目錄，並在每個源碼檔案頂部加上簡短的版權聲明。這不只是法律要求，也是對未來自己與使用者的一份尊重。</p>
+
+<blockquote>
+  ✅ <strong>快速行動清單：</strong>寫新專案前，先問自己三個問題——<br>
+  ① 我希望別人怎麼用我的代碼？（自由使用 / 必須開源）<br>
+  ② 我的商業模式是什麼？（賣軟體 / 賣服務 / 純分享）<br>
+  ③ 我有沒有法律資源去執行授權條款？（個人 / 企業 / 基金會）<br>
+  答案出來，License 自然就選對了。
+</blockquote>
+</article>
+
+<div class="article-footer">
+  <a href="#top" class="back-home">← 返回頁首</a>
+</div>
+</div></main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-column"><h4>"AI" 硬核工程師</h4><div class="footer-links"><a href="./about.html">關於我</a><a href="./articles.html">所有文章</a></div></div>
+      <div class="footer-column"><h4>聯絡方式</h4><div class="footer-links"><a href="mailto:cai100.cyc@gmail.com">信件</a><a href="https://github.com/Robert-cYc">GitHub</a><a href="#">Twitter</a></div></div>
+    </div>
+    <div class="marquee-container"><div class="marquee-content"></div></div>
+    <div class="footer-bottom"><p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+<script src="./js/wave.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/enhancements.js"></script>
+</body>
+</html>
