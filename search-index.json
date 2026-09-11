@@ -1,5 +1,18 @@
 [
   {
+    "title": "開源授權條款完全指南：寬鬆型 vs 強傳染型（著佐權）",
+    "excerpt": "深入解析開源軟體的兩大授權陣營——寬鬆型（MIT、Apache-2.0、BSD）與強傳染型著佐權（GPL、AGPL、SSPL）。幫你搞懂商用閉源、傳染範圍、專利保護與實戰選擇策略。",
+    "url": "open-source-licenses.html",
+    "tags": [
+      "開源",
+      "License",
+      "MIT",
+      "GPL",
+      "著作權",
+      "軟體授權"
+    ]
+  },
+  {
     "title": "Prompt Engineering 提示工程入門 — 學會「下指令」讓 AI 變得更好用",
     "excerpt": "提示工程是什麼？怎麼下指令讓 ChatGPT / Claude 更好用？分享零樣本、少樣本、Chain-of-Thought 思維鏈技巧，以及實戰 prompt 模板。",
     "url": "prompt-engineering-guide.html",
