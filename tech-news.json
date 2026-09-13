@@ -1,10 +1,70 @@
 {
-  "updated": "2026-09-12 00:20",
+  "updated": "2026-09-13 00:01",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "從產線到舞台！2026 日月光好聲音各廠區員工同台獻唱",
+          "link": "https://finance.technews.tw/2026/09/12/employees-from-all-factories-of-sunmoonlight-music-group-performed-together-on-stage-in-2026/",
+          "date": "2026-09-12 07:00",
+          "summary": "日月光文教基金會與日月光集團聯合職工福利委員會共同主辦的「2026 日月光好聲音」於9月11 日在日月光高雄廠 [&#8230;]"
+        },
+        {
+          "title": "國際巨頭夾擊，HTC／宏碁／佐臻以品牌、PC 生態與白牌三路搶進 AI 眼鏡市場",
+          "link": "https://technews.tw/2026/09/12/htc-acer-jorjin-ai-glasses/",
+          "date": "2026-09-12 06:00",
+          "summary": "Meta、Google 與三星等國際大廠接連發力，智慧眼鏡正掀起全球穿戴市場的新熱潮。面對國際巨頭夾擊，台灣科 [&#8230;]"
+        },
+        {
+          "title": "安永豪擲億元投資「人類大腦」，AI 技能防線成創投新寵",
+          "link": "https://finance.technews.tw/2026/09/12/ey-invests-human-brain-ai-skills/",
+          "date": "2026-09-12 05:30",
+          "summary": "安永（EY）美國分公司近日宣布，將於本財政年度斥資 1 億美元推出全新的員工獎勵計畫。該計畫旨在表揚於 AI [&#8230;]"
+        },
+        {
+          "title": "用電玩數據訓練 AI 反無人機系統：國防科技新創 Mara 開發「Spike」以撞代炸，成本僅對手 1/20",
+          "link": "https://technews.tw/2026/09/12/mara-spike/",
+          "date": "2026-09-12 03:00",
+          "summary": "總部位於舊金山的國防科技新創 Mara，於 8 月 26 日宣布完成 700 萬美元的 Pre-Seed 輪募 [&#8230;]"
+        },
+        {
+          "title": "Google 晶片大神降臨 SEMICON Taiwan 開示：瓶頸每天都不同，台廠人人有機會當主角",
+          "link": "https://technews.tw/2026/09/12/google-amin-vahdat-interview/",
+          "date": "2026-09-12 02:00",
+          "summary": "AI 發展的瓶頸是什麼？未來會有更多客製化晶片嗎？又，下一個可能改變 AI 發展的關鍵技術突破會是什麼？ Go [&#8230;]"
+        },
+        {
+          "title": "建 AI 資料中心太燒錢！甲骨文擬擴大裁員，重組成本增至 28 億美元",
+          "link": "https://finance.technews.tw/2026/09/12/oracle-may-cut-more-jobs/",
+          "date": "2026-09-12 01:54",
+          "summary": "由於開發 AI 大型資料中心而面臨資金短缺，甲骨文（Oracle）傳出將擴大原先規畫的裁員規模。 據彭博社報導 [&#8230;]"
+        },
+        {
+          "title": "挑戰史上最大 IPO 規模！傳輝達正洽談投資 Anthropic 最高 100 億美元",
+          "link": "https://technews.tw/2026/09/12/nvidia-in-talks-to-invest-in-anthropics-ipo/",
+          "date": "2026-09-12 01:34",
+          "summary": "據路透社報導，輝達（NVIDIA）考慮在 Anthropic 首次公開募股（IPO）中投資最高 100 億美元 [&#8230;]"
+        },
+        {
+          "title": "AI 浪潮重塑音樂產業：是創作者的雙翼，還是廉價免洗的商品？",
+          "link": "https://technews.tw/2026/09/12/ai-wave-reshapes-music-industry/",
+          "date": "2026-09-12 01:30",
+          "summary": "生成式 AI 正以狂飆之姿席捲音樂圈，從前端的詞曲創作、單曲發行，到後端的真偽辨識，無一不引發激烈論戰。這早已 [&#8230;]"
+        },
+        {
+          "title": "AI 雙雄決戰台灣！輝達與 Google 爭搶供應鏈，台廠迎左右逢源新商機",
+          "link": "https://technews.tw/2026/09/12/ai-supply-chain-rivalry-heats-up-taiwan-firms-opportunities/",
+          "date": "2026-09-12 01:00",
+          "summary": "全球科技巨頭的 AI 競賽加劇，從輝達與 Google 最近動作頻頻，足以說明台灣正成為 AI 巨頭爭相卡位的 [&#8230;]"
+        },
+        {
+          "title": "因應 AI 讓取得答案變太廉價，教育界須把學習價值重新聚焦「自發性思考」",
+          "link": "https://technews.tw/2026/09/12/ai-has-made-answers-cheap-education-must-make-thinking-valuable-again/",
+          "date": "2026-09-12 00:30",
+          "summary": "生成式 AI 能在數秒內生產摘要、程式與論述，全球教育界也被迫重新界定「學生究竟學會什麼」。 Excelsof [&#8230;]"
+        },
         {
           "title": "AI 加衛星影像即時監測，北極永凍土融化再也藏不住",
           "link": "https://technews.tw/2026/09/12/scientists-are-using-ai-to-track-permafrost-thaw-as-arctic-lakes-vanish-in-hours/",
@@ -16,66 +76,6 @@
           "link": "https://technews.tw/2026/09/11/anthropic-on-detecting-and-countering-misuse-of-ai/",
           "date": "2026-09-11 10:49",
           "summary": "Anthropic 發出旗下模型遭濫用的威脅情資報告，詳盡說明人們如何試圖運用涉及 Claude Haiku [&#8230;]"
-        },
-        {
-          "title": "GPU 競賽走向 Token 效率！AIDC 迎三大課題，MIC 揭台供應鏈新商機",
-          "link": "https://technews.tw/2026/09/11/mic-see-aidc-trend/",
-          "date": "2026-09-11 09:57",
-          "summary": "資策會產業情報研究所（MIC）近期觀察到 AIDC 三大趨勢，首先是 Token 產能與變現能力改變 AIDC [&#8230;]"
-        },
-        {
-          "title": "螞蟻集團注資新創 JoyIn 指控 OpenAI 抄襲，模型概念到網頁設計皆遭點名",
-          "link": "https://technews.tw/2026/09/11/joyin-accuses-openai-plagiarism/",
-          "date": "2026-09-11 08:40",
-          "summary": "由螞蟻集團投資的中國人型機器人新創公司 JoyIn，近日公開質疑 OpenAI 剛發表的新模型與網頁設計，指控 [&#8230;]"
-        },
-        {
-          "title": "具身 AI 的「ChatGPT 時刻」還要多久才會到來？",
-          "link": "https://technews.tw/2026/09/11/chinas-humanoid-robot-boom-part-iii-when-is-the-chatgpt-moment-for-humanoid-robots/",
-          "date": "2026-09-11 08:30",
-          "summary": "具身 AI 近來熱度持續升高，但業界對何時「ChatGPT 時刻」到來，看法仍相當審慎。多位受訪與論壇嘉賓指出 [&#8230;]"
-        },
-        {
-          "title": "韓稱與美談判順利、傳砸千億美元投資核電挺美 AI",
-          "link": "https://technews.tw/2026/09/11/south-korea-us-investment-talks-progress-smoothly/",
-          "date": "2026-09-11 07:30",
-          "summary": "韓國國務總理韓聖淑（Han Seong-sook）透露，韓國承諾對美投資 3,500 億美元的相關談判「進展順 [&#8230;]"
-        },
-        {
-          "title": "亞馬遜 Ads 宣布與 OpenAI 合作擴展廣告投放，以 Amazon DSP 進軍 ChatGPT",
-          "link": "https://technews.tw/2026/09/11/amazon-brings-its-dsp-to-openais-chatgpt-ads/",
-          "date": "2026-09-11 07:20",
-          "summary": "亞馬遜 Ads 宣布與 OpenAI 展開廣告合作，讓使用 Amazon DSP 的廣告主能將投放版位延伸至 [&#8230;]"
-        },
-        {
-          "title": "歐盟 AI 算力僅占全球 5%，擺脫美中夾擊的關鍵在「電網與審查效率」",
-          "link": "https://technews.tw/2026/09/11/europe-ai-breakthrough-battle/",
-          "date": "2026-09-11 07:00",
-          "summary": "最新分析指出，歐盟在人工智慧（AI）運算基礎設施的競賽中，已明顯落後美國與中國。根據預估，2026 年歐盟的 [&#8230;]"
-        },
-        {
-          "title": "2Q26 全球前十大 IC 設計廠營收年增 73%，AMD 擠進前三名",
-          "link": "https://technews.tw/2026/09/11/top-10-global-ic-design-firms-revenue-73-yoy-2q26-amd-top-three/",
-          "date": "2026-09-11 06:45",
-          "summary": "根據 TrendForce 最新 IC 設計產業研究，隨著 AI 相關應用擴張，GPU、CPU、ASIC、互連 [&#8230;]"
-        },
-        {
-          "title": "15 萬個 AI Agent 怎麼管？伊雲谷串聯三大 AI 端「企業級 AI 全景圖」",
-          "link": "https://finance.technews.tw/2026/09/11/ecloudvalley/",
-          "date": "2026-09-11 06:43",
-          "summary": "生成式 AI 應用正從單點任務躍升為企業核心營運火力，伊雲谷數位科技（eCloudvalley）今日首度集結集 [&#8230;]"
-        },
-        {
-          "title": "台灣人為何瘋追黃仁勳？外媒解密 AI 教父驚人效應",
-          "link": "https://technews.tw/2026/09/11/how-jensen-huang-became-ais-taylor-swift/",
-          "date": "2026-09-11 06:40",
-          "summary": "輝達執行長黃仁勳每逢來台總會掀起追星狂潮，外媒剖析，熱潮背後不只是本土英雄崇拜，更因他帶旺台股、力挺台廠供應鏈 [&#8230;]"
-        },
-        {
-          "title": "美參議員桑德斯推「禁止超級 AI 法案」，籲政府持股 50% 防科技富豪壟斷",
-          "link": "https://technews.tw/2026/09/11/propose-bill-ban-super-ai/",
-          "date": "2026-09-11 06:30",
-          "summary": "美國聯邦參議員伯尼·桑德斯（Bernie Sanders）近日接受英國廣播公司（BBC）專訪時表態，將致力推動 [&#8230;]"
         }
       ]
     },
@@ -84,13 +84,43 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
+          "title": "從產線到舞台！2026 日月光好聲音各廠區員工同台獻唱",
+          "link": "https://finance.technews.tw/2026/09/12/employees-from-all-factories-of-sunmoonlight-music-group-performed-together-on-stage-in-2026/",
+          "date": "2026-09-12 07:00",
+          "summary": "日月光文教基金會與日月光集團聯合職工福利委員會共同主辦的「2026 日月光好聲音」於9月11 日在日月光高雄廠 [&#8230;]"
+        },
+        {
+          "title": "台積電 CoWoS 產能供不應求，聯電、Amkor 等受惠 AI 訂單外溢",
+          "link": "https://technews.tw/2026/09/12/tsmc-cowos-capacity/",
+          "date": "2026-09-12 05:30",
+          "summary": "根據市場消息，台積電可能在 2028 年將 CoWoS 產能提升至 2026 年水準的兩倍，由於產能擴充需要時 [&#8230;]"
+        },
+        {
+          "title": "黃崇仁今辦告別式！總統賴清德親頒褒揚令，產業大老等近千人致哀",
+          "link": "https://technews.tw/2026/09/12/psmc-ceo-public-memorial-service/",
+          "date": "2026-09-12 04:09",
+          "summary": "力晶集團創辦人黃崇仁公祭於 12 日上午舉辦，總統賴清德親蒞致哀並頒褒揚令，政商名流與親友、部屬近千人出席弔祭 [&#8230;]"
+        },
+        {
+          "title": "挑戰輝達、博通！華為首秀 7.2T NPO 解方，搶攻光互連標準話語權",
+          "link": "https://technews.tw/2026/09/12/huawei-new-optical-tech-standard/",
+          "date": "2026-09-12 03:35",
+          "summary": "中國科技巨頭華為 10 日發布自有光通訊技術標準，向輝達（NVIDIA）與博通發起挑戰，希望在這項技術領域獲得 [&#8230;]"
+        },
+        {
+          "title": "AI 雙雄決戰台灣！輝達與 Google 爭搶供應鏈，台廠迎左右逢源新商機",
+          "link": "https://technews.tw/2026/09/12/ai-supply-chain-rivalry-heats-up-taiwan-firms-opportunities/",
+          "date": "2026-09-12 01:00",
+          "summary": "全球科技巨頭的 AI 競賽加劇，從輝達與 Google 最近動作頻頻，足以說明台灣正成為 AI 巨頭爭相卡位的 [&#8230;]"
+        },
+        {
           "title": "台積電拋 STCO 大計：先進封裝要「一起解題」，不再各自為政",
           "link": "https://technews.tw/2026/09/12/tsmc-stco-concept-aims-to-integrate-taiwan-semiconductor-supply-chain/",
           "date": "2026-09-12 00:00",
           "summary": "國際半導體展期間，台積電拋出「系統技術協同最佳化」（STCO）概念，正面迎擊先進封裝領域面臨的眾多挑戰，也被台 [&#8230;]"
         },
         {
-          "title": "傳統斷路器也要升級？800 V 帶動 SiC SSCB 新商機",
+          "title": "傳統斷路器也要升級？800V 帶動 SiC SSCB 新商機",
           "link": "https://technews.tw/2026/09/11/traditional-circuit-breakers-upgrade-800v-drives-sic-sscb-opportunities/",
           "date": "2026-09-11 08:10",
           "summary": "AI 資料中心朝 800 V 高壓直流供電發展，連斷路器也開始走向半導體化。英飛凌（Infineon）與 So [&#8230;]"
@@ -124,36 +154,6 @@
           "link": "https://technews.tw/2026/09/11/rapidus-japan-space-moon-semiconductor-factory-2040/",
           "date": "2026-09-11 06:10",
           "summary": "以國產化次世代半導體為目標的日本 Rapidus 公司社長小池淳義，10 日在美國發表演講時透露，公司計劃在 [&#8230;]"
-        },
-        {
-          "title": "擁美系 PQC 大單、機器人市場！通寶半導體 8 月營收強彈 579%",
-          "link": "https://finance.technews.tw/2026/09/11/sinchip-pqc/",
-          "date": "2026-09-11 06:02",
-          "summary": "通寶半導體公告 8 月營收達 6,224 萬元，年增 579.28%；累計前 8 月營收達 4.22 億元，年 [&#8230;]"
-        },
-        {
-          "title": "全球首創「多器官晶片」問世：重現腫瘤擴散、加速抗癌新藥開發",
-          "link": "https://technews.tw/2026/09/11/chip-reveals-cancer-cells-spread/",
-          "date": "2026-09-11 05:00",
-          "summary": "癌症致死的主因往往不是原發腫瘤，而是癌細胞隨血液擴散至遠端器官的「轉移」過程，這導致了至少三分之二的癌症死亡案 [&#8230;]"
-        },
-        {
-          "title": "中國高純度石英獲 DRAM 廠認證，高階石英坩堝仍受制美國",
-          "link": "https://technews.tw/2026/09/11/chinese-quartz-approved-for-china-dram-manufacturing/",
-          "date": "2026-09-11 04:10",
-          "summary": "中國高純度石英（HPQ）生產商江蘇，已經向科林研發、東京威力科創（TEL）等主要半導體設備商供應。根據市場消息 [&#8230;]"
-        },
-        {
-          "title": "美管制反助攻！中國需求升溫，壁仞科技上半年營收年增近 2,000%",
-          "link": "https://technews.tw/2026/09/11/biren-posts-2000-year-over-year-revenue-growth/",
-          "date": "2026-09-11 03:43",
-          "summary": "根據市場諮詢公司 Jon Peddie Research（JPR）資料，中國 AI 加速器供應商壁仞科技 20 [&#8230;]"
-        },
-        {
-          "title": "映智獨家奪非洲「國民身分建檔採集系統」訂單！迎第四季出貨放量",
-          "link": "https://finance.technews.tw/2026/09/11/fingerprint-recognition/",
-          "date": "2026-09-11 03:22",
-          "summary": "映智科技今日宣布偕同系統整合商（SI）獨家取得非洲大國且為前三大經濟體國家的「國民身分建檔採集系統」專案，負責 [&#8230;]"
         }
       ]
     },
@@ -162,13 +162,19 @@
       "site": "https://technews.tw/category/component/",
       "items": [
         {
+          "title": "Google 晶片大神降臨 SEMICON Taiwan 開示：瓶頸每天都不同，台廠人人有機會當主角",
+          "link": "https://technews.tw/2026/09/12/google-amin-vahdat-interview/",
+          "date": "2026-09-12 02:00",
+          "summary": "AI 發展的瓶頸是什麼？未來會有更多客製化晶片嗎？又，下一個可能改變 AI 發展的關鍵技術突破會是什麼？ Go [&#8230;]"
+        },
+        {
           "title": "今年摺疊手機面板出貨估增 23%，大摺疊面板倍增",
           "link": "https://technews.tw/2026/09/11/foldable-phone-panel-shipments-expected-to-grow-23/",
           "date": "2026-09-11 08:10",
           "summary": "綜合中媒報導，根據 Counterpoint Research 11 日發布報告顯示，2026 年上半年摺疊螢 [&#8230;]"
         },
         {
-          "title": "傳統斷路器也要升級？800 V 帶動 SiC SSCB 新商機",
+          "title": "傳統斷路器也要升級？800V 帶動 SiC SSCB 新商機",
           "link": "https://technews.tw/2026/09/11/traditional-circuit-breakers-upgrade-800v-drives-sic-sscb-opportunities/",
           "date": "2026-09-11 08:10",
           "summary": "AI 資料中心朝 800 V 高壓直流供電發展，連斷路器也開始走向半導體化。英飛凌（Infineon）與 So [&#8230;]"
@@ -226,12 +232,6 @@
           "link": "https://technews.tw/2026/09/11/transformer-shortage-shidian-orders-exceed-nt60-billion/",
           "date": "2026-09-10 23:53",
           "summary": "士林電機受惠台電強韌電網、半導體及 AI 資料中心擴建需求，重電訂單持續升溫。士電昨法說會表示，目前在手訂單已 [&#8230;]"
-        },
-        {
-          "title": "2026 年能源管理趨勢：能源即服務興起，價值重心由設備轉向服務",
-          "link": "https://technews.tw/2026/09/11/2026-eaas-rise/",
-          "date": "2026-09-10 23:00",
-          "summary": "EaaS（能源即服務）的本質並非新能源技術，而是重新定義廠商與服務提供商在能源管理的分工方式。過去廠商需自行完 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,12 @@
       "name": "CCC 追新聞",
       "site": "https://ccc.technews.tw/",
       "items": [
+        {
+          "title": "電腦到底多久該關機？專家解析「重新啟動」的最佳時機與關鍵好處",
+          "link": "https://ccc.technews.tw/2026/09/12/necessity-regularly-restarting-computer/",
+          "date": "2026-09-12 08:30",
+          "summary": "許多現代人習慣讓電腦長時間待機或直接進入睡眠模式，久久才關機一次。然而，最新觀點提醒，定期將電腦「重新啟動」依 [&#8230;]"
+        },
         {
           "title": "iPhone Duo 賣 74,900 元要怎麼刷？九大銀行分期 0 利率 vs. 高額刷卡金",
           "link": "https://ccc.technews.tw/2026/09/10/iphone-duo-credit-card-buy/",
@@ -304,12 +310,6 @@
           "link": "https://ccc.technews.tw/2026/09/03/semicon-taiwan-2027-booth-wars-kick-off-before-this-years-exhibition-concludes/",
           "date": "2026-09-03 09:16",
           "summary": "SEMICON Taiwan 2026 展場內忙著搶客戶、談訂單，場外另一場「搶攤大戰」也已悄悄開打！2027 [&#8230;]"
-        },
-        {
-          "title": "是掌機也是迷你筆電！宏碁亮相 Project DualPlay Mini 概念產品",
-          "link": "https://ccc.technews.tw/2026/09/03/acer-project-predator-atlas-7-dualplay-mini/",
-          "date": "2026-09-03 07:12",
-          "summary": "近年掌上型遊戲機市場快速擴張，但對玩家來說，遊戲筆電與掌機之間仍存在明顯取捨；前者功能完整卻體積較大，後者方便 [&#8230;]"
         }
       ]
     }
