@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canva 完整入門與進階技巧：從零到設計高手的 17 步教學 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="Canva 線上設計平台完整教學：從介面認識、圖層操作、文字編輯、快速去背（Pro 專屬）、品牌色保存、樣式複製到 17 個實戰設計技巧，幫你快速做出專業視覺內容。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/canva-tutorial.html">
+  <meta property="og:title" content="Canva 完整入門與進階技巧：從零到設計高手的 17 步教學 — \"AI\" 硬核工程師">
+  <meta property="og:description" content="Canva 線上設計平台完整教學：從介面認識、圖層操作、文字編輯、快速去背（Pro 專屬）、品牌色保存、樣式複製到 17 個實戰設計技巧。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/canva-tutorial.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Canva 完整入門與進階技巧：從零到設計高手的 17 步教學 — \"AI\" 硬核工程師">
+  <meta name="twitter:description" content="Canva 線上設計平台完整教學：從介面認識、圖層操作、文字編輯、快速去背（Pro 專屬）、品牌色保存、樣式複製到 17 個實戰設計技巧。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.55rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.85; font-size: 1.05rem; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.95em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); font-size: 0.9em; }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.75; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1rem; }
+    .article-body th, .article-body td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .article-body img { border-radius: 8px; margin: 1.5rem auto; display: block; max-width: 100%; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .tip-box { background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%); border-left: 4px solid var(--accent); padding: 1.2rem 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
+    .tip-box strong { color: var(--accent); }
+  </style>
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+  <div class="container header-inner">
+    <div class="logo"><div>"AI" 硬核工程師</div><div class="tagline">Talk is cheap. Show me the code</div></div>
+    <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="./index.html">首頁</a>
+      <a href="./tech-news.html">科技新知</a>
+      <a href="./articles.html">文章</a>
+      <a href="./about.html">關於</a>
+      <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+      <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay">
+  <div class="search-container">
+    <input type="text" placeholder="搜尋文章..." autocomplete="off">
+    <div class="search-results"></div>
+    <div class="search-close">按 Esc 關閉</div>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+    <section class="article-hero">
+      <h1>Canva 完整入門與進階技巧：從零到設計高手的 17 步教學</h1>
+      <div class="article-meta">
+        <span>2026-09-13</span>
+        <span class="separator">·</span>
+        <span>22 分鐘閱讀</span>
+      </div>
+      <div class="article-tags">
+        <span class="tag">Canva</span>
+        <span class="tag">設計工具</span>
+        <span class="tag">社群媒體</span>
+        <span class="tag">視覺創作</span>
+        <span class="tag">教學</span>
+      </div>
+    </section>
+
+    <article class="article-body">
+      <blockquote>
+        🎯 <strong>重點摘要：</strong>Canva 是線上視覺創作平台，支援社群圖文、海報、簡報、Logo 等多種設計。內建豐富模板、圖片、字型與影片素材，搭配拖曳操作與圖層編輯，讓沒有設計背景的人也能做出專業作品。Pro 方案解鎖快速去背、大容量雲端與進階功能，還有 30 天免費試用。這篇文章結合 17 個實戰技巧，從介面認識到品牌色保存、樣式複製，一次搞懂。
+      </blockquote>
+
+      <h2>Canva 是什麼？為什麼值得學？</h2>
+      <p>Canva 是一款線上設計平台，你可以直接在瀏覽器裡做社群貼文、海報、文件、簡報、Logo，甚至影片封面。它最大的優勢不是「功能多複雜」，而是「門檻超低」——不用安裝 Photoshop、不用懂圖層混合模式，拖曳、點選、套用範本就能完成。</p>
+      <p>全球有上億用戶在用 Canva，因為它的素材庫超豐富：數千種模板、上百萬張免費圖片、各式字型、影片與音訊素材。而且所有作品可以直接分享或下載，格式從 PNG、JPG 到 PDF、MP4 都支援。</p>
+
+      <h2>核心功能一覽：你該知道的 17 個技巧</h2>
+      <p>參考 Frank Know 的完整教學，Canva 的操作邏輯其實非常直覺。以下整理出 17 個最實用的技巧，從基礎到進階：</p>
+
+      <h3>1. 圖層選取與重疊操作</h3>
+      <p>當畫面上有多個重疊元素時，直接點選可能選到錯的物件。解法是按住 <code>Command</code>（Mac）或 <code>Ctrl</code>（Windows）再點擊拖曳，就能精準選取下層元素。這招在做複雜排版時超實用。</p>
+
+      <h3>2. 版面尺寸快速調整</h3>
+      <p>Canva 提供預設尺寸（Instagram 貼文、A4 海報、簡報 16:9 等），也可以自訂寬高。改尺寸時元素會自動縮放，不用手動重調每一個物件。</p>
+
+      <h3>3. 文字編輯與陰影效果</h3>
+      <p>點選文字後，右側面板可以調整字型、大小、字距、行高，還能加陰影（Shadow）讓文字在複雜背景上更清晰。建議用「粗體 + 陰影」組合，視覺衝擊力直接提升。</p>
+
+      <h3>4. 漸層元素搜尋與套用</h3>
+      <p>在元素搜尋欄輸入「gradient」，可以找到各種漸層背景、形狀與裝飾元素。直接拖入畫布，再調整顏色與角度，就能讓設計從「平面」變「有深度」。</p>
+
+      <h3>5. 畫面縮放與導航</h3>
+      <p>用滑鼠滾輪或右下角的縮放控制，可以快速查看整體排版或放大編輯細節。這對做海報或長文件特別重要。</p>
+
+      <h3>6. 元素群組（Group）</h3>
+      <p>選取多個元素後按 <code>Command + G</code>（或右鍵選「群組」），它們會被綁在一起移動。這樣調整整體位置時，不會不小心拆散排版。</p>
+
+      <h3>7. 圖像裁切與「快速去背」</h3>
+      <p>Canva 內建裁切工具，可以自由調整圖片顯示範圍。而「快速去背」（Background Remover）是 <strong>Canva Pro 專屬功能</strong>，一鍵把人物或物體從背景分離出來，對做商品圖或人像海報超方便。</p>
+
+      <div class="tip-box">
+        <strong>💡 Pro 提示：</strong>去背工具只有 Pro 用戶能使用。如果你常需要做商品圖、社群貼文或品牌視覺，30 天免費試用值得一試。試用期間所有 Pro 功能都能用，包括去背、大容量雲端、進階字型與付費素材。
+      </div>
+
+      <h3>8. 照片美化濾鏡與調整</h3>
+      <p>上傳照片後，可以套用濾鏡（Filter），或手動調整亮度、對比、飽和度、色溫。Canva 的濾鏡不像 Instagram 那麼誇張，而是更適合商業設計的自然風格。</p>
+
+      <h3>9. 品牌色保存（Brand Kit）</h3>
+      <p>如果你有固定的品牌色（例如公司 Logo 的主色），可以上傳 Logo，Canva 會自動擷取顏色並保存到「品牌套件」中。之後做任何設計都能直接套用，不用每次手動輸入色碼。</p>
+
+      <h3>10. 拖曳上傳自己的素材</h3>
+      <p>除了內建素材庫，你可以直接把本機的圖片、影片、音訊拖進 Canva 編輯區。上傳後會自動出現在「上傳內容」區塊，隨時可重複使用。</p>
+
+      <h3>11. 吸色工具（Color Picker）</h3>
+      <p>點選畫面上的任何顏色，Canva 會自動吸取該色並顯示色碼。這對「複製競品配色」或「保持品牌一致性」非常實用。</p>
+
+      <h3>12. 樣式複製（油漆刷圖示）</h3>
+      <p>選取一個已設定好樣式的元素（字型、顏色、大小、效果），點擊「複製樣式」（油漆刷圖示），再點選其他元素，就能一鍵套用相同風格。這比手動調整快十倍。</p>
+
+      <h3>13. 範本套用與元素搜尋篩選</h3>
+      <p>Canva 的範本庫按主題分類（社群、海報、簡報、名片等），搜尋時可以加篩選條件（免費 / Pro、橫版 / 直版、顏色等），快速縮小範圍。</p>
+
+      <h3>14. 快速複製元素</h3>
+      <p>選取元素後按 <code>Command + D</code>（或 <code>Option / Alt</code> 拖曳），可以快速複製。這對做重複圖案、圖示排列或多頁簡報特別有效率。</p>
+
+      <h3>15. 調整排版與配色</h3>
+      <p>Canva 提供「配色建議」功能，選取一個主色後會自動推薦搭配色。搭配「對齊輔助線」和「間距提示」，新手也能做出視覺平衡的排版。</p>
+
+      <h3>16. 版本控制與協作</h3>
+      <p>Canva 自動保存每一個修改版本，你可以隨時回到之前的狀態。也可以邀請團隊成員一起編輯，適合小組專案或品牌團隊協作。</p>
+
+      <h3>17. 匯出與分享</h3>
+      <p>完成後可以下載為 PNG（透明背景可選）、JPG、PDF、MP4（影片）等格式。也可以直接生成分享連結，讓對方線上預覽，不用下載檔案。</p>
+
+      <h2>Canva 免費 vs Pro：該選哪一個？</h2>
+      <table>
+        <thead>
+          <tr><th>功能</th><th>免費版</th><th>Pro 版</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>模板與元素</td><td>數千種（部分標皇冠）</td><td>全部解鎖，含付費素材</td></tr>
+          <tr><td>快速去背</td><td>❌ 不可用</td><td>✅ 一鍵去背</td></tr>
+          <tr><td>品牌套件（Brand Kit）</td><td>❌ 不可用</td><td>✅ 保存品牌色、字型、Logo</td></tr>
+          <tr><td>雲端儲存</td><td>5 GB</td><td>1 TB</td></tr>
+          <tr><td>進階字型與素材</td><td>部分受限</td><td>全部解鎖</td></tr>
+          <tr><td>團隊協作</td><td>基本分享</td><td>完整團隊管理</td></tr>
+          <tr><td>試用</td><td>永久免費</td><td>30 天免費試用</td></tr>
+        </tbody>
+      </table>
+
+      <p>如果你只是偶爾做社群貼文或個人簡報，免費版已經夠用。但如果你需要做商品圖（去背）、管理品牌視覺一致性，或團隊協作，Pro 版的價值會非常明顯。官方也提供教育與非營利方案，需要申請認證。</p>
+
+      <h2>實戰應用場景</h2>
+      <p>Canva 不只是「做海報」的工具，它的應用範圍其實很廣：</p>
+      <ul>
+        <li><strong>社群貼文</strong> — Instagram、Facebook、Twitter（X）的圖文內容，用範本直接套用品牌風格。</li>
+        <li><strong>海報與宣傳</strong> — 活動海報、課程宣傳、產品發表，搭配漸層與陰影讓視覺更有層次。</li>
+        <li><strong>簡報與文件</strong> — 會議簡報、提案書、教學講義，用統一配色與字型提升專業感。</li>
+        <li><strong>Logo 與品牌視覺</strong> — 雖然 Canva 不是專業 Logo 設計工具，但對小品牌、個人創作者來說已經足夠。搭配 Brand Kit 保存品牌色與字型，所有素材都能保持一致。</li>
+        <li><strong>影片封面與縮圖</strong> — 用去背功能做清晰的人物或產品主圖，搭配文字陰影增加可讀性。</li>
+      </ul>
+
+      <h2>新手快速入門：三步驟上手</h2>
+      <ol>
+        <li><strong>選尺寸</strong> — 進入 Canva 後選「社群貼文」、「海報」或自訂尺寸。</li>
+        <li><strong>套範本或從零開始</strong> — 搜尋關鍵字（如「簡約」、「科技」、「教育」），套用喜歡的範本，或直接拖入空白畫布。</li>
+        <li><strong>編輯與匯出</strong> — 調整文字、替換圖片、套用品牌色，完成後下載或直接分享。</li>
+      </ol>
+
+      <p>整個流程不需要任何設計基礎，重點是「多嘗試、多比較」。Canva 的素材庫夠大，你總能找到適合自己風格的組合。</p>
+
+      <h2>參考與延伸</h2>
+      <p>這篇文章的內容參考了 Frank Know 的 <a href="https://frankknow.com/canva-tutorial/" target="_blank" rel="noopener">Canva 完整教學</a>，結合實際操作經驗與進階技巧整理而成。如果你想更深入學習設計原理（配色、字體搭配、版面比例），建議搭配設計基礎書籍或線上課程，Canva 是執行工具，但設計思維仍然需要培養。</p>
+
+      <div class="tip-box">
+        <strong>💡 最後提醒：</strong>Canva 是工具，設計感還是要靠練習。如果你常做視覺內容，建議每週花 30 分鐘瀏覽 Canva 的「範本」區塊，觀察不同風格的排版與配色，慢慢建立自己的視覺直覺。工具再強，沒有審美也做不出好作品；審美再好，沒有好工具也難快速實現。兩者缺一不可。
+      </div>
+
+    </article>
+
+    <div class="article-footer">
+      <a href="./articles.html" class="back-home">← 回到所有文章</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-column">
+        <h4>"AI" 硬核工程師</h4>
+        <div class="footer-links">
+          <a href="./about.html">關於我</a>
+          <a href="./articles.html">所有文章</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>聯絡方式</h4>
+        <div class="footer-links">
+          <a href="mailto:cai100.cyc@gmail.com">信件</a>
+          <a href="https://github.com/Robert-cYc">GitHub</a>
+          <a href="https://x.com/">Twitter</a>
+        </div>
+      </div>
+    </div>
+    <div class="marquee-container">
+      <div class="marquee-content"></div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+<script src="./js/wave.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/enhancements.js"></script>
+</body>
+</html>
