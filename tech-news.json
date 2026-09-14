@@ -1,81 +1,81 @@
 {
-  "updated": "2026-09-13 00:01",
+  "updated": "2026-09-14 00:14",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
+          "title": "AI 跨世代使用調查：Z 世代追求效率，X 世代將成職場普及關鍵",
+          "link": "https://technews.tw/2026/09/14/how-different-generations-use-ai/",
+          "date": "2026-09-14 00:10",
+          "summary": "最新調查顯示，人工智慧（AI）已不再是少數人的嘗鮮工具，而是逐漸滲透各個年齡層的日常服務。過去一年，高達 82 [&#8230;]"
+        },
+        {
+          "title": "AI 摘要成企業決策雙面刃，專家呼籲在高效率分流與深度思考間取得平衡",
+          "link": "https://technews.tw/2026/09/14/ai-summaries-double-edged-sword-corporate-decision-making/",
+          "date": "2026-09-13 23:40",
+          "summary": "隨著企業決策節奏日益加快，AI 摘要已成為忙碌高階主管不可或缺的實用利器。業界普遍認為，AI 的價值並非取代人 [&#8230;]"
+        },
+        {
+          "title": "優先處理 AI 安全風險，OpenAI 執行長：2026 年內不會上市",
+          "link": "https://finance.technews.tw/2026/09/14/sam-altman-confirms-openai-will-not-go-public-this-year/",
+          "date": "2026-09-13 23:34",
+          "summary": "OpenAI 執行長奧特曼（Sam Altman）親口證實，雖然公司已透過保密方式提交 IPO 申請，但今年內 [&#8230;]"
+        },
+        {
+          "title": "養 AI 團隊比自己做還累？揭數位擴編潮背後的隱形工時與失控危機",
+          "link": "https://technews.tw/2026/09/14/opportunities-concerns-rise-ai-agents/",
+          "date": "2026-09-13 23:20",
+          "summary": "白領工作圈正掀起一波「AI 代理人」（AI Agents）的革命浪潮。越來越多職場人士不再滿足於單純向聊天機器 [&#8230;]"
+        },
+        {
+          "title": "AI 越聰明 EQ 越值錢，專家：父母必學的「情緒教養」將決定孩子未來高度",
+          "link": "https://technews.tw/2026/09/13/ai-era-emotions/",
+          "date": "2026-09-13 07:30",
+          "summary": "一位擁有豐富企業高階主管輔導經驗的工業與組織心理學家指出，在人工智慧（AI）快速發展的時代，具備辨識、理解與表 [&#8230;]"
+        },
+        {
+          "title": "食品製造業 AI 轉型大解密，選對平台不如打好「數據與信任」的基礎",
+          "link": "https://finance.technews.tw/2026/09/13/ai-reshaping-food-manufacturing/",
+          "date": "2026-09-13 06:30",
+          "summary": "食品製造業正掀起一波 AI 導入熱潮。然而，業界實務觀察指出，決定 AI 專案成敗的關鍵，往往不在於企業砸重金 [&#8230;]"
+        },
+        {
+          "title": "AI 升級不裁員！歐德砸 33 億打造系統家具「鋼鐵森林」，年年送 iPhone 寵員工",
+          "link": "https://finance.technews.tw/2026/09/13/furniture-magnate-no-layoffs-iphones-3-3-billion-ai-factory-employee-care/",
+          "date": "2026-09-13 06:00",
+          "summary": "桃園大園，一座能看到飛機起降的智慧工廠裡，一位做了 20 年的老師傅站在機台的螢幕前，手指還留著早年操作裁板機 [&#8230;]"
+        },
+        {
+          "title": "「影子 AI」入侵病歷系統，醫療機構的隱形資安危機",
+          "link": "https://infosecu.technews.tw/2026/09/13/medical-ai-privacy-crisis/",
+          "date": "2026-09-13 02:30",
+          "summary": "醫療機構正加速將人工智慧（AI）導入臨床與行政流程，但最新分析顯示，AI 在大幅提升效率的同時，也因資料流轉、 [&#8230;]"
+        },
+        {
+          "title": "研究：冥想正念 AI 只是輔助工具，不能取代人類導師",
+          "link": "https://technews.tw/2026/09/13/is-ai-making-us-smarter-or-teaching-us-not-to-think/",
+          "date": "2026-09-13 01:30",
+          "summary": "美國中佛羅里達大學團隊主導研究，提出 AI 正念與心理健康照護用的管理框架，試圖為 AI 應用劃出明確界線。團 [&#8230;]"
+        },
+        {
+          "title": "AI 可能在一年內失控，Anthropic 執行長呼籲放慢腳步等待安全技術跟上",
+          "link": "https://infosecu.technews.tw/2026/09/13/dario-amodei-calls-for-slowing-down-the-pace-of-ai-development-for-the-safety-tech-to-align/",
+          "date": "2026-09-13 00:36",
+          "summary": "知名人工智慧新創 Anthropic 執行長阿莫戴（Dario Amodei）近日發出警告，呼籲全球 AI 產 [&#8230;]"
+        },
+        {
+          "title": "「不給複製就被換掉！」AI 浪潮洗牌影視產業，真人演員面臨生存危機",
+          "link": "https://technews.tw/2026/09/13/ai-short-dramas-human-performers-survival-crisis/",
+          "date": "2026-09-13 00:30",
+          "summary": "人工智慧（AI）正以前所未有的速度改寫短劇與影視製作模式。從角色生成、場景設計到整部作品的完成，AI 已不再只 [&#8230;]"
+        },
+        {
           "title": "從產線到舞台！2026 日月光好聲音各廠區員工同台獻唱",
           "link": "https://finance.technews.tw/2026/09/12/employees-from-all-factories-of-sunmoonlight-music-group-performed-together-on-stage-in-2026/",
           "date": "2026-09-12 07:00",
           "summary": "日月光文教基金會與日月光集團聯合職工福利委員會共同主辦的「2026 日月光好聲音」於9月11 日在日月光高雄廠 [&#8230;]"
-        },
-        {
-          "title": "國際巨頭夾擊，HTC／宏碁／佐臻以品牌、PC 生態與白牌三路搶進 AI 眼鏡市場",
-          "link": "https://technews.tw/2026/09/12/htc-acer-jorjin-ai-glasses/",
-          "date": "2026-09-12 06:00",
-          "summary": "Meta、Google 與三星等國際大廠接連發力，智慧眼鏡正掀起全球穿戴市場的新熱潮。面對國際巨頭夾擊，台灣科 [&#8230;]"
-        },
-        {
-          "title": "安永豪擲億元投資「人類大腦」，AI 技能防線成創投新寵",
-          "link": "https://finance.technews.tw/2026/09/12/ey-invests-human-brain-ai-skills/",
-          "date": "2026-09-12 05:30",
-          "summary": "安永（EY）美國分公司近日宣布，將於本財政年度斥資 1 億美元推出全新的員工獎勵計畫。該計畫旨在表揚於 AI [&#8230;]"
-        },
-        {
-          "title": "用電玩數據訓練 AI 反無人機系統：國防科技新創 Mara 開發「Spike」以撞代炸，成本僅對手 1/20",
-          "link": "https://technews.tw/2026/09/12/mara-spike/",
-          "date": "2026-09-12 03:00",
-          "summary": "總部位於舊金山的國防科技新創 Mara，於 8 月 26 日宣布完成 700 萬美元的 Pre-Seed 輪募 [&#8230;]"
-        },
-        {
-          "title": "Google 晶片大神降臨 SEMICON Taiwan 開示：瓶頸每天都不同，台廠人人有機會當主角",
-          "link": "https://technews.tw/2026/09/12/google-amin-vahdat-interview/",
-          "date": "2026-09-12 02:00",
-          "summary": "AI 發展的瓶頸是什麼？未來會有更多客製化晶片嗎？又，下一個可能改變 AI 發展的關鍵技術突破會是什麼？ Go [&#8230;]"
-        },
-        {
-          "title": "建 AI 資料中心太燒錢！甲骨文擬擴大裁員，重組成本增至 28 億美元",
-          "link": "https://finance.technews.tw/2026/09/12/oracle-may-cut-more-jobs/",
-          "date": "2026-09-12 01:54",
-          "summary": "由於開發 AI 大型資料中心而面臨資金短缺，甲骨文（Oracle）傳出將擴大原先規畫的裁員規模。 據彭博社報導 [&#8230;]"
-        },
-        {
-          "title": "挑戰史上最大 IPO 規模！傳輝達正洽談投資 Anthropic 最高 100 億美元",
-          "link": "https://technews.tw/2026/09/12/nvidia-in-talks-to-invest-in-anthropics-ipo/",
-          "date": "2026-09-12 01:34",
-          "summary": "據路透社報導，輝達（NVIDIA）考慮在 Anthropic 首次公開募股（IPO）中投資最高 100 億美元 [&#8230;]"
-        },
-        {
-          "title": "AI 浪潮重塑音樂產業：是創作者的雙翼，還是廉價免洗的商品？",
-          "link": "https://technews.tw/2026/09/12/ai-wave-reshapes-music-industry/",
-          "date": "2026-09-12 01:30",
-          "summary": "生成式 AI 正以狂飆之姿席捲音樂圈，從前端的詞曲創作、單曲發行，到後端的真偽辨識，無一不引發激烈論戰。這早已 [&#8230;]"
-        },
-        {
-          "title": "AI 雙雄決戰台灣！輝達與 Google 爭搶供應鏈，台廠迎左右逢源新商機",
-          "link": "https://technews.tw/2026/09/12/ai-supply-chain-rivalry-heats-up-taiwan-firms-opportunities/",
-          "date": "2026-09-12 01:00",
-          "summary": "全球科技巨頭的 AI 競賽加劇，從輝達與 Google 最近動作頻頻，足以說明台灣正成為 AI 巨頭爭相卡位的 [&#8230;]"
-        },
-        {
-          "title": "因應 AI 讓取得答案變太廉價，教育界須把學習價值重新聚焦「自發性思考」",
-          "link": "https://technews.tw/2026/09/12/ai-has-made-answers-cheap-education-must-make-thinking-valuable-again/",
-          "date": "2026-09-12 00:30",
-          "summary": "生成式 AI 能在數秒內生產摘要、程式與論述，全球教育界也被迫重新界定「學生究竟學會什麼」。 Excelsof [&#8230;]"
-        },
-        {
-          "title": "AI 加衛星影像即時監測，北極永凍土融化再也藏不住",
-          "link": "https://technews.tw/2026/09/12/scientists-are-using-ai-to-track-permafrost-thaw-as-arctic-lakes-vanish-in-hours/",
-          "date": "2026-09-11 16:00",
-          "summary": "科學家正利用人工智慧與衛星影像，近乎即時地監測北極永凍土融化的跡象，因為在部分地區，湖泊可能在短短數小時內突然 [&#8230;]"
-        },
-        {
-          "title": "Claude 用來開發監控系統、生物武器？Anthropic 揭模型濫用案例",
-          "link": "https://technews.tw/2026/09/11/anthropic-on-detecting-and-countering-misuse-of-ai/",
-          "date": "2026-09-11 10:49",
-          "summary": "Anthropic 發出旗下模型遭濫用的威脅情資報告，詳盡說明人們如何試圖運用涉及 Claude Haiku [&#8230;]"
         }
       ]
     },
@@ -162,6 +162,24 @@
       "site": "https://technews.tw/category/component/",
       "items": [
         {
+          "title": "北美鋰資源自主關鍵一役：LGES 長約牽動全球電池供應板塊挪移",
+          "link": "https://technews.tw/2026/09/14/lges-wz-smackover-lithium/",
+          "date": "2026-09-13 23:00",
+          "summary": "8 月韓國電池廠 LGES（LG 新能源）與美國鋰資源開發商 Smackover Lithium 簽訂為期十年 [&#8230;]"
+        },
+        {
+          "title": "羽球比金價漲得還兇，看 YONEX 如何靠「頭到腳」全產品線殺出成本重圍",
+          "link": "https://finance.technews.tw/2026/09/13/why-yonex-defied-the-trend-to-surpass-100-billion-yen-in-revenue/",
+          "date": "2026-09-13 03:00",
+          "summary": "2026 年 3 月期，日本球拍大廠 YONEX 合併營收衝上 1,636 億日圓，寫下歷史新高。同一段時間， [&#8230;]"
+        },
+        {
+          "title": "駐龍卡位龐巴迪大單逾百項零件，董座曝航太業結構轉變「誰有產能誰就贏！」",
+          "link": "https://technews.tw/2026/09/13/drewloong-benefits-from-aidc-bombardier-orders/",
+          "date": "2026-09-13 01:00",
+          "summary": "漢翔築起本土供應鏈，為台灣爭取到首項民用機前機身組件長單，其中最關鍵的協力廠，正是高雄機製件大廠駐龍精密。駐龍 [&#8230;]"
+        },
+        {
           "title": "Google 晶片大神降臨 SEMICON Taiwan 開示：瓶頸每天都不同，台廠人人有機會當主角",
           "link": "https://technews.tw/2026/09/12/google-amin-vahdat-interview/",
           "date": "2026-09-12 02:00",
@@ -214,24 +232,6 @@
           "link": "https://technews.tw/2026/09/11/morgan-stanley-see-gseo-largan-and-iphone-18/",
           "date": "2026-09-11 01:45",
           "summary": "美系外資摩根士丹利（大摩）出具最新外資報告指出，蘋果發表最新 iPhone 產品，預期中國立訊精密、領益製造、 [&#8230;]"
-        },
-        {
-          "title": "日本九州電力公司加碼投資輝能次世代電池",
-          "link": "https://technews.tw/2026/09/11/kyushu-electric-invest-prologium/",
-          "date": "2026-09-11 00:37",
-          "summary": "台灣固態電池廠輝能宣布，與日本九州電力株式會社深化合作，進一步增加對輝能策略性資本投資，不過具體金額並未公開。 [&#8230;]"
-        },
-        {
-          "title": "精銳專利盡出，iPhone Duo 幾乎撫平摺痕",
-          "link": "https://technews.tw/2026/09/11/apple-iphone-duo-foldable-screen-specs-pencil/",
-          "date": "2026-09-11 00:20",
-          "summary": "蘋果推出首款摺疊手機 iPhone Duo，焦點完全落在重構摺疊裝置視覺體驗的雙螢幕。新機由外到內分別是 5. [&#8230;]"
-        },
-        {
-          "title": "變壓器供不應求，士電在手訂單破 600 億元",
-          "link": "https://technews.tw/2026/09/11/transformer-shortage-shidian-orders-exceed-nt60-billion/",
-          "date": "2026-09-10 23:53",
-          "summary": "士林電機受惠台電強韌電網、半導體及 AI 資料中心擴建需求，重電訂單持續升溫。士電昨法說會表示，目前在手訂單已 [&#8230;]"
         }
       ]
     },
