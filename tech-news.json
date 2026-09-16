@@ -1,81 +1,81 @@
 {
-  "updated": "2026-09-15 00:39",
+  "updated": "2026-09-16 00:22",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "AI 寫程式普及率破八成，軟體開發者的核心競爭力正悄悄轉移",
-          "link": "https://technews.tw/2026/09/15/mastering-ai-assisted-programming/",
-          "date": "2026-09-15 00:30",
-          "summary": "AI 輔助寫程式正快速從單純的「輔助工具」，蛻變為現代開發者日常工作不可或缺的一部分。根據 Stack Ove [&#8230;]"
+          "title": "AI 模擬測試驚現「殺戮本性」，部分模型為省成本會選擇輾過動物",
+          "link": "https://technews.tw/2026/09/16/ai-more-likely-to-kill-animals-if-it-saves-fuel-or-money/",
+          "date": "2026-09-16 00:10",
+          "summary": "慈悲同步機器學習（Compassion Aligned Machine Learning，CaML）與英國華威 [&#8230;]"
         },
         {
-          "title": "新 S11 晶片讓蘋果手錶 AI 效能大躍進，4 核 NPU 與 4GB 記憶體的強力加持",
-          "link": "https://technews.tw/2026/09/15/apple-watch-chipsets-faced-years-of-neglect-with-subpar-improvements/",
-          "date": "2026-09-15 00:20",
-          "summary": "長久以來，Apple Watch 所採用的系統級封裝（SiP）不僅效能普通，即使升級也是漸進式的些微改款。Ap [&#8230;]"
+          "title": "紐約市 60 萬學生暫停使用 AI，付費 AI 成了新家教？",
+          "link": "https://technews.tw/2026/09/16/mamdani-imposes-one-year-ban-on-ai-for-most-nyc-students/",
+          "date": "2026-09-15 23:50",
+          "summary": "紐約市對學生使用生成式 AI 按暫停鍵，希望孩子把注意力放回教師、同儕與獨立思考。但教室關閉聊天視窗，家庭需求 [&#8230;]"
         },
         {
-          "title": "淺談 iPhone 18 Pro 散熱：蘋果也開始相信物理了？",
-          "link": "https://technews.tw/2026/09/15/iphone-18-pro-cooling-apple-believing-physics/",
-          "date": "2026-09-14 23:50",
-          "summary": "如果細看 iPhone 18 Pro 的散熱設計，會發現蘋果對散熱這件事的態度似乎越來越務實，所以硬脾氣如蘋果 [&#8230;]"
+          "title": "讓 AI 對話不再尷尬，蘋果前研究員創辦 Nuance 打造更自然、無延遲的影音 AI 模型",
+          "link": "https://technews.tw/2026/09/16/3-ex-apple-researchers-raised-50m-to-build-ai-models-with-more-eq/",
+          "date": "2026-09-15 23:40",
+          "summary": "三名蘋果前研究員創立的西雅圖新創 Nuance Labs，近日宣布完成 5,000 萬美元 A 輪融資，打造更 [&#8230;]"
         },
         {
-          "title": "AI 代理不能只靠 API 金鑰，專家呼籲建立「數位身分」防堵資安漏洞",
-          "link": "https://finance.technews.tw/2026/09/15/ai-agents-cannot-rely-api-keys/",
-          "date": "2026-09-14 23:40",
-          "summary": "隨著 AI 代理（AI Agents）技術成熟並逐步導入企業生產環境，業界關注焦點已從「技術可行性」轉向「身分 [&#8230;]"
+          "title": "IBM 與 NASA 聯手推開源 AI 模型，助攻月球冰層探勘與科學研究",
+          "link": "https://technews.tw/2026/09/16/nasa-and-ibm-open-source-lunar-mapping-tools/",
+          "date": "2026-09-15 23:20",
+          "summary": "IBM 與美國國家航空暨太空總署（NASA）9 月 10 日宣布，推出開放原始碼的「NASA-IBM 月球基礎 [&#8230;]"
         },
         {
-          "title": "Arm 提出機器人功能分級架構，期能打造實體 AI 共通標準",
-          "link": "https://technews.tw/2026/09/15/arm-robotics-capability-framework/",
-          "date": "2026-09-14 23:00",
-          "summary": "Arm 8 日提出機器人功能框架（Robotics Capability Framework），嘗試以 RL0 [&#8230;]"
+          "title": "黃仁勳論 AI 風險與未來：放慢發展腳步絕對是錯誤策略",
+          "link": "https://infosecu.technews.tw/2026/09/16/jensen-huang-speaks-at-all-in-summit-2026/",
+          "date": "2026-09-15 23:14",
+          "summary": "NVIDIA 執行長黃仁勳上週末出席 All-In Summit 2026，圍繞 AI 相關議題與主持人深度對 [&#8230;]"
         },
         {
-          "title": "奧特曼力挺「控制節奏」：AI 發展不應快過人類掌控，籲建立聯邦監管框架",
-          "link": "https://technews.tw/2026/09/14/openai-ceo-sam-altman-supports-slowing-ai-development-to-prioritize-safety/",
-          "date": "2026-09-14 10:00",
-          "summary": "OpenAI 執行長山姆‧奧特曼（Sam Altman）13 日再度公開支持人工智慧開發採取「節奏控制」，主張 [&#8230;]"
+          "title": "三星放話 CES 2027 亮相人型機器人，投資 19 兆韓圜龜尾基地曝光",
+          "link": "https://technews.tw/2026/09/16/samsung-aims-to-unveil-first-humanoid-robot-at-ces-2027/",
+          "date": "2026-09-15 23:10",
+          "summary": "三星已將人型機器人列入正式產品開發軌道，目標 2027 年 1 月美國拉斯維加斯 CES 消費電子展首度公開自 [&#8230;]"
         },
         {
-          "title": "史上首見軌道 AI 資料中心，SpaceX 誓言 2027 讓輝達頂規算力升空",
-          "link": "https://technews.tw/2026/09/14/spacex-nvidia-2027/",
-          "date": "2026-09-14 09:50",
-          "summary": "SpaceX 執行長伊隆·馬斯克（Elon Musk）近日在社群平台 X 上豪言，對 2027 年將輝達（NV [&#8230;]"
+          "title": "解鎖更多 AI 用量和進階創作工具，Meta One 訂閱方案在台上線",
+          "link": "https://technews.tw/2026/09/15/meta-one-subscription-now-available-in-taiwan/",
+          "date": "2026-09-15 15:00",
+          "summary": "Meta 今年已推出 Meta One 單一產品方案，包括 Instagram Plus、Facebook P [&#8230;]"
         },
         {
-          "title": "國泰金上修今年台灣 GDP 至 11.%、明年僅 5.1%！估央行 9 月利率不動",
-          "link": "https://finance.technews.tw/2026/09/14/stand-out-from-the-crowd/",
-          "date": "2026-09-14 09:40",
-          "summary": "國泰金今日舉辦「2026 年第三季台灣經濟氣候暨金融情勢展望」，受惠全球 AI 投資熱潮，台灣今年出口與投資表 [&#8230;]"
+          "title": "無懼 AI 退燒雜音，博通陳福陽霸氣預告：2028 營收上看 2,300 億美元",
+          "link": "https://finance.technews.tw/2026/09/15/broadcom-refutes-ai-demand-slowdown/",
+          "date": "2026-09-15 08:10",
+          "summary": "近期市場頻傳「人工智慧（AI）需求可能降溫」的擔憂，但博通（Broadcom）執行長陳福陽 （Hock Tan [&#8230;]"
         },
         {
-          "title": "誰說散戶是韭菜？第四法人 8 月定期定額 154 億買爆 0050、0056",
-          "link": "https://finance.technews.tw/2026/09/14/chinese-chives/",
-          "date": "2026-09-14 08:42",
-          "summary": "台股 8 月第四法人定期定額資金湧入，元大台灣 50（0050）、元大高股息（0056）定期定額戶數雙雙創高， [&#8230;]"
+          "title": "華碩全球 AI Tech 高峰會前進韓國，攜手 NVIDIA 加速 AI 工廠落地",
+          "link": "https://technews.tw/2026/09/15/asus-ai-tech-korea-nvidia/",
+          "date": "2026-09-15 07:50",
+          "summary": "AI 基礎設施走向全新階段，隨著 AI 營運從實驗階段走向自主程度日益升高，支撐這些 AI 工作負載的系統越趨 [&#8230;]"
         },
         {
-          "title": "搶 AI 玻璃基板商機！富強鑫攜韓國中科先峰引進高階 TGV 封裝設備",
-          "link": "https://finance.technews.tw/2026/09/14/glass-substrate/",
-          "date": "2026-09-14 07:32",
-          "summary": "富強鑫今日宣布跨足半導體產業，正式與韓國技術先驅中科先峰（China Korea Smart Technolo [&#8230;]"
+          "title": "從辦公設備到 AI 數位轉型夥伴，台灣理光啟動企業「20/80 效率革命」",
+          "link": "https://technews.tw/2026/09/15/from-office-equipment-to-ai-digital-transformation-partner/",
+          "date": "2026-09-15 07:40",
+          "summary": "立足全球服務網絡與深厚經驗，台灣理光致力於賦能現代企業，全面釋放組織工作潛能。面對混合辦公與 AI 浪潮，成為 [&#8230;]"
         },
         {
-          "title": "進化版主動式市值 ETF 來了！群益主動群益核心 50 自 9/30 開募",
-          "link": "https://finance.technews.tw/2026/09/14/towards-agent-based-ai/",
-          "date": "2026-09-14 07:07",
-          "summary": "鎖定現任強勢龍頭股、準千金趨勢股，以及未來龍頭股，群益投信推出進化版市值型 ETF「主動群益核心 50（004 [&#8230;]"
+          "title": "聯發科發表首款 2 奈米旗艦 5G Agentic AI 天璣 9600 Pro 晶片，AI 性能提升 51%",
+          "link": "https://technews.tw/2026/09/15/mediatek-unveils-its-first-2nm-flagship-5g-agent-ai-dimensity-9600-pro-chip/",
+          "date": "2026-09-15 07:31",
+          "summary": "聯發科發表天璣 9600 系列旗艦 5G Agentic AI 晶片天璣 9600 Pro 及天璣 9600 [&#8230;]"
         },
         {
-          "title": "美政府 AI 沙皇嗆 Anthropic 與 OpenAI 想放緩就放緩，別假裝需要他人同意",
-          "link": "https://infosecu.technews.tw/2026/09/14/sacks-tells-anthropic-openai-to-slow-down-solo/",
-          "date": "2026-09-14 06:40",
-          "summary": "美國白宮科技顧問、總統科學與技術諮詢委員會共同主席大衛‧薩克斯（David Sacks）13 日再度批評 An [&#8230;]"
+          "title": "聯發科天璣 9600 Pro 多項降低佔用記憶體技術，終端裝置有望 10 月到手",
+          "link": "https://technews.tw/2026/09/15/mediatek-dimensity-9600-pro-features-multiple-technologies-to-reduce-memory-usage/",
+          "date": "2026-09-15 07:31",
+          "summary": "聯發科 15 日發表首款採用台積電 2 奈米製程的旗艦 5G Agentic AI 晶片天璣 9600 Pro [&#8230;]"
         }
       ]
     },
@@ -84,76 +84,76 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
-          "title": "新 S11 晶片讓蘋果手錶 AI 效能大躍進，4 核 NPU 與 4GB 記憶體的強力加持",
-          "link": "https://technews.tw/2026/09/15/apple-watch-chipsets-faced-years-of-neglect-with-subpar-improvements/",
-          "date": "2026-09-15 00:20",
-          "summary": "長久以來，Apple Watch 所採用的系統級封裝（SiP）不僅效能普通，即使升級也是漸進式的些微改款。Ap [&#8230;]"
+          "title": "台日半導體合作再升級：日本材料技術如何擴大亞洲供應鏈影響力",
+          "link": "https://finance.technews.tw/2026/09/16/japan-taiwan-bonds-and-a-tariff-refund-boost/",
+          "date": "2026-09-16 00:00",
+          "summary": "全球人工智慧與先進製程浪潮推動下，台日半導體合作正經歷一場深層的結構性升級。兩國的合作範疇已不再只有台積電（T [&#8230;]"
         },
         {
-          "title": "淺談 iPhone 18 Pro 散熱：蘋果也開始相信物理了？",
-          "link": "https://technews.tw/2026/09/15/iphone-18-pro-cooling-apple-believing-physics/",
-          "date": "2026-09-14 23:50",
-          "summary": "如果細看 iPhone 18 Pro 的散熱設計，會發現蘋果對散熱這件事的態度似乎越來越務實，所以硬脾氣如蘋果 [&#8230;]"
+          "title": "SEMICON Taiwan 2026：矽光子引領 AI 算力解方",
+          "link": "https://technews.tw/2026/09/16/semicon-taiwan-2026-cpo-ai/",
+          "date": "2026-09-15 23:00",
+          "summary": "傳統架構下，各環節分工明確，但在共同封裝光學與系統技術協同最佳化（System-Technology Co-O [&#8230;]"
         },
         {
-          "title": "矽品傳亞利桑那州布局將定案，台廠在美先進封測受矚",
-          "link": "https://finance.technews.tw/2026/09/14/spil-in-usa/",
-          "date": "2026-09-14 10:20",
-          "summary": "半導體封測大廠日月光投控旗下矽品精密，傳出在美國亞利桑那州投資設廠規劃進入最後階段，短期內將定案，有機會提供後 [&#8230;]"
+          "title": "消去法選電機系、一路走進台積電！魏哲家：我從張忠謀董事長身上學到，首先要好好「聽」",
+          "link": "https://technews.tw/2026/09/15/ccwei-tsmc-ntu/",
+          "date": "2026-09-15 10:36",
+          "summary": "台積電董事長暨總裁魏哲家今（15 日）以視訊致詞的方式參加台大的「跨世代共問 AI 時代共答」論壇，並分享自己 [&#8230;]"
         },
         {
-          "title": "EUV 訂單強、High NA 加速導入！路透：ASML 龍頭地位延續至 2030 年",
-          "link": "https://technews.tw/2026/09/14/asml-high-na-euv-customers/",
-          "date": "2026-09-14 09:58",
-          "summary": "全球半導體曝光機大廠艾司摩爾（ASML）於 2026 年 9 月 8 日，在荷蘭埃因霍溫的「北智慧港工業園區（ [&#8230;]"
+          "title": "台灣沒有台積電會怎樣？米玉傑妙答大哉問：「人」才是關鍵",
+          "link": "https://technews.tw/2026/09/15/tsmc-ntu-ai-personality-qa/",
+          "date": "2026-09-15 10:10",
+          "summary": "台積電營運長米玉傑今（15 日）在「跨世代共問 AI 時代」論壇被問到許多大哉問，例如「台灣如果沒有台積電會怎 [&#8230;]"
         },
         {
-          "title": "國泰金上修今年台灣 GDP 至 11.%、明年僅 5.1%！估央行 9 月利率不動",
-          "link": "https://finance.technews.tw/2026/09/14/stand-out-from-the-crowd/",
-          "date": "2026-09-14 09:40",
-          "summary": "國泰金今日舉辦「2026 年第三季台灣經濟氣候暨金融情勢展望」，受惠全球 AI 投資熱潮，台灣今年出口與投資表 [&#8230;]"
+          "title": "台北 A 級商辦南港崛起、敦南老化！仲量聯行 25 週年曝三大布局方向",
+          "link": "https://finance.technews.tw/2026/09/15/overseas-factory-expansion/",
+          "date": "2026-09-15 09:17",
+          "summary": "仲量聯行（JLL）今日迎來在台成立 25 週年，董事總經理侯文信今日揭露下一個五年的三大方向，包括布局中南部企 [&#8230;]"
         },
         {
-          "title": "搶 AI 玻璃基板商機！富強鑫攜韓國中科先峰引進高階 TGV 封裝設備",
-          "link": "https://finance.technews.tw/2026/09/14/glass-substrate/",
-          "date": "2026-09-14 07:32",
-          "summary": "富強鑫今日宣布跨足半導體產業，正式與韓國技術先驅中科先峰（China Korea Smart Technolo [&#8230;]"
+          "title": "台積電找人才看什麼？米玉傑揭三大特質：願扛責任、敢做決定、待人公平",
+          "link": "https://technews.tw/2026/09/15/tsmc-ntu-qa/",
+          "date": "2026-09-15 08:25",
+          "summary": "台積電營運長米玉傑今（15 日）重返母校台灣大學，出席「跨世代共問 AI 時代」論壇，並與學弟妹進行問答，並分 [&#8230;]"
         },
         {
-          "title": "進化版主動式市值 ETF 來了！群益主動群益核心 50 自 9/30 開募",
-          "link": "https://finance.technews.tw/2026/09/14/towards-agent-based-ai/",
-          "date": "2026-09-14 07:07",
-          "summary": "鎖定現任強勢龍頭股、準千金趨勢股，以及未來龍頭股，群益投信推出進化版市值型 ETF「主動群益核心 50（004 [&#8230;]"
+          "title": "無懼 AI 退燒雜音，博通陳福陽霸氣預告：2028 營收上看 2,300 億美元",
+          "link": "https://finance.technews.tw/2026/09/15/broadcom-refutes-ai-demand-slowdown/",
+          "date": "2026-09-15 08:10",
+          "summary": "近期市場頻傳「人工智慧（AI）需求可能降溫」的擔憂，但博通（Broadcom）執行長陳福陽 （Hock Tan [&#8230;]"
         },
         {
-          "title": "暫避 FCC 禁令！中國掌握光模組優勢，中美出現 NPO/CPO 路線分歧",
-          "link": "https://technews.tw/2026/09/14/china-optical-transceiver-makers-us-fcc-covered-list-ban/",
-          "date": "2026-09-14 06:56",
-          "summary": "美國聯邦通訊委員會（FCC）公布設備授權規則更新，收緊對部分零組件設備的授權要求，尤其是對來自「受保護清單」（ [&#8230;]"
+          "title": "華碩全球 AI Tech 高峰會前進韓國，攜手 NVIDIA 加速 AI 工廠落地",
+          "link": "https://technews.tw/2026/09/15/asus-ai-tech-korea-nvidia/",
+          "date": "2026-09-15 07:50",
+          "summary": "AI 基礎設施走向全新階段，隨著 AI 營運從實驗階段走向自主程度日益升高，支撐這些 AI 工作負載的系統越趨 [&#8230;]"
         },
         {
-          "title": "2H26 NOR Flash 價格走勢分化，高容量產品漲幅上看 90%~110%",
-          "link": "https://technews.tw/2026/09/14/2h26-nor-flash-price-trends-diverge-high-capacity-products-90-110-price-hikes/",
-          "date": "2026-09-14 06:20",
-          "summary": "TrendForce 最新記憶體產業研究，NOR Flash 市場正經歷近十年來最重要的供需結構轉變；AI 占 [&#8230;]"
+          "title": "聯發科發表首款 2 奈米旗艦 5G Agentic AI 天璣 9600 Pro 晶片，AI 性能提升 51%",
+          "link": "https://technews.tw/2026/09/15/mediatek-unveils-its-first-2nm-flagship-5g-agent-ai-dimensity-9600-pro-chip/",
+          "date": "2026-09-15 07:31",
+          "summary": "聯發科發表天璣 9600 系列旗艦 5G Agentic AI 晶片天璣 9600 Pro 及天璣 9600 [&#8230;]"
         },
         {
-          "title": "材料技術成半導體下一戰場！應材用 AI 加速研發，盼突破晶片微縮極限",
-          "link": "https://technews.tw/2026/09/14/applied-materials-japan/",
-          "date": "2026-09-14 05:51",
-          "summary": "隨著現有晶片微縮技術逐漸逼近極限，半導體產業需要採用新材料才能持續推進，應用材料（Applied Materi [&#8230;]"
+          "title": "聯發科天璣 9600 Pro 多項降低佔用記憶體技術，終端裝置有望 10 月到手",
+          "link": "https://technews.tw/2026/09/15/mediatek-dimensity-9600-pro-features-multiple-technologies-to-reduce-memory-usage/",
+          "date": "2026-09-15 07:31",
+          "summary": "聯發科 15 日發表首款採用台積電 2 奈米製程的旗艦 5G Agentic AI 晶片天璣 9600 Pro [&#8230;]"
         },
         {
-          "title": "中國出入境新規 9/15 上路，陸委會示警五類人有風險",
-          "link": "https://infosecu.technews.tw/2026/09/14/china-new-entry-exit-regulations-effective-sept-15-mac-warns-5-groups-at-risk/",
-          "date": "2026-09-14 05:50",
-          "summary": "中國出入境管理新規將於明天上路，陸委會副主委沈有忠示警 5 類人有出入境風險，包括在中國的台商、台企幹部、半導 [&#8230;]"
+          "title": "光通訊、航太雙引擎成主要動能！瑞銀喊買穩懋、目標價上看 500 元",
+          "link": "https://technews.tw/2026/09/15/ubs-see-win-semiconductors/",
+          "date": "2026-09-15 07:05",
+          "summary": "歐系外資瑞銀（UBS）出具最新報告指出，穩懋半導體可望掌握基礎建設與光通訊業務持續成長所帶來的機會，給予「買進 [&#8230;]"
         },
         {
-          "title": "韓電想預收 5 年電費 25 兆韓圜  三星 SK 海力士打槍",
-          "link": "https://finance.technews.tw/2026/09/14/kepco-seeks-25-trillion-krw-5-year-advance-electricity-payments-samsung-sk-hynix-reject/",
-          "date": "2026-09-14 05:40",
-          "summary": "近年 AI 資料中心用電量快速攀升，韓國電網建設壓力也跟著大增。為籌措建設資金，韓國電力公社（KEPCO）先前 [&#8230;]"
+          "title": "台積電營運長接力進校園！米玉傑今赴台大開講、秦永沛下月接棒成大",
+          "link": "https://technews.tw/2026/09/15/ntu-tsmc-talent/",
+          "date": "2026-09-15 06:36",
+          "summary": "聯合報成立 75 週年，今（15 日）在台大舉辦「跨世代共問 AI 時代共答」論壇，邀請自台大電機系畢業的米玉 [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,30 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "台日半導體合作再升級：日本材料技術如何擴大亞洲供應鏈影響力",
+          "link": "https://finance.technews.tw/2026/09/16/japan-taiwan-bonds-and-a-tariff-refund-boost/",
+          "date": "2026-09-16 00:00",
+          "summary": "全球人工智慧與先進製程浪潮推動下，台日半導體合作正經歷一場深層的結構性升級。兩國的合作範疇已不再只有台積電（T [&#8230;]"
+        },
+        {
+          "title": "台達電大手筆籌資：發行 15 億美元可交換債、充實營運資金",
+          "link": "https://finance.technews.tw/2026/09/15/delta-electronics-fundraising-1-5-billion-exchangeable-bonds-boost-working-capital/",
+          "date": "2026-09-15 08:06",
+          "summary": "台達電大手筆籌資，為後續業務拓展增添子彈。台達今（15）日代新加坡子公司 DEISG 公告，董事會決議發行總額 [&#8230;]"
+        },
+        {
+          "title": "工研院創新日登場，聚焦 AI 時代能源與永續技術",
+          "link": "https://technews.tw/2026/09/15/itri-innovation-day-launches-energy-sustainability-technologies-ai-era/",
+          "date": "2026-09-15 07:29",
+          "summary": "台灣產業用電占比高，隨半導體與 AI 資料中心持續發展，如何在增加能源供給之外，提高用電效率與調度能力，也成為 [&#8230;]"
+        },
+        {
+          "title": "康寧跳水 13%  增資＋AI 降速風險引發疑慮",
+          "link": "https://finance.technews.tw/2026/09/15/corning-launches-2-billion-dollar-capital-raising-plan/",
+          "date": "2026-09-15 04:00",
+          "summary": "特殊玻璃、陶瓷材料兼光纖製造巨擘康寧（Corning）啟動規模最高達 20 億美元的增資計畫，適逢 AI 巨頭 [&#8230;]"
+        },
         {
           "title": "電動車電池要不要換？別只看里程，幾個異常訊號才是關鍵",
           "link": "https://technews.tw/2026/09/15/how-to-know-its-time-to-replace-your-ev-battery/",
@@ -208,30 +232,6 @@
           "link": "https://technews.tw/2026/09/14/applied-materials-japan/",
           "date": "2026-09-14 05:51",
           "summary": "隨著現有晶片微縮技術逐漸逼近極限，半導體產業需要採用新材料才能持續推進，應用材料（Applied Materi [&#8230;]"
-        },
-        {
-          "title": "AI 需求旺  村田製作所：「大膽評估」擴增 MLCC 產能",
-          "link": "https://technews.tw/2026/09/14/strong-ai-demand-murata-manufacturing-boldly-evaluates-expanding-mlcc-capacity/",
-          "date": "2026-09-14 01:20",
-          "summary": "因應 AI 伺服器用積層陶瓷電容（MLCC）需求旺，全球 MLCC 龍頭廠村田製作所（Murata Manuf [&#8230;]"
-        },
-        {
-          "title": "北美鋰資源自主關鍵一役：LGES 長約牽動全球電池供應板塊挪移",
-          "link": "https://technews.tw/2026/09/14/lges-wz-smackover-lithium/",
-          "date": "2026-09-13 23:00",
-          "summary": "8 月韓國電池廠 LGES（LG 新能源）與美國鋰資源開發商 Smackover Lithium 簽訂為期十年 [&#8230;]"
-        },
-        {
-          "title": "羽球比金價漲得還兇，看 YONEX 如何靠「頭到腳」全產品線殺出成本重圍",
-          "link": "https://finance.technews.tw/2026/09/13/why-yonex-defied-the-trend-to-surpass-100-billion-yen-in-revenue/",
-          "date": "2026-09-13 03:00",
-          "summary": "2026 年 3 月期，日本球拍大廠 YONEX 合併營收衝上 1,636 億日圓，寫下歷史新高。同一段時間， [&#8230;]"
-        },
-        {
-          "title": "駐龍卡位龐巴迪大單逾百項零件，董座曝航太業結構轉變「誰有產能誰就贏！」",
-          "link": "https://technews.tw/2026/09/13/drewloong-benefits-from-aidc-bombardier-orders/",
-          "date": "2026-09-13 01:00",
-          "summary": "漢翔築起本土供應鏈，為台灣爭取到首項民用機前機身組件長單，其中最關鍵的協力廠，正是高雄機製件大廠駐龍精密。駐龍 [&#8230;]"
         }
       ]
     },
