@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17 00:33",
+  "updated": "2026-09-18 00:21",
   "sources": [
     {
       "name": "AI 人工智慧",
@@ -240,6 +240,18 @@
       "site": "https://ccc.technews.tw/",
       "items": [
         {
+          "title": "Google Home MCP 登場，第三方 AI Agent 與居家環境智慧接軌",
+          "link": "https://ccc.technews.tw/2026/09/17/google-opens-early-access-to-model-context-protocol-for-google-home/",
+          "date": "2026-09-17 08:44",
+          "summary": "Google 透過全新 Google Home MCP，將智慧家庭產品向各家 AI Agent 敞開大門，如 [&#8230;]"
+        },
+        {
+          "title": "蘋果靠 Lightning 連接埠收授權金，十年進帳超過 10 億美元",
+          "link": "https://ccc.technews.tw/2026/09/17/how-much-did-apple-earn-from-the-iphones-lightning-port/",
+          "date": "2026-09-17 04:20",
+          "summary": "Forbes 專欄作家 Ewan Spence 在「30 Days of iPhone」系列第 16 篇回顧， [&#8230;]"
+        },
+        {
           "title": "打破入門機框架！Googlebook 規格曝光，搭 15.3 吋 OLED 螢幕與 Core Ultra 5 處理器",
           "link": "https://ccc.technews.tw/2026/09/14/lenovo-googlebook-15-specs-leaked/",
           "date": "2026-09-14 08:19",
@@ -298,18 +310,6 @@
           "link": "https://ccc.technews.tw/2026/09/05/kinesin-protein-walking-viral/",
           "date": "2026-09-05 03:04",
           "summary": "有支動畫每隔幾年就會重新流行，內容為人體內某蛋白質沿「軌道」努力邊走邊搬貨物，動作就像努力跑步的小生物，大批網 [&#8230;]"
-        },
-        {
-          "title": "Switch 2 日本銷量續低迷、創史上次低水準",
-          "link": "https://ccc.technews.tw/2026/09/04/switch-2-japan-sales-sluggish-second-lowest-level-ever/",
-          "date": "2026-09-04 06:40",
-          "summary": "任天堂（Nintendo）Switch 2 遊戲機日本銷量持續低迷，上週僅賣出約 2.2 萬台，創下史上次低紀 [&#8230;]"
-        },
-        {
-          "title": "滿滿 1990 年代回憶殺，樂高聯名 Sony 推出「初代 PS 主機」細節滿分",
-          "link": "https://ccc.technews.tw/2026/09/04/lego-sony-playstation/",
-          "date": "2026-09-04 02:30",
-          "summary": "索尼互動娛樂（SIE）與樂高集團（LEGO Group）於 9 月 3 日強強聯手，正式發表全新「LEGO P [&#8230;]"
         }
       ]
     }
