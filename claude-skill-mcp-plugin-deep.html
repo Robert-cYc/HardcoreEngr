@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Skill、MCP 與 Plugin 深度解析 — 三個擴展機制如何讓 AI 變成你的專屬工程師 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="深入解析 Claude Code 的三大擴展機制：Skill（可重用指令）、MCP（外部資料連接）與 Plugin（打包分享）。從設定到實戰，讓你把 Claude Code 打造成真正的個人工程平台。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/claude-skill-mcp-plugin-deep.html">
+  <meta property="og:title" content="Claude Code Skill、MCP 與 Plugin 深度解析 — 三個擴展機制如何讓 AI 變成你的專屬工程師">
+  <meta property="og:description" content="深入解析 Claude Code 的三大擴展機制：Skill、MCP 與 Plugin。從設定到實戰，讓你把 Claude Code 打造成真正的個人工程平台。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/claude-skill-mcp-plugin-deep.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Code Skill、MCP 與 Plugin 深度解析">
+  <meta name="twitter:description" content="深入解析 Claude Code 的 Skill、MCP 與 Plugin 功能與使用方法。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.21rem; }
+    .article-body th, .article-body td { padding: 0.4rem 0.5rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .cmd-table td:first-child { font-family: "Fira Code", monospace; font-weight: 700; color: var(--accent); white-space: nowrap; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Claude Code Skill、MCP 與 Plugin 深度解析 — 三個擴展機制如何讓 AI 變成你的專屬工程師",
+    "description": "深入解析 Claude Code 的 Skill、MCP 與 Plugin 功能與使用方法。從設定到實戰，讓你把 Claude Code 打造成真正的個人工程平台。",
+    "url": "https://ai-hardcore-engineer.com/claude-skill-mcp-plugin-deep.html",
+    "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
+    "image": "https://ai-hardcore-engineer.com/og-image.png",
+    "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/claude-skill-mcp-plugin-deep.html" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo"><div>"AI" 硬核工程師</div><div class="tagline">Talk is cheap. Show me the code</div></div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="article-hero">
+        <h1>Claude Code Skill、MCP 與 Plugin 深度解析</h1>
+        <div class="article-meta"><span>2026-09-23</span><span class="separator">·</span><span>30 分鐘閱讀</span></div>
+        <div class="article-tags">
+          <span class="tag">Claude Code</span>
+          <span class="tag">Skill</span>
+          <span class="tag">MCP</span>
+          <span class="tag">Plugin</span>
+          <span class="tag">AI 開發工具</span>
+        </div>
+        <img loading="lazy" src="images/picsum-mcp-skill-1200-400.jpg" alt="Claude Code Skill MCP Plugin" style="border-radius:10px;max-height:400px;object-fit:cover;">
+      </section>
+
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> 本文深入解析 Claude Code 三大擴展機制：<br>
+          &nbsp;&nbsp;① <strong>Skill</strong> — 把你常做的 SOP 寫成一鍵指令（/code-review、/bug-fix...）<br>
+          &nbsp;&nbsp;② <strong>MCP</strong> — 用開放標準連接外部系統（資料庫、GitHub、瀏覽器、自訂 API...）<br>
+          &nbsp;&nbsp;③ <strong>Plugin</strong> — 把 Skill、MCP、Hook 打包成一個可分享的完整套件
+        </blockquote>
+
+        <p>嘿，如果你已經用 Claude Code 一陣子了，應該已經感受到它不只是個「聊天寫程式」的工具。真正讓它變強的，其實是這三個擴展機制：<strong>Skill、MCP、Plugin</strong>。這篇文章不講廢話，直接帶你從零到實戰，讓 Claude Code 從「好用的助手」進化成「你專屬的工程平台」。</p>
+
+        <h2>為什麼要學這三個？</h2>
+        <p>簡單說：沒有它們，Claude Code 就像一把瑞士刀，功能齊全但還是得靠你手動操作。有了它們，它就像一個已經熟悉你專案慣例、知道怎麼查資料庫、會自動執行工作流程的工程師。你只需要下指令，它自己搞定。</p>
+        <p>這三個機制各自負責不同的事：</p>
+        <ul>
+          <li><strong>Skill</strong> 管「流程」——你重複做過的步驟</li>
+          <li><strong>MCP</strong> 管「連接」——外部資料與服務</li>
+          <li><strong>Plugin</strong> 管「打包」——把前兩個加上 Hook 整包分享給團隊</li>
+        </ul>
+
+        <blockquote>
+          💡 小提醒：這三個機制可以單獨用，也可以組合。你今天只想做一個自動 code review 流程，那就先學 Skill；想接資料庫，就學 MCP。別一次全上，先解決你最痛的那個點。
+        </blockquote>
+
+        <h2>Skill — 把重複的 SOP 變成一鍵指令</h2>
+
+        <h3>什麼是 Skill？</h3>
+        <p>你有沒有遇過這種情況：每次改完 code 之後，都要手動跑 <code>git diff</code>、檢查 lint、寫測試、跑 CI... 這些步驟每次都一樣，但 Claude 不一定記得全部要做。Skill 就是把這些固定流程寫成一個檔案，然後用 <code>/skill-name</code> 一鍵觸發。</p>
+        <p>它的本質就是一個 <strong>可重用的 prompt 模板</strong>，存在專案目錄下的 <code>.claude/skills/</code> 資料夾中。</p>
+
+        <h3>Skill 檔案結構</h3>
+        <p>每個 Skill 就是一個資料夾，裡面只有一個檔案 <code>SKILL.md</code>：</p>
+        <pre><code>.claude/
+├── skills/
+│   ├── code-review/
+│   │   └── SKILL.md      # 觸發方式：/code-review
+│   ├── bug-fix/
+│   │   └── SKILL.md      # 觸發方式：/bug-fix
+│   └── generate-tests/
+│       └── SKILL.md      # 觸發方式：/generate-tests</code></pre>
+        <p>注意：資料夾名稱要跟 <code>SKILL.md</code> 前面的 <code>name:</code> 完全一致，不然 Claude 找不到。</p>
+
+        <h3>建立第一個 Skill：實戰範例</h3>
+        <p>假設你想建立一個「自動審查修改檔案」的 Skill，讓 Claude 每次收到 <code>/code-review</code> 時，會自動：</p>
+        <ol>
+          <li>列出所有修改過的檔案</li>
+          <li>逐一檢查每個檔案的 diff</li>
+          <li>分類問題（Critical / Warning / Info）</li>
+          <li>產出一份格式化報告</li>
+        </ol>
+
+        <p>在 <code>.claude/skills/code-review/SKILL.md</code> 中寫入：</p>
+        <pre><code>---
+name: code-review
+description: 對專案的變更檔案進行程式碼品質審查
+---
+
+# /code-review — 程式碼品質審查
+
+## 目的
+對專案中的 changed files 進行審查，包含：
+- Bug 檢測
+- 效能瓶頸
+- 安全漏洞
+- 可讀性問題
+
+## 操作指令
+1. 執行 `git diff main --name-only` 列出修改檔案
+2. 逐一檢視：`git diff main -- &lt;file&gt;`
+3. 分類問題：Critical（可能崩潰/安全漏洞）、Warning（效能/優化建議）、Info（可讀性改善）
+4. 撰寫格式化報告
+5. 若輸入 `/code-review high`，使用更嚴格標準
+6. 若輸入 `/code-review --fix`，在報告後自動修復可修復問題</code></pre>
+
+        <p>存檔後重新啟動 Claude（或執行 <code>/exit</code> 再進來），輸入 <code>/code-review</code> 就可以看到 Skill 生效了。如果沒出現，執行 <code>/doctor</code> 檢查配置是否有錯。</p>
+
+        <blockquote>
+          💡 小技巧：你可以在 Skill 前面的 frontmatter 加 <code>allowed-tools</code> 來限制這個 Skill 可以呼叫哪些工具，增加安全性。例如只允許 Read、Edit，不允許 Bash 執行危險指令。
+        </blockquote>
+
+        <h3>全域 Skill — 跨專案共用</h3>
+        <p>如果你有一些個人工作流（例如每日報告、提交輔助），不想每個專案都複製一份，可以把 Skill 放到家目錄下：</p>
+        <pre><code>~/.claude/
+└── skills/
+    ├── daily-report/
+    │   └── SKILL.md      # /daily-report
+    └── commit-helper/
+        └── SKILL.md      # /commit-helper</code></pre>
+        <p>這樣所有專案都能直接用 <code>/daily-report</code>，非常方便。</p>
+
+        <h2>MCP — 讓 Claude Code 連接外部世界</h2>
+
+        <h3>什麼是 MCP？</h3>
+        <p><strong>MCP (Model Context Protocol)</strong> 是 Anthropic 推出的開放標準，讓 Claude Code 可以連接到外部資料來源與服務。簡單說，就是讓 Claude 能「讀」和「操作」你專案之外的東西。</p>
+        <p>它提供三種能力：</p>
+        <table class="cmd-table">
+          <thead><tr><th>能力</th><th>說明</th><th>使用場景</th></tr></thead>
+          <tbody>
+            <tr><td>Resources</td><td>可讀取的資料（檔案內容、API 回應）</td><td>自動讀取設計文件、API 文件</td></tr>
+            <tr><td>Tools</td><td>可呼叫的函數（需使用者批准）</td><td>更新 GitHub Issue、查詢資料庫</td></tr>
+            <tr><td>Prompts</td><td>預寫的 prompt 模板</td><td>透過特定指令觸發</td></tr>
+          </tbody>
+        </table>
+
+        <h3>如何設定 MCP Server</h3>
+        <p>最常用的方式是在專案根目錄建立 <code>.mcp.json</code> 檔案：</p>
+        <pre><code>{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/username/project"],
+      "env": { "PATH": "/usr/local/bin" }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_xxxxx" }
+    },
+    "sqlite": {
+      "command": "uv",
+      "args": ["--directory", "/path/to/sqlite-mcp", "run", "sqlite.py"],
+      "env": { "SQLITE_PATH": "/path/to/app.db" }
+    }
+  }
+}</code></pre>
+
+        <blockquote>
+          ⚠️ 安全提醒：<code>.mcp.json</code> 會被 Git 追蹤，千萬別把 API Token 直接寫在裡面。對於敏感憑證，推薦用 <code>claude mcp login</code> 進行 OAuth 授權，或把檔案加入 <code>.gitignore</code>。
+        </blockquote>
+
+        <h3>實戰範例：接上 SQLite 資料庫</h3>
+        <p>假設你有一個 SQLite 資料庫 <code>/path/to/app.db</code>，想讓 Claude 直接查詢內容。步驟非常簡單：</p>
+
+        <h4>步驟 1 — 建立 .mcp.json</h4>
+        <pre><code>{
+  "mcpServers": {
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "/path/to/app.db"]
+    }
+  }
+}</code></pre>
+
+        <h4>步驟 2 — 啟動 Claude Code 並使用</h4>
+        <p>啟動 Claude 後，它會自動掃描 <code>.mcp.json</code> 並詢問是否信任這些 Server。選擇信任後，你就可以直接對 Claude 說：</p>
+        <pre><code>查詢 users 資料表的所有欄位</code></pre>
+        <p>Claude 會透過 MCP Server 直接執行 SQL 並回傳結果，完全不用你手動打 SQL！</p>
+
+        <h3>常用 MCP Server 快速參考</h3>
+        <table class="cmd-table">
+          <thead><tr><th>Server 名稱</th><th>用途</th><th>安裝指令</th></tr></thead>
+          <tbody>
+            <tr><td>@modelcontextprotocol/server-filesystem</td><td>本地檔案系統存取</td><td>npx -y ... &lt;path&gt;</td></tr>
+            <tr><td>@modelcontextprotocol/server-memory</td><td>記憶持久化</td><td>npx -y ...</td></tr>
+            <tr><td>@modelcontextprotocol/server-github</td><td>GitHub API 操作</td><td>npx -y ...</td></tr>
+            <tr><td>@modelcontextprotocol/server-sqlite</td><td>SQLite 資料庫查詢</td><td>npx -y ...</td></tr>
+            <tr><td>@modelcontextprotocol/server-fetch</td><td>HTTP 網頁抓取</td><td>npx -y ...</td></tr>
+            <tr><td>@modelcontextprotocol/server-brave-search</td><td>Brave 搜尋</td><td>npx -y ...</td></tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          📚 如果現有 Server 不符合需求，可以自己寫一個。MCP 提供 Python、TypeScript、Java、C# 多語言 SDK。官方教學：<a href="https://modelcontextprotocol.io/quickstart/server" target="_blank">Building Your First MCP Server</a>。
+        </blockquote>
+
+        <h3>CLI 管理指令</h3>
+        <p>在 Claude Code session 中，你可以用以下指令管理 MCP：</p>
+        <table class="cmd-table">
+          <thead><tr><th>命令</th><th>說明</th><th>範例</th></tr></thead>
+          <tbody>
+            <tr><td>claude mcp</td><td>列出所有連線狀態</td><td>claude mcp</td></tr>
+            <tr><td>claude mcp reconnect &lt;name&gt;</td><td>重新連線指定 Server</td><td>claude mcp reconnect github</td></tr>
+            <tr><td>claude mcp disable &lt;name&gt;</td><td>禁用指定 Server</td><td>claude mcp disable sqlite</td></tr>
+            <tr><td>claude mcp disable all</td><td>禁用所有 Server</td><td>—</td></tr>
+            <tr><td>claude mcp login &lt;name&gt;</td><td>執行 OAuth 授權流程</td><td>claude mcp login sentry</td></tr>
+            <tr><td>claude mcp logout &lt;name&gt;</td><td>清除 OAuth 憑證</td><td>claude mcp logout sentry</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Plugin — 把能力打包成完整套件</h2>
+
+        <h3>什麼是 Plugin？</h3>
+        <p><strong>Plugin</strong> 是 Claude Code 最高層的封裝單位。它把 Skill、MCP Server、Hooks、Subagents 與 Slash Commands 打包成一個可安裝的套件，透過 marketplace 安裝：</p>
+        <pre><code>/plugin marketplace add &lt;repo-url&gt;
+/plugin install &lt;plugin-name&gt;</code></pre>
+        <p>對團隊來說，這招非常省事：把共用的 code review 流程（Skill）、內部 API 的 MCP Server、強制執行的 Hooks 打包成一個 Plugin，新人裝完就等於完成了整套環境建置。</p>
+
+        <h3>Plugin 結構</h3>
+        <p>一個典型的 Plugin 目錄結構可能長這樣：</p>
+        <pre><code>my-team-plugin/
+├── plugin.json              # Plugin 設定
+├── skills/
+│   └── team-review/
+│       └── SKILL.md
+├── mcp/
+│   └── .mcp.json
+├── hooks/
+│   └── hooks.json
+└── subagents/
+    └── security-checker.md</code></pre>
+
+        <blockquote>
+          💡 Plugin 的價值不只是「方便安裝」，更重要的是「統一標準」。當整個團隊都用同一個 Plugin，你不用擔心每個人的 Skill 版本不同、Hook 設定不一致，所有人都在同一套規範下工作。
+        </blockquote>
+
+        <h2>三者關係：選擇心法</h2>
+        <p>這三個機制常常讓人搞混，這裡給你一個簡單的選擇心法：</p>
+        <table class="cmd-table">
+          <thead><tr><th>機制</th><th>觸發方式</th><th>解決什麼問題</th><th>配置位置</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Skill</strong></td><td>使用者輸入 /指令</td><td>固定 SOP、可重用工作流</td><td><code>.claude/skills/</code></td></tr>
+            <tr><td><strong>MCP</strong></td><td>模型依需求呼叫工具</td><td>連接外部系統與資料源</td><td><code>.mcp.json</code></td></tr>
+            <tr><td><strong>Hook</strong></td><td>事件點自動觸發</td><td>強制自動化（格式化、攔截、通知）</td><td><code>.claude/settings.json</code></td></tr>
+            <tr><td><strong>Plugin</strong></td><td>透過 /plugin 安裝</td><td>打包以上所有能力，團隊共用</td><td>marketplace repo</td></tr>
+          </tbody>
+        </table>
+
+        <p>一句話記住：<strong>要連外部服務用 MCP；要把重複流程變一鍵用 Skill；要「一定會執行」的自動化用 Hook；要分享給團隊就用 Plugin。</strong></p>
+
+        <h2>實戰組合：一個完整工作流範例</h2>
+        <p>假設你在一個團隊裡，想建立一套完整的開發輔助系統。你可以這樣組合：</p>
+
+        <h3>場景：自動審查 + 資料庫查詢 + 團隊分享</h3>
+        <ol>
+          <li><strong>建立 Skill</strong>：在專案中建立 <code>.claude/skills/code-review/SKILL.md</code>，定義審查流程</li>
+          <li><strong>添加 MCP</strong>：在 <code>.mcp.json</code> 中配置 SQLite Server，讓 Claude 能直接查專案資料</li>
+          <li><strong>配置 Hook</strong>：在 <code>.claude/settings.json</code> 中設定 PostToolUse，自動格式化修改過的檔案</li>
+          <li><strong>打包 Plugin</strong>：把以上內容整理成一個 Plugin，發布到團隊 marketplace</li>
+          <li><strong>團隊安裝</strong>：團隊成員只需要執行 <code>/plugin install team-dev-kit</code>，全部功能立即可用</li>
+        </ol>
+
+        <blockquote>
+          🎯 快速上手建議：別一次全上！先從最痛的那個開始——如果你常做 code review，先寫 Skill；如果你常查資料庫，先接 MCP。等一個機制熟悉了，再加下一個。記住：先解決問題，再追求完美。
+        </blockquote>
+
+        <h2>常見問題與疑難排解</h2>
+
+        <h3>Skill 沒出現怎麼辦？</h3>
+        <p>最常見的三個原因：</p>
+        <ol>
+          <li>資料夾名稱與 frontmatter 的 <code>name</code> 不一致</li>
+          <li>忘記加 <code>---</code> 前後的分隔線</li>
+          <li>沒有重新啟動 Claude session（或執行 <code>/skills</code> 確認列表）</li>
+        </ol>
+        <p>執行 <code>/doctor</code> 可以快速診斷配置問題。</p>
+
+        <h3>MCP Server 連接失敗</h3>
+        <p>檢查步驟：</p>
+        <ol>
+          <li>確認 <code>.mcp.json</code> 語法正確（用 JSON 驗證工具）</li>
+          <li>執行 <code>claude mcp</code> 看連線狀態</li>
+          <li>確認 <code>command</code> 和 <code>args</code> 路徑正確，特別是絕對路徑</li>
+          <li>確認環境變數（特別是 Token）已正確設定</li>
+        </ol>
+
+        <h3>Plugin 安裝後功能沒生效</h3>
+        <p>通常是因為 Plugin 需要重新啟動 Claude session 才能完全載入。執行 <code>/plugin list</code> 確認安裝狀態，再用 <code>/exit</code> 重啟。</p>
+
+        <h2>總結：從助手到工程平台的進化路徑</h2>
+        <p>Claude Code 的強大之處，不只是對話編程的能力，而是這三層擴展機制：MCP 打通外部資料源，Skill 沉澱你的工作流，Hook 保證自動化必然執行，Plugin 負責打包分享。當你把這四個湊在一起，Claude Code 就從一個聊天助手，真正變成一個客製化的工程平台。</p>
+        <p>記住一句話：<strong>先解決最痛的那一個，不要一次全上。</strong> 你的第一個 Skill、第一個 MCP Server、第一個 Plugin，會讓你感受到這個平台真正的力量。</p>
+
+        <blockquote>
+          🎯 最終建議：今天就做一件事——在你的專案中建立第一個 Skill（哪怕只是「自動格式化」），或接上第一個 MCP Server（哪怕只是檔案系統）。那個成功的瞬間，你就會明白為什麼這麼多人說 Claude Code 改變了他們的工作方式。
+        </blockquote>
+      </article>
+
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container"><div class="marquee-content"></div></div>
+      <div class="footer-bottom"><p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>

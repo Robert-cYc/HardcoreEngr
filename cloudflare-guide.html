@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare 功能詳解：CDN、DNS、SSL、WAF、Workers 與 Pages — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,☁️">
+  <meta name="description" content="Cloudflare 完整教學：CDN 加速、DNS 管理、SSL TLS、WAF 防護、DDoS 防禦、Cloudflare Workers、Pages 部署、Tunnel 內網穿透等功能與操作方法。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/cloudflare-guide.html">
+  <meta property="og:title" content="Cloudflare 功能詳解：CDN、DNS、SSL、WAF、Workers 與 Pages — "AI" 硬核工程師">
+  <meta property="og:description" content="Cloudflare 完整教學：CDN 加速、DNS 管理、SSL TLS、WAF 防護、DDoS 防禦、Cloudflare Workers、Pages 部署、Tunnel 內網穿透等功能與操作方法。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/cloudflare-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare 功能詳解：CDN、DNS、SSL、WAF、Workers 與 Pages — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Cloudflare 完整教學：CDN 加速、DNS 管理、SSL TLS、WAF 防護、DDoS 防禦、Cloudflare Workers、Pages 部署、Tunnel 內網穿透等功能與操作方法。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.55rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.85; font-size: 1.05rem; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.95em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); font-size: 0.9em; }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.75; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1rem; }
+    .article-body th, .article-body td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .article-body img { border-radius: 8px; margin: 1.5rem auto; display: block; max-width: 100%; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .tip-box { background: #1a1a1a; border-left: 4px solid var(--accent); padding: 1.2rem 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
+    .tip-box strong { color: #ffffff; }
+  </style>
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+  <div class="container header-inner">
+    <div class="logo"><div>"AI" 硬核工程師</div><div class="tagline">Talk is cheap. Show me the code</div></div>
+    <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="./index.html">首頁</a>
+      <a href="./tech-news.html">科技新知</a>
+      <a href="./articles.html">文章</a>
+      <a href="./about.html">關於</a>
+      <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+      <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay">
+  <div class="search-container">
+    <input type="text" placeholder="搜尋文章..." autocomplete="off">
+    <div class="search-results"></div>
+    <div class="search-close">按 Esc 關閉</div>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+    <section class="article-hero">
+      <h1>Cloudflare 功能詳解：CDN、DNS、SSL、WAF、Workers 與 Pages</h1>
+      <div class="article-meta">
+        <span>2026-09-14</span>
+        <span class="separator">·</span>
+        <span>15 分鐘閱讀</span>
+      </div>
+      <div class="article-tags">
+        <span class="tag">Cloudflare</span>
+        <span class="tag">CDN</span>
+        <span class="tag">DNS</span>
+        <span class="tag">網站加速</span>
+        <span class="tag">教學</span>
+      </div>
+    </section>
+
+    <article class="article-body">
+      <blockquote>
+        🎯 <strong>重點摘要：</strong>Cloudflare 是全球最大的邊緣網路平台，提供 CDN 加速、DNS 解析、SSL/TLS 加密、WAF 防護、DDoS 防禦、Cloudflare Workers 伺服函數、Pages 靜態站部署、Tunnel 內網穿透等服務。無論是個人部落格、電子商務網站抑或是企業應用，都能透過 Cloudflare 提升效能、安全性與可靠性。
+      </blockquote>
+
+      <h2>Cloudflare 是什麼？</h2>
+      <p>Cloudflare, Inc. 是一家美國雲端服務公司，創立於 2009 年。它以「全球最大的邊緣網路」為定位，透過在全球 300 多個據點部署的 CDN 節點，將用戶流量引導到距離最近的邊緣伺服器，實現網頁加載速度的顯著提升。</p>
+      <p>Cloudflare 的服務以 DNS 為入口 — 用戶只需將域名的 Nameserver 切換為 Cloudflare 提供的地址，即可自動享受 CDN 加速、DDoS 防護、SSL 加密等功能，無需修改伺服器或程式碼。</p>
+
+      <h2>主要功能介紹</h2>
+
+      <h3>1. CDN（Content Delivery Network）</h3>
+      <p>Cloudflare 的 CDN 會自動將你的網站靜態資源（HTML、CSS、JS、圖片等）快取到全球 300 多個邊緣資料中心。當用戶訪問你的網站時，Cloudflare 會將請求導向距離最近的邊緣伺服器，大幅減少延遲。</p>
+      <p><strong>操作方法：</strong></p>
+      <ul>
+        <li>將域名 Nameserver 切換為 Cloudflare 提供的地址（例如 <code>ns1.cloudflare.com</code>、<code>ns2.cloudflare.com</code>）。</li>
+        <li>在 Cloudflare Dashboard 的「Speed」→「Optimization」中開啟「Auto Minify」（自動壓縮 CSS/JS/HTML）。</li>
+        <li>在「Caching」→「Configuration」中設定快取等級（Cache Level）與 TTL。</li>
+        <li>使用「Purge Cache」按鈕清除快取，當網站更新內容時立即生效。</li>
+      </ul>
+      <div class="tip-box">
+        <strong>💡 小技巧：</strong>初次啟用 CDN 時，建議將「Development Mode」開啟，這樣修改過的檔案會立即生效，無需等待快取過期。
+      </div>
+
+      <h3>2. DNS 管理</h3>
+      <p>Cloudflare 提供快速、安全的 DNS 解析服務，解析速度通常低於 1ms，遠勝於一般註冊商提供的 DNS。</p>
+      <p><strong>操作方法：</strong></p>
+      <ul>
+        <li>在「DNS」標籤中點擊「Add record」，新增 A、AAAA、CNAME、MX、TXT、SRV 等類型的 DNS 記錄。</li>
+        <li>切換「Proxy status」為「Proxied」（橘色雲朵 ✅），流量會經由 Cloudflare 節點；選「DNS only」（灰色雲朵），直接解析到伺服器。</li>
+        <li>支援「DNS 重試」與「健康檢查」，當伺服器離線時自動切換備用 IP。</li>
+      </ul>
+      <div class="tip-box">
+        <strong>💡 小技巧：</strong>對於不需 CDN 加速的郵件 MX 記錄，請務必設定為「DNS only」（灰色雲朵），否則可能會影響郵件寄送。
+      </div>
+
+      <h3>3. SSL/TLS 加密</h3>
+      <p>Cloudflare 提供免費的 SSL 憑證，支援 Let's Encrypt 與自有憑證上傳。啟用 SSL 後，網站連線從 HTTP 自動升級為 HTTPS。</p>
+      <p><strong>操作方法：</strong></p>
+      <ul>
+        <li>在「SSL/TLS」→「Overview」中選擇加密模式：Full（推薦）、Full (strict)、Flexible、Off。</li>
+        <li>進階設定：在「Edge Certificates」中啟用「Always Use HTTPS」強制重定向。</li>
+        <li>可上傳自有 SSL 憑證，或使用 Cloudflare 自動發行的憑證。</li>
+      </ul>
+
+      <h3>4. WAF（Web Application Firewall）</h3>
+      <p>Cloudflare 的 WAF 會檢查進入網站的所有 HTTP 請求，阻擋 SQL 注入、XSS、CSRF 等常見攻擊。</p>
+      <p><strong>操作方法：</strong></p>
+      <ul>
+        <li>在「Security」→「WAF」中開啟 WAF 開關。</li>
+        <li>選擇適用的規則集（例如 OWASP Core Ruleset 來防護常見漏洞）。</li>
+        <li>可自訂規則：在「Tools」→「IP Access Rules」中封鎖或允放特定 IP 位址。</li>
+      </ul>
+
+      <h3>5. DDoS 防護</h3>
+      <p>Cloudflare 在邊緣層攔截 DDoS 攻擊，保護起源伺服器不被壓垓。</p>
+      <p><strong>操作方法：</strong></p>
+      <ul>
+        <li>在「Security」→「DDoS」中設定防護等級（Under Attack、High、Medium、Low、Off）。</li>
+        <li>「Under Attack」模式會針對可疑流量顯示挑戰驗證頁（JavaScript Challenge）。</li>
+        <li>「Security Level」設定可以根據來路 IP 的信譽分數自動判斷是否顯示驗證。</li>
+      </ul>
+
+      <h3>6. Cloudflare Workers</h3>
+      <p>Cloudflare Workers 是一種在邊緣運行的伺服函數平台，基於 V8 JavaScript 引擎。你可以撰寫 JavaScript、TypeScript、Rust、C 等語言部署到 Cloudflare 全球邊緣，實現毫秒級延遲的伺服端邏輯。</p>
+      <p><strong>操作方法：</strong></p>
+      <ul>
+        <li>在 Cloudflare Dashboard 點擊「Workers & Pages」→「Create」。</li>
+        <li>使用線上編輯器編寫程式碼，或透過 <code>wrangler</code> CLI 工具本地開發：</li>
+      </ul>
+      <pre><code>// 基本 Worker 範例
+export default {
+  async fetch(request, env, ctx) {
+    return new Response("Hello from Cloudflare Workers!", {
+      headers: { "content-type": "text/plain" }
+    })
+  }
+}</code></pre>
+      <pre><code># 使用 Wrangler CLI 部署
+npm install -g wrangler
+wrangler login
+wrangler deploy</code></pre>
+      <div class="tip-box">
+        <strong>💡 Pro 提示：</strong>Workers 支援 TypeScript、Rust、Python 等多種語言，並可與 Cloudflare 的 KV、D1、R2 等資料庫服務整合，非常適合打造 API 閘道、身份驗證、A/B 測試等功能。
+      </div>
+
+      <h3>7. Cloudflare Pages</h3>
+      <p>Cloudflare Pages 是一個 Jamstack 靜態站託管平台，原生支援 Next.js、Nuxt.js、Vue、React、Svelte 等框架，並與 Git 整合實現自動部署。</p>
+      <p><strong>操作方法：</strong></p>
+      <ul>
+        <li>在「Workers & Pages」→「Create」→「Pages」，選擇你的 Git 提供商（GitHub、GitLab、Bitbucket）。</li>
+        <li>選擇要部署的倉庫與分支，設定構建命令（例如 <code>npm run build</code>）與輸出目錄（例如 <code>dist</code>）。</li>
+        <li>每次推送 Git 時，Pages 會自動觸發構建與部署。</li>
+      </ul>
+      <div class="tip-box">
+        <strong>💡 小技巧：</strong>Cloudflare Pages 與 Workers 無縫整合，可以在 Pages 專案中添加 Custom Domains，並自動配置 SSL。
+      </div>
+
+      <h3>8. Cloudflare Tunnel</h3>
+      <p>Cloudflare Tunnel（原名 Argo Tunnel）讓你無需公開伺服器 IP，即可將內部網站透過 Cloudflare 反向代理暴露到公網。非常適合開發環境、內網服務穿透。</p>
+      <p><strong>操作方法：</strong></p>
+      <ul>
+        <li>安裝 Tunnel 客戶端：從 <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/install-and-setup/installation/" target="_blank" rel="noopener">官方文檔</a> 下載 <code>cloudflared</code> 二進制。</li>
+        <li>建立 Tunnel：<code>cloudflared tunnel create my-tunnel</code>。</li>
+        <li>設定路由：<code>cloudflared tunnel route dns my-tunnel mydomain.com</code>。</li>
+        <li>在 DNS 中會自動新增 CNAME 紀錄，指向 Cloudflare 的任何閘道。</li>
+      </ul>
+      <div class="tip-box">
+        <strong>💡 Pro 提示：</strong>Tunnel 會加密所有的進出流量，無需在防火牆開放任何入站連接埠，極大提升安全性。
+      </div>
+
+      <h3>9. R2 物件存儲</h3>
+      <p>Cloudflare R2 是一個 S3 兼容的物件存儲服務，與 Cloudflare 的 CDN 無縫整合，下傳費用為零（嫌免費額度內）。</p>
+      <p><strong>操作方法：</strong></p>
+      <ul>
+        <li>在「R2」標籤中點擊「Create bucket」，建立存儲桶。</li>
+        <li>透過 Cloudflare Dashboard 上傳文件，或使用 S3 API 工具（如 <code>awscli</code>）操作。</li>
+        <li>搭配 Workers，可實現圖片處理、私有文件訪問控制等進階應用。</li>
+      </ul>
+
+      <h3>10. Analytics 與日誌</h3>
+      <p>Cloudflare 提供豐富的流量分析與安全日誌，幫助你了解網站的訪問情況與攻擊情況。</p>
+      <p><strong>操作方法：</strong></p>
+      <ul>
+        <li>在「Analytics」→「Dashboard」查看請求量、頻寬、快取命中率等指標。</li>
+        <li>在「Security」→「Events」查看封鎖的攻擊請求詳情。</li>
+        <li>啟用「Logs」→「Logpush」，將日誌推送到雲端存儲（如 AWS S3、Google Cloud Storage）。</li>
+      </ul>
+
+      <h2>定價方案</h2>
+      <table>
+        <thead>
+          <tr><th>功能</th><th>Free</th><th>Pro</th><th>Business</th><th>Enterprise</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CDN</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+          <tr><td>DNS</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+          <tr><td>SSL/TLS</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+          <tr><td>WAF</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+          <tr><td>DDoS 防護</td><td>✅ 基礎</td><td>✅ 進階</td><td>✅ 進階</td><td>✅ 進階</td></tr>
+          <tr><td>Workers</td><td>100K 請求/天</td><td>100K 請求/天</td><td>100K 請求/天</td><td>無限制</td></tr>
+          <tr><td>Pages</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+          <tr><td>自動壓縮</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+          <tr><td>價格</td><td>免費</td><td>$20/月</td><td>$200/月</td><td>客製化</td></tr>
+        </tbody>
+      </table>
+
+      <p>對於個人部落格或小型網站，Free 方案已足夠。若需要 WAF、Argo Smart Routing 與更進階的安全功能，建議升級為 Pro。企業客戶可選擇 Business 或 Enterprise 方案。</p>
+
+      <h2>快速入門五步驟</h2>
+      <ol>
+        <li><strong>註冊帳號：</strong>前往 <a href="https://dash.cloudflare.com" target="_blank" rel="noopener">Cloudflare Dashboard</a> 註冊並登入。</li>
+        <li><strong>新增網站：</strong>點擊「Add a site」，輸入你的域名。</li>
+        <li><strong>切換 Nameserver：</strong>前往域名註冊商，將 NS 记录改為 Cloudflare 提供的地址。</li>
+        <li><strong>等待解析：</strong>通常在幾分鐘到 48 小時內生效，DNS  propagation 可以透過 <code>nslookup</code> 檢查。</li>
+        <li><strong>啟用功能：</strong>在 Dashboard 中開啟 CDN、SSL、Auto Minify 等功能。</li>
+      </ol>
+
+      <h2>常見問題答答</h2>
+      <p><strong>Q1. Cloudflare 會存取我的網站內容嗎？</strong><br>A1. 不會。Cloudflare 僅作為反向代理，所有流量會加密傳輸，不會存留用戶的敏感數據。</p>
+      <p><strong>Q2. 如何確認 Cloudflare 是否生效？</strong><br>A2. 可使用 <code>dig +short NS yourdomain.com</code> 檢查 Nameserver，或訪問網站觀察 HTTP 標頭中的 <code>Server: cloudflare</code>。</p>
+      <p><strong>Q3. Cloudflare 是否支援 HTTP/3？</strong><br>A3. 是的，Cloudflare 提供 HTTP/3 支援（預設開啟），可在「Network」→「HTTP/3」中確認。</p>
+
+      <div class="tip-box">
+        <strong>💡 最後提醒：</strong>Cloudflare 是工具，正確配置可以顯著提升網站速度、安全性與可用性。建譣先從 Free 方案開始體驗，逐步嘗試 Workers、Pages、Tunnel 等進階功能。
+      </div>
+
+    </article>
+
+    <div class="article-footer">
+      <a href="./articles.html" class="back-home">← 回到所有文章</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-column">
+        <h4>"AI" 硬核工程師</h4>
+        <div class="footer-links">
+          <a href="./about.html">關於我</a>
+          <a href="./articles.html">所有文章</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>聯絡方式</h4>
+        <div class="footer-links">
+          <a href="mailto:cai100.cyc@gmail.com">信件</a>
+          <a href="https://github.com/Robert-cYc">GitHub</a>
+          <a href="https://x.com/">Twitter</a>
+        </div>
+      </div>
+    </div>
+    <div class="marquee-container">
+      <div class="marquee-content"></div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+<script src="./js/wave.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/enhancements.js"></script>
+</body>
+</html>

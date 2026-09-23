@@ -1,11 +1,29 @@
 [
   {
+    "title": "Cloudflare 功能詳解：CDN、DNS、SSL、WAF、Workers 與 Pages",
+    "excerpt": "Cloudflare 完整教學：CDN 加速、DNS 管理、SSL TLS 加密、WAF 防護、DDoS 防禦、Cloudflare Workers、Pages 部署、Tunnel 內網穿透、R2 物件存儲與 Analytics 功能介紹。",
+    "url": "cloudflare-guide.html",
+    "tags": [
+      "Cloudflare",
+      "CDN",
+      "DNS",
+      "SSL",
+      "WAF",
+      "Workers",
+      "Pages",
+      "教學"
+    ]
+  },
+  {
     "title": "Canva 完整入門與進階技巧",
-    "excerpt": "Canva 線上圖形設計平台完整教學：範本庫、拖曳編輯器、文字工具、照片編輯、素材庫、品牌套件、多頁設計、協同設計、匯出下載與 Canva Pro 進階功能操作方法。",
+    "excerpt": "Canva 完整介紹與實戰教學：從帳號、介面、範本與拖曳編輯器，到品牌套件、AI 工具、協作、影片製作、匯出設定與進階設計技巧。",
     "url": "canva-tutorial.html",
     "tags": [
       "Canva",
       "設計工具",
+      "Canva AI",
+      "品牌設計",
+      "影片製作",
       "社群媒體",
       "視覺創作",
       "教學"
