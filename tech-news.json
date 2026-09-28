@@ -1,10 +1,40 @@
 {
-  "updated": "2026-09-27 00:38",
+  "updated": "2026-09-28 00:48",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "才兩年就退燒了？微軟 Surface 正淡化 Copilot Plus PC 標籤",
+          "link": "https://technews.tw/2026/09/27/microsoft-surface-copilot-plus-pc/",
+          "date": "2026-09-27 07:47",
+          "summary": "微軟在 2024 年推出 Copilot Plus PC，試圖以 NPU 與一系列 AI 功能，替新一代 Wi [&#8230;]"
+        },
+        {
+          "title": "中國首座「AI 眼科門診」實測，直擊醫療 AI 落地的三大痛點",
+          "link": "https://technews.tw/2026/09/27/china-test-ai-eye-clinic/",
+          "date": "2026-09-27 07:00",
+          "summary": "當人工智慧走出實驗室的完美環境，直接面對醫院裡真實的病患與病歷，會發生什麼事？近期，中國北京視覺科學與轉化醫學 [&#8230;]"
+        },
+        {
+          "title": "a16z 創辦矽谷 AI 學院：免學費、無考試，以「實作成果」取代成績單",
+          "link": "https://technews.tw/2026/09/27/andreessen-horowitz-academy/",
+          "date": "2026-09-27 06:30",
+          "summary": "創投公司 Andreessen Horowitz（a16z）9 月 22 日宣布，在舊金山推出 Andrees [&#8230;]"
+        },
+        {
+          "title": "AI 越成功硬體越稀缺：晶片、能源成 AI 擴張瓶頸，創投重新看好硬科技",
+          "link": "https://technews.tw/2026/09/27/silicon-valley-sees-hard-tech-revival/",
+          "date": "2026-09-27 03:00",
+          "summary": "過去幾年，生成式 AI 的投資熱潮席捲全球創投市場。自 ChatGPT 問世後，大量資本湧向 AI 軟體新創， [&#8230;]"
+        },
+        {
+          "title": "科技巨頭搶攻 AI 穿戴裝置，偷拍疑慮與雲端資安成最大絆腳石",
+          "link": "https://infosecu.technews.tw/2026/09/27/ai-wearable-devices-privacy-cybersecurity-risks/",
+          "date": "2026-09-27 02:30",
+          "summary": "科技巨頭正加速研發新一代 AI 穿戴裝置，從智慧眼鏡到各類隨身配件，這些主打「能看、能聽且能即時回饋」的創新設 [&#8230;]"
+        },
         {
           "title": "AI 研發生化武器消滅人類？專家：比起末日幻想，現有病原體威脅性更高",
           "link": "https://technews.tw/2026/09/27/why-ai-isnt-likely-to-wipe-out-humanity-with-bioweapons/",
@@ -46,36 +76,6 @@
           "link": "https://finance.technews.tw/2026/09/26/ai-demand-substrate-upgrade-taiwan-global-market-share/",
           "date": "2026-09-26 04:30",
           "summary": "AI 浪潮正把載板從「晶片配角」推向高階化競爭核心。台灣電路板協會（TPCA）指出，AI 與高效能運算需求快速 [&#8230;]"
-        },
-        {
-          "title": "傳產業吃不到 AI 紅利，專家：資源排擠加劇 K 型經濟",
-          "link": "https://finance.technews.tw/2026/09/26/traditional-industries-miss-ai-dividends-resource-crowding-exacerbates-k-shaped-economy/",
-          "date": "2026-09-26 04:00",
-          "summary": "台灣經濟搭上 AI 列車高速前進，不少傳統產業卻因吃不到 AI 紅利陷入焦慮。專家分析，AI 產業快速吸走資金 [&#8230;]"
-        },
-        {
-          "title": "從 iPhone 到 Mac 叢集：蘋果揭露地端 AI 戰力，最高可跑 1.6 兆參數模型",
-          "link": "https://technews.tw/2026/09/26/apple-rates-m5-ultra-mac-studio-for-480b-local-llms-1-6t-clusters/",
-          "date": "2026-09-26 03:20",
-          "summary": "蘋果近日公布地端 AI 能力矩陣，首次以裝置規格對應可承載的大型語言模型規模，從 iPhone、iPad 到 [&#8230;]"
-        },
-        {
-          "title": "五角大廈投資 3 千萬美元研發 AI 測謊系統，專家：老問題未解決增加誤判風險",
-          "link": "https://technews.tw/2026/09/26/the-pentagon-wants-an-ai-lie-detector-despite-an-old-problem-it-cant-ignore/",
-          "date": "2026-09-26 03:10",
-          "summary": "美國國防部近日推動 Polygraph Next 也稱之為 Polygraph+ 的新計畫，打算以人工智慧與機 [&#8230;]"
-        },
-        {
-          "title": "川習會，中國學者：經貿成果積極但無決定性意義",
-          "link": "https://technews.tw/2026/09/26/copilot-home-code-autopilot/",
-          "date": "2026-09-26 01:00",
-          "summary": "美國總統川普 24 日與中國國家主席習近平會談，中國學者認為，經貿領域方面儘管雙方會談成果是積極的，但並不具決 [&#8230;]"
-        },
-        {
-          "title": "別再盲目蓋資料中心，AI 算力競賽轉向智慧控電與架構最佳化雙軌戰場",
-          "link": "https://finance.technews.tw/2026/09/26/ai-compute-competition-pivots-intelligent-power-management-architectural-optimization-dual-track-battlefield/",
-          "date": "2026-09-26 00:30",
-          "summary": "最新產業觀察指出，生成式 AI 發展的瓶頸已從早期的「晶片供應」演變為電力、場址、電網接入與運算效率的綜合考驗 [&#8230;]"
         }
       ]
     },
@@ -83,6 +83,36 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "電池材料大廠康普收服特斯拉與豐田，跨足半導體化學品三箭齊發大啖非紅商機",
+          "link": "https://finance.technews.tw/2026/09/28/coremax-corporation/",
+          "date": "2026-09-28 00:00",
+          "summary": "非紅供應鏈浪潮下，動力電池材料大廠康普成為日歐系車廠爭相合作的夥伴，今年迎來獲利大爆發之餘，也鎖定半導體、被動 [&#8230;]"
+        },
+        {
+          "title": "從供需失衡到高壓規格戰，解析全球 PMIC 市場新格局",
+          "link": "https://technews.tw/2026/09/28/global-pmic-market-new-landscape-from-supply-demand-imbalance-to-high-pressure-spec-war/",
+          "date": "2026-09-27 23:00",
+          "summary": "AI 晶片功耗逼近甚至超越 1kW，傳統 PCB 走線帶來的寄生電阻與 IR 壓降已成為算力發揮的瓶頸。PMI [&#8230;]"
+        },
+        {
+          "title": "AI 越成功硬體越稀缺：晶片、能源成 AI 擴張瓶頸，創投重新看好硬科技",
+          "link": "https://technews.tw/2026/09/27/silicon-valley-sees-hard-tech-revival/",
+          "date": "2026-09-27 03:00",
+          "summary": "過去幾年，生成式 AI 的投資熱潮席捲全球創投市場。自 ChatGPT 問世後，大量資本湧向 AI 軟體新創， [&#8230;]"
+        },
+        {
+          "title": "台積電麥寮外海祕密計畫獨家曝光，全新台灣能源之路隱然成形",
+          "link": "https://technews.tw/2026/09/27/tsmc-ccs/",
+          "date": "2026-09-27 03:00",
+          "summary": "AI 浪潮引發科技業用電焦慮，國際供應鏈的減碳壓力也同時與日俱增。面對此情勢，台灣「護國神山」台積電低調布局三 [&#8230;]"
+        },
+        {
+          "title": "最快 10 月底亮相？傳 iPad mini 8 將換用 A20 Pro、OLED 螢幕",
+          "link": "https://technews.tw/2026/09/27/8-gen-ipad-mini-a20-pro-oled/",
+          "date": "2026-09-27 01:29",
+          "summary": "蘋果新一代 iPad mini 的產品資訊提前曝光，據外媒從蘋果程式碼中發現的內容，下一代 iPad mini [&#8230;]"
+        },
         {
           "title": "Dell 點名 HDD 缺貨，硬碟供應持續吃緊",
           "link": "https://technews.tw/2026/09/26/dell-highlights-hdd-shortage-hard-drive-supply-remains-tight/",
@@ -124,36 +154,6 @@
           "link": "https://technews.tw/2026/09/25/elon-musk-aims-to-double-colossus-2s-nvidia-chips-by-year-end/",
           "date": "2026-09-25 08:20",
           "summary": "伊隆‧馬斯克（Elon Musk）表示，旗下 xAI 打造的 AI 運算叢集 Colossus 2，到今年底時 [&#8230;]"
-        },
-        {
-          "title": "多元產能需求驅動，台灣半導體廠擴大新加坡布局",
-          "link": "https://technews.tw/2026/09/25/taiwan-semiconductor-expands-singapore-footprint-diverse-capacity-demand/",
-          "date": "2026-09-25 04:10",
-          "summary": "晶圓代工廠世界先進與恩智浦（NXP）合資的新加坡 12 吋廠將於 9 月 28 日開幕，另一晶圓代工廠聯電也計 [&#8230;]"
-        },
-        {
-          "title": "敢當面跟張忠謀說「無法勝任」，油漆工之子李瑞華如何變身台積電傳奇人資長",
-          "link": "https://finance.technews.tw/2026/09/25/li-ruihua-leads-tsmc-hr-transformation/",
-          "date": "2026-09-25 03:00",
-          "summary": "新加坡貧困油漆工之子李瑞華，闖蕩外商 20 年，落腳台灣帶領台積電人資。卸下光環後，全心投身教育 20 餘載， [&#8230;]"
-        },
-        {
-          "title": "受管制晶片疑出現在中國募資專案，AMD 回應：非直接出貨，將查非法轉運",
-          "link": "https://technews.tw/2026/09/25/regulated-chips-china-fundraising-amd-denies-direct-shipment-investigates-illegal-transshipment/",
-          "date": "2026-09-25 02:10",
-          "summary": "半導體研究機構 SemiAnalysis 負責人 Dylan Patel 24 日指稱，AMD 一款受美國出口 [&#8230;]"
-        },
-        {
-          "title": "ASML 罕見示警！歐洲半導體投資冷清，今上半年營收占比竟是 0%",
-          "link": "https://technews.tw/2026/09/25/asml-sell-0-europe-in-2026/",
-          "date": "2026-09-25 01:52",
-          "summary": "根據外媒 Tom’ s Hardware 報導，荷蘭半導體設備大廠 ASML 雖然是歐洲市值最高的企業之一，但 [&#8230;]"
-        },
-        {
-          "title": "自研數據晶片不影響協議，蘋果、高通再續專利授權",
-          "link": "https://finance.technews.tw/2026/09/25/apple-qualcomm-3/",
-          "date": "2026-09-25 01:41",
-          "summary": "高通（Qualcomm）稍早宣布與蘋果再續簽全球專利授權協議，新協議將自 2027 年 4 月 1 日起生效。 [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,18 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "電池材料大廠康普收服特斯拉與豐田，跨足半導體化學品三箭齊發大啖非紅商機",
+          "link": "https://finance.technews.tw/2026/09/28/coremax-corporation/",
+          "date": "2026-09-28 00:00",
+          "summary": "非紅供應鏈浪潮下，動力電池材料大廠康普成為日歐系車廠爭相合作的夥伴，今年迎來獲利大爆發之餘，也鎖定半導體、被動 [&#8230;]"
+        },
+        {
+          "title": "從供需失衡到高壓規格戰，解析全球 PMIC 市場新格局",
+          "link": "https://technews.tw/2026/09/28/global-pmic-market-new-landscape-from-supply-demand-imbalance-to-high-pressure-spec-war/",
+          "date": "2026-09-27 23:00",
+          "summary": "AI 晶片功耗逼近甚至超越 1kW，傳統 PCB 走線帶來的寄生電阻與 IR 壓降已成為算力發揮的瓶頸。PMI [&#8230;]"
+        },
         {
           "title": "蘋果 Home 攝影機 AI 功能實測！描述精準度與價格皆落後 Google Ring 與亞馬遜 Nest",
           "link": "https://technews.tw/2026/09/26/can-apple-homes-ai-camera-features-outsmart-amazons-and-googles/",
@@ -220,18 +232,6 @@
           "link": "https://technews.tw/2026/09/24/japan-korea-mlcc-pivot-ai-applications-reduce-consumer-focus-china-mlcc-international-brand-validation/",
           "date": "2026-09-24 06:10",
           "summary": "根據 TrendForce 研究指出， AI 排擠效應持續發酵，MLCC 產業正邁入結構性重組，日、 韓大廠明 [&#8230;]"
-        },
-        {
-          "title": "800V 方向更明朗，ABB：DC 架構兩三年內落地",
-          "link": "https://technews.tw/2026/09/24/800v-direction-clearer-abb-dc-architecture-deployed-2-3-years/",
-          "date": "2026-09-24 05:58",
-          "summary": "資料中心供電架構正加速從傳統交流（AC）轉向直流（DC）。ABB 推出全新 Infinitus 直流供電產品組 [&#8230;]"
-        },
-        {
-          "title": "小摩：CPO 對高速 CCL 影響有限，AI 趨勢下產業大者恆大",
-          "link": "https://technews.tw/2026/09/24/cpo-has-a-limited-impact-on-high-speed-ccl-under-the-ai-%e2%80%8b%e2%80%8btrend-the-big-players-in-the-industry-will-continue-to-thrive/",
-          "date": "2026-09-24 02:00",
-          "summary": "摩根大通（J.P. Morgan）日前邀請電子產業顧問機構 Prismark 高級顧問 Terry Wang [&#8230;]"
         }
       ]
     },
