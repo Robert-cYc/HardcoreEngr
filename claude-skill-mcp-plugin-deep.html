@@ -192,7 +192,7 @@ description: 對專案的變更檔案進行程式碼品質審查
         <h3>什麼是 MCP？</h3>
         <p><strong>MCP (Model Context Protocol)</strong> 是 Anthropic 推出的開放標準，讓 Claude Code 可以連接到外部資料來源與服務。簡單說，就是讓 Claude 能「讀」和「操作」你專案之外的東西。</p>
         <p>它提供三種能力：</p>
-        <table class="cmd-table">
+        <table >
           <thead><tr><th>能力</th><th>說明</th><th>使用場景</th></tr></thead>
           <tbody>
             <tr><td>Resources</td><td>可讀取的資料（檔案內容、API 回應）</td><td>自動讀取設計文件、API 文件</td></tr>
@@ -246,7 +246,7 @@ description: 對專案的變更檔案進行程式碼品質審查
         <p>Claude 會透過 MCP Server 直接執行 SQL 並回傳結果，完全不用你手動打 SQL！</p>
 
         <h3>常用 MCP Server 快速參考</h3>
-        <table class="cmd-table">
+        <table >
           <thead><tr><th>Server 名稱</th><th>用途</th><th>安裝指令</th></tr></thead>
           <tbody>
             <tr><td>@modelcontextprotocol/server-filesystem</td><td>本地檔案系統存取</td><td>npx -y ... &lt;path&gt;</td></tr>
@@ -304,7 +304,7 @@ description: 對專案的變更檔案進行程式碼品質審查
 
         <h2>三者關係：選擇心法</h2>
         <p>這三個機制常常讓人搞混，這裡給你一個簡單的選擇心法：</p>
-        <table class="cmd-table">
+        <table >
           <thead><tr><th>機制</th><th>觸發方式</th><th>解決什麼問題</th><th>配置位置</th></tr></thead>
           <tbody>
             <tr><td><strong>Skill</strong></td><td>使用者輸入 /指令</td><td>固定 SOP、可重用工作流</td><td><code>.claude/skills/</code></td></tr>

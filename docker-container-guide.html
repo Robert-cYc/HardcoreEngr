@@ -233,7 +233,7 @@
         <p>Docker 完美解決了這些問題 — 容器內含應用 + 所有依賴，確保環境一致性。</p>
 
         <h3>Docker 與傳統 VM 虛擬機的差別</h3>
-        <table class="cmd-table">
+        <table >
           <thead>
             <tr>
               <th>特性</th>
@@ -482,7 +482,7 @@ docker compose version
 
         <blockquote>
           💡 <strong>快速操作：</strong> 用 <code>-it</code> 進入容器後，可以直接執行指令進行除錯：<br>
-          <code>docker exec -it <span style="color: var(--text-muted);">容器名</span> sh</code>
+          <code>docker exec -it &lt;span style="color: var(--text-muted);"&gt;容器名&lt;/span&gt; sh</code>
         </blockquote>
 
         <h2>卷 (Volumes) 與網路 (Networks)</h2>
@@ -509,7 +509,7 @@ docker network create my-net
 docker network ls
 
 # 清理無用網路
-docker network prune</pre>
+docker network prune</code></pre>
 
         <h2>Docker Compose — 多容器神器</h2>
         <p>Compose 讓你可以用一個 <code>docker-compose.yml</code> 檔案管理多個容器。</p>
@@ -712,7 +712,7 @@ docker image prune
 docker system prune -a --volumes</code></pre>
 
         <h3>常見問題速查</h3>
-        <table class="cmd-table">
+        <table >
           <thead>
             <tr>
               <th>問題</th>

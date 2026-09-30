@@ -270,7 +270,7 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc</code></pre>
 
         <h3>其他安裝方式</h3>
-        <table class="cmd-table">
+        <table >
           <tr><th>工具</th><th>指令</th></tr>
           <tr><td>Brew (macOS)</td><td><code>brew install uv</code></td></tr>
           <tr><td>pip</td><td><code>pip install uv</code></td></tr>
@@ -561,9 +561,9 @@ $ uv add -r requirements.in -c requirements.txt</code></pre>
 # （uv 會自動處理大部分格式）
 
 $ uv sync        # 等於 poetry install
-$ uv add <pkg>   # 等於 poetry add <pkg>
+$ uv add &lt;pkg&gt;   # 等於 poetry add &lt;pkg&gt;
 $ uv lock        # 等於 poetry lock
-$ uv run <cmd>   # 等於 poetry run <cmd></code></pre>
+$ uv run &lt;cmd&gt;   # 等於 poetry run &lt;cmd&gt;</code></pre>
 
         <h2>快取機制：為什麼 uv 這麼快</h2>
         <p>uv 有一個<strong>全域快取區</strong>（預設在 <code>~/.cache/uv/</code> 或 <code>uv cache dir</code> 顯示的路徑），所有虛擬環境和下載的 wheels 會被快取起來：</p>

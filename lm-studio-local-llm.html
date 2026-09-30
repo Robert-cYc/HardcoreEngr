@@ -240,7 +240,7 @@
 
         <h3>步驟 2️⃣：選擇對應版本下載</h3>
         <p>LM Studio 會自動偵測你的作業系統，並提供對應的安裝檔：</p>
-        <table class="cmd-table">
+        <table >
           <thead>
             <tr>
               <th>平台</th>
@@ -290,7 +290,7 @@
 
         <h3>量化等級怎麼選？</h3>
         <p>LM Studio 支援多種量化等級，以下是推薦：</p>
-        <table class="cmd-table">
+        <table >
           <thead>
             <tr>
               <th>等級</th>
@@ -396,9 +396,9 @@ curl http://localhost:1234/v1/chat/completions -H "Content-Type: application/jso
 
         <h3>提示模板 (Prompt Templates)</h3>
         <p>LM Studio 支援自訂提示模板，常見應用：</p>
-        <pre><code>[INST] <<SYS>>
+        <pre><code>[INST] <&lt;SYS&gt;>
 你是一個友善且專業的 AI 助理，會用繁體中文回答所有問題。
-<</SYS>>
+<&lt;/SYS&gt;>
 {{UserInput}} [/INST]</code></pre>
 
         <h3>模型參數調整</h3>
