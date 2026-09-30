@@ -146,7 +146,7 @@ function Counter() {
   return (
     &lt;div&gt;
       &lt;p&gt;你點了 {count} 次&lt;/p&gt;
-      &lt;button onClick={() => setCount(count + 1)}&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
         點我 +1
       &lt;/button&gt;
     &lt;/div&gt;
@@ -167,7 +167,7 @@ function Counter() {
         <h2>React 的生態系統</h2>
         <p>React 本身只負責「畫面」，但一個完整的應用還需要很多其他功能。這就是為什麼 React 有這麼龐大的生態系統：</p>
 
-        <table class="cmd-table">
+        <table>
           <thead><tr><th>類別</th><th>常用工具 / 套件</th><th>用途</th></tr></thead>
           <tbody>
             <tr><td>路由（Routing）</td><td>React Router</td><td>處理頁面切換與網址對應</td></tr>
