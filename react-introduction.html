@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React 是什麼？Meta 開發的開源 JavaScript 函式庫完整介紹 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,⚛️">
+  <meta name="description" content="React 由 Meta（前身 Facebook）開發與維護的開源 JavaScript 函式庫。完整介紹 React 的核心概念、元件化開發、虛擬 DOM、JSX 語法、Hooks 與生態系統。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/react-introduction.html">
+  <meta property="og:title" content="React 是什麼？Meta 開發的開源 JavaScript 函式庫完整介紹">
+  <meta property="og:description" content="React 由 Meta（前身 Facebook）開發與維護的開源 JavaScript 函式庫。完整介紹 React 核心概念、元件化、虛擬 DOM、JSX、Hooks 與生態。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/react-introduction.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="React 是什麼？Meta 開發的開源 JS 函式庫">
+  <meta name="twitter:description" content="React 由 Meta 開發維護的開源 JS 函式庫。完整介紹核心概念與實戰。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.21rem; }
+    .article-body th, .article-body td { padding: 0.4rem 0.5rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .cmd-table td:first-child { font-family: "Fira Code", monospace; font-weight: 700; color: var(--accent); white-space: nowrap; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo"><div>"AI" 硬核工程師</div><div class="tagline">Talk is cheap. Show me the code</div></div>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="article-hero">
+        <h1>React 是什麼？Meta 開發的開源 JavaScript 函式庫完整介紹</h1>
+        <div class="article-meta"><span>2026-09-30</span><span class="separator">·</span><span>20 分鐘閱讀</span></div>
+        <div class="article-tags">
+          <span class="tag">React</span><span class="tag">前端</span><span class="tag">JavaScript</span><span class="tag">Meta</span><span class="tag">開源</span>
+        </div>
+        <img loading="lazy" src="images/og-image.png" alt="React 介紹" style="border-radius:10px;max-height:400px;object-fit:cover;margin-top:1.5rem;">
+      </section>
+
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> React 是由 Meta（前身為 Facebook）開發與維護的一個開源 JavaScript 函式庫（Library），專門用來構建使用者介面（UI）。它不是一個完整的框架，而是專注在「視圖層」的解決方案，透過元件化（Component）、虛擬 DOM（Virtual DOM）、單向資料流與 JSX 語法，讓開發者能以更直覺、可維護的方式建構複雜的互動式網頁應用。
+        </blockquote>
+
+        <p>嘿，朋友！今天來聊聊 React。你可能已經在很多地方聽過這個名字 —— 它幾乎是現代前端開發的代名詞之一。但你真的知道它是什麼、為什麼這麼多人用它、還有它跟那個「Meta」有什麼關係嗎？這篇文章就是要把這些講清楚，從基本概念到實際怎麼用，一次搞懂。</p>
+
+        <h2>React 是由誰開發的？</h2>
+        <p>先講最直接的答案：<strong>React 是由 Meta（前身為 Facebook）開發與維護的一個開源 JavaScript 函式庫（Library）</strong>。沒錯，就是那個現在叫 Meta、以前叫 Facebook 的公司。</p>
+        <p>React 最早是在 2011 年由 Jordan Walke 在 Facebook 內部開發出來的，當時只是為了解決 Facebook 自家產品（特別是廣告系統）的複雜 UI 問題。後來在 2013 年，Facebook 決定把 React 開源，從此它就從一個內部工具變成全球開發者最愛用的前端技術之一。</p>
+        <p>現在 React 的維護工作主要由 Meta 的工程團隊與廣大的開源社群共同完成。雖然 Meta 是主要的維護者，但這不代表 React 是 Meta 的「專屬產品」—— 它是完全開源的，任何人都可以免費使用、修改、貢獻。</p>
+
+        <blockquote>
+          💡 小知識：Meta 現在不只維護 React，還維護了 React Native（用 React 寫原生 App）、React DevTools、以及一些相關工具。可以說 React 已經是 Meta 技術生態系統的一部分了。
+        </blockquote>
+
+        <h2>React 到底是什麼？</h2>
+        <p>簡單來說，React 是一個專注在「畫面」的 JavaScript 函式庫。它不是一個完整的框架（像 Angular 那樣什麼都有），而是只負責一件事：<strong>幫你把資料（Data）變成畫面（UI），並且在資料改變時自動更新畫面。</strong></p>
+        <p>這聽起來好像很簡單，但實際上要做到這件事很不容易。想像一下，如果你手動操作 DOM（也就是直接改 HTML 元素），每次資料更新你都要自己去找哪個元素要改、怎麼改，還要小心不要改錯。當應用變複雜時，這簡直是災難。</p>
+        <p>React 的解決方式是引入了幾個核心概念：</p>
+
+        <h3>1. 元件化（Component）</h3>
+        <p>在 React 裡，畫面不是一整塊 HTML，而是由很多小塊「元件」組成的。每個元件都是一個獨立的、可重複使用的 UI 單位。例如一個按鈕、一張卡片、一個導航列，都可以是獨立的元件。</p>
+        <pre><code>// 一個簡單的 React 元件
+function Welcome() {
+  return &lt;h1&gt;你好，歡迎來到 React 的世界！&lt;/h1&gt;;
+}</code></pre>
+        <p>這樣的好處是什麼？你可以把複雜的畫面拆成很多小塊，每塊只負責一件事，維護起來輕鬆多了。而且元件可以重複使用，一個按鈕元件可以在不同頁面、不同地方重複出現，不用每次重寫。</p>
+
+        <h3>2. JSX 語法</h3>
+        <p>React 使用一種叫 JSX 的語法，讓你可以在 JavaScript 裡面直接寫類似 HTML 的標記。這不是 HTML，也不是字串，而是一種語法糖，最後會被編譯成 JavaScript 物件。</p>
+        <pre><code>const element = &lt;h1 className="greeting"&gt;你好，世界！&lt;/h1&gt;;</code></pre>
+        <p>雖然一開始看起來有點奇怪（JavaScript 裡面混 HTML？），但用習慣後你會發現這讓元件的結構一目了然，而且可以直接在標記裡嵌入 JavaScript 變數。</p>
+
+        <h3>3. 虛擬 DOM（Virtual DOM）</h3>
+        <p>這是 React 最核心、也是最被討論的技術。簡單說，React 不直接操作真實的瀏覽器 DOM（那個你用 JavaScript 改 <code>document.getElementById</code> 的東西），而是先在記憶體裡建立一個「虛擬」的 DOM 樹。</p>
+        <p>當資料改變時，React 會先在虛擬 DOM 上計算出最小的變更（Diffing），然後只把真正需要更新的部分套用到真實 DOM 上。這比每次都重新渲染整個畫面快得多，也減少了瀏覽器的負擔。</p>
+        <blockquote>
+          💡 想像一下：你在編輯一份文件，每次只改一個字都要整份重印（直接操作 DOM），還是只印出改過的那一頁（虛擬 DOM）？後者明顯效率高很多。
+        </blockquote>
+
+        <h3>4. 單向資料流（Unidirectional Data Flow）</h3>
+        <p>React 採用「單向資料流」的設計，也就是資料從父元件流向子元件，子元件不能直接修改父元件的資料。如果子元件要通知父元件發生了什麼事，必須透過「回呼函數」（Callback）來做。</p>
+        <p>這讓資料的流向非常清楚，不像雙向綁定那樣容易造成混亂。雖然一開始寫起來可能覺得麻煩，但當應用變大時，你會感謝這種清晰的架構。</p>
+
+        <h2>為什麼要用 React？</h2>
+        <p>現在你已經知道 React 是什麼、誰開發的，那為什麼這麼多人選擇用它？幾個主要原因：</p>
+
+        <h3>元件可重複使用</h3>
+        <p>一個設計好的元件可以在專案的不同地方重複出現，甚至可以打包成獨立的套件（Package）分享給其他專案使用。這大幅減少了重複程式碼。</p>
+
+        <h3>維護性高</h3>
+        <p>因為元件是獨立的，修改一個元件不會意外影響到其他元件。而且 JSX 讓畫面結構一目了然，不像傳統的模板語言那樣混亂。</p>
+
+        <h3>效能優異</h3>
+        <p>虛擬 DOM 的機制讓 React 在大多數情況下都比直接操作 DOM 快得多。加上 React 的團隊持續優化（例如 Concurrent Rendering、React 18 的新功能），效能只會越來越好。</p>
+
+        <h3>生態系統龐大</h3>
+        <p>React 不只是核心函式庫，還有一整個生態系統：React Router（路由）、Redux / Zustand（狀態管理）、Next.js（全端框架）、React Native（原生 App 開發）等等。幾乎你想做的任何前端功能，都有成熟的解決方案。</p>
+
+        <h3>社群活躍、學習資源豐富</h3>
+        <p>因為 React 太流行了，所以網路上的教學、問答、套件、範例多到數不完。遇到問題幾乎都能在 Stack Overflow 或官方文件找到答案。</p>
+
+        <h2>React 的核心概念實戰</h2>
+        <p>講了這麼多理論，來看一個實際的 React 元件長什麼樣子。我們用一個簡單的「計數器」來示範：</p>
+
+        <pre><code>import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;你點了 {count} 次&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;
+        點我 +1
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+
+        <p>這個範例展示了幾個關鍵點：</p>
+        <ul>
+          <li><strong>useState</strong>：這是 React 提供的「Hook」，讓函式元件也能有「狀態」（State）。以前只有類別元件（Class Component）才能有狀態，現在 Hook 讓函式元件也能輕鬆管理資料。</li>
+          <li><strong>JSX 語法</strong>：直接在 JavaScript 裡寫類似 HTML 的標記。</li>
+          <li><strong>事件處理</strong>：用 <code>onClick</code> 直接綁定點擊事件，語法跟原生 HTML 很像，但背後是 React 的事件系統。</li>
+        </ul>
+
+        <blockquote>
+          💡 小提醒：如果你以前寫過 jQuery 或原生 JavaScript，剛開始用 React 可能會覺得「為什麼要這麼複雜？」。但用習慣後你會發現，元件化和單向資料流讓複雜應用變得可管理，而不是一團混亂的回調地獄。
+        </blockquote>
+
+        <h2>React 的生態系統</h2>
+        <p>React 本身只負責「畫面」，但一個完整的應用還需要很多其他功能。這就是為什麼 React 有這麼龐大的生態系統：</p>
+
+        <table class="cmd-table">
+          <thead><tr><th>類別</th><th>常用工具 / 套件</th><th>用途</th></tr></thead>
+          <tbody>
+            <tr><td>路由（Routing）</td><td>React Router</td><td>處理頁面切換與網址對應</td></tr>
+            <tr><td>狀態管理</td><td>Redux, Zustand, Recoil</td><td>管理跨元件的共享資料</td></tr>
+            <tr><td>樣式</td><td>Styled Components, Tailwind CSS</td><td>元件級樣式管理</td></tr>
+            <tr><td>API 請求</td><td>React Query, SWR, Axios</td><td>處理網路請求與快取</td></tr>
+            <tr><td>表單處理</td><td>React Hook Form, Formik</td><td>簡化表單驗證與提交</td></tr>
+            <tr><td>全端框架</td><td>Next.js, Remix</td><td>在 React 基礎上提供 SSR、SSG、路由等完整功能</td></tr>
+          </tbody>
+        </table>
+
+        <h2>React 與 Meta 的關係</h2>
+        <p>雖然 React 是開源的，任何人都可以使用，但 Meta 仍然是主要的維護者和推動者。這有幾個實際的影響：</p>
+        <ul>
+          <li><strong>更新節奏</strong>：Meta 會根據自家產品（Instagram、WhatsApp Web、Facebook）的需求來推動 React 的發展方向。例如 React 18 引入的 Concurrent Rendering，就是為了讓大型應用（像 Instagram）的互動更流暢。</li>
+          <li><strong>穩定性</strong>：因為 Meta 自己也在大量使用 React，所以新功能通常會經過嚴格的內部測試才對外發布，這對使用者來說是好事。</li>
+          <li><strong>開源精神</strong>：儘管 Meta 是主要維護者，但 React 的開發過程完全公開，任何人都可以在 GitHub 上提出 Issue、提交 Pull Request，社群的貢獻同樣重要。</li>
+        </ul>
+
+        <blockquote>
+          💡 值得注意的是：Meta 並沒有「擁有」React 的專利或獨佔權。React 的授權是 MIT License，這意味著你可以在商業專案中完全免費使用，甚至修改後重新發布，不需要向 Meta 付費或取得許可。
+        </blockquote>
+
+        <h2>學習 React 的建議路徑</h2>
+        <p>如果你是初學者，建議這樣開始：</p>
+        <ol>
+          <li><strong>先熟悉 JavaScript 基礎</strong>：特別是 ES6+ 的語法（箭頭函數、解構賦值、模組導入導出）。React 大量使用這些現代語法。</li>
+          <li><strong>理解元件概念</strong>：從最簡單的函式元件開始，逐步學習 Props（屬性傳遞）、State（內部狀態）、事件處理。</li>
+          <li><strong>練習 JSX</strong>：剛開始可能覺得奇怪，但寫幾個簡單的元件後就會習慣。</li>
+          <li><strong>學習 Hooks</strong>：特別是 <code>useState</code> 和 <code>useEffect</code>，這是現代 React 最核心的兩個 Hook。</li>
+          <li><strong>實際做一個小專案</strong>：例如待辦事項清單（Todo List）、天氣查詢小工具，或者一個簡單的個人網頁。實作是最好的學習方式。</li>
+        </ol>
+
+        <h2>總結</h2>
+        <p>React 是由 Meta（前身為 Facebook）開發與維護的一個開源 JavaScript 函式庫，專門用來構建使用者介面。它透過元件化、虛擬 DOM、JSX 語法和單向資料流，讓前端開發變得更直覺、更可維護、更高效。</p>
+        <p>雖然 React 本身只是一個「函式庫」，不是完整的框架，但它強大的生態系統（React Router、Next.js、各種狀態管理工具）讓你可以用它建構從簡單網頁到大型企業應用的任何東西。</p>
+        <p>最重要的是：React 是完全開源的，任何人都可以免費使用。無論你是學生、自由開發者，還是大公司的工程師，React 都是一個值得學習和掌握的技術。</p>
+
+        <blockquote>
+          🎯 <strong>快速記住：</strong> React = Meta 開發的開源 JS 函式庫、專注 UI、元件化、虛擬 DOM、JSX 語法、單向資料流、龐大生態系統。學會它，你的前端開發能力會上一個大台階。
+        </blockquote>
+      </article>
+
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container"><div class="marquee-content"></div></div>
+      <div class="footer-bottom"><p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>
