@@ -1,24 +1,24 @@
-﻿/**
- * enhancements.js â€” ç¶²ç«™é«”é©—å‡ç´š
+/**
+ * enhancements.js — 網站體驗升級
  *
- * å…¨éƒ¨åŠŸèƒ½éƒ½æœ‰ feature detectionï¼Œé é¢æ²’æœ‰å°æ‡‰å…ƒç´ å°±è‡ªå‹•è·³éŽï¼š
- *  1. ç¨‹å¼ç¢¼è¤‡è£½æŒ‰éˆ•ï¼ˆ.article-body preï¼‰
- *  2. èªžæ³•é«˜äº®ï¼ˆå‹•æ…‹è¼‰å…¥ highlight.jsï¼ŒCDN å¤±æ•—å‰‡éœé»˜ç•¥éŽï¼‰
- *  3. é–±è®€é€²åº¦æ¢ï¼ˆ.article-bodyï¼›ç›®éŒ„ç”± script.js çš„ initTOC è² è²¬ï¼‰
- *  4. å›žåˆ°é ‚éƒ¨æŒ‰éˆ•ï¼ˆæ‰€æœ‰é é¢ï¼‰
- *  5. æ–‡ç« å¡ç‰‡æ»‘é¼ ç™¼å…‰ï¼ˆ.article-cardï¼‰
- *  6. é¦–é çµ‚ç«¯æ©Ÿæ‰“å­—å‹•ç•«ï¼ˆ#terminal-typingï¼ŒæŒ‡ä»¤æ¸…å–®æ”¾ data-commandsï¼‰
- *  7. ç¤¾ç¾¤åˆ†äº«æŒ‰éˆ• + è¤‡è£½é€£çµ Toastï¼ˆ.article-body é ï¼‰
- *  8. å»¶ä¼¸é–±è®€æŽ¨è–¦ï¼ˆ.article-body é ï¼Œå¾ž search-index.json å–æ¨™ç±¤ç›¸è¿‘æ–‡ç« ï¼‰
- *  9. ç§‘æŠ€æ–°çŸ¥åˆ†é¡ž + é—œéµå­—éŽæ¿¾ï¼ˆtech-news.htmlï¼‰
- * 10. æŒ‡ä»¤æ‰‹å†Šå³æ™‚éŽæ¿¾æœå°‹æ¡†ï¼ˆlinux/mac/git/node ç­‰ .cmd-table é é¢ï¼‰
+ * 全部功能都有 feature detection，頁面沒有對應元素就自動跳過：
+ *  1. 程式碼複製按鈕（.article-body pre）
+ *  2. 語法高亮（動態載入 highlight.js，CDN 失敗則靜默略過）
+ *  3. 閱讀進度條（.article-body；目錄由 script.js 的 initTOC 負責）
+ *  4. 回到頂部按鈕（所有頁面）
+ *  5. 文章卡片滑鼠發光（.article-card）
+ *  6. 首頁終端機打字動畫（#terminal-typing，指令清單放 data-commands）
+ *  7. 社群分享按鈕 + 複製連結 Toast（.article-body 頁）
+ *  8. 延伸閱讀推薦（.article-body 頁，從 search-index.json 取標籤相近文章）
+ *  9. 科技新知分類 + 關鍵字過濾（tech-news.html）
+ * 10. 指令手冊即時過濾搜尋框（linux/mac/git/node 等 .cmd-table 頁面）
  */
 (function () {
   'use strict';
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- 1. ç¨‹å¼ç¢¼è¤‡è£½æŒ‰éˆ• ---------- */
+  /* ---------- 1. 程式碼複製按鈕 ---------- */
   function initCopyButtons() {
     document.querySelectorAll('.article-body pre').forEach(function (pre) {
       var code = pre.querySelector('code');
@@ -27,21 +27,21 @@
       var btn = document.createElement('button');
       btn.className = 'copy-btn';
       btn.type = 'button';
-      btn.setAttribute('aria-label', 'è¤‡è£½ç¨‹å¼ç¢¼');
-      btn.textContent = 'è¤‡è£½';
+      btn.setAttribute('aria-label', '複製程式碼');
+      btn.textContent = '複製';
 
       btn.addEventListener('click', function () {
         copyText(code.innerText).then(function () {
-          btn.textContent = 'âœ“ å·²è¤‡è£½';
+          btn.textContent = '✓ 已複製';
           btn.classList.add('copied');
           setTimeout(function () {
-            btn.textContent = 'è¤‡è£½';
+            btn.textContent = '複製';
             btn.classList.remove('copied');
           }, 1500);
         });
       });
 
-      // åŒ…ä¸€å±¤ wrapper è®“æŒ‰éˆ•å›ºå®šåœ¨å³ä¸Šè§’ï¼Œä¸è·Ÿè‘—ç¨‹å¼ç¢¼æ¨ªå‘æ²å‹•
+      // 包一層 wrapper 讓按鈕固定在右上角，不跟著程式碼横向捲動
       var wrapper = document.createElement('div');
       wrapper.className = 'code-block';
       pre.parentNode.insertBefore(wrapper, pre);
@@ -54,7 +54,7 @@
     if (navigator.clipboard && window.isSecureContext) {
       return navigator.clipboard.writeText(text);
     }
-    // éž secure context (å¦‚æœ¬æ©Ÿ file://) çš„ fallback
+    // 非 secure context (如本機 file://) 的 fallback
     return new Promise(function (resolve) {
       var ta = document.createElement('textarea');
       ta.value = text;
@@ -68,7 +68,7 @@
     });
   }
 
-  /* ---------- 2. èªžæ³•é«˜äº® ---------- */
+  /* ---------- 2. 語法高亮 ---------- */
   function initHighlight() {
     var HLJS_CDN = 'https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.9.0/highlight.min.js';
 
@@ -84,11 +84,11 @@
     var s = document.createElement('script');
     s.src = HLJS_CDN;
     s.onload = highlightAll;
-    s.onerror = function () { /* CDN æŽ›äº†å°±è·³éŽé«˜äº®ï¼Œå…¶ä»–åŠŸèƒ½ä¸å—å½±éŸ¿ */ };
+    s.onerror = function () { /* CDN 掛了就跳過高亮，其他功能不受影響 */ };
     document.head.appendChild(s);
   }
 
-  /* ---------- 3. é–±è®€é€²åº¦æ¢ï¼ˆç›®éŒ„ç”± script.js çš„ initTOC æä¾›ï¼‰---------- */
+  /* ---------- 3. 閱讀進度條（目錄由 script.js 的 initTOC 提供）---------- */
   function initReading() {
     var body = document.querySelector('.article-body');
     if (!body) return;
@@ -110,12 +110,12 @@
     updateBar();
   }
 
-  /* ---------- 4. å›žåˆ°é ‚éƒ¨æŒ‰éˆ• ---------- */
+  /* ---------- 4. 回到頂部按鈕 ---------- */
   function initBackToTop() {
     var btn = document.createElement('button');
     btn.className = 'back-to-top';
     btn.type = 'button';
-    btn.setAttribute('aria-label', 'å›žåˆ°é é¦–');
+    btn.setAttribute('aria-label', '回到頁首');
     btn.innerHTML =
       '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
       'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
@@ -134,9 +134,9 @@
     toggle();
   }
 
-  /* ---------- 5. æ–‡ç« å¡ç‰‡æ»‘é¼ ç™¼å…‰ ---------- */
+  /* ---------- 5. 文章卡片滑鼠發光 ---------- */
   function initCardGlow() {
-    if (reduceMotion) return; // æ¸›å°‘å‹•æ…‹æ•ˆæžœæ™‚ä¸å‡ºç¾å…‰æšˆ
+    if (reduceMotion) return; // 減少動態效果時不出現光暈
     document.querySelectorAll('.article-card').forEach(function (card) {
       card.addEventListener('pointermove', function (e) {
         var r = card.getBoundingClientRect();
@@ -146,7 +146,7 @@
     });
   }
 
-  /* ---------- 6. çµ‚ç«¯æ©Ÿæ‰“å­—å‹•ç•« ---------- */
+  /* ---------- 6. 終端機打字動畫 ---------- */
   function initTerminalTyping() {
     var el = document.getElementById('terminal-typing');
     if (!el) return;
@@ -154,9 +154,9 @@
     var commands = el.getAttribute('data-commands');
     commands = commands
       ? commands.split('|')
-      : ['claude "å¹«æˆ‘ä¿®å¥½é€™å€‹ bug"', 'git push origin main', 'brew install btop'];
+      : ['claude "幫我修好這個 bug"', 'git push origin main', 'brew install btop'];
 
-    if (reduceMotion) { // ä¸åšå‹•ç•«ï¼Œç›´æŽ¥é¡¯ç¤ºç¬¬ä¸€è¡Œ
+    if (reduceMotion) { // 不做動畫，直接顯示第一行
       el.textContent = commands[0];
       return;
     }
@@ -170,12 +170,12 @@
 
       var delay = deleting ? 28 : 65 + Math.random() * 60;
       if (!deleting && ci === line.length) {
-        delay = 1900;           // æ‰“å®Œæ•´è¡Œåœä¹…ä¸€é»ž
+        delay = 1900;           // 打完整行停久一點
         deleting = true;
       } else if (deleting && ci === 0) {
         deleting = false;
         li = (li + 1) % commands.length;
-        delay = 480;            // æ›ä¸‹ä¸€è¡Œå‰ç¨åœ
+        delay = 480;            // 換下一行前稍停
       }
       setTimeout(tick, delay);
     }
@@ -183,16 +183,16 @@
     tick();
   }
 
-  /* ---------- 7. ç¤¾ç¾¤åˆ†äº«æŒ‰éˆ• + è¤‡è£½é€£çµ Toast ---------- */
+  /* ---------- 7. 社群分享按鈕 + 複製連結 Toast ---------- */
   function initShareButtons() {
     var articleBody = document.querySelector('.article-body');
     if (!articleBody) return;
 
-    // å–æ¨™é¡Œ
+    // 取標題
     var title = document.title || document.querySelector('h1') && document.querySelector('h1').textContent || '';
     var url = window.location.href;
 
-    // Toast å®¹å™¨
+    // Toast 容器
     var toast = document.createElement('div');
     toast.id = 'share-toast';
     toast.setAttribute('aria-live', 'polite');
@@ -219,17 +219,17 @@
     // Share bar
     var shareBar = document.createElement('div');
     shareBar.className = 'share-bar';
-    shareBar.setAttribute('aria-label', 'åˆ†äº«æ–‡ç« ');
+    shareBar.setAttribute('aria-label', '分享文章');
     shareBar.innerHTML = [
-      '<span class="share-label">åˆ†äº«ï¼š</span>',
+      '<span class="share-label">分享：</span>',
       '<a class="share-btn share-x" href="https://twitter.com/intent/tweet?text=' +
         encodeURIComponent(title) + '&url=' + encodeURIComponent(url) +
-        '" target="_blank" rel="noopener" aria-label="åˆ†äº«åˆ° X (Twitter)">',
+        '" target="_blank" rel="noopener" aria-label="分享到 X (Twitter)">',
       '  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
-      '  åˆ†äº«</a>',
-      '<button class="share-btn share-copy" type="button" aria-label="è¤‡è£½æ–‡ç« é€£çµ">',
+      '  分享</a>',
+      '<button class="share-btn share-copy" type="button" aria-label="複製文章連結">',
       '  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>',
-      '  è¤‡è£½é€£çµ</button>'
+      '  複製連結</button>'
     ].join('');
 
     // Style injection
@@ -250,7 +250,7 @@
     // Copy link handler
     shareBar.querySelector('.share-copy').addEventListener('click', function () {
       copyText(url).then(function () {
-        showToast('âœ“ é€£çµå·²è¤‡è£½åˆ°å‰ªè²¼ç°¿ï¼');
+        showToast('✓ 連結已複製到剪貼簿！');
       });
     });
 
@@ -263,7 +263,7 @@
     }
   }
 
-  /* ---------- 8. å»¶ä¼¸é–±è®€æŽ¨è–¦ ---------- */
+  /* ---------- 8. 延伸閱讀推薦 ---------- */
   function initRelatedArticles() {
     var articleBody = document.querySelector('.article-body');
     if (!articleBody) return;
@@ -322,7 +322,7 @@
 
       var section = document.createElement('div');
       section.className = 'related-articles';
-      section.innerHTML = '<h3>ðŸ“– å»¶ä¼¸é–±è®€</h3><div class="related-grid">' +
+      section.innerHTML = '<h3>📖 延伸閱讀</h3><div class="related-grid">' +
         scored.map(function (x) {
           var art = x.art;
           var img = heroImageMap[art.url] || 'og-image.png';
@@ -343,7 +343,7 @@
     });
   }
 
-  /* ---------- 9. ç§‘æŠ€æ–°çŸ¥ â€“ åˆ†é¡ž + é—œéµå­—éŽæ¿¾ ---------- */
+  /* ---------- 9. 科技新知 – 分類 + 關鍵字過濾 ---------- */
   function initNewsFilter() {
     var newsContent = document.getElementById('news-content');
     if (!newsContent) return;
@@ -386,7 +386,7 @@
     document.head.appendChild(style);
 
     // Collect category names
-    var categories = [{ key: 'all', label: 'âœ¦ å…¨éƒ¨' }];
+    var categories = [{ key: 'all', label: '✦ 全部' }];
     sections.forEach(function (sec) {
       var h2 = sec.querySelector('h2');
       if (h2) categories.push({ key: h2.textContent.trim(), label: h2.textContent.trim() });
@@ -400,7 +400,7 @@
         return '<button class="news-filter-tab' + (i === 0 ? ' active' : '') + '" data-cat="' + c.key + '">' + c.label + '</button>';
       }).join('') +
       '</div>' +
-      '<input class="news-keyword-input" type="text" placeholder="é—œéµå­—éŽæ¿¾â€¦" aria-label="æ–°èžé—œéµå­—éŽæ¿¾">';
+      '<input class="news-keyword-input" type="text" placeholder="關鍵字過濾…" aria-label="新聞關鍵字過濾">';
 
     if (heroSection && heroSection.parentNode) {
       heroSection.parentNode.insertBefore(bar, newsContent);
@@ -447,7 +447,7 @@
     });
   }
 
-  /* ---------- 10. æŒ‡ä»¤æ‰‹å†Šå³æ™‚éŽæ¿¾ ---------- */
+  /* ---------- 10. 指令手冊即時過濾 ---------- */
   function initCheatsheetFilter() {
     // Only on pages with .cmd-table
     var tables = document.querySelectorAll('.cmd-table');
@@ -477,13 +477,13 @@
     var input = document.createElement('input');
     input.type = 'search';
     input.className = 'cheatsheet-filter';
-    input.placeholder = 'ðŸ” å³æ™‚æœå°‹æŒ‡ä»¤ï¼ˆä¾‹å¦‚ï¼šlsã€grepã€docker runï¼‰';
-    input.setAttribute('aria-label', 'æœå°‹æŒ‡ä»¤');
+    input.placeholder = '🔍 即時搜尋指令（例如：ls、grep、docker run）';
+    input.setAttribute('aria-label', '搜尋指令');
     wrap.appendChild(input);
 
     var noResults = document.createElement('div');
     noResults.className = 'no-cmd-results';
-    noResults.textContent = 'ðŸ˜• æ‰¾ä¸åˆ°ç¬¦åˆçš„æŒ‡ä»¤';
+    noResults.textContent = '😕 找不到符合的指令';
     wrap.appendChild(noResults);
 
     insertTarget.parentNode.insertBefore(wrap, insertTarget);
@@ -510,7 +510,7 @@
     });
   }
 
-  /* ---------- å•Ÿå‹• ---------- */
+  /* ---------- 啟動 ---------- */
   function init() {
     initTerminalTyping();
     initCopyButtons();
