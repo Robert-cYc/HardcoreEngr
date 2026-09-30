@@ -30,6 +30,7 @@
     ]
   },
   {
+    "title": "開源授權條款完全指南：寬鬆型 vs 強傳染型（著佐權）",
     "excerpt": "深入解析開源軟體的兩大授權陣營——寬鬆型（MIT、Apache-2.0、BSD）與強傳染型著佐權（GPL、AGPL、SSPL）。幫你搞懂商用閉源、傳染範圍、專利保護與實戰選擇策略。",
     "url": "open-source-licenses.html",
     "tags": [
@@ -471,6 +472,34 @@
       "演算法",
       "機器學習",
       "深度學習",
+      "教學"
+    ]
+  },
+  {
+    "title": "Claude Code Skill、MCP 與 Plugin 深度解析：三個擴展機制讓 AI 變成你的專屬工程師",
+    "excerpt": "深入解析 Claude Code 的三大擴展機制：Skill（可重用指令）、MCP（外部資料連接）與 Plugin（打包分享）。從設定到實戰，把 Claude Code 打造成真正的個人工程平台。",
+    "url": "claude-skill-mcp-plugin-deep.html",
+    "tags": [
+      "Claude Code",
+      "Skill",
+      "MCP",
+      "Plugin",
+      "AI 開發工具",
+      "教學"
+    ]
+  },
+  {
+    "title": "React 是什麼？Meta 開發的開源 JavaScript 函式庫完整介紹",
+    "excerpt": "React 由 Meta（前身 Facebook）開發與維護的開源 JavaScript 函式庫。完整介紹 React 的核心概念、元件化開發、虛擬 DOM、JSX 語法、Hooks 與生態系統。",
+    "url": "react-introduction.html",
+    "tags": [
+      "React",
+      "JavaScript",
+      "前端開發",
+      "Meta",
+      "JSX",
+      "Hooks",
+      "元件化",
       "教學"
     ]
   }

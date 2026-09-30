@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 找不到頁面 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="頁面不存在。回到硬核工程師首頁，繼續探索前端、後端、AI 技術文章。">
+  <meta name="robots" content="noindex">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+    <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .error-page {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      gap: 2rem;
+    }
+    .error-code {
+      font-size: clamp(5rem, 15vw, 10rem);
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--accent) 0%, #a855f7 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -4px;
+    }
+    .error-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--text);
+      margin: 0;
+    }
+    .error-desc {
+      color: var(--text-muted);
+      max-width: 480px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    .error-terminal {
+      background: #0d1117;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: left;
+      border: 1px solid #30363d;
+    }
+    .error-terminal .term-line {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-size: 0.9rem;
+      color: #c9d1d9;
+      line-height: 2;
+    }
+    .error-terminal .term-prompt { color: #7ee787; }
+    .error-terminal .term-err { color: #f85149; }
+    .error-terminal .term-hint { color: #8b949e; }
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    .error-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.18s ease;
+    }
+    .error-btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .error-btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37,99,235,0.3);
+    }
+    .error-btn-secondary {
+      background: var(--bg-alt);
+      border: 1.5px solid var(--border);
+      color: var(--text);
+    }
+    .error-btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .popular-articles {
+      width: 100%;
+      max-width: 700px;
+    }
+    .popular-articles h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .popular-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+    }
+    .popular-item {
+      display: block;
+      padding: 0.75rem 1rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.92rem;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.18s ease;
+      line-height: 1.4;
+    }
+    .popular-item:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.1);
+    }
+    .popular-item-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .search-hint {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-alt);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      transition: all 0.18s ease;
+    }
+    .search-hint:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .search-hint kbd {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="error-page">
+        <div class="error-code">404</div>
+
+        <h1 class="error-title">Houston, we have a problem. 🚀</h1>
+        <p class="error-desc">你要找的頁面不見了，可能是連結過期、URL 打錯，或者這個頁面從未存在過。</p>
+
+        <div class="error-terminal" aria-hidden="true">
+          <div class="term-line"><span class="term-prompt">$</span> curl https://ai-hardcore-engineer.com<span id="term-path"></span></div>
+          <div class="term-line term-err">Error 404: Page Not Found</div>
+          <div class="term-line term-hint"># 嘗試以下解決方案...</div>
+          <div class="term-line"><span class="term-prompt">$</span> cd / && ls articles</div>
+        </div>
+
+        <div class="error-actions">
+          <a href="./index.html" class="error-btn error-btn-primary">🏠 回到首頁</a>
+          <a href="./articles.html" class="error-btn error-btn-secondary">📚 所有文章</a>
+          <button class="search-hint" onclick="document.querySelector('.nav-search-toggle').click()">
+            🔍 搜尋文章 <kbd>/</kbd>
+          </button>
+        </div>
+
+        <div class="popular-articles">
+          <h3>🔥 熱門文章</h3>
+          <div class="popular-list">
+            <a href="./linux-commands.html" class="popular-item">
+              <span class="popular-item-tag">💻 終端機</span><br>
+              Linux 常用指令入門
+            </a>
+            <a href="./claude-code-commands.html" class="popular-item">
+              <span class="popular-item-tag">🤖 AI</span><br>
+              Claude Code 完整指令集
+            </a>
+            <a href="./git-commands.html" class="popular-item">
+              <span class="popular-item-tag">🛠️ 開發</span><br>
+              Git 常用指令入門
+            </a>
+            <a href="./docker-container-guide.html" class="popular-item">
+              <span class="popular-item-tag">🛠️ 開發</span><br>
+              Docker 容器化指南
+            </a>
+            <a href="./prompt-engineering-guide.html" class="popular-item">
+              <span class="popular-item-tag">🤖 AI</span><br>
+              Prompt Engineering 入門
+            </a>
+            <a href="./mac-commands.html" class="popular-item">
+              <span class="popular-item-tag">💻 終端機</span><br>
+              Mac 常用指令入門
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+  <script>
+    // Show the current path in the terminal
+    var termPath = document.getElementById('term-path');
+    if (termPath) {
+      termPath.textContent = window.location.pathname;
+    }
+  </script>
+</body>
+</html>
