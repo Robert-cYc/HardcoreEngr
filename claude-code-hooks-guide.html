@@ -62,6 +62,11 @@
       font-weight: 600;
       margin: 1.5rem 0 0.75rem;
     }
+    .article-body h4 {
+      font-size: 1.32rem;
+      font-weight: 600;
+      margin: 1.25rem 0 0.5rem;
+    }
     .article-body p {
       margin-bottom: 1rem;
       line-height: 1.8;
@@ -94,7 +99,13 @@
       margin: 1.5rem 0;
       border-radius: 0 8px 8px 0;
     }
-    .article-body ul, .article-body ol {
+    .article-body ul {
+      list-style: disc;
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    .article-body ol {
+      list-style: decimal;
       margin: 1rem 0;
       padding-left: 2rem;
     }
@@ -108,7 +119,7 @@
       font-size: 1.21rem; /* 10% larger */
     }
     .article-body th, .article-body td {
-      padding: 0.4rem 0.5rem;
+      padding: 0.75rem 1rem;
       text-align: left;
       border-bottom: 1px solid var(--border);
       vertical-align: top;
@@ -119,6 +130,7 @@
       background: var(--bg-alt);
       white-space: nowrap;
     }
+    .article-body tr:hover td { background: var(--bg-alt); }
     .cmd-table td:first-child {
       font-family: "Fira Code", "SF Mono", Consolas, monospace;
       font-weight: 700;
@@ -129,6 +141,7 @@
       display: flex;
       gap: 0.5rem;
       flex-wrap: wrap;
+      justify-content: center;
       margin-bottom: 2rem;
     }
     .tag {
