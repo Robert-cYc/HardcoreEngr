@@ -468,9 +468,9 @@
     ].join('');
     document.head.appendChild(style);
 
-    // Build filter input (insert before first table's section heading)
+    // Build filter input (insert before first table's container or the table itself)
     var firstTable = tables[0];
-    var insertTarget = firstTable.closest('section') || firstTable.closest('div') || firstTable.parentNode;
+    var insertTarget = firstTable.closest('section') || firstTable;
 
     var wrap = document.createElement('div');
     wrap.className = 'cheatsheet-filter-wrap';
