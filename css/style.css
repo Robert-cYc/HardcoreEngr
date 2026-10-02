@@ -311,6 +311,12 @@ body.dark-mode {
   max-height: 300px;
   object-fit: cover;
 }
+.hero video {
+  border-radius: 8px;
+  margin: 2rem auto 0;
+  max-height: 300px;
+  object-fit: cover;
+}
 
 /* =============== Article Cards =============== */
 .article-grid {
