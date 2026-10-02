@@ -1,81 +1,81 @@
 {
-  "updated": "2026-09-30 01:18",
+  "updated": "2026-10-02 01:42",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "鴻海員工今早被獎金砸醒！年度分紅入帳，績優員工百萬起跳",
-          "link": "https://finance.technews.tw/2026/09/30/2026-foxconn-annual-bonus/",
-          "date": "2026-09-30 01:06",
-          "summary": "鴻海員工今日一早迎來年度「開獎日」，依循近年慣例，該公司年度分紅獎金今早正式匯入員工帳戶。據了解，鴻海今年整體 [&#8230;]"
+          "title": "AI 代理頻失控，OpenAI 排查影響範圍、通報逾百機構",
+          "link": "https://technews.tw/2026/10/02/openai-alerts-more-than-100-groups-about-rogue-ai-agent-activity/",
+          "date": "2026-10-02 01:30",
+          "summary": "ChatGPT 開發商 OpenAI 在部落格文章中表示，已向逾 100 個組織通報與其 AI 代理相關的未授 [&#8230;]"
         },
         {
-          "title": "AI 催動光纖需求  康寧拿下 AT＆T 大單、光通訊股嗨",
-          "link": "https://technews.tw/2026/09/30/att-and-corning-team-up-to-engineer-the-connected-world-with-fiber/",
-          "date": "2026-09-30 00:50",
-          "summary": "康寧（Corning）宣布與 AT&#38;T 達成一項價值數十億美元的光纖及纜線供應協議，主要受到資料與人工 [&#8230;]"
+          "title": "馬斯克大砍記憶體規格！特斯拉 AI5 降至 72GB、AI6 縮減 1/3 容量",
+          "link": "https://technews.tw/2026/10/02/elon-musk-tesla-ai5-chip/",
+          "date": "2026-10-02 01:26",
+          "summary": "由於記憶體供應長期受限，特斯拉執行長馬斯克（Elon Musk）宣布，特斯拉 AI5 與 AI6 晶片將大幅下 [&#8230;]"
         },
         {
-          "title": "美中客觀條件未變，華府「川習會」難有大突破",
-          "link": "https://finance.technews.tw/2026/09/30/us-china-objective-environment-trump-xi-summit-washington-unlikely-major-breakthrough/",
-          "date": "2026-09-30 00:20",
-          "summary": "習近平訪問美國後，白宮公布與中國公平及對等關係（a fair and reciprocal relations [&#8230;]"
+          "title": "川普接受 TIME 專訪，宣稱台灣晶片公司投資 5,000 億美元",
+          "link": "https://technews.tw/2026/10/02/read-the-full-transcript-of-donald-trumps-2026-interview-with-time/",
+          "date": "2026-10-02 01:10",
+          "summary": "美國總統川普近日在白宮接受時代雜誌（TIME）專訪，期間談到經濟成長議題時聲稱，「偉大的台灣晶片公司」正投資美 [&#8230;]"
         },
         {
-          "title": "下指令要求 AI「不要產生幻覺」也無效，研究：系統設計就是「非答不可」",
-          "link": "https://technews.tw/2026/09/30/ai-hallucinations-believed-to-be-stoppable-by-letting-ai-know-it-is-okay-to-be-wrong-sometimes/",
-          "date": "2026-09-30 00:10",
-          "summary": "一項最新研究與相關分析指出，生成式 AI 之所以常出現所謂「幻覺」，關鍵問題可能不只是模型會猜，而是系統本身被 [&#8230;]"
+          "title": "軟銀完成對 OpenAI 的 300 億美元投資，累計持股達 13%",
+          "link": "https://finance.technews.tw/2026/10/02/softbank-completes-final-phase-of-30-billion-investment-in-openai/",
+          "date": "2026-10-02 01:00",
+          "summary": "軟銀集團（SoftBank Group）今天表示，已完成對 ChatGPT 開發商 OpenAI 的 300 [&#8230;]"
         },
         {
-          "title": "機器人也需要救護車？日本搶攻人型機器人售後服務商機",
-          "link": "https://finance.technews.tw/2026/09/30/japanese-company-unveils-robot-ambulance-for-on-site-humanoid-repairs/",
-          "date": "2026-09-30 00:00",
-          "summary": "人型機器人逐步走出實驗室，開始進入工廠組裝線、物流倉庫、商場與高齡照護機構。過去產業焦點集中關節自由度、驅動馬 [&#8230;]"
+          "title": "新加坡首起 AI 個資外洩事件，美珍香逾 9.5 萬顧客遭殃",
+          "link": "https://infosecu.technews.tw/2026/10/02/bee-cheng-hiang-ai-personal-information-leaked/",
+          "date": "2026-10-02 00:50",
+          "summary": "新加坡品牌美珍香員工使用人工智慧工具操作不當，造成逾 9 萬 5,000 名顧客的電子信箱地址外洩，為當地首起 [&#8230;]"
         },
         {
-          "title": "為什麼突然沒人罵 NVIDIA DLSS 5 了？",
-          "link": "https://technews.tw/2026/09/30/why-suddenly-no-dlss-5-criticism/",
-          "date": "2026-09-29 23:50",
-          "summary": "今年 3 月 NVIDIA 首度公開 DLSS 5 時，網路罵聲一片。和過去負責補幀生幀的 DLSS 不同，D [&#8230;]"
+          "title": "AI 擴大應用金融市場，韓專家示警資金過度集中風險",
+          "link": "https://finance.technews.tw/2026/10/02/ai-financial-markets-korean-experts-warn-capital-concentration-risk/",
+          "date": "2026-10-02 00:40",
+          "summary": "隨著 AI 快速發展，應用範圍擴及金融市場，韓國也開始防範相關風險，新版「金融領域人工智慧指引」今年 6 月起 [&#8230;]"
         },
         {
-          "title": "美中 AI 競賽換跑道，從比拚最強模型轉向產業應用與基礎設施",
-          "link": "https://technews.tw/2026/09/30/us-china-ai-race-shifts-focus-from-most-powerful-models-to-industry-applications-and-infrastructure/",
-          "date": "2026-09-29 23:40",
-          "summary": "人工智慧競賽正從單純比拚最先進模型，轉向更廣泛的產業應用與基礎設施競爭。根據最新整理的多篇報導與研究，中國雖然 [&#8230;]"
+          "title": "9 月 PMI 創逾 5 年新高，專家：AI 軍備競賽支撐景氣",
+          "link": "https://technews.tw/2026/10/02/september-pmi-hits-over-5-year-high-experts-ai-arms-race-sustains-economic-outlook/",
+          "date": "2026-10-02 00:15",
+          "summary": "中經院 1 日公布 9 月製造業採購經理人指數（PMI）續揚 0.9 個百分點至 63.4%，創 2021 年 [&#8230;]"
         },
         {
-          "title": "全新 Agent「dots」、GPT-6.1 Sol 模型，快速回顧 OpenAI 開發者大會",
-          "link": "https://technews.tw/2026/09/30/openai-devday-2026-recap/",
-          "date": "2026-09-29 23:29",
-          "summary": "29 日所舉行的 OpenAI DevDay 2026 開發者大會上，一口氣帶來超過 20 項重大發表，涵蓋模 [&#8230;]"
+          "title": "AI 聊天機器人答案太單一，研究指多樣性仍不及 Google 搜尋",
+          "link": "https://technews.tw/2026/10/02/ai-chatbots-serve-you-a-narrower-slice-of-knowledge-than-a-plain-old-google-search-study-finds/",
+          "date": "2026-10-02 00:10",
+          "summary": "哥本哈根大學新研究指出，越來越多人習慣以 AI 聊天機器人取代傳統搜尋引擎，但這樣做可能接觸到更狹窄的知識範圍 [&#8230;]"
         },
         {
-          "title": "四大主流模型全中招，最新研究：AI 判定女性化用語較不專業且充滿誇張情緒",
-          "link": "https://technews.tw/2026/09/30/johns-hopkins-4-chatbots-weaken-replies-to-womens-phrasing/",
-          "date": "2026-09-29 23:20",
-          "summary": "美國約翰霍普金斯大學（Johns Hopkins University）最新研究指出，當使用者請 AI 聊天機 [&#8230;]"
+          "title": "OpenAI 破解數學難題震撼學界，AI 時代的數學核心：是「找答案」還是「真理解」",
+          "link": "https://technews.tw/2026/10/02/solving-maths-greatest-problems-was-an-art-form/",
+          "date": "2026-10-01 23:40",
+          "summary": "OpenAI 近期以一款內部生成式人工智慧模型解出一項長期未決的數學難題，震撼學界，也讓關於人工智慧是否正在改 [&#8230;]"
         },
         {
-          "title": "Meta Muse 被爆偷看私人訊息，掀起隱私疑慮",
-          "link": "https://infosecu.technews.tw/2026/09/29/meta-s-muse-read-private-messages-without-permission/",
-          "date": "2026-09-29 08:59",
-          "summary": "AI Agent 代替人們執行各項任務的能力，可說是 AI 技術一項重大進展，例如近來 Meta 在美推出的個 [&#8230;]"
+          "title": "Anthropic IPO 傳延後，最快 11 月中旬上市",
+          "link": "https://finance.technews.tw/2026/10/02/anthropic-ipo-mid-november-2-trillion-valuation-in-focus/",
+          "date": "2026-10-01 23:31",
+          "summary": "Anthropic 上市計畫持續推進。根據外電報導，Claude 開發商 Anthropic 最快可能於 11 [&#8230;]"
         },
         {
-          "title": "8 月景氣燈號連九紅，9 月可望續亮紅燈刷新最長紀錄",
-          "link": "https://finance.technews.tw/2026/09/29/august-economic-indicator-stays-in-red-for-ninth-straight-month/",
-          "date": "2026-09-29 08:50",
-          "summary": "國發會今天公布 8 月景氣燈號續亮紅燈，呈現連九紅，已經追平 COVID-19 疫情後紀錄，且因人工智慧（AI [&#8230;]"
+          "title": "拿養老金資助淘汰自己的技術？美 401(k) 恐成 AI 泡沫最大苦主",
+          "link": "https://technews.tw/2026/10/02/401k-quietly-funding-ai-boom/",
+          "date": "2026-10-01 23:20",
+          "summary": "美國 401(k) 退休帳戶正悄悄成為支撐這波 AI 熱潮的龐大資金庫。數據顯示，美國約 54% 的家庭擁有 [&#8230;]"
         },
         {
-          "title": "鴻海持續推進 AI 與全球布局，劉揚偉連獲多項企業領袖獎項",
-          "link": "https://technews.tw/2026/09/29/young-liu-ai/",
-          "date": "2026-09-29 07:46",
-          "summary": "鴻海董事長劉揚偉近期接連獲得多項企業領袖相關獎項。包括 9 月 29 日獲網路溫度計「2026 第九屆網路口碑 [&#8230;]"
+          "title": "MAN Truck 將智駕效益延伸至能源節省，推動車隊升級潮",
+          "link": "https://technews.tw/2026/10/02/man-truck-intelligent-driving-benefits-energy-saving-fleet-upgrade-wave/",
+          "date": "2026-10-01 23:00",
+          "summary": "MAN Truck 於 IAA Transportation 2026 大會上發表多項全新技術，兼具安全性與營 [&#8230;]"
         }
       ]
     },
@@ -84,76 +84,76 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
-          "title": "傳台積電擬赴德州設第 2 園區，吳誠文：根留台灣不會改變",
-          "link": "https://technews.tw/2026/09/30/tsmc-texas-investment-wu-cheng-wen-evaluation-site-company-announcement/",
-          "date": "2026-09-30 00:15",
-          "summary": "傳出台積電擬啟動美國第 2 園區建廠計畫，再蓋 6 座先進晶圓廠，落腳德州達拉斯呼聲高。國科會主委吳誠文 29 [&#8230;]"
+          "title": "馬斯克大砍記憶體規格！特斯拉 AI5 降至 72GB、AI6 縮減 1/3 容量",
+          "link": "https://technews.tw/2026/10/02/elon-musk-tesla-ai5-chip/",
+          "date": "2026-10-02 01:26",
+          "summary": "由於記憶體供應長期受限，特斯拉執行長馬斯克（Elon Musk）宣布，特斯拉 AI5 與 AI6 晶片將大幅下 [&#8230;]"
         },
         {
-          "title": "台積電投資亞利桑那州廠 2,650 億美元，深化台美經濟與文化鏈結",
-          "link": "https://technews.tw/2026/09/30/tsmcs-investment-in-its-arizona-plant-deepens-economic-and-cultural-ties-between-taiwan-and-the-united-states/",
-          "date": "2026-09-30 00:00",
-          "summary": "晶圓代工龍頭台積電在美國亞利桑那州投資高達破紀錄的 2,650 億美元，創下美國歷史上最大規模的外國直接投資案 [&#8230;]"
+          "title": "美傳盯上中國 3.2T 光模組、雷射恐吃緊  光通訊嗨",
+          "link": "https://technews.tw/2026/10/02/us-targets-china-3-2t-optical-modules-lasers-supply-concerns-optical-communications-boost/",
+          "date": "2026-10-02 01:20",
+          "summary": "市場謠傳，美國國會議員考慮對中國製 3.2T 光收發模組祭出禁制令，帶動美國光通訊類股週四（10 月 1 日） [&#8230;]"
         },
         {
-          "title": "記憶體高漲拉抬成本，蘋果新任執行長考慮進行裁員平衡壓力",
-          "link": "https://finance.technews.tw/2026/09/30/apples-new-ceo-is-considering-layoffs-to-balance-the-pressure/",
-          "date": "2026-09-29 23:00",
-          "summary": "科技大廠蘋果（Apple）迎接新任執行長約翰·特納斯（John Ternus），然而新官上任之際，公司卻正面臨 [&#8230;]"
+          "title": "川普接受 TIME 專訪，宣稱台灣晶片公司投資 5,000 億美元",
+          "link": "https://technews.tw/2026/10/02/read-the-full-transcript-of-donald-trumps-2026-interview-with-time/",
+          "date": "2026-10-02 01:10",
+          "summary": "美國總統川普近日在白宮接受時代雜誌（TIME）專訪，期間談到經濟成長議題時聲稱，「偉大的台灣晶片公司」正投資美 [&#8230;]"
         },
         {
-          "title": "AI 狂潮席捲！台灣三大科學園區 2026 上半年總營收破 3.5 兆創歷年同期新高",
-          "link": "https://finance.technews.tw/2026/09/29/taiwans-three-major-science-parks-achieved-a-combined-revenue-exceeding-nt3-5-trillion-in-the-first-half-of-2026/",
-          "date": "2026-09-29 09:45",
-          "summary": "受惠於全球人工智慧（AI）浪潮、高效能運算（HPC）與先進半導體需求強勁擴增，台灣三大科學園區（竹科、中科、南 [&#8230;]"
+          "title": "半導體微加工技術導入電池，韓國團隊成功打造高穩定「無負極電池」新架構",
+          "link": "https://technews.tw/2026/10/02/semiconductor-technology-improve-ev-battery-life/",
+          "date": "2026-10-02 00:30",
+          "summary": "韓國研究團隊近日宣布，成功將半導體產業的精密製造技術導入電池設計，開發出能促使鋰金屬更均勻沉積的「無負極鋰金屬 [&#8230;]"
         },
         {
-          "title": "輝達傳找保險業挺 GPU 融資、助攻 Neocloud 競爭力",
-          "link": "https://finance.technews.tw/2026/09/29/nvidia-turns-to-insurers-to-spread-the-risk-of-ai-build-out/",
-          "date": "2026-09-29 07:30",
-          "summary": "市場傳出，輝達（Nvidia）正在與保險公司洽談，研究由保險業分攤以 AI 晶片做為擔保品的融資風險，希望吸引 [&#8230;]"
+          "title": "淺談新世代手機晶片：速度和 AI 至上",
+          "link": "https://technews.tw/2026/10/02/next-gen-smartphone-chips-speed-ai-supreme/",
+          "date": "2026-10-01 23:50",
+          "summary": "如果要替今年新旗艦手機晶片找出相同之處，那更快 CPU 和更多 AI 加速器大概最明顯。近日高通發表 Snap [&#8230;]"
         },
         {
-          "title": "記憶體紅利爆發！華邦電獎金傳上看百萬，但美光罷工票還沒算完",
-          "link": "https://technews.tw/2026/09/29/memory-winbond/",
-          "date": "2026-09-29 07:01",
-          "summary": "受惠 AI 需求與記憶體景氣回溫，記憶體大廠近期不只營運表現轉強，員工獎金與分紅也成為科技圈熱議焦點。華邦電第 [&#8230;]"
+          "title": "Snapdragon 高峰會重點在哪？代理 AI 全布局，高通已準備搶攻個人 AI 入口",
+          "link": "https://technews.tw/2026/10/01/qualcomm-2026-snapdragon-summit/",
+          "date": "2026-10-01 10:19",
+          "summary": "高通 2026 年 Snapdragon 高峰會已經正式落幕，這次一口氣推出最新雙旗艦晶片 Snapdrago [&#8230;]"
         },
         {
-          "title": "緩解 AI 算力荒，中國傳擬放行字節跳動與阿里巴巴採購輝達 RTX Pro 5500",
-          "link": "https://technews.tw/2026/09/29/nvidia-influence-trump-ai-policy/",
-          "date": "2026-09-29 07:00",
-          "summary": "據外媒報導，中國政府正考慮允許部分本土科技巨頭採購輝達（Nvidia）的 RTX Pro 5500 晶片，顯示 [&#8230;]"
+          "title": "科學園區審議會通過 13 件投資案，南亞科將進駐南科屏東園區",
+          "link": "https://finance.technews.tw/2026/10/01/nanya-in-stsp/",
+          "date": "2026-10-01 10:00",
+          "summary": "國科會科學園區審議會今天通過 13 件投資案，投資總額約新台幣 512.19 億元。南亞科技股份有限公司屏東分 [&#8230;]"
         },
         {
-          "title": "反映 HBM 供應持續吃緊，上修 2027 年 HBM 價格展望、預估 ASP 年增達 121%",
-          "link": "https://technews.tw/2026/09/29/2027-hbm-price-outlook-revised-upward/",
-          "date": "2026-09-29 06:20",
-          "summary": "根據 TrendForce 最新研究顯示，AI 伺服器需求持續擴張，HBM 與 conventional DR [&#8230;]"
+          "title": "Arm 機櫃級伺服器已超越 x86，Arm 攜手 NVIDIA 搶代理 AI 商機",
+          "link": "https://technews.tw/2026/10/01/arm-talk-about-agentic-ai/",
+          "date": "2026-10-01 09:33",
+          "summary": "人工智慧（AI）基礎設施正在加速向 Arm 架構轉移，基於 Arm 架構的機櫃級伺服器目前已超越 x86，成為 [&#8230;]"
         },
         {
-          "title": "陳立武：台積電是夥伴不是對手，英特爾未來仍可能是其重要客戶",
-          "link": "https://technews.tw/2026/09/29/intel-ceo-lip-bu-tan-calls-tsmc-a-partner-not-a-rival/",
-          "date": "2026-09-29 03:25",
-          "summary": "英特爾（Intel）執行長陳立武（Lip-Bu Tan）表示，即使公司正在重建晶圓代工業務，台積電（TSMC） [&#8230;]"
+          "title": "2025 年全球跨國投資金額年增 2.2% 達 1.3 兆美元，台積電站上第一名寶座",
+          "link": "https://finance.technews.tw/2026/10/01/global-cross-border-investment-is-projected-to-grow-by-2-2-annually-to-reach-us1-3-trillion-by-2025/",
+          "date": "2026-10-01 08:50",
+          "summary": "根據《fDi Report 2026》與 Visual capitalist 的最新分析，2025 年全球跨國 [&#8230;]"
         },
         {
-          "title": "日本晶片設備銷售旺  逼近「6 千億」、刷新歷史新高",
-          "link": "https://technews.tw/2026/09/29/japanese-chip-equipment-sales-approach-600-billion-yen/",
-          "date": "2026-09-29 02:50",
-          "summary": "日本半導體（晶片）製造設備銷售續旺，8 月份銷售額創 54 個月來最大增幅，逼近 6,000 億日圓大關，刷新 [&#8230;]"
+          "title": "泰國加速半導體投資！英飛凌啟用後段製造新廠，初期投資超過 1 億歐元",
+          "link": "https://finance.technews.tw/2026/10/01/infineon-opens-1-4-billion-thailand-plant/",
+          "date": "2026-10-01 07:38",
+          "summary": "英飛凌今（1 日）在泰國曼谷附近啟用全新半導體後段製造基地，初期投資超過 1 億歐元，顯示在全球半導體供應鏈持 [&#8230;]"
         },
         {
-          "title": "舊顯卡不要太快淘汰，二手市場價格比你想像更高",
-          "link": "https://finance.technews.tw/2026/09/29/your-old-gpu-could-be-worth-more-than-you-think/",
-          "date": "2026-09-29 02:40",
-          "summary": "記憶體供應緊縮與人工智慧需求暴增，正把顯示卡市場推向更劇烈的漲價潮。最新消息指出，記憶體危機再度升溫，GPU [&#8230;]"
+          "title": "AI 點火  韓 9 月出口創高、半導體出口破 600 億美元",
+          "link": "https://technews.tw/2026/10/01/ai-fuels-south-korea-september-exports-record-semiconductor-exports-top-60-billion/",
+          "date": "2026-10-01 06:50",
+          "summary": "AI 及記憶體需求強勁，帶動韓國 9 月出口額年增逾八成、再創歷史新高，其中，半導體出口更首度突破 600 億 [&#8230;]"
         },
         {
-          "title": "OpenAI 首款自研 AI 推論晶片 Jalapeño 核心細節曝光，以 AI 輔助設計重塑產業基準",
-          "link": "https://technews.tw/2026/09/29/openai-jalapeno-ai-inference-chip-details/",
-          "date": "2026-09-29 02:20",
-          "summary": "OpenAI 近期進一步公開了旗下首款自研推論晶片「Jalapeño」的設計理念與未來藍圖。OpenAI 硬體 [&#8230;]"
+          "title": "日月光攜手六校發表 12 項成果，深化本土研發能量展現封測領航實力",
+          "link": "https://technews.tw/2026/10/01/ase-technology-group-together-with-six-universities-announced-12-research-findings/",
+          "date": "2026-10-01 06:15",
+          "summary": "日月光半導體日前舉辦「第十一屆自動化產學專案成果發表會」，攜手國立中央大學、國立成功大學、國立中山大學、國立陽 [&#8230;]"
         }
       ]
     },
@@ -162,76 +162,76 @@
       "site": "https://technews.tw/category/component/",
       "items": [
         {
-          "title": "Bloom Energy 買新廠、暗示客戶需求強？股價嗨",
-          "link": "https://technews.tw/2026/09/30/bloom-energy-stock-gains-on-factory-expansion/",
-          "date": "2026-09-30 01:10",
-          "summary": "燃料電池大廠 Bloom Energy 購入廠房、分析師推估這暗示市場需求強勁，股價應聲跳高。 Barron&#038; [&#8230;]"
+          "title": "相較同業有落後補漲優勢，美銀給南電買進投資評等目標價 2,000 元",
+          "link": "https://finance.technews.tw/2026/10/02/bank-of-america-gives-nanyang-power-a-buy-rating-with-a-target-price-of-nt2000/",
+          "date": "2026-10-02 01:40",
+          "summary": "外資美商美銀證券發布最新投資研究報告，重申對 IC 載板大廠南電的「買進」投資評等，並將目標價由每股新台幣 1 [&#8230;]"
         },
         {
-          "title": "機器人也需要救護車？日本搶攻人型機器人售後服務商機",
-          "link": "https://finance.technews.tw/2026/09/30/japanese-company-unveils-robot-ambulance-for-on-site-humanoid-repairs/",
-          "date": "2026-09-30 00:00",
-          "summary": "人型機器人逐步走出實驗室，開始進入工廠組裝線、物流倉庫、商場與高齡照護機構。過去產業焦點集中關節自由度、驅動馬 [&#8230;]"
+          "title": "半導體微加工技術導入電池，韓國團隊成功打造高穩定「無負極電池」新架構",
+          "link": "https://technews.tw/2026/10/02/semiconductor-technology-improve-ev-battery-life/",
+          "date": "2026-10-02 00:30",
+          "summary": "韓國研究團隊近日宣布，成功將半導體產業的精密製造技術導入電池設計，開發出能促使鋰金屬更均勻沉積的「無負極鋰金屬 [&#8230;]"
         },
         {
-          "title": "特斯拉無稀土電機上車，一場應用邊界明顯的工程勝利",
-          "link": "https://technews.tw/2026/09/30/tesla-rare-earth-free-motor-engineering-victory-clear-application-boundaries/",
-          "date": "2026-09-29 23:00",
-          "summary": "特斯拉執行長馬斯克宣布不影響續航里程前提下，Cybercab 成功搭載無稀土驅動電機。尚未公布更多細節，但業界 [&#8230;]"
+          "title": "可變色電子紙服裝登巴黎時裝週，每套上千片 E Ink Prism 3 元件",
+          "link": "https://technews.tw/2026/10/01/e-ink-and-anrealage-debut-color-changing-dresses-at-paris-fashion-week/",
+          "date": "2026-10-01 08:59",
+          "summary": "電子紙大廠 E Ink 元太科技與日本前衛時裝品牌 ANREALAGE 展開創意合作，並登上巴黎時裝週的舞台。 [&#8230;]"
         },
         {
-          "title": "金像電私募拍板亞馬遜 15.89 億元入股，另通過 79 億元新廠擴產案",
-          "link": "https://finance.technews.tw/2026/09/29/golden-image-private-equity-funds-invest-nt1-589-billion-in-amazon/",
-          "date": "2026-09-29 11:00",
-          "summary": "PCB 大廠金像電於 2026 年 9 月 29 日召開董事會，拍板確定引進雲端大廠亞馬遜（Amazon.co [&#8230;]"
+          "title": "AI 供電授權夯  Vicor 兩週內二度上修財測、盤後嗨",
+          "link": "https://finance.technews.tw/2026/10/01/vicor-raises-guidance-for-second-time-in-two-weeks/",
+          "date": "2026-10-01 07:10",
+          "summary": "美國電源供應器製造商 Vicor Corporation 上週才剛以權利金收入為由大幅上調第三季營收成長展望， [&#8230;]"
         },
         {
-          "title": "賓士、輝能簽署合作協議，取得次世代固態電池優先權",
-          "link": "https://technews.tw/2026/09/29/mercedes-benz-prologium-ssb-priority/",
-          "date": "2026-09-29 10:40",
-          "summary": "台灣固態電池廠輝能和賓士之間的曖昧關係，今天終於更加清晰，雙方簽署合作協議，未來賓士將取得輝能最新電池的優先測 [&#8230;]"
+          "title": "崇越科技深化日本半導體戰略布局，福岡營業所 10 月設立",
+          "link": "https://technews.tw/2026/10/01/tsc-deepens-its-strategic-layout-in-the-japanese-semiconductor-industry/",
+          "date": "2026-10-01 06:40",
+          "summary": "半導體關鍵材料商崇越科技持續加速海外市場布局，旗下日本子公司「峻川商事株式會社」於 10 月 1 日正式啟用福 [&#8230;]"
         },
         {
-          "title": "AI 狂潮席捲！台灣三大科學園區 2026 上半年總營收破 3.5 兆創歷年同期新高",
-          "link": "https://finance.technews.tw/2026/09/29/taiwans-three-major-science-parks-achieved-a-combined-revenue-exceeding-nt3-5-trillion-in-the-first-half-of-2026/",
-          "date": "2026-09-29 09:45",
-          "summary": "受惠於全球人工智慧（AI）浪潮、高效能運算（HPC）與先進半導體需求強勁擴增，台灣三大科學園區（竹科、中科、南 [&#8230;]"
+          "title": "電子供應鏈高度集中亞洲，中台韓日產能居全球前四大",
+          "link": "https://technews.tw/2026/10/01/ranked-the-countries-that-make-the-worlds-electronics/",
+          "date": "2026-10-01 06:10",
+          "summary": "全球科技產品製造高度集中在亞洲。根據 2024 至 2025 年全球數位硬體產能排名，中國以 58.8% 占比 [&#8230;]"
         },
         {
-          "title": "光寶擴大智慧財產權布局，加入 LOT Network 專利防護網",
-          "link": "https://technews.tw/2026/09/29/lite-on-expands-ip-footprint-joins-lot-network-patent-protection/",
-          "date": "2026-09-29 06:12",
-          "summary": "光寶科技今（29）日宣布加入全球專利授權非營利組織 LOT Network，透過與全球超過 6,500 家會員 [&#8230;]"
+          "title": "累計投資逾台幣 1.6 兆元！美光深耕台灣四大廠區持續擴建因應市場需求",
+          "link": "https://technews.tw/2026/10/01/micron-continues-to-expand-its-four-major-manufacturing-facilities-in-taiwan-to-meet-market-demand/",
+          "date": "2026-10-01 05:45",
+          "summary": "記憶體大廠美光（Micron）在 1 日財報公布之後，由台灣區董事長盧東輝帶領公司高階主管舉辦年度媒體茶會，說 [&#8230;]"
         },
         {
-          "title": "AI 資料中心邁向 38 kV，施耐德推軟體定義中壓配電",
-          "link": "https://technews.tw/2026/09/29/ai-data-centers-38kv-schneider-electric-software-defined-medium-voltage-distribution/",
-          "date": "2026-09-29 04:10",
-          "summary": "AI 資料中心持續朝高功率密度發展，也帶動中壓配電設備升級。施耐德電機於 YOTTA 2026 發表新一代軟體 [&#8230;]"
+          "title": "牧德訂單能見度達一年，2027 年 AI 營收占比上看九成",
+          "link": "https://technews.tw/2026/10/01/motech-order-visibility-1-year-ai-revenue-90-percent-2027/",
+          "date": "2026-10-01 00:58",
+          "summary": "牧德科技昨（9 月 30 日）召開法人說明會，公司表示，隨 AI 伺服器、高效能運算及高速傳輸應用持續發展，高 [&#8230;]"
         },
         {
-          "title": "日本 Nidec 傳擬認列「1 兆」減損、社長遭解任  股價挫",
-          "link": "https://finance.technews.tw/2026/09/29/nidec-books-1-trillion-yen-charge-president-dismissed/",
-          "date": "2026-09-29 04:00",
-          "summary": "日本精密驅動馬達製造商尼得科（Nidec）傳出將認列 1 兆日圓減損損失，且社長遭解任。Nidec 今日股價重 [&#8230;]"
+          "title": "欣興砸百億湖口買地，因應持續擴產高階載板需求",
+          "link": "https://finance.technews.tw/2026/10/01/xinxing-spends-billions-to-buy-land-in-hukou/",
+          "date": "2026-09-30 23:45",
+          "summary": "欣興電子於 9 月 30 日發布重大訊息指出，將取得位於新竹縣湖口鄉之不動產，交易總金額達新台幣 100 億 [&#8230;]"
         },
         {
-          "title": "福斯重磅！攜手國軒高科，在歐洲大蓋 LFP 電池廠",
-          "link": "https://technews.tw/2026/09/29/volkswagen-gotion-joint-ventures-for-lfp-battery/",
-          "date": "2026-09-29 01:24",
-          "summary": "福斯汽車昨日宣布重量級消息，與中國電池大廠國軒高科展開大規模合作，要在歐洲建立多座電池廠，以滿足福斯推出平價電 [&#8230;]"
+          "title": "三星 6 家企業聯手投資 Helix，砸 10 億美元擴大 AI",
+          "link": "https://technews.tw/2026/09/30/samsung-6-companies-invest-1-billion-helix-ai-expansion/",
+          "date": "2026-09-30 08:54",
+          "summary": "三星集團擴大 AI 基礎設施布局。三星電子、三星物產、三星 SDS、三星 SDI、三星人壽及三星火災海上保險宣 [&#8230;]"
         },
         {
-          "title": "中國新型電池「十五五」規劃出爐，加速儲能技術升級",
-          "link": "https://technews.tw/2026/09/29/china-15th-five-year-plan-new-batteries-energy-storage-tech-upgrade/",
-          "date": "2026-09-29 01:22",
-          "summary": "中國新型電池產業下一階段發展方向出爐。中國工信部等七部門公布「新型電池產業發展『十五五』規劃」，將固態電池、鈉 [&#8230;]"
+          "title": "促消費者記得換新！PHILIPS 推行動電源「365 保值換新」",
+          "link": "https://ccc.technews.tw/2026/09/30/philips-powerbank-goodcube-air/",
+          "date": "2026-09-30 08:27",
+          "summary": "近年來行動電源的爭議不斷，但消費者對於這一類的產品往往都會使用到產品故障、膨脹或效能明顯衰退後才更換；為了鼓勵 [&#8230;]"
         },
         {
-          "title": "非紅供應鏈重塑低空市場，無人機商機起飛，台灣接軌全球",
-          "link": "https://technews.tw/2026/09/29/non-china-supply-chains-reshape-low-altitude-market-drone-opportunities-taiwan-global-connection/",
-          "date": "2026-09-28 23:30",
-          "summary": "無人機市場有多大？據無人機產業分析機構 Drone Industry Insights 估計，2025 年全球 [&#8230;]"
+          "title": "日圓貶值  LED 廠日亞化純益飆增 30 倍",
+          "link": "https://finance.technews.tw/2026/09/30/nichia-net-profit-surges-30-fold/",
+          "date": "2026-09-30 07:10",
+          "summary": "日圓貶值，加上鋰離子電池關鍵材料「正極材」事業折舊費用負擔大減，LED 大廠日亞化學工業（Nichia Cor [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,30 @@
       "name": "CCC 追新聞",
       "site": "https://ccc.technews.tw/",
       "items": [
+        {
+          "title": "白宮 AI 協議拼錯「美國」網路瘋傳，科技巨頭簽名風格成話題",
+          "link": "https://ccc.technews.tw/2026/10/01/white-house-ai-agreement-misspells-america-viral-tech-giants-signature-styles-discussion/",
+          "date": "2026-10-01 06:20",
+          "summary": "美國總統川普日前攜手科技巨頭簽署被譽為「AI 憲法」的新協議，不料眼尖網友發現川普簽名下方的「美國」英文拼錯， [&#8230;]"
+        },
+        {
+          "title": "「HomePad」傳 10/13 亮相，復刻 iMac G4 經典設計",
+          "link": "https://ccc.technews.tw/2026/10/01/homepad-apple-event/",
+          "date": "2026-10-01 01:47",
+          "summary": "市場傳聞已久的蘋果智慧家庭中樞裝置「HomePad」終於要亮相了嗎？ 據《彭博社》最新報導，蘋果預計於 10 [&#8230;]"
+        },
+        {
+          "title": "促消費者記得換新！PHILIPS 推行動電源「365 保值換新」",
+          "link": "https://ccc.technews.tw/2026/09/30/philips-powerbank-goodcube-air/",
+          "date": "2026-09-30 08:27",
+          "summary": "近年來行動電源的爭議不斷，但消費者對於這一類的產品往往都會使用到產品故障、膨脹或效能明顯衰退後才更換；為了鼓勵 [&#8230;]"
+        },
+        {
+          "title": "PS6 不會在 CES 發表，Sony 終止 60 年參展傳統",
+          "link": "https://ccc.technews.tw/2026/09/30/sony-is-skipping-ces-2027-for-the-first-time-since-1967/",
+          "date": "2026-09-30 03:30",
+          "summary": "Sony 已確認不會參加 2027 年 1 月舉行的消費性電子展（CES），連同旗下關係企業也不會在會場展示產 [&#8230;]"
+        },
         {
           "title": "主機遊戲也走向手遊化？微軟最新專利揭露：觀看廣告可換取「免打擾遊玩時間」",
           "link": "https://ccc.technews.tw/2026/09/30/xbox-patents-new-way-to-inject-ads-into-gaming/",
@@ -286,30 +310,6 @@
           "link": "https://ccc.technews.tw/2026/09/21/googlebook-is-now-available-for-pre-order/",
           "date": "2026-09-21 14:54",
           "summary": "Google 攜手宏碁、華碩、戴爾、惠普、聯想 5 家品牌夥伴合作開發的全新高階筆電 Googlebook，2 [&#8230;]"
-        },
-        {
-          "title": "拒當盤子，購買二手電腦零件必看的六大避險心法與驗貨訣竅",
-          "link": "https://ccc.technews.tw/2026/09/20/used-computer-hardware-buying-guide/",
-          "date": "2026-09-20 01:30",
-          "summary": "雖然在 2026 年，購買二手電腦硬體依然是節省預算的好管道，但潛藏的風險已大幅攀升。隨著硬體價格波動，加上 [&#8230;]"
-        },
-        {
-          "title": "iPhone Duo 再酷也不等！中華電信曝 AI 掀換機潮「絕美新色」預售搶光",
-          "link": "https://ccc.technews.tw/2026/09/18/stunning-new-colors/",
-          "date": "2026-09-18 01:11",
-          "summary": "中華電信今日正式開賣蘋果 iPhone 18 Pro 系列，現場由廖先生意外奪頭香哥寶座，這次鎖定 iPhon [&#8230;]"
-        },
-        {
-          "title": "Google Home MCP 登場，第三方 AI Agent 與居家環境智慧接軌",
-          "link": "https://ccc.technews.tw/2026/09/17/google-opens-early-access-to-model-context-protocol-for-google-home/",
-          "date": "2026-09-17 08:44",
-          "summary": "Google 透過全新 Google Home MCP，將智慧家庭產品向各家 AI Agent 敞開大門，如 [&#8230;]"
-        },
-        {
-          "title": "蘋果靠 Lightning 連接埠收授權金，十年進帳超過 10 億美元",
-          "link": "https://ccc.technews.tw/2026/09/17/how-much-did-apple-earn-from-the-iphones-lightning-port/",
-          "date": "2026-09-17 04:20",
-          "summary": "Forbes 專欄作家 Ewan Spence 在「30 Days of iPhone」系列第 16 篇回顧， [&#8230;]"
         }
       ]
     }
