@@ -516,5 +516,19 @@
     <category>元件化</category>
     <category>教學</category>
   </item>
+  <item>
+    <title>InfluxDB 入門到進階：時間序列資料庫的巧妙之處</title>
+    <link>https://ai-hardcore-engineer.com/influxdb-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/influxdb-guide.html</guid>
+    <description>InfluxDB 完整教學：時間序列資料庫概念、InfluxDB 3.0 架構、資料模型（Buckets、Measurements、Tags、Fields）、Flux 查詢語言、InfluxQL、Docker 安裝、實戰應用與比較。</description>
+    <pubDate>Thu, 02 Oct 2026 00:00:00 +0000</pubDate>
+    <category>InfluxDB</category>
+    <category>Time Series</category>
+    <category>Database</category>
+    <category>Flux</category>
+    <category>Monitoring</category>
+    <category>DevOps</category>
+    <category>教學</category>
+  </item>
   </channel>
 </rss>

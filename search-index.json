@@ -502,5 +502,19 @@
       "元件化",
       "教學"
     ]
+  },
+  {
+    "title": "InfluxDB 入門到進階：時間序列資料庫的巧妙之處",
+    "excerpt": "InfluxDB 完整教學：時間序列資料庫概念、InfluxDB 3.0 架構、資料模型（Buckets、Measurements、Tags、Fields）、Flux 查詢語言、InfluxQL、Docker 安裝、實戰應用與比較。",
+    "url": "influxdb-guide.html",
+    "tags": [
+      "InfluxDB",
+      "Time Series",
+      "Database",
+      "Flux",
+      "Monitoring",
+      "DevOps",
+      "教學"
+    ]
   }
 ]

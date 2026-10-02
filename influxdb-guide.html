@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfluxDB 入門到進階：時間序列資料庫的巧妙之處 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="InfluxDB 完整教學：時間序列資料庫概念、InfluxDB 3.0 架構、資料模型、Flux 查詢語言、InfluxQL、Docker 安裝、實戰應用與比較。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/influxdb-guide.html">
+  <meta property="og:title" content="InfluxDB 入門到進階：時間序列資料庫的巧妙之處 — "AI" 硬核工程師">
+  <meta property="og:description" content="InfluxDB 完整教學：時間序列資料庫概念、InfluxDB 3.0 架構、資料模型、Flux 查詢語言、InfluxQL、Docker 安裝、實戰應用與比較。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/influxdb-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="InfluxDB 入門到進階：時間序列資料庫的巧妙之處 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="InfluxDB 完整教學：時間序列資料庫概念、InfluxDB 3.0 架構、資料模型、Flux 查詢語言、InfluxQL、Docker 安裝、實戰應用與比較。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>    <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body h4 { font-size: 1.32rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.1rem; }
+    .article-body th, .article-body td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); }
+    .article-body img { border-radius: 8px; margin: 1.5rem auto; display: block; }
+    .img-caption { text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "InfluxDB 入門到進階：時間序列資料庫的巧妙之處",
+  "description": "InfluxDB 完整教學：時間序列資料庫概念、InfluxDB 3.0 架構、資料模型、Flux 查詢語言、InfluxQL、Docker 安裝、實戰應用與比較。",
+  "url": "https://ai-hardcore-engineer.com/influxdb-guide.html",
+  "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/influxdb-guide.html" }
+}
+  </script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo"><div>"AI" 硬核工程師</div><div class="tagline">Talk is cheap. Show me the code</div></div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Hero =============== -->
+      <section class="article-hero">
+        <h1>InfluxDB 入門到進階：時間序列資料庫的巧妙之處</h1>
+        <div class="article-meta">
+          <span>2026-10-02</span>
+          <span class="separator">·</span>
+          <span>22 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">InfluxDB</span>
+          <span class="tag">Time Series</span>
+          <span class="tag">Database</span>
+          <span class="tag">Flux</span>
+          <span class="tag">Monitoring</span>
+          <span class="tag">DevOps</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/influxdb/1200/400" alt="InfluxDB 時間序列資料庫">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> <strong>InfluxDB</strong> 是一款專門為時間序列資料打造的資料庫——每筆資料都有「何時」發生這個先決條件：<br>
+          &nbsp;&nbsp;① <strong>為什麼需要 TSDB：</strong>傳統資料庫在時間序列查詢（如「過去 1 小時 CPU 平均值」）上效率差，InfluxDB 靠「時間索引優化」＋「自動切分」解決<br>
+          &nbsp;&nbsp;② <strong>資料模型簡單直觀：</strong> <code>measurement,tag=value field=value timestamp</code> — 一行搞定標籤與數值，比 JSON 輕量百倍<br>
+          &nbsp;&nbsp;③ <strong>三種查詢語言：</strong> <code>Flux</code>（函數式管道語言）、<code>InfluxQL</code>（SQL 變體）與原生 <code>SQL</code> 共存，選你所好<br>
+          &nbsp;&nbsp;④ <strong>生產級特性：</strong>資料保留政策、自動降採樣、Cloud + OSS 雙版本，監控 IoT APM 都不在話下<br>
+          &nbsp;&nbsp;⑤ <strong>快速上手：</strong> <code>docker run -p 8086:8086 influxdb:2</code> 即可在本機跑起，3 分鐘內完成寫入查詢
+        </blockquote>
+
+        <h2>時間序列資料是什麼？為什麼 InfluxDB 誕生？</h2>
+        <p>想想看，你每天都在量測一些「隨時間變動」的東西：體溫、股價、伺服器 CPU 使用率、IoT 環境感測器的溫度&hellip;這些資料有一個共通點——<strong>它們都是以時間為軸的數值序列</strong>。</p>
+        <p>傳統資料庫（MySQL、PostgreSQL）雖然也可以存這種資料，但它們的優化方向是「交易一致性」，不是「時間序列查詢」。試想「查詢過去 7 天每 5 分鐘的平均 CPU 溫度」這種需求，傳統資料庫就會變慢，因為：</p>
+        <ul>
+          <li><strong>索引效率低：</strong>B-tree 索引對時間範圍查詢不是最優</li>
+          <li><strong>儲存浪費：</strong>時間戳本身佔空間，但傳統資料庫不做壓縮</li>
+          <li><strong>寫入速度瓶頸：</strong>百萬級高頻寫入會導致鎖競爭</li>
+          <li><strong>缺少時間序列函數：</strong>沒有原生的「降採樣」「滾動窗口」「聚合窗口」功能</li>
+        </ul>
+        <p>InfluxDB 就是為了解決這些問題而誕生的——它是一款<strong>時間序列資料庫 (Time Series Database, TSDB)</strong>，由 InfluxData 公司開發，專門針對時間戳資料做了深度優化。</p>
+
+        <blockquote>
+          💡 <strong>小技巧：</strong>時間序列資料的三大特徵：<br>
+          &nbsp;&nbsp;① <strong>不可變 (Immutable)：</strong>過去的資料點不會被修改，只有新增<br>
+          &nbsp;&nbsp;② <strong>時間有序 (Time-Ordered)：</strong>資料點自然按照時間遞序<br>
+          &nbsp;&nbsp;③ <strong>高頻率 (High Frequency)：</strong>可能每秒 thousands 上萬筆寫入
+        </blockquote>
+
+        <h2>InfluxDB 架構概覽</h2>
+        <p>InfluxDB 有幾個重要的版本演進，理解這些對選擇部署方式很重要：</p>
+
+        <h3>InfluxDB 2.x / 3.x 架構</h3>
+        <p>InfluxDB 2.0（2020 年推出）是一個革命性的轉折點——它把「InfluxDB 資料庫」、「Telegraf 代理」、「Chronograf 儀表板」和「Kapacitor 串流處理」合併成一個單一的應用程式，提供「資料庫 + 可視化 + 處理」的一站式解決方案。</p>
+        <p>InfluxDB 3.x（2024 年推出）更進一步，引入 Apache Arrow 格式的記憶體引擎，支援 SQL 查詢，並顯著提升查詢效能。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>版本</th>
+              <th>發布年</th>
+              <th>查詢語言</th>
+              <th>部署方式</th>
+              <th>核心特色</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>InfluxDB 1.x</td>
+              <td>2013</td>
+              <td>InfluxQL</td>
+              <td>單機 / 集群</td>
+              <td>成熟穩定，InfluxQL 易學</td>
+            </tr>
+            <tr>
+              <td>InfluxDB 2.x</td>
+              <td>2020</td>
+              <td>Flux</td>
+              <td>單機 / Cloud</td>
+              <td>整合 Telegraf + Chronograf，Flux 語言</td>
+            </tr>
+            <tr>
+              <td>InfluxDB 3.x</td>
+              <td>2024</td>
+              <td>Flux + SQL</td>
+              <td>Docker / Cloud</td>
+              <td>Arrow 引擎，SQL 支援，性能飆升</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>部署選項</h3>
+        <p>InfluxData 提供三種部署方式：</p>
+        <ul>
+          <li><strong>InfluxDB Cloud (Serverless)：</strong>Fully managed 的 Serverless 版本，按使用量計費，無需管理伺服器。</li>
+          <li><strong>InfluxDB Cloud Dedicated：</strong>專用叢集版本，適合企業級工作負載。</li>
+          <li><strong>InfluxDB OSS：</strong>開源版本，可自行在本地或雲端部署。</li>
+        </ul>
+      </article>
+
+      <article class="article-body">
+        <h2>資料模型：Measurement、Tags、Fields 與 Buckets</h2>
+        <p>InfluxDB 的資料模型設計非常精巧，與關聯式資料庫非常不同。讓我們一步一步拆解：</p>
+
+        <h3>Line Protocol — 一行搞定所有資料</h3>
+        <p>InfluxDB 使用 <strong>Line Protocol</strong> 格式來寫入資料——看起來像這樣：</p>
+<pre><code># 格式說明
+measurement,tag_key=tag_value field_key=field_value timestamp
+
+# 實際例子 — 溫度感測器資料
+weather,location=us-midwest temperature=82,humidity=71 1640995200000000000
+
+# 多個欄位寫入
+weather,location=us-midwest temperature=82,humidity=71,pressure=1013 1640995200000000000
+
+# 多個標籤
+weather,location=us-midwest,season=winter temperature=82,humidity=71 1640995200000000000</code></pre>
+
+        <blockquote>
+          💡 <strong>Line Protocol 小技巧：</strong> timestamp 可以省略，InfluxDB 會自動使用當前時間。另外，標籤值中如果有空格或特殊字元，需要用雙引號包住： <code>location="New York"</code>
+        </blockquote>
+
+        <h3>Measurement、Tags 與 Fields 的差別</h3>
+        <p>InfluxDB 的資料模型有三個核心概念，搞懂它們的差別就像搞懂 RDB 的「表、列、行」一樣重要：</p>
+        <table>
+          <thead>
+            <tr>
+              <th>概念</th>
+              <th>類比 (RDB)</th>
+              <th>特性</th>
+              <th>是否建立索引</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Measurement</td>
+              <td>Table</td>
+              <td>資料類別（如 <code>cpu</code>、<code>weather</code>）</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Tag</td>
+              <td>Indexed Column</td>
+              <td>字串型索引欄位（如 <code>location=us-midwest</code>）</td>
+              <td>✅ 是</td>
+            </tr>
+            <tr>
+              <td>Field</td>
+          </tbody>
+        </table>
+
+        <h3>Buckets 與 Retention Policies</h3>
+        <p>InfluxDB 2.x/3.x 用 <strong>Buckets</strong> 取代了 1.x 的「Database + Retention Policy」的組合——一個 Bucket 同時定義了資料存放位置和保留天數：</p>
+        <ul>
+          <li>建立 Bucket 時可以指定 <strong>Retention Period</strong>（如 30 天、90 天、∞）</li>
+          <li>過期資料會自動被刪除，無需手動清理</li>
+          <li>一個 Bucket 裡可以有多個 Measurement</li>
+        </ul>
+      </article>
+
+      <article class="article-body">
+        <h2>查詢語言：Flux、InfluxQL 與 SQL</h2>
+        <p>InfluxDB 支援多種查詢語言，使用場景不同。這三種語言各有所長，新手不用慌，漸漫就會習慣：</p>
+
+        <h3>Flux — 函數式管道語言 (InfluxDB 2.x 推薦)</h3>
+        <p><strong>Flux</strong> 是 InfluxDB 2.0 推出的全新查詢語言，它採用<strong>函數式管道 (Functional Pipeline)</strong> 的概念，用 <code>|&gt;</code> 運算子串連資料轉換步驟，非常直觀：</p>
+<pre><code># 查詢過去 1 小時的平均 CPU 使用率
+from(bucket: "my_bucket")
+  |&gt; range(start: -1h)
+  |&gt; filter(fn: (r) => r._measurement == "cpu")
+  |&gt; filter(fn: (r) => r._field == "usage_user")
+  |&gt; aggregateWindow(fn: mean, every: 10m)
+  |&gt; yield(name: "mean")</code></pre>
+
+        <blockquote>
+          💡 <strong>Flux 小技巧：</strong> <code>|&gt;</code> 的 pipe-forward 運算子就像 shell 的 pipe 一樣，把左邊的結果傳給右邊的函數。這樣的設計讓查詢語句自然地閱讀為「資料流」。
+        </blockquote>
+
+        <h3>InfluxQL — 類 SQL 的查詢語言</h3>
+        <p><strong>InfluxQL</strong> 是 InfluxDB 1.x 時代的查詢語言，語法和 SQL 很像，上手非常快：</p>
+<pre><code># 查詢過去 1 小時的平均 CPU 使用率
+SELECT MEAN("usage_user") FROM "cpu"
+WHERE time &gt; now() - 1h
+GROUP BY time(10m)</code></pre>
+
+        <p>InfluxQL 雖然易學，但功能有限，官方已將其列為「維護模式」。如果你正在使用 InfluxDB 2.x 或 3.x，建議優先學習 Flux。</p>
+
+        <h3>SQL — InfluxDB 3.x 的新成員</h3>
+        <p>InfluxDB 3.x 新增了<strong>原生 SQL 支援</strong>，這對於已經熟悉 SQL 的開發者來說無疑是福利：</p>
+<pre><code>SELECT mean("usage_user") FROM "cpu"
+WHERE time &gt;= now() - interval '1 hour'
+GROUP BY bin(interval '10 minutes')</code></pre>
+
+        <h2>快速上手：Docker 安裝與基本操作</h2>
+        <p>InfluxDB 的安裝方式有很多種，筆者推薦使用 Docker 快速體驗：</p>
+
+        <h3>用 Docker 啟動 InfluxDB 2</h3>
+<pre><code># 拉取並啟動 InfluxDB 2
+docker run -d \
+  --name influxdb \
+  -p 8086:8086 \
+  -v influxdb-data:/var/lib/influxdb2 \
+  influxdb:2-latest
+
+# 等待幾秒後訪問 UI
+open http://localhost:8086</code></pre>
+
+        <h3>初始化設定 — 建立 Bucket 和 Token</h3>
+        <p>第一次訪問 UI 時，InfluxDB 會要求你建立一個<strong>Organization</strong>、一個<strong>Bucket</strong>和一個<strong>API Token</strong>：</p>
+        <ul>
+          <li><strong>Organization：</strong>通常填 <code>my-org</code></li>
+          <li><strong>Bucket：</strong>建立一個 <code>sensor-data</code></li>
+          <li><strong>Username & Password：</strong>設定管理者密碼</li>
+          <li><strong>Token：</strong>等設定完成後，在 <code>Data &rarr; Tokens</code> 頁面生成一個 <code>RW</code> Token</li>
+        </ul>
+
+        <blockquote>
+          💡 <strong>Token 是什麼？</strong>InfluxDB 使用 Token 而非帳號密碼進行 API 認證。你可以建立 Read-only、Write-only 或 Read-Write 的 Token，方便權限控管。
+        </blockquote>
+
+        <h2>基本操作：寫入、查詢與管理</h2>
+
+        <h3>寫入資料 — Line Protocol + HTTP API</h3>
+        <p>InfluxDB 提供 HTTP API 讓任何語言都能寫入資料，以下以 curl 為例：</p>
+<pre><code># 單筆寫入
+curl --request POST \
+  "http://localhost:8086/api/v2/write" \
+  --header "Authorization: Token YOUR_TOKEN" \
+  --header "Content-Type: text/plain; charset=utf-8" \
+  --header "Accept: application/json" \
+  --data-raw "sensor,location=room1 temperature=23.5,humidity=45.2 $(date +%s%N)"
+
+# 批次寫入多筆
+curl --request POST \
+  "http://localhost:8086/api/v2/write" \
+  --header "Authorization: Token YOUR_TOKEN" \
+  --header "Content-Type: text/plain; charset=utf-8" \
+  --header "Accept: application/json" \
+  --data-raw "sensor,location=room1 temperature=23.5,humidity=45.2
+sensor,location=room2 temperature=25.1,humidity=42.8
+sensor,location=room1 temperature=24.0,humidity=44.0"</code></pre>
+
+        <h3>查詢資料 — 透過 HTTP API</h3>
+<pre><code># 查詢過去 1 小時的平均溫度
+curl --request GET \
+  "http://localhost:8086/api/v2/query" \
+  --header "Authorization: Token YOUR_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data-raw '{"query":"from(bucket: \"sensor-data\") |&gt; range(start: -1h) |&gt; filter(fn: (r) =&gt; r._measurement == \"sensor\")"}'</code></pre>
+
+        <h2>進階功能：保留政策、降措與 Tasks</h2>
+        <p>InfluxDB 的真正威力在於它<strong>生產級的管理功能</strong>，而不僅僅是查詢：</p>
+
+        <h3>Retention Policy — 自動清資料</h3>
+        <p>在建立 Bucket 時，你可以指定資料的保留天數。例如設定「保留 30 天」，那麼 30 天前的資料會被自動刪除，無需手動清理：</p>
+<pre><code># 建立一個保留 7 天的 Bucket
+influx bucket create --name "7-day-data" --retention 7d --org my-org</code></pre>
+
+        <h3>Continuous Queries / Tasks — 自動降措</h3>
+        <p>InfluxDB 1.x 使用 <strong>Continuous Queries (CQ)</strong> 進行降措；InfluxDB 2.x/3.x 則改用 <strong>Tasks</strong> — 一種基於 Flux 的定時任務：</p>
+<pre><code># Task 範例：每小時將原始資料降為 1 天的聚合值
+option task = {
+  name: "downsample_sensor_data",
+  every: 1h,
+}
+
+from(bucket: "sensor-data")
+  |&gt; range(start: -task.every)
+  |&gt; filter(fn: (r) =&gt; r._measurement == "sensor")
+  |&gt; aggregateWindow(every: 1d, fn: mean)
+  |&gt; to(bucket: "sensor-data-aggregate")</code></pre>
+
+        <blockquote>
+          💡 <strong>降措的好處：</strong>把高頻原始資料（每秒 1 筆）聚合成低頻彙總資料（每小時 1 筆），不僅篩掉雜訊，還大幅減少儲存空間。這也是 InfluxDB 在長時間序列查詢上如此快速的秘密武器。
+        </blockquote>
+
+        <h3>Telegraf — 輕量資料收集代理</h3>
+        <p>InfluxDB 配套的 <strong>Telegraf</strong> 是一個 <strong>插件型資料收集代理</strong>，支援 300+ 種輸入來源（Docker、Kubernetes、MySQL、Nginx 等），只要簡單設定就可以自動收集系統指標：</p>
+<pre><code># telegraf.conf 範例
+[[inputs.cpu]]
+  percpu = true
+  totalcpu = true
+  collect_per_field = false
+
+[[outputs.influxdb_v2]]
+  urls = ["http://localhost:8086"]
+  token = "YOUR_TOKEN"
+  organization = "my-org"
+  bucket = "sensor-data"</code></pre>
+
+        <h2>實戰應用場景</h2>
+        <p>InfluxDB 廣泱應用在各個需要「時間序列分析」的領域，以下是幾個典型場景：</p>
+        <ul>
+          <li><strong>基礎設施監控 (Infrastructure Monitoring)：</strong>收集伺服器 CPU、記憶體、磁碟 I/O，建立即時告警與儀表板。</li>
+          <li><strong>IoT 物聯網：</strong>感測器每秒上萬筆資料寫入，結合降措壓縮，長期存儲與分析。</li>
+          <li><strong>應用效能監控 (APM)：</strong>追褤 API 回應時間、錯誤率、吞吐量，發現效能瓶頸。</li>
+          <li><strong>金融市場分析：</strong>股票價格、加密貨幣交易記錄的時間序列查詢。</li>
+          <li><strong>智慧城市：</strong>交通流量、空氣品質、水電消耗量的即時監控。</li>
+        </ul>
+
+        <h2>InfluxDB vs 其他時間序列資料庫</h2>
+        <p>時間序列資料庫領域有幾個重要的對手，選擇時可以參考下表：</p>
+        <table>
+          <thead>
+            <tr>
+              <th>特性</th>
+              <th>InfluxDB</th>
+              <th>Prometheus</th>
+              <th>TimescaleDB</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>查詢語言</td>
+              <td>Flux / SQL / InfluxQL</td>
+              <td>PromQL</td>
+              <td>SQL (PostgreSQL)</td>
+            </tr>
+            <tr>
+              <td>部署方式</td>
+              <td>Cloud / OSS / Docker</td>
+              <td>單機 / k8s</td>
+              <td>VM / Cloud</td>
+            </tr>
+            <tr>
+              <td>資料模型</td>
+              <td>Line Protocol</td>
+              <td>Metric + Labels</td>
+              <td>RDBMS 表</td>
+            </tr>
+            <tr>
+              <td>萃取方式</td>
+              <td>Push / Pull</td>
+              <td>Pull</td>
+              <td>Push / Pull</td>
+            </tr>
+            <tr>
+              <td>視覺化</td>
+              <td>內建 (Chronograf)</td>
+              <td>Grafana</td>
+              <td>Grafana / Metabase</td>
+            </tr>
+            <tr>
+              <td>適合場景</td>
+              <td>全面（IoT / APM / 監控）</td>
+              <td>Kubernetes 監控</td>
+              <td>混合工作負載</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>常見問題 FAQ</h2>
+
+        <h3>InfluxDB 和 Prometheus 哪個比較好？</h3>
+        <p>選擇取決於你的使用場景：</p>
+        <ul>
+          <li><strong>選 Prometheus：</strong>主要監控 Kubernetes 集群，已經跟 Grafana 生態整合，團隊熟悉 PromQL。</li>
+          <li><strong>選 InfluxDB：</strong>需要存儲大量 IoT 資料、需要長期歷史分析、需要自由定義降措策略、或希望得到一站式的「資料庫 + 儀表板 + 處理」解決方案。</li>
+        </ul>
+
+        <h3>InfluxDB 3.x 真的支援 SQL 嗎？</h3>
+        <p>Yes！InfluxDB 3.x 引入了基於 Apache Arrow 的 SQL 引擎，支援標準 SQL 查詢語法。但如果你需要做時間序列特有的操作（如 <code>bin()</code>、<code>window()</code>），Flux 仍然更強。</p>
+
+        <h3>免費版本有嗎？</h3>
+        <p>InfluxDB OSS 是完全免費的開源版本，但缺少 Cloud 的自動擴展和 Serverless 計費。InfluxDB Cloud 有免費層（每月 3 百萬筆寫入），適合小型專案或入門體驗。</p>
+
+        <h2>總結</h2>
+        <p>InfluxDB 是一個<strong>為時間序列資料而生</strong>的資料庫——它的價值不在於「比傳統資料庫多了什麼新功能」，而在於<strong>用時間序列的角度重新設計了整個資料流程</strong>：</p>
+        <ul>
+          <li><strong>資料寫入：</strong>Line Protocol 輕巧、高效，適合高頻寫入</li>
+          <li><strong>資料查詢：</strong>Flux 語言天然支援時間窗口、聚合、降措等時間序列操作</li>
+          <li><strong>資料管理：</strong>Bucket + Retention + Tasks 三合一，自動化管理整個資料生命週期</li>
+          <li><strong>生產部署：</strong>Cloud / OSS / Docker 彈性選擇，滿足不同場景需求</li>
+        </ul>
+        <p>無論你是監控伺服器、收集 IoT 感測器資料，還是建立 APM 系統，InfluxDB 都是一個值得投資的選擇。今天有個小建議：<strong>先用 Docker 玩玩看 3 分鐘</strong>，等你親手寫完第一筆資料並查詢成功，一定會愛上這種「時間就是第一公民」的設計哲學。</p>
+
+        <blockquote>
+          🚀 <strong>下一步：</strong>準備好開始使用 InfluxDB 了嗎？<br>
+          &nbsp;&nbsp;官網：<a href="https://docs.influxdata.com/influxdb/" target="_blank">https://docs.influxdata.com/influxdb/</a><br>
+          &nbsp;&nbsp;GitHub：<a href="https://github.com/influxdata/influxdb" target="_blank">https://github.com/influxdata/influxdb</a><br>
+          &nbsp;&nbsp;社群討論：<a href="https://community.influxdata.com/" target="_blank">https://community.influxdata.com/</a>
+        </blockquote>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>
+
+
