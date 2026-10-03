@@ -1,5 +1,18 @@
 [
   {
+    "title": "晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘",
+    "excerpt": "深入剖析全球四大晶片巨頭與架構：Intel 的反擊、AMD 的 Zen 5 奇蹟、NVIDIA 的 Blackwell AI 霸權，以及 ASIC (如 Google TPU, Groq) 如何在特定領域達成算力輾壓。",
+    "url": "chip-wars-intel-amd-nvidia-asic.html",
+    "tags": [
+      "硬體架構",
+      "Intel",
+      "AMD",
+      "NVIDIA",
+      "ASIC",
+      "AI 晶片"
+    ]
+  },
+  {
     "title": "虛擬機器 (VM) 終極對決：VMware vs VirtualBox vs Hyper-V",
     "excerpt": "深入探討主流虛擬機器軟體的架構與優缺點：VMware Workstation 的極致效能、VirtualBox 的開源靈活、Hyper-V 的原生整合，以及 macOS 專屬的 Parallels Desktop。幫你找出最適合的 VM 工具。",
     "url": "virtual-machine-comparison.html",
