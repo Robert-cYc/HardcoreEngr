@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作業系統 (OS) 底層架構全解析：Windows, macOS, Linux 與 Android — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🧠">
+  <meta name="description" content="深入探討現代四大作業系統的核心架構。從 Windows 的 NT 核心、macOS 的 Mach/BSD 混合核心、Linux 的宏核心，到 Android 基於 Linux 的客製化與 ART 虛擬機，解析各自的設計哲學與適用場景。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/os-architecture-comparison.html">
+  <meta property="og:title" content="作業系統 (OS) 底層架構全解析：Windows, macOS, Linux 與 Android — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="深入探討現代四大作業系統的核心架構。從 Windows 的 NT 核心、macOS 的 Mach/BSD 混合核心、Linux 的宏核心，到 Android 基於 Linux 的客製化與 ART 虛擬機，解析各自的設計哲學與適用場景。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/os-architecture-comparison.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="作業系統 (OS) 底層架構全解析：Windows, macOS, Linux 與 Android — &quot;AI&quot; 硬核工程師">
+  <meta name="twitter:description" content="深入探討現代四大作業系統的核心架構。從 Windows 的 NT 核心、macOS 的 Mach/BSD 混合核心、Linux 的宏核心，到 Android 基於 Linux 的客製化與 ART 虛擬機，解析各自的設計哲學與適用場景。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; line-height: 1.8; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.1rem; }
+    .article-body th, .article-body td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>作業系統 (OS) 底層架構全解析：Windows, macOS, Linux 與 Android</h1>
+        <div class="article-meta">
+          <span>2026-10-03</span>
+          <span class="separator">·</span>
+          <span>18 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">OS</span>
+          <span class="tag">作業系統</span>
+          <span class="tag">Windows</span>
+          <span class="tag">macOS</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Android</span>
+          <span class="tag">架構</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/operating-systems/1200/400" alt="四大作業系統架構與核心">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p>在我們每天敲打鍵盤、滑動手機螢幕的背後，作業系統 (Operating System, OS) 扮演著無名英雄的角色。它就像是一個龐大帝國的交通警察與管家，負責在「硬體 (CPU、記憶體、硬碟)」與「軟體 (瀏覽器、遊戲、IDE)」之間進行精準的資源調度。</p>
+        <p>雖然我們每天都在用，但你真的了解它們底層的運作邏輯嗎？為什麼 Windows 能相容三十年前的軟體？為什麼 macOS 的體驗如此絲滑？為什麼全世界的伺服器都跑 Linux？Android 又是如何讓 Java/Kotlin 跑在手機硬體上？</p>
+        <p>今天，我們就從硬核工程師的視角，直接剖析 <strong>Windows、macOS、Linux 與 Android</strong> 的核心架構 (Kernel) 與設計哲學。</p>
+
+        <h2>1. Windows：向後相容的企業巨獸 (Windows NT 核心)</h2>
+        <p>Windows 是目前桌面端市佔率絕對的霸主。它最常被工程師詬病「底層複雜、登錄檔 (Registry) 是一場災難」，但這其實是微軟為了一個偉大目標所付出的代價：<strong>絕對的向後相容性 (Backward Compatibility)</strong>。</p>
+        
+        <h3>核心架構：Windows NT (New Technology)</h3>
+        <p>現代的 Windows (從 XP、Win7 到 Win11) 都是基於 <strong>NT 核心</strong>。它採用的是一種<strong>混合核心 (Hybrid Kernel)</strong> 設計，結合了宏核心 (Monolithic) 的效能與微核心 (Microkernel) 的模組化。</p>
+        <ul>
+          <li><strong>登錄檔 (Registry)：</strong>這是一個巨大的階層式資料庫，用來儲存系統與所有軟體的設定。好處是集中管理，壞處是一旦這個資料庫龐大且混亂，系統就會變得極度緩慢。</li>
+          <li><strong>DirectX：</strong>微軟自家的多媒體與遊戲 API。這是 Windows 成為全球唯一「電競 OS」的護城河，因為它能極度高效地直接調用 GPU 資源。</li>
+          <li><strong>WSL (Windows Subsystem for Linux)：</strong>為了挽回流失到 Mac 的開發者，微軟在 Windows 中透過 Hyper-V 技術，直接內建了一個真正的 Linux 核心 (WSL2)。這讓 Windows 變成了全端開發者的超級兵器。</li>
+        </ul>
+
+        <h2>2. macOS：優雅的混血貴族 (XNU / Darwin)</h2>
+        <p>macOS (前身為 Mac OS X) 的底層其實與 iPhone 的 iOS 同源，它們都有著純正的 <strong>UNIX 血統</strong>。這也是為什麼開發者特別愛用 Mac，因為你打開終端機 (Terminal)，所有在 Linux 伺服器上的指令，在 Mac 幾乎都能無縫運行。</p>
+        
+        <h3>核心架構：XNU (Mach + BSD)</h3>
+        <p>macOS 的核心稱為 <strong>XNU (X is Not Unix)</strong>，這是一個非常有趣的混合體：</p>
+        <ul>
+          <li><strong>Mach 核心：</strong>負責最底層的任務排程、記憶體管理與處理器間通訊 (IPC)。</li>
+          <li><strong>BSD 系統 (基於 FreeBSD)：</strong>覆蓋在 Mach 之上，提供 POSIX 標準的 API、檔案系統、網路堆疊以及 UNIX 權限模型。</li>
+        </ul>
+        <p><strong>軟硬體一體化的優勢：</strong>不同於 Windows 要適配千萬種硬體，Apple 完全控制了從晶片 (Apple Silicon M系列) 到作業系統的所有細節。這種封閉生態讓 macOS 能做到極致的記憶體管理與功耗控制，這也是為什麼 MacBook 的續航力能輾壓同級對手。</p>
+
+        <h2>3. Linux：開源世界的基石 (Monolithic Kernel)</h2>
+        <p>Linux 不是一個完整的作業系統，它嚴格來說只是一個 <strong>Kernel (核心)</strong>。當你把 Linux Kernel 加上 GNU 工具鏈、桌面環境 (如 GNOME) 與套件管理員，才會變成我們熟知的 Ubuntu、Debian 或 CentOS 等發行版 (Distro)。</p>
+        
+        <h3>核心架構：宏核心 (Monolithic Kernel)</h3>
+        <p>Linux 採用的是傳統的<strong>宏核心</strong>架構。也就是說，所有的驅動程式、檔案系統、網路堆疊，全部都跟核心跑在同一個記憶體空間 (Kernel Space)。</p>
+        <ul>
+          <li><strong>極致效能：</strong>因為所有東西都在同一個空間，不需要頻繁的 User Space 與 Kernel Space 之間的 Context Switch，所以 I/O 效能極高。這讓 Linux 統治了全球 90% 以上的伺服器、超級電腦與雲端基礎設施。</li>
+          <li><strong>一切皆檔案 (Everything is a file)：</strong>這是 UNIX/Linux 最經典的設計哲學。你的硬碟、鍵盤、網路 Socket，在作業系統眼裡全都是「檔案」。這讓腳本自動化與資料導流 (Piping) 變得不可思議的簡單。</li>
+          <li><strong>高度模組化：</strong>雖然是宏核心，但 Linux 支援動態加載模組 (Loadable Kernel Modules, LKM)，你可以在不重開機的情況下，隨時載入或卸載驅動程式。</li>
+        </ul>
+
+        <h2>4. Android：披著 Linux 外皮的行動霸主</h2>
+        <p>Android 的最底層其實就是 <strong>Linux Kernel</strong>，但它在上面疊加了無數層的魔改，讓它成為適合觸控、電池供電與行動裝置的系統。</p>
+        
+        <h3>核心架構：Linux Kernel + HAL + ART</h3>
+        <ul>
+          <li><strong>Linux Kernel：</strong>負責最基礎的硬體溝通、記憶體分配、電源管理 (如 Android 專屬的 Wakelock 機制，防止手機在背景完全睡死)。</li>
+          <li><strong>HAL (硬體抽象層)：</strong>因為 Android 手機硬體百百種 (高通、聯發科、三星)，Google 設計了 HAL。硬體廠商只要把自己的驅動包裝成 HAL 規定的標準介面，上層的 Android 系統就能直接調用，解決了嚴重的硬體碎片化問題。</li>
+          <li><strong>ART (Android Runtime)：</strong>你寫的 Android App 通常是 Java 或 Kotlin，這些程式碼會被編譯成 Bytecode，然後由 ART 虛擬機來執行。ART 採用了 <strong>AOT (Ahead-of-Time) 編譯</strong>，在 App 安裝或系統閒置時，提前把代碼編譯成機器碼 (Machine Code)，大幅提升了 App 的啟動速度與運行效能。</li>
+        </ul>
+
+        <h2>四大作業系統硬核對決</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>維度</th>
+              <th>Windows</th>
+              <th>macOS</th>
+              <th>Linux</th>
+              <th>Android</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>底層核心 (Kernel)</strong></td>
+              <td>Windows NT (混合核心)</td>
+              <td>XNU (Mach + FreeBSD)</td>
+              <td>Linux (宏核心)</td>
+              <td>Linux (針對行動裝置深度客製化)</td>
+            </tr>
+            <tr>
+              <td><strong>開源與授權</strong></td>
+              <td>閉源，商業授權</td>
+              <td>閉源 (核心 Darwin 開源)</td>
+              <td>GPL 完全開源免費</td>
+              <td>AOSP 開源，但 Google GMS 閉源</td>
+            </tr>
+            <tr>
+              <td><strong>圖形與遊戲 API</strong></td>
+              <td>DirectX (遊戲霸主)</td>
+              <td>Metal (Apple 專屬)</td>
+              <td>OpenGL / Vulkan</td>
+              <td>Vulkan / OpenGL ES</td>
+            </tr>
+            <tr>
+              <td><strong>應用程式執行</strong></td>
+              <td>.exe / .msi (Native)</td>
+              <td>.app / .dmg (Native)</td>
+              <td>ELF 二進制 / Flatpak</td>
+              <td>APK / AAB (透過 ART 虛擬機執行)</td>
+            </tr>
+            <tr>
+              <td><strong>最強優勢與場景</strong></td>
+              <td>極致向後相容、PC 遊戲、Office 生態系</td>
+              <td>軟硬體一體化效能、UNIX 開發體驗優良</td>
+              <td>伺服器統治者、Docker/K8s 容器原生環境</td>
+              <td>行動裝置、高度客製化、硬體生態圈廣大</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>結語：每個 OS 都在其領域閃耀</h2>
+        <p>作為一名工程師，我們不該陷入「哪套 OS 最好」的無謂爭論。</p>
+        <p><strong>Windows</strong> 是相容性與企業辦公的王者；<strong>macOS</strong> 是 UNIX 體驗與硬體效能完美結合的開發利器；<strong>Linux</strong> 則是雲端基礎設施的絕對基石；而 <strong>Android</strong> 則用極具彈性的架構，征服了全球數十億的行動裝置。</p>
+        <p>了解它們底層的設計哲學，有助於我們在開發軟體時，寫出更符合系統特性、效能更優越的程式碼。Talk is cheap, 去裝個虛擬機把這四套都玩一遍吧！</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="article-footer">
+    <div class="container">
+      <p>"AI" 硬核工程師 — Talk is cheap. Show me the code.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>

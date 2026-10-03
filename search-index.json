@@ -1,5 +1,19 @@
 [
   {
+    "title": "作業系統 (OS) 底層架構全解析：Windows, macOS, Linux 與 Android",
+    "excerpt": "深入探討現代四大作業系統的核心架構。從 Windows 的 NT 核心、macOS 的 Mach/BSD 混合核心、Linux 的宏核心，到 Android 基於 Linux 的客製化與 ART 虛擬機，解析各自的設計哲學與適用場景。",
+    "url": "os-architecture-comparison.html",
+    "tags": [
+      "OS",
+      "作業系統",
+      "Windows",
+      "macOS",
+      "Linux",
+      "Android",
+      "架構"
+    ]
+  },
+  {
     "title": "晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘",
     "excerpt": "深入剖析全球四大晶片巨頭與架構：Intel 的反擊、AMD 的 Zen 5 奇蹟、NVIDIA 的 Blackwell AI 霸權，以及 ASIC (如 Google TPU, Groq) 如何在特定領域達成算力輾壓。",
     "url": "chip-wars-intel-amd-nvidia-asic.html",
