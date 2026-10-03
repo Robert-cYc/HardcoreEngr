@@ -325,9 +325,9 @@
       section.innerHTML = '<h3>📖 延伸閱讀</h3><div class="related-grid">' +
         scored.map(function (x) {
           var art = x.art;
-          var img = heroImageMap[art.url] || 'og-image.png';
+          var seed = art.url.replace('.html', '');
           return '<a href="./' + art.url + '" class="related-card">' +
-            '<img src="images/' + img + '" alt="" loading="lazy">' +
+            '<img src="https://picsum.photos/seed/' + seed + '/600/340" alt="" loading="lazy">' +
             '<div class="related-card-body"><div class="related-card-title">' + (art.title || art.url) + '</div></div>' +
             '</a>';
         }).join('') + '</div>';
