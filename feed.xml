@@ -5,13 +5,28 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 03 Oct 2026 03:17:01 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 03:30:04 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>工業通訊協定全解析：RS232/RS485, Modbus, DDE 到 OPC DA/UA</title>
+    <link>https://ai-hardcore-engineer.com/industrial-protocols-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/industrial-protocols-guide.html</guid>
+    <description>深入解析工業物聯網 (IIoT) 中最核心的通訊協定與介面，從硬體層的 RS232、RS485，到網路層的 Modbus RTU/TCP，再到軟體交換層的 DDE、OPC DA 與現代化的 OPC UA，帶你一次搞懂 OT 架構。</description>
+    <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
+    <category>OT</category>
+    <category>通訊協定</category>
+    <category>Modbus</category>
+    <category>OPC</category>
+    <category>RS232</category>
+    <category>RS485</category>
+    <category>IIoT</category>
+    <category>教學</category>
+  </item>
   <item>
     <title>Cloudflare 功能詳解：CDN、DNS、SSL、WAF、Workers 與 Pages</title>
     <link>https://ai-hardcore-engineer.com/cloudflare-guide.html</link>
