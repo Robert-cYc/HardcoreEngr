@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工業通訊協定全解析：RS232/RS485, Modbus, DDE 到 OPC DA/UA — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,⚙️">
+  <meta name="description" content="深入解析工業物聯網 (IIoT) 中最核心的通訊協定與介面，從硬體層的 RS232、RS485，到網路層的 Modbus RTU/TCP，再到軟體交換層的 DDE、OPC DA 與現代化的 OPC UA，帶你一次搞懂 OT 架構。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/industrial-protocols-guide.html">
+  <meta property="og:title" content="工業通訊協定全解析：RS232/RS485, Modbus, DDE 到 OPC DA/UA — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="深入解析工業物聯網 (IIoT) 中最核心的通訊協定與介面，從硬體層的 RS232、RS485，到網路層的 Modbus RTU/TCP，再到軟體交換層的 DDE、OPC DA 與現代化的 OPC UA，帶你一次搞懂 OT 架構。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/industrial-protocols-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="工業通訊協定全解析：RS232/RS485, Modbus, DDE 到 OPC DA/UA — &quot;AI&quot; 硬核工程師">
+  <meta name="twitter:description" content="深入解析工業物聯網 (IIoT) 中最核心的通訊協定與介面，從硬體層的 RS232、RS485，到網路層的 Modbus RTU/TCP，再到軟體交換層的 DDE、OPC DA 與現代化的 OPC UA，帶你一次搞懂 OT 架構。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.97rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 1.21rem;
+      margin-bottom: 2rem;
+    }
+    .article-hero img {
+      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .article-body {
+      max-width: 60em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.145rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .article-body p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      background: var(--bg-alt);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 1.21em;
+      color: #e11d48;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+      line-height: 1.8;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .article-body th, .article-body td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .layer-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>工業通訊協定全解析：RS232/RS485, Modbus, DDE 到 OPC DA/UA</h1>
+        <div class="article-meta">
+          <span>2026-10-03</span>
+          <span class="separator">·</span>
+          <span>15 分鐘閱讀</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/ot-protocols/1200/400" alt="Industrial OT Protocols">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p>在工業自動化 (Industrial Automation)、智慧製造與工業物聯網 (IIoT) 的世界中，IT (資訊技術) 與 OT (營運技術) 的融合是必經之路。對於習慣了 HTTP/REST API、gRPC 與 WebSockets 的純軟體工程師來說，初次接觸工廠機台的通訊協定往往會感到一頭霧水。</p>
+        <p>機台為什麼沒有 IP 位址？什麼是鮑率 (Baud rate)？COM port 是什麼？為什麼讀取一個溫度值需要去了解暂存器 (Register)？本文將由淺入深，從最底層的<strong>物理硬體層</strong>，到<strong>網路資料鏈結層</strong>，最後再到<strong>軟體架構層</strong>，為您詳細拆解工業界最常見的通訊協定與介面：<strong>RS232、RS485、Modbus (RTU/TCP)、DDE 以及 OPC (DA/UA)</strong>。</p>
+
+        <h2>第一層：物理介面層 (Physical Layer) <span class="layer-badge">硬體接線</span></h2>
+        <p>在工廠中，許多老舊機台或簡單的感測器 (如溫濕度計、流量計) 並不具備網路孔 (RJ45)，它們是透過<strong>序列通訊 (Serial Communication)</strong> 的方式進行資料傳輸。其中最主流的兩種實體介面就是 RS-232 與 RS-485。</p>
+
+        <h3>1. RS-232：點對點的經典介面</h3>
+        <p>RS-232 (Recommended Standard 232) 是非常古老的標準，早期的電腦主機板上常見的 9 針 (DB9) 介面就是它。</p>
+        <ul>
+          <li><strong>通訊方式：</strong> 全雙工 (Full-Duplex)，可以同時收發資料。</li>
+          <li><strong>接線方式：</strong> 最基本需要三根線：<code>Tx</code> (傳送)、<code>Rx</code> (接收) 與 <code>GND</code> (接地)。</li>
+          <li><strong>連線拓樸：</strong> <strong>點對點 (Point-to-Point)</strong>。一個 RS-232 接口只能連接<strong>一台</strong>設備。</li>
+          <li><strong>傳輸距離：</strong> 非常短，標準建議為 <strong>15 公尺</strong>以內，容易受到工廠電磁干擾 (EMI)。</li>
+        </ul>
+
+        <h3>2. RS-485：工業現場的抗干擾王者</h3>
+        <p>為了解決 RS-232 距離短且只能一對一的問題，RS-485 誕生了。它是目前工廠底層感測器最廣泛使用的實體層標準。</p>
+        <ul>
+          <li><strong>通訊方式：</strong> 半雙工 (Half-Duplex)，同一時間只能有一個設備發送，其他設備接收。</li>
+          <li><strong>訊號原理：</strong> 採用<strong>差分訊號 (Differential Signaling)</strong>，透過兩根線 <code>D+</code> 與 <code>D-</code> 之間的電壓差來表示 0 或 1。這種設計極大增強了抗干擾能力。</li>
+          <li><strong>連線拓樸：</strong> <strong>多點匯流排 (Multi-drop Bus)</strong>。一條線上通常可以串接 32 到 128 台設備（甚至更多）。也就是說，一台工業電腦可以透過一條線讀取幾十個感測器。</li>
+          <li><strong>傳輸距離：</strong> 可達 <strong>1200 公尺</strong>（在低鮑率下）。</li>
+        </ul>
+
+        <blockquote>
+          💡 <strong>工程師白話文：</strong> RS232 就像是用兩根水管，一個專門送水一個專門排水，但管子很短只能接一家。RS485 像是一條長長的大水溝，沿途有幾十家工廠，但同一個時間只能有一家在講話，大家用大聲公廣播。
+        </blockquote>
+
+        <h2>第二層：通訊協定層 (Protocol Layer) <span class="layer-badge">資料格式</span></h2>
+        <p>有了 RS-232 或 RS-485 的實體線路，兩台機器硬體上連通了，但它們需要一種「語言」來溝通。這就是 <strong>Modbus</strong> 登場的時候了。</p>
+
+        <h3>1. Modbus RTU (基於序列埠)</h3>
+        <p>Modbus 是 1979 年由 Modicon 公司發明的公開通訊協定，至今仍是工業界的絕對主流（因為簡單、免費且可靠）。Modbus 採用 <strong>Master-Slave (主從架構)</strong>：</p>
+        <ul>
+          <li>網路上只能有一個 Master（通常是 PLC 或電腦）。</li>
+          <li>Master 發出請求 (Request)，對應的 Slave (感測器/機台) 收到後回覆 (Response)。</li>
+          <li>Slave 永遠不會主動發送資料（不支援 Pub/Sub）。</li>
+        </ul>
+        <p><strong>資料結構：</strong> Modbus 的核心概念是「暫存器 (Registers)」。資料分為四種類型：</p>
+        <ol>
+          <li><code>Coils</code>: 可讀可寫的布林值 (例如：控制馬達開關)。</li>
+          <li><code>Discrete Inputs</code>: 唯讀的布林值 (例如：門是否關閉的感測器)。</li>
+          <li><code>Input Registers</code>: 唯讀的 16-bit 數值 (例如：目前的溫度值)。</li>
+          <li><code>Holding Registers</code>: 可讀可寫的 16-bit 數值 (例如：設定冷氣的目標溫度)。</li>
+        </ol>
+        <p><strong>Modbus RTU</strong> 是將上述資料封裝成<strong>二進位 (Binary)</strong> 格式，並加上 CRC 校驗碼，然後透過 RS-485 或 RS-232 發送出去。</p>
+
+        <h3>2. Modbus TCP (基於乙太網路)</h3>
+        <p>隨著網路普及，工業界希望把舊的 Modbus 協定搬到 TCP/IP 上。於是就有了 Modbus TCP。</p>
+        <ul>
+          <li><strong>架構：</strong> 將 Master/Slave 改稱為 <strong>Client/Server</strong>。</li>
+          <li><strong>底層：</strong> 跑在標準的乙太網路上，預設 Port 為 <strong>502</strong>。</li>
+          <li><strong>格式變化：</strong> 移除了 RTU 的 CRC 校驗碼（因為 TCP 已經有 checksum 保證正確性），並在封包最前面加上了 7 個 bytes 的 MBAP Header (Modbus Application Protocol Header)。</li>
+        </ul>
+
+        <h2>第三層：軟體交換層 (Middleware / Software Layer) <span class="layer-badge">系統整合</span></h2>
+        <p>當我們把底層硬體 (PLC、變頻器、各廠牌感測器) 透過 Modbus 接上網路後，上位機 (SCADA 系統、MES 系統或寫 Python 收集資料的你) 會面臨一個大問題：<strong>每家廠商的暫存器定義都不一樣！</strong></p>
+        <p>三菱的 PLC 和西門子的 PLC，讀取溫度的方式完全不同。為了解決這種軟體層面的大亂鬥，微軟與工業界陸續推出了 DDE 與 OPC 標準。</p>
+
+        <h3>1. DDE (Dynamic Data Exchange)</h3>
+        <p>在早期的 Windows (Windows 3.0/95 時代)，微軟推出了一種讓不同應用程式之間共享資料的機制，稱為 DDE。許多早期的工業軟體利用 DDE 將 PLC 的資料直接送到 Excel 儲存格裡顯示。</p>
+        <ul>
+          <li><strong>原理：</strong> 基於 Windows 訊息機制的 IPC (進程間通訊)。它使用 <code>Application|Topic!Item</code> 的格式來定位資料。</li>
+          <li><strong>缺點：</strong> 效能極差，經常造成系統當機；且不具備網路擴展性（雖然有 NetDDE，但也已被淘汰）。目前 DDE 已是<strong>歷史文物</strong>，在現代工業系統中幾乎被全面棄用。</li>
+        </ul>
+
+        <h3>2. OPC DA (Data Access) - 經典 OPC</h3>
+        <p>為了取代難用的 DDE，1996 年成立了 OPC 基金會，推出了 OPC 規範（全名 OLE for Process Control）。OPC DA 是一個中介軟體標準：</p>
+        <p>底層機台製造商（如西門子）只負責寫一個 <strong>OPC Server</strong> 軟體。這個 Server 往下透過 Modbus 或專有協定跟硬體溝通，往上則暴露統一的 Windows COM/DCOM 介面。這樣，SCADA 軟體只要實作 <strong>OPC Client</strong>，就能統一讀取所有廠牌的設備，達到了「隨插即用」。</p>
+        <ul>
+          <li><strong>架構：</strong> 基於微軟的 <strong>COM/DCOM</strong> 技術。</li>
+          <li><strong>致命傷：</strong> 
+            <ol>
+              <li><strong>綁死 Windows</strong>：因為依賴 COM/DCOM，所以無法在 Linux 或嵌入式設備上運行。</li>
+              <li><strong>網路設定噩夢</strong>：透過 DCOM 進行跨網段通訊時，需要設定繁瑣的 Windows 登錄檔與防火牆，被工程師戲稱為「DCOM 地獄」。</li>
+              <li><strong>安全性極低</strong>：缺乏現代的加密與憑證機制。</li>
+            </ol>
+          </li>
+        </ul>
+
+        <h3>3. OPC UA (Unified Architecture) - 現代工業 4.0 標準</h3>
+        <p>為了徹底解決 OPC DA 綁定 Windows 與安全性差的問題，OPC 基金會於 2008 年推出了全新架構：<strong>OPC UA</strong>。這也是目前工業物聯網 (IIoT) 的黃金標準。</p>
+        <ul>
+          <li><strong>跨平台 (Platform Independent)：</strong> 徹底拋棄了 COM/DCOM。底層採用標準的 TCP/IP (二進位 opc.tcp) 或是 HTTP/SOAP，完美支援 Linux、macOS、Docker 甚至微型感測器單晶片。</li>
+          <li><strong>強大的資訊模型 (Information Model)：</strong> OPC DA 只能傳遞「標籤 (Tag)」和「值 (Value)」。而 OPC UA 採用<strong>物件導向 (Object-Oriented)</strong>，可以定義一台「馬達」，這台馬達底下包含溫度、轉速等多個節點，資料具有結構與語義。</li>
+          <li><strong>現代化安全性 (Security)：</strong> 內建 X.509 憑證雙向認證，傳輸過程支援 AES 加密與簽章，符合現代 IT 資安標準。</li>
+          <li><strong>多種通訊模式：</strong> 除了傳統的 Client/Server 模式外，還新增了 <strong>Pub/Sub (發布/訂閱)</strong> 模式，非常適合整合 MQTT 與雲端大數據分析。</li>
+        </ul>
+
+        <h2>總結與技術演進圖</h2>
+        <p>工業通訊的發展史，就是一部「從實體線路走向網路化，從封閉系統走向跨平台與物件化」的歷史。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>技術分層</th>
+              <th>舊時代 (過去)</th>
+              <th>現代 (現在與未來)</th>
+              <th>核心特徵差異</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>硬體實體層</strong></td>
+              <td>RS-232 / RS-485</td>
+              <td>Ethernet (RJ45, 光纖)</td>
+              <td>從點對點、半雙工序列埠，演進為高速、全雙工的 IP 網路。</td>
+            </tr>
+            <tr>
+              <td><strong>資料協定層</strong></td>
+              <td>Modbus RTU</td>
+              <td>Modbus TCP</td>
+              <td>將暫存器讀寫指令封裝進 TCP/IP 封包中。</td>
+            </tr>
+            <tr>
+              <td><strong>軟體交換層</strong></td>
+              <td>DDE / OPC DA</td>
+              <td>OPC UA</td>
+              <td>從綁死 Windows COM/DCOM、無加密，演進為跨平台、物件化、高資安防護的架構。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>對於軟體工程師來說，如果你的任務是要去工廠「撈資料」：</p>
+        <ol>
+          <li>如果設備很新，請直接詢問是否有提供 <strong>OPC UA Server</strong> 或支援 <strong>MQTT</strong>，你可以輕鬆用 Python (<code>asyncua</code>) 或 Node.js 接接 API 就搞定。</li>
+          <li>如果設備是傳統 PLC，大概率會支援 <strong>Modbus TCP</strong>，你可以使用 <code>pymodbus</code> 透過 TCP/IP 去讀取特定 Register。</li>
+          <li>如果是超級老舊的感測器，你可能需要準備一條 <strong>USB 轉 RS485 轉換線</strong>，親手處理 Baud rate 與 Modbus RTU 的二進位解析了。</li>
+        </ol>
+      </article>
+
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>

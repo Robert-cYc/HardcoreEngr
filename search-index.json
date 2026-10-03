@@ -1,5 +1,20 @@
 [
   {
+    "title": "工業通訊協定全解析：RS232/RS485, Modbus, DDE 到 OPC DA/UA",
+    "excerpt": "深入解析工業物聯網 (IIoT) 中最核心的通訊協定與介面，從硬體層的 RS232、RS485，到網路層的 Modbus RTU/TCP，再到軟體交換層的 DDE、OPC DA 與現代化的 OPC UA，帶你一次搞懂 OT 架構。",
+    "url": "industrial-protocols-guide.html",
+    "tags": [
+      "OT",
+      "通訊協定",
+      "Modbus",
+      "OPC",
+      "RS232",
+      "RS485",
+      "IIoT",
+      "教學"
+    ]
+  },
+  {
     "title": "Cloudflare 功能詳解：CDN、DNS、SSL、WAF、Workers 與 Pages",
     "excerpt": "Cloudflare 完整教學：CDN 加速、DNS 管理、SSL TLS 加密、WAF 防護、DDoS 防禦、Cloudflare Workers、Pages 部署、Tunnel 內網穿透、R2 物件存儲與 Analytics 功能介紹。",
     "url": "cloudflare-guide.html",
