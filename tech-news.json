@@ -1,10 +1,34 @@
 {
-  "updated": "2026-10-03 12:23",
+  "updated": "2026-10-03 12:50",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "近九成開發者都在用 AI 寫程式，美國學界報告：信任與驗證才是下道關卡",
+          "link": "https://technews.tw/2026/10/03/engineering-trustworthy-software-systems-with-ai-at-scale/",
+          "date": "2026-10-03 08:30",
+          "summary": "美國計算社群聯盟（Computing Community Consortium，CCC）9 月 24 日發布最 [&#8230;]"
+        },
+        {
+          "title": "醫院警報響不停怎麼辦？延遲機制讓儀器警示音銳減近八成，病人安全不打折",
+          "link": "https://technews.tw/2026/10/03/improving-medical-alarm-fatigue/",
+          "date": "2026-10-03 07:30",
+          "summary": "醫院裡的監視器、輸液幫浦與各式儀器日夜發出無休止的嗶嗶聲與警示音，不僅讓病患難以安穩休息，更讓護理人員面臨嚴重 [&#8230;]"
+        },
+        {
+          "title": "川普召集黃仁勳、馬斯克等科技巨頭簽「AI 憲法」，四層稽核機制能解失控風險？",
+          "link": "https://technews.tw/2026/10/03/trump-ai-constitution-jensen-huang-tech-giants-four-layer-audit-prevent-ai-rogue/",
+          "date": "2026-10-03 06:00",
+          "summary": "美國總統川普（Donald Trump）日前在白宮召集輝達（NVIDIA）執行長黃仁勳、SpaceXAI 創辦 [&#8230;]"
+        },
+        {
+          "title": "英飛凌捐贈「AI 消防之眼」，整合邊緣 AI、毫米波雷達即時掌握火場資訊",
+          "link": "https://technews.tw/2026/10/03/infineon-ai-disaster-relief/",
+          "date": "2026-10-03 03:51",
+          "summary": "全球半導體領導廠商英飛凌攜手台灣守護者聯盟，捐贈「AI 消防之眼」，以提升消防人員安全及救災效率，並降低第一線 [&#8230;]"
+        },
         {
           "title": "AI 會毀滅人類還是先搶走白領飯碗？《紐時》整理 11 個大哉問，帶你看懂 AI 的真實風險",
           "link": "https://infosecu.technews.tw/2026/10/03/nyt-explores-five-major-ai-concerns-and-answers-key-questions/",
@@ -52,30 +76,6 @@
           "link": "https://technews.tw/2026/10/02/nchu-materials-science-department-develops-ai-haptic-smart-clothing-mouse-free-computer-control/",
           "date": "2026-10-02 09:30",
           "summary": "國立中興大學材料科學與工程學系今天公布開發「AI 體感智慧衣」，利用紡織材料與人體活動產生的自然靜電感測動作， [&#8230;]"
-        },
-        {
-          "title": "報告揭 OpenAI 代理擅闖政府網站，試圖抹除活動軌跡",
-          "link": "https://technews.tw/2026/10/02/openai-agent-trespasses-government-websites-erases-activity-traces/",
-          "date": "2026-10-02 09:20",
-          "summary": "1 日公布的報告，OpenAI 開發的人工智慧（AI）代理未經授權入侵政府網站後，還試圖抹除活動痕跡。 法新社 [&#8230;]"
-        },
-        {
-          "title": "統一資訊打造 AI 生活服務平台，試營運日活躍逾萬人",
-          "link": "https://technews.tw/2026/10/02/uni-pic-20261001/",
-          "date": "2026-10-02 09:04",
-          "summary": "統一企業集團旗下統一資訊（UNI-PIC）打造的 AI 生活服務平台「i住家」，將串連 2,000 萬 uni [&#8230;]"
-        },
-        {
-          "title": "亞馬遜傳轉移 80 億美元輝達 GPU、花式融資藏風險",
-          "link": "https://finance.technews.tw/2026/10/02/amazon-reportedly-transfers-8-billion-nvidia-gpus-complex-financing-hides-risks/",
-          "date": "2026-10-02 07:30",
-          "summary": "科技巨頭投入巨資建置 AI 基礎設施之際，正在採取不同融資方式把債務移出資產負債表，以維持信用評等，但相關安排 [&#8230;]"
-        },
-        {
-          "title": "AI 安全系統助幣安第一季攔截 19.8 億美元資產損失",
-          "link": "https://technews.tw/2026/10/02/ai-binance-intercepted-19-billion-losses/",
-          "date": "2026-10-02 07:08",
-          "summary": "加密貨幣詐騙手法日新月異，加上 AI 的高速發展同時改變加密貨幣詐騙與資安防禦。全球最大的加密貨幣交易所之一的 [&#8230;]"
         }
       ]
     },
@@ -83,6 +83,18 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "華為最新麒麟 9050 Pro 晶片照曝光！兩層 Die 垂直堆疊，尺寸再縮小",
+          "link": "https://technews.tw/2026/10/03/huaweis-latest-kirin-9050-pro-chip/",
+          "date": "2026-10-03 07:37",
+          "summary": "華為最新麒麟 9050 Pro 晶片近日再傳新進展，外媒 Wccftech 引述社群平台 X 帳號 Kurna [&#8230;]"
+        },
+        {
+          "title": "產能提升逾 10%！三星開始量產 Exynos 2700 晶片，搭載 Galaxy S27 多系列",
+          "link": "https://technews.tw/2026/10/03/samsung-electronics-starts-mass-production-of-exynos-2700/",
+          "date": "2026-10-03 06:32",
+          "summary": "市場消息傳出，三星電子已開始量產 Exynos 2700，該晶片將搭載於 Galaxy S27 系列智慧手機， [&#8230;]"
+        },
         {
           "title": "記憶體太貴！128GB DGX Spark 價格飆破 6,000 美元，輝達改推 64GB 版本搶市",
           "link": "https://technews.tw/2026/10/03/nvidia-64-gb-dgx-spark/",
@@ -142,18 +154,6 @@
           "link": "https://finance.technews.tw/2026/10/02/episil-august-profit-surges-73x-yoy-ai-power-silicon-photonics-dual-engines/",
           "date": "2026-10-02 06:39",
           "summary": "隨 AI 資料中心帶動光通訊及電源相關需求成長，磊晶廠嘉晶公布 8 月自結財務資訊，單月營收 5.07 億元， [&#8230;]"
-        },
-        {
-          "title": "從移民少女到 AI 教母，李飛飛走進 AMD 技術核心",
-          "link": "https://technews.tw/2026/10/02/fei-fei-li-immigrant-girl-ai-godmother-amd-tech-core/",
-          "date": "2026-10-02 06:20",
-          "summary": "「AI 教母」李飛飛將出任超微首席科學家。現年 50 歲的她，在中國出生長大，母親家族與「反共的國民黨」有關連 [&#8230;]"
-        },
-        {
-          "title": "記憶體吃緊、需求增加  東芝傳倍增 AI DC 用 HDD 產能",
-          "link": "https://technews.tw/2026/10/02/toshiba-data-center-hdd/",
-          "date": "2026-10-02 06:10",
-          "summary": "記憶體供需吃緊，推升硬碟機（HDD）需求增加，日本東芝（Toshiba）傳出將投資 600 億日圓，倍增 AI [&#8230;]"
         }
       ]
     },
