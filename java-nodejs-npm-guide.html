@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java, Node.js 與 npm 全面解析：從企業級巨獸到非同步 I/O 王者 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,☕">
+  <meta name="description" content="深入剖析後端兩大主流技術棧：Java 及其 JVM 生態系，與基於 V8 引擎的 Node.js 及其龐大的 npm 套件管理系統。以硬核工程師視角，拆解底層差異與適用場景。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/java-nodejs-npm-guide.html">
+  <meta property="og:title" content="Java, Node.js 與 npm 全面解析 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="深入剖析後端兩大主流技術棧：Java 及其 JVM 生態系，與基於 V8 引擎的 Node.js 及其龐大的 npm 套件管理系統。以硬核工程師視角，拆解底層差異與適用場景。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/java-nodejs-npm-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Java, Node.js 與 npm 全面解析 — &quot;AI&quot; 硬核工程師">
+  <meta name="twitter:description" content="深入剖析後端兩大主流技術棧：Java 及其 JVM 生態系，與基於 V8 引擎的 Node.js 及其龐大的 npm 套件管理系統。以硬核工程師視角，拆解底層差異與適用場景。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; line-height: 1.8; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.1rem; }
+    .article-body th, .article-body td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>Java, Node.js 與 npm 全面解析：從企業級巨獸到非同步 I/O 王者</h1>
+        <div class="article-meta">
+          <span>2026-10-03</span>
+          <span class="separator">·</span>
+          <span>15 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">npm</span>
+          <span class="tag">Backend</span>
+          <span class="tag">架構</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/java-nodejs/1200/400" alt="Java 與 Node.js 技術棧">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p>如果你今天接手了一個後端開發的專案，你面臨的第一個架構決策通常是：「我們該用什麼語言跟執行環境？」</p>
+        <p>在這場技術選型的戰場上，<strong>Java</strong> 和 <strong>Node.js</strong> 絕對是兩個無法避開的重量級對手。一個是歷經數十年風霜、支撐起全球多數銀行與大型企業基礎設施的「重裝坦克」；另一個則是乘著瀏覽器 V8 引擎的東風，主打輕量、非同步、全端統一語言的「敏捷刺客」。再加上讓 JavaScript 繁榮強大的背後功臣 <strong>npm</strong>，這三個關鍵字幾乎撐起了現代 Web 開發的半壁江山。</p>
+        <p>這篇文章，我們不談虛無縹緲的「哪個最好」，而是以硬核工程師的視角，直接拆解它們的<strong>底層架構、運行機制與最適合的應用場景</strong>。</p>
+
+        <h2>Java：企業級開發的重裝坦克</h2>
+        <p>「Write Once, Run Anywhere.」這句 Java 誕生時的口號，到了今天依然有效。Java 是一種<strong>強型別 (Strongly Typed)</strong>、<strong>物件導向 (Object-Oriented)</strong> 的編譯型語言。但嚴格來說，Java 是被編譯成 Bytecode，然後在 <strong>JVM (Java Virtual Machine)</strong> 上執行。</p>
+
+        <h3>1. JVM (Java 虛擬機) 與跨平台</h3>
+        <p>Java 為什麼能稱霸企業界？JVM 功不可沒。你的 Java 程式碼不需要針對 Windows 或是 Linux 重新編譯，它被編譯成 <code>.class</code> 檔 (Bytecode) 後，交由各個作業系統上的 JVM 去解釋與 JIT (Just-In-Time) 編譯執行。JVM 不只處理作業系統底層差異，還負責了<strong>垃圾回收 (Garbage Collection, GC)</strong> 與記憶體管理，確保了長時間運行的穩定性。</p>
+
+        <h3>2. 多執行緒 (Multi-threading) 架構</h3>
+        <p>傳統 Java Web 伺服器 (如 Tomcat、Spring Boot MVC) 採用的是 <strong>Thread-per-request (一個請求一個執行緒)</strong> 的模型。當 1000 個使用者同時連線，伺服器就會開啟 1000 個執行緒。這種架構的好處是：</p>
+        <ul>
+          <li><strong>CPU 密集型任務毫無壓力：</strong>你可以充分利用多核心 CPU 進行繁重的計算（如影像處理、複雜演算法）。</li>
+          <li><strong>除錯容易：</strong>每個請求都在自己的執行緒內，Stack Trace 清楚明瞭。</li>
+        </ul>
+        <p>但缺點也很明顯：執行緒的建立與 Context Switch 成本極高，當面臨幾萬個高併發 I/O 請求時（也就是俗稱的 C10K 問題），記憶體和 CPU 會瞬間被榨乾。這也是為什麼後來 Java 推出了 NIO (Netty) 以及 Project Loom (虛擬執行緒, Virtual Threads) 來解決這個問題。</p>
+
+        <h3>3. 繁榮的企業級生態系</h3>
+        <p>Java 擁有地表最強的企業級框架生態系，如 <strong>Spring Boot</strong>。無論是 ORM (Hibernate/JPA)、Security、Cloud Native 微服務架構 (Spring Cloud)，Java 都有經過千錘百鍊的標準解決方案。這讓 Java 成為銀行、金融系統與大型電商的絕對首選。</p>
+
+        <h2>Node.js：打破結界的非同步王者</h2>
+        <p>如果在 2009 年以前，有人跟你說 JavaScript 可以拿來寫伺服器後端，大家大概會笑你。直到 Ryan Dahl 把 Google Chrome 的 <strong>V8 JavaScript 引擎</strong> 拔了出來，包裝上 C++ 寫的底層 I/O 庫 (libuv)，<strong>Node.js</strong> 就此誕生。</p>
+
+        <h3>1. V8 引擎與 Event Loop</h3>
+        <p>Node.js 不是一個語言，它是 JavaScript 的<strong>執行環境 (Runtime)</strong>。它的核心機制是：<strong>單執行緒 (Single-threaded)</strong> 搭配 <strong>Event Loop (事件迴圈)</strong> 與 <strong>非同步 I/O (Asynchronous I/O)</strong>。</p>
+        
+        <h3>2. 單執行緒，為什麼還能抗高併發？</h3>
+        <p>你可能會疑惑，只有一個執行緒，怎麼處理一萬個同時連線？秘訣就在於「<strong>非阻塞 (Non-blocking)</strong>」。</p>
+        <p>當 Node.js 收到一個請求要去資料庫讀取資料時，它<strong>不會停下來等</strong>。它會把這個讀取任務丟給底層作業系統 (透過 libuv 開啟的 thread pool 處理)，然後主執行緒立刻轉頭去處理下一個請求。當資料庫讀取完畢，會觸發一個 Callback (或 Resolve 一個 Promise)，Event Loop 就會在合適的時機把結果丟回給主執行緒繼續執行。</p>
+        <ul>
+          <li><strong>優勢：</strong>極低的記憶體消耗，非常適合處理 I/O 密集型任務（如 API Gateway、Chat App、Real-time 串流、微服務的中介層）。</li>
+          <li><strong>劣勢：</strong><strong>千萬不要用 Node.js 算費波那契數列或做影像轉檔！</strong>因為主執行緒只有一個，只要你寫了一個佔用 CPU 兩秒鐘的 <code>for</code> 迴圈，整個伺服器在這兩秒內就會「完全卡死」，所有其他使用者的請求都會被堵在門外。</li>
+        </ul>
+
+        <h2>npm：現代 JavaScript 的基礎建設</h2>
+        <p>講到 Node.js，就絕對不能不提 <strong>npm (Node Package Manager)</strong>。它是世界上最大的軟體註冊表 (Registry)，沒有它，Node.js 生態系不可能如此繁榮。</p>
+
+        <h3>1. <code>package.json</code> 與依賴管理</h3>
+        <p>在 Node.js 專案中，所有的元資料、啟動腳本與依賴套件，都紀錄在 <code>package.json</code> 檔案裡：</p>
+        <pre><code class="language-json">{
+  "name": "my-hardcore-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}</code></pre>
+        <p>當你執行 <code>npm install</code> 時，npm 會去讀取這個檔案，把所有的套件下載到名為 <code>node_modules</code> 的黑洞資料夾裡。</p>
+
+        <h3>2. 模組化與開源共享</h3>
+        <p>npm 的哲學是「微型模組 (Micro-modules)」。你不需要自己寫日期處理邏輯 (用 <code>date-fns</code> 或是 <code>dayjs</code>)，不需要自己處理 HTTP 請求路由 (用 <code>Express</code> 或 <code>Fastify</code>)。整個社群的智慧都在 npm 上，你只需要一行指令就能擁有。</p>
+        <p>當然，這也帶來了所謂的「依賴地獄」與安全風險。一個簡單的網頁可能背後依賴了幾千個 npm 套件，這使得 <code>package-lock.json</code> (鎖定確切版本) 變得極度重要。</p>
+
+        <h2>Java vs Node.js：硬核對決</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>維度</th>
+              <th>Java</th>
+              <th>Node.js</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>型別系統</strong></td>
+              <td>強型別 (Statically Typed)，編譯期抓錯</td>
+              <td>動態弱型別 (JavaScript)，可外掛 TypeScript</td>
+            </tr>
+            <tr>
+              <td><strong>架構模型</strong></td>
+              <td>多執行緒 (Thread-per-request)</td>
+              <td>單執行緒 + Event Loop (非同步 I/O)</td>
+            </tr>
+            <tr>
+              <td><strong>優勢場景</strong></td>
+              <td>CPU 密集計算、金融系統、超大型複雜商業邏輯</td>
+              <td>I/O 密集任務、即時通訊 (WebSocket)、API 中介層、快速迭代</td>
+            </tr>
+            <tr>
+              <td><strong>啟動時間與資源</strong></td>
+              <td>冷啟動慢 (JVM 初始化)，記憶體佔用極大</td>
+              <td>啟動極快，記憶體佔用極小 (適合 Serverless 架構)</td>
+            </tr>
+            <tr>
+              <td><strong>生態系統</strong></td>
+              <td>Maven / Gradle，以 Spring Boot 為絕對核心</td>
+              <td>npm，碎片化但極度活躍 (Express, NestJS, Fastify)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>結語：沒有最好，只有最適合</h2>
+        <p>作為一名硬核工程師，最忌諱的就是陷入「語言宗教戰爭」。</p>
+        <p>如果你今天要在 AWS Lambda 上寫一個微服務 API，或者你要做一個即時的聊天室 (Socket.io)，<strong>Node.js</strong> 的輕量與高 I/O 吞吐量絕對是首選。但如果你要開發銀行的核心交易系統，需要保證極致的資料一致性、複雜的事務處理 (Transaction) 與多核心並行計算，那 <strong>Java + Spring Boot</strong> 依然是那個無法撼動的王者。</p>
+        <p>技術永遠是為業務服務的，了解底層原理，你才能在架構設計時，選對武器，一擊必殺。</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="article-footer">
+    <div class="container">
+      <p>"AI" 硬核工程師 — Talk is cheap. Show me the code.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>

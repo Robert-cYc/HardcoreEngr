@@ -1,5 +1,17 @@
 [
   {
+    "title": "Java, Node.js 與 npm 全面解析：從企業級巨獸到非同步 I/O 王者",
+    "excerpt": "深入剖析後端兩大主流技術棧：Java 及其 JVM 生態系，與基於 V8 引擎的 Node.js 及其龐大的 npm 套件管理系統。以硬核工程師視角，拆解底層差異與適用場景。",
+    "url": "java-nodejs-npm-guide.html",
+    "tags": [
+      "Java",
+      "Node.js",
+      "npm",
+      "Backend",
+      "架構"
+    ]
+  },
+  {
     "title": "工業通訊協定全解析：RS232/RS485, Modbus, DDE 到 OPC DA/UA",
     "excerpt": "深入解析工業物聯網 (IIoT) 中最核心的通訊協定與介面，從硬體層的 RS232、RS485，到網路層的 Modbus RTU/TCP，再到軟體交換層的 DDE、OPC DA 與現代化的 OPC UA，帶你一次搞懂 OT 架構。",
     "url": "industrial-protocols-guide.html",
