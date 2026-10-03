@@ -5,13 +5,27 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 03 Oct 2026 10:21:13 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 12:23:18 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>作業系統 (OS) 底層架構全解析：Windows, macOS, Linux 與 Android</title>
+    <link>https://ai-hardcore-engineer.com/os-architecture-comparison.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/os-architecture-comparison.html</guid>
+    <description>深入探討現代四大作業系統的核心架構。從 Windows 的 NT 核心、macOS 的 Mach/BSD 混合核心、Linux 的宏核心，到 Android 基於 Linux 的客製化與 ART 虛擬機，解析各自的設計哲學與適用場景。</description>
+    <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
+    <category>OS</category>
+    <category>作業系統</category>
+    <category>Windows</category>
+    <category>macOS</category>
+    <category>Linux</category>
+    <category>Android</category>
+    <category>架構</category>
+  </item>
   <item>
     <title>晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘</title>
     <link>https://ai-hardcore-engineer.com/chip-wars-intel-amd-nvidia-asic.html</link>
