@@ -1,0 +1,48 @@
+name: Automate Site Content
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # 每天執行兩次（大約是台灣時間早上 8 點和晚上 8 點）
+    - cron: '0 0,12 * * *'
+  workflow_dispatch: # 允許手動觸發
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 允許 GitHub Actions 推送 Commit
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Fetch Tech News
+        run: python3 scripts/fetch_news.py
+
+      - name: Generate RSS Feed
+        run: python3 scripts/generate_feed.py
+
+      - name: Commit and Push changes
+        run: |
+          # 設定 Git 使用者
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # 將有變更的檔案加入暫存區
+          git add tech-news.json feed.xml
+          
+          # 檢查是否有檔案變動，如果有則 Commit 並 Push
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(bot): auto-update tech news and RSS feed [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
