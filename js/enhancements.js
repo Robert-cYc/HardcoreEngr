@@ -510,6 +510,124 @@
     });
   }
 
+  /* ---------- 11. Mermaid.js 自動渲染 ---------- */
+  function initMermaid() {
+    var mermaidBlocks = document.querySelectorAll('.article-body pre code.language-mermaid');
+    if (!mermaidBlocks.length) return;
+
+    // Convert code blocks to mermaid divs
+    mermaidBlocks.forEach(function (code) {
+      var pre = code.parentElement;
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = code.textContent;
+      
+      // If wrapped in .code-block (by copy btn), replace the wrapper
+      if (pre.parentElement.classList.contains('code-block')) {
+        pre.parentElement.replaceWith(div);
+      } else {
+        pre.replaceWith(div);
+      }
+    });
+
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js';
+    s.onload = function () {
+      window.mermaid.initialize({ 
+        startOnLoad: true,
+        theme: document.documentElement.classList.contains('dark-mode') ? 'dark' : 'default'
+      });
+      window.mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+    };
+    document.head.appendChild(s);
+  }
+
+  /* ---------- 12. 圖片點擊放大 (Lightbox) ---------- */
+  function initLightbox() {
+    var images = document.querySelectorAll('.article-body img');
+    if (!images.length) return;
+
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    var imgEl = document.createElement('img');
+    overlay.appendChild(imgEl);
+    document.body.appendChild(overlay);
+
+    var style = document.createElement('style');
+    style.textContent = [
+      '.article-body img { cursor: zoom-in; transition: transform 0.3s; }',
+      '.lightbox-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(4px); }',
+      '.lightbox-overlay.active { opacity: 1; pointer-events: auto; cursor: zoom-out; }',
+      '.lightbox-overlay img { max-width: 90vw; max-height: 90vh; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s; }',
+      '.lightbox-overlay.active img { transform: scale(1); }'
+    ].join('');
+    document.head.appendChild(style);
+
+    images.forEach(function (img) {
+      img.addEventListener('click', function () {
+        imgEl.src = img.src;
+        overlay.classList.add('active');
+      });
+    });
+
+    overlay.addEventListener('click', function () {
+      overlay.classList.remove('active');
+    });
+    
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) {
+        overlay.classList.remove('active');
+      }
+    });
+  }
+
+  /* ---------- 13. GitHub 留言板 (Utterances) ---------- */
+  function initComments() {
+    var articleBody = document.querySelector('.article-body');
+    if (!articleBody) return; // 只在文章頁面顯示
+
+    var container = document.createElement('div');
+    container.className = 'comments-container';
+    container.style.cssText = 'margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);';
+    
+    var title = document.createElement('h3');
+    title.textContent = '💬 留言討論';
+    title.style.cssText = 'font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;';
+    container.appendChild(title);
+
+    var script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'Robert-cYc/HardcoreEngr'); // Automatically hooked to your repo
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', document.documentElement.classList.contains('dark-mode') ? 'github-dark' : 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+
+    container.appendChild(script);
+    
+    // 插入在文章最尾端 (related articles 或 footer 之前)
+    var footer = document.querySelector('.article-footer');
+    if (footer) {
+      footer.parentNode.insertBefore(container, footer);
+    } else {
+      articleBody.parentNode.appendChild(container);
+    }
+
+    // 處理主題切換時的留言板主題同步
+    var themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function() {
+        var isDark = document.documentElement.classList.contains('dark-mode');
+        // Theme toggle happens before this click resolves, so the class is already toggled
+        var newTheme = !isDark ? 'github-dark' : 'github-light'; // It's reversed because our event runs after the DOM toggle
+        var iframe = document.querySelector('.utterances-frame');
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage({ type: 'set-theme', theme: newTheme }, 'https://utteranc.es');
+        }
+      });
+    }
+  }
+
   /* ---------- 啟動 ---------- */
   function init() {
     initTerminalTyping();
@@ -522,6 +640,9 @@
     initRelatedArticles();
     initNewsFilter();
     initCheatsheetFilter();
+    initMermaid();
+    initLightbox();
+    initComments();
   }
 
   if (document.readyState === 'loading') {
