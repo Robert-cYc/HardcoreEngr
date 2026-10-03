@@ -1,5 +1,19 @@
 [
   {
+    "title": "虛擬機器 (VM) 終極對決：VMware vs VirtualBox vs Hyper-V",
+    "excerpt": "深入探討主流虛擬機器軟體的架構與優缺點：VMware Workstation 的極致效能、VirtualBox 的開源靈活、Hyper-V 的原生整合，以及 macOS 專屬的 Parallels Desktop。幫你找出最適合的 VM 工具。",
+    "url": "virtual-machine-comparison.html",
+    "tags": [
+      "VM",
+      "VMware",
+      "VirtualBox",
+      "Hyper-V",
+      "Parallels",
+      "虛擬機",
+      "比較"
+    ]
+  },
+  {
     "title": "Java, Node.js 與 npm 全面解析：從企業級巨獸到非同步 I/O 王者",
     "excerpt": "深入剖析後端兩大主流技術棧：Java 及其 JVM 生態系，與基於 V8 引擎的 Node.js 及其龐大的 npm 套件管理系統。以硬核工程師視角，拆解底層差異與適用場景。",
     "url": "java-nodejs-npm-guide.html",
