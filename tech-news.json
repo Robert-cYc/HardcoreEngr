@@ -1,10 +1,40 @@
 {
-  "updated": "2026-10-04 03:28",
+  "updated": "2026-10-04 12:05",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "摺疊不妥協了！實測HONOR Magic V6 從輕薄到相機都更實用",
+          "link": "https://3c.ltn.com.tw/news/67787",
+          "date": "2026/10/04 18:02",
+          "summary": "大摺疊手機這幾年愈做愈成熟，但真正讓人猶豫的問題其實一直沒變，拿起來會不會太厚重？電池撐不撐得住一整天？相機是不是又 ..."
+        },
+        {
+          "title": "手機漲不停！買不起旗艦 外媒點名最值得買中階安卓是這款",
+          "link": "https://3c.ltn.com.tw/news/67801",
+          "date": "2026/10/04 16:38",
+          "summary": "這一、兩年手機真的愈賣愈貴，不只旗艦機價格一路往上衝，就連過去被視為「甜蜜價位」的中階、入門手機，也開始一支比一支貴 ..."
+        },
+        {
+          "title": "冷氣這顆按鈕很多人沒按過！換季前多做這一步 下次開機少霉味",
+          "link": "https://3c.ltn.com.tw/news/67802",
+          "date": "2026/10/04 15:00",
+          "summary": "進入10月，天氣逐漸從炎熱轉為早晚偏涼，不少家庭開冷氣的時間也開始變少，甚至準備正式讓冷氣「休息」。不過，換季可不是 ..."
+        },
+        {
+          "title": "iPhone這招很多人沒發現！LINE打字可直接叫AI代筆改寫",
+          "link": "https://3c.ltn.com.tw/news/67776",
+          "date": "2026/10/04 14:01",
+          "summary": "不少人每天都在LINE聊天，但可能沒發現，iPhone其實早就能直接用AI幫忙改寫訊息。只要使用支援Apple In ..."
+        },
+        {
+          "title": "台灣人挑家用網路標準變了！90%最在意穩不穩 速度反而排後面",
+          "link": "https://3c.ltn.com.tw/news/67800",
+          "date": "2026/10/04 12:02",
+          "summary": "台灣人挑家用網路的標準正在改變。過去大家最常比較的是「下載速度有多快」，但現在真正有感的，反而是網路穩不穩、Wi-F ..."
+        },
         {
           "title": "iPhone省電別做錯！這5大功能千萬別亂關 達人揭後果",
           "link": "https://3c.ltn.com.tw/news/67790",
@@ -12,7 +42,7 @@
           "summary": "很多iPhone用戶為了省電，會把手機裡不少功能直接關掉，不過3C達人Tim哥點名「5大功能」千萬不要亂關，否則不只 ..."
         },
         {
-          "title": "Google Gemini免費版要縮水了！10／9起只剩1種模型 Plus也受影響",
+          "title": "Google Gemini免費版縮水！10／9起只剩1種模型 AI Plus也挨刀",
           "link": "https://3c.ltn.com.tw/news/67799",
           "date": "2026/10/04 08:00",
           "summary": "Google Gemini免費用戶注意，之後能用的AI模型要變少了。Google最新公告指出，自2026年10月起將 ..."
@@ -46,36 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67795",
           "date": "2026/10/03 14:01",
           "summary": "滑YouTube Shorts最煩的情況之一，就是同一段熱門影片一直被不同帳號搬來搬去，甚至只是換個字幕、套個模板就 ..."
-        },
-        {
-          "title": "台灣人撐起《皮克敏》手遊！貢獻全球52%消費 超車日本登頂",
-          "link": "https://3c.ltn.com.tw/news/67796",
-          "date": "2026/10/03 13:01",
-          "summary": "台灣人到底有多愛《Pikmin Bloom》(皮克敏)？從公園、捷運站到商圈，常常都能看到有人低頭走路、忙著種花、打 ..."
-        },
-        {
-          "title": "iPhone 18 Pro Max爆斷訊災情！更新也救不回 蘋果：中招可換機",
-          "link": "https://3c.ltn.com.tw/news/67797",
-          "date": "2026/10/03 12:00",
-          "summary": "蘋果iPhone 18 Pro系列上市兩週，陸續傳出一些災情，蘋果日前已透過iOS 27.0.1修復Face ID異 ..."
-        },
-        {
-          "title": "iPhone Duo綁約也不便宜！月租1399綁4年 竟還要5萬元",
-          "link": "https://3c.ltn.com.tw/news/67793",
-          "date": "2026/10/03 10:00",
-          "summary": "蘋果首款摺疊手機iPhone Duo即將開賣，售價74,900元起，頂規2TB更高達118,900元。想靠電信綁約減 ..."
-        },
-        {
-          "title": "爆紅程度超車ChatGPT！Meta Muse是什麼？被稱「懶人版龍蝦」",
-          "link": "https://3c.ltn.com.tw/news/67788",
-          "date": "2026/10/03 09:30",
-          "summary": "最近AI圈又有新寵兒了，那就是Meta Muse，自9月8日推出後迅速爆紅，也讓「個人AI代理」成為AI市場下一波熱 ..."
-        },
-        {
-          "title": "行車體驗再進化！Android Auto著手整合Pixel AI功能與Gemini建議",
-          "link": "https://3c.ltn.com.tw/news/67794",
-          "date": "2026/10/03 08:40",
-          "summary": "車載系統 Android Auto 即將迎來實用升級。根據外媒《9to5Google》最新 APK 拆解報告，Goo ..."
         }
       ]
     },
