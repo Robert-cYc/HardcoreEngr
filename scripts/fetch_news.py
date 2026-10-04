@@ -17,18 +17,20 @@ from pathlib import Path
 
 FEEDS = [
     {"name": "AI 人工智慧", "url": "https://technews.tw/category/ai/feed/",
-     "site": "https://technews.tw/category/ai/"},
+     "site": "https://technews.tw/category/ai/", "type": "rss"},
     {"name": "半導體", "url": "https://technews.tw/category/semiconductor/feed/",
-     "site": "https://technews.tw/category/semiconductor/"},
+     "site": "https://technews.tw/category/semiconductor/", "type": "rss"},
     {"name": "零組件", "url": "https://technews.tw/category/component/feed/",
-     "site": "https://technews.tw/category/component/"},
+     "site": "https://technews.tw/category/component/", "type": "rss"},
     {"name": "CCC 追新聞", "url": "https://ccc.technews.tw/feed/",
-     "site": "https://ccc.technews.tw/"},
+     "site": "https://ccc.technews.tw/", "type": "rss"},
+    {"name": "自由 3C 科技", "url": "https://3c.ltn.com.tw/",
+     "site": "https://3c.ltn.com.tw/", "type": "html"},
 ]
 
 MAX_PER_FEED = 12
 TIMEOUT = 15
-UA = {"User-Agent": "Mozilla/5.0 (compatible; HardcoreEngr-news/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
 TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
 
@@ -64,13 +66,36 @@ def parse_rss(xml_bytes):
         })
     return items
 
+def parse_html_ltn_3c(html_bytes):
+    html = html_bytes.decode('utf-8', errors='ignore')
+    items = []
+    blocks = re.findall(r'<div class="box boxnews">.*?</div>', html, re.DOTALL)
+    for block in blocks:
+        match_tit = re.search(r'<a class="tit" href="([^"]+)"[^>]*><h3[^>]*>(.*?)</h3>', block)
+        match_p = re.search(r'<p>(.*?)</p>', block, re.DOTALL)
+        match_date = re.search(r'<span>(.*?)</span>', block, re.DOTALL)
+        if match_tit:
+            link = match_tit.group(1).strip()
+            if not link.startswith('http'):
+                link = 'https://3c.ltn.com.tw/' + link
+            items.append({
+                "title": clean_html(match_tit.group(2)),
+                "link": link,
+                "date": clean_html(match_date.group(1)) if match_date else "",
+                "summary": clean_html(match_p.group(1))[:160] if match_p else "",
+            })
+    return items
 
 def main():
     sources = []
     for feed in FEEDS:
         entry = {"name": feed["name"], "site": feed["site"], "items": []}
         try:
-            entry["items"] = parse_rss(fetch_feed(feed["url"]))[:MAX_PER_FEED]
+            raw_bytes = fetch_feed(feed["url"])
+            if feed.get("type") == "html":
+                entry["items"] = parse_html_ltn_3c(raw_bytes)[:MAX_PER_FEED]
+            else:
+                entry["items"] = parse_rss(raw_bytes)[:MAX_PER_FEED]
         except Exception as e:
             entry["error"] = str(e)
             print(f"[warn] {feed['name']} 抓取失敗: {e}", file=sys.stderr)
