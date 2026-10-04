@@ -1,10 +1,34 @@
 {
-  "updated": "2026-10-04 01:08",
+  "updated": "2026-10-04 01:14",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "特斯拉前團隊打造「供應鏈大腦」，AI 新創 Atomic 獲 1,250 萬美元 A 輪募資",
+          "link": "https://technews.tw/2026/10/04/atomic-automated-supply-chain/",
+          "date": "2026-10-04 00:30",
+          "summary": "總部位於波士頓的供應鏈 AI 新創 Atomic，近日宣布完成 1,250 萬美元的 A 輪募資，由 Klas [&#8230;]"
+        },
+        {
+          "title": "每週狂聊 89 小時！美研究揭青少年陷「AI 陪伴」成癮，越用竟越孤獨",
+          "link": "https://technews.tw/2026/10/04/us-study-reveals-teenagers-addicted-ai-companionship-chatting-89-hours-weekly-paradoxically-becoming-lonelier/",
+          "date": "2026-10-04 00:30",
+          "summary": "美國研究人員最新指出，部分青少年對 AI 角色聊天機器人出現明顯過度依賴，甚至有人每週使用時間高達 89 小時 [&#8230;]"
+        },
+        {
+          "title": "從安全氣囊做到 AI 散熱，時碩工業憑 20 年精密加工奪古河液冷大單",
+          "link": "https://finance.technews.tw/2026/10/04/how-globaltek-won-furukawa-group-major-liquid-cooling-order/",
+          "date": "2026-10-04 00:00",
+          "summary": "憑藉近二十年累積的鍛造、沖壓等精密加工技術，時碩工業成功跨足液冷散熱領域。一筆來自古河集團的伺服器散熱系統大單 [&#8230;]"
+        },
+        {
+          "title": "AI 與機器人加速標本數位化，英國打造 7 千萬件館藏網路超級博物館",
+          "link": "https://technews.tw/2026/10/03/how-ai-is-creating-a-uk-super-museum-and-revealing-our-planets-history/",
+          "date": "2026-10-03 13:30",
+          "summary": "英國研究員運用人工智慧（AI）與機器人，將全國各地收藏的自然史標本數位化，打造線上「超級博物館」。民眾用手機或 [&#8230;]"
+        },
         {
           "title": "近九成開發者都在用 AI 寫程式，美國學界報告：信任與驗證才是下道關卡",
           "link": "https://technews.tw/2026/10/03/engineering-trustworthy-software-systems-with-ai-at-scale/",
@@ -52,30 +76,6 @@
           "link": "https://technews.tw/2026/10/03/nvidia-alumni-are-fueling-a-new-wave-of-robotics-and-ai-startups/",
           "date": "2026-10-03 01:30",
           "summary": "輝達（Nvidia）長年投入機器人技術，為「實體 AI」（physical AI）奠定基礎，如今旗下機器人老將 [&#8230;]"
-        },
-        {
-          "title": "ChatGPT 推出虛擬試穿功能，上傳照片即可 AI 模擬穿搭效果",
-          "link": "https://technews.tw/2026/10/03/chatgpt-adds-virtual-try-on-for-clothes/",
-          "date": "2026-10-02 23:44",
-          "summary": "有關 ChatGPT 如何在購物時幫助使用者，OpenAI 再次展開測試，宣布向全球推出兩項全新購物功能，讓使 [&#8230;]"
-        },
-        {
-          "title": "Shield AI 攜手台灣合作夥伴推動自主系統在地化，持續擴大在台佈局與人才招募",
-          "link": "https://technews.tw/2026/10/02/shield-ai-is-planning-to-increase-cooperations-with-taiwanese-supply-chians-and-recruit-more-taiwanese-talents/",
-          "date": "2026-10-02 10:10",
-          "summary": "Shield AI 於 2025 年在台北 101 大樓設立辦公室，攜手台灣產業夥伴積極推動自主系統在地化，並 [&#8230;]"
-        },
-        {
-          "title": "烏克蘭前防長要打造「機器人軍團」，Shield AI 創辦人：十年內應該很難實現",
-          "link": "https://technews.tw/2026/10/02/brandon-tseng-thinks-fedorovs-army-of-robots-cant-be-done-within-10-years/",
-          "date": "2026-10-02 09:41",
-          "summary": "Shield AI 今日於台北 101 分公司總部，由創辦人曾國光（Brandon Tseng）出面舉行媒體簡 [&#8230;]"
-        },
-        {
-          "title": "不用滑鼠可操控電腦，興大材料系開發 AI 體感智慧衣",
-          "link": "https://technews.tw/2026/10/02/nchu-materials-science-department-develops-ai-haptic-smart-clothing-mouse-free-computer-control/",
-          "date": "2026-10-02 09:30",
-          "summary": "國立中興大學材料科學與工程學系今天公布開發「AI 體感智慧衣」，利用紡織材料與人體活動產生的自然靜電感測動作， [&#8230;]"
         }
       ]
     },
@@ -162,6 +162,12 @@
       "site": "https://technews.tw/category/component/",
       "items": [
         {
+          "title": "從安全氣囊做到 AI 散熱，時碩工業憑 20 年精密加工奪古河液冷大單",
+          "link": "https://finance.technews.tw/2026/10/04/how-globaltek-won-furukawa-group-major-liquid-cooling-order/",
+          "date": "2026-10-04 00:00",
+          "summary": "憑藉近二十年累積的鍛造、沖壓等精密加工技術，時碩工業成功跨足液冷散熱領域。一筆來自古河集團的伺服器散熱系統大單 [&#8230;]"
+        },
+        {
           "title": "光寶擴大 AI 電源產能，砸 88.5 億元擴產高雄",
           "link": "https://finance.technews.tw/2026/10/02/lite-on-expands-ai-power-supply-capacity-investing-nt8-85-billion-kaohsiung/",
           "date": "2026-10-02 12:08",
@@ -226,12 +232,6 @@
           "link": "https://technews.tw/2026/10/01/tsc-deepens-its-strategic-layout-in-the-japanese-semiconductor-industry/",
           "date": "2026-10-01 06:40",
           "summary": "半導體關鍵材料商崇越科技持續加速海外市場布局，旗下日本子公司「峻川商事株式會社」於 10 月 1 日正式啟用福 [&#8230;]"
-        },
-        {
-          "title": "電子供應鏈高度集中亞洲，中台韓日產能居全球前四大",
-          "link": "https://technews.tw/2026/10/01/ranked-the-countries-that-make-the-worlds-electronics/",
-          "date": "2026-10-01 06:10",
-          "summary": "全球科技產品製造高度集中在亞洲。根據 2024 至 2025 年全球數位硬體產能排名，中國以 58.8% 占比 [&#8230;]"
         }
       ]
     },
