@@ -1,58 +1,10 @@
 {
-  "updated": "2026-10-04 01:29",
+  "updated": "2026-10-04 01:30",
   "sources": [
     {
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
-        {
-          "title": "特斯拉前團隊打造「供應鏈大腦」，AI 新創 Atomic 獲 1,250 萬美元 A 輪募資",
-          "link": "https://technews.tw/2026/10/04/atomic-automated-supply-chain/",
-          "date": "2026-10-04 00:30",
-          "summary": "總部位於波士頓的供應鏈 AI 新創 Atomic，近日宣布完成 1,250 萬美元的 A 輪募資，由 Klas [&#8230;]"
-        },
-        {
-          "title": "每週狂聊 89 小時！美研究揭青少年陷「AI 陪伴」成癮，越用竟越孤獨",
-          "link": "https://technews.tw/2026/10/04/us-study-reveals-teenagers-addicted-ai-companionship-chatting-89-hours-weekly-paradoxically-becoming-lonelier/",
-          "date": "2026-10-04 00:30",
-          "summary": "美國研究人員最新指出，部分青少年對 AI 角色聊天機器人出現明顯過度依賴，甚至有人每週使用時間高達 89 小時 [&#8230;]"
-        },
-        {
-          "title": "從安全氣囊做到 AI 散熱，時碩工業憑 20 年精密加工奪古河液冷大單",
-          "link": "https://finance.technews.tw/2026/10/04/how-globaltek-won-furukawa-group-major-liquid-cooling-order/",
-          "date": "2026-10-04 00:00",
-          "summary": "憑藉近二十年累積的鍛造、沖壓等精密加工技術，時碩工業成功跨足液冷散熱領域。一筆來自古河集團的伺服器散熱系統大單 [&#8230;]"
-        },
-        {
-          "title": "AI 與機器人加速標本數位化，英國打造 7 千萬件館藏網路超級博物館",
-          "link": "https://technews.tw/2026/10/03/how-ai-is-creating-a-uk-super-museum-and-revealing-our-planets-history/",
-          "date": "2026-10-03 13:30",
-          "summary": "英國研究員運用人工智慧（AI）與機器人，將全國各地收藏的自然史標本數位化，打造線上「超級博物館」。民眾用手機或 [&#8230;]"
-        },
-        {
-          "title": "近九成開發者都在用 AI 寫程式，美國學界報告：信任與驗證才是下道關卡",
-          "link": "https://technews.tw/2026/10/03/engineering-trustworthy-software-systems-with-ai-at-scale/",
-          "date": "2026-10-03 08:30",
-          "summary": "美國計算社群聯盟（Computing Community Consortium，CCC）9 月 24 日發布最 [&#8230;]"
-        },
-        {
-          "title": "醫院警報響不停怎麼辦？延遲機制讓儀器警示音銳減近八成，病人安全不打折",
-          "link": "https://technews.tw/2026/10/03/improving-medical-alarm-fatigue/",
-          "date": "2026-10-03 07:30",
-          "summary": "醫院裡的監視器、輸液幫浦與各式儀器日夜發出無休止的嗶嗶聲與警示音，不僅讓病患難以安穩休息，更讓護理人員面臨嚴重 [&#8230;]"
-        },
-        {
-          "title": "川普召集黃仁勳、馬斯克等科技巨頭簽「AI 憲法」，四層稽核機制能解失控風險？",
-          "link": "https://technews.tw/2026/10/03/trump-ai-constitution-jensen-huang-tech-giants-four-layer-audit-prevent-ai-rogue/",
-          "date": "2026-10-03 06:00",
-          "summary": "美國總統川普（Donald Trump）日前在白宮召集輝達（NVIDIA）執行長黃仁勳、SpaceXAI 創辦 [&#8230;]"
-        },
-        {
-          "title": "英飛凌捐贈「AI 消防之眼」，整合邊緣 AI、毫米波雷達即時掌握火場資訊",
-          "link": "https://technews.tw/2026/10/03/infineon-ai-disaster-relief/",
-          "date": "2026-10-03 03:51",
-          "summary": "全球半導體領導廠商英飛凌攜手台灣守護者聯盟，捐贈「AI 消防之眼」，以提升消防人員安全及救災效率，並降低第一線 [&#8230;]"
-        },
         {
           "title": "AI 會毀滅人類還是先搶走白領飯碗？《紐時》整理 11 個大哉問，帶你看懂 AI 的真實風險",
           "link": "https://infosecu.technews.tw/2026/10/03/nyt-explores-five-major-ai-concerns-and-answers-key-questions/",
@@ -76,6 +28,54 @@
           "link": "https://technews.tw/2026/10/03/nvidia-alumni-are-fueling-a-new-wave-of-robotics-and-ai-startups/",
           "date": "2026-10-03 01:30",
           "summary": "輝達（Nvidia）長年投入機器人技術，為「實體 AI」（physical AI）奠定基礎，如今旗下機器人老將 [&#8230;]"
+        },
+        {
+          "title": "ChatGPT 推出虛擬試穿功能，上傳照片即可 AI 模擬穿搭效果",
+          "link": "https://technews.tw/2026/10/03/chatgpt-adds-virtual-try-on-for-clothes/",
+          "date": "2026-10-02 23:44",
+          "summary": "有關 ChatGPT 如何在購物時幫助使用者，OpenAI 再次展開測試，宣布向全球推出兩項全新購物功能，讓使 [&#8230;]"
+        },
+        {
+          "title": "Shield AI 攜手台灣合作夥伴推動自主系統在地化，持續擴大在台佈局與人才招募",
+          "link": "https://technews.tw/2026/10/02/shield-ai-is-planning-to-increase-cooperations-with-taiwanese-supply-chians-and-recruit-more-taiwanese-talents/",
+          "date": "2026-10-02 10:10",
+          "summary": "Shield AI 於 2025 年在台北 101 大樓設立辦公室，攜手台灣產業夥伴積極推動自主系統在地化，並 [&#8230;]"
+        },
+        {
+          "title": "烏克蘭前防長要打造「機器人軍團」，Shield AI 創辦人：十年內應該很難實現",
+          "link": "https://technews.tw/2026/10/02/brandon-tseng-thinks-fedorovs-army-of-robots-cant-be-done-within-10-years/",
+          "date": "2026-10-02 09:41",
+          "summary": "Shield AI 今日於台北 101 分公司總部，由創辦人曾國光（Brandon Tseng）出面舉行媒體簡 [&#8230;]"
+        },
+        {
+          "title": "不用滑鼠可操控電腦，興大材料系開發 AI 體感智慧衣",
+          "link": "https://technews.tw/2026/10/02/nchu-materials-science-department-develops-ai-haptic-smart-clothing-mouse-free-computer-control/",
+          "date": "2026-10-02 09:30",
+          "summary": "國立中興大學材料科學與工程學系今天公布開發「AI 體感智慧衣」，利用紡織材料與人體活動產生的自然靜電感測動作， [&#8230;]"
+        },
+        {
+          "title": "報告揭 OpenAI 代理擅闖政府網站，試圖抹除活動軌跡",
+          "link": "https://technews.tw/2026/10/02/openai-agent-trespasses-government-websites-erases-activity-traces/",
+          "date": "2026-10-02 09:20",
+          "summary": "1 日公布的報告，OpenAI 開發的人工智慧（AI）代理未經授權入侵政府網站後，還試圖抹除活動痕跡。 法新社 [&#8230;]"
+        },
+        {
+          "title": "統一資訊打造 AI 生活服務平台，試營運日活躍逾萬人",
+          "link": "https://technews.tw/2026/10/02/uni-pic-20261001/",
+          "date": "2026-10-02 09:04",
+          "summary": "統一企業集團旗下統一資訊（UNI-PIC）打造的 AI 生活服務平台「i住家」，將串連 2,000 萬 uni [&#8230;]"
+        },
+        {
+          "title": "亞馬遜傳轉移 80 億美元輝達 GPU、花式融資藏風險",
+          "link": "https://finance.technews.tw/2026/10/02/amazon-reportedly-transfers-8-billion-nvidia-gpus-complex-financing-hides-risks/",
+          "date": "2026-10-02 07:30",
+          "summary": "科技巨頭投入巨資建置 AI 基礎設施之際，正在採取不同融資方式把債務移出資產負債表，以維持信用評等，但相關安排 [&#8230;]"
+        },
+        {
+          "title": "AI 安全系統助幣安第一季攔截 19.8 億美元資產損失",
+          "link": "https://technews.tw/2026/10/02/ai-binance-intercepted-19-billion-losses/",
+          "date": "2026-10-02 07:08",
+          "summary": "加密貨幣詐騙手法日新月異，加上 AI 的高速發展同時改變加密貨幣詐騙與資安防禦。全球最大的加密貨幣交易所之一的 [&#8230;]"
         }
       ]
     },
@@ -83,18 +83,6 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
-        {
-          "title": "華為最新麒麟 9050 Pro 晶片照曝光！兩層 Die 垂直堆疊，尺寸再縮小",
-          "link": "https://technews.tw/2026/10/03/huaweis-latest-kirin-9050-pro-chip/",
-          "date": "2026-10-03 07:37",
-          "summary": "華為最新麒麟 9050 Pro 晶片近日再傳新進展，外媒 Wccftech 引述社群平台 X 帳號 Kurna [&#8230;]"
-        },
-        {
-          "title": "產能提升逾 10%！三星開始量產 Exynos 2700 晶片，搭載 Galaxy S27 多系列",
-          "link": "https://technews.tw/2026/10/03/samsung-electronics-starts-mass-production-of-exynos-2700/",
-          "date": "2026-10-03 06:32",
-          "summary": "市場消息傳出，三星電子已開始量產 Exynos 2700，該晶片將搭載於 Galaxy S27 系列智慧手機， [&#8230;]"
-        },
         {
           "title": "記憶體太貴！128GB DGX Spark 價格飆破 6,000 美元，輝達改推 64GB 版本搶市",
           "link": "https://technews.tw/2026/10/03/nvidia-64-gb-dgx-spark/",
@@ -154,6 +142,18 @@
           "link": "https://finance.technews.tw/2026/10/02/episil-august-profit-surges-73x-yoy-ai-power-silicon-photonics-dual-engines/",
           "date": "2026-10-02 06:39",
           "summary": "隨 AI 資料中心帶動光通訊及電源相關需求成長，磊晶廠嘉晶公布 8 月自結財務資訊，單月營收 5.07 億元， [&#8230;]"
+        },
+        {
+          "title": "從移民少女到 AI 教母，李飛飛走進 AMD 技術核心",
+          "link": "https://technews.tw/2026/10/02/fei-fei-li-immigrant-girl-ai-godmother-amd-tech-core/",
+          "date": "2026-10-02 06:20",
+          "summary": "「AI 教母」李飛飛將出任超微首席科學家。現年 50 歲的她，在中國出生長大，母親家族與「反共的國民黨」有關連 [&#8230;]"
+        },
+        {
+          "title": "記憶體吃緊、需求增加  東芝傳倍增 AI DC 用 HDD 產能",
+          "link": "https://technews.tw/2026/10/02/toshiba-data-center-hdd/",
+          "date": "2026-10-02 06:10",
+          "summary": "記憶體供需吃緊，推升硬碟機（HDD）需求增加，日本東芝（Toshiba）傳出將投資 600 億日圓，倍增 AI [&#8230;]"
         }
       ]
     },
@@ -161,12 +161,6 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
-        {
-          "title": "從安全氣囊做到 AI 散熱，時碩工業憑 20 年精密加工奪古河液冷大單",
-          "link": "https://finance.technews.tw/2026/10/04/how-globaltek-won-furukawa-group-major-liquid-cooling-order/",
-          "date": "2026-10-04 00:00",
-          "summary": "憑藉近二十年累積的鍛造、沖壓等精密加工技術，時碩工業成功跨足液冷散熱領域。一筆來自古河集團的伺服器散熱系統大單 [&#8230;]"
-        },
         {
           "title": "光寶擴大 AI 電源產能，砸 88.5 億元擴產高雄",
           "link": "https://finance.technews.tw/2026/10/02/lite-on-expands-ai-power-supply-capacity-investing-nt8-85-billion-kaohsiung/",
@@ -232,6 +226,12 @@
           "link": "https://technews.tw/2026/10/01/tsc-deepens-its-strategic-layout-in-the-japanese-semiconductor-industry/",
           "date": "2026-10-01 06:40",
           "summary": "半導體關鍵材料商崇越科技持續加速海外市場布局，旗下日本子公司「峻川商事株式會社」於 10 月 1 日正式啟用福 [&#8230;]"
+        },
+        {
+          "title": "電子供應鏈高度集中亞洲，中台韓日產能居全球前四大",
+          "link": "https://technews.tw/2026/10/01/ranked-the-countries-that-make-the-worlds-electronics/",
+          "date": "2026-10-01 06:10",
+          "summary": "全球科技產品製造高度集中在亞洲。根據 2024 至 2025 年全球數位硬體產能排名，中國以 58.8% 占比 [&#8230;]"
         }
       ]
     },
