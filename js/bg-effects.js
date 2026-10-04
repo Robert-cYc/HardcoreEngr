@@ -161,7 +161,7 @@
           const dy = p.y - p2.y;
           const dist = Math.sqrt(dx*dx + dy*dy);
           
-          if(dist < 150) {
+          if(dist > 0 && dist < 150) {
             const opacity = 1 - dist/150;
             const p2Color = currentPalette[p2.colorIdx];
             
