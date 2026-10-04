@@ -1,12 +1,18 @@
 {
-  "updated": "2026-10-04 01:51",
+  "updated": "2026-10-04 03:04",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
-          "title": "Gemini免費版要縮水了！10／9起只剩1種模型 AI Plus也受影響",
+          "title": "iPhone省電別做錯！這5大功能千萬別亂關 達人揭後果",
+          "link": "https://3c.ltn.com.tw/news/67790",
+          "date": "2026/10/04 10:00",
+          "summary": "很多iPhone用戶為了省電，會把手機裡不少功能直接關掉，不過3C達人Tim哥點名「5大功能」千萬不要亂關，否則不只 ..."
+        },
+        {
+          "title": "Google Gemini免費版要縮水了！10／9起只剩1種模型 Plus也受影響",
           "link": "https://3c.ltn.com.tw/news/67799",
           "date": "2026/10/04 08:00",
           "summary": "Google Gemini免費用戶注意，之後能用的AI模型要變少了。Google最新公告指出，自2026年10月起將 ..."
@@ -70,12 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67794",
           "date": "2026/10/03 08:40",
           "summary": "車載系統 Android Auto 即將迎來實用升級。根據外媒《9to5Google》最新 APK 拆解報告，Goo ..."
-        },
-        {
-          "title": "Google又做怪鍵盤！Gboard變身輸送帶 按鍵自己跑來找手指",
-          "link": "https://3c.ltn.com.tw/news/67792",
-          "date": "2026/10/03 08:25",
-          "summary": "Google日本團隊又來了！每年固定端出各種腦洞大開的實體Gboard鍵盤，今年更直接把鍵盤做成「輸送帶」，打字時不 ..."
         }
       ]
     },
