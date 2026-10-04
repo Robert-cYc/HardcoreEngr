@@ -115,7 +115,13 @@
     const height = netCanvas.height = wavesContainer.clientHeight * window.devicePixelRatio;
     
     const particles = [];
-    const numParticles = Math.floor((width * height) / 30000); // Scale by area
+    const numParticles = Math.floor((width * height) / 12000); // Increased density
+    
+    // Tech-vibe color palette (RGB strings)
+    const palettes = {
+      dark: ['96, 165, 250', '52, 211, 153', '244, 114, 182', '167, 139, 250', '250, 204, 21'], // Blue, Emerald, Pink, Purple, Yellow
+      light: ['37, 99, 235', '5, 150, 105', '219, 39, 119', '124, 58, 237', '217, 119, 6']
+    };
     
     for(let i=0; i<numParticles; i++) {
       particles.push({
@@ -123,7 +129,8 @@
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 1.5,
         vy: (Math.random() - 0.5) * 1.5,
-        radius: Math.random() * 2 + 1
+        radius: Math.random() * 2 + 1.5,
+        colorIdx: Math.floor(Math.random() * 5)
       });
     }
     
@@ -131,7 +138,7 @@
       if (window.activeBgEffect !== 'net') return;
       ctx.clearRect(0, 0, width, height);
       const isDark = document.documentElement.classList.contains('dark-mode');
-      const color = isDark ? '255, 255, 255' : '0, 0, 0';
+      const currentPalette = isDark ? palettes.dark : palettes.light;
       
       for(let i=0; i<particles.length; i++) {
         const p = particles[i];
@@ -141,9 +148,11 @@
         if(p.x < 0 || p.x > width) p.vx *= -1;
         if(p.y < 0 || p.y > height) p.vy *= -1;
         
+        const pColor = currentPalette[p.colorIdx];
+        
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${color}, 0.5)`;
+        ctx.fillStyle = `rgba(${pColor}, 0.8)`;
         ctx.fill();
         
         for(let j=i+1; j<particles.length; j++) {
@@ -153,11 +162,19 @@
           const dist = Math.sqrt(dx*dx + dy*dy);
           
           if(dist < 150) {
+            const opacity = 1 - dist/150;
+            const p2Color = currentPalette[p2.colorIdx];
+            
+            // Create a gradient line between the two different colored particles
+            const grad = ctx.createLinearGradient(p.x, p.y, p2.x, p2.y);
+            grad.addColorStop(0, `rgba(${pColor}, ${opacity})`);
+            grad.addColorStop(1, `rgba(${p2Color}, ${opacity})`);
+            
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(${color}, ${1 - dist/150})`;
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = 1.5;
             ctx.stroke();
           }
         }
