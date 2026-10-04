@@ -16,6 +16,8 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 FEEDS = [
+    {"name": "自由 3C 科技", "url": "https://3c.ltn.com.tw/",
+     "site": "https://3c.ltn.com.tw/", "type": "html"},
     {"name": "AI 人工智慧", "url": "https://technews.tw/category/ai/feed/",
      "site": "https://technews.tw/category/ai/", "type": "rss"},
     {"name": "半導體", "url": "https://technews.tw/category/semiconductor/feed/",
@@ -24,8 +26,6 @@ FEEDS = [
      "site": "https://technews.tw/category/component/", "type": "rss"},
     {"name": "CCC 追新聞", "url": "https://ccc.technews.tw/feed/",
      "site": "https://ccc.technews.tw/", "type": "rss"},
-    {"name": "自由 3C 科技", "url": "https://3c.ltn.com.tw/",
-     "site": "https://3c.ltn.com.tw/", "type": "html"},
 ]
 
 MAX_PER_FEED = 12
