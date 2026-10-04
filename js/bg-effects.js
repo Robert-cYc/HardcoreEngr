@@ -319,7 +319,7 @@
     const width = hexCanvas.width = wavesContainer.clientWidth * window.devicePixelRatio;
     const height = hexCanvas.height = wavesContainer.clientHeight * window.devicePixelRatio;
     
-    const size = 30 * window.devicePixelRatio;
+    const size = 15 * window.devicePixelRatio;
     const hexWidth = Math.sqrt(3) * size;
     const hexHeight = 2 * size;
     const cols = Math.ceil(width / hexWidth) + 1;
