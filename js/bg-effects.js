@@ -414,7 +414,7 @@
         ctx.save();
         ctx.translate(b.x, b.y);
         ctx.rotate(b.angle);
-        ctx.scale(1.3, 1.3); // Enlarge bee by 30%
+        ctx.scale(1.5, 1.5); // Enlarge bee by 50%
         
         // Bee glow / shadow
         ctx.shadowColor = '#f59e0b';
