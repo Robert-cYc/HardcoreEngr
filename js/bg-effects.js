@@ -115,7 +115,7 @@
     const height = netCanvas.height = wavesContainer.clientHeight * window.devicePixelRatio;
     
     const particles = [];
-    const numParticles = Math.floor((width * height) / 12000); // Increased density
+    const numParticles = Math.floor(((width * height) / 12000) * 1.3); // Increased density by another 30%
     
     // Tech-vibe color palette (RGB strings)
     const palettes = {
