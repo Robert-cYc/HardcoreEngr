@@ -115,7 +115,7 @@
         if(drops[i] * fontSize > height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
       }
-    }, 41);
+    }, 82);
   }
   
   /* ================== NET ================== */
