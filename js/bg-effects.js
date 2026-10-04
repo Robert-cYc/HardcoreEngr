@@ -16,7 +16,7 @@
   toggleBtn.textContent = '🪄';
   nav.appendChild(toggleBtn);
   
-  const effects = ['waver', 'matrix', 'net', 'swarm', 'life', 'hex', 'dna'];
+  const effects = ['waver', 'matrix', 'net', 'swarm', 'life', 'hex', 'dna', 'firework'];
   let currentIdx = localStorage.getItem('bg-effect-idx') ? parseInt(localStorage.getItem('bg-effect-idx')) : 0;
   // Ensure valid index if we added new effects
   if(currentIdx >= effects.length) currentIdx = 0;
@@ -48,6 +48,7 @@
   const lifeCanvas = createCanvas('life-canvas', '0.6');
   const hexCanvas = createCanvas('hex-canvas', '0.9');
   const dnaCanvas = createCanvas('dna-canvas', '0.7');
+  const fireworkCanvas = createCanvas('firework-canvas', '0.9');
   
   const waveCanvas = document.getElementById('wave-canvas');
   
@@ -63,6 +64,7 @@
     lifeCanvas.style.display = window.activeBgEffect === 'life' ? 'block' : 'none';
     hexCanvas.style.display = window.activeBgEffect === 'hex' ? 'block' : 'none';
     dnaCanvas.style.display = window.activeBgEffect === 'dna' ? 'block' : 'none';
+    fireworkCanvas.style.display = window.activeBgEffect === 'firework' ? 'block' : 'none';
     
     if (window.activeBgEffect === 'matrix') initMatrix();
     if (window.activeBgEffect === 'net') initNet();
@@ -70,6 +72,7 @@
     if (window.activeBgEffect === 'life') initLife();
     if (window.activeBgEffect === 'hex') initHex();
     if (window.activeBgEffect === 'dna') initDNA();
+    if (window.activeBgEffect === 'firework') initFirework();
   }
   
   toggleBtn.addEventListener('click', () => {
@@ -498,6 +501,98 @@
     }
     draw();
   }
+
+  /* ================== FIREWORK ================== */
+  let fireworkAnim;
+  function initFirework() {
+    cancelAnimationFrame(fireworkAnim);
+    const ctx = fireworkCanvas.getContext('2d');
+    const width = fireworkCanvas.width = wavesContainer.clientWidth * window.devicePixelRatio;
+    const height = fireworkCanvas.height = wavesContainer.clientHeight * window.devicePixelRatio;
+    
+    let fireworks = [];
+    let particles = [];
+    
+    function createFirework() {
+      const x = Math.random() * width;
+      const y = height;
+      const targetY = Math.random() * (height / 2);
+      const speed = Math.random() * 3 + 4;
+      const angle = Math.PI / 2 + (Math.random() - 0.5) * 0.5;
+      const vx = Math.cos(angle) * speed;
+      const vy = -Math.sin(angle) * speed;
+      const hue = Math.floor(Math.random() * 360);
+      fireworks.push({ x, y, targetY, vx, vy, hue });
+    }
+    
+    function explode(x, y, hue) {
+      const particleCount = 60 + Math.random() * 40;
+      for (let i = 0; i < particleCount; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 4 + 1;
+        particles.push({
+          x: x,
+          y: y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          alpha: 1,
+          hue: hue + (Math.random() - 0.5) * 30,
+          size: Math.random() * 2 + 1,
+          decay: Math.random() * 0.015 + 0.015
+        });
+      }
+    }
+    
+    function draw() {
+      if (window.activeBgEffect !== 'firework') return;
+      
+      const isDark = document.documentElement.classList.contains('dark-mode');
+      ctx.fillStyle = isDark ? 'rgba(15, 23, 42, 0.2)' : 'rgba(255, 255, 255, 0.2)';
+      ctx.fillRect(0, 0, width, height);
+      
+      if (Math.random() < 0.04) {
+        createFirework();
+      }
+      
+      for (let i = fireworks.length - 1; i >= 0; i--) {
+        let f = fireworks[i];
+        f.x += f.vx;
+        f.y += f.vy;
+        f.vy += 0.05; // gravity
+        
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = `hsl(${f.hue}, 100%, 60%)`;
+        ctx.fill();
+        
+        if (f.vy >= 0 || f.y <= f.targetY) {
+          explode(f.x, f.y, f.hue);
+          fireworks.splice(i, 1);
+        }
+      }
+      
+      for (let i = particles.length - 1; i >= 0; i--) {
+        let p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.03; // gravity
+        p.alpha -= p.decay;
+        
+        if (p.alpha <= 0) {
+          particles.splice(i, 1);
+          continue;
+        }
+        
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${p.hue}, 100%, 60%, ${p.alpha})`;
+        ctx.fill();
+      }
+      
+      fireworkAnim = requestAnimationFrame(draw);
+    }
+    draw();
+  }
   
   // Re-init current effect on resize
   window.addEventListener('resize', () => {
@@ -507,6 +602,7 @@
     if (window.activeBgEffect === 'life') initLife();
     if (window.activeBgEffect === 'hex') initHex();
     if (window.activeBgEffect === 'dna') initDNA();
+    if (window.activeBgEffect === 'firework') initFirework();
   });
   
   // Init on load
