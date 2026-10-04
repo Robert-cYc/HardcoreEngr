@@ -347,10 +347,12 @@
       ctx.closePath();
     }
 
+    let time = 0;
     function draw() {
       if (window.activeBgEffect !== 'hex') return;
       ctx.clearRect(0, 0, width, height);
       const isDark = document.documentElement.classList.contains('dark-mode');
+      time += 0.5;
       
       for (let h of hexes) {
         let dx = h.x - mouseX;
@@ -360,10 +362,13 @@
         
         drawHex(h.x, h.y, size * 0.95);
         if (h.glow > 0) {
-          ctx.strokeStyle = isDark ? `rgba(167, 139, 250, ${h.glow})` : `rgba(124, 58, 237, ${h.glow})`;
+          // Constantly changing colors based on time and position
+          let hue = (time + h.x * 0.1 + h.y * 0.1) % 360;
+          let lightness = isDark ? 65 : 45;
+          ctx.strokeStyle = `hsla(${hue}, 80%, ${lightness}%, ${h.glow})`;
           ctx.lineWidth = 2 * window.devicePixelRatio;
           ctx.stroke();
-          ctx.fillStyle = isDark ? `rgba(167, 139, 250, ${h.glow * 0.15})` : `rgba(124, 58, 237, ${h.glow * 0.15})`;
+          ctx.fillStyle = `hsla(${hue}, 80%, ${lightness}%, ${h.glow * 0.2})`;
           ctx.fill();
         } else {
           ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)';
