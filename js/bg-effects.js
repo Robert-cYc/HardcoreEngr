@@ -334,6 +334,17 @@
         hexes.push({x, y, glow: 0});
       }
     }
+    
+    // Add cyber bees!
+    const numBees = 5;
+    const bees = [];
+    for(let i=0; i<numBees; i++) {
+      bees.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        angle: Math.random() * Math.PI * 2
+      });
+    }
 
     function drawHex(x, y, s) {
       ctx.beginPath();
@@ -354,10 +365,31 @@
       const isDark = document.documentElement.classList.contains('dark-mode');
       time += 0.5;
       
+      // Update bees
+      for(let b of bees) {
+        b.angle += (Math.random() - 0.5) * 0.5; // Wander randomly
+        b.x += Math.cos(b.angle) * 2;
+        b.y += Math.sin(b.angle) * 2;
+        
+        // Wrap around screen
+        if (b.x < -20) b.x = width + 20;
+        if (b.x > width + 20) b.x = -20;
+        if (b.y < -20) b.y = height + 20;
+        if (b.y > height + 20) b.y = -20;
+      }
+      
       for (let h of hexes) {
         let dx = h.x - mouseX;
         let dy = h.y - mouseY;
         if (dx*dx + dy*dy < 20000) h.glow = 1;
+        
+        // Bees also trigger hex glow!
+        for (let b of bees) {
+          let bdx = h.x - b.x;
+          let bdy = h.y - b.y;
+          if (bdx*bdx + bdy*bdy < 5000) h.glow = Math.max(h.glow, 0.8);
+        }
+        
         if (h.glow > 0) h.glow -= 0.015;
         
         drawHex(h.x, h.y, size * 0.95);
@@ -376,6 +408,39 @@
           ctx.stroke();
         }
       }
+      
+      // Draw bees
+      for(let b of bees) {
+        ctx.save();
+        ctx.translate(b.x, b.y);
+        ctx.rotate(b.angle);
+        
+        // Bee glow / shadow
+        ctx.shadowColor = '#f59e0b';
+        ctx.shadowBlur = 10;
+        
+        // Bee body (yellow/orange ellipse)
+        ctx.fillStyle = '#fbbf24';
+        ctx.beginPath();
+        ctx.ellipse(0, 0, 5, 3, 0, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Bee wings (flapping based on time)
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.shadowBlur = 0;
+        let flap = Math.sin(time * 2) * (Math.PI / 4);
+        
+        ctx.beginPath();
+        ctx.ellipse(0, -3, 3, 4, flap, 0, Math.PI * 2); // Left wing
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.ellipse(0, 3, 3, 4, -flap, 0, Math.PI * 2); // Right wing
+        ctx.fill();
+        
+        ctx.restore();
+      }
+      
       hexAnim = requestAnimationFrame(draw);
     }
     draw();
