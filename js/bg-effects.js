@@ -78,12 +78,13 @@
   
   // Track mouse globally for interactable canvases
   let mouseX = -1000, mouseY = -1000;
-  wavesContainer.addEventListener('mousemove', (e) => {
+  const hoverEl = document.querySelector('.site-header') || wavesContainer;
+  hoverEl.addEventListener('mousemove', (e) => {
     const rect = wavesContainer.getBoundingClientRect();
     mouseX = (e.clientX - rect.left) * window.devicePixelRatio;
     mouseY = (e.clientY - rect.top) * window.devicePixelRatio;
   });
-  wavesContainer.addEventListener('mouseleave', () => { mouseX = -1000; mouseY = -1000; });
+  hoverEl.addEventListener('mouseleave', () => { mouseX = -1000; mouseY = -1000; });
   
   /* ================== MATRIX ================== */
   let matrixInterval;
