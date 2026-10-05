@@ -517,7 +517,7 @@
       const x = Math.random() * width;
       const y = height;
       const targetY = Math.random() * (height / 2);
-      const speed = Math.random() * 3 + 4;
+      const speed = (Math.random() * 3 + 4) * 0.2;
       const angle = Math.PI / 2 + (Math.random() - 0.5) * 0.5;
       const vx = Math.cos(angle) * speed;
       const vy = -Math.sin(angle) * speed;
@@ -529,7 +529,7 @@
       const particleCount = 60 + Math.random() * 40;
       for (let i = 0; i < particleCount; i++) {
         const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 4 + 1;
+        const speed = (Math.random() * 4 + 1) * 0.2;
         particles.push({
           x: x,
           y: y,
@@ -538,7 +538,7 @@
           alpha: 1,
           hue: hue + (Math.random() - 0.5) * 30,
           size: Math.random() * 2 + 1,
-          decay: Math.random() * 0.015 + 0.015
+          decay: (Math.random() * 0.015 + 0.015) * 0.2
         });
       }
     }
@@ -550,7 +550,7 @@
       ctx.fillStyle = isDark ? 'rgba(15, 23, 42, 0.2)' : 'rgba(255, 255, 255, 0.2)';
       ctx.fillRect(0, 0, width, height);
       
-      if (Math.random() < 0.04) {
+      if (Math.random() < 0.008) {
         createFirework();
       }
       
@@ -558,7 +558,7 @@
         let f = fireworks[i];
         f.x += f.vx;
         f.y += f.vy;
-        f.vy += 0.05; // gravity
+        f.vy += 0.002; // gravity
         
         ctx.beginPath();
         ctx.arc(f.x, f.y, 2, 0, Math.PI * 2);
@@ -575,7 +575,7 @@
         let p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.03; // gravity
+        p.vy += 0.0012; // gravity
         p.alpha -= p.decay;
         
         if (p.alpha <= 0) {
