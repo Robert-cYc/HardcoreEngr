@@ -5,13 +5,25 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 05 Oct 2026 03:07:06 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 09:16:33 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>顛覆汽車工業的純電巨頭：Tesla 特斯拉車系與核心技術總覽</title>
+    <link>https://ai-hardcore-engineer.com/tesla-model-lineup-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/tesla-model-lineup-guide.html</guid>
+    <description>詳細梳理 Tesla 目前的核心車系矩陣（S3XY 家族、Cybertruck），以及其背後的關鍵技術：FSD、OTA 與超級充電網路。</description>
+    <pubDate>Mon, 05 Oct 2026 00:00:00 +0000</pubDate>
+    <category>Tesla</category>
+    <category>EV</category>
+    <category>FSD</category>
+    <category>自動駕駛</category>
+    <category>硬體架構</category>
+  </item>
   <item>
     <title>Apache HTTP Server 與 Apache Tomcat 全面解析</title>
     <link>https://ai-hardcore-engineer.com/apache-vs-tomcat.html</link>

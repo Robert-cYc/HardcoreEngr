@@ -1,10 +1,22 @@
 {
-  "updated": "2026-10-05 03:07",
+  "updated": "2026-10-05 09:16",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "卡普空當家RE引擎將升級！AI輔助開發效率 保證內容依舊手工繪製",
+          "link": "https://3c.ltn.com.tw/news/67808",
+          "date": "2026/10/05 16:33",
+          "summary": "日系遊戲大廠卡普空今日宣布名為「REX」的次世代 RE Engine 計畫，將為這套如今擔綱主力的遊戲引擎進行升級， ..."
+        },
+        {
+          "title": "電腦用完一定要關機？專家破解迷思「這些時候」其實沒必要",
+          "link": "https://3c.ltn.com.tw/news/67807",
+          "date": "2026/10/05 12:15",
+          "summary": "電腦每天用完，到底要不要關機？不少人下班、睡前都會在「直接關機」和「讓電腦睡眠」之間猶豫，甚至擔心長期不關機會傷電腦 ..."
+        },
         {
           "title": "電競螢幕更新率突破1000Hz！AOC發表AGP257FT超頻達1050Hz",
           "link": "https://3c.ltn.com.tw/news/67804",
@@ -64,18 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67772",
           "date": "2026/10/04 05:45",
           "summary": "全新手遊《魔物獵人：旅人》將於10月29日上市，目前已開放預約。 由Capcom進行IP授權與監修、TiMi Stu ..."
-        },
-        {
-          "title": "升iOS 27.0.1沒有更省電？這款iPhone續航竟縮水近1.5小時",
-          "link": "https://3c.ltn.com.tw/news/67791",
-          "date": "2026/10/03 17:00",
-          "summary": "蘋果近日釋出iOS 27.0.1，主要修復iPhone 18 Pro系列多項Bug，包括Face ID辨識失敗後無故 ..."
-        },
-        {
-          "title": "台灣「等等黨」快出手！Google Pixel 10a全球多國都漲了",
-          "link": "https://3c.ltn.com.tw/news/67789",
-          "date": "2026/10/03 15:00",
-          "summary": "Google中階手機Pixel 10a近日才被發現日本售價無預警調漲，現在看來，日本並不是單一個案。最新消息指出，美 ..."
         }
       ]
     },
@@ -318,6 +318,18 @@
       "site": "https://ccc.technews.tw/",
       "items": [
         {
+          "title": "Meta 開源 Muse Gadgets 開發工具，限量推出 Home Link 串聯智慧家庭",
+          "link": "https://ccc.technews.tw/2026/10/05/meta-announces-muse-gadgets/",
+          "date": "2026-10-05 04:09",
+          "summary": "Meta 提出開源專案「Muse Gadgets」，是一套 ESP32 韌體與 Linux SDK，使用者能打 [&#8230;]"
+        },
+        {
+          "title": "Figure 為退役機器人舉行「魔鬼終結者」式葬禮，阿諾‧史瓦辛格親臨現場",
+          "link": "https://ccc.technews.tw/2026/10/05/figure-ai-melted-its-figure-02-fleet-in-finland-the-real-reason-is-less-dramatic/",
+          "date": "2026-10-05 03:20",
+          "summary": "美國機器人公司 Figure 近日以戲劇化方式，告別第二代人型機器人 F.02。Figure 將退役機器人送往 [&#8230;]"
+        },
+        {
           "title": "打字不用找按鍵，Google 日本今年推「輸送帶鍵盤」讓字母自己過來",
           "link": "https://ccc.technews.tw/2026/10/03/google-shows-off-a-wild-keyboard-that-is-literally-an-excavator-of-keys/",
           "date": "2026-10-03 05:30",
@@ -376,18 +388,6 @@
           "link": "https://ccc.technews.tw/2026/09/29/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping/",
           "date": "2026-09-28 23:20",
           "summary": "參與打造蘋果零售體系的羅恩‧強森（Ron Johnson）上 Podcast 節目時表示，矽谷大舉投資能幫消費 [&#8230;]"
-        },
-        {
-          "title": "庫克時代最成功代表作，AirPods 如何從網路迷因變身蘋果最強印鈔機？",
-          "link": "https://ccc.technews.tw/2026/09/25/airpods-comeback/",
-          "date": "2026-09-25 06:30",
-          "summary": "2016 年 AirPods 隨 iPhone 7 首次登場時，其實並未獲得市場青睞，其獨特的外觀甚至引來不少 [&#8230;]"
-        },
-        {
-          "title": "Sony 新專利曝光，PlayStation 手把有望支援感應付款",
-          "link": "https://ccc.technews.tw/2026/09/25/sony-patent-could-turn-playstation-controllers-into-tap-to-pay-credit-card-terminals/",
-          "date": "2026-09-25 02:40",
-          "summary": "Sony 一項新公開的專利引發玩家關注。內容顯示，PlayStation 控制器未來可能成為付款與資料傳輸的中 [&#8230;]"
         }
       ]
     }
