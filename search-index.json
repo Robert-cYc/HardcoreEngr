@@ -1,5 +1,11 @@
 [
   {
+    "url": "microsoft-services-ecosystem.html",
+    "title": "Microsoft 產品與服務生態圈總覽：從視窗霸主到 AI 雲端巨擘",
+    "excerpt": "深入剖析微軟 (Microsoft) 橫跨個人電腦、企業生產力、Azure 雲端運算與引領全球的 Copilot AI 戰略生態系。",
+    "tags": ["Microsoft", "Azure", "Copilot", "Windows", "OpenAI", "科技商業"]
+  },
+  {
     "url": "apple-services-ecosystem.html",
     "title": "Apple 產品與服務生態圈總覽：從極致硬體到 Apple Intelligence",
     "excerpt": "深入剖析 Apple 封閉卻極致完美的生態系，涵蓋核心硬體矩陣、作業系統、訂閱服務以及引領未來體驗的 Apple Intelligence。",
