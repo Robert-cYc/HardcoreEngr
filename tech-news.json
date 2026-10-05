@@ -1,10 +1,16 @@
 {
-  "updated": "2026-10-04 16:10",
+  "updated": "2026-10-05 00:56",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "不只觸控＋OLED！蘋果新一代旗艦MacBook Pro爆有感減重",
+          "link": "https://3c.ltn.com.tw/news/67806",
+          "date": "2026/10/05 08:00",
+          "summary": "蘋果新一代MacBook Pro傳出將迎來近年少見的大改款，除了首度導入觸控螢幕、換上OLED面板之外，現在又有新的 ..."
+        },
         {
           "title": "手機漲不停！買不起旗艦 外媒點名最值得買中階安卓是這款",
           "link": "https://3c.ltn.com.tw/news/67801",
@@ -70,12 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67795",
           "date": "2026/10/03 14:01",
           "summary": "滑YouTube Shorts最煩的情況之一，就是同一段熱門影片一直被不同帳號搬來搬去，甚至只是換個字幕、套個模板就 ..."
-        },
-        {
-          "title": "台灣人撐起《皮克敏》手遊！貢獻全球52%消費 超車日本登頂",
-          "link": "https://3c.ltn.com.tw/news/67796",
-          "date": "2026/10/03 13:01",
-          "summary": "台灣人到底有多愛《Pikmin Bloom》(皮克敏)？從公園、捷運站到商圈，常常都能看到有人低頭走路、忙著種花、打 ..."
         }
       ]
     },
