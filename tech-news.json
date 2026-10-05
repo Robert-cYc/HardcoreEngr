@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05 09:16",
+  "updated": "2026-10-05 09:21",
   "sources": [
     {
       "name": "自由 3C 科技",
@@ -84,76 +84,76 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "法軍打造自主 AI 空戰架構，2028 年測試戰機與無人僚機協同飛行",
-          "link": "https://technews.tw/2026/10/04/french-air-force-is-building-its-own-military-ai-systems/",
-          "date": "2026-10-04 08:22",
-          "summary": "隨著各國加速開發無人僚機，法國也開始為新一代空戰模式鋪路，法國空軍與太空軍、軍備總署（DGA）及國防人工智慧機 [&#8230;]"
+          "title": "OpenAI 奧特曼：別把 AI 當宗教或道德權威，這才是真正的安全問題",
+          "link": "https://technews.tw/2026/10/05/sam-altman-warns-against-giving-ai-models-religious-authority-or-surrendering-human-judgment/",
+          "date": "2026-10-05 08:49",
+          "summary": "OpenAI 執行長奧特曼（Sam Altman）近日在 X 平台發文表示，對於看到有人試圖替 AI 模型賦予 [&#8230;]"
         },
         {
-          "title": "AI 助攻量子設計：德國新創 QC Design 推 Meridian 可壓低邏輯錯誤率逾十倍",
-          "link": "https://technews.tw/2026/10/04/qc-design-reports-10x-logical-error-reduction-with-meridian-ai/",
-          "date": "2026-10-04 07:30",
-          "summary": "德國量子軟體新創 QC Design 於 9 月 24 日發表白皮書，公布專為容錯量子運算架構設計打造的 AI [&#8230;]"
+          "title": "800 VDC 走向 AI 電源主流，台達電、光寶迎戰 OCP 2026",
+          "link": "https://technews.tw/2026/10/05/800-vdc-mainstream-ai-power-delta-liteon-ocp-2026/",
+          "date": "2026-10-05 08:20",
+          "summary": "AI 資料中心供電升級潮來了。隨 AI 機櫃功率百萬瓦（MW）級邁進，今年 OCP Global Summit [&#8230;]"
         },
         {
-          "title": "挑戰 99.5% 成功率，NVIDIA 攜鴻海讓機器人組裝 GB300",
-          "link": "https://finance.technews.tw/2026/10/04/nvidia-foxconn-robot/",
-          "date": "2026-10-04 06:47",
-          "summary": "AI 伺服器需求持續爆發，如何讓產線自動化程度再往前推，也成為供應鏈下一階段競賽焦點。據 NVIDIA 部落格 [&#8230;]"
+          "title": "台股史上首家單月營收破兆，鴻海 9 月衝上 1.16 兆元",
+          "link": "https://finance.technews.tw/2026/10/05/2026-sep-foxconn/",
+          "date": "2026-10-05 08:09",
+          "summary": "鴻海單月營收正式跨越兆元大關，寫下台灣企業新紀錄。鴻海今日公布 9 月營收達 1 兆 1,586.33 億元， [&#8230;]"
         },
         {
-          "title": "AI 時代的「禮儀」與邊界：人類監督與透明揭露才是核心",
-          "link": "https://technews.tw/2026/10/04/the-rules-of-ai-etiquette/",
-          "date": "2026-10-04 06:30",
-          "summary": "生成式 AI 持續滲透教育、法律、音訊創作與內容產製等領域，也讓「AI 禮儀」與使用規範成為新的討論焦點。外界 [&#8230;]"
+          "title": "DeepSeek 緊追 OpenAI、Anthropic！美中 AI 差距縮減至 3%，創歷史新低",
+          "link": "https://technews.tw/2026/10/05/bi-see-deepseek-gain/",
+          "date": "2026-10-05 07:22",
+          "summary": "根據彭博產業研究（Bloomberg Intelligence，簡稱 BI）分析，隨著 DeepSeek 等中 [&#8230;]"
         },
         {
-          "title": "諾斯洛普格魯曼「蒼藍鷹爪」完成自主首飛，搶攻美軍無人僚機市場",
-          "link": "https://technews.tw/2026/10/04/northrop-grummans-yfq-48-talon-group-successfully-completed-its-first-flight/",
-          "date": "2026-10-04 05:55",
-          "summary": "諾斯洛普格魯曼（Northrop Grumman）10 月 3 日宣布，其開發的協同作戰航空器（CCA）「蒼藍 [&#8230;]"
+          "title": "野村料 AI 短劇工具定價續降  快手／阿里價格較 Seedance 低",
+          "link": "https://technews.tw/2026/10/05/nomura-ai-short-drama-tool-price-drop-kuaishou-alibaba-lower-seedance/",
+          "date": "2026-10-05 07:10",
+          "summary": "綜合中媒及港媒報導，野村發布研究報告指出，中國 AI 生成短劇（AGSD）正從低成本內容模式，轉向更專業化、以 [&#8230;]"
         },
         {
-          "title": "今年還是有成功機會，專家教你六個 AI 商機與無資金創業法",
-          "link": "https://finance.technews.tw/2026/10/04/6-ai-business-ideas-for-2026-and-how-to-start-one-with-no-funding/",
-          "date": "2026-10-04 01:30",
-          "summary": "人工智慧應用持續擴大，市場開始出現一批不依賴新模型、技術合夥人或外部融資也能啟動的 AI 創業構想。最新整理的 [&#8230;]"
+          "title": "日銀：AI 熱潮帶動需求，金融環境轉寬鬆但有回檔風險",
+          "link": "https://finance.technews.tw/2026/10/05/boj-says-ai-boom-may-have-eased-financial-conditions/",
+          "date": "2026-10-05 06:20",
+          "summary": "日本銀行（BOJ，日本央行）副總裁內田真一今天表示，全球人工智慧（AI）熱潮可能透過刺激需求及推升資產價格，使 [&#8230;]"
         },
         {
-          "title": "特斯拉前團隊打造「供應鏈大腦」，AI 新創 Atomic 獲 1,250 萬美元 A 輪募資",
-          "link": "https://technews.tw/2026/10/04/atomic-automated-supply-chain/",
-          "date": "2026-10-04 00:30",
-          "summary": "總部位於波士頓的供應鏈 AI 新創 Atomic，近日宣布完成 1,250 萬美元的 A 輪募資，由 Klas [&#8230;]"
+          "title": "以機器速度實現新一代威脅修復，TrendAI 推自主漏洞探索服務",
+          "link": "https://infosecu.technews.tw/2026/10/05/trendai-vision-one-autonomous-vulnerability-discovery/",
+          "date": "2026-10-05 04:52",
+          "summary": "AI 資安廠商趨勢科技旗下 TrendAI 今日宣布，TrendAI Vision One 自主漏洞探索服務（ [&#8230;]"
         },
         {
-          "title": "每週狂聊 89 小時！美研究揭青少年陷「AI 陪伴」成癮，越用竟越孤獨",
-          "link": "https://technews.tw/2026/10/04/us-study-reveals-teenagers-addicted-ai-companionship-chatting-89-hours-weekly-paradoxically-becoming-lonelier/",
-          "date": "2026-10-04 00:30",
-          "summary": "美國研究人員最新指出，部分青少年對 AI 角色聊天機器人出現明顯過度依賴，甚至有人每週使用時間高達 89 小時 [&#8230;]"
+          "title": "Meta 開源 Muse Gadgets 開發工具，限量推出 Home Link 串聯智慧家庭",
+          "link": "https://ccc.technews.tw/2026/10/05/meta-announces-muse-gadgets/",
+          "date": "2026-10-05 04:09",
+          "summary": "Meta 提出開源專案「Muse Gadgets」，是一套 ESP32 韌體與 Linux SDK，使用者能打 [&#8230;]"
         },
         {
-          "title": "從安全氣囊做到 AI 散熱，時碩工業憑 20 年精密加工奪古河液冷大單",
-          "link": "https://finance.technews.tw/2026/10/04/how-globaltek-won-furukawa-group-major-liquid-cooling-order/",
-          "date": "2026-10-04 00:00",
-          "summary": "憑藉近二十年累積的鍛造、沖壓等精密加工技術，時碩工業成功跨足液冷散熱領域。一筆來自古河集團的伺服器散熱系統大單 [&#8230;]"
+          "title": "現代攜手波士頓動力強攻實體 AI，挑戰特斯拉拚 2028 年產 3 萬台",
+          "link": "https://technews.tw/2026/10/05/hyundai-push-physical-ai/",
+          "date": "2026-10-05 04:00",
+          "summary": "現代汽車集團正將發展重心押注於機器人、自動駕駛與「實體 AI」（Physical AI），透過多條事業線同步推 [&#8230;]"
         },
         {
-          "title": "AI 與機器人加速標本數位化，英國打造 7 千萬件館藏網路超級博物館",
-          "link": "https://technews.tw/2026/10/03/how-ai-is-creating-a-uk-super-museum-and-revealing-our-planets-history/",
-          "date": "2026-10-03 13:30",
-          "summary": "英國研究員運用人工智慧（AI）與機器人，將全國各地收藏的自然史標本數位化，打造線上「超級博物館」。民眾用手機或 [&#8230;]"
+          "title": "JEDEC 發表首個矽光子可靠度標準，加速 AI 與資料中心大規模應用",
+          "link": "https://technews.tw/2026/10/05/jesd264-silicon-photonics-qualification-and-reliability-requirements/",
+          "date": "2026-10-05 03:50",
+          "summary": "JEDEC 固態技術協會（JEDEC Solid State Technology Association）美 [&#8230;]"
         },
         {
-          "title": "近九成開發者都在用 AI 寫程式，美國學界報告：信任與驗證才是下道關卡",
-          "link": "https://technews.tw/2026/10/03/engineering-trustworthy-software-systems-with-ai-at-scale/",
-          "date": "2026-10-03 08:30",
-          "summary": "美國計算社群聯盟（Computing Community Consortium，CCC）9 月 24 日發布最 [&#8230;]"
+          "title": "電力與審核雙重受阻，甲骨文 AI 資料中心擴建計畫恐面臨延期",
+          "link": "https://technews.tw/2026/10/05/ai-data-center-debt-hits-roadblocks-as-lenders-demand-tougher-terms/",
+          "date": "2026-10-05 03:40",
+          "summary": "甲骨文（Oracle）擴張人工智慧基礎設施的計畫，近日因電力與監管進度受阻而再度引發市場關注。最新消息，甲骨文 [&#8230;]"
         },
         {
-          "title": "醫院警報響不停怎麼辦？延遲機制讓儀器警示音銳減近八成，病人安全不打折",
-          "link": "https://technews.tw/2026/10/03/improving-medical-alarm-fatigue/",
-          "date": "2026-10-03 07:30",
-          "summary": "醫院裡的監視器、輸液幫浦與各式儀器日夜發出無休止的嗶嗶聲與警示音，不僅讓病患難以安穩休息，更讓護理人員面臨嚴重 [&#8230;]"
+          "title": "AI 代理算力消耗達人類 5 倍，全球記憶體短缺恐加速爆發",
+          "link": "https://technews.tw/2026/10/05/ai-agent-wave-memory-crisis/",
+          "date": "2026-10-05 03:30",
+          "summary": "最新市場數據顯示，AI Agent（AI 代理）的運算規模正迅速擴張，但其成長核心已不再單純是模型推理，而是大 [&#8230;]"
         }
       ]
     },
@@ -162,76 +162,76 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
-          "title": "美國 FDA 推動法規轉型，以器官晶片與電腦模型取代動物實驗",
-          "link": "https://technews.tw/2026/10/04/tech-to-replace-animal-testing-is-almost-ready/",
-          "date": "2026-10-04 08:30",
-          "summary": "美國以人類細胞、器官晶片與電腦模型取代動物實驗的趨勢，正從實驗室走向監管制度核心。從哈佛大學魏斯研究所（Wys [&#8230;]"
+          "title": "台積電創新高市值達 66.77 兆元，貢獻加權指數 594 點",
+          "link": "https://finance.technews.tw/2026/10/05/tsmc-market-cap-hits-record/",
+          "date": "2026-10-05 09:00",
+          "summary": "晶圓代工龍頭台積電今天創多項紀錄，包括再創盤中、收盤歷史新高 2,580 元及 2,575 元，市值攻上新台幣 [&#8230;]"
         },
         {
-          "title": "「自己組一定最省錢」成過去式，套裝電腦重回玩家選購清單",
-          "link": "https://technews.tw/2026/10/04/building-pc-not-cost-effective/",
-          "date": "2026-10-04 02:30",
-          "summary": "長久以來，自行組裝電腦始終是玩家在「價格」與「客製化」之間取得完美平衡的最佳選擇。然而，到了 2026 年，這 [&#8230;]"
+          "title": "年增 97.8%！創意 9 月營收衝 71.45 億元創新高，股價同步刷上新天價",
+          "link": "https://technews.tw/2026/10/05/guc-2026-09-revenue/",
+          "date": "2026-10-05 08:11",
+          "summary": "ASIC 設計服務大廠創意電子今（5 日）公布 2026 年 9 月營收達新台幣 71.45 億元，月增 22 [&#8230;]"
         },
         {
-          "title": "台積電可能加入 Terafab，馬斯克證實正在洽談晶片製造合作",
-          "link": "https://finance.technews.tw/2026/10/04/elon-musk-confirmed-that-hes-in-talks-with-tsmc-for-joining-the-terafab/",
-          "date": "2026-10-04 02:01",
-          "summary": "高燦鳴（Tim Culpan）近日表示，晶圓代工龍頭台積電正與特斯拉執行長馬斯克（Elon Musk）針對旗下 [&#8230;]"
+          "title": "南亞科 9 月營收首破 450 億元！年增 576.6%，新廠落腳屏東引關注",
+          "link": "https://finance.technews.tw/2026/10/05/nanya-technology-2026-09-revenue/",
+          "date": "2026-10-05 07:46",
+          "summary": "南亞科今（5 日）公布 2026 年 9 月自結合併營收為新台幣（下同） 450.91 億元，較上月增加 0. [&#8230;]"
         },
         {
-          "title": "華為最新麒麟 9050 Pro 晶片照曝光！兩層 Die 垂直堆疊，尺寸再縮小",
-          "link": "https://technews.tw/2026/10/03/huaweis-latest-kirin-9050-pro-chip/",
-          "date": "2026-10-03 07:37",
-          "summary": "華為最新麒麟 9050 Pro 晶片近日再傳新進展，外媒 Wccftech 引述社群平台 X 帳號 Kurna [&#8230;]"
+          "title": "美光下年度資本支出將翻倍，帶給韓系記憶體雙雄壓力",
+          "link": "https://finance.technews.tw/2026/10/05/microns-capital-expenditures-will-double-next-year/",
+          "date": "2026-10-05 07:45",
+          "summary": "根據韓國媒體報導，美國記憶體大廠美光（Micron）計劃在下一財年將資本支出擴增至接近前一年的兩倍，因應人工智 [&#8230;]"
         },
         {
-          "title": "產能提升逾 10%！三星開始量產 Exynos 2700 晶片，搭載 Galaxy S27 多系列",
-          "link": "https://technews.tw/2026/10/03/samsung-electronics-starts-mass-production-of-exynos-2700/",
-          "date": "2026-10-03 06:32",
-          "summary": "市場消息傳出，三星電子已開始量產 Exynos 2700，該晶片將搭載於 Galaxy S27 系列智慧手機， [&#8230;]"
+          "title": "聯發科攜手達發科技，加速 AI 時代全球網路基礎建設升級",
+          "link": "https://technews.tw/2026/10/05/mediatek-partners-with-dafa-technology-to-accelerate-the-upgrade-of-global-network-infrastructure-in-the-ai-%e2%80%8b%e2%80%8bera/",
+          "date": "2026-10-05 07:30",
+          "summary": "在 AI 時代不僅需要更強大的運算能力，也需要高頻寬、低延遲且高度可靠的網路基礎建設，將 AI 服務即時、穩定 [&#8230;]"
         },
         {
-          "title": "記憶體太貴！128GB DGX Spark 價格飆破 6,000 美元，輝達改推 64GB 版本搶市",
-          "link": "https://technews.tw/2026/10/03/nvidia-64-gb-dgx-spark/",
-          "date": "2026-10-03 02:08",
-          "summary": "AI 運算需求持續升溫，也讓高容量記憶體成為本地 AI 裝置發展的一大瓶頸。NVIDIA 近日宣布推出全新的 [&#8230;]"
+          "title": "蘇姿丰下午專機抵達台北，不到五個月再次訪台搶供應鏈產能",
+          "link": "https://technews.tw/2026/10/05/lisa-su-is-expected-to-arrive-in-taipei-by-private-plane-at-430-pm/",
+          "date": "2026-10-05 07:20",
+          "summary": "一架編號 VJT993 的龐巴迪 Global 6000 私人商務客機，在 5 日美國東岸時間中午 12:51 [&#8230;]"
         },
         {
-          "title": "欲藉 2 奈米盼重返高通供應鏈，台積電一單不漏全數拿下讓三星盼了個寂寞",
-          "link": "https://finance.technews.tw/2026/10/02/samsung-hopes-to-rejoin-qualcomms-supply-chain-by-leveraging-its-2nm-technology/",
-          "date": "2026-10-02 12:40",
-          "summary": "近期以來，因為台積電受到 AI 晶片需求大增，使得產能進一步吃緊，加上外傳三星的 2 奈米的良率提升，還進一步 [&#8230;]"
+          "title": "長鑫技術趕上了？專家：記憶體太缺、高價仍有撐",
+          "link": "https://technews.tw/2026/10/05/memory-boom-to-last-3-4-years-chinas-technological-catch-up-a-key-variable/",
+          "date": "2026-10-05 06:10",
+          "summary": "隨著中國記憶體廠長鑫存儲（CXMT）與三星電子（Samsung Electronics Co.）、SK 海力士 [&#8230;]"
         },
         {
-          "title": "汎銓受惠半導體與 AI 市況熱絡，9 月、第三季、前三季營收均創紀錄",
-          "link": "https://finance.technews.tw/2026/10/02/msscorps-benefits-from-the-booming-semiconductor-and-ai-markets/",
-          "date": "2026-10-02 08:50",
-          "summary": "半導體檢測廠商汎銓科技公告2026年9月合併營收達2.65億元，月增4.15%、年增36.71%，續創單月歷史 [&#8230;]"
+          "title": "輝達逼史高  客戶估 GPU 可撐 6 年、貝瑞酸遲早跌價",
+          "link": "https://finance.technews.tw/2026/10/05/nvidia-rebuts-michael-burrys-depreciation-claims/",
+          "date": "2026-10-05 04:20",
+          "summary": "輝達（Nvidia）股價一路朝歷史新高買進，公司強調旗下人工智慧（AI）繪圖處理器（GPU）的耐用性，反駁電影 [&#8230;]"
         },
         {
-          "title": "降低外匯避險成本，南亞科再增資海外子公司約 600 億元",
-          "link": "https://finance.technews.tw/2026/10/02/nanya-technology-to-invest-approximately-nt60-billion-in-its-overseas-subsidiaries/",
-          "date": "2026-10-02 08:45",
-          "summary": "記憶體大廠南亞科 2 日發布重大訊息，代 100% 持股之子公司南亞科技國際有限公司公告，董事會決議辦理現金增 [&#8230;]"
+          "title": "JEDEC 發表首個矽光子可靠度標準，加速 AI 與資料中心大規模應用",
+          "link": "https://technews.tw/2026/10/05/jesd264-silicon-photonics-qualification-and-reliability-requirements/",
+          "date": "2026-10-05 03:50",
+          "summary": "JEDEC 固態技術協會（JEDEC Solid State Technology Association）美 [&#8230;]"
         },
         {
-          "title": "西門子、台積電推進半導體設計自動化，聚焦先進製程、3DFabric 與矽光子",
-          "link": "https://technews.tw/2026/10/02/siemens-tsmc-eda-tool/",
-          "date": "2026-10-02 08:44",
-          "summary": "西門子宣布將持續深化與台積電的合作，共同推動 AI 驅動的自動化技術創新，加速先進半導體設計流程的開發與應用。 [&#8230;]"
+          "title": "AI 代理算力消耗達人類 5 倍，全球記憶體短缺恐加速爆發",
+          "link": "https://technews.tw/2026/10/05/ai-agent-wave-memory-crisis/",
+          "date": "2026-10-05 03:30",
+          "summary": "最新市場數據顯示，AI Agent（AI 代理）的運算規模正迅速擴張，但其成長核心已不再單純是模型推理，而是大 [&#8230;]"
         },
         {
-          "title": "應材攜貝思半導體擴大先進封裝合作，布局 3D IC、面板整合與 CPO 技術",
-          "link": "https://technews.tw/2026/10/02/applied-materials-besi-epic-center/",
-          "date": "2026-10-02 08:30",
-          "summary": "應用材料與貝思半導體（BESI）宣布擴大雙方長期策略合作關係，貝思半導體加入應材 EPIC 中心成為創新合作夥 [&#8230;]"
+          "title": "東芝攻克 SiC MOSFET 電壓漂移，長期可靠性再提升",
+          "link": "https://technews.tw/2026/10/05/toshiba-improves-sic-mosfet-long-term-reliability-evs-data-centers/",
+          "date": "2026-10-05 02:37",
+          "summary": "東芝持續推進碳化矽（SiC）功率半導體技術，宣布開發溝槽閘極（Trench-gate）SiC MOSFET 臨 [&#8230;]"
         },
         {
-          "title": "不換材料只換疊法，台灣團隊突破二維半導體 MoS₂ 發光、谷極化效率",
-          "link": "https://technews.tw/2026/10/02/cvd-grown-1h-phase-mos%e2%82%82-bilayers-2d-material/",
-          "date": "2026-10-02 08:13",
-          "summary": "科學家通常透過混合不同材料來調控二維半導體性質，但台灣研究團隊證明，只要能精準控制同一材料的原子層間疊法，就能 [&#8230;]"
+          "title": "美報告：中國取得數百台浸潤式 DUV 微影機，籲收緊出口管制",
+          "link": "https://technews.tw/2026/10/05/china-stockpiles-asml-lithography-tools-spurring-us-calls-for-complete-export-ban/",
+          "date": "2026-10-05 02:30",
+          "summary": "美國研究機構指出，在美國限制向中國出口先進半導體製造設備之際，中國仍取得數百台可用於製造先進晶片的浸潤式深紫外 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,54 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "800 VDC 走向 AI 電源主流，台達電、光寶迎戰 OCP 2026",
+          "link": "https://technews.tw/2026/10/05/800-vdc-mainstream-ai-power-delta-liteon-ocp-2026/",
+          "date": "2026-10-05 08:20",
+          "summary": "AI 資料中心供電升級潮來了。隨 AI 機櫃功率百萬瓦（MW）級邁進，今年 OCP Global Summit [&#8230;]"
+        },
+        {
+          "title": "聯發科攜手達發科技，加速 AI 時代全球網路基礎建設升級",
+          "link": "https://technews.tw/2026/10/05/mediatek-partners-with-dafa-technology-to-accelerate-the-upgrade-of-global-network-infrastructure-in-the-ai-%e2%80%8b%e2%80%8bera/",
+          "date": "2026-10-05 07:30",
+          "summary": "在 AI 時代不僅需要更強大的運算能力，也需要高頻寬、低延遲且高度可靠的網路基礎建設，將 AI 服務即時、穩定 [&#8230;]"
+        },
+        {
+          "title": "蘇姿丰下午專機抵達台北，不到五個月再次訪台搶供應鏈產能",
+          "link": "https://technews.tw/2026/10/05/lisa-su-is-expected-to-arrive-in-taipei-by-private-plane-at-430-pm/",
+          "date": "2026-10-05 07:20",
+          "summary": "一架編號 VJT993 的龐巴迪 Global 6000 私人商務客機，在 5 日美國東岸時間中午 12:51 [&#8230;]"
+        },
+        {
+          "title": "AI 需求超預期、被動元件廠 TDK 或上修財測  股價飆",
+          "link": "https://technews.tw/2026/10/05/tdk-may-raise-guidance-stock-surges/",
+          "date": "2026-10-05 06:50",
+          "summary": "AI 需求超乎預期，日本被動元件廠 TDK 可能將上修今年度（2026 年度、2026 年 4 月-2027 [&#8230;]"
+        },
+        {
+          "title": "MBP 將大瘦身？傳新款大幅減重，OLED、觸控一次到位",
+          "link": "https://technews.tw/2026/10/05/macbook-pro-oled-3/",
+          "date": "2026-10-05 06:23",
+          "summary": "蘋果新一代 MacBook Pro 傳出將迎來近年最大幅度改版，除了首度導入 OLED 螢幕與觸控操作外，機身 [&#8230;]"
+        },
+        {
+          "title": "群電衛星通訊電源需求升溫，第四季訂單較上季倍增",
+          "link": "https://technews.tw/2026/10/05/chunghsin-electric-satellite-communication-power-supply-demand-rises-q4-orders-double/",
+          "date": "2026-10-05 06:05",
+          "summary": "群光電能公布 9 月合併營收 24.13 億元，月減 2.3%；累計前 9 月營收 236.41 億元。公司表 [&#8230;]"
+        },
+        {
+          "title": "獲利持續改善與產品漲價前景，大和證券力挺南電目標價 2,460 元",
+          "link": "https://finance.technews.tw/2026/10/05/daiwa-securities-strongly-supports-nan-ya-powers-target-price-of-nt2460/",
+          "date": "2026-10-05 02:30",
+          "summary": "IC載板大廠南電因近期股價波動劇烈，於2026年10月2日盤後公布8月最新財務數據。受惠於昆山廠良率改善及規格 [&#8230;]"
+        },
+        {
+          "title": "IMPACT 2026 聚焦節能 AI，產學齊聚研討先進封裝、異質整合",
+          "link": "https://technews.tw/2026/10/05/impact-iaac-2026-ai-computing-to-systems-and-applications/",
+          "date": "2026-10-05 01:00",
+          "summary": "亞洲最具代表性的國際構裝暨電路板研討會「IMPACT &#8211; IAAC 2026」將於 10 月 19 [&#8230;]"
+        },
         {
           "title": "iPhone Duo 能否維持摺痕低能見度，有待時間驗證",
           "link": "https://technews.tw/2026/10/04/why-we-wont-know-how-visible-the-iphone-duos-crease-is-for-a-long-time/",
@@ -258,58 +306,10 @@
           "summary": "憑藉近二十年累積的鍛造、沖壓等精密加工技術，時碩工業成功跨足液冷散熱領域。一筆來自古河集團的伺服器散熱系統大單 [&#8230;]"
         },
         {
-          "title": "光寶擴大 AI 電源產能，砸 88.5 億元擴產高雄",
-          "link": "https://finance.technews.tw/2026/10/02/lite-on-expands-ai-power-supply-capacity-investing-nt8-85-billion-kaohsiung/",
-          "date": "2026-10-02 12:08",
-          "summary": "因應 AI 資料中心高功率電源需求持續成長，光寶科技加快擴充相關產能。光寶今（2）日公告，為因應營收成長及後續 [&#8230;]"
-        },
-        {
-          "title": "汎銓受惠半導體與 AI 市況熱絡，9 月、第三季、前三季營收均創紀錄",
-          "link": "https://finance.technews.tw/2026/10/02/msscorps-benefits-from-the-booming-semiconductor-and-ai-markets/",
-          "date": "2026-10-02 08:50",
-          "summary": "半導體檢測廠商汎銓科技公告2026年9月合併營收達2.65億元，月增4.15%、年增36.71%，續創單月歷史 [&#8230;]"
-        },
-        {
-          "title": "應材攜貝思半導體擴大先進封裝合作，布局 3D IC、面板整合與 CPO 技術",
-          "link": "https://technews.tw/2026/10/02/applied-materials-besi-epic-center/",
-          "date": "2026-10-02 08:30",
-          "summary": "應用材料與貝思半導體（BESI）宣布擴大雙方長期策略合作關係，貝思半導體加入應材 EPIC 中心成為創新合作夥 [&#8230;]"
-        },
-        {
-          "title": "信邦 9 月營收 33.49 億元連 6 月創高，綠能需求回溫",
-          "link": "https://technews.tw/2026/10/02/sinbon-september-revenue-3-349-billion-new-high-6-consecutive-months-green-energy-demand-recovery/",
-          "date": "2026-10-02 07:59",
-          "summary": "信邦 9 月自結合併營收 33.49 億元，月增 2.08%、年增 25.51%，連續 6 個月改寫單月歷史新 [&#8230;]"
-        },
-        {
-          "title": "iPhone Duo 摺痕用久也能救？蘋果揭可更換螢幕表層設計",
-          "link": "https://technews.tw/2026/10/02/iphone-duo-screen-crease/",
-          "date": "2026-10-02 07:58",
-          "summary": "蘋果首款摺疊手機「iPhone Duo」自上個月亮相後，外界除了關注轉軸耐用度，也好奇摺疊螢幕長時間使用後是否 [&#8230;]"
-        },
-        {
-          "title": "Google Gemini Live 推即時視覺輔助功能 Guided Vision，但比蘋果晚了一年",
-          "link": "https://technews.tw/2026/10/02/google-brings-real-time-visual-assistance-to-blind-users-on-android/",
-          "date": "2026-10-02 03:30",
-          "summary": "Google Gemini Live 1 日推出 Guided Vision，使符合條件的 Android 裝 [&#8230;]"
-        },
-        {
-          "title": "相較同業有落後補漲優勢，美銀給南電買進投資評等目標價 2,000 元",
-          "link": "https://finance.technews.tw/2026/10/02/bank-of-america-gives-nanyang-power-a-buy-rating-with-a-target-price-of-nt2000/",
-          "date": "2026-10-02 01:40",
-          "summary": "外資美商美銀證券發布最新投資研究報告，重申對 IC 載板大廠南電的「買進」投資評等，並將目標價由每股新台幣 1 [&#8230;]"
-        },
-        {
-          "title": "半導體微加工技術導入電池，韓國團隊成功打造高穩定「無負極電池」新架構",
-          "link": "https://technews.tw/2026/10/02/semiconductor-technology-improve-ev-battery-life/",
-          "date": "2026-10-02 00:30",
-          "summary": "韓國研究團隊近日宣布，成功將半導體產業的精密製造技術導入電池設計，開發出能促使鋰金屬更均勻沉積的「無負極鋰金屬 [&#8230;]"
-        },
-        {
-          "title": "可變色電子紙服裝登巴黎時裝週，每套上千片 E Ink Prism 3 元件",
-          "link": "https://technews.tw/2026/10/01/e-ink-and-anrealage-debut-color-changing-dresses-at-paris-fashion-week/",
-          "date": "2026-10-01 08:59",
-          "summary": "電子紙大廠 E Ink 元太科技與日本前衛時裝品牌 ANREALAGE 展開創意合作，並登上巴黎時裝週的舞台。 [&#8230;]"
+          "title": "先進光處分科雅光電 10% 股權！共處分 368 萬股、持股降至 90%",
+          "link": "https://finance.technews.tw/2026/10/03/ability-miyabi-technology-stock/",
+          "date": "2026-10-03 03:34",
+          "summary": "先進光公告，為配合重要子公司科雅光電股份有限公司股票上市櫃規畫，依法辦理股權分散，先進光將處分科雅光電 10% [&#8230;]"
         }
       ]
     },
