@@ -1,5 +1,11 @@
 [
   {
+    "url": "google-services-ecosystem.html",
+    "title": "Google 產品與服務生態圈總覽：從個人應用到 AI 雲端帝國",
+    "excerpt": "Google 的產品與服務橫跨個人消費、企業協作、AI 開發及雲端運算，本文按功能領域詳細分類整理 Google 龐大的服務生態。",
+    "tags": ["Google", "Ecosystem", "GCP", "AI", "Gemini", "科技商業"]
+  },
+  {
     "title": "Google Colab 完整攻略：雲端 Jupyter Notebook 介紹、功能與實戰指南",
     "excerpt": "Google Colab 是一個免費的雲端 Jupyter Notebook 環境。本文詳細介紹 Colab 的核心功能、如何掛載 Google Drive、使用免費 GPU/TPU 資源，以及進階使用技巧。",
     "url": "google-colab-guide.html",
