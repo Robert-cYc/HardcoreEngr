@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05 00:56",
+  "updated": "2026-10-05 01:19",
   "sources": [
     {
       "name": "自由 3C 科技",
@@ -84,6 +84,36 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
+          "title": "法軍打造自主 AI 空戰架構，2028 年測試戰機與無人僚機協同飛行",
+          "link": "https://technews.tw/2026/10/04/french-air-force-is-building-its-own-military-ai-systems/",
+          "date": "2026-10-04 08:22",
+          "summary": "隨著各國加速開發無人僚機，法國也開始為新一代空戰模式鋪路，法國空軍與太空軍、軍備總署（DGA）及國防人工智慧機 [&#8230;]"
+        },
+        {
+          "title": "AI 助攻量子設計：德國新創 QC Design 推 Meridian 可壓低邏輯錯誤率逾十倍",
+          "link": "https://technews.tw/2026/10/04/qc-design-reports-10x-logical-error-reduction-with-meridian-ai/",
+          "date": "2026-10-04 07:30",
+          "summary": "德國量子軟體新創 QC Design 於 9 月 24 日發表白皮書，公布專為容錯量子運算架構設計打造的 AI [&#8230;]"
+        },
+        {
+          "title": "挑戰 99.5% 成功率，NVIDIA 攜鴻海讓機器人組裝 GB300",
+          "link": "https://finance.technews.tw/2026/10/04/nvidia-foxconn-robot/",
+          "date": "2026-10-04 06:47",
+          "summary": "AI 伺服器需求持續爆發，如何讓產線自動化程度再往前推，也成為供應鏈下一階段競賽焦點。據 NVIDIA 部落格 [&#8230;]"
+        },
+        {
+          "title": "AI 時代的「禮儀」與邊界：人類監督與透明揭露才是核心",
+          "link": "https://technews.tw/2026/10/04/the-rules-of-ai-etiquette/",
+          "date": "2026-10-04 06:30",
+          "summary": "生成式 AI 持續滲透教育、法律、音訊創作與內容產製等領域，也讓「AI 禮儀」與使用規範成為新的討論焦點。外界 [&#8230;]"
+        },
+        {
+          "title": "諾斯洛普格魯曼「蒼藍鷹爪」完成自主首飛，搶攻美軍無人僚機市場",
+          "link": "https://technews.tw/2026/10/04/northrop-grummans-yfq-48-talon-group-successfully-completed-its-first-flight/",
+          "date": "2026-10-04 05:55",
+          "summary": "諾斯洛普格魯曼（Northrop Grumman）10 月 3 日宣布，其開發的協同作戰航空器（CCA）「蒼藍 [&#8230;]"
+        },
+        {
           "title": "今年還是有成功機會，專家教你六個 AI 商機與無資金創業法",
           "link": "https://finance.technews.tw/2026/10/04/6-ai-business-ideas-for-2026-and-how-to-start-one-with-no-funding/",
           "date": "2026-10-04 01:30",
@@ -124,36 +154,6 @@
           "link": "https://technews.tw/2026/10/03/improving-medical-alarm-fatigue/",
           "date": "2026-10-03 07:30",
           "summary": "醫院裡的監視器、輸液幫浦與各式儀器日夜發出無休止的嗶嗶聲與警示音，不僅讓病患難以安穩休息，更讓護理人員面臨嚴重 [&#8230;]"
-        },
-        {
-          "title": "川普召集黃仁勳、馬斯克等科技巨頭簽「AI 憲法」，四層稽核機制能解失控風險？",
-          "link": "https://technews.tw/2026/10/03/trump-ai-constitution-jensen-huang-tech-giants-four-layer-audit-prevent-ai-rogue/",
-          "date": "2026-10-03 06:00",
-          "summary": "美國總統川普（Donald Trump）日前在白宮召集輝達（NVIDIA）執行長黃仁勳、SpaceXAI 創辦 [&#8230;]"
-        },
-        {
-          "title": "英飛凌捐贈「AI 消防之眼」，整合邊緣 AI、毫米波雷達即時掌握火場資訊",
-          "link": "https://technews.tw/2026/10/03/infineon-ai-disaster-relief/",
-          "date": "2026-10-03 03:51",
-          "summary": "全球半導體領導廠商英飛凌攜手台灣守護者聯盟，捐贈「AI 消防之眼」，以提升消防人員安全及救災效率，並降低第一線 [&#8230;]"
-        },
-        {
-          "title": "AI 會毀滅人類還是先搶走白領飯碗？《紐時》整理 11 個大哉問，帶你看懂 AI 的真實風險",
-          "link": "https://infosecu.technews.tw/2026/10/03/nyt-explores-five-major-ai-concerns-and-answers-key-questions/",
-          "date": "2026-10-03 03:00",
-          "summary": "AI 到底已經發展到什麼程度？哪些風險是真實存在的，又有哪些仍停留在假設？《紐約時報》從近千名讀者對 AI 提 [&#8230;]"
-        },
-        {
-          "title": "AI「能做」不代表「該做」，企業決定自建或外購系統前的 4 大評估指標",
-          "link": "https://technews.tw/2026/10/03/the-gut-check-questions-every-leader-needs-to-ask-before-building-with-ai/",
-          "date": "2026-10-03 02:30",
-          "summary": "企業界正掀起一波以 AI 自建軟體的討論熱潮，愈來愈多資訊長（CIO）與技術團隊開始評估，是否要用 Claud [&#8230;]"
-        },
-        {
-          "title": "當 AI 開始自己開發 AI，安全機制恐遭破解！「一鍵關機」為何淪為不切實際的幻想",
-          "link": "https://infosecu.technews.tw/2026/10/03/what-is-an-ai-kill-switch-and-does-it-work/",
-          "date": "2026-10-03 02:00",
-          "summary": "在 OpenAI、Anthropic 旗下 AI 代理人相繼出現自主越界的駭客行為後，現在 Google Ge [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,24 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "美國 FDA 推動法規轉型，以器官晶片與電腦模型取代動物實驗",
+          "link": "https://technews.tw/2026/10/04/tech-to-replace-animal-testing-is-almost-ready/",
+          "date": "2026-10-04 08:30",
+          "summary": "美國以人類細胞、器官晶片與電腦模型取代動物實驗的趨勢，正從實驗室走向監管制度核心。從哈佛大學魏斯研究所（Wys [&#8230;]"
+        },
+        {
+          "title": "「自己組一定最省錢」成過去式，套裝電腦重回玩家選購清單",
+          "link": "https://technews.tw/2026/10/04/building-pc-not-cost-effective/",
+          "date": "2026-10-04 02:30",
+          "summary": "長久以來，自行組裝電腦始終是玩家在「價格」與「客製化」之間取得完美平衡的最佳選擇。然而，到了 2026 年，這 [&#8230;]"
+        },
+        {
+          "title": "台積電可能加入 Terafab，馬斯克證實正在洽談晶片製造合作",
+          "link": "https://finance.technews.tw/2026/10/04/elon-musk-confirmed-that-hes-in-talks-with-tsmc-for-joining-the-terafab/",
+          "date": "2026-10-04 02:01",
+          "summary": "高燦鳴（Tim Culpan）近日表示，晶圓代工龍頭台積電正與特斯拉執行長馬斯克（Elon Musk）針對旗下 [&#8230;]"
+        },
         {
           "title": "華為最新麒麟 9050 Pro 晶片照曝光！兩層 Die 垂直堆疊，尺寸再縮小",
           "link": "https://technews.tw/2026/10/03/huaweis-latest-kirin-9050-pro-chip/",
@@ -214,24 +232,6 @@
           "link": "https://technews.tw/2026/10/02/cvd-grown-1h-phase-mos%e2%82%82-bilayers-2d-material/",
           "date": "2026-10-02 08:13",
           "summary": "科學家通常透過混合不同材料來調控二維半導體性質，但台灣研究團隊證明，只要能精準控制同一材料的原子層間疊法，就能 [&#8230;]"
-        },
-        {
-          "title": "誤會大了！英特爾 Micro LED 封裝專利以為瞄準光通訊，原來只是讓 CPU 發光",
-          "link": "https://technews.tw/2026/10/02/intel-rgb-lit-cpus/",
-          "date": "2026-10-02 07:31",
-          "summary": "英特爾近期取得一項美國專利，引發市場關注。原先外界看到 Micro LED、玻璃基板與玻璃穿孔（TGV）等技術 [&#8230;]"
-        },
-        {
-          "title": "亞馬遜傳轉移 80 億美元輝達 GPU、花式融資藏風險",
-          "link": "https://finance.technews.tw/2026/10/02/amazon-reportedly-transfers-8-billion-nvidia-gpus-complex-financing-hides-risks/",
-          "date": "2026-10-02 07:30",
-          "summary": "科技巨頭投入巨資建置 AI 基礎設施之際，正在採取不同融資方式把債務移出資產負債表，以維持信用評等，但相關安排 [&#8230;]"
-        },
-        {
-          "title": "AI 電源、矽光子雙引擎發威，嘉晶 8 月獲利年增 73 倍",
-          "link": "https://finance.technews.tw/2026/10/02/episil-august-profit-surges-73x-yoy-ai-power-silicon-photonics-dual-engines/",
-          "date": "2026-10-02 06:39",
-          "summary": "隨 AI 資料中心帶動光通訊及電源相關需求成長，磊晶廠嘉晶公布 8 月自結財務資訊，單月營收 5.07 億元， [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,18 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "iPhone Duo 能否維持摺痕低能見度，有待時間驗證",
+          "link": "https://technews.tw/2026/10/04/why-we-wont-know-how-visible-the-iphone-duos-crease-is-for-a-long-time/",
+          "date": "2026-10-04 05:30",
+          "summary": "蘋果首款摺疊手機 iPhone Duo 近日成為焦點。目前實機觀察，內螢幕摺痕初次上手時並不明顯，甚至有人形容 [&#8230;]"
+        },
+        {
+          "title": "「自己組一定最省錢」成過去式，套裝電腦重回玩家選購清單",
+          "link": "https://technews.tw/2026/10/04/building-pc-not-cost-effective/",
+          "date": "2026-10-04 02:30",
+          "summary": "長久以來，自行組裝電腦始終是玩家在「價格」與「客製化」之間取得完美平衡的最佳選擇。然而，到了 2026 年，這 [&#8230;]"
+        },
         {
           "title": "從安全氣囊做到 AI 散熱，時碩工業憑 20 年精密加工奪古河液冷大單",
           "link": "https://finance.technews.tw/2026/10/04/how-globaltek-won-furukawa-group-major-liquid-cooling-order/",
@@ -298,18 +310,6 @@
           "link": "https://technews.tw/2026/10/01/e-ink-and-anrealage-debut-color-changing-dresses-at-paris-fashion-week/",
           "date": "2026-10-01 08:59",
           "summary": "電子紙大廠 E Ink 元太科技與日本前衛時裝品牌 ANREALAGE 展開創意合作，並登上巴黎時裝週的舞台。 [&#8230;]"
-        },
-        {
-          "title": "AI 供電授權夯  Vicor 兩週內二度上修財測、盤後嗨",
-          "link": "https://finance.technews.tw/2026/10/01/vicor-raises-guidance-for-second-time-in-two-weeks/",
-          "date": "2026-10-01 07:10",
-          "summary": "美國電源供應器製造商 Vicor Corporation 上週才剛以權利金收入為由大幅上調第三季營收成長展望， [&#8230;]"
-        },
-        {
-          "title": "崇越科技深化日本半導體戰略布局，福岡營業所 10 月設立",
-          "link": "https://technews.tw/2026/10/01/tsc-deepens-its-strategic-layout-in-the-japanese-semiconductor-industry/",
-          "date": "2026-10-01 06:40",
-          "summary": "半導體關鍵材料商崇越科技持續加速海外市場布局，旗下日本子公司「峻川商事株式會社」於 10 月 1 日正式啟用福 [&#8230;]"
         }
       ]
     },
