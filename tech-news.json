@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05 12:29",
+  "updated": "2026-10-05 12:32",
   "sources": [
     {
       "name": "自由 3C 科技",
@@ -84,12 +84,6 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "日媒：日本擬研發與導入自駕船，運送部隊與彈藥",
-          "link": "https://technews.tw/2026/10/05/japan-develop-deploy-autonomous-ships-transport-troops-ammunition/",
-          "date": "2026-10-05 10:00",
-          "summary": "日媒披露，防衛省計畫研發並採用結合人工智慧與自動駕駛的運輸船，以加強海上運輸能力。若台海爆發戰事，這些船隻可能 [&#8230;]"
-        },
-        {
           "title": "AI 破解 217 年懸案，GPT-6 Astra 6 小時解開拿破崙時代軍事密函",
           "link": "https://technews.tw/2026/10/05/chatgpt-6-astra-cracks-217-year-old-napoleonic-code-in-just-six-hours/",
           "date": "2026-10-05 09:40",
@@ -154,6 +148,12 @@
           "link": "https://technews.tw/2026/10/05/jesd264-silicon-photonics-qualification-and-reliability-requirements/",
           "date": "2026-10-05 03:50",
           "summary": "JEDEC 固態技術協會（JEDEC Solid State Technology Association）美 [&#8230;]"
+        },
+        {
+          "title": "電力與審核雙重受阻，甲骨文 AI 資料中心擴建計畫恐面臨延期",
+          "link": "https://technews.tw/2026/10/05/ai-data-center-debt-hits-roadblocks-as-lenders-demand-tougher-terms/",
+          "date": "2026-10-05 03:40",
+          "summary": "甲骨文（Oracle）擴張人工智慧基礎設施的計畫，近日因電力與監管進度受阻而再度引發市場關注。最新消息，甲骨文 [&#8230;]"
         }
       ]
     },
@@ -240,12 +240,6 @@
       "site": "https://technews.tw/category/component/",
       "items": [
         {
-          "title": "零組件成本大漲、需求轉弱，三大面板應用價格估持平",
-          "link": "https://technews.tw/2026/10/05/panel-prices-in-2026-october-h1/",
-          "date": "2026-10-05 10:39",
-          "summary": "進入第四季，市場研究機構 TrendForce 觀察面板市場面臨成本攀升與需求轉弱的雙重壓力，上游零組件全面漲 [&#8230;]"
-        },
-        {
           "title": "大立光 9 月營收 57.79 億元月增 15%，估 10 月動能相當",
           "link": "https://finance.technews.tw/2026/10/05/largan-fr-2609/",
           "date": "2026-10-05 09:30",
@@ -310,6 +304,12 @@
           "link": "https://technews.tw/2026/10/04/why-we-wont-know-how-visible-the-iphone-duos-crease-is-for-a-long-time/",
           "date": "2026-10-04 05:30",
           "summary": "蘋果首款摺疊手機 iPhone Duo 近日成為焦點。目前實機觀察，內螢幕摺痕初次上手時並不明顯，甚至有人形容 [&#8230;]"
+        },
+        {
+          "title": "「自己組一定最省錢」成過去式，套裝電腦重回玩家選購清單",
+          "link": "https://technews.tw/2026/10/04/building-pc-not-cost-effective/",
+          "date": "2026-10-04 02:30",
+          "summary": "長久以來，自行組裝電腦始終是玩家在「價格」與「客製化」之間取得完美平衡的最佳選擇。然而，到了 2026 年，這 [&#8230;]"
         }
       ]
     },
