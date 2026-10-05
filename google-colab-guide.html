@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Colab 完整攻略：雲端 Jupyter Notebook 介紹、功能與實戰指南 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="Google Colab 是一個免費的雲端 Jupyter Notebook 環境。本文詳細介紹 Colab 的核心功能、如何掛載 Google Drive、使用免費 GPU/TPU 資源，以及進階使用技巧。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/google-colab-guide.html">
+  <meta property="og:title" content="Google Colab 完整攻略：雲端 Jupyter Notebook 介紹、功能與實戰指南 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="Google Colab 是一個免費的雲端 Jupyter Notebook 環境。本文詳細介紹 Colab 的核心功能、如何掛載 Google Drive、使用免費 GPU/TPU 資源，以及進階使用技巧。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/google-colab-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Colab 完整攻略：雲端 Jupyter Notebook 介紹、功能與實戰指南 — &quot;AI&quot; 硬核工程師">
+  <meta name="twitter:description" content="Google Colab 是一個免費的雲端 Jupyter Notebook 環境。本文詳細介紹 Colab 的核心功能、如何掛載 Google Drive、使用免費 GPU/TPU 資源，以及進階使用技巧。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.21rem; }
+    .article-body th, .article-body td { padding: 0.4rem 0.5rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Google Colab 完整攻略：雲端 Jupyter Notebook 介紹、功能與實戰指南 — \"AI\" 硬核工程師",
+  "description": "Google Colab 是一個免費的雲端 Jupyter Notebook 環境。本文詳細介紹 Colab 的核心功能、如何掛載 Google Drive、使用免費 GPU/TPU 資源，以及進階使用技巧。",
+  "url": "https://ai-hardcore-engineer.com/google-colab-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "\"AI\" 硬核工程師",
+    "url": "https://ai-hardcore-engineer.com"
+  },
+  "image": "https://ai-hardcore-engineer.com/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://ai-hardcore-engineer.com/google-colab-guide.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="article-hero">
+        <h1>Google Colab 完整攻略：雲端 Jupyter Notebook 介紹、功能與實戰指南</h1>
+        <div class="article-meta">
+          <span>2026-10-05</span>
+          <span class="separator">·</span>
+          <span>8 分鐘閱讀</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/googlecolab/1200/400" alt="Google Colab">
+      </section>
+
+      <article class="article-body">
+        <p>隨著人工智慧與機器學習的發展，擁有強大算力的運算環境變得越來越重要。然而，對於初學者或學生來說，配置高效能 GPU 的電腦成本高昂，而 <strong>Google Colab</strong>（全名 Colaboratory）的出現，完美解決了這個痛點。</p>
+        
+        <p>Google Colab 是一個基於雲端的 <strong>Jupyter Notebook 環境</strong>，讓任何人都能透過瀏覽器撰寫與執行 Python 程式碼，完全不需要設定環境，並提供免費的 GPU 與 TPU 資源。本文將深入介紹 Colab 的特色、基本使用方法以及進階開發技巧。</p>
+
+        <h2>什麼是 Google Colab？</h2>
+        <p>Google Colab 是由 Google Research 所開發的免費產品。它可以想成是「運行在 Google 伺服器上的 Jupyter Notebook」。它有以下三大核心優勢：</p>
+        <ul>
+          <li><strong>零設定（Zero Configuration）：</strong> 打開瀏覽器即可開始寫 Python，無需煩惱安裝環境變數或套件依賴。</li>
+          <li><strong>免費 GPU/TPU 加速：</strong> 提供免費的 NVIDIA GPU (如 T4、L4) 與 Google 自研的 TPU，對於深度學習訓練來說是一大福音。</li>
+          <li><strong>輕鬆共享與協作：</strong> 檔案直接儲存在 Google Drive，你可以像分享 Google 文件一樣分享程式碼，甚至與他人協同編輯。</li>
+        </ul>
+
+        <h2>1. 初探 Google Colab 介面與基本操作</h2>
+        <h3>建立與儲存筆記本</h3>
+        <p>前往 <a href="https://colab.research.google.com/" target="_blank">Colab 首頁</a>，登入你的 Google 帳號。點選「新增筆記本」即可建立一個新的 <code>.ipynb</code> 檔案。預設情況下，這些檔案會自動儲存到你 Google Drive 內的 <code>Colab Notebooks</code> 資料夾中。</p>
+
+        <h3>程式碼儲存格 (Code Cell) 與 文字儲存格 (Text Cell)</h3>
+        <p>與一般的 Jupyter Notebook 相同，Colab 支援兩種主要的儲存格：</p>
+        <ul>
+          <li><strong>Code Cell：</strong> 用來撰寫 Python 程式碼。按下 <code>Shift + Enter</code> 即可執行並在下方顯示結果。</li>
+          <li><strong>Text Cell：</strong> 用來撰寫說明文件，支援完整的 Markdown 語法（包含 LaTeX 數學公式：<code>$E=mc^2$</code>）。</li>
+        </ul>
+
+        <h2>2. 開啟 GPU / TPU 加速運算</h2>
+        <p>Colab 最吸引人的功能莫過於免費硬體加速。要開啟 GPU 或 TPU，請依照以下步驟：</p>
+        <ol>
+          <li>點擊頂部選單欄的 <strong>「執行階段」(Runtime)</strong>。</li>
+          <li>選擇 <strong>「變更執行階段類型」(Change runtime type)</strong>。</li>
+          <li>在「硬體加速器」(Hardware accelerator) 的下拉選單中，選擇 <strong>T4 GPU</strong> 或 <strong>TPU</strong>，然後點擊儲存。</li>
+        </ol>
+        <p>你可以透過以下 Python 程式碼確認是否成功分配到 GPU：</p>
+        <pre><code class="language-python">!nvidia-smi</code></pre>
+        <p>這行指令會顯示你分配到的 GPU 型號以及當前的記憶體使用狀態。</p>
+
+        <h2>3. 檔案操作與 Google Drive 整合</h2>
+        <p>因為 Colab 的執行環境是拋棄式的（閒置過久或超過使用時限，虛擬機就會被重置），任何儲存在虛擬機本機的檔案都會消失。因此，將資料持久化存儲至 Google Drive 是必備技巧。</p>
+        
+        <h3>掛載 Google Drive</h3>
+        <p>你可以使用以下程式碼將 Google Drive 掛載至 <code>/content/drive</code> 目錄下：</p>
+        <pre><code class="language-python">from google.colab import drive
+drive.mount('/content/drive')</code></pre>
+        <p>執行後會彈出授權視窗，授權成功後，你就可以像操作本地磁碟一樣讀寫 Google Drive 裡的檔案：</p>
+        <pre><code class="language-python">import pandas as pd
+# 讀取 Google Drive 中的 CSV 檔案
+df = pd.read_csv('/content/drive/MyDrive/dataset.csv')
+print(df.head())</code></pre>
+
+        <h3>上傳與下載檔案</h3>
+        <p>如果你不想掛載整個 Drive，也可以使用 Colab 內建的方法臨時上傳或下載檔案：</p>
+        <pre><code class="language-python">from google.colab import files
+
+# 上傳檔案 (會彈出檔案選擇視窗)
+uploaded = files.upload()
+
+# 下載檔案
+files.download('model_weights.h5')</code></pre>
+
+        <h2>4. 安裝套件與使用系統指令 (Magic Commands)</h2>
+        <p>雖然 Colab 已經預先安裝了 <code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>, <code>tensorflow</code>, <code>pytorch</code> 等主流資料科學套件，但有時你還是需要安裝其他自訂套件。你可以使用 <code>!</code> 符號來執行 Linux shell 指令：</p>
+
+        <pre><code class="language-bash"># 安裝 Python 套件
+!pip install transformers xgboost
+
+# 複製 GitHub 儲存庫
+!git clone https://github.com/huggingface/transformers.git
+
+# 查看當前目錄檔案
+!ls -la</code></pre>
+
+        <p>此外，Colab 也支援 IPython 的 <strong>Magic Commands</strong>（以 <code>%</code> 開頭），例如：</p>
+        <ul>
+          <li><code>%cd /content/drive/MyDrive</code>：切換當前工作目錄。</li>
+          <li><code>%timeit</code>：測試一行程式碼的執行時間。</li>
+          <li><code>%%writefile script.py</code>：將該儲存格的內容寫入名為 <code>script.py</code> 的檔案中。</li>
+        </ul>
+
+        <h2>5. Colab 實用進階技巧</h2>
+        
+        <h3>A. 防止 Colab 斷線 (防呆機制)</h3>
+        <p>免費版的 Colab 如果在網頁閒置超過 90 分鐘，就會自動斷開連接並回收資源。一個常見的工程師小撇步是打開瀏覽器的「開發者工具」(Console)，輸入以下 JavaScript 程式碼來定時點擊頁面：</p>
+        <pre><code class="language-javascript">function ConnectButton(){
+    console.log("Connect pushed"); 
+    document.querySelector("#top-toolbar &gt; colab-connect-button").shadowRoot.querySelector("#connect").click() 
+}
+setInterval(ConnectButton, 60000);</code></pre>
+        <blockquote>請注意，Google 可能會偵測並阻擋過度頻繁的自動點擊腳本，請謹慎使用。</blockquote>
+
+        <h3>B. 與 GitHub 整合</h3>
+        <p>Colab 完美整合了 GitHub。你可以：</p>
+        <ul>
+          <li>在 Colab 首頁選擇「GitHub」標籤，直接讀取並開啟任何公用 Repository 的 <code>.ipynb</code> 檔案。</li>
+          <li>在筆記本編輯介面中，點擊 <code>檔案 -&gt; 在 GitHub 中儲存副本</code>，直接將筆記本推送到你的 GitHub 儲存庫中。</li>
+        </ul>
+
+        <h3>C. 顯示互動式圖表</h3>
+        <p>除了傳統的 <code>matplotlib</code>，Colab 對於 <code>plotly</code> 或 <code>altair</code> 這類互動式視覺化套件的支援度極高。搭配 Colab 特有的 <code>@param</code> 註解，還能直接在右側生成簡易 UI：</p>
+        <pre><code class="language-python">#@title 設定訓練參數
+learning_rate = 0.01 #@param {type:"number"}
+epochs = 100 #@param {type:"slider", min:10, max:500, step:10}
+print(f"學習率: {learning_rate}, 訓練週期: {epochs}")</code></pre>
+
+        <h2>6. Colab Pro 與限制 (Limitations)</h2>
+        <p>雖然免費版極度佛心，但也有其硬性限制：</p>
+        <ul>
+          <li><strong>最長執行時間：</strong> 免費版單次實例最多存活 12 小時。</li>
+          <li><strong>資源配額：</strong> GPU 分配並非保證，且當使用量太大時，會被系統限制配額 (Quota Limit)。</li>
+          <li><strong>記憶體：</strong> 免費版提供約 12GB 的系統記憶體。</li>
+        </ul>
+        <p>對於需要更長訓練時間、更多記憶體（High-RAM）或保證獲得強大 GPU（如 A100）的專業用戶，Google 提供了 <strong>Colab Pro</strong> 與 <strong>Colab Pro+</strong> 的付費訂閱服務。</p>
+
+        <h2>結語</h2>
+        <p>Google Colab 大幅降低了進入機器學習與資料科學領域的門檻。無需繁雜的硬體配置，透過瀏覽器便能即刻開啟高效能的程式開發之旅。無論你是正在上課的學生、嘗試新演算法的 AI 工程師，還是需要快速驗證想法的開發者，Colab 都是你不可或缺的強大工具。</p>
+
+      </article>
+
+      <!-- =============== Tags =============== -->
+      <div class="article-tags">
+        <span class="tag">Google Colab</span>
+        <span class="tag">Jupyter Notebook</span>
+        <span class="tag">Python</span>
+        <span class="tag">AI</span>
+        <span class="tag">開發工具</span>
+        <span class="tag">教學</span>
+      </div>
+
+      <!-- =============== Article Footer =============== -->
+      <footer class="article-footer">
+        <a href="./articles.html" class="back-home">
+          ← 返回所有文章
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="logo">"AI" 硬核工程師</div>
+        <p class="footer-desc">專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</p>
+      </div>
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>網站</h4>
+          <a href="./index.html">首頁</a>
+          <a href="./tech-news.html">科技新知</a>
+          <a href="./articles.html">文章列表</a>
+          <a href="./about.html">關於我</a>
+        </div>
+        <div class="link-group">
+          <h4>工具</h4>
+          <a href="#">RSS 訂閱</a>
+          <a href="#">深淺色切換</a>
+          <a href="#">搜尋文章</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        &copy; 2026 "AI" 硬核工程師. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

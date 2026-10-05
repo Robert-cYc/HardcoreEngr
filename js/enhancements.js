@@ -626,6 +626,8 @@
         }
       });
     }
+  }
+
   /* ---------- 啟動 ---------- */
   function init() {
     initTerminalTyping();

@@ -1,5 +1,18 @@
 [
   {
+    "title": "Google Colab 完整攻略：雲端 Jupyter Notebook 介紹、功能與實戰指南",
+    "excerpt": "Google Colab 是一個免費的雲端 Jupyter Notebook 環境。本文詳細介紹 Colab 的核心功能、如何掛載 Google Drive、使用免費 GPU/TPU 資源，以及進階使用技巧。",
+    "url": "google-colab-guide.html",
+    "tags": [
+      "Google Colab",
+      "Jupyter Notebook",
+      "Python",
+      "AI",
+      "開發工具",
+      "教學"
+    ]
+  },
+  {
     "title": "顛覆汽車工業的純電巨頭：Tesla 特斯拉車系與核心技術總覽",
     "excerpt": "詳細梳理 Tesla 目前的核心車系矩陣（S3XY 家族、Cybertruck），以及其背後的關鍵技術：FSD、OTA 與超級充電網路。",
     "url": "tesla-model-lineup-guide.html",
