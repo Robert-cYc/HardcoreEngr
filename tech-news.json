@@ -1,10 +1,16 @@
 {
-  "updated": "2026-10-05 01:19",
+  "updated": "2026-10-05 01:46",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "果粉真的需要每年換新iPhone？蘋果執行長親自給答案",
+          "link": "https://3c.ltn.com.tw/news/67805",
+          "date": "2026/10/05 09:14",
+          "summary": "每年9月新款iPhone登場後，很多果粉都會陷入同一個掙扎：手上的iPhone明明還能用，到底有沒有必要跟著每年換新 ..."
+        },
         {
           "title": "不只觸控＋OLED！蘋果新一代旗艦MacBook Pro爆有感減重",
           "link": "https://3c.ltn.com.tw/news/67806",
@@ -70,12 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67798",
           "date": "2026/10/03 14:15",
           "summary": "日本LINE早在7月預告，將於秋季起針對「LYP Premium」付費訂閱用戶推出4大新功能，包含訊息編輯、進階封鎖 ..."
-        },
-        {
-          "title": "YouTube大改Shorts演算法！這類影片恐降觸及 原創優先推",
-          "link": "https://3c.ltn.com.tw/news/67795",
-          "date": "2026/10/03 14:01",
-          "summary": "滑YouTube Shorts最煩的情況之一，就是同一段熱門影片一直被不同帳號搬來搬去，甚至只是換個字幕、套個模板就 ..."
         }
       ]
     },
