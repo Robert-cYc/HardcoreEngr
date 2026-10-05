@@ -1,10 +1,16 @@
 {
-  "updated": "2026-10-05 01:46",
+  "updated": "2026-10-05 02:59",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "電競螢幕更新率突破1000Hz！AOC發表AGP257FT超頻達1050Hz",
+          "link": "https://3c.ltn.com.tw/news/67804",
+          "date": "2026/10/05 10:00",
+          "summary": "AOC 旗下品牌 AGON 發表旗下速度最快的電競顯示器 AGON PRO AGP257FT，專為職業電競選手和快節 ..."
+        },
         {
           "title": "果粉真的需要每年換新iPhone？蘋果執行長親自給答案",
           "link": "https://3c.ltn.com.tw/news/67805",
@@ -70,12 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67789",
           "date": "2026/10/03 15:00",
           "summary": "Google中階手機Pixel 10a近日才被發現日本售價無預警調漲，現在看來，日本並不是單一個案。最新消息指出，美 ..."
-        },
-        {
-          "title": "LINE 3大新功能曝光！封鎖斷聯更徹底 直接從對方好友名單消失",
-          "link": "https://3c.ltn.com.tw/news/67798",
-          "date": "2026/10/03 14:15",
-          "summary": "日本LINE早在7月預告，將於秋季起針對「LYP Premium」付費訂閱用戶推出4大新功能，包含訊息編輯、進階封鎖 ..."
         }
       ]
     },
