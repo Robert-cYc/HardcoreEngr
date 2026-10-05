@@ -1,5 +1,17 @@
 [
   {
+    "title": "顛覆汽車工業的純電巨頭：Tesla 特斯拉車系與核心技術總覽",
+    "excerpt": "詳細梳理 Tesla 目前的核心車系矩陣（S3XY 家族、Cybertruck），以及其背後的關鍵技術：FSD、OTA 與超級充電網路。",
+    "url": "tesla-model-lineup-guide.html",
+    "tags": [
+      "Tesla",
+      "EV",
+      "FSD",
+      "自動駕駛",
+      "硬體架構"
+    ]
+  },
+  {
     "title": "Apache HTTP Server 與 Apache Tomcat 全面解析",
     "excerpt": "深入解析 Apache HTTP Server 與 Apache Tomcat，涵蓋它們的各自定位、功能差異，以及在實際架構中如何協同工作，以硬核工程師視角拆解底層架構。",
     "url": "apache-vs-tomcat.html",

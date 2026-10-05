@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tesla 特斯拉車系與核心技術總覽 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🚗">
+  <meta name="description" content="詳細梳理 Tesla 目前的核心車系矩陣（S3XY 家族、Cybertruck），以及其背後的關鍵技術：FSD、OTA 與超級充電網路。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/tesla-model-lineup-guide.html">
+  <meta property="og:title" content="Tesla 特斯拉車系與核心技術總覽 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="詳細梳理 Tesla 目前的核心車系矩陣（S3XY 家族、Cybertruck），以及其背後的關鍵技術：FSD、OTA 與超級充電網路。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/tesla-model-lineup-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tesla 特斯拉車系與核心技術總覽 — &quot;AI&quot; 硬核工程師">
+  <meta name="twitter:description" content="詳細梳理 Tesla 目前的核心車系矩陣（S3XY 家族、Cybertruck），以及其背後的關鍵技術：FSD、OTA 與超級充電網路。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; line-height: 1.8; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.1rem; }
+    .article-body th, .article-body td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>顛覆汽車工業的純電巨頭：Tesla 特斯拉車系與核心技術總覽</h1>
+        <div class="article-meta">
+          <span>2026-10-05</span>
+          <span class="separator">·</span>
+          <span>12 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Tesla</span>
+          <span class="tag">EV</span>
+          <span class="tag">FSD</span>
+          <span class="tag">自動駕駛</span>
+          <span class="tag">硬體架構</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/tesla-cybertruck/1200/400" alt="Tesla 車系與 Cybertruck">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p>自 2008 年推出第一款 Roadster 以來，Tesla（特斯拉）徹底改變了全球汽車產業的遊戲規則。它不僅是一家車廠，更是一家軟體與能源公司。透過強大的軟硬體整合能力、OTA (Over-the-Air) 遠端更新，以及獨步全球的 Supercharger 超級充電網路，Tesla 成功將「電動車」與「高科技」畫上等號。</p>
+        <p>本文將以硬核工程師的視角，為你詳細梳理 Tesla 目前的核心車系矩陣（S3XY 家族、Cybertruck），以及其背後的關鍵技術。</p>
+
+        <h2>1. 核心車系陣容：S3XY 家族</h2>
+        <p>Elon Musk 最初的產品命名戰略是拼出「SEXY」，但由於 "E" 的商標被 Ford 註冊，因此改為數字 "3"，形成了如今的 <strong>S3XY</strong> 陣容。</p>
+
+        <h3>Model S：旗艦純電轎車 (Sedan)</h3>
+        <ul>
+          <li><strong>定位：</strong> Tesla 的第一款量產四門轎車，確立了現代 Tesla 的品牌地位。</li>
+          <li><strong>特色：</strong> 主打極致性能與豪華體驗。配備 Yoke 方向盤（或傳統方向盤選項）與後座娛樂螢幕。</li>
+          <li><strong>硬核指標 (Plaid 版)：</strong> 搭載三馬達全輪驅動，擁有超過 1,000 匹馬力，0-100 km/h 加速僅需 <strong>2.1 秒</strong>，是地表加速最快的量產車之一。其風阻係數 (Cd) 僅 0.208。</li>
+        </ul>
+
+        <h3>Model 3：平價純電房車 (Compact Sedan)</h3>
+        <ul>
+          <li><strong>定位：</strong> 肩負「普及電動車」使命的大眾市場車款，也是讓 Tesla 轉虧為盈的關鍵。</li>
+          <li><strong>特色：</strong> 極簡內裝設計，取消傳統儀表板，所有資訊整合於 15.4 吋中控螢幕。近年推出了代號 "Highland" 的改款版本，進一步取消了實體撥桿（方向燈、排檔皆改為方向盤按鈕與螢幕滑動），並大幅提升了車室隔音與懸吊舒適度。</li>
+          <li><strong>硬核指標：</strong> 高能效比，長續航版本 (Long Range) 可達 600 公里以上續航，Performance 版則兼具賽道等級的操控與加速。</li>
+        </ul>
+
+        <h3>Model X：旗艦純電休旅 (SUV)</h3>
+        <ul>
+          <li><strong>定位：</strong> 基於 Model S 底盤開發的全尺寸豪華休旅車，最多可容納 7 人乘坐。</li>
+          <li><strong>特色：</strong> 最具標誌性的是其 <strong>「鷹翼門 (Falcon Wing Doors)」</strong>，內建超音波感測器，能在狹窄空間內偵測障礙物並自動調整開啟角度。此外，配備全景擋風玻璃，視野極佳。</li>
+          <li><strong>硬核指標：</strong> 同樣提供三馬達的 Plaid 版本，是一台擁有超跑加速能力的休旅巨獸，且具備強大的拖曳能力。</li>
+        </ul>
+
+        <h3>Model Y：中型純電跨界休旅 (Crossover SUV)</h3>
+        <ul>
+          <li><strong>定位：</strong> 基於 Model 3 平台開發的休旅車，也是目前 <strong>全球最暢銷的車款</strong>（不分燃油或純電）。</li>
+          <li><strong>特色：</strong> 結合了 Model 3 的操控性與 Model X 的空間實用性。採用一體化壓鑄技術 (Giga Press)，大幅減少車身零件數量，提升結構強度並降低生產成本。</li>
+          <li><strong>硬核指標：</strong> 完美的空間與能耗平衡，標配全景玻璃車頂與電動尾門，是目前 CP 值最高的家庭純電休旅選擇。</li>
+        </ul>
+
+        <h2>2. 顛覆傳統的重型武器：Cybertruck</h2>
+        <ul>
+          <li><strong>定位：</strong> 純電皮卡 (Pickup Truck)，主攻北美市場。</li>
+          <li><strong>特色：</strong> 打破了過去百年來皮卡的設計框架。車身採用 <strong>Ultra-Hard 30X 冷軋不鏽鋼</strong> 製成，無需烤漆，具備防彈能力；車窗為 Tesla 裝甲玻璃。造型充滿賽博龐克 (Cyberpunk) 風格的銳利幾何線條。</li>
+          <li><strong>硬核指標：</strong>
+            <ul>
+              <li>導入 <strong>48V 低壓架構</strong>（傳統車輛為 12V），大幅縮減車內線束重量。</li>
+              <li>採用 <strong>線控轉向 (Steer-by-Wire)</strong> 技術，方向盤與車輪之間沒有機械連接，根據車速動態調整轉向比。</li>
+              <li>Cyberbeast (野獸版) 擁有 845 匹馬力，0-100 km/h 加速僅 2.7 秒，甚至能拖著一輛保時捷 911 跑贏另一輛保時捷 911。</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>3. 其他商業與未來車系</h2>
+        <ul>
+          <li><strong>Tesla Semi：</strong> 純電 Class 8 重型卡車，承諾在滿載 80,000 磅的情況下能達到 500 英里（約 800 公里）的續航，目前已交付給百事可樂 (PepsiCo) 等企業進行商業營運。</li>
+          <li><strong>Next-Gen Roadster：</strong> 第二代純電跑車，號稱 0-60 mph 加速低於 1 秒（若選配 SpaceX 冷氣體推進器），目前仍在開發階段。</li>
+          <li><strong>Robotaxi / Cybercab：</strong> 專為完全自動駕駛 (FSD) 設計的無方向盤、無踏板計程車，是 Tesla 轉型為自駕服務網路公司的核心產品。</li>
+        </ul>
+
+        <h2>4. Tesla 的三大硬核技術護城河</h2>
+        <ol>
+          <li><strong>FSD (Full Self-Driving) 完全自動駕駛：</strong><br>Tesla 堅持採用「純視覺 (Vision-only)」方案，拔除了雷達與超音波感測器，僅靠車身鏡頭捕捉影像，並透過神經網路 (Neural Network) 進行端到端 (End-to-End) 的機器學習。其 Dojo 超級電腦不斷處理全球百萬輛 Tesla 回傳的真實駕駛數據，使 FSD 的能力呈指數級進化。</li>
+          <li><strong>OTA (Over-the-Air) 軟體更新：</strong><br>傳統車廠的車子買來就定型了，但 Tesla 像是一台巨大的智慧型手機。透過 OTA，Tesla 能遠端提升馬達輸出、改善煞車邏輯、增加新 UI 介面，甚至推出全新的自動駕駛功能，讓車子「越開越新」。</li>
+          <li><strong>超級充電網路 (Supercharger Network)：</strong><br>這是 Tesla 早期最成功的一步棋。其 V3/V4 超充站遍布全球，隨插即充 (Plug & Charge) 體驗無縫且穩定。如今，Tesla 的 NACS (北美充電標準) 甚至統一了北美電動車市場，迫使各大傳統車廠低頭採用。</li>
+        </ol>
+
+        <h2>結語</h2>
+        <p>Tesla 已經不是一家單純製造硬體的車廠。它利用軟體定義汽車 (Software-Defined Vehicle)，將 AI、自動化生產與能源網格無縫結合。如果你是一個崇尚科技與效率的工程師，Tesla 的設計邏輯與底層架構，絕對是目前汽車工業中最值得研究的標竿。</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="article-footer">
+    <div class="container">
+      <p>"AI" 硬核工程師 — Talk is cheap. Show me the code.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>
