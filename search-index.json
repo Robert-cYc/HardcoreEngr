@@ -1,5 +1,17 @@
 [
   {
+    "title": "Apache HTTP Server 與 Apache Tomcat 全面解析",
+    "excerpt": "深入解析 Apache HTTP Server 與 Apache Tomcat，涵蓋它們的各自定位、功能差異，以及在實際架構中如何協同工作，以硬核工程師視角拆解底層架構。",
+    "url": "apache-vs-tomcat.html",
+    "tags": [
+      "Apache",
+      "Tomcat",
+      "Server",
+      "Backend",
+      "架構"
+    ]
+  },
+  {
     "title": "主流 NAS 終極解析：Synology, QNAP, Asustor 與 DIY TrueNAS 比較",
     "excerpt": "深入剖析現代 NAS 的核心架構與功能。從備份3-2-1原則、Docker 容器託管到 Btrfs/ZFS 檔案系統。全面比較商業品牌與 DIY 方案。",
     "url": "nas-storage-comparison.html",

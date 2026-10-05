@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apache HTTP Server 與 Apache Tomcat 全面解析 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,☕">
+  <meta name="description" content="深入解析 Apache HTTP Server 與 Apache Tomcat，涵蓋它們的各自定位、功能差異，以及在實際架構中如何協同工作，以硬核工程師視角拆解底層架構。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/apache-vs-tomcat.html">
+  <meta property="og:title" content="Apache HTTP Server 與 Apache Tomcat 全面解析 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="深入解析 Apache HTTP Server 與 Apache Tomcat，涵蓋它們的各自定位、功能差異，以及在實際架構中如何協同工作，以硬核工程師視角拆解底層架構。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/apache-vs-tomcat.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Apache HTTP Server 與 Apache Tomcat 全面解析 — &quot;AI&quot; 硬核工程師">
+  <meta name="twitter:description" content="深入解析 Apache HTTP Server 與 Apache Tomcat，涵蓋它們的各自定位、功能差異，以及在實際架構中如何協同工作，以硬核工程師視角拆解底層架構。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; line-height: 1.8; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.1rem; }
+    .article-body th, .article-body td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>Apache HTTP Server 與 Apache Tomcat 全面解析</h1>
+        <div class="article-meta">
+          <span>2026-10-05</span>
+          <span class="separator">·</span>
+          <span>10 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Apache</span>
+          <span class="tag">Tomcat</span>
+          <span class="tag">Server</span>
+          <span class="tag">Backend</span>
+          <span class="tag">架構</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/apache-tomcat/1200/400" alt="Apache HTTP Server 與 Tomcat">
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <p>在網站伺服器與 Java 開發領域，<strong>Apache HTTP Server</strong> 與 <strong>Apache Tomcat</strong> 是兩個最常被提及，卻也最容易被混淆的開源軟體。雖然它們都冠有「Apache」之名（皆由 Apache 軟體基金會維護），但兩者的設計初衷、核心功能與應用場景有著本質上的不同。</p>
+        <p>簡單來說：<strong>Apache HTTP Server 是「網頁伺服器（Web Server）」</strong>，而 <strong>Apache Tomcat 是「應用程式伺服器（Application Server / Servlet Container）」</strong>。</p>
+
+        <h2>1. Apache HTTP Server (簡稱 Apache 或 httpd)</h2>
+        <h3>定位</h3>
+        <p>Apache HTTP Server 誕生於 1995 年，是世界上歷史最悠久、最廣泛使用的網頁伺服器之一。它的主要任務是<strong>接收 HTTP 請求並提供靜態內容</strong>。</p>
+
+        <h3>核心功能與特色</h3>
+        <ul>
+          <li><strong>處理靜態資源：</strong> 極度擅長且高效地處理 HTML、CSS、JavaScript、圖片與影片等靜態檔案。</li>
+          <li><strong>模組化架構：</strong> 支援豐富的模組（Modules），例如：
+            <ul>
+              <li><code>mod_rewrite</code>：強大的 URL 重寫功能。</li>
+              <li><code>mod_ssl</code>：提供 HTTPS 安全連線支援。</li>
+              <li><code>mod_proxy</code>：實現反向代理（Reverse Proxy）與負載均衡（Load Balancing）。</li>
+            </ul>
+          </li>
+          <li><strong>動態語言支援（需透過模組）：</strong> 雖然本身處理靜態內容，但可透過載入模組（如 <code>mod_php</code>, <code>mod_python</code>）來解析 PHP 或 Python 腳本。</li>
+          <li><strong>高併發與穩定性：</strong> 在處理大量且高併發的靜態 HTTP 請求時，效能與穩定性極佳。</li>
+        </ul>
+
+        <h2>2. Apache Tomcat</h2>
+        <h3>定位</h3>
+        <p>Apache Tomcat 是一個由 Java 寫成的 Servlet 容器（Servlet Container），也是一個輕量級的應用程式伺服器。它的核心任務是<strong>執行 Java 程式碼來動態生成網頁內容</strong>。</p>
+
+        <h3>核心功能與特色</h3>
+        <ul>
+          <li><strong>Java EE 規範實作：</strong> 主要支援 Java Servlet、JavaServer Pages (JSP)、Java Expression Language (EL) 與 WebSocket 等技術。</li>
+          <li><strong>處理動態內容：</strong> 當使用者發出請求時，Tomcat 會喚醒對應的 Java 類別（Servlet），與資料庫互動或進行業務邏輯運算後，將結果動態渲染成 HTML 返回給客戶端。</li>
+          <li><strong>內建 HTTP 伺服器：</strong> Tomcat 本身包含了一個基本的 HTTP 伺服器元件（Coyote），因此它可以獨立運行，直接接收瀏覽器的請求。但其處理靜態資源的效能傳統上不如 Apache HTTP Server。</li>
+          <li><strong>專注於 Java：</strong> 它無法原生解析 PHP 或 Python，是專為 Java Web 應用（如 Spring Boot, JSF）設計的運行環境。</li>
+        </ul>
+
+        <h2>3. 核心差異比較表</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>Apache HTTP Server (httpd)</th>
+              <th>Apache Tomcat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>主要角色</strong></td>
+              <td>網頁伺服器 (Web Server)</td>
+              <td>應用程式伺服器 (App Server / Servlet Container)</td>
+            </tr>
+            <tr>
+              <td><strong>擅長處理</strong></td>
+              <td>靜態內容 (HTML, CSS, JS, 圖片)</td>
+              <td>動態內容 (Java Servlets, JSP)</td>
+            </tr>
+            <tr>
+              <td><strong>開發語言</strong></td>
+              <td>C 語言</td>
+              <td>Java</td>
+            </tr>
+            <tr>
+              <td><strong>動態腳本支援</strong></td>
+              <td>PHP, Perl, Python (需載入模組)</td>
+              <td>Java (Servlet, JSP)</td>
+            </tr>
+            <tr>
+              <td><strong>效能表現</strong></td>
+              <td>處理靜態資源與高併發連線效能極高</td>
+              <td>處理靜態資源效能普通；專注於 Java 邏輯運算</td>
+            </tr>
+            <tr>
+              <td><strong>反向代理/負載均衡</strong></td>
+              <td>強大，常作為前端路由使用</td>
+              <td>較弱，通常依賴前置的 Web Server</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>4. 完美搭檔：如何協同工作 (整合架構)</h2>
+        <p>在企業級的生產環境中，通常不會讓 Tomcat 直接面對所有的網際網路請求，而是將兩者結合使用，形成 <strong>Apache (前端) + Tomcat (後端)</strong> 的經典架構。</p>
+
+        <h3>整合運作流程：</h3>
+        <ol>
+          <li><strong>前端攔截：</strong> Apache HTTP Server 作為系統的最前端，監聽 80 (HTTP) 與 443 (HTTPS) 埠。</li>
+          <li><strong>靜態請求：</strong> 當使用者請求圖片、CSS 或純 HTML 時，Apache 直接讀取檔案系統並回傳，<strong>不經過 Tomcat</strong>，大幅減輕後端負擔。</li>
+          <li><strong>動態請求轉發：</strong> 當使用者請求動態內容（例如 <code>/login.do</code> 或 <code>/api/*</code>），Apache 會透過反向代理模組（如 <code>mod_proxy_ajp</code> 或 <code>mod_jk</code>）將請求轉發給後端的 Tomcat。</li>
+          <li><strong>業務處理：</strong> Tomcat 接收到轉發的請求，執行 Java 程式碼、查詢資料庫，並將結果回傳給 Apache。</li>
+          <li><strong>回傳客戶端：</strong> Apache 最終將 Tomcat 處理好的動態內容回傳給使用者的瀏覽器。</li>
+        </ol>
+
+        <h3>整合的優勢：</h3>
+        <ul>
+          <li><strong>效能最佳化：</strong> 讓各自做最擅長的事（Apache 處理靜態，Tomcat 專心跑 Java）。</li>
+          <li><strong>安全性：</strong> Tomcat 隱藏在內網，由 Apache 在前端擋下惡意請求或處理 SSL/TLS 憑證加解密。</li>
+          <li><strong>擴充性與高可用性（HA）：</strong> 一台前端的 Apache 可以透過負載均衡將動態請求分發給多台後端的 Tomcat 叢集（Cluster），實現系統的水平擴展與容災能力。</li>
+        </ul>
+
+        <h2>結語</h2>
+        <p>如果你的網站只是純靜態網頁，或者使用 PHP/Python，選擇 <strong>Apache HTTP Server</strong> (或 Nginx) 即可。如果你的專案是基於 Java 開發的，你絕對需要 <strong>Tomcat</strong>。而在重視效能與安全的大型生產環境中，將兩者結合使用是長久以來的業界最佳實踐。</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="article-footer">
+    <div class="container">
+      <p>"AI" 硬核工程師 — Talk is cheap. Show me the code.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>
