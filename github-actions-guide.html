@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Actions 完全攻略：原生 CI/CD 與自動化工作流指南 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="GitHub Actions 完整教學：核心概念、Workflow 語法、常見應用場景、CI/CD 實戰範例與最佳實踐。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/github-actions-guide.html">
+  <meta property="og:title" content="GitHub Actions 完全攻略：原生 CI/CD 與自動化工作流指南 — "AI" 硬核工程師">
+  <meta property="og:description" content="GitHub Actions 完整教學：核心概念、Workflow 語法、常見應用場景、CI/CD 實戰範例與最佳實踐。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/github-actions-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GitHub Actions 完全攻略：原生 CI/CD 與自動化工作流指南 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="GitHub Actions 完整教學：核心概念、Workflow 語法、常見應用場景、CI/CD 實戰範例與最佳實踐。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.21rem; }
+    .article-body th, .article-body td { padding: 0.4rem 0.5rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .cmd-table td:first-child { font-family: "Fira Code", "SF Mono", Consolas, monospace; font-weight: 700; color: var(--accent); white-space: nowrap; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "GitHub Actions 完全攻略：原生 CI/CD 與自動化工作流指南",
+    "description": "GitHub Actions 完整教學：核心概念、Workflow 語法、常見應用場景、CI/CD 實戰範例與最佳實踐。",
+    "url": "https://ai-hardcore-engineer.com/github-actions-guide.html",
+    "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
+    "image": "https://ai-hardcore-engineer.com/og-image.png",
+    "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/github-actions-guide.html" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="article-hero">
+        <h1>GitHub Actions 完全攻略：原生 CI/CD 與自動化工作流指南</h1>
+        <div class="article-meta">
+          <span>2026-10-06</span>
+          <span class="separator">·</span>
+          <span>15 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">GitHub</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">DevOps</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/github-actions/1200/400" alt="GitHub Actions 教學">
+      </section>
+
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong><br>
+          &nbsp;&nbsp;① <strong>什麼是 GitHub Actions：</strong>GitHub 內建的原生自動化與 CI/CD 平台，不需額外架設 Jenkins 等工具。<br>
+          &nbsp;&nbsp;② <strong>核心概念：</strong>由 Workflows (工作流)、Events (事件)、Jobs (工作)、Steps (步驟)、Actions (動作)、Runners (執行環境) 組成。<br>
+          &nbsp;&nbsp;③ <strong>優勢：</strong>無縫整合 GitHub、有龐大的社群開源 Actions 生態系、公開專案完全免費。<br>
+          &nbsp;&nbsp;④ <strong>實戰應用：</strong>自動化測試 (CI)、自動化部署 (CD)、自動標記 Issue、發布 Release 等。
+        </blockquote>
+
+        <h2>為什麼需要 GitHub Actions？</h2>
+        <p>在過去，如果你想要做持續整合與持續部署（CI/CD），通常需要自己架設 Jenkins 伺服器，或者註冊 CircleCI、Travis CI 等第三方服務，然後把 GitHub 上的程式碼與這些服務綁定。這不僅增加了維護成本，還容易遇到權限認證與網路同步的問題。</p>
+        <p><strong>GitHub Actions</strong> 打破了這個局面。身為 GitHub 官方推出的原生功能，它允許你在 <code>.github/workflows</code> 目錄下直接撰寫 YAML 設定檔，只要有程式碼推入（Push）、開啟 Pull Request (PR)，或是定時觸發，GitHub 就會自動分配一台機器（Runner）幫你跑腳本。一站式的體驗讓它成為現代開發者的首選。</p>
+
+        <h2>核心概念拆解</h2>
+        <p>在開始寫 YAML 之前，我們必須先搞懂 GitHub Actions 的幾個核心名詞：</p>
+        <ul>
+          <li><strong>Workflow (工作流)：</strong> 一個完整的自動化流程。一個儲存庫可以有多個工作流（例如：一個用來測試、一個用來部署）。由 <code>.github/workflows/</code> 底下的 YAML 檔案定義。</li>
+          <li><strong>Event (事件)：</strong> 觸發 Workflow 執行的條件。例如：<code>push</code>、<code>pull_request</code>、<code>schedule</code> (定時) 或 <code>workflow_dispatch</code> (手動觸發)。</li>
+          <li><strong>Job (工作)：</strong> 一個 Workflow 包含一個或多個 Job。預設情況下，多個 Job 會<strong>並行 (Parallel)</strong> 執行，但你可以設定它們的相依性（例如：Deploy Job 必須等 Test Job 成功才能執行）。</li>
+          <li><strong>Step (步驟)：</strong> 每個 Job 裡面的具體步驟。可以是一條 Shell 指令（如 <code>npm install</code>），也可以是一個 <strong>Action</strong>。</li>
+          <li><strong>Action (動作)：</strong> 已經寫好的可重複使用腳本。你可以用官方提供的 Actions，也可以用社群開源的 Actions（如：<code>actions/checkout</code> 用來拉取程式碼）。</li>
+          <li><strong>Runner (執行環境)：</strong> 執行這些 Job 的伺服器。GitHub 提供免費的 Ubuntu、Windows、macOS 虛擬機，你也可以自建 Self-hosted Runner。</li>
+        </ul>
+
+        <h2>第一個 Workflow：自動化測試 (CI)</h2>
+        <p>讓我們從一個最常見的情境開始：每當有人推程式碼到 <code>main</code> 分支時，自動執行 Node.js 的測試。</p>
+        <p>在專案根目錄下建立 <code>.github/workflows/ci.yml</code>：</p>
+        <pre><code>name: Node.js CI
+
+# 觸發條件 (Event)
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    # 執行環境 (Runner)
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: 匯出程式碼
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Step 2: 設定 Node.js 環境
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm' # 自動快取 npm dependencies 提升速度
+
+    # Step 3: 安裝依賴
+    - name: Install dependencies
+      run: npm ci
+
+    # Step 4: 執行測試
+    - name: Run tests
+      run: npm test</code></pre>
+
+        <h3>語法解析：</h3>
+        <ul>
+          <li><code>on:</code> 定義了觸發條件，這裡是當 <code>main</code> 分支有 Push 或 PR 時觸發。</li>
+          <li><code>runs-on: ubuntu-latest</code> 告訴 GitHub 給我一台最新的 Ubuntu 虛擬機。</li>
+          <li><code>uses: actions/checkout@v4</code> 這是官方提供的 Action，幫你把程式碼拉到 Runner 裡面。幾乎每個 Workflow 都要用到它。</li>
+          <li><code>run: npm test</code> 則是直接在 Runner 裡面執行的終端機指令。</li>
+        </ul>
+
+        <h2>常用觸發條件 (Events)</h2>
+        <table class="cmd-table">
+          <tr><th>Event</th><th>說明</th><th>範例語法</th></tr>
+          <tr><td>push</td><td>當有程式碼 Push 到特定分支時</td><td><code>on: push</code></td></tr>
+          <tr><td>pull_request</td><td>當 PR 被開啟、更新或同步時</td><td><code>on: pull_request</code></td></tr>
+          <tr><td>schedule</td><td>Cron 排程，定時自動執行</td><td><code>on: schedule: - cron: '0 0 * * *'</code> (每天半夜執行)</td></tr>
+          <tr><td>workflow_dispatch</td><td>允許在 GitHub 網頁上按按鈕手動觸發</td><td><code>on: workflow_dispatch:</code></td></tr>
+          <tr><td>release</td><td>當發布了新的 GitHub Release 時</td><td><code>on: release: types: [published]</code></td></tr>
+        </table>
+
+        <h2>環境變數與 Secrets 安全管理</h2>
+        <p>在 CI/CD 過程中，我們經常需要用到 API Key、資料庫密碼或伺服器的 SSH Key。<strong>千萬不能把它們直接寫在 YAML 裡面</strong>！</p>
+        <p>GitHub 提供了 <strong>Secrets</strong> 功能。到專案的 <code>Settings > Secrets and variables > Actions</code> 新增你的機密資訊（例如 <code>DOCKER_PASSWORD</code>）。</p>
+        <p>在 YAML 中讀取 Secret：</p>
+        <pre><code>steps:
+  - name: Login to Docker Hub
+    uses: docker/login-action@v3
+    with:
+      username: ${{ secrets.DOCKER_USERNAME }}
+      password: ${{ secrets.DOCKER_PASSWORD }}</code></pre>
+        <p>若是普通的環境變數（非機密），可以使用 <code>env</code> 關鍵字：</p>
+        <pre><code>env:
+  NODE_ENV: production
+  API_URL: https://api.example.com</code></pre>
+
+        <h2>進階實戰：自動建置與部署 (CD) 到伺服器</h2>
+        <p>現在我們要設計一個串聯的 Workflow：先跑測試（Test），測試成功後，再自動部署（Deploy）到遠端伺服器。</p>
+        <pre><code>name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm ci
+      - run: npm test
+
+  deploy:
+    runs-on: ubuntu-latest
+    # 關鍵：告訴 GitHub 這個 job 依賴 test job，test 成功才會跑 deploy
+    needs: test 
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/my-app
+            git pull origin main
+            npm install
+            pm2 restart my-app</code></pre>
+        <p>這裡用到了 <code>needs: test</code>，確保如果測試失敗，就不會進行部署。同時使用了社群知名的 <code>appleboy/ssh-action</code> 來透過 SSH 登入遠端伺服器執行部署指令。</p>
+
+        <h2>實用技巧與最佳實踐</h2>
+        <ol>
+          <li><strong>善用 Actions Marketplace：</strong> 不要重新發明輪子。想做什麼（如部署到 AWS、發送 Slack 通知），先去 <a href="https://github.com/marketplace?type=actions" target="_blank">GitHub Marketplace</a> 搜尋，通常都有現成的 Action 可以 <code>uses</code>。</li>
+          <li><strong>鎖定 Action 的版本：</strong> 建議使用 <code>@v4</code> 這樣的大版本號，或者直接鎖定 Commit SHA，避免 Action 開發者引入 breaking changes 導致你的 Workflow 壞掉。</li>
+          <li><strong>矩陣測試 (Matrix Strategy)：</strong> 如果你的套件需要支援多個 Node.js 版本，不需要寫多個 Job，使用 matrix：
+            <pre><code>strategy:
+  matrix:
+    node-version: [18.x, 20.x, 22.x]
+steps:
+  - uses: actions/setup-node@v4
+    with:
+      node-version: ${{ matrix.node-version }}</code></pre>
+          </li>
+          <li><strong>快取 (Caching)：</strong> 對於 <code>node_modules</code> 或 Docker layers，善用 cache 可以讓你的 CI 時間從幾分鐘縮短到幾十秒。官方的 <code>actions/setup-*</code> 通常都已經內建快取選項（如前面範例的 <code>cache: 'npm'</code>）。</li>
+        </ol>
+
+        <h2>總結</h2>
+        <p>GitHub Actions 把自動化流程與程式碼放在一起管理（Configuration as Code），大幅降低了 DevOps 的門檻。從簡單的 Linter 檢查、單元測試，到複雜的跨平台編譯打包、Docker 映像推送與 Kubernetes 部署，都能夠輕鬆搞定。現在就打開你的 GitHub 專案，點擊上方的 "Actions" 標籤，挑選一個官方推薦的範本開始嘗試吧！</p>
+      </article>
+
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>
