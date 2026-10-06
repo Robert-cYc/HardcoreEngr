@@ -1,10 +1,22 @@
 {
-  "updated": "2026-10-05 20:07",
+  "updated": "2026-10-06 01:14",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "升級iOS 27也用不到Siri AI！外媒：歐盟用戶恐再等數個月",
+          "link": "https://3c.ltn.com.tw/news/67814",
+          "date": "2026/10/06 08:40",
+          "summary": "蘋果（Apple）在9月中旬發表新一代iOS 27，其中作引人矚目的新功能就是Siri AI，然而根據科技外媒《Ma ..."
+        },
+        {
+          "title": "Google全新智慧手環曝光！睽違3年回歸 iPhone也能用",
+          "link": "https://3c.ltn.com.tw/news/67809",
+          "date": "2026/10/06 08:00",
+          "summary": "Google穿戴裝置陣容可能又要迎來新成員。外媒最新曝光一款名為「Fitbit Edge」的全新健身手環，不同於今年 ..."
+        },
         {
           "title": "卡普空當家RE引擎將升級！AI輔助開發效率 保證內容依舊手工繪製",
           "link": "https://3c.ltn.com.tw/news/67808",
@@ -64,18 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67790",
           "date": "2026/10/04 10:00",
           "summary": "很多iPhone用戶為了省電，會把手機裡不少功能直接關掉，不過3C達人Tim哥點名「5大功能」千萬不要亂關，否則不只 ..."
-        },
-        {
-          "title": "Google Gemini免費版縮水！10／9起只剩1種模型 AI Plus也挨刀",
-          "link": "https://3c.ltn.com.tw/news/67799",
-          "date": "2026/10/04 08:00",
-          "summary": "Google Gemini免費用戶注意，之後能用的AI模型要變少了。Google最新公告指出，自2026年10月起將 ..."
-        },
-        {
-          "title": "《魔物獵人：旅人》手遊10月底熱血開玩 原創古龍解放狩獵本能 掌上開啟探索建造新篇章",
-          "link": "https://3c.ltn.com.tw/news/67772",
-          "date": "2026/10/04 05:45",
-          "summary": "全新手遊《魔物獵人：旅人》將於10月29日上市，目前已開放預約。 由Capcom進行IP授權與監修、TiMi Stu ..."
         }
       ]
     },
@@ -162,12 +162,6 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
-          "title": "華邦電 9 月營收年增逾 250%，預計前 10 個月營收將突破 2,000 億元",
-          "link": "https://finance.technews.tw/2026/10/05/winbond-electronics-september-revenue-increased-by-over-250-year-on-year/",
-          "date": "2026-10-05 12:45",
-          "summary": "記憶體大廠華邦電最新營收表現搶眼，公司結算2026年9月含子公司新唐科技等之合併營收為新台幣282.49億元， [&#8230;]"
-        },
-        {
           "title": "台積電創新高市值達 66.77 兆元，貢獻加權指數 594 點",
           "link": "https://finance.technews.tw/2026/10/05/tsmc-market-cap-hits-record/",
           "date": "2026-10-05 09:00",
@@ -232,6 +226,12 @@
           "link": "https://technews.tw/2026/10/05/toshiba-improves-sic-mosfet-long-term-reliability-evs-data-centers/",
           "date": "2026-10-05 02:37",
           "summary": "東芝持續推進碳化矽（SiC）功率半導體技術，宣布開發溝槽閘極（Trench-gate）SiC MOSFET 臨 [&#8230;]"
+        },
+        {
+          "title": "美報告：中國取得數百台浸潤式 DUV 微影機，籲收緊出口管制",
+          "link": "https://technews.tw/2026/10/05/china-stockpiles-asml-lithography-tools-spurring-us-calls-for-complete-export-ban/",
+          "date": "2026-10-05 02:30",
+          "summary": "美國研究機構指出，在美國限制向中國出口先進半導體製造設備之際，中國仍取得數百台可用於製造先進晶片的浸潤式深紫外 [&#8230;]"
         }
       ]
     },
