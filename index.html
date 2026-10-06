@@ -72,9 +72,19 @@
     <div class="container">
       <h1>歡迎來到"AI" 硬核工程師</h1>
       <p class="hero-tagline">Talk is cheap. Show me the code. — 專注於前端、後端、AI 與 Git 技術</p>
-      <video autoplay muted loop playsinline>
-        <source src="images/Megan.mp4" type="video/mp4">Your browser does not support the video tag.
+      <video id="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="./images/Megan.mp4" type="video/mp4">Your browser does not support the video tag.
       </video>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var v = document.getElementById('hero-video');
+          if (v) {
+            v.play().catch(function(e) {
+              console.log("Autoplay prevented:", e);
+            });
+          }
+        });
+      </script>
       <div class="terminal-window" aria-hidden="true">
         <div class="terminal-titlebar">
           <span class="terminal-dot dot-r"></span>
