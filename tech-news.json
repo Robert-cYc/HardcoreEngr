@@ -1,12 +1,18 @@
 {
-  "updated": "2026-10-06 02:02",
+  "updated": "2026-10-06 02:19",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
-          "title": "Android Auto恐淘汰一票老手機！Google擬拉高最低系統門檻",
+          "title": "Googlebook藏限制！手機沒Android 17功能少一截 舊機族哭了",
+          "link": "https://3c.ltn.com.tw/news/67810",
+          "date": "2026/10/06 10:00",
+          "summary": "Google主導的「Googlebook」已在美國、英國等部分市場率先上市，其中一大賣點，就是能和Android手機 ..."
+        },
+        {
+          "title": "Android Auto恐淘汰一票老手機！Google擬拉高系統門檻",
           "link": "https://3c.ltn.com.tw/news/67811",
           "date": "2026/10/06 09:15",
           "summary": "Android Auto用戶注意！Google似乎準備提高有線連接Android Auto的手機系統要求，又有一票老 ..."
@@ -70,12 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67776",
           "date": "2026/10/04 14:01",
           "summary": "不少人每天都在LINE聊天，但可能沒發現，iPhone其實早就能直接用AI幫忙改寫訊息。只要使用支援Apple In ..."
-        },
-        {
-          "title": "台灣人挑家用網路標準變了！90%最在意穩不穩 速度反而排後面",
-          "link": "https://3c.ltn.com.tw/news/67800",
-          "date": "2026/10/04 12:02",
-          "summary": "台灣人挑家用網路的標準正在改變。過去大家最常比較的是「下載速度有多快」，但現在真正有感的，反而是網路穩不穩、Wi-F ..."
         }
       ]
     },
@@ -162,12 +162,6 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
-          "title": "華邦電 9 月營收年增逾 250%，預計前 10 個月營收將突破 2,000 億元",
-          "link": "https://finance.technews.tw/2026/10/05/winbond-electronics-september-revenue-increased-by-over-250-year-on-year/",
-          "date": "2026-10-05 12:45",
-          "summary": "記憶體大廠華邦電最新營收表現搶眼，公司結算2026年9月含子公司新唐科技等之合併營收為新台幣282.49億元， [&#8230;]"
-        },
-        {
           "title": "台積電創新高市值達 66.77 兆元，貢獻加權指數 594 點",
           "link": "https://finance.technews.tw/2026/10/05/tsmc-market-cap-hits-record/",
           "date": "2026-10-05 09:00",
@@ -232,6 +226,12 @@
           "link": "https://technews.tw/2026/10/05/toshiba-improves-sic-mosfet-long-term-reliability-evs-data-centers/",
           "date": "2026-10-05 02:37",
           "summary": "東芝持續推進碳化矽（SiC）功率半導體技術，宣布開發溝槽閘極（Trench-gate）SiC MOSFET 臨 [&#8230;]"
+        },
+        {
+          "title": "美報告：中國取得數百台浸潤式 DUV 微影機，籲收緊出口管制",
+          "link": "https://technews.tw/2026/10/05/china-stockpiles-asml-lithography-tools-spurring-us-calls-for-complete-export-ban/",
+          "date": "2026-10-05 02:30",
+          "summary": "美國研究機構指出，在美國限制向中國出口先進半導體製造設備之際，中國仍取得數百台可用於製造先進晶片的浸潤式深紫外 [&#8230;]"
         }
       ]
     },
