@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06 01:59",
+  "updated": "2026-10-06 02:02",
   "sources": [
     {
       "name": "自由 3C 科技",
@@ -162,6 +162,12 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
+          "title": "華邦電 9 月營收年增逾 250%，預計前 10 個月營收將突破 2,000 億元",
+          "link": "https://finance.technews.tw/2026/10/05/winbond-electronics-september-revenue-increased-by-over-250-year-on-year/",
+          "date": "2026-10-05 12:45",
+          "summary": "記憶體大廠華邦電最新營收表現搶眼，公司結算2026年9月含子公司新唐科技等之合併營收為新台幣282.49億元， [&#8230;]"
+        },
+        {
           "title": "台積電創新高市值達 66.77 兆元，貢獻加權指數 594 點",
           "link": "https://finance.technews.tw/2026/10/05/tsmc-market-cap-hits-record/",
           "date": "2026-10-05 09:00",
@@ -226,12 +232,6 @@
           "link": "https://technews.tw/2026/10/05/toshiba-improves-sic-mosfet-long-term-reliability-evs-data-centers/",
           "date": "2026-10-05 02:37",
           "summary": "東芝持續推進碳化矽（SiC）功率半導體技術，宣布開發溝槽閘極（Trench-gate）SiC MOSFET 臨 [&#8230;]"
-        },
-        {
-          "title": "美報告：中國取得數百台浸潤式 DUV 微影機，籲收緊出口管制",
-          "link": "https://technews.tw/2026/10/05/china-stockpiles-asml-lithography-tools-spurring-us-calls-for-complete-export-ban/",
-          "date": "2026-10-05 02:30",
-          "summary": "美國研究機構指出，在美國限制向中國出口先進半導體製造設備之際，中國仍取得數百台可用於製造先進晶片的浸潤式深紫外 [&#8230;]"
         }
       ]
     },
