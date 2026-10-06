@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows Subsystem for Linux (WSL) 完全攻略：在 Windows 上享受原生 Linux 開發體驗 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="Windows Subsystem for Linux (WSL) 完整教學：WSL2 架構、安裝方式、VS Code 整合、Docker 搭配使用與進階效能調校。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/wsl-guide.html">
+  <meta property="og:title" content="Windows Subsystem for Linux (WSL) 完全攻略：在 Windows 上享受原生 Linux 開發體驗 — "AI" 硬核工程師">
+  <meta property="og:description" content="Windows Subsystem for Linux (WSL) 完整教學：WSL2 架構、安裝方式、VS Code 整合、Docker 搭配使用與進階效能調校。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/wsl-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Windows Subsystem for Linux (WSL) 完全攻略：在 Windows 上享受原生 Linux 開發體驗 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="Windows Subsystem for Linux (WSL) 完整教學：WSL2 架構、安裝方式、VS Code 整合、Docker 搭配使用與進階效能調校。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.21rem; }
+    .article-body th, .article-body td { padding: 0.4rem 0.5rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .cmd-table td:first-child { font-family: "Fira Code", "SF Mono", Consolas, monospace; font-weight: 700; color: var(--accent); white-space: nowrap; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Windows Subsystem for Linux (WSL) 完全攻略：在 Windows 上享受原生 Linux 開發體驗",
+    "description": "Windows Subsystem for Linux (WSL) 完整教學：WSL2 架構、安裝方式、VS Code 整合、Docker 搭配使用與進階效能調校。",
+    "url": "https://ai-hardcore-engineer.com/wsl-guide.html",
+    "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
+    "image": "https://ai-hardcore-engineer.com/og-image.png",
+    "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/wsl-guide.html" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="article-hero">
+        <h1>Windows Subsystem for Linux (WSL) 完全攻略：在 Windows 上享受原生 Linux 開發體驗</h1>
+        <div class="article-meta">
+          <span>2026-10-06</span>
+          <span class="separator">·</span>
+          <span>18 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">WSL</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Windows</span>
+          <span class="tag">Ubuntu</span>
+          <span class="tag">開發工具</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/wsl-guide/1200/400" alt="Windows Subsystem for Linux 教學">
+      </section>
+
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong><br>
+          &nbsp;&nbsp;① <strong>什麼是 WSL：</strong>微軟推出的工具，讓開發者在 Windows 上直接執行原生 Linux 環境，免除傳統虛擬機的龐大開銷。<br>
+          &nbsp;&nbsp;② <strong>WSL 2 的架構：</strong>採用輕量級 Hyper-V 虛擬機與真正的 Linux 核心，提供 100% 系統呼叫相容性與極速檔案系統。<br>
+          &nbsp;&nbsp;③ <strong>無縫整合：</strong>透過 VS Code Remote 擴充套件，在 Windows 的圖形介面下撰寫程式，執行環境卻完全在 Linux 中。<br>
+          &nbsp;&nbsp;④ <strong>檔案互通：</strong>Windows 可透過 <code>\\wsl$</code> 直接存取 Linux 檔案；Linux 可透過 <code>/mnt/c</code> 存取 Windows C 槽。
+        </blockquote>
+
+        <h2>為什麼你需要 WSL？</h2>
+        <p>在過去，Windows 開發者想要在本地端模擬 Linux 環境，通常有幾個選擇：裝雙系統（麻煩）、用 VirtualBox 等虛擬機（極吃資源且笨重）、或者使用 Cygwin/Git Bash（相容性差且速度慢）。</p>
+        <p><strong>Windows Subsystem for Linux (WSL)</strong> 徹底改變了這個局面。它不僅輕量、啟動極快（僅需幾秒鐘），更支援真正的 Linux 核心，讓所有 Docker、Node.js、Python 等工具都能以原生效能運行。微軟甚至在其中加入了對圖形化介面 (GUI) 應用程式的支援，讓你在 Windows 桌面直接開啟 Linux 應用軟體。</p>
+
+        <h2>WSL 1 vs WSL 2</h2>
+        <p>WSL 經歷過一次重大的架構改版，強烈建議使用 <strong>WSL 2</strong>：</p>
+        <table>
+          <tr><th>功能</th><th>WSL 1</th><th>WSL 2 (推薦)</th></tr>
+          <tr><td>架構原理</td><td>將 Linux 系統呼叫即時翻譯成 Windows NT 呼叫</td><td>在輕量化 Hyper-V 虛擬機內執行完整的 Linux 核心</td></tr>
+          <tr><td>啟動速度</td><td>極快</td><td>極快</td></tr>
+          <tr><td>檔案系統效能</td><td>跨系統存取稍快，但 Linux 內部操作慢</td><td>Linux 內部操作極速，跨系統存取較慢</td></tr>
+          <tr><td>相容性</td><td>部分依賴底層特性的軟體無法執行 (如 Docker)</td><td>100% 系統呼叫相容，支援所有 Linux 軟體與 Docker</td></tr>
+        </table>
+        <p>目前的預設安裝皆為 WSL 2。</p>
+
+        <h2>一行指令完成安裝</h2>
+        <p>在 Windows 10 (版號 2004 以上) 或 Windows 11 中，安裝 WSL 已經簡化到只需要打開具有管理員權限的 <strong>PowerShell</strong> 或 <strong>Windows Terminal</strong>，並輸入：</p>
+        <pre><code>wsl --install</code></pre>
+        <p>這個指令會自動：</p>
+        <ol>
+          <li>啟用必要的 Windows 虛擬機器平台功能。</li>
+          <li>下載並安裝最新的 Linux 核心。</li>
+          <li>下載並安裝預設的發行版（通常是 Ubuntu）。</li>
+        </ol>
+        <p>安裝完成後，<strong>重新啟動電腦</strong>。重開機後，一個 Ubuntu 的終端機視窗會自動彈出，要求你設定一組 UNIX 帳號與密碼（這組帳號密碼與 Windows 系統無關）。</p>
+
+        <h3>管理你的 Linux 發行版</h3>
+        <table class="cmd-table">
+          <tr><th>指令</th><th>作用</th></tr>
+          <tr><td>wsl -l -v</td><td>列出所有已安裝的 Linux 發行版及其 WSL 版本 (1 或是 2)。</td></tr>
+          <tr><td>wsl --list --online</td><td>列出官方線上商店可供安裝的其他發行版 (如 Debian, Kali 等)。</td></tr>
+          <tr><td>wsl --install -d &lt;Distro&gt;</td><td>安裝特定的發行版，例如：<code>wsl --install -d Debian</code>。</td></tr>
+          <tr><td>wsl --set-default-version 2</td><td>將預設的新發行版安裝為 WSL 2 版本。</td></tr>
+          <tr><td>wsl --set-version &lt;Distro&gt; 2</td><td>將舊版的 WSL 1 發行版升級為 WSL 2 (例如：<code>wsl --set-version Ubuntu 2</code>)。</td></tr>
+          <tr><td>wsl --shutdown</td><td>立即關閉所有正在運行的 WSL 虛擬機 (釋放記憶體)。</td></tr>
+        </table>
+
+        <h2>開發神器：VS Code 完美整合</h2>
+        <p>WSL 真正的威力在於與 Visual Studio Code 的無縫整合。你不需在終端機裡用 <code>vim</code> 寫程式，可以享受現代編輯器的所有好處。</p>
+        <ol>
+          <li>在 Windows 上安裝好 VS Code。</li>
+          <li>在 VS Code 的擴充功能市集中，搜尋並安裝 <strong>WSL (由 Microsoft 提供)</strong> 套件。</li>
+          <li>打開你的 WSL 終端機（例如 Ubuntu），建立一個專案資料夾並進入。</li>
+          <li>輸入神奇的指令：<code>code .</code></li>
+        </ol>
+        <p>此時，Windows 的 VS Code 會啟動，但左下角會顯示連線到「WSL: Ubuntu」。在這個模式下：</p>
+        <ul>
+          <li><strong>檔案：</strong> 你在編輯的是 Linux 檔案系統內的檔案。</li>
+          <li><strong>終端機：</strong> VS Code 內建的終端機會直接開啟 bash/zsh，而不是 PowerShell。</li>
+          <li><strong>擴充套件：</strong> Node.js、Python 等語言擴充套件會安裝在 Linux 端，利用 Linux 原生的編譯器來提供自動完成與除錯。</li>
+        </ul>
+
+        <h2>檔案系統的互通有無</h2>
+        <p>WSL 讓 Windows 和 Linux 兩個世界的檔案可以互相存取：</p>
+        <h3>1. 從 Windows 存取 Linux 檔案</h3>
+        <p>打開 Windows 檔案總管，在網址列輸入：</p>
+        <pre><code>\\wsl$</code></pre>
+        <p>或者在較新的 Windows 11 中，左側導覽列會有一個「Linux」的企鵝圖示。你可以直接把圖片拖進去，或是用 Windows 的工具編輯裡面的文件。</p>
+
+        <h3>2. 從 Linux 存取 Windows 檔案</h3>
+        <p>Windows 的 C 槽會自動掛載在 Linux 的 <code>/mnt/c</code>。例如要切換到 Windows 的桌面：</p>
+        <pre><code>cd /mnt/c/Users/你的帳號名稱/Desktop</code></pre>
+        <blockquote>
+          ⚠️ <strong>效能警告：</strong>在 WSL 2 中，跨檔案系統存取（例如在 Linux 內操作 Windows 的 <code>/mnt/c</code> 內的檔案）速度<strong>非常慢</strong>。因此，<strong>請務必把你的開發專案放在 Linux 原生檔案系統中 (如 <code>~</code> 家目錄)</strong>，而不是 Windows C 槽！
+        </blockquote>
+
+        <h2>Docker 與 WSL 2：天作之合</h2>
+        <p>過去在 Windows 上跑 Docker 要依賴肥重的 Hyper-V 虛擬機，現在 Docker Desktop 原生支援基於 WSL 2 的引擎：</p>
+        <ol>
+          <li>安裝 <a href="https://www.docker.com/products/docker-desktop/" target="_blank">Docker Desktop for Windows</a>。</li>
+          <li>在設定中勾選 <strong>"Use the WSL 2 based engine"</strong>。</li>
+          <li>到 <strong>Settings > Resources > WSL integration</strong>，勾選你要整合的發行版（如 Ubuntu）。</li>
+        </ol>
+        <p>設定好後，你在 Windows 上的 <code>docker</code> 指令與在 WSL Ubuntu 裡的 <code>docker</code> 指令，操作的是同一個守護進程 (Daemon) 與容器，效能完全比照原生 Linux，體驗極佳。</p>
+
+        <h2>進階：設定資源限制 (.wslconfig)</h2>
+        <p>WSL 2 的虛擬機會動態吃掉主機記憶體。如果不加以限制，有時會吃光所有的 RAM。你可以在 Windows 的使用者目錄（<code>C:\Users\&lt;你的帳號&gt;\</code>）下建立一個名為 <code>.wslconfig</code> 的檔案來限制它：</p>
+        <pre><code># C:\Users\你的帳號\.wslconfig
+[wsl2]
+memory=8GB        # 限制 WSL 最多只能使用 8GB 的 RAM
+processors=4      # 限制只使用 4 個 CPU 核心
+swap=2GB          # 設定 2GB 的 Swap 空間</code></pre>
+        <p>存檔後，在 PowerShell 執行 <code>wsl --shutdown</code>，下次啟動 WSL 時設定就會生效。</p>
+
+        <h2>總結</h2>
+        <p>WSL 2 是一項劃時代的技術，它讓前端工程師能無痛使用各種 Node.js 原生編譯套件、讓後端工程師能使用最接近正式伺服器的環境開發、讓資料科學家能輕鬆調用 GPU。如果你是 Windows 使用者，請立刻安裝 WSL，它絕對是你開發路上的最強助力。</p>
+      </article>
+
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>
