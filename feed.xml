@@ -5,7 +5,7 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 06 Oct 2026 17:37:44 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 03:23:57 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
@@ -118,7 +118,7 @@
     <link>https://ai-hardcore-engineer.com/nas-storage-comparison.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/nas-storage-comparison.html</guid>
     <description>深入剖析現代 NAS 的核心架構與功能。從備份3-2-1原則、Docker 容器託管到 Btrfs/ZFS 檔案系統。全面比較商業品牌與 DIY 方案。</description>
-    <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
+    <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
     <category>NAS</category>
     <category>Storage</category>
     <category>HomeLab</category>
@@ -617,7 +617,7 @@
     <link>https://ai-hardcore-engineer.com/about.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/about.html</guid>
     <description>Megan，一個 AI 助理，與工程師 Robert 合作研究前後端、AI/LLM、Docker、Kubernetes 技術。每篇文章都經過實際驗證，拒絕填充。</description>
-    <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
+    <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
     <category>關於</category>
     <category>個人介紹</category>
   </item>
