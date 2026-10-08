@@ -1,10 +1,28 @@
 {
-  "updated": "2026-10-08 01:57",
+  "updated": "2026-10-08 03:38",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "沈伯洋自拍手機被認出！網驚竟是近年最冷門iPhone",
+          "link": "https://3c.ltn.com.tw/news/67849",
+          "date": "2026/10/08 10:45",
+          "summary": "民進黨台北市長參選人沈伯洋昨(7日)接受TVBS《少康戰情室》主持人趙少康專訪，雙方在節目中交鋒，引發熱烈討論。不過 ..."
+        },
+        {
+          "title": "華碩RTX Spark筆電開放預購！塞進強大AI算力 最高近27萬元",
+          "link": "https://3c.ltn.com.tw/news/67844",
+          "date": "2026/10/08 10:04",
+          "summary": "華碩宣布旗下首款搭載NVIDIA RTX Spark超級晶片的ProArt P14、ProArt P16筆電，即日起 ..."
+        },
+        {
+          "title": "果粉 10 月真的忙！摺疊 iPhone Duo 領軍 多款蘋果新品將接續登場",
+          "link": "https://3c.ltn.com.tw/news/67843",
+          "date": "2026/10/08 10:00",
+          "summary": "今年 10 月對於蘋果（Apple）來說會是非常忙碌的月份，除了已確認首款摺疊新機 iPhone Duo 即將在 1 ..."
+        },
         {
           "title": "一票Windows 11用戶受影響！微軟：10／13停止更新 快升級",
           "link": "https://3c.ltn.com.tw/news/67841",
@@ -58,24 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67827",
           "date": "2026/10/07 14:15",
           "summary": "YouTube新功能愈來愈多，宣布6大功能正式登台，其中全新上線「YouTube遊戲角落」，用戶不用另外下載App， ..."
-        },
-        {
-          "title": "LINE推「無痕偷看」新功能！預覽訊息不顯示已讀 日本先上線",
-          "link": "https://3c.ltn.com.tw/news/67833",
-          "date": "2026/10/07 14:11",
-          "summary": "現在手機雖然有一些小技巧，可以偷看LINE訊息又不顯示已讀，但多少都有些限制，例如訊息太長時，往往只能看到前面一小段 ..."
-        },
-        {
-          "title": "曾是圖庫霸主！Getty Images 遭 AI 打趴 市值蒸發逾 99% 陷生存危機",
-          "link": "https://3c.ltn.com.tw/news/67835",
-          "date": "2026/10/07 10:05",
-          "summary": "曾經是圖庫霸主的 Getty Images，在近年 AI 生成圖片取得容易情況下，導致業務量大幅萎縮，就連股價都慘兮 ..."
-        },
-        {
-          "title": "LINE改版被嫌更難用！「好友」分頁狂誤觸 網友氣：還關不掉",
-          "link": "https://3c.ltn.com.tw/news/67828",
-          "date": "2026/10/07 10:00",
-          "summary": "LINE上月迎來大改版，新版介面其中一項變化，就是在「聊天」頁面最上方新增「好友」分頁。不過，這項新設計似乎沒有獲得 ..."
         }
       ]
     },
@@ -84,76 +84,76 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "AI 需求續旺三星 Q3 獲利暴增 782%  首破 100 兆韓圜",
-          "link": "https://technews.tw/2026/10/08/samsung-q3-profit-surges-782-percent-first-time-over-100-trillion-won-ai-demand/",
-          "date": "2026-10-08 01:55",
-          "summary": "韓國科技巨頭三星電子（Samsung Electronics）受惠 AI 記憶體需求爆發，上季獲利再創歷史新高 [&#8230;]"
-        },
-        {
-          "title": "AI 基建燒錢  Applied Digital Q1 營收狂飆仍慘虧",
-          "link": "https://finance.technews.tw/2026/10/08/applied-digital-reports-fiscal-first-quarter-2027-results/",
-          "date": "2026-10-08 01:20",
-          "summary": "受惠 AI 資料中心需求爆發，美國資料中心營運商 Applied Digital 上季營收暴增逾三倍，但投入天 [&#8230;]"
-        },
-        {
-          "title": "香港秋季電子與組件展十月登場，匯聚前沿科技引領產業未來",
-          "link": "https://technews.tw/2026/10/08/hktdc-efae-easia-2026-electronicasia/",
-          "date": "2026-10-08 01:00",
-          "summary": "香港貿易發展局（香港貿發局）將於 10 月 13 日至 16 日在香港舉辦兩大重要展覽︰香港秋季電子產品展（秋 [&#8230;]"
-        },
-        {
-          "title": "AI 寫程式引發過勞與職涯焦慮，工程師面臨「身分認同危機」",
-          "link": "https://technews.tw/2026/10/08/ai-programming-triggers-developer-burnout-crisis/",
-          "date": "2026-10-08 00:30",
-          "summary": "Stack Overflow 最新公布的一項開發者調查顯示，人工智慧（AI）雖已成為軟體開發的日常工具，卻也讓 [&#8230;]"
-        },
-        {
-          "title": "IMF 總裁示警，AI 恐擴大全球不平等",
-          "link": "https://technews.tw/2026/10/08/imf-preparing-el-nino-assistance-concerned-about-ai-bubble-burst/",
-          "date": "2026-10-08 00:15",
-          "summary": "國際貨幣基金（IMF）總裁喬治艾娃 7 日警告，人工智慧（AI）熱潮正迅速成為世界各地經濟的主要驅動力，但可能 [&#8230;]"
-        },
-        {
-          "title": "台股憑完整 AI 供應鏈穩坐今年全球投資熱點，狠甩韓股幾條街",
-          "link": "https://finance.technews.tw/2026/10/08/taiwan-dethrones-korea-atop-world-markets-as-ai-trade-widens/",
-          "date": "2026-10-08 00:10",
-          "summary": "今年全球股市已進入關鍵收官階段，台灣 AI 交易熱潮地位持續升溫，並超越韓國，成為市場眼中更具吸引力的 AI [&#8230;]"
-        },
-        {
-          "title": "博通傳籌資 300 億美元，助 OpenAI 採購客製化 AI 晶片",
-          "link": "https://technews.tw/2026/10/08/broadcom-reportedly-raising-30-billion-to-fund-openai-custom-ai-chip-procurement/",
-          "date": "2026-10-07 23:34",
-          "summary": "隨 AI 基礎設施投資規模持續擴大，科技企業開始透過大型債務融資支應晶片採購需求。根據外電報導，博通正初步洽談 [&#8230;]"
-        },
-        {
-          "title": "年底大選逼近，當政治人物開始用 AI「借你的嘴說話」",
-          "link": "https://infosecu.technews.tw/2026/10/08/year-end-election-politicians-ai-borrow-voice/",
-          "date": "2026-10-07 23:30",
-          "summary": "7 月底名為「油不得你」的宣傳片流出。現任在野黨為了以「毒油」食安爭議攻擊政府，使用 AI 模擬總統賴清德的聲 [&#8230;]"
-        },
-        {
-          "title": "19 歲天才創辦人獲 1,100 萬美元融資，新創 Ghost 推出要價 3,499 美元的「專屬 AI 個人電腦」",
-          "link": "https://technews.tw/2026/10/08/ghost-ai/",
-          "date": "2026-10-07 23:20",
-          "summary": "成立僅一年的新創公司 Ghost 於週一正式亮相（結束隱形模式），並宣布完成 1,100 萬美元的種子輪融資。 [&#8230;]"
-        },
-        {
-          "title": "AI 圖打敗圖庫霸主，Getty Images 股價崩跌遭紐交所除牌",
-          "link": "https://technews.tw/2026/10/08/getty-images-faces-delisting-amid-ai-image-impact/",
-          "date": "2026-10-07 23:10",
-          "summary": "全球最大圖庫公司之一 Getty Images，因股價過低遭紐約證券交易所（NYSE）除牌，股份轉至 OTC [&#8230;]"
-        },
-        {
-          "title": "Surface Laptop Ultra 筆電展開預購，RTX Spark 晶片、磁吸式 USB-C 充電成亮點",
-          "link": "https://ccc.technews.tw/2026/10/08/surface-laptop-ultra-and-surface-rtx-spark-dev-box-now-available-for-pre-order/",
-          "date": "2026-10-07 20:29",
-          "summary": "微軟揭曉 Surface Laptop Ultra 數個月過後，7 日宣布這款搭載 RTX Spark 晶片的 [&#8230;]"
-        },
-        {
           "title": "韓國「AI for All」計畫 10 月試營運，SK 電信、Kakao、KT 各押不同 AI 入口",
           "link": "https://technews.tw/2026/10/07/ai-for-all-set-for-october-contest-as-sk-telecom-bets-on-calls-kakao-on-kakaotalk-and-kt-on-open-architecture/",
           "date": "2026-10-07 10:00",
           "summary": "業界消息，獲韓國科學技術資訊通信部「全民 AI 服務利用普及支援」計畫（通稱 AI for All）選定的 S [&#8230;]"
+        },
+        {
+          "title": "馬斯克否認台積電將參與 Terafab，稱將自建自營",
+          "link": "https://technews.tw/2026/10/07/musk-denies-tsmc-terafab-self-build-operate/",
+          "date": "2026-10-07 09:50",
+          "summary": "美國電動車廠特斯拉與美國太空探索科技公司（SpaceX）執行長馬斯克今天表示，兩公司合作的人工智慧（AI）晶片 [&#8230;]"
+        },
+        {
+          "title": "全球避險基金龍頭創辦人示警，AI 泡沫恐接近破裂",
+          "link": "https://finance.technews.tw/2026/10/07/global-hedge-fund-founder-warns-ai-bubble-bursting/",
+          "date": "2026-10-07 09:40",
+          "summary": "全球避險基金龍頭橋水聯合公司（Bridgewater Associates）創辦人達里歐警告，人工智慧（AI） [&#8230;]"
+        },
+        {
+          "title": "美資料中心建設支出大飆 73%！年化達 850 億美元，4 個月來增速加快",
+          "link": "https://technews.tw/2026/10/07/us-spending-on-data-center-buildings/",
+          "date": "2026-10-07 08:40",
+          "summary": "AI 基礎建設需求持續升溫，美國資料中心建設支出也同步創下新高。根據美國人口普查局（U.S. Census B [&#8230;]"
+        },
+        {
+          "title": "Google 全新模型 EmbeddingGemma 2 登場，Mac 離線 AI 工具輕鬆整合個人知識庫",
+          "link": "https://technews.tw/2026/10/07/google-mac-ai-app/",
+          "date": "2026-10-07 07:50",
+          "summary": "Google 於 6 日正式宣布推出全新的 EmbeddingGemma 2 模型，主打讓使用者能直接在一般消 [&#8230;]"
+        },
+        {
+          "title": "波士頓動力挖角亞馬遜 AI 大將，力攻物理 AI 戰場",
+          "link": "https://technews.tw/2026/10/07/boston-dynamics-taps-amazon-ai-veteran-to-lead-physical-ai-push/",
+          "date": "2026-10-07 06:50",
+          "summary": "波士頓動力宣布，任命亞馬遜前高層羅希特‧普拉薩德（Rohit Prasad）出任執行長，10 月 7 日起生效 [&#8230;]"
+        },
+        {
+          "title": "Google 發表新 AI 影像模型 Nano Banana 2.1：產圖成本砍半、性能全面超越 Pro 版",
+          "link": "https://technews.tw/2026/10/07/google-nano-banana-2-1/",
+          "date": "2026-10-07 06:40",
+          "summary": "Google 於 6 日正式公開新一代影像生成與編輯模型 Nano Banana 2.1。該模型以 Gemin [&#8230;]"
+        },
+        {
+          "title": "首爾智慧生活週開幕，聚焦實體 AI 走入市民日常",
+          "link": "https://technews.tw/2026/10/07/smart-life-week-2026/",
+          "date": "2026-10-07 06:30",
+          "summary": "第三屆首爾智慧生活週（Smart Life Week）今日在江南 COEX 開幕，主題為「以 AI 描繪未來城 [&#8230;]"
+        },
+        {
+          "title": "涉隱私疑慮，澳洲調查平價智慧眼鏡 App 中國開發商",
+          "link": "https://technews.tw/2026/10/07/australia-probes-smart-glasses-app-heycyan/",
+          "date": "2026-10-07 06:20",
+          "summary": "澳洲資料保護監管機構今天表示，澳洲正在調查一款用於熱門平價智慧眼鏡的應用程式開發公司，如何以及在何處蒐集和儲存 [&#8230;]"
+        },
+        {
+          "title": "AI 熱潮助陣  華爾街全年獲利上看 900 億美元拚新高",
+          "link": "https://finance.technews.tw/2026/10/07/wall-street-profits-soar-to-45-9-billion-in-first-half-of-2026/",
+          "date": "2026-10-07 06:00",
+          "summary": "AI 投資熱潮與投行業務復甦同步發酵，華爾街券商今年獲利火力全開。紐約州審計長 Thomas DiNapoli [&#8230;]"
+        },
+        {
+          "title": "定價對象是商品！沃爾瑪否認用 AI 與電子貨架標籤差別定價",
+          "link": "https://technews.tw/2026/10/07/walmart-pushes-back-on-concerns-over-ai-driven-personalized-pricing/",
+          "date": "2026-10-07 05:24",
+          "summary": "美國零售龍頭沃爾瑪（Walmart）近日重申，旗下 AI 購物助理、顧客資料及電子貨架標籤都不會用於對個別顧客 [&#8230;]"
+        },
+        {
+          "title": "魂類遊戲將來不只「讀指令」還能「即時調整難度」，索尼新 AI 專利或讓玩家不能靠堆屍破關",
+          "link": "https://technews.tw/2026/10/07/fromsoftware-style-bosses-could-stop-being-learnable-as-playstations-october-1-ai-patent-rewrites-enemy-behavior-on-the-fly/",
+          "date": "2026-10-07 03:40",
+          "summary": "索尼互動娛樂近日公開新專利，指向以人工智慧即時調整遊戲非玩家角色（NPC）行為，讓敵人不再照固定程式反應，能根 [&#8230;]"
         }
       ]
     },
@@ -161,60 +161,6 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
-        {
-          "title": "AI 需求續旺三星 Q3 獲利暴增 782%  首破 100 兆韓圜",
-          "link": "https://technews.tw/2026/10/08/samsung-q3-profit-surges-782-percent-first-time-over-100-trillion-won-ai-demand/",
-          "date": "2026-10-08 01:55",
-          "summary": "韓國科技巨頭三星電子（Samsung Electronics）受惠 AI 記憶體需求爆發，上季獲利再創歷史新高 [&#8230;]"
-        },
-        {
-          "title": "華為：基本擺脫對美技術依賴；昇騰中市占超越輝達",
-          "link": "https://technews.tw/2026/10/08/huawei-broken-free-us-tech-reliance-ascend-market-share-surpasses-nvidia/",
-          "date": "2026-10-08 01:50",
-          "summary": "綜合中媒報導，華為常務董事、終端 BG 董事長余承東近日於國際媒體圓桌會議上回顧了華為在外部封鎖下突圍的歷程表 [&#8230;]"
-        },
-        {
-          "title": "Marvell 新品成威脅？大摩力挺信驊：短期難撼動 BMC 地位、目標價上看 24,000 元",
-          "link": "https://technews.tw/2026/10/08/aspeed-technology-marvell/",
-          "date": "2026-10-08 01:21",
-          "summary": "美系外資摩根士丹利（大摩）出具最新報告，針對 Marvell 近期推出的新一代 AI 基礎設施管理處理器進行分 [&#8230;]"
-        },
-        {
-          "title": "台股憑完整 AI 供應鏈穩坐今年全球投資熱點，狠甩韓股幾條街",
-          "link": "https://finance.technews.tw/2026/10/08/taiwan-dethrones-korea-atop-world-markets-as-ai-trade-widens/",
-          "date": "2026-10-08 00:10",
-          "summary": "今年全球股市已進入關鍵收官階段，台灣 AI 交易熱潮地位持續升溫，並超越韓國，成為市場眼中更具吸引力的 AI [&#8230;]"
-        },
-        {
-          "title": "IBM 量子電腦再創里程碑，19 秒輾壓超級電腦 110 年算力",
-          "link": "https://technews.tw/2026/10/08/ibm-quantum-computing-milestone/",
-          "date": "2026-10-08 00:00",
-          "summary": "根據最新研究報告，研究人員利用 IBM 最新的量子處理器完成了極度複雜的運算任務，整個過程僅耗時 19 秒。研 [&#8230;]"
-        },
-        {
-          "title": "博通傳籌資 300 億美元，助 OpenAI 採購客製化 AI 晶片",
-          "link": "https://technews.tw/2026/10/08/broadcom-reportedly-raising-30-billion-to-fund-openai-custom-ai-chip-procurement/",
-          "date": "2026-10-07 23:34",
-          "summary": "隨 AI 基礎設施投資規模持續擴大，科技企業開始透過大型債務融資支應晶片採購需求。根據外電報導，博通正初步洽談 [&#8230;]"
-        },
-        {
-          "title": "跨界與重構：智駕晶片的車載 AI 時代角力賽",
-          "link": "https://technews.tw/2026/10/08/crossover-restructuring-competition-smart-driving-chips-automotive-ai-era/",
-          "date": "2026-10-07 23:00",
-          "summary": "新車銷售量停滯且電動化轉型放緩之際，智駕系統已成為車企競爭的核心焦點。2026 年全球新車市場的 L2 滲透率 [&#8230;]"
-        },
-        {
-          "title": "Surface Laptop Ultra 筆電展開預購，RTX Spark 晶片、磁吸式 USB-C 充電成亮點",
-          "link": "https://ccc.technews.tw/2026/10/08/surface-laptop-ultra-and-surface-rtx-spark-dev-box-now-available-for-pre-order/",
-          "date": "2026-10-07 20:29",
-          "summary": "微軟揭曉 Surface Laptop Ultra 數個月過後，7 日宣布這款搭載 RTX Spark 晶片的 [&#8230;]"
-        },
-        {
-          "title": "旺宏 9 月營收再創新高，前三季營收同步締造新高紀錄",
-          "link": "https://finance.technews.tw/2026/10/08/macronixs-september-revenue-hit-a-new-high/",
-          "date": "2026-10-07 16:00",
-          "summary": "記憶體大廠旺宏公布 9 月營收，單月合併營收達新台幣 83.67 億元，較 8 月份增加 2.7%、較 202 [&#8230;]"
-        },
         {
           "title": "馬斯克否認台積電將參與 Terafab，稱將自建自營",
           "link": "https://technews.tw/2026/10/07/musk-denies-tsmc-terafab-self-build-operate/",
@@ -232,6 +178,60 @@
           "link": "https://technews.tw/2026/10/07/episil-targets-10-20-ai-revenue-share-2027-gan-sic-dual-growth-engines/",
           "date": "2026-10-07 08:42",
           "summary": "AI 資料中心帶動第三類半導體需求加速成長。漢磊總經理劉燦文表示，今年上半年 AI 相關營收占比約 5%，隨 [&#8230;]"
+        },
+        {
+          "title": "Windows 11 26H2 瘦身有感，搭配 Rufus 工具大幅降低記憶體占用",
+          "link": "https://technews.tw/2026/10/07/windows-11-consumes-only-16-percent-of-ram-on-a-16gb-system/",
+          "date": "2026-10-07 08:24",
+          "summary": "微軟 9 月底釋出的 Windows 11 26H2 版本更新，成功朝著降低整體記憶體用量又再邁進一步。一名來 [&#8230;]"
+        },
+        {
+          "title": "美光桃園工會宣布，透過會員投票取得罷工權",
+          "link": "https://technews.tw/2026/10/07/new-developments-in-the-micron-taiwan-strike-case/",
+          "date": "2026-10-07 08:00",
+          "summary": "台灣美光 mttw 工會於 7 日宣布，經過會員 6 天投票與開票作業，已正式高票取得罷工及設置罷工糾察線的權 [&#8230;]"
+        },
+        {
+          "title": "應材、英特爾深化合作，加速 AI 晶片製造技術創新",
+          "link": "https://technews.tw/2026/10/07/applied-material-intel-epic-center/",
+          "date": "2026-10-07 06:50",
+          "summary": "應用材料今（7 日）宣布與英特爾攜手合作，加速新一代電晶體、互連與先進封裝技術的晶片製造創新。此次合作將結合應 [&#8230;]"
+        },
+        {
+          "title": "小摩唱多探針卡巨頭特諾本  看好晶片測試需求",
+          "link": "https://finance.technews.tw/2026/10/07/jpmorgan-bullish-on-technoprobe/",
+          "date": "2026-10-07 04:00",
+          "summary": "義大利半導體測試大廠、探針卡巨頭特諾本（Technoprobe）首度獲摩根大通（J.P. Morgan，小摩） [&#8230;]"
+        },
+        {
+          "title": "經濟安全考量  半導體設備商 TOWA 擬在日本蓋新廠",
+          "link": "https://technews.tw/2026/10/07/towa-plans-new-plant-in-japan/",
+          "date": "2026-10-07 03:50",
+          "summary": "經濟安全考量，日本半導體製造設備商 TOWA 將在日本國內興建新工廠，預計 2029 年投產，生產半導體封裝設 [&#8230;]"
+        },
+        {
+          "title": "台積電投資亞利桑那州創美國史上最大規模，引發中國不滿與警告",
+          "link": "https://finance.technews.tw/2026/10/07/tsmcs-investment-in-arizona-creates-the-largest-impact-in-us-history/",
+          "date": "2026-10-07 03:50",
+          "summary": "台積電（TSMC）在美國亞利桑那州鳳凰城持續擴建半導體廠，累計投資金額高達 2,650 億美元，創下美國史上最 [&#8230;]"
+        },
+        {
+          "title": "智邦 9 月營收寫歷史次高！大摩讚明年成長動能增，目標價喊上 3,500 元",
+          "link": "https://technews.tw/2026/10/07/accton-technology-2026-09-revenue/",
+          "date": "2026-10-07 03:45",
+          "summary": "網通大廠智邦近期公布 9 月營收，美系外資摩根士丹利（大摩）出具最新外資報告指出，智邦 9 月營收有望成為推動 [&#8230;]"
+        },
+        {
+          "title": "賣方主導市場，三星 HBM4 價格 2027 年將翻倍成長",
+          "link": "https://finance.technews.tw/2026/10/07/samsung-hbm4-supply-prices-are-expected-to-double-by-2027/",
+          "date": "2026-10-07 03:30",
+          "summary": "根據韓國媒體報導指出，韓國三星在與主要客戶進行的 2027 年高頻寬記憶體（HBM）供給談判中，提出了大幅調漲 [&#8230;]"
+        },
+        {
+          "title": "美股還在「否認」？大賣空貝瑞：恐持續 6 至 9 個月",
+          "link": "https://finance.technews.tw/2026/10/07/michael-burry-remains-bearish-on-ai/",
+          "date": "2026-10-07 03:10",
+          "summary": "電影〈大賣空〉原型、知名投資人麥可貝瑞（Michael Burry）再度示警美股前景。他 10 月 6 日在 [&#8230;]"
         }
       ]
     },
@@ -239,18 +239,6 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
-        {
-          "title": "香港秋季電子與組件展十月登場，匯聚前沿科技引領產業未來",
-          "link": "https://technews.tw/2026/10/08/hktdc-efae-easia-2026-electronicasia/",
-          "date": "2026-10-08 01:00",
-          "summary": "香港貿易發展局（香港貿發局）將於 10 月 13 日至 16 日在香港舉辦兩大重要展覽︰香港秋季電子產品展（秋 [&#8230;]"
-        },
-        {
-          "title": "台股憑完整 AI 供應鏈穩坐今年全球投資熱點，狠甩韓股幾條街",
-          "link": "https://finance.technews.tw/2026/10/08/taiwan-dethrones-korea-atop-world-markets-as-ai-trade-widens/",
-          "date": "2026-10-08 00:10",
-          "summary": "今年全球股市已進入關鍵收官階段，台灣 AI 交易熱潮地位持續升溫，並超越韓國，成為市場眼中更具吸引力的 AI [&#8230;]"
-        },
         {
           "title": "美核潛艦產能告急  Anduril 砸 37 億美元跨界造零件",
           "link": "https://technews.tw/2026/10/07/anduril-invests-3700-million-in-nuclear-sub-parts/",
@@ -310,6 +298,18 @@
           "link": "https://technews.tw/2026/10/07/japan-supply-chain-impact-suzuki-expands-china-parts/",
           "date": "2026-10-07 00:20",
           "summary": "日本汽車大廠鈴木（Suzuki）擴大採用中國製零件，除電動車（EV）電池外，預計今後推出的 ADAS（先進駕駛 [&#8230;]"
+        },
+        {
+          "title": "IFA 2026 智慧家庭新格局：品牌高階化、AI Home 與 Physical AI 並進",
+          "link": "https://technews.tw/2026/10/07/ifa-2026-new-smart-home-paradigm-brand-premiumization-ai-home-physical-ai-advancing-together/",
+          "date": "2026-10-06 23:00",
+          "summary": "IFA 2026 顯示，消費電子與家電的成長邏輯正由「增加硬體出貨」轉向「提高單機價值與服務深度」。TV 透過 [&#8230;]"
+        },
+        {
+          "title": "讓匿蹤戰機攜彈量增加，美軍和新創公司合作開發小型飛彈發動機",
+          "link": "https://technews.tw/2026/10/07/us-navy-awarded-ursa-major-137-million-contract-for-new-compact-missile-engine/",
+          "date": "2026-10-06 23:00",
+          "summary": "美國海軍正同步推進小型空對空飛彈與新一代艦載攔截飛彈，火箭推進新創 Ursa Major 近日宣布，取得合計 [&#8230;]"
         }
       ]
     },
