@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libre Hardware Monitor 完全攻略：使用教學、HTTP JSON API、.NET 整合與 WMI 應用 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="Libre Hardware Monitor 完整教學：涵蓋基本使用方法、啟用 HTTP Web Server 解析 JSON API、C# .NET 整合讀取與 WMI 感測器查詢應用。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/libre-hardware-monitor-guide.html">
+  <meta property="og:title" content="Libre Hardware Monitor 完全攻略：使用教學、HTTP JSON API、.NET 整合與 WMI 應用 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="Libre Hardware Monitor 完整教學：涵蓋基本使用方法、啟用 HTTP Web Server 解析 JSON API、C# .NET 整合讀取與 WMI 感測器查詢應用。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/libre-hardware-monitor-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Libre Hardware Monitor 完全攻略：使用教學、HTTP JSON API、.NET 整合與 WMI 應用 — &quot;AI&quot; 硬核工程師">
+  <meta name="twitter:description" content="Libre Hardware Monitor 完整教學：涵蓋基本使用方法、啟用 HTTP Web Server 解析 JSON API、C# .NET 整合讀取與 WMI 感測器查詢應用。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
+    .article-body { max-width: 60em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.21rem; }
+    .article-body th, .article-body td { padding: 0.4rem 0.5rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .cmd-table td:first-child { font-family: "Fira Code", "SF Mono", Consolas, monospace; font-weight: 700; color: var(--accent); white-space: nowrap; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Libre Hardware Monitor 完全攻略：使用教學、HTTP JSON API、.NET 整合與 WMI 應用",
+    "description": "Libre Hardware Monitor 完整教學：涵蓋基本使用方法、啟用 HTTP Web Server 解析 JSON API、C# .NET 整合讀取與 WMI 感測器查詢應用。",
+    "url": "https://ai-hardcore-engineer.com/libre-hardware-monitor-guide.html",
+    "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
+    "image": "https://ai-hardcore-engineer.com/og-image.png",
+    "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/libre-hardware-monitor-guide.html" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="article-hero">
+        <h1>Libre Hardware Monitor 完全攻略：使用教學、HTTP JSON API、.NET 整合與 WMI 應用</h1>
+        <div class="article-meta">
+          <span>2026-10-09</span>
+          <span class="separator">·</span>
+          <span>15 分鐘閱讀</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">工具</span>
+          <span class="tag">硬體監控</span>
+          <span class="tag">API</span>
+          <span class="tag">C#</span>
+          <span class="tag">WMI</span>
+          <span class="tag">.NET</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/libre-hw/1200/400" alt="Libre Hardware Monitor 教學">
+      </section>
+
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong><br>
+          &nbsp;&nbsp;① <strong>什麼是 Libre Hardware Monitor：</strong>這是一款免費開源的硬體監控軟體，從經典的 Open Hardware Monitor 分支而來，支援最新的 CPU、GPU 與主機板晶片。<br>
+          &nbsp;&nbsp;② <strong>HTTP JSON API：</strong>內建 Web Server，可輕鬆透過 HTTP 請求取得即時的硬體數據 JSON。<br>
+          &nbsp;&nbsp;③ <strong>.NET (C#) 整合：</strong>可以透過匯入 LibreHardwareMonitorLib，在自己的程式中建立 Computer 實體直接讀取感測器。<br>
+          &nbsp;&nbsp;④ <strong>WMI 整合：</strong>支援將數據發布至 Windows Management Instrumentation (WMI)，讓 PowerShell 等腳本也能輕鬆撈取資料。
+        </blockquote>
+
+        <h2>什麼是 Libre Hardware Monitor？</h2>
+        <p><strong>Libre Hardware Monitor</strong> 是一款開源的系統硬體監控軟體。由於知名的 Open Hardware Monitor 開發進度放緩且對新硬體的支援較慢，社群便分支 (Fork) 出了 Libre Hardware Monitor。</p>
+        <p>它可以讀取溫度感測器、風扇轉速、電壓、負載 (Load) 以及電腦的時脈速度。支援的硬體包含多數現代的 Intel 和 AMD 處理器、NVIDIA 和 AMD 顯示卡、多數主機板的監控晶片 (Nuvoton, ITE, Fintek 等) 以及硬碟的 S.M.A.R.T. 資訊。</p>
+
+        <h2>基本使用教學</h2>
+        <h3>下載與安裝</h3>
+        <ol>
+          <li>前往 <a href="https://github.com/LibreHardwareMonitor/LibreHardwareMonitor" target="_blank">Libre Hardware Monitor 的 GitHub Release 頁面</a>。</li>
+          <li>下載最新版的 <code>.zip</code> 壓縮檔。</li>
+          <li>解壓縮後，由於軟體需要存取底層硬體資訊，請<strong>以系統管理員身分執行 <code>LibreHardwareMonitor.exe</code></strong>。</li>
+        </ol>
+        
+        <h3>介面與設定</h3>
+        <p>打開軟體後，你會看到一個樹狀結構，列出你的主機板、CPU、GPU、記憶體等裝置。你可以展開節點查看詳細的溫度與電壓資訊。在選單列的 <strong>Options</strong> 中，你可以設定開機自動啟動 (Run on Windows Startup) 以及將應用程式縮小至系統匣 (Minimize to Tray)。</p>
+
+        <h2>透過 HTTP JSON API 獲取數據</h2>
+        <p>Libre Hardware Monitor 內建了一個 Web 伺服器，允許我們透過 HTTP 請求獲取即時的硬體數據，這對於自己開發 Dashboard (如結合 Grafana 或自建網頁) 非常實用。</p>
+        
+        <h3>1. 啟用 Remote Web Server</h3>
+        <p>在 Libre Hardware Monitor 視窗中，點擊選單的 <strong>Options</strong> -> <strong>Remote Web Server</strong> -> <strong>Run</strong>。預設的連接埠是 8085。你也可以透過 <strong>Port</strong> 選項來更改。</p>
+
+        <h3>2. 獲取 JSON 數據</h3>
+        <p>打開瀏覽器或使用任何 HTTP 客戶端 (如 <code>curl</code>、Postman 等)，造訪以下 URL：</p>
+        <pre><code>http://localhost:8085/data.json</code></pre>
+        <p>這會回傳一個層次結構的 JSON。其結構對應了 UI 上的樹狀視圖。每個節點包含以下重要屬性：</p>
+        <ul>
+          <li><code>id</code>：感測器的唯一識別碼 (整數)。</li>
+          <li><code>Text</code>：顯示名稱 (例如 "CPU Package")。</li>
+          <li><code>Value</code>：當前數值 (例如 "45.0 °C")。</li>
+          <li><code>Min</code> / <code>Max</code>：歷史最小/最大值。</li>
+          <li><code>Children</code>：子節點陣列，包含下一層的硬體或感測器。</li>
+        </ul>
+
+        <h3>3. JavaScript 呼叫範例</h3>
+        <p>你可以輕鬆使用 <code>fetch</code> 來取得資料：</p>
+        <pre><code class="language-javascript">async function fetchHardwareData() {
+  try {
+    const response = await fetch('http://localhost:8085/data.json');
+    const data = await response.json();
+    console.log(data);
+    // 遍歷 Children 尋找你需要的節點...
+  } catch (error) {
+    console.error('無法取得硬體資料:', error);
+  }
+}</code></pre>
+
+        <h2>透過 C# (.NET) 程式碼整合</h2>
+        <p>如果你的專案是 .NET 應用程式，最直接且高效的方法是直接引用它的 Library，而不是透過 HTTP。</p>
+
+        <h3>1. 匯入 Library</h3>
+        <p>你可以透過 NuGet 安裝 <code>LibreHardwareMonitorLib</code>，或者直接將下載的 <code>LibreHardwareMonitorLib.dll</code> 加入專案的參考中。</p>
+
+        <h3>2. 撰寫讀取程式碼</h3>
+        <p>LHM 使用 <code>Visitor</code> 模式來遍歷硬體樹。以下是完整的 C# Console Application 範例：</p>
+        <pre><code class="language-csharp">using System;
+using LibreHardwareMonitor.Hardware;
+
+class Program
+{
+    // 實作 IVisitor 介面來遍歷感測器
+    public class UpdateVisitor : IVisitor
+    {
+        public void VisitComputer(IComputer computer)
+        {
+            computer.Traverse(this);
+        }
+        public void VisitHardware(IHardware hardware)
+        {
+            hardware.Update();
+            foreach (IHardware subHardware in hardware.SubHardware) subHardware.Accept(this);
+        }
+        public void VisitSensor(ISensor sensor) { }
+        public void VisitParameter(IParameter parameter) { }
+    }
+
+    static void Main(string[] args)
+    {
+        // 建立 Computer 物件並啟用需要監控的硬體
+        Computer computer = new Computer
+        {
+            IsCpuEnabled = true,
+            IsGpuEnabled = true,
+            IsMemoryEnabled = true,
+            IsMotherboardEnabled = true,
+            IsControllerEnabled = true,
+            IsNetworkEnabled = true,
+            IsStorageEnabled = true
+        };
+
+        computer.Open();
+        computer.Accept(new UpdateVisitor());
+
+        // 遍歷並印出資料
+        foreach (IHardware hardware in computer.Hardware)
+        {
+            Console.WriteLine($"硬體: {hardware.Name}");
+            foreach (ISensor sensor in hardware.Sensors)
+            {
+                Console.WriteLine($"\t感測器: {sensor.Name}, 類型: {sensor.SensorType}, 數值: {sensor.Value}");
+            }
+        }
+
+        computer.Close();
+    }
+}</code></pre>
+        <p><strong>注意：</strong> 由於需要存取底層硬體，你的程式必須以<strong>系統管理員權限</strong>執行才能讀取到所有資料（尤其是 CPU 溫度）。</p>
+
+        <h2>透過 WMI 獲取數據</h2>
+        <p>WMI (Windows Management Instrumentation) 是 Windows 作業系統管理資料的標準架構。將 LHM 資料發布到 WMI 後，你可以輕鬆使用 PowerShell 腳本來存取，適合用來寫系統管理自動化腳本。</p>
+
+        <h3>1. 啟用 WMI Provider</h3>
+        <p>在 Libre Hardware Monitor 中，點擊選單 <strong>Options</strong> -> <strong>WMI</strong> -> 勾選 <strong>Enable WMI</strong>。</p>
+
+        <h3>2. 使用 PowerShell 查詢</h3>
+        <p>LHM 會將資料寫入 <code>root\LibreHardwareMonitor</code> 命名空間中，並提供兩個主要類別：<code>Hardware</code> 與 <code>Sensor</code>。</p>
+        <p>開啟 PowerShell，輸入以下指令查詢所有溫度感測器：</p>
+        <pre><code class="language-powershell"># 查詢所有感測器
+Get-WmiObject -Namespace "root\LibreHardwareMonitor" -Class Sensor
+
+# 查詢 CPU 溫度
+Get-WmiObject -Namespace "root\LibreHardwareMonitor" -Class Sensor | Where-Object { $_.SensorType -eq "Temperature" -and $_.Name -like "*CPU*" } | Select-Object Name, Value</code></pre>
+
+        <h3>3. 使用 C# 查詢 WMI</h3>
+        <p>在 C# 中，你可以使用 <code>System.Management</code> 命名空間來存取 WMI：</p>
+        <pre><code class="language-csharp">using System;
+using System.Management;
+
+class Program
+{
+    static void Main()
+    {
+        ManagementScope scope = new ManagementScope(@"root\LibreHardwareMonitor");
+        ObjectQuery query = new ObjectQuery("SELECT * FROM Sensor WHERE SensorType='Temperature'");
+        ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
+
+        foreach (ManagementObject obj in searcher.Get())
+        {
+            Console.WriteLine($"{obj["Name"]}: {obj["Value"]} °C");
+        }
+    }
+}</code></pre>
+
+        <h2>結語</h2>
+        <p>Libre Hardware Monitor 不只是一個簡單的監控工具，其豐富的整合介面（HTTP JSON、.NET Library、WMI）讓工程師可以極具彈性地將硬體監控數據整合到各種自動化腳本與儀表板系統中。趕快試試看，為你的電腦打造專屬的監控系統吧！</p>
+      </article>
+
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>
