@@ -1,10 +1,22 @@
 {
-  "updated": "2026-10-08 18:11",
+  "updated": "2026-10-09 00:32",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "華碩RTX Spark筆電預購即刻啟動 超級晶片引領AI運算革命 出色效能鎖定高端創作者",
+          "link": "https://3c.ltn.com.tw/news/67857",
+          "date": "2026/10/09 05:36",
+          "summary": "隨著輝達NVIDIA RTX Spark平台正式發布，各電腦大廠相繼推出新機，華碩宣布旗下兩款搭載NVIDIA RT ..."
+        },
+        {
+          "title": "蘋果宣布下週再發新品！10／13登場 「歡迎回家」明示主角",
+          "link": "https://3c.ltn.com.tw/news/67863",
+          "date": "2026/10/09 03:07",
+          "summary": "果粉準備迎接新品，蘋果全球行銷資深副總裁Greg Joswiak在X(前推特)宣布，蘋果將於下週10月13日發布新品 ..."
+        },
         {
           "title": "新iPhone太貴先不換！通路揭這3代舊機成換電池主力",
           "link": "https://3c.ltn.com.tw/news/67852",
@@ -64,18 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67842",
           "date": "2026/10/08 08:50",
           "summary": "Google Gemini免費用戶注意了，從明(9日)起將有重大變動，只能使用Flash-Lite模型，原本可用的F ..."
-        },
-        {
-          "title": "Sony新款掌機要來了？PlayStation神祕裝置通過認證",
-          "link": "https://3c.ltn.com.tw/news/67832",
-          "date": "2026/10/07 17:15",
-          "summary": "Sony PlayStation Portal遊戲串流掌機自2023年推出後，一直沒有迎來改款，然而，最近有兩款尚未 ..."
-        },
-        {
-          "title": "驚現網頁版《GTA V》在社群爆紅！大神用外洩原始碼和AI完成移植",
-          "link": "https://3c.ltn.com.tw/news/67836",
-          "date": "2026/10/07 16:32",
-          "summary": "用網頁瀏覽器就能玩《GTA V》（俠盜獵車手 V），隨著 AI 技術普及，國外一名玩家透過 2023 年底外洩的遊戲 ..."
         }
       ]
     },
