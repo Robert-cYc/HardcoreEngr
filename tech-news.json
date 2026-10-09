@@ -1,10 +1,40 @@
 {
-  "updated": "2026-10-09 03:44",
+  "updated": "2026-10-09 17:44",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "不怕銷量差！iPhone Air 2 傳還會更薄 厚度只剩5.2mm",
+          "link": "https://3c.ltn.com.tw/news/67861",
+          "date": "2026/10/09 16:45",
+          "summary": "蘋果去年推出iPhone Air，主打極致輕薄的機身設計，厚度只有5.6mm，雖然市場買氣不如預期，但蘋果似乎沒有打 ..."
+        },
+        {
+          "title": "iPhone 18 Pro全面降價！上市不到1個月最高便宜4千元",
+          "link": "https://3c.ltn.com.tw/news/67856",
+          "date": "2026/10/09 15:36",
+          "summary": "想等iPhone 18 Pro系列降價再入手的果粉，好消息來了，新機上市還不到1個月，通路宣布全面降價。 ..."
+        },
+        {
+          "title": "賣了也難賺錢！三星漲價手機也沒用 傳年底大減產30%",
+          "link": "https://3c.ltn.com.tw/news/67860",
+          "date": "2026/10/09 14:16",
+          "summary": "三星近來在全球調漲旗下多款手機售價，從旗艦S26系列到中階A系列都受到影響，以台灣為例，最高漲幅甚至達到8千元。然而 ..."
+        },
+        {
+          "title": "買新手機竟自帶病毒！中國2品牌遭點名 恐刪都刪不掉",
+          "link": "https://3c.ltn.com.tw/news/67869",
+          "date": "2026/10/09 13:35",
+          "summary": "買便宜手機也要小心，小心省了荷包，卻買到一支內建「病毒」的問題手機！資安公司Bitdefender最新揭露，一款名為 ..."
+        },
+        {
+          "title": "別再把AI當出氣筒！Claude首度禁止用戶亂罵 11月新規上路",
+          "link": "https://3c.ltn.com.tw/news/67868",
+          "date": "2026/10/09 12:30",
+          "summary": "不要以為跟AI聊天機器人聊天時，可以毫無理由的辱罵，Anthropic針對旗下Claude更新使用政策，首次明文禁止 ..."
+        },
         {
           "title": "OpenAI讓AI開外掛！GPT-6.1超高速模式最高快8倍 價格也飆6倍",
           "link": "https://3c.ltn.com.tw/news/67867",
@@ -46,36 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67852",
           "date": "2026/10/08 15:01",
           "summary": "蘋果iPhone 18 Pro系列大漲價，首款摺疊iPhone也相當昂貴，讓不少果粉看了價格後，決定打消換機念頭，讓 ..."
-        },
-        {
-          "title": "AI照片愈來愈難辨！Google免費神器來了 1步驟就能查",
-          "link": "https://3c.ltn.com.tw/news/67839",
-          "date": "2026/10/08 14:00",
-          "summary": "AI生成的照片與影片愈來愈逼真，有時真假難辨，甚至連真實拍攝的畫面，都可能讓人懷疑是不是AI做出來的。現在Googl ..."
-        },
-        {
-          "title": "新款Apple Watch Series 12會刺激皮膚？蘋果提醒注意這件事",
-          "link": "https://3c.ltn.com.tw/news/67848",
-          "date": "2026/10/08 12:50",
-          "summary": "蘋果今年新款Apple Watch Series 12、Apple Watch Series Ultra 4主打更精 ..."
-        },
-        {
-          "title": "《GTA 6》台灣大哥大搶賣！獨家典藏盒曝光 要價近1.6萬元",
-          "link": "https://3c.ltn.com.tw/news/67850",
-          "date": "2026/10/08 12:12",
-          "summary": "全球玩家引頸期盼的3A遊戲大作《Grand Theft Auto VI》（俠盜獵車手6，簡稱GTA 6）即將登場，台 ..."
-        },
-        {
-          "title": "ChatGPT回答介面大改版！加入互動按鈕 免費用戶也能用",
-          "link": "https://3c.ltn.com.tw/news/67846",
-          "date": "2026/10/08 11:38",
-          "summary": "隨著OpenAI將最新GPT-6模型導入ChatGPT，ChatGPT也推出全新「智慧介面」(Intelligent ..."
-        },
-        {
-          "title": "沈伯洋自拍手機被認出！網驚竟是近年最冷門iPhone",
-          "link": "https://3c.ltn.com.tw/news/67849",
-          "date": "2026/10/08 10:45",
-          "summary": "民進黨台北市長參選人沈伯洋昨(7日)接受TVBS《少康戰情室》主持人趙少康專訪，雙方在節目中交鋒，引發熱烈討論。不過 ..."
         }
       ]
     },
