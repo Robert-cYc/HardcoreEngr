@@ -1,21 +1,21 @@
 {
-  "updated": "2026-10-09 00:46",
+  "updated": "2026-10-09 02:11",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
-          "title": "蘋果新款iPad mini 8被潑冷水！升級OLED螢幕恐仍只有60Hz",
+          "title": "iPad mini 8本月底亮相！爆料潑冷水：OLED螢幕維持60Hz",
           "link": "https://3c.ltn.com.tw/news/67858",
-          "date": "2026/10/09 08:33",
+          "date": "2026/10/09 09:50",
           "summary": "蘋果新一代iPad mini 8傳聞最快本月亮相，其中一大亮點是升級OLED螢幕，讓不少果粉相當期待，不過，最新爆料 ..."
         },
         {
-          "title": "華碩RTX Spark筆電預購即刻啟動 超級晶片引領AI運算革命 出色效能鎖定高端創作者",
-          "link": "https://3c.ltn.com.tw/news/67857",
-          "date": "2026/10/09 05:36",
-          "summary": "隨著輝達NVIDIA RTX Spark平台正式發布，各電腦大廠相繼推出新機，華碩宣布旗下兩款搭載NVIDIA RT ..."
+          "title": "蘋果10月連發兩波新品！爆10／27還有一場 觸控MacBook要來了",
+          "link": "https://3c.ltn.com.tw/news/67865",
+          "date": "2026/10/09 09:28",
+          "summary": "蘋果已經宣布下週10月13日發布新品，並以一句「Welcome home(歡迎回家)」明示主角為智慧家庭，不過，10 ..."
         },
         {
           "title": "蘋果宣布下週再發新品！10／13登場 「歡迎回家」明示主角",
@@ -84,6 +84,30 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
+          "title": "蘋果暫緩 AI 替換真人客服，維持「人機協作」雙軌制",
+          "link": "https://technews.tw/2026/10/09/apple-puts-ai-customer-service-plans-on-hold/",
+          "date": "2026-10-09 02:00",
+          "summary": "蘋果（Apple）傳曾考慮裁減約 5,000 名 AppleCare 客服員工，讓 AI 代理接手部分電話及線 [&#8230;]"
+        },
+        {
+          "title": "三檔 AI 流量股誰值得買？名嘴 Jim Cramer 獨推 Akamai",
+          "link": "https://finance.technews.tw/2026/10/09/ai-is-a-boon-for-3-internet-traffic-cop-stocks/",
+          "date": "2026-10-09 01:30",
+          "summary": "CNBC 股市名嘴吉姆‧克瑞莫（Jim Cramer）指出，AI 代理帶來的網路流量激增，正在為維持網際網路順 [&#8230;]"
+        },
+        {
+          "title": "手機一拍就能預測產量，AI 走入農田化身精準採收的最強大腦",
+          "link": "https://technews.tw/2026/10/09/ai-upgrades-agriculture/",
+          "date": "2026-10-09 00:30",
+          "summary": "人工智慧正逐步走進農田與果園，成為農民判斷何時採收的得力助手。從蘋果園、草莓田到糖蔗產區，農業界正積極導入影像 [&#8230;]"
+        },
+        {
+          "title": "Mercedes-Benz 引進新供應商，2028 年將 Wayve AI Driver 導入新車型",
+          "link": "https://technews.tw/2026/10/09/mercedes-benz-new-supplier-wayve-ai-driver-new-models-2028/",
+          "date": "2026-10-08 23:00",
+          "summary": "Wayve 與 Mercedes-Benz（以下簡稱 Mercedes）簽署量產合作協議，將 Wayve 的 [&#8230;]"
+        },
+        {
           "title": "Google 推 Gemini agent 攻企業市場，自選合適模型、內建成本控制",
           "link": "https://technews.tw/2026/10/09/google-introduces-the-gemini-agent/",
           "date": "2026-10-08 17:59",
@@ -130,30 +154,6 @@
           "link": "https://technews.tw/2026/10/08/mega-bull-dan-ives-debuts-his-new-tech-coverage/",
           "date": "2026-10-08 06:30",
           "summary": "華爾街知名科技股多頭分析師 Dan Ives 指出，人工智慧（AI）基礎設施供給至少到 2027 年仍將吃緊， [&#8230;]"
-        },
-        {
-          "title": "華碩 ProArt P14、P16 搭載 RTX Spark，主打地端 AI 與 Agent 工作流",
-          "link": "https://technews.tw/2026/10/08/asus-proart-p14-p16-rtx-spark/",
-          "date": "2026-10-08 05:46",
-          "summary": "華碩宣布推出新一代 ProArt P14 與 ProArt P16，兩款筆電皆搭載 NVIDIA RTX Sp [&#8230;]"
-        },
-        {
-          "title": "TPCA Show 2026 規模創新高！攜手 IMPACT 深度串聯 PCB 與先進封裝，聚焦AI 新局",
-          "link": "https://technews.tw/2026/10/08/tpca-show-2026-impact-pcb/",
-          "date": "2026-10-08 05:00",
-          "summary": "AI 需求引爆，PCB 產業迎接新機遇！隨著 AI 算力爆發引發硬體架構革新，台灣電路板協會（TPCA）年度盛 [&#8230;]"
-        },
-        {
-          "title": "ChatGPT 增添「智慧介面」，互動式圖表、按鍵直接用",
-          "link": "https://technews.tw/2026/10/08/gpt-6-powers-a-new-intelligent-ui-in-chatgpt/",
-          "date": "2026-10-08 04:59",
-          "summary": "由 GPT-6 驅動的 ChatGPT 引進新的「智慧介面」（Intelligent UI），對話過程整合大量 [&#8230;]"
-        },
-        {
-          "title": "18 億美元重金打造，Google、Meta 攜手美政府建構全球最大 AI 生物資料庫",
-          "link": "https://technews.tw/2026/10/08/tech-giants-partner-with-us-government-to-advance-ai-biodatabases/",
-          "date": "2026-10-08 04:20",
-          "summary": "Biohub 於 10 月 7 日正式宣布，將攜手美國政府、Google 與 Meta 等重量級合作夥伴，進一 [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,30 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "比 High NA EUV 更強！ASML 下一代 Hyper NA EUV 有望 10 年內問世",
+          "link": "https://technews.tw/2026/10/09/asml-next-gen-hyper-na-euv-stronger-high-na-expected-10-years/",
+          "date": "2026-10-09 01:20",
+          "summary": "半導體微影設備龍頭艾司摩爾（ASML）持續推進下一代極紫外光（EUV）技術。據外電報導，ASML 與光學合作夥 [&#8230;]"
+        },
+        {
+          "title": "SK 海力士來台釋千億大單，找上力成、和碩代工，挹注兩台廠營運熱轉",
+          "link": "https://technews.tw/2026/10/09/solidigm-taps-pti-and-pegatron-for-outsourcing/",
+          "date": "2026-10-09 01:00",
+          "summary": "韓國記憶體大廠 SK 海力士集團強攻 AI，旗下 NAND 快閃記憶體暨固態硬碟（SSD）大廠 Solidig [&#8230;]"
+        },
+        {
+          "title": "格羅方德與台積電簽署 20 億美元協議，於紐約建立 CoWoS 矽中介層供應鏈",
+          "link": "https://finance.technews.tw/2026/10/09/globalfoundries-signs-2-billion-deal-with-tsmc/",
+          "date": "2026-10-08 22:30",
+          "summary": "美國半導體晶圓代工廠格羅方德（GlobalFoundries）於2026年10月8日宣布，已與台積電達成一項多 [&#8230;]"
+        },
+        {
+          "title": "聯發科第 3 季營收 1,680 億元超財測創新高，ASIC 市場表現受期待",
+          "link": "https://finance.technews.tw/2026/10/09/mediateks-third-quarter-revenue-of-168-billion-yuan-exceeded-financial-forecasts-and-hit-a-new-high/",
+          "date": "2026-10-08 22:00",
+          "summary": "IC設計龍頭聯發科公布2026年9月合併營收為新台幣553.99億元，較8月份減少13.69%、較2025年同 [&#8230;]"
+        },
         {
           "title": "財部：出口迎輝煌時刻，第四季連破三關全年上看 9 千億美元",
           "link": "https://finance.technews.tw/2026/10/08/2609-export/",
@@ -208,30 +232,6 @@
           "link": "https://finance.technews.tw/2026/10/08/hances-revenue-in-september-increased-by-150-33-year-on-year/",
           "date": "2026-10-08 06:40",
           "summary": "半導體晶圓測試解決方案廠商漢測公布 2026 年 9 月營收，金額為新台幣 5.14 億元，較 2025 年同 [&#8230;]"
-        },
-        {
-          "title": "AI 才到第 3 局  華爾街知名科技多頭唱旺輝達生態系",
-          "link": "https://technews.tw/2026/10/08/mega-bull-dan-ives-debuts-his-new-tech-coverage/",
-          "date": "2026-10-08 06:30",
-          "summary": "華爾街知名科技股多頭分析師 Dan Ives 指出，人工智慧（AI）基礎設施供給至少到 2027 年仍將吃緊， [&#8230;]"
-        },
-        {
-          "title": "六大領導廠商押注 VCSEL NPO，2031 年 VCSEL 市場上看 6.5 億顆",
-          "link": "https://technews.tw/2026/10/08/vcsel-npo-2031/",
-          "date": "2026-10-08 06:20",
-          "summary": "TrendForce 最新《 2027 紅外線感測與光通訊市場趨勢》指出， 資料中心垂直擴展（Scale-Up [&#8230;]"
-        },
-        {
-          "title": "台積電 9 月營收雖月減但仍創同期新高，第三季 1.49 兆元突破財測高標",
-          "link": "https://finance.technews.tw/2026/10/08/tsmcs-september-revenue-declined-month-on-month-but-still-hit-a-new-high-for-the-same-period/",
-          "date": "2026-10-08 06:20",
-          "summary": "晶圓代工龍頭台積電公布 2026 年 9 月合併營收，金額為新台幣 5,118.57 億元，雖然較上月微幅減少 [&#8230;]"
-        },
-        {
-          "title": "世界先進 9 月營收 59.04 億元，月增 15.9％、年增 15.5%",
-          "link": "https://technews.tw/2026/10/08/vanguard-2026-09-revenue/",
-          "date": "2026-10-08 06:18",
-          "summary": "世界先進今（8 日）日公布 9 月合併營收約為新台幣（下同）59.04 億元，較去年同月的 51.11 億元增 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,18 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "SK 海力士來台釋千億大單，找上力成、和碩代工，挹注兩台廠營運熱轉",
+          "link": "https://technews.tw/2026/10/09/solidigm-taps-pti-and-pegatron-for-outsourcing/",
+          "date": "2026-10-09 01:00",
+          "summary": "韓國記憶體大廠 SK 海力士集團強攻 AI，旗下 NAND 快閃記憶體暨固態硬碟（SSD）大廠 Solidig [&#8230;]"
+        },
+        {
+          "title": "利機 9 月營收 1.3 億元年增 26%，第三季營收創近 14 年單季新高",
+          "link": "https://finance.technews.tw/2026/10/09/niching-september-revenue-reached-130-million-yuan-a-year-on-year-increase-of-26/",
+          "date": "2026-10-08 23:00",
+          "summary": "散熱片大廠利機公布 9月合併營收12,984萬元，年增26%。累計，1至9月合併營收10.52億元，年增13% [&#8230;]"
+        },
         {
           "title": "財部：出口迎輝煌時刻，第四季連破三關全年上看 9 千億美元",
           "link": "https://finance.technews.tw/2026/10/08/2609-export/",
@@ -298,18 +310,6 @@
           "link": "https://technews.tw/2026/10/08/bezel-free-iphone-2/",
           "date": "2026-10-08 04:30",
           "summary": "蘋果對 iPhone 外型的終極想像，可能是一支幾乎看不到邊框、甚至沒有傳統中框與實體按鍵的手機。中國爆料者「 [&#8230;]"
-        },
-        {
-          "title": "Bloom Energy 切入 AI 光通訊供應鏈，SOFC 助祥茂光電擴產",
-          "link": "https://technews.tw/2026/10/08/bloom-energy-ai-optical-supply-chain-sofc-gigalight-expands-production/",
-          "date": "2026-10-08 03:52",
-          "summary": "隨 AI 資料中心帶動高速光通訊需求持續升溫，美國燃料電池業者 Bloom Energy 進一步切入台灣 AI [&#8230;]"
-        },
-        {
-          "title": "AI 需求增 村田傳增設產線、擴產 MLCC 原料",
-          "link": "https://technews.tw/2026/10/08/murata-plans-to-expand-mlcc-material-production/",
-          "date": "2026-10-08 03:30",
-          "summary": "AI 相關需求增加，MLCC（積層陶瓷電容）龍頭村田製作所（Murata Manufacturing）傳將投資 [&#8230;]"
         }
       ]
     },
