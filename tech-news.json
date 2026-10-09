@@ -1,10 +1,28 @@
 {
-  "updated": "2026-10-09 02:11",
+  "updated": "2026-10-09 03:44",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "OpenAI讓AI開外掛！GPT-6.1超高速模式最高快8倍 價格也飆6倍",
+          "link": "https://3c.ltn.com.tw/news/67867",
+          "date": "2026/10/09 11:30",
+          "summary": "OpenAI又讓AI加速了！官方宣布替GPT-6.1 Sol推出全新的「Ultrafast（超高速）」模式，最大賣點 ..."
+        },
+        {
+          "title": "iOS 27 讓 Apple CarPlay 變得更好用！外媒實測新功能升級有感",
+          "link": "https://3c.ltn.com.tw/news/67864",
+          "date": "2026/10/09 10:42",
+          "summary": "隨著蘋果（Apple）日前正式向全球用戶推送 iOS 27，受到許多駕駛喜愛的車用系統 CarPlay 也同步迎來多 ..."
+        },
+        {
+          "title": "ChatGPT錄音轉逐字稿要付錢！網狂推Google這款免費神器",
+          "link": "https://3c.ltn.com.tw/news/67862",
+          "date": "2026/10/09 10:10",
+          "summary": "ChatGPT最新加入「Audio uploads(音訊上傳)」功能，現在只要把MP3、M4A等錄音檔直接上傳，就能 ..."
+        },
         {
           "title": "iPad mini 8本月底亮相！爆料潑冷水：OLED螢幕維持60Hz",
           "link": "https://3c.ltn.com.tw/news/67858",
@@ -58,24 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67849",
           "date": "2026/10/08 10:45",
           "summary": "民進黨台北市長參選人沈伯洋昨(7日)接受TVBS《少康戰情室》主持人趙少康專訪，雙方在節目中交鋒，引發熱烈討論。不過 ..."
-        },
-        {
-          "title": "華碩RTX Spark筆電開放預購！塞進強大AI算力 最高近27萬元",
-          "link": "https://3c.ltn.com.tw/news/67844",
-          "date": "2026/10/08 10:04",
-          "summary": "華碩宣布旗下首款搭載NVIDIA RTX Spark超級晶片的ProArt P14、ProArt P16筆電，即日起 ..."
-        },
-        {
-          "title": "果粉 10 月真的忙！摺疊 iPhone Duo 領軍 多款蘋果新品將接續登場",
-          "link": "https://3c.ltn.com.tw/news/67843",
-          "date": "2026/10/08 10:00",
-          "summary": "今年 10 月對於蘋果（Apple）來說會是非常忙碌的月份，除了已確認首款摺疊新機 iPhone Duo 即將在 1 ..."
-        },
-        {
-          "title": "iPhone 18 Pro 又傳褪色問題 勃根地紅機身被網友發現異常",
-          "link": "https://3c.ltn.com.tw/news/67838",
-          "date": "2026/10/08 09:00",
-          "summary": "蘋果 iPhone 18 Pro 系列上市後，近期有海外網友陸續發現機身出現異常褪色情況，主要集中在勃根地紅色版本 ..."
         }
       ]
     },
@@ -83,6 +83,12 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "AI 白用新聞內容該怎麼付錢？微支付可能是解方",
+          "link": "https://technews.tw/2026/10/09/ai-is-consuming-human-knowledge/",
+          "date": "2026-10-09 02:30",
+          "summary": "隨著《紐約時報》（The New York Times）對 OpenAI 與微軟（Microsoft）的著作權 [&#8230;]"
+        },
         {
           "title": "蘋果暫緩 AI 替換真人客服，維持「人機協作」雙軌制",
           "link": "https://technews.tw/2026/10/09/apple-puts-ai-customer-service-plans-on-hold/",
@@ -148,12 +154,6 @@
           "link": "https://infosecu.technews.tw/2026/10/08/unknown-threat-actor-uses-ai-driven-artex-to-target-south-korean-finance/",
           "date": "2026-10-08 06:50",
           "summary": "美國資安公司 CrowdStrike 表示，近期對韓國金融業發動網攻的嫌疑人，可能是一名 26 歲的中國廣東省 [&#8230;]"
-        },
-        {
-          "title": "AI 才到第 3 局  華爾街知名科技多頭唱旺輝達生態系",
-          "link": "https://technews.tw/2026/10/08/mega-bull-dan-ives-debuts-his-new-tech-coverage/",
-          "date": "2026-10-08 06:30",
-          "summary": "華爾街知名科技股多頭分析師 Dan Ives 指出，人工智慧（AI）基礎設施供給至少到 2027 年仍將吃緊， [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,18 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "黃仁勳、蘇姿丰與馬斯克同獲殊榮，川普頒發美國國家科學獎章",
+          "link": "https://technews.tw/2026/10/09/jensen-huang-lisa-su-elon-musk-national-medal-science-trump/",
+          "date": "2026-10-09 03:30",
+          "summary": "美國總統川普於當地時間 8 日舉行「科學：新黃金時代」（Science: A New Golden Age）高 [&#8230;]"
+        },
+        {
+          "title": "合晶四度申請臺商回臺投資，178.8 億元擴大中科二林廠布局",
+          "link": "https://finance.technews.tw/2026/10/09/topco-scientific-4th-taiwan-investment-17-88bn-expand-erlin-plant/",
+          "date": "2026-10-09 02:15",
+          "summary": "矽晶圓大廠合晶科技持續擴大臺灣產能布局。經濟部投資臺灣事務所 8 日宣布，合晶第四度申請「歡迎臺商回臺投資行動 [&#8230;]"
+        },
         {
           "title": "比 High NA EUV 更強！ASML 下一代 Hyper NA EUV 有望 10 年內問世",
           "link": "https://technews.tw/2026/10/09/asml-next-gen-hyper-na-euv-stronger-high-na-expected-10-years/",
@@ -220,18 +232,6 @@
           "link": "https://technews.tw/2026/10/08/cost-pressures-shift-demand-side-2027-laptop-market-dual-impact-shipments-prices/",
           "date": "2026-10-08 07:40",
           "summary": "根據 TrendForce 最新筆電產業研究，2027 年筆電市場的主要風險將由供應限制轉向成本上升對需求的衝 [&#8230;]"
-        },
-        {
-          "title": "群聯 9 月營收年增 370%，前三季合併營收年增 290% 創新高",
-          "link": "https://finance.technews.tw/2026/10/08/phisons-september-revenue-increased-by-370-year-on-year/",
-          "date": "2026-10-08 07:30",
-          "summary": "NAND 控制晶片暨 AI 應用儲存解決方案廠商群聯公布了 2026 年 9 月份營運結果，單月合併營收達新台 [&#8230;]"
-        },
-        {
-          "title": "漢測 9 月營收年增 150.33%，前 9 個月累計營收年增 129.06%",
-          "link": "https://finance.technews.tw/2026/10/08/hances-revenue-in-september-increased-by-150-33-year-on-year/",
-          "date": "2026-10-08 06:40",
-          "summary": "半導體晶圓測試解決方案廠商漢測公布 2026 年 9 月營收，金額為新台幣 5.14 億元，較 2025 年同 [&#8230;]"
         }
       ]
     },
