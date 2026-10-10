@@ -1,10 +1,22 @@
 {
-  "updated": "2026-10-09 17:44",
+  "updated": "2026-10-10 01:45",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "iPhone 18 Pro漲價嚇走果粉？上市不到1個月傳蘋果砍單",
+          "link": "https://3c.ltn.com.tw/news/67872",
+          "date": "2026/10/10 08:00",
+          "summary": "蘋果今年新款iPhone 18 Pro系列才上市不到1個月，竟然就傳出砍單消息！最新消息指出，由於新機漲價，讓部分果 ..."
+        },
+        {
+          "title": "Garmin高階智慧錶征服運動場 Enduro 4首登台主打續航力 Approach S72化身高球教練",
+          "link": "https://3c.ltn.com.tw/news/67871",
+          "date": "2026/10/10 05:38",
+          "summary": "在運動需求劃分得越來越細的趨勢下，Garmin持續擴大戶外版圖，推出兩款全新高階運動智慧錶，其中，專為超耐力運動打造 ..."
+        },
         {
           "title": "不怕銷量差！iPhone Air 2 傳還會更薄 厚度只剩5.2mm",
           "link": "https://3c.ltn.com.tw/news/67861",
@@ -64,18 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67865",
           "date": "2026/10/09 09:28",
           "summary": "蘋果已經宣布下週10月13日發布新品，並以一句「Welcome home(歡迎回家)」明示主角為智慧家庭，不過，10 ..."
-        },
-        {
-          "title": "蘋果宣布下週再發新品！10／13登場 「歡迎回家」明示主角",
-          "link": "https://3c.ltn.com.tw/news/67863",
-          "date": "2026/10/09 03:07",
-          "summary": "果粉準備迎接新品，蘋果全球行銷資深副總裁Greg Joswiak在X(前推特)宣布，蘋果將於下週10月13日發布新品 ..."
-        },
-        {
-          "title": "新iPhone太貴先不換！通路揭這3代舊機成換電池主力",
-          "link": "https://3c.ltn.com.tw/news/67852",
-          "date": "2026/10/08 15:01",
-          "summary": "蘋果iPhone 18 Pro系列大漲價，首款摺疊iPhone也相當昂貴，讓不少果粉看了價格後，決定打消換機念頭，讓 ..."
         }
       ]
     },
@@ -83,12 +83,6 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
-        {
-          "title": "AI 白用新聞內容該怎麼付錢？微支付可能是解方",
-          "link": "https://technews.tw/2026/10/09/ai-is-consuming-human-knowledge/",
-          "date": "2026-10-09 02:30",
-          "summary": "隨著《紐約時報》（The New York Times）對 OpenAI 與微軟（Microsoft）的著作權 [&#8230;]"
-        },
         {
           "title": "蘋果暫緩 AI 替換真人客服，維持「人機協作」雙軌制",
           "link": "https://technews.tw/2026/10/09/apple-puts-ai-customer-service-plans-on-hold/",
@@ -154,6 +148,12 @@
           "link": "https://infosecu.technews.tw/2026/10/08/unknown-threat-actor-uses-ai-driven-artex-to-target-south-korean-finance/",
           "date": "2026-10-08 06:50",
           "summary": "美國資安公司 CrowdStrike 表示，近期對韓國金融業發動網攻的嫌疑人，可能是一名 26 歲的中國廣東省 [&#8230;]"
+        },
+        {
+          "title": "AI 才到第 3 局  華爾街知名科技多頭唱旺輝達生態系",
+          "link": "https://technews.tw/2026/10/08/mega-bull-dan-ives-debuts-his-new-tech-coverage/",
+          "date": "2026-10-08 06:30",
+          "summary": "華爾街知名科技股多頭分析師 Dan Ives 指出，人工智慧（AI）基礎設施供給至少到 2027 年仍將吃緊， [&#8230;]"
         }
       ]
     },
@@ -161,18 +161,6 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
-        {
-          "title": "黃仁勳、蘇姿丰與馬斯克同獲殊榮，川普頒發美國國家科學獎章",
-          "link": "https://technews.tw/2026/10/09/jensen-huang-lisa-su-elon-musk-national-medal-science-trump/",
-          "date": "2026-10-09 03:30",
-          "summary": "美國總統川普於當地時間 8 日舉行「科學：新黃金時代」（Science: A New Golden Age）高 [&#8230;]"
-        },
-        {
-          "title": "合晶四度申請臺商回臺投資，178.8 億元擴大中科二林廠布局",
-          "link": "https://finance.technews.tw/2026/10/09/topco-scientific-4th-taiwan-investment-17-88bn-expand-erlin-plant/",
-          "date": "2026-10-09 02:15",
-          "summary": "矽晶圓大廠合晶科技持續擴大臺灣產能布局。經濟部投資臺灣事務所 8 日宣布，合晶第四度申請「歡迎臺商回臺投資行動 [&#8230;]"
-        },
         {
           "title": "比 High NA EUV 更強！ASML 下一代 Hyper NA EUV 有望 10 年內問世",
           "link": "https://technews.tw/2026/10/09/asml-next-gen-hyper-na-euv-stronger-high-na-expected-10-years/",
@@ -232,6 +220,18 @@
           "link": "https://technews.tw/2026/10/08/cost-pressures-shift-demand-side-2027-laptop-market-dual-impact-shipments-prices/",
           "date": "2026-10-08 07:40",
           "summary": "根據 TrendForce 最新筆電產業研究，2027 年筆電市場的主要風險將由供應限制轉向成本上升對需求的衝 [&#8230;]"
+        },
+        {
+          "title": "群聯 9 月營收年增 370%，前三季合併營收年增 290% 創新高",
+          "link": "https://finance.technews.tw/2026/10/08/phisons-september-revenue-increased-by-370-year-on-year/",
+          "date": "2026-10-08 07:30",
+          "summary": "NAND 控制晶片暨 AI 應用儲存解決方案廠商群聯公布了 2026 年 9 月份營運結果，單月合併營收達新台 [&#8230;]"
+        },
+        {
+          "title": "漢測 9 月營收年增 150.33%，前 9 個月累計營收年增 129.06%",
+          "link": "https://finance.technews.tw/2026/10/08/hances-revenue-in-september-increased-by-150-33-year-on-year/",
+          "date": "2026-10-08 06:40",
+          "summary": "半導體晶圓測試解決方案廠商漢測公布 2026 年 9 月營收，金額為新台幣 5.14 億元，較 2025 年同 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,18 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "毛利率衝破 87% 遠超台積電！川湖 40 年只做滑軌，AI 伺服器市占近八成",
+          "link": "https://finance.technews.tw/2026/10/10/king-slide-success-story-revealed/",
+          "date": "2026-10-10 00:00",
+          "summary": "高雄路竹「慧賢宮」最近聲名大噪，因為宮廟座上神明，被發現是股后川湖林家長期信仰寄託，其中濟公更是林家信仰的重要 [&#8230;]"
+        },
+        {
+          "title": "光寶科第三季營收季增 9%，康舒單季首破百億元",
+          "link": "https://finance.technews.tw/2026/10/09/ai-power-demand-remains-strong-liteon-q3-revenue-up-9-percent-acbel-hits-new-high/",
+          "date": "2026-10-09 06:46",
+          "summary": "AI 資料中心電源需求持續成長，帶動電源供應器廠商第三季營收走揚。光寶科技第三季合併營收約 574 億元，季增 [&#8230;]"
+        },
         {
           "title": "SK 海力士來台釋千億大單，找上力成、和碩代工，挹注兩台廠營運熱轉",
           "link": "https://technews.tw/2026/10/09/solidigm-taps-pti-and-pegatron-for-outsourcing/",
@@ -298,18 +310,6 @@
           "link": "https://finance.technews.tw/2026/10/08/caterpillar-stock-falls-amid-antitrust-probe/",
           "date": "2026-10-08 06:20",
           "summary": "美國政府對農業設備產業啟動反壟斷調查，引發相關類股賣壓出籠，工業機械大廠開拓重工（Caterpillar）重挫 [&#8230;]"
-        },
-        {
-          "title": "TPCA Show 2026 規模創新高！攜手 IMPACT 深度串聯 PCB 與先進封裝，聚焦AI 新局",
-          "link": "https://technews.tw/2026/10/08/tpca-show-2026-impact-pcb/",
-          "date": "2026-10-08 05:00",
-          "summary": "AI 需求引爆，PCB 產業迎接新機遇！隨著 AI 算力爆發引發硬體架構革新，台灣電路板協會（TPCA）年度盛 [&#8230;]"
-        },
-        {
-          "title": "「終極版」無邊框 iPhone 再曝光，傳等三星完成環繞式無邊框 OLED",
-          "link": "https://technews.tw/2026/10/08/bezel-free-iphone-2/",
-          "date": "2026-10-08 04:30",
-          "summary": "蘋果對 iPhone 外型的終極想像，可能是一支幾乎看不到邊框、甚至沒有傳統中框與實體按鍵的手機。中國爆料者「 [&#8230;]"
         }
       ]
     },
