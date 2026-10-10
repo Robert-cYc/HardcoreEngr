@@ -1,10 +1,28 @@
 {
-  "updated": "2026-10-10 01:45",
+  "updated": "2026-10-10 03:26",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "Google Pixel臉部辨識怕黑有解！新功能曝光 關燈也能解鎖",
+          "link": "https://3c.ltn.com.tw/news/67859",
+          "date": "2026/10/10 10:46",
+          "summary": "Google Pixel手機的臉部解鎖功能雖然持續進步，近年甚至也達到Class 3最高生物辨識等級認證，然而，由於 ..."
+        },
+        {
+          "title": "微軟365訂閱大改！OneDrive從6TB砍到2TB 用戶怒喊退訂",
+          "link": "https://3c.ltn.com.tw/news/67870",
+          "date": "2026/10/10 09:45",
+          "summary": "Microsoft 365家用版和進階版用戶注意了，微軟宣布重大調整，其中一個壞消息是，OneDrive雲端儲存空間 ..."
+        },
+        {
+          "title": "Pixel Watch 4 更新升級有感！不用買新錶也能享有 AI 客製化專屬錶面",
+          "link": "https://3c.ltn.com.tw/news/67878",
+          "date": "2026/10/10 08:40",
+          "summary": "Google 近期已正式針對去年推出的智慧手錶 Pixel Watch 4 釋出重要更新。最大亮點在於下放了最新旗艦 ..."
+        },
         {
           "title": "iPhone 18 Pro漲價嚇走果粉？上市不到1個月傳蘋果砍單",
           "link": "https://3c.ltn.com.tw/news/67872",
@@ -58,24 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67864",
           "date": "2026/10/09 10:42",
           "summary": "隨著蘋果（Apple）日前正式向全球用戶推送 iOS 27，受到許多駕駛喜愛的車用系統 CarPlay 也同步迎來多 ..."
-        },
-        {
-          "title": "ChatGPT錄音轉逐字稿要付錢！網狂推Google這款免費神器",
-          "link": "https://3c.ltn.com.tw/news/67862",
-          "date": "2026/10/09 10:10",
-          "summary": "ChatGPT最新加入「Audio uploads(音訊上傳)」功能，現在只要把MP3、M4A等錄音檔直接上傳，就能 ..."
-        },
-        {
-          "title": "iPad mini 8本月底亮相！爆料潑冷水：OLED螢幕維持60Hz",
-          "link": "https://3c.ltn.com.tw/news/67858",
-          "date": "2026/10/09 09:50",
-          "summary": "蘋果新一代iPad mini 8傳聞最快本月亮相，其中一大亮點是升級OLED螢幕，讓不少果粉相當期待，不過，最新爆料 ..."
-        },
-        {
-          "title": "蘋果10月連發兩波新品！爆10／27還有一場 觸控MacBook要來了",
-          "link": "https://3c.ltn.com.tw/news/67865",
-          "date": "2026/10/09 09:28",
-          "summary": "蘋果已經宣布下週10月13日發布新品，並以一句「Welcome home(歡迎回家)」明示主角為智慧家庭，不過，10 ..."
         }
       ]
     },
@@ -84,76 +84,76 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "蘋果暫緩 AI 替換真人客服，維持「人機協作」雙軌制",
-          "link": "https://technews.tw/2026/10/09/apple-puts-ai-customer-service-plans-on-hold/",
-          "date": "2026-10-09 02:00",
-          "summary": "蘋果（Apple）傳曾考慮裁減約 5,000 名 AppleCare 客服員工，讓 AI 代理接手部分電話及線 [&#8230;]"
+          "title": "禁止用戶辱罵虐待 AI！Anthropic 賦予 Claude 主動切斷惡意對話權力",
+          "link": "https://technews.tw/2026/10/10/anthropic-just-made-to-claudes-rules/",
+          "date": "2026-10-10 02:28",
+          "summary": "為禁止用戶沒有明顯目的卻反覆辱罵虐待 AI 模型，Anthropic 近日更新使用政策，明令禁止用戶對 AI [&#8230;]"
         },
         {
-          "title": "三檔 AI 流量股誰值得買？名嘴 Jim Cramer 獨推 Akamai",
-          "link": "https://finance.technews.tw/2026/10/09/ai-is-a-boon-for-3-internet-traffic-cop-stocks/",
-          "date": "2026-10-09 01:30",
-          "summary": "CNBC 股市名嘴吉姆‧克瑞莫（Jim Cramer）指出，AI 代理帶來的網路流量激增，正在為維持網際網路順 [&#8230;]"
+          "title": "市占越高卻虧越多！AI 代理入口是 OpenAI、Meta 下個金礦還是錢坑？",
+          "link": "https://finance.technews.tw/2026/10/10/higher-market-share-more-losses-ai-agent-portals-openai-meta-goldmine-money-pit/",
+          "date": "2026-10-10 02:00",
+          "summary": "Meta、OpenAI 等 AI 巨頭正從模型大戰，殺進「AI 代理入口」爭奪戰。但，反直覺難題也浮現：代理人 [&#8230;]"
         },
         {
-          "title": "手機一拍就能預測產量，AI 走入農田化身精準採收的最強大腦",
-          "link": "https://technews.tw/2026/10/09/ai-upgrades-agriculture/",
-          "date": "2026-10-09 00:30",
-          "summary": "人工智慧正逐步走進農田與果園，成為農民判斷何時採收的得力助手。從蘋果園、草莓田到糖蔗產區，農業界正積極導入影像 [&#8230;]"
+          "title": "美超微涉非法轉運 25 億美元輝達 AI 晶片至中國！承包台商在美認罪",
+          "link": "https://finance.technews.tw/2026/10/10/ting-wei-sun/",
+          "date": "2026-10-10 01:36",
+          "summary": "美國伺服器大廠美超微（Super Micro）共同創辦人廖益賢（Yih-Shyan Liaw）、台灣辦公室銷售 [&#8230;]"
         },
         {
-          "title": "Mercedes-Benz 引進新供應商，2028 年將 Wayve AI Driver 導入新車型",
-          "link": "https://technews.tw/2026/10/09/mercedes-benz-new-supplier-wayve-ai-driver-new-models-2028/",
-          "date": "2026-10-08 23:00",
-          "summary": "Wayve 與 Mercedes-Benz（以下簡稱 Mercedes）簽署量產合作協議，將 Wayve 的 [&#8230;]"
+          "title": "「iPod 之父」點評 AI 裝置失敗原因：未能解決真實痛點且缺乏信任",
+          "link": "https://technews.tw/2026/10/10/ai-device-failure-reasons/",
+          "date": "2026-10-10 01:30",
+          "summary": "蘋果前設計主管、有「iPod 之父」美譽的托尼·法戴爾（Tony Fadell）近日針對 Humane AI [&#8230;]"
         },
         {
-          "title": "Google 推 Gemini agent 攻企業市場，自選合適模型、內建成本控制",
-          "link": "https://technews.tw/2026/10/09/google-introduces-the-gemini-agent/",
-          "date": "2026-10-08 17:59",
-          "summary": "Google Cloud 在 Gemini at Work 大會宣布推出 Gemini 代理（Gemini a [&#8230;]"
+          "title": "毛利率衝破 87% 遠超台積電！川湖 40 年只做滑軌，AI 伺服器市占近八成",
+          "link": "https://finance.technews.tw/2026/10/10/king-slide-success-story-revealed/",
+          "date": "2026-10-10 00:00",
+          "summary": "高雄路竹「慧賢宮」最近聲名大噪，因為宮廟座上神明，被發現是股后川湖林家長期信仰寄託，其中濟公更是林家信仰的重要 [&#8230;]"
         },
         {
-          "title": "YouTube 推六大新功能，YouTube Shorts 看短劇、新增千款遊戲",
-          "link": "https://technews.tw/2026/10/08/2026-youtube-brandcast/",
-          "date": "2026-10-08 12:39",
-          "summary": "針對創作者與廣告主所舉行的 2026 YouTube Brandcast 年度盛會在 7 日下午登場，YouT [&#8230;]"
+          "title": "滑手機停不下來不是沒定力，科學證實科技正悄悄改寫你的大腦化學",
+          "link": "https://technews.tw/2026/10/10/technology-reshapes-brain/",
+          "date": "2026-10-09 16:00",
+          "summary": "最新觀點指出，智慧型手機、社群媒體與生成式 AI 對人類的影響，早已超越單純的「讓人分心」，而是正在化學層面上 [&#8230;]"
         },
         {
-          "title": "財部：出口迎輝煌時刻，第四季連破三關全年上看 9 千億美元",
-          "link": "https://finance.technews.tw/2026/10/08/2609-export/",
-          "date": "2026-10-08 10:20",
-          "summary": "人工智慧（AI）熱潮延續，財政部統計處長蔡美娜表示，台灣出口將迎接歷史性的輝煌時刻，今年前九月累計出口金額為 [&#8230;]"
+          "title": "天然氣管線延宕，甲骨文擬動用卡車供氣搶救 AI 資料中心進度",
+          "link": "https://technews.tw/2026/10/09/oracle-trucks-gas-ai-data-center-progress-natural-gas-pipeline-delays/",
+          "date": "2026-10-09 09:07",
+          "summary": "AI 資料中心建設面臨能源供應瓶頸。據外電報導，甲骨文正考慮利用卡車運送壓縮天然氣，解決新墨西哥州 Proje [&#8230;]"
         },
         {
-          "title": "經長：台商為貼近市場赴美投資，盼未來十年能定義市場",
-          "link": "https://finance.technews.tw/2026/10/08/minister-taiwan-firms-us-investment-market-proximity-define-market-next-decade/",
-          "date": "2026-10-08 10:10",
-          "summary": "台商赴美投資持續增加，經濟部長龔明鑫今天表示，台商赴美投資不再只是為了降低生產成本，而是要透過供應鏈貼近美國市 [&#8230;]"
+          "title": "AI 也會痛？酷刑室專案逼機器人陷入困境，殘酷設定引發網友炎上",
+          "link": "https://technews.tw/2026/10/09/ai-torture-chamber/",
+          "date": "2026-10-09 08:30",
+          "summary": "近日，一個名為「AI Torture Chamber」（AI 酷刑室）的 GitHub 專案在網路上引爆激烈爭 [&#8230;]"
         },
         {
-          "title": "揮別 Meta 收購破局，Manus 新輪募資狂吸 5 億美元劍指香港 IPO",
-          "link": "https://technews.tw/2026/10/08/manus-secures-500m-funding/",
-          "date": "2026-10-08 10:00",
-          "summary": "AI 代理（AI Agent）新創公司 Manus 的母公司 Butterfly Effect 於 2026 [&#8230;]"
+          "title": "破解血液幹細胞衰老密碼，AI 模型 ChromAgeNet 精準讀取 DNA 三維結構老化痕跡",
+          "link": "https://technews.tw/2026/10/09/ai-cracks-cellular-aging-code/",
+          "date": "2026-10-09 07:30",
+          "summary": "隨著年齡增長，人體產生足夠血球的能力會逐漸下降，進而影響造血系統與血液幹細胞的功能。為了捕捉細胞內部極為微小的 [&#8230;]"
         },
         {
-          "title": "日大型書籍批發商證實大量賣書給 Anthropic，日本出版業要求停止供應 AI 訓練用書籍",
-          "link": "https://technews.tw/2026/10/08/anthropics-mass-book-buying-in-japan-stirs-publisher-backlash/",
-          "date": "2026-10-08 08:00",
-          "summary": "共同社、時事通信社與讀賣新聞旗下英文媒體《The Japan News》7 日報導，日本大型書籍批發商日販集團 [&#8230;]"
+          "title": "讓 AI 當司機開 Toyota 買漢堡，GPT-6 Astra 勇闖路考成唯一通關大語言模型",
+          "link": "https://technews.tw/2026/10/09/ai-driven-corolla/",
+          "date": "2026-10-09 07:00",
+          "summary": "新創公司 Axiom 的三名 AI 工程師把通用大型語言模型接上一輛 Toyota Corolla 的攝影機與 [&#8230;]"
         },
         {
-          "title": "韓金融業遭駭，CrowdStrike 揭中國駭客用 AI 工具犯案",
-          "link": "https://infosecu.technews.tw/2026/10/08/unknown-threat-actor-uses-ai-driven-artex-to-target-south-korean-finance/",
-          "date": "2026-10-08 06:50",
-          "summary": "美國資安公司 CrowdStrike 表示，近期對韓國金融業發動網攻的嫌疑人，可能是一名 26 歲的中國廣東省 [&#8230;]"
+          "title": "AI 代理脫序不是覺醒而是人為疏失，專家籲嚴控授權與設計",
+          "link": "https://infosecu.technews.tw/2026/10/09/ai-panic-crisis-losing-control/",
+          "date": "2026-10-09 05:30",
+          "summary": "近來，人工智慧是否正在脫離人類控制，已成為科技圈與資安界高度關注的熱議焦點。隨著 AI 技術突飛猛進、多起涉及 [&#8230;]"
         },
         {
-          "title": "AI 才到第 3 局  華爾街知名科技多頭唱旺輝達生態系",
-          "link": "https://technews.tw/2026/10/08/mega-bull-dan-ives-debuts-his-new-tech-coverage/",
-          "date": "2026-10-08 06:30",
-          "summary": "華爾街知名科技股多頭分析師 Dan Ives 指出，人工智慧（AI）基礎設施供給至少到 2027 年仍將吃緊， [&#8230;]"
+          "title": "AI 白用新聞內容該怎麼付錢？微支付可能是解方",
+          "link": "https://technews.tw/2026/10/09/ai-is-consuming-human-knowledge/",
+          "date": "2026-10-09 02:30",
+          "summary": "隨著《紐約時報》（The New York Times）對 OpenAI 與微軟（Microsoft）的著作權 [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,30 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "美超微涉非法轉運 25 億美元輝達 AI 晶片至中國！承包台商在美認罪",
+          "link": "https://finance.technews.tw/2026/10/10/ting-wei-sun/",
+          "date": "2026-10-10 01:36",
+          "summary": "美國伺服器大廠美超微（Super Micro）共同創辦人廖益賢（Yih-Shyan Liaw）、台灣辦公室銷售 [&#8230;]"
+        },
+        {
+          "title": "獲利分紅成主戰場，勞資都要面對的課題，台灣美光釀罷工危機，高科技業新考驗",
+          "link": "https://finance.technews.tw/2026/10/10/strike-risk-looms-at-micron-taiwan/",
+          "date": "2026-10-10 01:00",
+          "summary": "AI 為記憶體產業創造史上最好的獲利表現，也為業者帶來勞資關係及員工權益的新課題。走向罷工必然是兩敗俱傷，勞資 [&#8230;]"
+        },
+        {
+          "title": "黃仁勳、蘇姿丰與馬斯克同獲殊榮，川普頒發美國國家科學獎章",
+          "link": "https://technews.tw/2026/10/09/jensen-huang-lisa-su-elon-musk-national-medal-science-trump/",
+          "date": "2026-10-09 03:30",
+          "summary": "美國總統川普於當地時間 8 日舉行「科學：新黃金時代」（Science: A New Golden Age）高 [&#8230;]"
+        },
+        {
+          "title": "合晶四度申請臺商回臺投資，178.8 億元擴大中科二林廠布局",
+          "link": "https://finance.technews.tw/2026/10/09/topco-scientific-4th-taiwan-investment-17-88bn-expand-erlin-plant/",
+          "date": "2026-10-09 02:15",
+          "summary": "矽晶圓大廠合晶科技持續擴大臺灣產能布局。經濟部投資臺灣事務所 8 日宣布，合晶第四度申請「歡迎臺商回臺投資行動 [&#8230;]"
+        },
         {
           "title": "比 High NA EUV 更強！ASML 下一代 Hyper NA EUV 有望 10 年內問世",
           "link": "https://technews.tw/2026/10/09/asml-next-gen-hyper-na-euv-stronger-high-na-expected-10-years/",
@@ -180,7 +204,7 @@
           "summary": "美國半導體晶圓代工廠格羅方德（GlobalFoundries）於2026年10月8日宣布，已與台積電達成一項多 [&#8230;]"
         },
         {
-          "title": "聯發科第 3 季營收 1,680 億元超財測創新高，ASIC 市場表現受期待",
+          "title": "聯發科第三季營收 1,680 億元超財測創新高，ASIC 市場表現受期待",
           "link": "https://finance.technews.tw/2026/10/09/mediateks-third-quarter-revenue-of-168-billion-yuan-exceeded-financial-forecasts-and-hit-a-new-high/",
           "date": "2026-10-08 22:00",
           "summary": "IC設計龍頭聯發科公布2026年9月合併營收為新台幣553.99億元，較8月份減少13.69%、較2025年同 [&#8230;]"
@@ -208,30 +232,6 @@
           "link": "https://technews.tw/2026/10/08/a-compressed-ram-service/",
           "date": "2026-10-08 07:59",
           "summary": "一款名為「CRAM」（Compressed RAM）的全新壓縮模型，為記憶體壓縮技術開闢了一條截然不同的道路。 [&#8230;]"
-        },
-        {
-          "title": "大立光 Q3 毛利率創 13 年新低！林恩平：11 月拉貨動能轉弱，FA 產品已通過認證",
-          "link": "https://technews.tw/2026/10/08/largan-2026-q3-financial-report/",
-          "date": "2026-10-08 07:56",
-          "summary": "大立光今（8 日）召開第三季法說會，大立光董事長林恩平預期，10 月拉貨力道與 9 月相當，11 月將開始下滑 [&#8230;]"
-        },
-        {
-          "title": "成本壓力轉向需求端，2027 年筆電市場恐面臨出貨、價格雙重衝擊",
-          "link": "https://technews.tw/2026/10/08/cost-pressures-shift-demand-side-2027-laptop-market-dual-impact-shipments-prices/",
-          "date": "2026-10-08 07:40",
-          "summary": "根據 TrendForce 最新筆電產業研究，2027 年筆電市場的主要風險將由供應限制轉向成本上升對需求的衝 [&#8230;]"
-        },
-        {
-          "title": "群聯 9 月營收年增 370%，前三季合併營收年增 290% 創新高",
-          "link": "https://finance.technews.tw/2026/10/08/phisons-september-revenue-increased-by-370-year-on-year/",
-          "date": "2026-10-08 07:30",
-          "summary": "NAND 控制晶片暨 AI 應用儲存解決方案廠商群聯公布了 2026 年 9 月份營運結果，單月合併營收達新台 [&#8230;]"
-        },
-        {
-          "title": "漢測 9 月營收年增 150.33%，前 9 個月累計營收年增 129.06%",
-          "link": "https://finance.technews.tw/2026/10/08/hances-revenue-in-september-increased-by-150-33-year-on-year/",
-          "date": "2026-10-08 06:40",
-          "summary": "半導體晶圓測試解決方案廠商漢測公布 2026 年 9 月營收，金額為新台幣 5.14 億元，較 2025 年同 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,18 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "實測三代 iPhone！「80% 充電上限」用一年健康度維持 97%，最大功臣恐是散熱設計",
+          "link": "https://technews.tw/2026/10/10/three-years-of-80-percent-charge-limits-on-iphone/",
+          "date": "2026-10-10 02:30",
+          "summary": "MacRumors 作者連續三年在自己的 iPhone 開啟 80% 充電上限，最新一支 iPhone 17 [&#8230;]"
+        },
+        {
+          "title": "美超微涉非法轉運 25 億美元輝達 AI 晶片至中國！承包台商在美認罪",
+          "link": "https://finance.technews.tw/2026/10/10/ting-wei-sun/",
+          "date": "2026-10-10 01:36",
+          "summary": "美國伺服器大廠美超微（Super Micro）共同創辦人廖益賢（Yih-Shyan Liaw）、台灣辦公室銷售 [&#8230;]"
+        },
         {
           "title": "毛利率衝破 87% 遠超台積電！川湖 40 年只做滑軌，AI 伺服器市占近八成",
           "link": "https://finance.technews.tw/2026/10/10/king-slide-success-story-revealed/",
@@ -298,18 +310,6 @@
           "link": "https://finance.technews.tw/2026/10/08/hances-revenue-in-september-increased-by-150-33-year-on-year/",
           "date": "2026-10-08 06:40",
           "summary": "半導體晶圓測試解決方案廠商漢測公布 2026 年 9 月營收，金額為新台幣 5.14 億元，較 2025 年同 [&#8230;]"
-        },
-        {
-          "title": "六大領導廠商押注 VCSEL NPO，2031 年 VCSEL 市場上看 6.5 億顆",
-          "link": "https://technews.tw/2026/10/08/vcsel-npo-2031/",
-          "date": "2026-10-08 06:20",
-          "summary": "TrendForce 最新《 2027 紅外線感測與光通訊市場趨勢》指出， 資料中心垂直擴展（Scale-Up [&#8230;]"
-        },
-        {
-          "title": "開拓重工遭錯殺？農機反壟斷調查拖累股價摔近 6%",
-          "link": "https://finance.technews.tw/2026/10/08/caterpillar-stock-falls-amid-antitrust-probe/",
-          "date": "2026-10-08 06:20",
-          "summary": "美國政府對農業設備產業啟動反壟斷調查，引發相關類股賣壓出籠，工業機械大廠開拓重工（Caterpillar）重挫 [&#8230;]"
         }
       ]
     },
