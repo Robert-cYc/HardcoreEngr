@@ -1,5 +1,11 @@
 [
   {
+    "url": "hermes-desktop-vs-hermes-one.html",
+    "title": "Hermes Desktop vs Hermes One 功能及比較差異完全解析",
+    "excerpt": "深入解析 Nous Research 官方推出的 Hermes Desktop 與社群旗艦 Hermes One 的核心架構、Bot Screen、3D Office、多通訊頻道與排程等功能，並提供全維度比較表格與選型決策指南。",
+    "tags": ["Hermes Agent", "Hermes Desktop", "Hermes One", "AI Agent", "Nous Research", "開源AI", "AI 工具比較", "教學"]
+  },
+  {
     "url": "wsl-guide.html",
     "title": "Windows Subsystem for Linux (WSL) 完全攻略：在 Windows 上享受原生 Linux 開發體驗",
     "excerpt": "Windows Subsystem for Linux (WSL) 讓開發者能在 Windows 上直接執行原生 Linux 環境。本文詳細介紹 WSL2 的架構、安裝方式、與 VS Code 的完美整合，以及進階網路與效能調校技巧。",
