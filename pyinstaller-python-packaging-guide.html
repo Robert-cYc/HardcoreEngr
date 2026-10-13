@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PyInstaller 完全操作指南：安裝、--onefile 與 --onedir 核心指令詳解、資源打包與除錯避坑手冊 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="深入解析 Python 最強打包神器 PyInstaller：詳細介紹安裝方式、核心指令參數（--onefile、--onedir、--windowed、--add-data、--hidden-import）、sys._MEIPASS 資源路徑解析、.spec 規格檔進階配置與常見閃退、體積肥大等避坑指南。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/pyinstaller-python-packaging-guide.html">
+  <meta property="og:title" content="PyInstaller 完全操作指南：安裝、--onefile 與 --onedir 核心指令詳解、資源打包與除錯避坑手冊 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="深入解析 Python 最強打包神器 PyInstaller：詳細介紹安裝方式、核心指令參數（--onefile、--onedir、--windowed、--add-data、--hidden-import）、sys._MEIPASS 資源路徑解析、.spec 規格檔進階配置與常見閃退、體積肥大等避坑指南。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/pyinstaller-python-packaging-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PyInstaller 完全操作指南：安裝、--onefile 與 --onedir 核心指令詳解、資源打包與除錯避坑手冊 — &quot;AI&quot; 硬核工程師">
+  <meta name="twitter:description" content="深入解析 Python 最強打包神器 PyInstaller：詳細介紹安裝方式、核心指令參數（--onefile、--onedir、--windowed、--add-data、--hidden-import）、sys._MEIPASS 資源路徑解析、.spec 規格檔進階配置與常見閃退、體積肥大等避坑指南。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.25; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.15rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; margin-top: 1rem; }
+    .article-body { max-width: 62em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.05rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.55rem; font-weight: 600; margin: 1.6rem 0 0.75rem; color: var(--accent); }
+    .article-body h4 { font-size: 1.25rem; font-weight: 600; margin: 1.2rem 0 0.5rem; }
+    .article-body p { margin-bottom: 1.15rem; line-height: 1.85; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.12em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); font-size: 0.95rem; line-height: 1.6; }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.75; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1.02rem; }
+    .article-body th, .article-body td { padding: 0.75rem 0.9rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 700; color: var(--text); background: var(--bg-alt); }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .feature-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0 2rem; }
+    .feature-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .feature-card h4 { margin-top: 0; color: var(--accent); font-size: 1.15rem; }
+    .callout-box { background: rgba(56, 189, 248, 0.08); border-left: 4px solid #38bdf8; padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
+    .command-badge { display: inline-block; font-family: "Fira Code", monospace; font-size: 0.85rem; font-weight: bold; background: rgba(37, 99, 235, 0.1); color: var(--accent); padding: 0.15rem 0.5rem; border-radius: 4px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "PyInstaller 完全操作指南：安裝、--onefile 與 --onedir 核心指令詳解、資源打包與除錯避坑手冊",
+    "description": "深入解析 Python 最強打包神器 PyInstaller：詳細介紹安裝方式、核心指令參數（--onefile、--onedir、--windowed、--add-data、--hidden-import）、sys._MEIPASS 資源路徑解析、.spec 規格檔進階配置與常見閃退、體積肥大等避坑指南。",
+    "url": "https://ai-hardcore-engineer.com/pyinstaller-python-packaging-guide.html",
+    "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
+    "image": "https://ai-hardcore-engineer.com/og-image.png",
+    "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/pyinstaller-python-packaging-guide.html" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="article-hero">
+        <h1>PyInstaller 完全操作指南：安裝、--onefile 與 --onedir 核心指令詳解、資源打包與除錯避坑手冊</h1>
+        <div class="article-meta">
+          <span>2026-10-13</span>
+          <span class="separator">·</span>
+          <span>18 分鐘閱讀</span>
+          <span class="separator">·</span>
+          <span>分類：開發工具與 Python</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">PyInstaller</span>
+          <span class="tag">Python 打包</span>
+          <span class="tag">exe 製作</span>
+          <span class="tag">CLI 指令</span>
+          <span class="tag">開發工具</span>
+          <span class="tag">教學</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/pyinstaller-guide/1200/400" alt="PyInstaller 完全操作指南 Banner">
+      </section>
+
+      <article class="article-body">
+        <div class="callout-box">
+          <strong>TL;DR 速覽：</strong><br>
+          • <strong>什麼是 PyInstaller？</strong> 一款將 Python 腳本連同 Python 直譯器環境、動態依賴庫（DLL/so/dylib）打包為獨立可執行檔（Windows <code>.exe</code>、macOS App、Linux binary）的打包工具，目標電腦<strong>無需安裝 Python 即可直接執行</strong>。<br>
+          • <strong>核心旗標核心差異：</strong><br>
+          &nbsp;&nbsp;- <code>--onefile</code> (<code>-F</code>)：打包為<strong>單一獨立執行檔</strong>。方便分發，但啟動時會先解壓縮到暫存目錄，啟動略慢。<br>
+          &nbsp;&nbsp;- <code>--onedir</code> (<code>-D</code>，預設)：打包為<strong>包含執行檔與依賴檔的資料夾</strong>。啟動極快、方便替換設定與除錯，分發時建議壓縮為 zip。<br>
+          • <strong>絕不能漏的關鍵細節：</strong> 打包外部靜態資源（圖片、設定檔）時，需搭配 <code>--add-data</code>，並在 Python 程式碼中透過 <code>sys._MEIPASS</code> 動態定位暫存路徑。<br>
+          • <strong>最佳實踐：</strong> 強烈建議在<strong>乾淨的虛擬環境 (venv)</strong> 中打包，否則會將全域所有龐大套件一同捲入，造成 exe 肥大至數百 MB！
+        </div>
+
+        <h2>一、什麼是 PyInstaller？底層運作原理剖析</h2>
+        <p>在 Python 開發中，我們常面臨交付軟體的難題：一般使用者電腦通常沒有安裝 Python，也沒有設定好 <code>pip</code> 依賴，甚至可能會遇到版本衝突。PyInstaller 正是為了解決這個痛點而生的業界標準解決方案。</p>
+        <p>PyInstaller 的工作原理並非「將 Python 程式碼編譯成 C++ 或機器碼」，而是執行以下自動化流程：</p>
+        <ol>
+          <li><strong>依賴靜態分析：</strong> 深度解析你的入口腳本（如 <code>main.py</code>），遍歷所有 <code>import</code> 語句，構建模組依賴樹狀圖。</li>
+          <li><strong>環境收集：</strong> 從目前使用的 Python 環境中提取對應版本的 Python 直譯器核心動態庫（如 <code>python311.dll</code>）、標準庫二進位檔（<code>.pyd</code>）及第三方依賴包。</li>
+          <li><strong>內建 Bootloader：</strong> 加入編譯好的引導啟動程式（Bootloader）。當使用者點擊產生的 <code>.exe</code> 時，Bootloader 會建立獨立的 Python 執行期環境並啟動腳本。</li>
+        </ol>
+
+        <h2>二、PyInstaller 安裝與環境準備</h2>
+
+        <h3>1. 標準安裝 (pip)</h3>
+        <p>在終端機（PowerShell、CMD 或 bash）中直接使用 pip 安裝：</p>
+        <pre><code class="language-bash"># 安裝最新穩定版本
+pip install pyinstaller
+
+# 驗證安裝成功與查看版本
+pyinstaller --version</code></pre>
+
+        <h3>2. 升級至最新版或開發版</h3>
+        <p>若你的 Python 是剛發布的新版本（例如 Python 3.12+ / 3.13），建議更新至官方開發分支以避免語法樹解析相容性問題：</p>
+        <pre><code class="language-bash"># 升級現有版本
+pip install --upgrade pyinstaller
+
+# 安裝 GitHub 最新開發分支
+pip install https://github.com/pyinstaller/pyinstaller/tarball/develop</code></pre>
+
+        <h3>3. 核心建議：務必在獨立虛擬環境中打包！</h3>
+        <p>許多初學者抱怨「只有幾行代碼的腳本打包出來竟然有 300MB！」，其根本原因就是直接在<strong>全域 Python 環境</strong>執行打包。PyInstaller 會嘗試收集所有被間接探測到的套件（如 pandas、torch、matplotlib 等）。</p>
+        <pre><code class="language-bash"># 1. 建立乾淨的虛擬環境
+python -m venv .venv
+
+# 2. 啟動虛擬環境
+# Windows PowerShell:
+.\.venv\Scripts\Activate.ps1
+# macOS / Linux:
+source .venv/bin/activate
+
+# 3. 僅安裝該專案真正需要的套件與 PyInstaller
+pip install requests pyinstaller</code></pre>
+
+        <h2>三、核心指令與參數詳解速查手冊</h2>
+        <p>PyInstaller 提供了非常豐富的 CLI 參數，掌握以下核心參數即可涵蓋 95% 以上的日常打包情境：</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>參數選項</th>
+              <th>簡寫</th>
+              <th>功能說明</th>
+              <th>適用情境</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--onefile</code></td>
+              <td><code>-F</code></td>
+              <td>打包成<strong>單一獨立可執行檔</strong></td>
+              <td>分發給終端客戶、免安裝獨立工具</td>
+            </tr>
+            <tr>
+              <td><code>--onedir</code></td>
+              <td><code>-D</code></td>
+              <td>打包為<strong>一個目錄（包含 exe 與眾多依賴）</strong>（預設選項）</td>
+              <td>大型專案、頻繁啟動程式、除錯測試</td>
+            </tr>
+            <tr>
+              <td><code>--windowed</code> / <code>--noconsole</code></td>
+              <td><code>-w</code></td>
+              <td><strong>無主控台視窗</strong>，不彈出黑色命令提示字元黑框</td>
+              <td>Tkinter、PyQt、wxPython 等桌面 GUI 程式</td>
+            </tr>
+            <tr>
+              <td><code>--console</code> / <code>--nowindowed</code></td>
+              <td><code>-c</code></td>
+              <td><strong>顯示主控台視窗</strong>（預設選項）</td>
+              <td>CLI 命令列工具、排查報錯與印出日誌</td>
+            </tr>
+            <tr>
+              <td><code>--icon=&lt;PATH&gt;</code></td>
+              <td><code>-i</code></td>
+              <td>設定產物圖示（Windows <code>.ico</code>，macOS <code>.icns</code>）</td>
+              <td>打造具備企業與品牌識別度的執行檔</td>
+            </tr>
+            <tr>
+              <td><code>--name=&lt;NAME&gt;</code></td>
+              <td><code>-n</code></td>
+              <td>指定輸出的 exe / 目錄自訂名稱</td>
+              <td>修改檔名，預設為入口腳本的主檔名</td>
+            </tr>
+            <tr>
+              <td><code>--add-data &lt;SRC;DEST&gt;</code></td>
+              <td>-</td>
+              <td>將外部檔案/資料夾一同打包（Windows 用 <code>;</code>，Unix 用 <code>:</code>）</td>
+              <td>打包圖片、JSON 設定檔、HTML/CSS 靜態模板</td>
+            </tr>
+            <tr>
+              <td><code>--add-binary &lt;SRC;DEST&gt;</code></td>
+              <td>-</td>
+              <td>將額外的二進位函式庫（DLL、.so）打包進去</td>
+              <td>調用自製 C/C++ 共享庫或驅動</td>
+            </tr>
+            <tr>
+              <td><code>--hidden-import=&lt;PKG&gt;</code></td>
+              <td>-</td>
+              <td>強制標記隱藏導入模組（手動補齊）</td>
+              <td>動態 import、<code>__import__</code>、Plugin 架構</td>
+            </tr>
+            <tr>
+              <td><code>--exclude-module=&lt;PKG&gt;</code></td>
+              <td>-</td>
+              <td>明確排除特定無用套件</td>
+              <td>極致減肥，剔除未使用的重量級模組</td>
+            </tr>
+            <tr>
+              <td><code>--clean</code></td>
+              <td>-</td>
+              <td>打包前自動清理舊快取與暫存目錄</td>
+              <td>更換設定或程式碼大幅變更後的乾淨建置</td>
+            </tr>
+            <tr>
+              <td><code>--distpath &lt;DIR&gt;</code></td>
+              <td>-</td>
+              <td>自訂最終執行檔輸出目標資料夾（預設為 <code>dist/</code>）</td>
+              <td>自動化 CI/CD 工作流發布目錄配置</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>四、--onefile vs. --onedir 核心差異與選型對策</h2>
+        <div class="feature-card-grid">
+          <div class="feature-card">
+            <h4>📦 --onefile (單一執行檔模式)</h4>
+            <p><strong>打包結果：</strong> 僅產出一個獨立的 <code>myapp.exe</code>。</p>
+            <p><strong>執行機制：</strong> 每次點擊執行時，Bootloader 會在作業系統的暫存區（Windows 上的 <code>%TEMP%/_MEIxxxxxx</code>）創建一個臨時解壓資料夾，將所有依賴解壓後才開始運行 Python 直譯器，程式結束後自動刪除該目錄。</p>
+            <p><strong>優勢：</strong> 單一檔案，極簡乾淨，分發時使用者只需下載一個檔案。</p>
+            <p><strong>劣勢：</strong> 每次啟動有解壓開銷（冷啟動慢）；若打包外部檔案需特別處理暫存路徑。</p>
+          </div>
+
+          <div class="feature-card">
+            <h4>📁 --onedir (資料夾目錄模式 - 預設)</h4>
+            <p><strong>打包結果：</strong> 產出一個包含 <code>myapp.exe</code> 與數十個依賴檔案、DLL 的 <code>dist/myapp/</code> 資料夾。</p>
+            <p><strong>執行機制：</strong> exe 直接在當前資料夾讀取周圍的依賴函式庫，<strong>無需任何解壓過程</strong>。</p>
+            <p><strong>優勢：</strong> <strong>啟動秒開</strong>、極速響應；排查缺失 DLL 非常直觀；若需更新圖片或設定檔，直接手動替換即可，無需重新打包整份專案。</p>
+            <p><strong>劣勢：</strong> 檔案分散，分發時必須手動壓縮成 zip 包或搭配 Inno Setup 製作安裝包。</p>
+          </div>
+        </div>
+
+        <h2>五、完整實戰操作教學：從零打包一個真實應用</h2>
+        <p>我們以一個包含設定檔 <code>config.json</code> 與圖片 <code>logo.png</code> 的真實腳本為例，完整演示標準化打包工作流。</p>
+
+        <h3>1. 專案目錄結構</h3>
+        <pre><code>my_project/
+├── assets/
+│   └── logo.png
+├── config.json
+└── main.py</code></pre>
+
+        <h3>2. 關鍵程式碼：處理打包前後資源路徑 (sys._MEIPASS 萬用模板)</h3>
+        <p>在 <code>--onefile</code> 打包後，程式執行時所有資源都會被解壓到臨時目錄 <code>sys._MEIPASS</code> 中。如果直接用 <code>open('config.json')</code>，會導致找不到檔案的 <code>FileNotFoundError</code> 崩潰。請務必在代碼中引入以下萬用路徑解析函式：</p>
+
+        <pre><code class="language-python"># main.py
+import sys
+import os
+import json
+
+def get_resource_path(relative_path: str) -> str:
+    """取得資源的絕對路徑，兼容開發環境與 PyInstaller 打包環境"""
+    try:
+        # PyInstaller 打包後會創建 _MEIPASS 暫存路徑
+        base_path = sys._MEIPASS
+    except AttributeError:
+        # 未打包的標準本地開發環境
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+def main():
+    config_file = get_resource_path("config.json")
+    print(f"正在讀取設定檔路徑: {config_file}")
+    
+    with open(config_file, "r", encoding="utf-8") as f:
+        config = json.load(f)
+    print(f"應用程式名稱: {config.get('app_name', '未命名')}")
+
+    logo_file = get_resource_path(os.path.join("assets", "logo.png"))
+    print(f"靜態資源存在檢查: {os.path.exists(logo_file)}")
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+
+        <h3>3. 執行打包指令</h3>
+        <p>將 <code>main.py</code>、外部檔案 <code>config.json</code> 及 <code>assets</code> 資料夾整合打包為單一桌面執行檔：</p>
+
+        <pre><code class="language-bash"># Windows 環境命令（注意分號 ; 區隔來源與目標路徑）
+pyinstaller --onefile \
+  --name="MyAwesomeApp" \
+  --add-data="config.json;." \
+  --add-data="assets/logo.png;assets" \
+  --clean \
+  main.py
+
+# macOS / Linux 環境命令（注意冒號 : 區隔）
+pyinstaller --onefile \
+  --name="MyAwesomeApp" \
+  --add-data="config.json:." \
+  --add-data="assets/logo.png:assets" \
+  --clean \
+  main.py</code></pre>
+
+        <h3>4. 打包產物說明</h3>
+        <ul>
+          <li><strong><code>dist/</code></strong>：存放最終生成的可執行檔（交付給使用者的核心成果）。</li>
+          <li><strong><code>build/</code></strong>：編譯過程中的暫存分析檔與日誌，確認產物無誤後可隨時手動刪除。</li>
+          <li><strong><code>MyAwesomeApp.spec</code></strong>：PyInstaller 自動產生的建置規格檔（Spec 檔），非常適合納入 Git 版本控制，用於後續自動化重現打包。</li>
+        </ul>
+
+        <h2>六、進階技巧：使用 .spec 規格檔優雅管理複雜配置</h2>
+        <p>當參數越來越多時，在終端機輸入長串 CLI 命令極易出錯且難以維護。透過直接編輯 <code>.spec</code> 檔案，可以如同寫 Python 代碼一般精細控制打包行為：</p>
+
+        <pre><code class="language-python"># -*- mode: python ; coding: utf-8 -*-
+# MyAwesomeApp.spec
+
+block_cipher = None
+
+a = Analysis(
+    ['main.py'],
+    pathex=[],
+    binaries=[],
+    # 集中管理所有外部打包資源 [(來源路徑, 目標目錄)]
+    datas=[
+        ('config.json', '.'),
+        ('assets/logo.png', 'assets'),
+    ],
+    # 手動補齊動態隱藏套件
+    hiddenimports=['requests', 'charset_normalizer'],
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    # 明確排除巨大無用庫，大幅瘦身
+    excludes=['tkinter', 'matplotlib', 'scipy'],
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
+    noarchive=False,
+)
+
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    [],
+    name='MyAwesomeApp',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=True,           # 啟用 UPX 執行檔壓縮（需安裝 UPX）
+    console=True,       # 是否顯示 Console
+    icon='app.ico',     # 自訂圖示
+)
+</code></pre>
+        <p>修改好規格檔後，日後只需一行簡潔命令即可快速建置：</p>
+        <pre><code class="language-bash">pyinstaller MyAwesomeApp.spec</code></pre>
+
+        <h2>七、高頻踩坑與除錯避坑指南 (Troubleshooting)</h2>
+        <div class="feature-card-grid">
+          <div class="feature-card">
+            <h4>💥 痛點 1：雙擊 exe 瞬間閃退，看不到錯誤訊息</h4>
+            <p><strong>診斷：</strong> 如果使用了 <code>--windowed</code> 或 <code>-w</code>，一旦程式出錯崩潰，由於沒有主控台，視窗會瞬間關閉消失。</p>
+            <p><strong>解法：</strong> 先拿掉 <code>-w</code> 重新打包成具備 Console 的模式，並在命令提示字元 (CMD/PowerShell) 中手動敲入 <code>.\dist\app.exe</code> 執行，即可完整看到 Traceback 錯誤堆疊。</p>
+          </div>
+
+          <div class="feature-card">
+            <h4>📉 痛點 2：打包出的 exe 體積高達 200MB~500MB</h4>
+            <p><strong>診斷：</strong> 使用全域 Python 環境，未加思索地將包含 Anaconda/全局庫的所有關聯模組整包打包。</p>
+            <p><strong>解法：</strong> 1. 強烈建立乾淨的 <code>venv</code> 虛擬環境；2. 在 spec 檔或命令中使用 <code>--exclude-module</code> 排除大型科學運算庫；3. 安裝 UPX 壓縮工具（在 PATH 中放入 <code>upx.exe</code>）。</p>
+          </div>
+
+          <div class="feature-card">
+            <h4>🔍 痛點 3：ModuleNotFoundError: No module named 'xxx'</h4>
+            <p><strong>診斷：</strong> 程式碼中使用了反射、<code>importlib.import_module()</code> 或字串動態加載，PyInstaller 靜態語法樹無法自動探測。</p>
+            <p><strong>解法：</strong> 在命令列加上 <code>--hidden-import="xxx"</code> 或在 spec 檔的 <code>hiddenimports</code> 清單中明確補齊。</p>
+          </div>
+
+          <div class="feature-card">
+            <h4>🛡️ 痛點 4：Windows Defender / 防毒軟體報毒或被攔截</h4>
+            <p><strong>診斷：</strong> PyInstaller 的預編譯 Bootloader 經常被各路木馬病毒拿去封裝惡意腳本，導致通用特徵碼被部分防毒軟體無差別標記為「潛在威脅 (Trojan/False Positive)」。</p>
+            <p><strong>解法：</strong> 1. 在自己電腦中從原始碼編譯 PyInstaller Bootloader；2. 購買代碼簽名證書（Code Signing Certificate）進行數位簽名；3. 提交誤報樣本給微軟安全中心審核。</p>
+          </div>
+        </div>
+
+        <h2>八、總結與最佳實踐檢核清單</h2>
+        <p>將 Python 專案成功交付給使用者，是從開發邁向生產的關鍵一步。在進行任何正式打包前，請對照以下最佳實踐檢核表：</p>
+        <ul>
+          <li>✅ 是否已在<strong>乾淨的虛擬環境 (venv)</strong> 中測試過腳本功能？</li>
+          <li>✅ 所有讀取外部靜態資源的路徑，是否都使用了 <code>sys._MEIPASS</code> 兼容函式處理？</li>
+          <li>✅ 初次除錯時，是否保留了 <code>--console</code> 視窗以便即時排查錯誤？</li>
+          <li>✅ 是否保存了 <code>.spec</code> 規格檔以便在 CI/CD 中實現穩定重現的自動化打包？</li>
+          <li>✅ 若需要跨平台運行（例如同時產出 Windows 與 Linux 版本），是否在對應的作業系統環境（或 Docker 容器）中執行打包？（<strong>注意：PyInstaller 無法交叉編譯</strong>）</li>
+        </ul>
+      </article>
+
+      <div class="article-footer">
+        <a href="./articles.html" class="back-home">← 返回所有文章</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>

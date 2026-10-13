@@ -1,5 +1,11 @@
 [
   {
+    "url": "pyinstaller-python-packaging-guide.html",
+    "title": "PyInstaller 完全操作指南：安裝、--onefile 與 --onedir 核心指令詳解、資源打包與除錯避坑手冊",
+    "excerpt": "深入解析 Python 最強打包神器 PyInstaller：詳細介紹安裝方式、核心指令參數（--onefile、--onedir、--windowed、--add-data、--hidden-import）、sys._MEIPASS 資源路徑解析、.spec 規格檔進階配置與常見閃退、體積肥大等避坑指南。",
+    "tags": ["PyInstaller", "Python 打包", "exe 製作", "CLI 指令", "開發工具", "教學"]
+  },
+  {
     "url": "slm-small-language-models-guide.html",
     "title": "小型語言模型 (SLM) 全面概覽：核心優勢、技術突破、主流家族與邊緣落地實戰指南",
     "excerpt": "深入剖析小型語言模型（SLM）的崛起浪潮：探討 SLM 與 LLM 的核心差異、推動突破的知識蒸餾與合成數據技術，全景解析 Microsoft Phi、Google Gemma 2、Meta Llama 3.2、Qwen 2.5 與 SmolLM2 等主流模型家族，並提供邊緣端量化部署與端雲協同實戰指南。",
