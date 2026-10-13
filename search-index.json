@@ -1,5 +1,11 @@
 [
   {
+    "url": "rag-technology-guide.html",
+    "title": "RAG 技術完全攻略：核心原理、架構演進、關鍵元件與從零到落地實戰指南",
+    "excerpt": "全面剖析檢索增強生成（RAG）技術：深入解析 Naive RAG、Advanced RAG、Modular RAG 與 GraphRAG 架構演進，涵蓋語意分塊、向量資料庫選型、混合檢索（BM25 + Dense）、重排序（Reranking），並提供完整 Python 端到端實戰程式碼與企業級評估最佳實踐。",
+    "tags": ["RAG", "檢索增強生成", "向量資料庫", "LangChain", "大語言模型", "AI架構", "教學"]
+  },
+  {
     "url": "hermes-desktop-vs-hermes-one.html",
     "title": "Hermes Desktop vs Hermes One 功能及比較差異完全解析",
     "excerpt": "深入解析 Nous Research 官方推出的 Hermes Desktop 與社群旗艦 Hermes One 的核心架構、Bot Screen、3D Office、多通訊頻道與排程等功能，並提供全維度比較表格與選型決策指南。",

@@ -5,13 +5,27 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 13 Oct 2026 04:38:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 05:37:00 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>RAG 技術完全攻略：核心原理、架構演進、關鍵元件與從零到落地實戰指南</title>
+    <link>https://ai-hardcore-engineer.com/rag-technology-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/rag-technology-guide.html</guid>
+    <description>全面剖析檢索增強生成（RAG）技術：深入解析 Naive RAG、Advanced RAG、Modular RAG 與 GraphRAG 架構演進，涵蓋語意分塊、向量資料庫選型、混合檢索（BM25 + Dense）、重排序（Reranking），並提供完整 Python 端到端實戰程式碼與企業級評估最佳實踐。</description>
+    <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
+    <category>RAG</category>
+    <category>檢索增強生成</category>
+    <category>向量資料庫</category>
+    <category>LangChain</category>
+    <category>大語言模型</category>
+    <category>AI架構</category>
+    <category>教學</category>
+  </item>
   <item>
     <title>Hermes Desktop vs Hermes One 功能及比較差異完全解析</title>
     <link>https://ai-hardcore-engineer.com/hermes-desktop-vs-hermes-one.html</link>
@@ -611,7 +625,7 @@
     <link>https://ai-hardcore-engineer.com/articles.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/articles.html</guid>
     <description>關於前端開發、後端技術、Git 與 AI 開發的技術博客。</description>
-    <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+    <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
     <category>文章</category>
     <category>博客</category>
   </item>
