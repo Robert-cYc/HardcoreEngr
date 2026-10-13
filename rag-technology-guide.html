@@ -49,7 +49,264 @@
     .feature-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
     .feature-card h4 { margin-top: 0; color: var(--accent); font-size: 1.15rem; }
     .callout-box { background: rgba(56, 189, 248, 0.08); border-left: 4px solid #38bdf8; padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
-    .flow-diagram { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; font-family: "Fira Code", monospace; font-size: 0.92rem; line-height: 1.5; overflow-x: auto; color: var(--text); }
+
+    /* Pipeline & Triad Diagrams */
+    .rag-pipeline-container {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.25rem;
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .pipeline-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .pipeline-step {
+      flex: 1;
+      min-width: 170px;
+      max-width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .pipeline-step.wide {
+      max-width: 580px;
+      width: 100%;
+    }
+    .step-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      background: var(--border);
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    .step-badge.accent {
+      background: rgba(37, 99, 235, 0.12);
+      color: var(--accent);
+    }
+    .step-badge.success {
+      background: rgba(16, 185, 129, 0.12);
+      color: #10b981;
+    }
+    .step-card {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 0.8rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .step-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+    .step-card.highlight {
+      border-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.04);
+    }
+    .step-card.highlight-purple {
+      border-color: #a855f7;
+      background: rgba(168, 85, 247, 0.04);
+    }
+    .step-card.highlight-green {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.04);
+    }
+    .step-card.border-accent {
+      border-color: var(--accent);
+      border-style: dashed;
+      background: rgba(37, 99, 235, 0.03);
+    }
+    .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.2rem;
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+    .card-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: "Fira Code", monospace;
+    }
+    .flow-arrow {
+      color: var(--text-muted);
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flow-arrow.horizontal {
+      font-size: 1.3rem;
+      padding: 0 0.2rem;
+    }
+    .flow-down-merge {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: -0.25rem 0;
+    }
+    .flow-arrow.vertical {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.85rem;
+      border-radius: 20px;
+    }
+    .pipeline-center {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Triad styling */
+    .triad-container {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.25rem;
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .triad-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1.15rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+    .triad-query {
+      max-width: 340px;
+      width: 100%;
+      border-top: 4px solid var(--accent);
+    }
+    .triad-context {
+      flex: 1;
+      min-width: 200px;
+      max-width: 270px;
+      border-top: 4px solid #38bdf8;
+    }
+    .triad-answer {
+      flex: 1;
+      min-width: 200px;
+      max-width: 270px;
+      border-top: 4px solid #10b981;
+    }
+    .triad-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+    .triad-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+      color: var(--text);
+    }
+    .triad-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+      line-height: 1.45;
+    }
+    .triad-relations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 650px;
+    }
+    .relation-item {
+      background: var(--bg);
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.9rem;
+    }
+    .relation-badge {
+      display: inline-block;
+      width: fit-content;
+      font-size: 0.72rem;
+      font-weight: bold;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--accent);
+      padding: 0.1rem 0.45rem;
+      border-radius: 4px;
+    }
+    .relation-item strong {
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .relation-item span {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+    .triad-base {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .relation-horizontal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-width: 200px;
+    }
+    .h-arrow {
+      font-weight: 700;
+      color: #a855f7;
+      font-size: 0.92rem;
+      letter-spacing: -0.02em;
+    }
+    .relation-desc {
+      background: var(--bg);
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 0.55rem 0.8rem;
+      margin-top: 0.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .relation-desc strong {
+      font-size: 0.88rem;
+      color: #a855f7;
+    }
+    .relation-desc span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -136,27 +393,83 @@
 
         <p><strong>RAG（Retrieval-Augmented Generation，檢索增強生成）</strong> 就是為此而生的典範轉移。它的核心哲學是：<strong>把閉卷考試變成「開卷考試」</strong>。當使用者提出問題時，系統先從外部知識庫中檢索出與問題最相關的權威資料片段，然後將問題與這些客觀事實一起封裝成 Context Prompt 餵給 LLM，讓 LLM 專注於理解與語意整合，精準輸出帶有引用標註的回答。</p>
 
-        <div class="flow-diagram">
-┌─────────────────┐       ┌─────────────────┐       ┌────────────────────────┐
-│  使用者問題      │ ────> │  外部檢索系統    │ ────> │ 檢索出高相關文件片段    │
-│  (User Query)   │       │  (Vector/BM25)  │       │ (Retrieved Chunks)     │
-└────────┬────────┘       └─────────────────┘       └───────────┬────────────┘
-         │                                                      │
-         └───────────────────────┬──────────────────────────────┘
-                                 ▼
-                     ┌───────────────────────┐
-                     │ 增強提示詞 (Prompt)   │
-                     │ Context + Question    │
-                     └───────────┬───────────┘
-                                 ▼
-                     ┌───────────────────────┐
-                     │ 大語言模型 (LLM)      │
-                     │ 推理、整合、歸納      │
-                     └───────────┬───────────┘
-                                 ▼
-                     ┌───────────────────────┐
-                     │ 精準回答 (可溯源引用) │
-                     └───────────────────────┘
+        <div class="rag-pipeline-container">
+          <!-- 上層：檢索流 -->
+          <div class="pipeline-flow">
+            <div class="pipeline-step">
+              <div class="step-badge">1. 輸入問題</div>
+              <div class="step-card">
+                <div class="card-icon">👤</div>
+                <div class="card-title">使用者問題</div>
+                <div class="card-sub">User Query</div>
+              </div>
+            </div>
+
+            <div class="flow-arrow horizontal">➔</div>
+
+            <div class="pipeline-step">
+              <div class="step-badge accent">2. 動態檢索</div>
+              <div class="step-card highlight">
+                <div class="card-icon">🔍</div>
+                <div class="card-title">外部檢索系統</div>
+                <div class="card-sub">Vector DB + BM25</div>
+              </div>
+            </div>
+
+            <div class="flow-arrow horizontal">➔</div>
+
+            <div class="pipeline-step">
+              <div class="step-badge">3. 召回內容</div>
+              <div class="step-card">
+                <div class="card-icon">📄</div>
+                <div class="card-title">高相關文檔片段</div>
+                <div class="card-sub">Top-K Chunks</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 匯聚銜接 -->
+          <div class="flow-down-merge">
+            <div class="flow-arrow vertical">⬇️ 聚合上下文與原始問題</div>
+          </div>
+
+          <!-- 中層：增強 Prompt -->
+          <div class="pipeline-center">
+            <div class="pipeline-step wide">
+              <div class="step-badge accent">4. 增強提示詞 (Augmented Prompt)</div>
+              <div class="step-card border-accent">
+                <div class="card-title">Prompt = 系統規範 (防幻覺) + 檢索上下文 (Context) + 使用者問題 (Query)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 下傳模型 -->
+          <div class="flow-down-merge">
+            <div class="flow-arrow vertical">⬇️ 餵入模型進行推理</div>
+          </div>
+
+          <!-- 下層：推理與生成 -->
+          <div class="pipeline-flow">
+            <div class="pipeline-step">
+              <div class="step-badge">5. 深度推理</div>
+              <div class="step-card highlight-purple">
+                <div class="card-icon">🤖</div>
+                <div class="card-title">大語言模型 (LLM)</div>
+                <div class="card-sub">理解、分析與綜合歸納</div>
+              </div>
+            </div>
+
+            <div class="flow-arrow horizontal">➔</div>
+
+            <div class="pipeline-step">
+              <div class="step-badge success">6. 精準交付</div>
+              <div class="step-card highlight-green">
+                <div class="card-icon">✨</div>
+                <div class="card-title">精準可靠回答</div>
+                <div class="card-sub">附帶可溯源文獻引用</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <h3>RAG vs. 微調 (Fine-Tuning) vs. 長上下文窗口 (Long Context)</h3>
@@ -484,19 +797,50 @@ if __name__ == "__main__":
         <h2>五、RAG 系統評估指標體系：RAG Triad 與 Ragas</h2>
         <p>一個 RAG 系統到底「好不好用」？絕不能僅憑開發者的主觀感受。業界公認的黃金標準是 <strong>RAG Triad（三元評估原則）</strong>：</p>
 
-        <div class="flow-diagram">
-                       ┌───────────────────────┐
-                       │  使用者查詢 (Query)    │
-                       └───────────┬───────────┘
-                                   │
-              Context Relevance    │    Answer Relevance
-              (檢索內容是否切題?)   │   (回答是否切中題意?)
-                                   │
-        ┌──────────────────────────┴──────────────────────────┐
-        ▼                                                     ▼
-┌───────────────────────┐                             ┌───────────────────────┐
-│ 檢索上下文 (Context)   │ ── Groundedness / Faithfulness ─> │   模型回答 (Answer)   │
-└───────────────────────┘    (回答是否完全忠於檢索內容，無幻覺?)   └───────────────────────┘
+        <div class="triad-container">
+          <!-- 頂點 1：Query -->
+          <div class="triad-card triad-query">
+            <div class="triad-tag">頂點 1</div>
+            <div class="triad-title">🔍 使用者查詢 (Query)</div>
+            <p>使用者提出的真實問題或業務需求</p>
+          </div>
+
+          <!-- 側邊兩大關聯指標 -->
+          <div class="triad-relations">
+            <div class="relation-item">
+              <span class="relation-badge">指標 1</span>
+              <strong>Context Relevance (上下文切題度)</strong>
+              <span>檢索系統召回的片段是否精準對齊問題，有無無關雜訊干擾</span>
+            </div>
+            <div class="relation-item">
+              <span class="relation-badge">指標 2</span>
+              <strong>Answer Relevance (答案相關度)</strong>
+              <span>模型產生的最終答案是否直接擊中使用者問題核心，非答非所問</span>
+            </div>
+          </div>
+
+          <!-- 底邊兩大頂點與忠實度指標 -->
+          <div class="triad-base">
+            <div class="triad-card triad-context">
+              <div class="triad-tag">頂點 2</div>
+              <div class="triad-title">📚 檢索上下文 (Context)</div>
+              <p>從外部知識庫檢索出的事實片段</p>
+            </div>
+
+            <div class="relation-horizontal">
+              <div class="h-arrow">⟵――― 忠實度檢驗 ―――⟶</div>
+              <div class="relation-desc">
+                <strong>Groundedness / Faithfulness</strong>
+                <span>回答的每個陳述句是否 100% 忠於檢索內容，徹底杜絕幻覺捏造</span>
+              </div>
+            </div>
+
+            <div class="triad-card triad-answer">
+              <div class="triad-tag">頂點 3</div>
+              <div class="triad-title">💡 模型回答 (Answer)</div>
+              <p>LLM 基於上下文生成的最終回覆</p>
+            </div>
+          </div>
         </div>
 
         <ol>
