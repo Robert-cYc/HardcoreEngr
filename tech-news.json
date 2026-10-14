@@ -1,10 +1,22 @@
 {
-  "updated": "2026-10-13 18:40",
+  "updated": "2026-10-14 01:14",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "Sony全新智慧型手機麥克風ECM-AX10上市！360度完整收音強化臨場感",
+          "link": "https://3c.ltn.com.tw/news/67914",
+          "date": "2026/10/14 08:01",
+          "summary": "Sony宣布全球首款通過Eclipsa Audio認證的智慧型手機麥克風ECM-AX10正式在台上市，專為使用智慧型 ..."
+        },
+        {
+          "title": "蘋果新品有彩蛋！寶可夢聯名Beats Pill超萌登場 台灣只能找代購",
+          "link": "https://3c.ltn.com.tw/news/67915",
+          "date": "2026/10/14 08:01",
+          "summary": "蘋果昨(13日)發布多款智慧家庭新品，包含智慧家庭中樞HomeView、HomePod mini 2智慧音箱、第4代 ..."
+        },
         {
           "title": "蘋果Apple TV 4K大升級！不用遙控器也能操控 售價逼近萬元",
           "link": "https://3c.ltn.com.tw/news/67913",
@@ -64,18 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67898",
           "date": "2026/10/13 14:05",
           "summary": "全球手機市場真的冷颼颼！受到記憶體持續缺貨、價格飆漲影響，手機愈賣愈貴，消費者也捨不得換新機。最新調查顯示，2026 ..."
-        },
-        {
-          "title": "蘋果摺疊被酸爆！安卓品牌執行長嗆：買iPhone Duo浪費錢",
-          "link": "https://3c.ltn.com.tw/news/67901",
-          "date": "2026/10/13 12:00",
-          "summary": "蘋果首款摺疊手機iPhone Duo即將於10月16日開放預購、10月23日正式上市，售價從74,900元一路飆到1 ..."
-        },
-        {
-          "title": "想買PS5 Pro得當盤子！單機飆4.5萬元 缺貨恐延續至2027年",
-          "link": "https://3c.ltn.com.tw/news/67905",
-          "date": "2026/10/13 10:45",
-          "summary": "Sony PS5 Pro在台缺貨已久，最近通路上終於有現貨釋出，不過想用原價入手幾乎不可能，多數通路或店家都得搭配遊 ..."
         }
       ]
     },
@@ -83,6 +83,12 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "博通 CEO 批 AI 燒錢像打電玩、貝瑞轉發  馬斯克反駁",
+          "link": "https://finance.technews.tw/2026/10/13/broadcom-ceo-likens-many-ai-investors-to-casino-gamblers/",
+          "date": "2026-10-13 05:50",
+          "summary": "人工智慧（AI）投資熱潮引發泡沫疑慮，博通（Broadcom）執行長陳福陽（Hock Tan）直言，許多 AI [&#8230;]"
+        },
         {
           "title": "Alphabet 20 年首見現金流轉負，無懼逆風豪擲 2 千億美元建 AI：落後才是最大風險",
           "link": "https://finance.technews.tw/2026/10/13/alphabet-expands-ai-investment/",
@@ -148,12 +154,6 @@
           "link": "https://technews.tw/2026/10/13/meta-introduces-the-muse-wonder-series/",
           "date": "2026-10-13 03:19",
           "summary": "耗時一年多的時間與數百億美元重新布局 AI 領域後，Meta 表示已追上先進水準，12 日宣布推出 Muse [&#8230;]"
-        },
-        {
-          "title": "能源管理法迎十年重大修法掀儲能熱！台灣電池協會能源週秀「全鏈整合」",
-          "link": "https://technews.tw/2026/10/13/energy-management/",
-          "date": "2026-10-13 03:16",
-          "summary": "台灣電池協會 10 月 14 日將參與 2026 台灣國際智慧能源週，隨著能源管理法 9 月迎來睽違近十年重大 [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,12 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "長鑫 DRAM 追兵  三星 SK 海力士崩跌、韓股 Sidecar",
+          "link": "https://technews.tw/2026/10/13/cxmt-breakthrough-sends-samsung-sk-hynix-tumbling/",
+          "date": "2026-10-13 06:20",
+          "summary": "中國 DRAM 技術猛烈追趕，震撼韓國記憶體雙雄股價。中國最大 DRAM 業者長鑫存儲宣布，年底前將推出 4F [&#8230;]"
+        },
         {
           "title": "高通大秀 AI 原生寬頻新技術，整合 Wi-Fi 8、5G Advanced 與邊緣 AI",
           "link": "https://technews.tw/2026/10/13/qualcomm-network-x-2026-dragonwing-ai/",
@@ -226,12 +232,6 @@
           "link": "https://finance.technews.tw/2026/10/13/once-wall-streets-darling-cerebras-stock-is-struggling/",
           "date": "2026-10-13 00:15",
           "summary": "美國 AI 晶片新創公司 Cerebras Systems 近期股價持續承壓，市場擔憂最大客戶 OpenAI [&#8230;]"
-        },
-        {
-          "title": "全球手機市場陷 14 年低谷，記憶體短缺拖累出貨量、Q3 年減 20%",
-          "link": "https://technews.tw/2026/10/13/global-smartphone-shipments-hit-a-new-low-with-20-percent-yoy-decline/",
-          "date": "2026-10-13 00:04",
-          "summary": "由於記憶體供應短缺與成本飆升，對手機製造商造成壓力並推高價格，市場研究機構 Counterpoint Rese [&#8230;]"
         }
       ]
     },
