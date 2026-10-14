@@ -38,9 +38,45 @@
     .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
     .article-body ul, .article-body ol { margin: 1rem 0 1.5rem; padding-left: 2rem; }
     .article-body li { margin-bottom: 0.6rem; line-height: 1.75; }
-    .article-body table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1.02rem; }
-    .article-body th, .article-body td { padding: 0.75rem 0.9rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
-    .article-body th { font-weight: 700; color: var(--text); background: var(--bg-alt); }
+    /* Responsive Table Wrapper */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 2rem 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    .table-responsive table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+      margin: 0;
+      font-size: 1.02rem;
+    }
+    .table-responsive th, .table-responsive td {
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .table-responsive th {
+      font-weight: 700;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+    }
+    .table-responsive tr:last-child td {
+      border-bottom: none;
+    }
+    .table-responsive::-webkit-scrollbar {
+      height: 6px;
+    }
+    .table-responsive::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
+    }
     .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center; }
     .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
     .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
@@ -307,6 +343,59 @@
       color: var(--text-muted);
       line-height: 1.35;
     }
+
+    /* FAQ Accordion */
+    .faq-container {
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .faq-item:hover {
+      border-color: var(--accent);
+    }
+    .faq-question {
+      padding: 1.1rem 1.25rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      color: var(--text);
+    }
+    .faq-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--accent);
+      transition: transform 0.2s;
+    }
+    .faq-item[open] .faq-question::after {
+      content: '−';
+    }
+    .faq-answer {
+      padding: 0 1.25rem 1.2rem;
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 0.96rem;
+      border-top: 1px dashed var(--border);
+      padding-top: 0.9rem;
+    }
+    .faq-answer p:last-child {
+      margin-bottom: 0;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -318,6 +407,54 @@
     "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
     "image": "https://ai-hardcore-engineer.com/og-image.png",
     "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/rag-technology-guide.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "什麼是 RAG（檢索增強生成）？與模型微調（Fine-Tuning）有何不同？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RAG（Retrieval-Augmented Generation）是將外部知識檢索與大語言模型（LLM）推理相結合的架構。簡單來說，微調是教模型「如何說話（特定語氣風格與任務格式）」，而 RAG 是告訴模型「該說什麼（最新事實與私有領域知識）」。RAG 能即時動態更新外部知識庫、具備精確文獻引用，且無須負擔高昂的 GPU 重新訓練成本。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "為什麼生產環境必須使用混合檢索（Hybrid Search）而非純向量檢索？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "純向量檢索（Dense Retrieval）擅長語意泛化與同義詞理解，但在面對精確產品型號、合約編號、身分證字號與系統錯誤代碼（如 ERR_CONN_TIMEOUT_99）等專有名詞時極易失準。混合檢索結合了傳統 BM25 關鍵字稀疏檢索與向量稠密檢索，透過 RRF（Reciprocal Rank Fusion）演算法進行融合排名，能兼具關鍵字精準度與語意廣度。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "什麼是重排序（Reranking）？為何第一階段檢索後還需要 Reranker？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "第一階段檢索使用雙塔向量模型（Bi-Encoder）追求毫秒級大量候選召回，但查詢與文檔是獨立計算特徵的；重排序模型（Cross-Encoder Reranker）則將查詢與候選文檔同時輸入 Transformer 計算全注意力交互，給出極精確的相關性分數。常見實務是先召回 Top 20~50 條候選片段，再經 Reranker 篩選出精準度最高的前 3~5 條送給 LLM，能有效降低雜訊並杜絕幻覺。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "常見向量資料庫（Chroma、Qdrant、Milvus、pgvector、Pinecone）該如何選型？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本機實驗與 PoC 概念驗證推薦輕量嵌入式的 Chroma；需要高性價比與豐富 Payload 屬性過濾的生產環境推薦 Qdrant；十億級海量向量分散式叢集首選 Milvus；若既有架構已有 PostgreSQL 關聯資料庫，推薦使用 pgvector 擴充以降低維運負擔；追求零運維完全託管的雲端應用則首選 Pinecone。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "評估 RAG 系統品質的 RAG Triad 三大指標是什麼？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RAG Triad（三元評估原則）包含：1. 上下文切題度（Context Relevance，檢索內容是否精確對齊問題且無雜訊）；2. 真實性/忠實度（Groundedness / Faithfulness，模型回覆是否 100% 忠於檢索事實、杜絕捏造）；3. 答案相關性（Answer Relevance，回覆是否切題解決使用者提問）。業界常用自動化評估工具有 Ragas 與 TruLens。"
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -475,6 +612,7 @@
         <h3>RAG vs. 微調 (Fine-Tuning) vs. 長上下文窗口 (Long Context)</h3>
         <p>許多工程團隊在立項時常面臨決策困惑：究竟該選用 RAG、微調模型，還是直接使用 1M~10M Token 的超長上下文窗口？下表為全維度架構選型對比：</p>
 
+        <div class="table-responsive">
         <table>
           <thead>
             <tr>
@@ -523,6 +661,7 @@
             </tr>
           </tbody>
         </table>
+        </div>
 
         <blockquote>
           <strong>架構師金句：</strong>「用微調來教模型<strong>如何說話（風格與任務形式）</strong>，用 RAG 來告訴模型<strong>該說什麼（事實與私有知識）</strong>。」
@@ -585,6 +724,7 @@
 
         <h3>2. 向量資料庫與索引技術 (Vector Databases & Indexing)</h3>
         <p>向量資料庫專門負責高維度向量（如 1536 維或 3072 維）的極速近似最近鄰搜尋（ANN, Approximate Nearest Neighbor）：</p>
+        <div class="table-responsive">
         <table>
           <thead>
             <tr>
@@ -627,6 +767,7 @@
             </tr>
           </tbody>
         </table>
+        </div>
 
         <h2>四、從零實戰：打造 Production-Grade 混合檢索 RAG 系統</h2>
         <p>話不多說，我們直接用 Python 實作一個整合 <strong>Recursive 切分、Chroma 向量檢索、BM25 關鍵字稀疏檢索、RRF 排名融合、Cross-Encoder 重排序與防幻覺 Prompt</strong> 的生產級 RAG 管線。</p>
@@ -871,7 +1012,49 @@ if __name__ == "__main__":
           </div>
         </div>
 
-        <h2>七、總結</h2>
+        <h2>七、高頻問答與架構決策 (FAQ)</h2>
+        <div class="faq-container">
+          <details class="faq-item" open>
+            <summary class="faq-question">什麼是 RAG（檢索增強生成）？與模型微調（Fine-Tuning）有何不同？</summary>
+            <div class="faq-answer">
+              <p>RAG（Retrieval-Augmented Generation）是將外部知識檢索與大語言模型（LLM）推理相結合的架構。簡單來說，微調是教模型「<strong>如何說話</strong>（特定語氣風格與任務格式）」，而 RAG 是告訴模型「<strong>該說什麼</strong>（最新事實與私有領域知識）」。RAG 能即時動態更新外部知識庫、具備精確文獻引用，且無須負擔高昂的 GPU 重新訓練成本。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">為什麼生產環境必須使用混合檢索（Hybrid Search）而非純向量檢索？</summary>
+            <div class="faq-answer">
+              <p>純向量檢索（Dense Retrieval）擅長語意泛化與同義詞理解，但在面對精確產品型號、合約編號、身分證字號與系統錯誤代碼（如 <code>ERR_CONN_TIMEOUT_99</code>）等專有名詞時極易失準。混合檢索結合了傳統 BM25 關鍵字稀疏檢索與向量稠密檢索，透過 RRF（Reciprocal Rank Fusion）演算法進行融合排名，能兼具關鍵字精準度與語意廣度。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">什麼是重排序（Reranking）？為何第一階段檢索後還需要 Reranker？</summary>
+            <div class="faq-answer">
+              <p>第一階段檢索使用雙塔向量模型（Bi-Encoder）追求毫秒級大量候選召回，但查詢與文檔是獨立計算特徵的；重排序模型（Cross-Encoder Reranker）則將查詢與候選文檔同時輸入 Transformer 計算全注意力交互，給出極精確的相關性分數。常見實務是先召回 Top 20~50 條候選片段，再經 Reranker 篩選出精準度最高的前 3~5 條送給 LLM，能有效降低雜訊並杜絕幻覺。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">常見向量資料庫（Chroma、Qdrant、Milvus、pgvector、Pinecone）該如何選型？</summary>
+            <div class="faq-answer">
+              <p>本機實驗與 PoC 概念驗證推薦輕量嵌入式的 Chroma；需要高性價比與豐富 Payload 屬性過濾的生產環境推薦 Qdrant；十億級海量向量分散式叢集首選 Milvus；若既有架構已有 PostgreSQL 關聯資料庫，推薦使用 pgvector 擴充以降低維運負擔；追求零運維完全託管的雲端應用則首選 Pinecone。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">評估 RAG 系統品質的 RAG Triad 三大指標是什麼？</summary>
+            <div class="faq-answer">
+              <p>RAG Triad（三元評估原則）包含：<br>
+              1. <strong>上下文切題度（Context Relevance）</strong>：檢索內容是否精確對齊問題且無雜訊。<br>
+              2. <strong>真實性/忠實度（Groundedness / Faithfulness）</strong>：模型回覆是否 100% 忠於檢索事實、杜絕捏造。<br>
+              3. <strong>答案相關性（Answer Relevance）</strong>：回覆是否切題解決使用者提問。<br>
+              業界常用自動化評估工具有 Ragas 與 TruLens。</p>
+            </div>
+          </details>
+        </div>
+
+        <h2>八、總結</h2>
         <p>RAG 技術的本質，是將<strong>知識儲存</strong>與<strong>邏輯推理</strong>進行了優雅的解耦。大語言模型擅長理解與合成，而向量與搜尋引擎擅長可靠、精確地儲存與過濾海量資訊。兩者的結合，為私有化企業 AI、垂直領域專業助手打開了最平易近人且高可靠度的通道。</p>
         <p>從最初的單純向量比對，到如今 <strong>Hybrid Search 混合檢索 + Reranker 重排序 + Agentic 自我反思 + GraphRAG 知識圖譜</strong> 的全面成熟，RAG 已從原型玩具蛻變為支撐千行百業關鍵業務系統的核心架構骨幹！</p>
       </article>
