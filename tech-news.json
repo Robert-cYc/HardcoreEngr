@@ -1,10 +1,16 @@
 {
-  "updated": "2026-10-14 07:51",
+  "updated": "2026-10-14 16:11",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "蘋果智慧家庭螢幕HomeView實測一整天！YouTuber：沒有花300美元的理由",
+          "link": "https://3c.ltn.com.tw/news/67928",
+          "date": "2026/10/14 17:20",
+          "summary": "蘋果（Apple）昨晚推出 HomeView，以成為家中的生活中樞為設計理念，藉由 7 吋 Liquid Retin ..."
+        },
         {
           "title": "Google Play大改版！自製App免上架就能用 6大新功能一次看",
           "link": "https://3c.ltn.com.tw/news/67919",
@@ -70,12 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67913",
           "date": "2026/10/13 21:57",
           "summary": "蘋果今（13日）正式發表第四代Apple TV 4K，這次不只換上效能更強的A19晶片，還首度內建遠距麥克風，讓使用 ..."
-        },
-        {
-          "title": "蘋果HomePod mini 2睽違6年登場！會隨音樂發光 但也變貴了",
-          "link": "https://3c.ltn.com.tw/news/67912",
-          "date": "2026/10/13 21:46",
-          "summary": "蘋果今（13日）正式發表第二代HomePod mini 2，不只換上5款新色，還加入全新「聲波光暈」功能，讓喇叭能跟 ..."
         }
       ]
     },
@@ -84,8 +84,26 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
+          "title": "啟弘 CDMO 承接高端疫苗產程開發！開拓日本基因治療拚 2028 年送 IPO",
+          "link": "https://finance.technews.tw/2026/10/14/vaccine-delivery-process/",
+          "date": "2026-10-14 09:17",
+          "summary": "啟弘生技迎接成立十週年，董事長阮大同今日宣布 CDMO（委託開發暨製造服務）取得重大進展，合作夥伴包括日本 O [&#8230;]"
+        },
+        {
+          "title": "中東衝突遇上 AI 熱潮，全球央行抗通膨難度升高",
+          "link": "https://finance.technews.tw/2026/10/14/middle-east-conflict-ai-boom-global-central-banks-inflation-difficulty/",
+          "date": "2026-10-14 09:10",
+          "summary": "國際貨幣基金（IMF）與世界銀行（World Bank）年會在曼谷登場。傳統貨幣政策的侷限性日益突顯，全球央行 [&#8230;]"
+        },
+        {
+          "title": "搶當 AIDC 電力心臟！台塑新智能啟動彰濱二期產能直衝 7.5GWh",
+          "link": "https://finance.technews.tw/2026/10/14/90v50ah/",
+          "date": "2026-10-14 08:12",
+          "summary": "台塑新智能今年以「全域能源，驅動 AI 未來」為主題參加台灣國際智慧能源週，總經理劉慧啟今日宣布全面啟動彰濱二 [&#8230;]"
+        },
+        {
           "title": "又是低價競爭？中國低成本與開源 AI 模型衝擊雲端廠商龐大投資恐難回收",
-          "link": "https://finance.technews.tw/2026/10/14/chinas-low-cost-and-open-source-ai-models-have-swept-the-world/",
+          "link": "https://technews.tw/2026/10/14/chinas-low-cost-and-open-source-ai-models-have-swept-the-world/",
           "date": "2026-10-14 07:50",
           "summary": "受中國低成本與開源 AI 模型迅速崛起影響，大型語言模型的 Token 價格持續重挫，導致美國雲端大廠面臨難以 [&#8230;]"
         },
@@ -136,24 +154,6 @@
           "link": "https://finance.technews.tw/2026/10/14/openais-dot-assistant-burned-300k-tokens-in-a-day-without-a-single-prompt/",
           "date": "2026-10-14 04:40",
           "summary": "OpenAI 9 月推出「全天候」個人 AI 代理人 dot，可能在使用者沒有察覺下大量消耗 Token。AI [&#8230;]"
-        },
-        {
-          "title": "牛市行情反轉？傳奇投資人估 2027 市況具挑戰性",
-          "link": "https://finance.technews.tw/2026/10/14/hedge-fund-legend-paul-tudor-jones-says-the-stock-market-faces-a-really-challenging-2027/",
-          "date": "2026-10-14 04:30",
-          "summary": "在 1987 年「黑色星期一」精準放空的知名基金經理人瓊斯（Paul Tudor Jones）認為，美國股市 [&#8230;]"
-        },
-        {
-          "title": "OpenAI 員工暗藏錄音器竊取機密，FBI 火速逮補調查國安威脅",
-          "link": "https://infosecu.technews.tw/2026/10/14/saudi-national-arrested-for-installing-surreptitious-audio-recording-device-at-openai/",
-          "date": "2026-10-14 04:04",
-          "summary": "根據美國司法部（Department of Justice，DOJ）新聞稿以及 OpenAI 貼文指出，一名 [&#8230;]"
-        },
-        {
-          "title": "AI 不只會聊天！抗癌、防火、綠電到防災 2026 TIE 吸引逾 5 萬人次，看見臺灣科技創新成果",
-          "link": "https://technews.tw/2026/10/14/ai-beyond-chat-cancer-fire-green-energy-disaster-prevention-2026-tie-taiwan-tech-innovation/",
-          "date": "2026-10-14 03:50",
-          "summary": "2026 TIE 臺灣創新技術博覽會於 9 月 19 日圓滿落幕，三天展期吸引來自 64 國、逾 5 萬人次參 [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,12 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "先進封裝材料挑戰怎解？三菱化學靠計算化學、量子技術加速材料開發",
+          "link": "https://technews.tw/2026/10/14/mitsubishi-chemical-group-sanjiv-bhatt-semicon-west/",
+          "date": "2026-10-14 10:26",
+          "summary": "AI 與 HPC 需求持續推升晶片效能與整合密度，先進封裝也面臨互連密度提高、散熱與翹曲控制等多重挑戰。三菱化 [&#8230;]"
+        },
         {
           "title": "AI 強勁需求推升 ASML 第三季營收獲利創新高，全年營收展望上調",
           "link": "https://finance.technews.tw/2026/10/14/asmls-third-quarter-revenue-and-profit-hit-record-highs/",
@@ -226,12 +232,6 @@
           "link": "https://technews.tw/2026/10/14/memory-stocks-plunge-musk-slams-pricing-as-extortion-praises-micron/",
           "date": "2026-10-14 01:00",
           "summary": "隨著全球記憶體類股連續兩日遭到拋售，馬斯克（Elon Musk）再度發文，痛批美光（Micron Techno [&#8230;]"
-        },
-        {
-          "title": "IMF 估台灣經濟成長逾 10%，各國學者：AI 帶動經濟榮景",
-          "link": "https://technews.tw/2026/10/14/imf-taiwan-economic-growth-over-10-global-scholars-ai-prosperity/",
-          "date": "2026-10-14 00:50",
-          "summary": "IMF 公布的全球經濟預測大幅調高今年台灣經濟成長率，預估調升至全球少見的雙位數 10.7%。各國經濟學者接受 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,24 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "先進封裝材料挑戰怎解？三菱化學靠計算化學、量子技術加速材料開發",
+          "link": "https://technews.tw/2026/10/14/mitsubishi-chemical-group-sanjiv-bhatt-semicon-west/",
+          "date": "2026-10-14 10:26",
+          "summary": "AI 與 HPC 需求持續推升晶片效能與整合密度，先進封裝也面臨互連密度提高、散熱與翹曲控制等多重挑戰。三菱化 [&#8230;]"
+        },
+        {
+          "title": "台達電 800 VDC SST 實機首度亮相！SOFC 年底啟動試量產",
+          "link": "https://technews.tw/2026/10/14/delta-electronics-800-vdc-sst-debut-sofc-pilot-production-starts-year-end/",
+          "date": "2026-10-14 08:43",
+          "summary": "台達電今（14）日於 2026 台灣國際智慧能源週展示預製型固態變壓器（SST）直流電力解決方案，現場展出可實 [&#8230;]"
+        },
+        {
+          "title": "搶當 AIDC 電力心臟！台塑新智能啟動彰濱二期產能直衝 7.5GWh",
+          "link": "https://finance.technews.tw/2026/10/14/90v50ah/",
+          "date": "2026-10-14 08:12",
+          "summary": "台塑新智能今年以「全域能源，驅動 AI 未來」為主題參加台灣國際智慧能源週，總經理劉慧啟今日宣布全面啟動彰濱二 [&#8230;]"
+        },
         {
           "title": "美國防新創湧入台灣，攜手打造非紅無人機供應鏈",
           "link": "https://technews.tw/2026/10/14/u-s-defense-startups-flock-to-taiwan-to-build-china-free-drones/",
@@ -292,24 +310,6 @@
           "link": "https://technews.tw/2026/10/13/applied-materials-epic-center/",
           "date": "2026-10-13 14:58",
           "summary": "美商應用材料斥資 50 億美元在美國矽谷打造的 EPIC 中心正式揭幕，包括台積電、英特爾、美光、三星及 SK [&#8230;]"
-        },
-        {
-          "title": "京東方 OLED 產線出問題持續半年，恐吃不到蘋果 iPad 訂單",
-          "link": "https://technews.tw/2026/10/13/%e2%80%8bboe-struggles-with-glass-substrate-cracking-at-8-6-gen-oled-line/",
-          "date": "2026-10-13 10:00",
-          "summary": "國面板大廠京東方（BOE）8.6 代 OLED 產線遇上玻璃基板裂痕問題，至今已延續約半年仍未找到明確原因，為 [&#8230;]"
-        },
-        {
-          "title": "輝達、AMD 點火 AI 機櫃戰局，800 VDC 電源、散熱族群蓄勢待發",
-          "link": "https://technews.tw/2026/10/13/nvidia-amd-ai-server-rack-specs-emerge-800vdc-power-liquid-cooling-opportunities/",
-          "date": "2026-10-13 09:21",
-          "summary": "輝達與 AMD 帶頭推進新一代 AI 機櫃規格，機櫃功率朝 250 kW 等級邁進，800 VDC 高壓直流供 [&#8230;]"
-        },
-        {
-          "title": "台灣人愛「硬」睡，德國 Emma 也跟著在地化",
-          "link": "https://technews.tw/2026/10/13/emma-sleep-taiwan-localize-product/",
-          "date": "2026-10-13 09:20",
-          "summary": "過去幾年在台灣快速竄紅的床墊品牌德國 Emma，根據台灣人的睡眠偏好，打造更符合台灣消費者需求的產品，還準備了 [&#8230;]"
         }
       ]
     },
