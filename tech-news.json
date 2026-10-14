@@ -1,21 +1,33 @@
 {
-  "updated": "2026-10-14 01:14",
+  "updated": "2026-10-14 02:47",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
-          "title": "Sony全新智慧型手機麥克風ECM-AX10上市！360度完整收音強化臨場感",
-          "link": "https://3c.ltn.com.tw/news/67914",
-          "date": "2026/10/14 08:01",
-          "summary": "Sony宣布全球首款通過Eclipsa Audio認證的智慧型手機麥克風ECM-AX10正式在台上市，專為使用智慧型 ..."
+          "title": "蘋果iPhone Duo開賣大陣仗！旗艦店擺逾150支展示機 首批恐很難搶",
+          "link": "https://3c.ltn.com.tw/news/67925",
+          "date": "2026/10/14 10:26",
+          "summary": "蘋果首款摺疊手機iPhone Duo即將在本週五（16日）開放預購，10月23日正式上市。為了迎接這款重量級新品，蘋 ..."
+        },
+        {
+          "title": "Google最強Gemini 4 Argon開放更多人用！官方公布使用資格",
+          "link": "https://3c.ltn.com.tw/news/67921",
+          "date": "2026/10/14 09:55",
+          "summary": "Google旗下最強AI模型Gemini 4 Argon終於擴大開放，先前這款新模型限定特定用戶使用，如今Googl ..."
         },
         {
           "title": "蘋果新品有彩蛋！寶可夢聯名Beats Pill超萌登場 台灣只能找代購",
           "link": "https://3c.ltn.com.tw/news/67915",
-          "date": "2026/10/14 08:01",
+          "date": "2026/10/14 08:10",
           "summary": "蘋果昨(13日)發布多款智慧家庭新品，包含智慧家庭中樞HomeView、HomePod mini 2智慧音箱、第4代 ..."
+        },
+        {
+          "title": "Sony全新智慧型手機麥克風ECM-AX10上市！360度完整收音強化臨場感",
+          "link": "https://3c.ltn.com.tw/news/67914",
+          "date": "2026/10/14 08:01",
+          "summary": "Sony宣布全球首款通過Eclipsa Audio認證的智慧型手機麥克風ECM-AX10正式在台上市，專為使用智慧型 ..."
         },
         {
           "title": "蘋果Apple TV 4K大升級！不用遙控器也能操控 售價逼近萬元",
@@ -64,18 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67906",
           "date": "2026/10/13 14:45",
           "summary": "德國頂級家電品牌 LIEBHERR 利勃推出全新獨立式雙溫酒櫃 WPsd5262，由嘉儀企業引進，主打雙溫區獨立控溫 ..."
-        },
-        {
-          "title": "台灣LINE宣布6大新功能！偷看訊息不顯示已讀、通話還能錄音",
-          "link": "https://3c.ltn.com.tw/news/67902",
-          "date": "2026/10/13 14:29",
-          "summary": "LINE用戶注意了！LINE今（13日）舉辦「LINE CONVERGE 2026」年度大會，宣布LINE Prem ..."
-        },
-        {
-          "title": "手機愈來愈貴沒人買！全球出貨暴跌20% 創14年最慘紀錄",
-          "link": "https://3c.ltn.com.tw/news/67898",
-          "date": "2026/10/13 14:05",
-          "summary": "全球手機市場真的冷颼颼！受到記憶體持續缺貨、價格飆漲影響，手機愈賣愈貴，消費者也捨不得換新機。最新調查顯示，2026 ..."
         }
       ]
     },
@@ -318,6 +318,12 @@
       "site": "https://ccc.technews.tw/",
       "items": [
         {
+          "title": "Xbox 成立 Xbox Labs，用 AI 探索遊戲重混、跨平台與瀏覽器遊玩新可能",
+          "link": "https://ccc.technews.tw/2026/10/14/xbox-labs/",
+          "date": "2026-10-14 02:00",
+          "summary": "微軟（Microsoft）旗下 Xbox 宣布成立全新的 Xbox Labs 團隊，將以小規模研發與原型測試的 [&#8230;]"
+        },
+        {
           "title": "Apple TV 4K、HomePod mini 升級！Siri AI 加持、遙控器不怕找不到",
           "link": "https://ccc.technews.tw/2026/10/13/apple-tv-4k-homepod-mini-2gen/",
           "date": "2026-10-13 14:01",
@@ -382,12 +388,6 @@
           "link": "https://ccc.technews.tw/2026/10/02/steam-deck-2-specifications-leaked/",
           "date": "2026-10-02 03:20",
           "summary": "Valve 下一代掌機 Steam Deck 2 的核心晶片規格，近期因相關資料外洩再度成為話題焦點。根據多方 [&#8230;]"
-        },
-        {
-          "title": "不限 Pro，Sony 將 AI 圖像升頻技術下放一般版 PS5",
-          "link": "https://ccc.technews.tw/2026/10/02/playstation-5-qssr/",
-          "date": "2026-10-02 02:41",
-          "summary": "Sony 持續擴大 AI 圖像技術在 PlayStation 5 平台的應用，並進一步宣布為一般版 PS5 推 [&#8230;]"
         }
       ]
     }
