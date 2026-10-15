@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15 11:04",
+  "updated": "2026-10-15 15:59",
   "sources": [
     {
       "name": "自由 3C 科技",
@@ -84,76 +84,76 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "毅嘉第三季營收創高卻逢獲利逆風！砸重本建大馬廠待「光通訊」爆發",
-          "link": "https://finance.technews.tw/2026/10/15/fpca/",
-          "date": "2026-10-15 09:28",
-          "summary": "毅嘉科技今日召開法說會，自行結算第三季合併營收 34.17 億元，季增 4%，年增 18%，再創近年新高，受惠 [&#8230;]"
+          "title": "啟弘 CDMO 承接高端疫苗產程開發！開拓日本基因治療拚 2028 年送 IPO",
+          "link": "https://finance.technews.tw/2026/10/14/vaccine-delivery-process/",
+          "date": "2026-10-14 09:17",
+          "summary": "啟弘生技迎接成立十週年，董事長阮大同今日宣布 CDMO（委託開發暨製造服務）取得重大進展，合作夥伴包括日本 O [&#8230;]"
         },
         {
-          "title": "2,000 美元起打造加密貨幣專用 SoC？Muse 完成 RISC-V 架構晶片設計",
-          "link": "https://technews.tw/2026/10/15/meta-s-muse-designs-crypto-specific-soc-based-on-risc-v-architecture/",
-          "date": "2026-10-15 09:24",
-          "summary": "在 X 平台上小有聲量的半導體產業專家 Bubble Boi，利用 Meta 的 AI Agent「Muse」 [&#8230;]"
+          "title": "中東衝突遇上 AI 熱潮，全球央行抗通膨難度升高",
+          "link": "https://finance.technews.tw/2026/10/14/middle-east-conflict-ai-boom-global-central-banks-inflation-difficulty/",
+          "date": "2026-10-14 09:10",
+          "summary": "國際貨幣基金（IMF）與世界銀行（World Bank）年會在曼谷登場。傳統貨幣政策的侷限性日益突顯，全球央行 [&#8230;]"
         },
         {
-          "title": "NVIDIA 揭 AI 工廠四大布局！串聯半導體設計、製造到晶圓廠自動化",
-          "link": "https://technews.tw/2026/10/15/nvidia-semicon-west-timothy-costa/",
-          "date": "2026-10-15 08:45",
-          "summary": "NVIDIA 副總裁暨工業與計算工程總經理 Timothy Costa 在 SEMICON West 主題演講 [&#8230;]"
+          "title": "搶當 AIDC 電力心臟！台塑新智能啟動彰濱二期產能直衝 7.5GWh",
+          "link": "https://finance.technews.tw/2026/10/14/90v50ah/",
+          "date": "2026-10-14 08:12",
+          "summary": "台塑新智能今年以「全域能源，驅動 AI 未來」為主題參加台灣國際智慧能源週，總經理劉慧啟今日宣布全面啟動彰濱二 [&#8230;]"
         },
         {
-          "title": "台積電全球擴產加速！近 20 座廠依計畫進行，台美日產能再升級",
-          "link": "https://technews.tw/2026/10/15/ai-applications-flourish-tsmc-foresees-continued-growth-advanced-process-demand/",
-          "date": "2026-10-15 07:57",
-          "summary": "台積電今（15）日舉行第三季法人說明會，董事長魏哲家表示，隨著 AI 及先進製程需求持續強勁，公司正以前所未有 [&#8230;]"
+          "title": "又是低價競爭？中國低成本與開源 AI 模型衝擊雲端廠商龐大投資恐難回收",
+          "link": "https://technews.tw/2026/10/14/chinas-low-cost-and-open-source-ai-models-have-swept-the-world/",
+          "date": "2026-10-14 07:50",
+          "summary": "受中國低成本與開源 AI 模型迅速崛起影響，大型語言模型的 Token 價格持續重挫，導致美國雲端大廠面臨難以 [&#8230;]"
         },
         {
-          "title": "在家辦公最大遺產是 AI？史丹佛經濟學家：數位溝通激增成 LLM 訓練寶庫",
-          "link": "https://technews.tw/2026/10/15/wfh-helped-create-the-ai-revolution/",
-          "date": "2026-10-15 07:00",
-          "summary": "史丹佛大學（Stanford University）經濟學家古拉斯·布魯姆（Nick Bloom）估計居家辦公 [&#8230;]"
+          "title": "2027 年 CSP 資本支出總額估破 1.5 兆美元，AI 伺服器量價齊揚帶動產值年增逾 90%",
+          "link": "https://technews.tw/2026/10/14/csp-capital-expenditure-projected-exceed-1-5-trillion-2027-ai-server-volume-price-surge-drive-90-annual-output-value-growth/",
+          "date": "2026-10-14 07:15",
+          "summary": "根據 TrendForce 最新 AI server 產業研究，在超大型雲端服務供應商（CSP）擴大投資 se [&#8230;]"
         },
         {
-          "title": "串流平台 AI 政策大不同，YouTube Music 推出專屬標籤保障聽眾知情權",
-          "link": "https://technews.tw/2026/10/15/youtube-music-launches-ai-music-tags/",
-          "date": "2026-10-15 06:50",
-          "summary": "YouTube Music 自 2026 年 10 月 14 日起，在播放頁面針對主要以生成式 AI 製作的歌 [&#8230;]"
+          "title": "軟銀以歷史新高殖利率發債，孫正義豪賭 AI 成敗備受考驗",
+          "link": "https://finance.technews.tw/2026/10/14/softbank-junk-bond-sale-raises-stakes-for-ceo-sons-all-in-ai-bet/",
+          "date": "2026-10-14 06:50",
+          "summary": "軟銀集團在總額達 110 億美元的非投資等級債券發行案中，承諾支付史上最高債券殖利率，凸顯執行長孫正義全力押注 [&#8230;]"
         },
         {
-          "title": "美國女子提告 OpenAI ChatGPT「竊取」數百萬兒童資料，要求依 token 數分配公司股權",
-          "link": "https://infosecu.technews.tw/2026/10/15/lawsuit-alleges-openai-stole-childrens-user-data/",
-          "date": "2026-10-15 06:30",
-          "summary": "住在美國夏威夷的一名女子 13 日代表 12 歲的女兒與 16 歲的兒子對 OpenAI 提起擬議集體訴訟，案 [&#8230;]"
+          "title": "連 AutoCAD 都該緊張了，ArtCraft 再推免費開源 CAD 軟體",
+          "link": "https://technews.tw/2026/10/14/autocad-artcraft/",
+          "date": "2026-10-14 06:38",
+          "summary": "日前才因推出多款免費開源創作工具，試圖挑戰 Adobe 軟體生態系而引發關注的 ArtCraft，如今進一步將 [&#8230;]"
         },
         {
-          "title": "蘋果發表「Minions」系統，將閒置 Mac 打造為虛擬 GPU 雲端，算力縮短至數分鐘",
-          "link": "https://technews.tw/2026/10/15/turn-idle-mac-into-gpu-cloud/",
-          "date": "2026-10-15 06:20",
-          "summary": "蘋果研究人員近日公開一套名為「Minions」的內部系統，旨在將網路中閒置的 Apple Silicon Ma [&#8230;]"
+          "title": "晶片自主化仍追不上需求，中國科技公司今年狂掃逾 100 萬顆輝達 GPU",
+          "link": "https://technews.tw/2026/10/14/chinese-ai-companies-buy-1-million-nvidia-gaming-and-workstation-gpus-in-a-single-year/",
+          "date": "2026-10-14 06:20",
+          "summary": "外媒報導，中國科技公司今年已買進超過 100 萬顆輝達（NVIDIA）GPU，用來補足人工智慧運算能力的缺口。 [&#8230;]"
         },
         {
-          "title": "傳字節跳動與聯發科接近達成資料中心晶片供貨協議，有望成第二大客戶",
-          "link": "https://technews.tw/2026/10/15/bytedance-in-talks-to-secure-mediatek-ai-chips-for-data-centers/",
-          "date": "2026-10-15 06:00",
-          "summary": "彭博引述知情人士，字節跳動接近與聯發科達成協議，向後者採購資料中心 AI 晶片，以確保旗下資料中心的關鍵零組件 [&#8230;]"
+          "title": "AMD 蘇姿丰看 AI 運算多元化，雙機櫃布局迎需求",
+          "link": "https://technews.tw/2026/10/14/ocp-2026-amd-ceo-lisa-su-keynote/",
+          "date": "2026-10-14 05:40",
+          "summary": "AMD 董事長暨執行長蘇姿丰於 2026 年開放運算計畫全球峰會（OCP Global Summit）開幕主題 [&#8230;]"
         },
         {
-          "title": "新加坡也受益 AI 熱潮，經濟成長率僅次台灣",
-          "link": "https://technews.tw/2026/10/15/singapore-also-benefits-from-the-ai-%e2%80%8b%e2%80%8bboom-with-an-economic-growth-rate-second-only-to-taiwans/",
-          "date": "2026-10-15 05:45",
-          "summary": "全球 AI 投資熱潮不只推動台灣經濟高速成長，也讓新加坡成為最大受益者之一。新加坡第三季經濟成長率達 5.4% [&#8230;]"
+          "title": "全球六成 AI 供應鏈在台灣！施羅德 AI 科技台股主動式 ETF 自 11/2 開募",
+          "link": "https://finance.technews.tw/2026/10/14/00419a/",
+          "date": "2026-10-14 05:19",
+          "summary": "繼澳洲、美國及歐洲既有的主動式 ETF 管理經驗後，施羅德投信今日宣布推出亞洲首檔主動式 ETF「施羅德 AI [&#8230;]"
         },
         {
-          "title": "鎖定 AI 鈾礦、稀土與電網！永豐投信「全球戰略資源基金」10/19 開募",
-          "link": "https://finance.technews.tw/2026/10/15/earth/",
-          "date": "2026-10-15 05:32",
-          "summary": "鎖定鈾礦、稀土及電力基礎設施三大戰略領域，永豐投信今日宣布推出「永豐全球戰略資源基金」，預計 10 月 19 [&#8230;]"
+          "title": "反對遷松機蓋 AI 園區，童子賢：台北太擠了",
+          "link": "https://finance.technews.tw/2026/10/14/tsa/",
+          "date": "2026-10-14 05:08",
+          "summary": "台北市長蔣萬安日前提出遷建松山機場、將原址轉型為人工智慧（AI）產業園區的構想，不過和碩董事長童子賢今日對此表 [&#8230;]"
         },
         {
-          "title": "Shield AI 將首架 V-BAT 運抵台灣，深化與海巡部門合作關係",
-          "link": "https://technews.tw/2026/10/15/shield-ai-delivered-first-v-bat-to-taiwan-coast-guard/",
-          "date": "2026-10-15 05:23",
-          "summary": "美國國防科技公司 Shield AI 宣布，已與合作夥伴漢翔航空工業（AIDC）共同完成首架 V-BAT 垂直 [&#8230;]"
+          "title": "OpenAI 新個人 AI 代理全天候自動運作，企業小心背景 Token 開銷大增、成本失控",
+          "link": "https://finance.technews.tw/2026/10/14/openais-dot-assistant-burned-300k-tokens-in-a-day-without-a-single-prompt/",
+          "date": "2026-10-14 04:40",
+          "summary": "OpenAI 9 月推出「全天候」個人 AI 代理人 dot，可能在使用者沒有察覺下大量消耗 Token。AI [&#8230;]"
         }
       ]
     },
@@ -240,76 +240,76 @@
       "site": "https://technews.tw/category/component/",
       "items": [
         {
-          "title": "毅嘉第三季營收創高卻逢獲利逆風！砸重本建大馬廠待「光通訊」爆發",
-          "link": "https://finance.technews.tw/2026/10/15/fpca/",
-          "date": "2026-10-15 09:28",
-          "summary": "毅嘉科技今日召開法說會，自行結算第三季合併營收 34.17 億元，季增 4%，年增 18%，再創近年新高，受惠 [&#8230;]"
-        },
-        {
-          "title": "台積電將於 2030 年開始採用 High-NA EUV，客戶 A14 參與度高於 N2",
-          "link": "https://finance.technews.tw/2026/10/15/tsmc-will-begin-adopting-high-na-euv-in-2030/",
-          "date": "2026-10-15 07:15",
-          "summary": "台積電董事長兼總裁魏哲家針對外界關注的四大焦點議題，包含產能轉租、High-NA EUV 技術引進時程、A14 [&#8230;]"
-        },
-        {
-          "title": "魏哲家：AI 需求極其強勁，台積電營收年複合成長率有望超越 50% 高標",
-          "link": "https://finance.technews.tw/2026/10/15/tsmcs-revenue-is-expected-to-achieve-a-compound-annual-growth-rate-exceeding-50-a-high-target/",
-          "date": "2026-10-15 07:00",
-          "summary": "台積電董事長魏哲家針對人工智慧（AI）半導體需求與產能展望強調，目前 AI 需求「非常、極其強勁」，且完全未見 [&#8230;]"
-        },
-        {
-          "title": "CCL 漲價幅度超預期！大和資本調高聯茂買進目標價至 1,110 元",
-          "link": "https://finance.technews.tw/2026/10/15/e-glass/",
-          "date": "2026-10-15 02:24",
-          "summary": "受惠於電子級玻璃纖維布（E-glass）與 M4 以下等級銅箔基板（CCL）漲價幅度與持久性優於預期，大和資本 [&#8230;]"
-        },
-        {
-          "title": "AI 算力霸權下現金流大洗牌，摩根大通揭大廠資金轉移力拚輝達喊出 4 兆美元榮景",
-          "link": "https://finance.technews.tw/2026/10/15/jpmorgan-chase-reveals-fund-transfers-by-major-manufacturers/",
-          "date": "2026-10-15 01:50",
-          "summary": "隨著人工智慧（AI）浪潮席捲全球，科技大廠間的資本競逐正在重塑半導體與雲端產業鏈的資金流向。根據外資摩根大通（ [&#8230;]"
-        },
-        {
-          "title": "光寶科亮相 OCP，秀 800 VDC 電源與 2.6MW 液冷系統",
-          "link": "https://technews.tw/2026/10/15/lite-on-technology-ocp-800-vdc-power-2-6mw-liquid-cooling-system/",
-          "date": "2026-10-15 00:00",
-          "summary": "光寶參與 10 月 12 日至 15 日於美國聖荷西舉行的 OCP 開放運算全球峰會，展示以 800 VDC [&#8230;]"
-        },
-        {
-          "title": "三星前技術專家創立 Kools，以仿貽貝黏附原理解決 TGV 銅鍍層瓶頸",
-          "link": "https://technews.tw/2026/10/15/kools-leverages-mussel-adhesion-principles-to-solve-tgv-copper-coating-bottleneck/",
-          "date": "2026-10-14 23:40",
-          "summary": "曾在三星電子（Samsung Electronics）視覺顯示（VD）事業部任職 28 年的 Jin-hyun [&#8230;]"
-        },
-        {
-          "title": "波士頓動力 Atlas 新靈巧手採用四指，量產思維重新定義自由度",
-          "link": "https://technews.tw/2026/10/15/boston-dynamics-atlas-4-finers-13dof/",
-          "date": "2026-10-14 23:00",
-          "summary": "波士頓動力（Boston Dynamics）1 日公布 Atlas 新靈巧手，手指數由前代三指增加至四指，採較 [&#8230;]"
-        },
-        {
-          "title": "熙特爾攜手漢吉搶攻自備電力市場，打造 10MW 模組化發電系統",
-          "link": "https://technews.tw/2026/10/15/xitel-hanji-seize-captive-power-market-10mw-modular-power-system/",
-          "date": "2026-10-14 23:00",
-          "summary": "隨著 AI 資料中心（AIDC）用電需求持續攀升，企業自備發電與能源管理需求逐漸受到重視。熙特爾新能源昨（14 [&#8230;]"
-        },
-        {
-          "title": "先進封裝推升設備需求！ACM Research 擴大全球布局，清洗、沉積產品線持續延伸",
-          "link": "https://technews.tw/2026/10/15/acm-research-semicon-west-sally-ann-henry/",
-          "date": "2026-10-14 19:05",
-          "summary": "美商 ACM Research 首席技術專家 Sally-Ann Henry 於 SEMICON West 受 [&#8230;]"
-        },
-        {
-          "title": "Wooptix 加速全球布局！明年兩套量測設備出貨亞洲、美國市場",
-          "link": "https://technews.tw/2026/10/15/wooptix-semicon-west-javier-elizalde/",
-          "date": "2026-10-14 18:39",
-          "summary": "半導體波前相位成像量測技術業者 Wooptix 先前宣布已於法國技術研究機構 CEA-Leti 完成首套量產規 [&#8230;]"
-        },
-        {
           "title": "先進封裝材料挑戰怎解？三菱化學靠計算化學、量子技術加速材料開發",
           "link": "https://technews.tw/2026/10/14/mitsubishi-chemical-group-sanjiv-bhatt-semicon-west/",
           "date": "2026-10-14 10:26",
           "summary": "AI 與 HPC 需求持續推升晶片效能與整合密度，先進封裝也面臨互連密度提高、散熱與翹曲控制等多重挑戰。三菱化 [&#8230;]"
+        },
+        {
+          "title": "台達電 800 VDC SST 實機首度亮相！SOFC 年底啟動試量產",
+          "link": "https://technews.tw/2026/10/14/delta-electronics-800-vdc-sst-debut-sofc-pilot-production-starts-year-end/",
+          "date": "2026-10-14 08:43",
+          "summary": "台達電今（14）日於 2026 台灣國際智慧能源週展示預製型固態變壓器（SST）直流電力解決方案，現場展出可實 [&#8230;]"
+        },
+        {
+          "title": "搶當 AIDC 電力心臟！台塑新智能啟動彰濱二期產能直衝 7.5GWh",
+          "link": "https://finance.technews.tw/2026/10/14/90v50ah/",
+          "date": "2026-10-14 08:12",
+          "summary": "台塑新智能今年以「全域能源，驅動 AI 未來」為主題參加台灣國際智慧能源週，總經理劉慧啟今日宣布全面啟動彰濱二 [&#8230;]"
+        },
+        {
+          "title": "美國防新創湧入台灣，攜手打造非紅無人機供應鏈",
+          "link": "https://technews.tw/2026/10/14/u-s-defense-startups-flock-to-taiwan-to-build-china-free-drones/",
+          "date": "2026-10-14 07:10",
+          "summary": "美國無人機新創公司在美國政府牽線下，紛紛湧入台灣尋找合作夥伴。這項新興產業既能滿足美軍對避開中國的安全無人機供 [&#8230;]"
+        },
+        {
+          "title": "AI 強勁需求推升 ASML 第三季營收獲利創新高，全年營收展望上調",
+          "link": "https://finance.technews.tw/2026/10/14/asmls-third-quarter-revenue-and-profit-hit-record-highs/",
+          "date": "2026-10-14 06:50",
+          "summary": "半導體設備商艾司摩爾（ASML）發布 2026 年第三季財報，受惠於強勁的產能提升執行力與 AI 相關投資帶動 [&#8230;]"
+        },
+        {
+          "title": "現代汽車砸 155 億美元深耕印度  拚擴產、在地化",
+          "link": "https://technews.tw/2026/10/14/hyundai-to-invest-16-billion-in-india-plants/",
+          "date": "2026-10-14 06:30",
+          "summary": "韓國最大車廠現代汽車集團（Hyundai Motor Group）14 日宣布，2032 年前將在印度投資 1 [&#8230;]"
+        },
+        {
+          "title": "東元搶攻全球電力商機，儲能、變壓器雙線出擊",
+          "link": "https://technews.tw/2026/10/14/teco-targets-global-power-market-energy-storage-transformers/",
+          "date": "2026-10-14 06:07",
+          "summary": "隨著 AI 資料中心建置與全球電力設備需求持續成長，東元同步擴大儲能及變壓器業務。東元總經理高飛鳶今（14）日 [&#8230;]"
+        },
+        {
+          "title": "全球六成 AI 供應鏈在台灣！施羅德 AI 科技台股主動式 ETF 自 11/2 開募",
+          "link": "https://finance.technews.tw/2026/10/14/00419a/",
+          "date": "2026-10-14 05:19",
+          "summary": "繼澳洲、美國及歐洲既有的主動式 ETF 管理經驗後，施羅德投信今日宣布推出亞洲首檔主動式 ETF「施羅德 AI [&#8230;]"
+        },
+        {
+          "title": "需求急增  村田將擴建 MLCC 工廠、評估提前投資",
+          "link": "https://technews.tw/2026/10/14/demand-surges-murata-expand-mlcc-factory-evaluate-accelerated-investment/",
+          "date": "2026-10-14 03:40",
+          "summary": "AI 伺服器需求急增，MLCC（積層陶瓷電容）龍頭村田製作所（Murata Manufacturing）將擴建 [&#8230;]"
+        },
+        {
+          "title": "中國造「身體」、美國做「大腦」，兩國如何各憑軟硬體優勢角逐機器人市場",
+          "link": "https://technews.tw/2026/10/14/china-robot-bodies-us-brains-robotics-market-competition-hardware-software-strengths/",
+          "date": "2026-10-14 01:50",
+          "summary": "中國在人型機器人領域的優勢持續擴大，從零組件、製造到整機出貨都逐步形成完整的產業鏈，被視為全球人工智慧競賽下一 [&#8230;]"
+        },
+        {
+          "title": "全球半導體設備支出爆發！SEMI 估 2029 年達 2,270 億美元，美國擴產加速",
+          "link": "https://finance.technews.tw/2026/10/14/semicon-west-clark-tseng/",
+          "date": "2026-10-13 19:50",
+          "summary": "AI 與高效能運算（HPC）需求持續攀升，帶動全球半導體產業加大資本投資。SEMI 全球資深總監曾瑞榆（Cla [&#8230;]"
+        },
+        {
+          "title": "應材矽谷 EPIC 中心開幕！台積電魏哲家：加速 2 奈米以下量產",
+          "link": "https://technews.tw/2026/10/13/applied-materials-epic-center/",
+          "date": "2026-10-13 14:58",
+          "summary": "美商應用材料斥資 50 億美元在美國矽谷打造的 EPIC 中心正式揭幕，包括台積電、英特爾、美光、三星及 SK [&#8230;]"
         }
       ]
     },
