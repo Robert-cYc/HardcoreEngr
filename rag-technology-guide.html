@@ -11,22 +11,23 @@
   <meta property="og:description" content="全面剖析檢索增強生成（RAG）技術：深入解析 Naive RAG、Advanced RAG、Modular RAG 與 GraphRAG 架構演進，涵蓋語意分塊、向量資料庫選型、混合檢索（BM25 + Dense）、重排序（Reranking），並提供完整 Python 端到端實戰程式碼與企業級評估最佳實踐。">
   <meta property="og:url" content="https://ai-hardcore-engineer.com/rag-technology-guide.html">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:image" content="./images/rag-guide.jpg">
   <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="RAG 技術完全攻略：核心原理、架構演進、關鍵元件與從零到落地實戰指南 — &quot;AI&quot; 硬核工程師">
   <meta name="twitter:description" content="全面剖析檢索增強生成（RAG）技術：深入解析 Naive RAG、Advanced RAG、Modular RAG 與 GraphRAG 架構演進，涵蓋語意分塊、向量資料庫選型、混合檢索（BM25 + Dense）、重排序（Reranking），並提供完整 Python 端到端實戰程式碼與企業級評估最佳實踐。">
-  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta name="twitter:image" content="./images/rag-guide.jpg">
   <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="./css/style.css">
   <style>
-    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero { text-align: center; padding: 3.5rem 0 2rem; }
     .article-hero h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.25; }
     .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.15rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; margin-top: 1rem; }
+    .hero-image-wrap { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid var(--border); margin: 1.5rem 0 2rem; }
+    .hero-image-wrap img { width: 100%; max-height: 520px; object-fit: cover; display: block; margin: 0; }
     .article-body { max-width: 62em; margin: 0 auto; }
     .article-body h2 { font-size: 2.05rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
     .article-body h3 { font-size: 1.55rem; font-weight: 600; margin: 1.6rem 0 0.75rem; color: var(--accent); }
@@ -405,7 +406,7 @@
     "description": "全面剖析檢索增強生成（RAG）技術：深入解析 Naive RAG、Advanced RAG、Modular RAG 與 GraphRAG 架構演進，涵蓋語意分塊、向量資料庫選型、混合檢索（BM25 + Dense）、重排序（Reranking），並提供完整 Python 端到端實戰程式碼與企業級評估最佳實踐。",
     "url": "https://ai-hardcore-engineer.com/rag-technology-guide.html",
     "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
-    "image": "https://ai-hardcore-engineer.com/og-image.png",
+    "image": "https://ai-hardcore-engineer.com/images/rag-guide.jpg",
     "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/rag-technology-guide.html" }
   }
   </script>
@@ -506,7 +507,9 @@
           <span class="tag">AI架構</span>
           <span class="tag">教學</span>
         </div>
-        <img loading="lazy" src="https://picsum.photos/seed/rag-architecture/1200/400" alt="RAG 架構與技術攻略 Banner">
+        <div class="hero-image-wrap">
+          <img src="./images/rag-guide.jpg" alt="RAG 架構與技術攻略 Banner">
+        </div>
       </section>
 
       <article class="article-body">
