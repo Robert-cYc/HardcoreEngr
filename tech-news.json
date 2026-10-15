@@ -1,10 +1,70 @@
 {
-  "updated": "2026-10-15 02:26",
+  "updated": "2026-10-15 10:37",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "《新楓之谷：經典版》大改版！解鎖三轉12職業 推萬聖節原創企劃",
+          "link": "https://3c.ltn.com.tw/news/67946",
+          "date": "2026/10/15 18:10",
+          "summary": "遊戲橘子旗下、韓國遊戲公司 Nexon 打造的《新楓之谷：經典版》吸引大量老玩家，今（15）日正式推出重大改版，開放 ..."
+        },
+        {
+          "title": "Sony《跑車浪漫旅》30 週年紀念手把登場 《GT7》同步更新車款、賽道",
+          "link": "https://3c.ltn.com.tw/news/67945",
+          "date": "2026/10/15 17:11",
+          "summary": "Sony 宣布推出 DualSense 無線控制器《跑車浪漫旅》限量版，向經典賽車遊戲《跑車浪漫旅》（Gran Tu ..."
+        },
+        {
+          "title": "三星S27又擠牙膏？自拍感光元件恐5代沒換 升級只給高階款",
+          "link": "https://3c.ltn.com.tw/news/67936",
+          "date": "2026/10/15 16:52",
+          "summary": "三星新一代旗艦S27系列預計明年初登場，傳聞將推出S27、S27+、S27 Pro和S27 Ultra共4款機型。不 ..."
+        },
+        {
+          "title": "摺疊iPhone Duo有多難搶？通路估全台首批不到2萬台",
+          "link": "https://3c.ltn.com.tw/news/67943",
+          "date": "2026/10/15 15:00",
+          "summary": "蘋果首款摺疊iPhone Duo將於明(16日)開放預購，10月23日上市，售價從74,900元一路到118,900 ..."
+        },
+        {
+          "title": "太扯了！冒牌Chrome竟成功上架Google Play 下載破10萬次",
+          "link": "https://3c.ltn.com.tw/news/67934",
+          "date": "2026/10/15 14:20",
+          "summary": "Google Play商店下載App也不一定安全！最近有網友發現，Google Play商店竟然出現一款冒充Goog ..."
+        },
+        {
+          "title": "LINE這組貼圖不賺錢！怪奇事物所24張動態超有梗 72元開賣",
+          "link": "https://3c.ltn.com.tw/news/67942",
+          "date": "2026/10/15 13:55",
+          "summary": "LINE 2026公益貼圖來了！LINE宣布和人氣貼圖創作者「怪奇事物所」及RE-THINK社團法人重新思考環境教育 ..."
+        },
+        {
+          "title": "果粉眼淚！史上最輕巧MacBook走入歷史 蘋果終止官方維修",
+          "link": "https://3c.ltn.com.tw/news/67941",
+          "date": "2026/10/15 13:01",
+          "summary": "還記得當年話題十足的12吋MacBook嗎？如果家中還留著這款筆電，可得多加留意了，蘋果公告2017年款12吋Mac ..."
+        },
+        {
+          "title": "Google 車載迎重大改版！Android Auto 18 測試版曝光 導入全新代號介面",
+          "link": "https://3c.ltn.com.tw/news/67929",
+          "date": "2026/10/15 12:30",
+          "summary": "Google 持續強化車載系統 Android Auto，最新 Android Auto 18 測試版已進入 Bet ..."
+        },
+        {
+          "title": "蘋果iPhone Duo藏散熱黑科技！轉軸不只會摺疊 還能幫降溫",
+          "link": "https://3c.ltn.com.tw/news/67933",
+          "date": "2026/10/15 12:10",
+          "summary": "蘋果首款摺疊手機iPhone Duo即將於明（16日）開放預購，10月23日正式上市，售價從74,900元一路到11 ..."
+        },
+        {
+          "title": "YouTube留言區進入迷因時代！開放GIF動圖 11月全面上線",
+          "link": "https://3c.ltn.com.tw/news/67938",
+          "date": "2026/10/15 11:01",
+          "summary": "以後在YouTube看影片，留言區可能比影片還精彩。YouTube在9月預告將升級留言功能，其中一項備受關注的新改變 ..."
+        },
         {
           "title": "Google Gemini付費方案縮水！用戶收通知信 11月砍Pro模型",
           "link": "https://3c.ltn.com.tw/news/67939",
@@ -16,66 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67932",
           "date": "2026/10/15 09:30",
           "summary": "今年蘋果（Apple）秋季發表會焦點落在iPhone 18 Pro及摺疊iPhone Duo等高階機型身上，主打大眾 ..."
-        },
-        {
-          "title": "iPhone Duo維修費嚇人！換內螢幕噴3.7萬元 可買一支新手機",
-          "link": "https://3c.ltn.com.tw/news/67930",
-          "date": "2026/10/15 08:50",
-          "summary": "蘋果首款摺疊手機iPhone Duo將於明(16日)開放預購，10月23日上市，售價從74,900元一路到118,9 ..."
-        },
-        {
-          "title": "iPhone 18 Pro背板又翹了！才用幾週就中招 苦主紛現身",
-          "link": "https://3c.ltn.com.tw/news/67931",
-          "date": "2026/10/15 08:00",
-          "summary": "蘋果去年iPhone 17 Pro系列曾傳出背板容易翹起的問題，沒想到新一代iPhone 18 Pro系列上市還不到 ..."
-        },
-        {
-          "title": "蘋果智慧家庭螢幕HomeView實測一整天！YouTuber：沒有花300美元的理由",
-          "link": "https://3c.ltn.com.tw/news/67928",
-          "date": "2026/10/14 17:20",
-          "summary": "蘋果（Apple）昨晚推出 HomeView，以成為家中的生活中樞為設計理念，藉由 7 吋 Liquid Retin ..."
-        },
-        {
-          "title": "Google Play大改版！自製App免上架就能用 6大新功能一次看",
-          "link": "https://3c.ltn.com.tw/news/67919",
-          "date": "2026/10/14 15:30",
-          "summary": "Google Play不只能下載App，現在連App都能自己做了！Google宣布Google Play迎來一波大改 ..."
-        },
-        {
-          "title": "Facebook演算法終於能自己決定！不想看的貼文直接叫AI減少",
-          "link": "https://3c.ltn.com.tw/news/67920",
-          "date": "2026/10/14 15:00",
-          "summary": "每天滑Facebook，明明只想看看朋友近況，卻老是被推薦一堆沒興趣的貼文或短影音，讓人愈滑愈煩，現在Meta準備把 ..."
-        },
-        {
-          "title": "智慧眼鏡竟會偷聽！用戶對話被錄下還變逐字稿 Meta認了出包",
-          "link": "https://3c.ltn.com.tw/news/67917",
-          "date": "2026/10/14 14:05",
-          "summary": "智慧眼鏡竟然會偷聽？Meta旗下Ray-Ban智慧眼鏡最近再度爆出隱私爭議，除了備受關注的錄影遭濫用問題，近來還有用 ..."
-        },
-        {
-          "title": "果粉存好錢！蘋果10月新品懶人包 9款話題產品接力一次看",
-          "link": "https://3c.ltn.com.tw/news/67922",
-          "date": "2026/10/14 13:09",
-          "summary": "蘋果10月新品一波接一波！昨晚(13日)才剛發布3款智慧家庭新品，接下來首款摺疊手機iPhone Duo也即將開賣， ..."
-        },
-        {
-          "title": "台灣品牌手機快成回憶！HTC、華碩通路庫存見底 最後入手機會",
-          "link": "https://3c.ltn.com.tw/news/67926",
-          "date": "2026/10/14 12:25",
-          "summary": "台灣品牌手機真的快買不到了，隨著華碩、HTC陸續淡出手機市場，市面上的剩餘庫存已快賣光。通路業者透露，部分機型現貨甚 ..."
-        },
-        {
-          "title": "蘋果首款 HomeView 值得買嗎？外媒列出 4 大潛在缺點",
-          "link": "https://3c.ltn.com.tw/news/67924",
-          "date": "2026/10/14 10:45",
-          "summary": "蘋果（Apple）在昨晚推出 HomeView，以成為家中的生活中樞為設計理念，藉由 7 吋 Liquid Reti ..."
-        },
-        {
-          "title": "蘋果iPhone Duo開賣大陣仗！旗艦店擺逾150支展示機 首批恐很難搶",
-          "link": "https://3c.ltn.com.tw/news/67925",
-          "date": "2026/10/14 10:26",
-          "summary": "蘋果首款摺疊手機iPhone Duo即將在本週五（16日）開放預購，10月23日正式上市。為了迎接這款重量級新品，蘋 ..."
         }
       ]
     },
@@ -84,8 +84,26 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
+          "title": "啟弘 CDMO 承接高端疫苗產程開發！開拓日本基因治療拚 2028 年送 IPO",
+          "link": "https://finance.technews.tw/2026/10/14/vaccine-delivery-process/",
+          "date": "2026-10-14 09:17",
+          "summary": "啟弘生技迎接成立十週年，董事長阮大同今日宣布 CDMO（委託開發暨製造服務）取得重大進展，合作夥伴包括日本 O [&#8230;]"
+        },
+        {
+          "title": "中東衝突遇上 AI 熱潮，全球央行抗通膨難度升高",
+          "link": "https://finance.technews.tw/2026/10/14/middle-east-conflict-ai-boom-global-central-banks-inflation-difficulty/",
+          "date": "2026-10-14 09:10",
+          "summary": "國際貨幣基金（IMF）與世界銀行（World Bank）年會在曼谷登場。傳統貨幣政策的侷限性日益突顯，全球央行 [&#8230;]"
+        },
+        {
+          "title": "搶當 AIDC 電力心臟！台塑新智能啟動彰濱二期產能直衝 7.5GWh",
+          "link": "https://finance.technews.tw/2026/10/14/90v50ah/",
+          "date": "2026-10-14 08:12",
+          "summary": "台塑新智能今年以「全域能源，驅動 AI 未來」為主題參加台灣國際智慧能源週，總經理劉慧啟今日宣布全面啟動彰濱二 [&#8230;]"
+        },
+        {
           "title": "又是低價競爭？中國低成本與開源 AI 模型衝擊雲端廠商龐大投資恐難回收",
-          "link": "https://finance.technews.tw/2026/10/14/chinas-low-cost-and-open-source-ai-models-have-swept-the-world/",
+          "link": "https://technews.tw/2026/10/14/chinas-low-cost-and-open-source-ai-models-have-swept-the-world/",
           "date": "2026-10-14 07:50",
           "summary": "受中國低成本與開源 AI 模型迅速崛起影響，大型語言模型的 Token 價格持續重挫，導致美國雲端大廠面臨難以 [&#8230;]"
         },
@@ -136,24 +154,6 @@
           "link": "https://finance.technews.tw/2026/10/14/openais-dot-assistant-burned-300k-tokens-in-a-day-without-a-single-prompt/",
           "date": "2026-10-14 04:40",
           "summary": "OpenAI 9 月推出「全天候」個人 AI 代理人 dot，可能在使用者沒有察覺下大量消耗 Token。AI [&#8230;]"
-        },
-        {
-          "title": "牛市行情反轉？傳奇投資人估 2027 市況具挑戰性",
-          "link": "https://finance.technews.tw/2026/10/14/hedge-fund-legend-paul-tudor-jones-says-the-stock-market-faces-a-really-challenging-2027/",
-          "date": "2026-10-14 04:30",
-          "summary": "在 1987 年「黑色星期一」精準放空的知名基金經理人瓊斯（Paul Tudor Jones）認為，美國股市 [&#8230;]"
-        },
-        {
-          "title": "OpenAI 員工暗藏錄音器竊取機密，FBI 火速逮補調查國安威脅",
-          "link": "https://infosecu.technews.tw/2026/10/14/saudi-national-arrested-for-installing-surreptitious-audio-recording-device-at-openai/",
-          "date": "2026-10-14 04:04",
-          "summary": "根據美國司法部（Department of Justice，DOJ）新聞稿以及 OpenAI 貼文指出，一名 [&#8230;]"
-        },
-        {
-          "title": "AI 不只會聊天！抗癌、防火、綠電到防災 2026 TIE 吸引逾 5 萬人次，看見臺灣科技創新成果",
-          "link": "https://technews.tw/2026/10/14/ai-beyond-chat-cancer-fire-green-energy-disaster-prevention-2026-tie-taiwan-tech-innovation/",
-          "date": "2026-10-14 03:50",
-          "summary": "2026 TIE 臺灣創新技術博覽會於 9 月 19 日圓滿落幕，三天展期吸引來自 64 國、逾 5 萬人次參 [&#8230;]"
         }
       ]
     },
@@ -162,76 +162,76 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
-          "title": "AI 強勁需求推升 ASML 第三季營收獲利創新高，全年營收展望上調",
-          "link": "https://finance.technews.tw/2026/10/14/asmls-third-quarter-revenue-and-profit-hit-record-highs/",
-          "date": "2026-10-14 06:50",
-          "summary": "半導體設備商艾司摩爾（ASML）發布 2026 年第三季財報，受惠於強勁的產能提升執行力與 AI 相關投資帶動 [&#8230;]"
+          "title": "毅嘉第三季營收創高卻逢獲利逆風！砸重本建大馬廠待「光通訊」爆發",
+          "link": "https://finance.technews.tw/2026/10/15/fpca/",
+          "date": "2026-10-15 09:28",
+          "summary": "毅嘉科技今日召開法說會，自行結算第三季合併營收 34.17 億元，季增 4%，年增 18%，再創近年新高，受惠 [&#8230;]"
         },
         {
-          "title": "供應給台積電？富士軟片在美增產先進半導體材料",
-          "link": "https://technews.tw/2026/10/14/fujifilm-to-expand-cmp-slurry-production-capacity-in-the-united-states/",
-          "date": "2026-10-14 06:40",
-          "summary": "日廠富士軟片（Fujifilm）將在美國亞利桑那州工廠增產先進半導體材料「研磨液」（CMP Slurry），預 [&#8230;]"
+          "title": "2,000 美元起打造加密貨幣專用 SoC？Muse 完成 RISC-V 架構晶片設計",
+          "link": "https://technews.tw/2026/10/15/meta-s-muse-designs-crypto-specific-soc-based-on-risc-v-architecture/",
+          "date": "2026-10-15 09:24",
+          "summary": "在 X 平台上小有聲量的半導體產業專家 Bubble Boi，利用 Meta 的 AI Agent「Muse」 [&#8230;]"
         },
         {
-          "title": "晶片自主化仍追不上需求，中國科技公司今年狂掃逾 100 萬顆輝達 GPU",
-          "link": "https://technews.tw/2026/10/14/chinese-ai-companies-buy-1-million-nvidia-gaming-and-workstation-gpus-in-a-single-year/",
-          "date": "2026-10-14 06:20",
-          "summary": "外媒報導，中國科技公司今年已買進超過 100 萬顆輝達（NVIDIA）GPU，用來補足人工智慧運算能力的缺口。 [&#8230;]"
+          "title": "台積電全球擴產加速！近 20 座廠依計畫進行，台美日產能再升級",
+          "link": "https://technews.tw/2026/10/15/ai-applications-flourish-tsmc-foresees-continued-growth-advanced-process-demand/",
+          "date": "2026-10-15 07:57",
+          "summary": "台積電今（15）日舉行第三季法人說明會，董事長魏哲家表示，隨著 AI 及先進製程需求持續強勁，公司正以前所未有 [&#8230;]"
         },
         {
-          "title": "先進封裝角色躍升！英特爾晶圓代工揭「晶片三道牆」：客戶信任成關鍵",
-          "link": "https://technews.tw/2026/10/14/semicon-west-intel-foundry-lalitha-immaneni/",
-          "date": "2026-10-14 06:06",
-          "summary": "SEMICON West 於美國時間 10 月 13 日正式開幕，英特爾代工事業部半導體研發副總裁 Lalit [&#8230;]"
+          "title": "AI 晶片需求有多強？魏哲家：所有 AI 業者都與台積電合作",
+          "link": "https://technews.tw/2026/10/15/tsmc-ai-demand-is-booming/",
+          "date": "2026-10-15 07:18",
+          "summary": "台積電今（15）日舉行第三季法人說明會，董事長魏哲家表示，隨著 AI 應用快速發展，無論業者採取何種技術路線， [&#8230;]"
         },
         {
-          "title": "SK 會長賣股買家揭曉  戴爾家族入股、合作添想像",
-          "link": "https://finance.technews.tw/2026/10/14/sk-group-chairman-chey-sells-stake-to-dell-family-office-fund-for-406-million/",
-          "date": "2026-10-14 05:50",
-          "summary": "韓國 SK 集團會長崔泰源（Chey Tae-won）出售集團控股公司 SK Inc. 股權的神祕買家揭曉！根 [&#8230;]"
+          "title": "台積電將於 2030 年開始採用 High-NA EUV，客戶 A14 參與度高於 N2",
+          "link": "https://finance.technews.tw/2026/10/15/tsmc-will-begin-adopting-high-na-euv-in-2030/",
+          "date": "2026-10-15 07:15",
+          "summary": "台積電董事長兼總裁魏哲家針對外界關注的四大焦點議題，包含產能轉租、High-NA EUV 技術引進時程、A14 [&#8230;]"
         },
         {
-          "title": "全球六成 AI 供應鏈在台灣！施羅德 AI 科技台股主動式 ETF 自 11/2 開募",
-          "link": "https://finance.technews.tw/2026/10/14/00419a/",
-          "date": "2026-10-14 05:19",
-          "summary": "繼澳洲、美國及歐洲既有的主動式 ETF 管理經驗後，施羅德投信今日宣布推出亞洲首檔主動式 ETF「施羅德 AI [&#8230;]"
+          "title": "赴德州評估擴產！魏哲家霸氣回應：晶圓廠須由台積電營運",
+          "link": "https://technews.tw/2026/10/15/tsmc-raises-prices/",
+          "date": "2026-10-15 07:06",
+          "summary": "台積電董事長魏哲家今（15）日在第三季法人說明會上表示，台積電已派遣團隊赴美國德州評估擴產機會，並與提出 Te [&#8230;]"
         },
         {
-          "title": "日月光投控 2026 年第三季優於預期，美銀力挺目標價至 900 元",
-          "link": "https://finance.technews.tw/2026/10/14/ase-technology-holding-co-ltd-reported-better-than-expected-results-for-the-third-quarter-of-2026/",
-          "date": "2026-10-14 02:50",
-          "summary": "半導體封測龍頭日月光投控公布 2026 年第三季財報，營收表現強勁，受惠於先進封裝測試（LEAP）產能開出與成 [&#8230;]"
+          "title": "魏哲家：AI 需求極其強勁，台積電營收年複合成長率有望超越 50% 高標",
+          "link": "https://finance.technews.tw/2026/10/15/tsmcs-revenue-is-expected-to-achieve-a-compound-annual-growth-rate-exceeding-50-a-high-target/",
+          "date": "2026-10-15 07:00",
+          "summary": "台積電董事長魏哲家針對人工智慧（AI）半導體需求與產能展望強調，目前 AI 需求「非常、極其強勁」，且完全未見 [&#8230;]"
         },
         {
-          "title": "記憶體吃緊至少持續至 2028 年、標普調升鎧俠評等",
-          "link": "https://finance.technews.tw/2026/10/14/memory-shortage-2028-s-p-upgrades-kioxia-rating/",
-          "date": "2026-10-14 02:40",
-          "summary": "記憶體供需吃緊情況有可能至少持續至 2028 年，美國信用評等機構標準普爾（S&#38;P Global Ra [&#8230;]"
+          "title": "SK 海力士赴美設廠有條件？傳要求放行擴產大連廠",
+          "link": "https://technews.tw/2026/10/15/sk-hynix-conditions-new-us-factory-on-more-us-chip-equipment-exports-to-china/",
+          "date": "2026-10-15 06:40",
+          "summary": "美國川普政府積極施壓外國晶片業者赴美設廠，韓國記憶體大廠 SK 海力士（SK Hynix）卻試圖反向運用美國製 [&#8230;]"
         },
         {
-          "title": "輝達 OCP 高峰會釋出多項開源設計與網路技術，加速 AI 工廠規模化擴建",
-          "link": "https://technews.tw/2026/10/14/nvidia-details-open-designs-for-ai-power-cooling-and-networking/",
-          "date": "2026-10-14 01:40",
-          "summary": "輝達（NVIDIA）在美國聖荷西舉行的 Open Compute Project（OCP）全球高峰會上，公布一 [&#8230;]"
+          "title": "魏哲家：台積電 2026 全年營收成長率將達約 44%，絕不將任何商機拱手讓人",
+          "link": "https://finance.technews.tw/2026/10/15/tsmcs-revenue-growth-rate-for-the-full-year-of-2026-is-expected-to-reach-approximately-44/",
+          "date": "2026-10-15 06:40",
+          "summary": "邁入 2026 年第四季，台積電董事長魏哲家表示，在先進製程技術強勁需求的支撐下，預估以美元計價的 2026 [&#8230;]"
         },
         {
-          "title": "應材獲利目標夯、未給營收展望  市場失望股價摔",
-          "link": "https://finance.technews.tw/2026/10/14/applied-materials-stock-could-be-flashing-a-sell-signal-on-this-investor-day-omission/",
-          "date": "2026-10-14 01:30",
-          "summary": "半導體設備大廠應用材料（Applied Materials Inc.）雖在投資人日提出 2030 年獲利能力提 [&#8230;]"
+          "title": "蘋果發表「Minions」系統，將閒置 Mac 打造為虛擬 GPU 雲端，算力縮短至數分鐘",
+          "link": "https://technews.tw/2026/10/15/turn-idle-mac-into-gpu-cloud/",
+          "date": "2026-10-15 06:20",
+          "summary": "蘋果研究人員近日公開一套名為「Minions」的內部系統，旨在將網路中閒置的 Apple Silicon Ma [&#8230;]"
         },
         {
-          "title": "記憶體股慘摔  馬斯克轟報價形同勒索、獨讚美光",
-          "link": "https://technews.tw/2026/10/14/memory-stocks-plunge-musk-slams-pricing-as-extortion-praises-micron/",
-          "date": "2026-10-14 01:00",
-          "summary": "隨著全球記憶體類股連續兩日遭到拋售，馬斯克（Elon Musk）再度發文，痛批美光（Micron Techno [&#8230;]"
+          "title": "傳字節跳動與聯發科接近達成資料中心晶片供貨協議，有望成第二大客戶",
+          "link": "https://technews.tw/2026/10/15/bytedance-in-talks-to-secure-mediatek-ai-chips-for-data-centers/",
+          "date": "2026-10-15 06:00",
+          "summary": "彭博引述知情人士，字節跳動接近與聯發科達成協議，向後者採購資料中心 AI 晶片，以確保旗下資料中心的關鍵零組件 [&#8230;]"
         },
         {
-          "title": "IMF 估台灣經濟成長逾 10%，各國學者：AI 帶動經濟榮景",
-          "link": "https://technews.tw/2026/10/14/imf-taiwan-economic-growth-over-10-global-scholars-ai-prosperity/",
-          "date": "2026-10-14 00:50",
-          "summary": "IMF 公布的全球經濟預測大幅調高今年台灣經濟成長率，預估調升至全球少見的雙位數 10.7%。各國經濟學者接受 [&#8230;]"
+          "title": "台積電第三季 EPS 29.43 元創新高，先進製程占比 79%，2 奈米貢獻營收達 8%",
+          "link": "https://finance.technews.tw/2026/10/15/tsmcs-third-quarter-eps-hit-a-new-high-of-nt29-43/",
+          "date": "2026-10-15 05:40",
+          "summary": "晶圓代工龍頭台積電 15 日公布 2026 年第三季財務報告。受惠於市場強勁需求與先進製程持續發威，台積電第三 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,24 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "先進封裝材料挑戰怎解？三菱化學靠計算化學、量子技術加速材料開發",
+          "link": "https://technews.tw/2026/10/14/mitsubishi-chemical-group-sanjiv-bhatt-semicon-west/",
+          "date": "2026-10-14 10:26",
+          "summary": "AI 與 HPC 需求持續推升晶片效能與整合密度，先進封裝也面臨互連密度提高、散熱與翹曲控制等多重挑戰。三菱化 [&#8230;]"
+        },
+        {
+          "title": "台達電 800 VDC SST 實機首度亮相！SOFC 年底啟動試量產",
+          "link": "https://technews.tw/2026/10/14/delta-electronics-800-vdc-sst-debut-sofc-pilot-production-starts-year-end/",
+          "date": "2026-10-14 08:43",
+          "summary": "台達電今（14）日於 2026 台灣國際智慧能源週展示預製型固態變壓器（SST）直流電力解決方案，現場展出可實 [&#8230;]"
+        },
+        {
+          "title": "搶當 AIDC 電力心臟！台塑新智能啟動彰濱二期產能直衝 7.5GWh",
+          "link": "https://finance.technews.tw/2026/10/14/90v50ah/",
+          "date": "2026-10-14 08:12",
+          "summary": "台塑新智能今年以「全域能源，驅動 AI 未來」為主題參加台灣國際智慧能源週，總經理劉慧啟今日宣布全面啟動彰濱二 [&#8230;]"
+        },
         {
           "title": "美國防新創湧入台灣，攜手打造非紅無人機供應鏈",
           "link": "https://technews.tw/2026/10/14/u-s-defense-startups-flock-to-taiwan-to-build-china-free-drones/",
@@ -292,24 +310,6 @@
           "link": "https://technews.tw/2026/10/13/applied-materials-epic-center/",
           "date": "2026-10-13 14:58",
           "summary": "美商應用材料斥資 50 億美元在美國矽谷打造的 EPIC 中心正式揭幕，包括台積電、英特爾、美光、三星及 SK [&#8230;]"
-        },
-        {
-          "title": "京東方 OLED 產線出問題持續半年，恐吃不到蘋果 iPad 訂單",
-          "link": "https://technews.tw/2026/10/13/%e2%80%8bboe-struggles-with-glass-substrate-cracking-at-8-6-gen-oled-line/",
-          "date": "2026-10-13 10:00",
-          "summary": "國面板大廠京東方（BOE）8.6 代 OLED 產線遇上玻璃基板裂痕問題，至今已延續約半年仍未找到明確原因，為 [&#8230;]"
-        },
-        {
-          "title": "輝達、AMD 點火 AI 機櫃戰局，800 VDC 電源、散熱族群蓄勢待發",
-          "link": "https://technews.tw/2026/10/13/nvidia-amd-ai-server-rack-specs-emerge-800vdc-power-liquid-cooling-opportunities/",
-          "date": "2026-10-13 09:21",
-          "summary": "輝達與 AMD 帶頭推進新一代 AI 機櫃規格，機櫃功率朝 250 kW 等級邁進，800 VDC 高壓直流供 [&#8230;]"
-        },
-        {
-          "title": "台灣人愛「硬」睡，德國 Emma 也跟著在地化",
-          "link": "https://technews.tw/2026/10/13/emma-sleep-taiwan-localize-product/",
-          "date": "2026-10-13 09:20",
-          "summary": "過去幾年在台灣快速竄紅的床墊品牌德國 Emma，根據台灣人的睡眠偏好，打造更符合台灣消費者需求的產品，還準備了 [&#8230;]"
         }
       ]
     },
