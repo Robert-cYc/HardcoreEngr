@@ -1,10 +1,28 @@
 {
-  "updated": "2026-10-15 00:32",
+  "updated": "2026-10-15 02:26",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "Google Gemini付費方案縮水！用戶收通知信 11月砍Pro模型",
+          "link": "https://3c.ltn.com.tw/news/67939",
+          "date": "2026/10/15 10:00",
+          "summary": "Google最近調整Gemini的模型權限，免費版自上週10月9日開始，只能使用Flash-Lite模型，Googl ..."
+        },
+        {
+          "title": "蘋果 iPhone 18 標準版投產時間曝光！有望延續前代熱潮成銷售主力",
+          "link": "https://3c.ltn.com.tw/news/67932",
+          "date": "2026/10/15 09:30",
+          "summary": "今年蘋果（Apple）秋季發表會焦點落在iPhone 18 Pro及摺疊iPhone Duo等高階機型身上，主打大眾 ..."
+        },
+        {
+          "title": "iPhone Duo維修費嚇人！換內螢幕噴3.7萬元 可買一支新手機",
+          "link": "https://3c.ltn.com.tw/news/67930",
+          "date": "2026/10/15 08:50",
+          "summary": "蘋果首款摺疊手機iPhone Duo將於明(16日)開放預購，10月23日上市，售價從74,900元一路到118,9 ..."
+        },
         {
           "title": "iPhone 18 Pro背板又翹了！才用幾週就中招 苦主紛現身",
           "link": "https://3c.ltn.com.tw/news/67931",
@@ -58,24 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67925",
           "date": "2026/10/14 10:26",
           "summary": "蘋果首款摺疊手機iPhone Duo即將在本週五（16日）開放預購，10月23日正式上市。為了迎接這款重量級新品，蘋 ..."
-        },
-        {
-          "title": "Google最強Gemini 4 Argon開放更多人用！官方公布使用資格",
-          "link": "https://3c.ltn.com.tw/news/67921",
-          "date": "2026/10/14 09:55",
-          "summary": "Google旗下最強AI模型Gemini 4 Argon終於擴大開放，先前這款新模型限定特定用戶使用，如今Googl ..."
-        },
-        {
-          "title": "iPhone Duo維修費嚇人！換內螢幕噴3.7萬元 幾乎半支手機",
-          "link": "https://3c.ltn.com.tw/news/67930",
-          "date": "2026/10/14 08:35",
-          "summary": "蘋果首款摺疊手機iPhone Duo將於明(16日)開放預購，10月23日上市，售價從74,900元一路到118,9 ..."
-        },
-        {
-          "title": "蘋果新品有彩蛋！寶可夢聯名Beats Pill超萌登場 台灣只能找代購",
-          "link": "https://3c.ltn.com.tw/news/67915",
-          "date": "2026/10/14 08:10",
-          "summary": "蘋果昨(13日)發布多款智慧家庭新品，包含智慧家庭中樞HomeView、HomePod mini 2智慧音箱、第4代 ..."
         }
       ]
     },
