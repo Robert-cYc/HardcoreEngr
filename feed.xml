@@ -13,6 +13,19 @@
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
   <item>
+    <title>大語言模型（LLM）命名學、參數量級與量化壓縮全攻略</title>
+    <link>https://ai-hardcore-engineer.com/llm-naming-quantization-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/llm-naming-quantization-guide.html</guid>
+    <description>深度解析大語言模型命名代號規則（Instruct、MoE 8x7B、128K）、參數量級與顯存換算、模型壓縮三大流派，以及 GGUF、AWQ、GPTQ、EXL2 與 BitNet 1.58-bit 量化實戰對比。</description>
+    <pubDate>Wed, 14 Oct 2026 00:00:00 +0000</pubDate>
+    <category>LLM</category>
+    <category>大語言模型</category>
+    <category>模型量化</category>
+    <category>GGUF</category>
+    <category>AWQ</category>
+    <category>顯存計算</category>
+  </item>
+  <item>
     <title>Windows Subsystem for Linux (WSL) 完全攻略：在 Windows 上享受原生 Linux 開發體驗</title>
     <link>https://ai-hardcore-engineer.com/wsl-guide.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/wsl-guide.html</guid>

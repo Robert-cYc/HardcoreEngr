@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大語言模型（LLM）命名學、參數量級與量化壓縮全攻略 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="深度解析大語言模型（LLM）的命名代號規則、參數量級與硬體開銷換算、三大模型壓縮技術，以及 GGUF、AWQ、GPTQ、EXL2、BitNet 等量化原理與實戰選型速查表。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/llm-naming-quantization-guide.html">
+  <meta property="og:title" content="大語言模型（LLM）命名學、參數量級與量化壓縮全攻略 — "AI" 硬核工程師">
+  <meta property="og:description" content="深度解析大語言模型（LLM）的命名代號規則、參數量級與硬體開銷換算、三大模型壓縮技術，以及 GGUF、AWQ、GPTQ、EXL2、BitNet 等量化原理與實戰選型速查表。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/llm-naming-quantization-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/llm-quantization-guide.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="大語言模型（LLM）命名學、參數量級與量化壓縮全攻略 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="深度解析大語言模型（LLM）的命名代號規則、參數量級與硬體開銷換算、三大模型壓縮技術，以及 GGUF、AWQ、GPTQ、EXL2、BitNet 等量化原理與實戰選型速查表。">
+  <meta name="twitter:image" content="./images/llm-quantization-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- KaTeX for crisp math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 3.5rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-body {
+      max-width: 62em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h3 {
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.75rem;
+      color: var(--text);
+    }
+    .article-body p {
+      margin-bottom: 1.15rem;
+      line-height: 1.85;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      background: var(--bg-alt);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      font-size: 1.05em;
+      color: #e11d48;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .article-body code {
+      color: #f43f5e;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      border: none;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1.1rem 1.6rem;
+      margin: 1.6rem 0;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.6rem;
+      line-height: 1.75;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.8rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.1rem;
+      min-width: 600px;
+    }
+    .article-body th, .article-body td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .article-body th {
+      font-weight: 700;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-body tr:hover td {
+      background: rgba(37, 99, 235, 0.04);
+    }
+    .badge-pill {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+
+    /* Interactive Model Name Decoder */
+    .name-decoder-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.8rem 0;
+    }
+    .decoder-title {
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .decoder-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-family: "Fira Code", monospace;
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+    .dec-pill {
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      user-select: none;
+    }
+    .dec-pill:hover, .dec-pill.active {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-color: var(--accent);
+    }
+    .dec-desc {
+      background: var(--bg);
+      border-left: 3px solid var(--accent);
+      padding: 0.9rem 1.2rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 1.05rem;
+      min-height: 4.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Calculator Widget */
+    .calculator-card {
+      background: var(--bg-alt);
+      border: 2px solid var(--accent);
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+    }
+    .calculator-header {
+      margin-bottom: 1.5rem;
+    }
+    .calculator-header h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.6rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .calc-field label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+    .calc-field select, .calc-field input {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1.1rem;
+      font-family: inherit;
+    }
+    .calc-results {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+      text-align: center;
+    }
+    .calc-res-item .res-label {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    .calc-res-item .res-value {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .calc-hardware-tip {
+      margin-top: 1.2rem;
+      padding: 1rem 1.2rem;
+      background: rgba(37, 99, 235, 0.08);
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    /* Concept comparison grid */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+    .concept-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .concept-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .concept-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Table of contents */
+    .toc-container {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .toc-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.8rem;
+    }
+    .toc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .toc-list li {
+      margin-bottom: 0.5rem;
+    }
+    .toc-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .toc-list a:hover {
+      text-decoration: underline;
+    }
+
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3.5rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 1.15rem;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "大語言模型（LLM）命名學、參數量級與量化壓縮全攻略 — \"AI\" 硬核工程師",
+    "description": "深度解析大語言模型（LLM）的命名代號規則、參數量級與硬體開銷換算、三大模型壓縮技術，以及 GGUF、AWQ、GPTQ、EXL2、BitNet 等量化原理與實戰選型速查表。",
+    "url": "https://ai-hardcore-engineer.com/llm-naming-quantization-guide.html",
+    "datePublished": "2026-10-14",
+    "author": {
+      "@type": "Person",
+      "name": "Robert cYc"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "\"AI\" 硬核工程師",
+      "url": "https://ai-hardcore-engineer.com"
+    },
+    "image": "https://ai-hardcore-engineer.com/images/llm-quantization-guide.jpg",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "url": "https://ai-hardcore-engineer.com/llm-naming-quantization-guide.html"
+    }
+  }
+  </script>
+</head>
+<body id="top">
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>大語言模型（LLM）命名學、參數量級與量化壓縮全攻略</h1>
+      <div class="article-meta">
+        <span>📅 2026-10-14</span>
+        <span class="separator">·</span>
+        <span>⏱️ 25 分鐘深度閱讀</span>
+        <span class="separator">·</span>
+        <span>✍️ "AI" 硬核工程師</span>
+      </div>
+      <div class="article-tags" style="justify-content: center;">
+        <span class="tag">LLM 架構</span>
+        <span class="tag">模型量化</span>
+        <span class="tag">GGUF</span>
+        <span class="tag">AWQ / GPTQ</span>
+        <span class="tag">顯存計算</span>
+        <span class="tag">本機推理</span>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="./images/llm-quantization-guide.jpg" alt="LLM Quantization & Model Scale Concept Illustration">
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== Main Content =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> 面對開源社群成千上萬的 LLM 權重檔案，你是否曾被 <code>8x7B</code>、<code>Q4_K_M</code>、<code>AWQ</code>、<code>128K</code> 這些代號搞得眼花撩亂？<br>
+          本文系統化梳理：<br>
+          &nbsp;&nbsp;① <strong>模型命名學</strong>：一秒拆解模型名稱中的架構、參數量、訓練階段與量化標記<br>
+          &nbsp;&nbsp;② <strong>參數量級與顯存換算</strong>：搞懂 1B 到 405B 的本質，學會精確預估 VRAM 與硬體需求<br>
+          &nbsp;&nbsp;③ <strong>模型壓縮三流派</strong>：知識蒸餾、網路剪枝與模型量化的核心差異<br>
+          &nbsp;&nbsp;④ <strong>量化技術深潛</strong>：線性縮放、非對稱量化、分組粒度與神經元「異常值（Outliers）」解決方案<br>
+          &nbsp;&nbsp;⑤ <strong>四大主流格式與極限演進</strong>：GGUF、AWQ、GPTQ、EXL2 與 1.58-bit BitNet 原理解析<br>
+          &nbsp;&nbsp;文內附贈 <strong>【LLM 顯存與硬體即時估算器】</strong> 與 <strong>實戰速查表</strong>，助你選型不踩坑！
+        </blockquote>
+
+        <!-- Table of Contents -->
+        <div class="toc-container">
+          <div class="toc-title">📑 本文快速目錄</div>
+          <ul class="toc-list">
+            <li><a href="#section-1">1. 模型命名學：解密那一長串代號與後綴</a></li>
+            <li><a href="#section-2">2. 參數量級：什麼是「B」？硬體開銷如何精確換算？</a></li>
+            <li><a href="#section-calc">🧮 互動工具：LLM 顯存與硬體即時估算器</a></li>
+            <li><a href="#section-3">3. 模型的瘦身術：模型壓縮三大流派對比</a></li>
+            <li><a href="#section-4">4. 深度剖析：量化技術（Quantization）的數學與工程原理</a></li>
+            <li><a href="#section-5">5. 主流量化格式與生態庫：GGUF、AWQ、GPTQ、EXL2</a></li>
+            <li><a href="#section-6">6. 實戰速查表：熱門模型量化等級與硬體配置推薦</a></li>
+            <li><a href="#section-7">7. 工程選型決策指南與總結</a></li>
+          </ul>
+        </div>
+
+        <!-- Section 1 -->
+        <h2 id="section-1">1. 模型命名學：解密那一長串代號與後綴</h2>
+        <p>在 Hugging Face、ModelScope 或 Ollama 上瀏覽模型時，常看到如 <code>Meta-Llama-3.1-70B-Instruct-Q4_K_M.gguf</code> 或 <code>Qwen2.5-Coder-32B-Instruct-AWQ</code> 這樣的長名稱。其實它們具有嚴謹的模組化結構，通常遵循以下通用格式：</p>
+
+        <pre><code>[機構/架構] - [主版本號] - [領域/特性] - [參數量級] - [訓練階段] - [上下文長度] - [量化標記]</code></pre>
+
+        <!-- Interactive Decoder Box -->
+        <div class="name-decoder-box">
+          <div class="decoder-title">💡 互動範例：點擊下方標籤查看各區塊含義</div>
+          <div class="decoder-pills">
+            <span class="dec-pill badge-blue active" data-desc="<strong>Meta-Llama-3.1</strong>：模型家族與主版本號。Meta 開源的第三代 LLaMA 系列次版本 3.1。">Meta-Llama-3.1</span>
+            <span class="dec-pill badge-purple" data-desc="<strong>70B</strong>：參數量級。全神經網路擁有約 700 億（70 Billion）個可學習參數。">70B</span>
+            <span class="dec-pill badge-green" data-desc="<strong>Instruct</strong>：訓練階段後綴。表示經過指令微調（SFT）與人類對齊（RLHF/DPO），適合直接進行問答對話。">Instruct</span>
+            <span class="dec-pill badge-amber" data-desc="<strong>128K</strong>（若有）：上下文窗口（Context Window）長度，代表單次最多能處理 128,000 個 Token 的長文本。">128K</span>
+            <span class="dec-pill badge-rose" data-desc="<strong>Q4_K_M.gguf</strong>：量化格式與等級。採用 GGUF 容器，核心權重 5-bit、其餘 4-bit 的中型 k-quant 複合量化。">Q4_K_M.gguf</span>
+          </div>
+          <div class="dec-desc" id="decoder-desc">
+            <strong>Meta-Llama-3.1</strong>：模型家族與主版本號。Meta 開源的第三代 LLaMA 系列次版本 3.1。
+          </div>
+        </div>
+
+        <h3>1.1 機構與家族代號</h3>
+        <ul>
+          <li><strong>LLaMA (Meta)</strong>：Large Language Model Meta AI，開源模型社群的黃金標準與奠基架構。</li>
+          <li><strong>Qwen / 通義千問 (Alibaba)</strong>：涵蓋多語言、數學與代碼領域的開源標竿，架構相容度極高。</li>
+          <li><strong>Mistral / Mixtral (Mistral AI)</strong>：歐洲頂尖 AI 團隊，<code>Mixtral</code> 特指其稀疏混合專家（Sparse MoE）架構。</li>
+          <li><strong>Gemma (Google DeepMind)</strong>：Google 開源的輕量級旗艦模型，與 Gemini 共享架構技術。</li>
+          <li><strong>DeepSeek (深度求索)</strong>：在多頭潛在注意力（MLA）與長思維鏈推理（DeepSeek-R1）具突破性成就的開源系列。</li>
+          <li><strong>Phi (Microsoft)</strong>：微軟專注於高質量小模型（SLM, Small Language Model）的系列。</li>
+        </ul>
+
+        <h3>1.2 訓練階段與對齊後綴</h3>
+        <ul>
+          <li><strong>Base / Foundation（基礎基底模型）</strong>：<br>
+            僅完成大規模海量文本的無監督預訓練（Pre-training），本質上是<strong>純粹的文字接龍機器</strong>。如果對它說「請幫我寫一封信」，它可能會接著輸出「，給我的主管...」甚至列出其他人提問的題目。它極度適合用於企業私有數據的二次預訓練或微調，但<strong>不適合直接拿來作為對話助手</strong>。</li>
+          <li><strong>Instruct / Chat（指令 / 對話微調模型）</strong>：<br>
+            在 Base 基礎上經歷過 <strong>SFT（Supervised Fine-Tuning 監督微調）</strong> 與 <strong>RLHF / DPO（強化學習與人類反饋對齊）</strong>。能理解使用者的指令意圖、扮演角色，並遵循安全與格式規範輸出。</li>
+          <li><strong>Thinking / Reasoner（思考 / 推理模型）</strong>：<br>
+            如 OpenAI o1/o3、DeepSeek-R1 等。在生成最終答覆前，會先生成一段包含自我檢視、回溯糾錯的長思維鏈（Chain of Thought, CoT）。</li>
+          <li><strong>特化領域後綴</strong>：<br>
+            <code>Coder</code>（代碼強化）、<code>Math</code>（數學推理）、<code>VL / Vision</code>（多模態視覺語言模型）。</li>
+        </ul>
+
+        <h3>1.3 MoE 稀疏混合專家代號（如 8x7B, 8x22B）</h3>
+        <p>許多初學者會誤以為 <code>Mixtral 8x7B</code> 的參數量是 $8 \times 7 = 56\text{B}$。實際上：</p>
+        <ul>
+          <li>MoE（Mixture of Experts）架構中，多個專家網路僅存在於 FFN（前饋神經網路層），而 Self-Attention 注意力機制與 Embedding 層是<strong>所有專家共享</strong>的。</li>
+          <li>因此 <strong>Mixtral 8x7B 的總參數量約為 46.7B</strong>。</li>
+          <li><strong>啟動參數（Active Parameters）</strong>：在生成每個 Token 時，門控路由器（Router）通常只選擇激活 Top-2 的專家，因此實際參與計算的活躍參數僅約 <strong>12.9B</strong>，具備「47B 級別的能力，13B 級別的計算速度」。</li>
+        </ul>
+
+        <!-- Section 2 -->
+        <h2 id="section-2">2. 參數量級：什麼是「B」？硬體開銷如何精確換算？</h2>
+        <p>在神經網路中，<strong>參數（Parameter / Weight）</strong>就是節點之間連接強度的數值矩陣。每個參數本質上就是一個數字，儲存於電腦記憶體或顯存中。1B 代表 10 億個參數（1 Billion）。</p>
+
+        <h3>2.1 各種數據精度的字節大小</h3>
+        <ul>
+          <li><strong>FP32（單精度浮點數）</strong>：每個參數佔 32 bits = <strong>4 Bytes</strong>。早期深度學習訓練標準。</li>
+          <li><strong>FP16 / BF16（半精度 / Bfloat16）</strong>：每個參數佔 16 bits = <strong>2 Bytes</strong>。當今 LLM 官方預訓練與權重發佈的主流基準。</li>
+          <li><strong>INT8 / FP8（8 位元整數 / 浮點數）</strong>：每個參數佔 8 bits = <strong>1 Byte</strong>。</li>
+          <li><strong>INT4（4 位元整數）</strong>：每個參數佔 4 bits = <strong>0.5 Byte</strong>。</li>
+          <li><strong>1.58-bit（BitNet 三元整數）</strong>：每個參數約佔 1.58 bits $\approx$ <strong>0.2 Byte</strong>。</li>
+        </ul>
+
+        <h3>2.2 顯存開銷公式：不只是模型權重！</h3>
+        <p>在推理時，GPU 顯存由兩大部分構成：<strong>靜態權重顯存</strong> 與 <strong>動態推理顯存（KV Cache + 激活值）</strong>。</p>
+
+        $$\text{靜態權重顯存 (GB)} \approx \text{參數量 (B)} \times \frac{\text{Bit-width}}{8}$$
+
+        $$\text{總顯存需求 (GB)} = \text{靜態權重顯存} + \text{KV Cache 顯存} + \text{計算緩衝 (約 1.25}\times\text{)}$$
+
+        <p>例如：一個 <strong>70B 模型以 16-bit 浮點</strong>載入，純模型就需要 $70 \times 2 = 140\text{ GB}$；若加上 8K 長度的 KV Cache 與推理暫存，至少需要 <strong>160 GB</strong> 顯存（相當於兩張 A100 80G）。但如果經過 <strong>4-bit 量化</strong>，靜態權重縮小為約 <strong>38 GB</strong>，只要一台 64GB 記憶體的 Mac Studio 或雙卡 RTX 3090/4090 即可從容執行！</p>
+
+        <!-- Calculator Widget -->
+        <div class="calculator-card" id="section-calc">
+          <div class="calculator-header">
+            <h3>🧮 LLM 顯存與硬體即時估算器</h3>
+            <p style="margin: 0; color: var(--text-muted); font-size: 1.05rem;">調整模型規模、量化等級與上下文長度，立即預估所需顯存與推薦硬體配置。</p>
+          </div>
+          <div class="calc-grid">
+            <div class="calc-field">
+              <label for="calc-params">模型參數量級 (B)</label>
+              <select id="calc-params">
+                <option value="1.5">1.5B (如 Qwen2.5-1.5B)</option>
+                <option value="3">3B (如 Llama-3.2-3B)</option>
+                <option value="7">7B / 8B (如 Llama-3-8B)</option>
+                <option value="14">14B (如 Qwen2.5-14B)</option>
+                <option value="32">32B (如 Qwen2.5-32B)</option>
+                <option value="70" selected>70B / 72B (如 Llama-3.1-70B)</option>
+                <option value="405">405B (如 Llama-3.1-405B)</option>
+              </select>
+            </div>
+            <div class="calc-field">
+              <label for="calc-quant">量化精度 (Quantization)</label>
+              <select id="calc-quant">
+                <option value="16">FP16 / BF16 (未量化 16-bit)</option>
+                <option value="8">INT8 / FP8 / Q8_0 (8-bit)</option>
+                <option value="5.5">Q5_K_M (5.5-bit)</option>
+                <option value="4.5" selected>Q4_K_M / AWQ / GPTQ (4.5-bit)</option>
+                <option value="3.5">Q3_K_M / EXL2 (3.5-bit)</option>
+                <option value="1.58">BitNet b1.58 (1.58-bit 極限架構)</option>
+              </select>
+            </div>
+            <div class="calc-field">
+              <label for="calc-ctx">上下文窗口 (Context Tokens)</label>
+              <select id="calc-ctx">
+                <option value="4096">4K Tokens (一般問答)</option>
+                <option value="8192" selected>8K Tokens (標準文檔)</option>
+                <option value="32768">32K Tokens (長文本代碼)</option>
+                <option value="131072">128K Tokens (超長書本/專案分析)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-results">
+            <div class="calc-res-item">
+              <div class="res-label">模型本體靜態體積</div>
+              <div class="res-value" id="res-model-size">39.4 GB</div>
+            </div>
+            <div class="calc-res-item">
+              <div class="res-label">KV Cache 緩存預估</div>
+              <div class="res-value" id="res-kv-cache">2.8 GB</div>
+            </div>
+            <div class="calc-res-item">
+              <div class="res-label">推薦最低顯存/RAM</div>
+              <div class="res-value" id="res-total-vram" style="color: #10b981;">48 GB</div>
+            </div>
+          </div>
+
+          <div class="calc-hardware-tip" id="calc-hardware-recommend">
+            💡 <strong>硬體推薦：</strong> 推薦使用雙張 RTX 3090 / 4090 (24GB x 2) 或 Apple M2/M3/M4 Max/Studio 64GB 統一記憶體設備。
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <h2 id="section-3">3. 模型的瘦身術：模型壓縮三大流派對比</h2>
+        <p>在模型參數量動輒數百億的今天，將模型部署至終端邊緣設備或節省資料中心昂貴算力，主要依賴以下三大技術手段：</p>
+
+        <div class="concept-grid">
+          <div class="concept-card">
+            <h4>🧪 知識蒸餾 (Distillation)</h4>
+            <p><strong>原理：</strong> 用一個龐大且心智成熟的「教師模型（Teacher）」輸出大量高品質推理日誌與軟機率標籤，指導結構緊湊的「學生模型（Student）」學習其思維範式。</p>
+            <p><strong>優勢：</strong> 學生模型可以採用最先進的小型硬體友善架構，推理極快。</p>
+            <p><strong>代價：</strong> 需要數十萬美元的重訓算力，不是個人或一般團隊能輕易執行的。</p>
+          </div>
+
+          <div class="concept-card">
+            <h4>✂️ 網路剪枝 (Pruning)</h4>
+            <p><strong>原理：</strong> 透過靈敏度分析，移除神經網路中權重數值接近 0、或對損失函數貢獻微弱的突觸連接。</p>
+            <p><strong>分類：</strong> 非結構化剪枝（權重隨機變 0，需特殊硬體驅動加速）與結構化剪枝（整行、整列裁切矩陣）。</p>
+            <p><strong>代價：</strong> 剪枝超過 20%~30% 後，模型語言流暢度容易出現懸崖式下跌，且需微調恢復。</p>
+          </div>
+
+          <div class="concept-card" style="border: 2px solid var(--accent);">
+            <h4>💎 模型量化 (Quantization)</h4>
+            <p><strong>原理：</strong> <strong>不改變模型的任何拓撲結構與神經元數量</strong>，僅降低每個數值的數位精度（如從 16 位元浮點降為 4 位元整數）。</p>
+            <p><strong>優勢：</strong> <strong>零重訓成本（PTQ）</strong>，數分鐘即可完成轉檔，顯存直降 50%~75%，性能損失通常小於 1%~2%。</p>
+            <p><strong>地位：</strong> <strong>當前大模型工程部署中性價比最高的必備技術！</strong></p>
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+        <h2 id="section-4">4. 深度剖析：量化技術（Quantization）的數學與工程原理</h2>
+
+        <h3>4.1 均勻仿射量化數學原理</h3>
+        <p>量化的核心任務，是建立一條將<strong>連續實數區間（FP16/BF16）</strong>映射到<strong>有限離散整數區間（如 INT8: [-128, 127] 或 INT4: [0, 15]）</strong>的數學橋樑。</p>
+
+        <p>最經典的線性均勻量化公式如下：</p>
+
+        $$x_q = \text{clip}\left( \left\lfloor \frac{x}{S} \right\rceil + Z, \; q_{\min}, \; q_{\max} \right)$$
+
+        <ul>
+          <li>$x$：原始未量化的高精度浮點數（FP16）。</li>
+          <li>$S$（Scale 縮放因子）：定義一個整數步長代表多少浮點跨度，$S = \frac{x_{\max} - x_{\min}}{q_{\max} - q_{\min}}$。</li>
+          <li>$Z$（Zero-point 零點偏移）：將浮點數 $0.0$ 精確對齊到整數刻度，保證 Padding 零值計算精準。</li>
+          <li>$\lfloor \cdot \rceil$：四捨五入取整運算（Round to nearest integer）。</li>
+        </ul>
+
+        <p>在推理時進行矩陣乘法，透過反量化（Dequantization）還原浮點數近似值：</p>
+
+        $$\hat{x} = S \times (x_q - Z) \approx x$$
+
+        <blockquote>
+          💡 <strong>對稱量化 (Symmetric) vs 非對稱量化 (Asymmetric)：</strong><br>
+          • <strong>對稱量化</strong>：強制浮點數以 $0$ 為中心對稱（$x_{\max} = -x_{\min}$），此時 $Z = 0$。公式簡化為 $x_q = \text{round}(x / S)$。硬體計算時無需額外減去偏移常數，<strong>矩陣乘法器運算速度最快</strong>。<br>
+          • <strong>非對稱量化</strong>：保留 $Z$ 偏移量，能更緊湊地貼合非對稱分佈的數據（例如 ReLU 後的非負激活值），動態範圍利用率更高。
+        </blockquote>
+
+        <h3>4.2 量化粒度（Granularity）：全局還是局部？</h3>
+        <p>縮放因子 $S$ 是以多大的範圍共用？這決定了量化精度與硬體開銷的平衡：</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>量化粒度</th>
+                <th>共用 Scale 的範圍</th>
+                <th>額外開銷 (Overhead)</th>
+                <th>精度表現</th>
+                <th>典型應用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Per-Tensor</strong></td>
+                <td>整顆權重矩陣（整個 Layer）共用 1 個 Scale</td>
+                <td>極低（幾乎無額外儲存）</td>
+                <td>差（容易被極端最大值拉垮精度）</td>
+                <td>早期的 INT8 實驗</td>
+              </tr>
+              <tr>
+                <td><strong>Per-Channel / Per-Row</strong></td>
+                <td>矩陣的每一行或每個輸出通道獨立 1 個 Scale</td>
+                <td>很低（每行 1 個浮點數）</td>
+                <td>良好</td>
+                <td>INT8 權重量化、GPU GEMM 運算</td>
+              </tr>
+              <tr>
+                <td><strong>Per-Group / Block</strong></td>
+                <td>每 32、64 或 128 個數值為一組共用 1 個 Scale</td>
+                <td>低（佔比約 2%~5% 儲存）</td>
+                <td><strong>極佳（現代 4-bit 量化黃金標準）</strong></td>
+                <td><strong>GGUF、AWQ、GPTQ</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>4.3 破局關鍵：神經元「異常值（Outliers）」困境</h3>
+        <p>在模型規模突破 6.7B 參數量級時，研究者發現了一個奇特現象：<strong>神經網路內部會自發產生極少數數值極其巨大的維度（Outlier Features）</strong>。這些數值的量級可能是普通數值的數十倍到上百倍。</p>
+        <p>如果粗暴進行 4-bit 量化，由於 Scale 會被最大值拉得極大，導致其餘 99.9% 正常大小的權重被強制四捨五入合併為 0，引發模型嚴重的「語言失語症」。</p>
+
+        <pre><code>【異常值破壞示意】
+原始分佈: [-0.3, 0.1, -0.2, 0.4, 0.15, ... 48.5 (異常值)]
+若強制 4-bit (16 格刻度):
+Scale 必須容納 48.5，導致 1 格刻度 ≈ 3.2
+結果: -0.3, 0.1, 0.4 全部被 round 成 0！模型喪失微觀區分能力。</code></pre>
+
+        <p>現代量化算法（如 AWQ、SmoothQuant、k-quants）的核心突破，就是<strong>精準識別並保護這關鍵的 0.1% 異常通道</strong>（例如保持高精度或動態搬移縮放），從而在 4-bit 下幾乎無損保留模型心智！</p>
+
+        <!-- Section 5 -->
+        <h2 id="section-5">5. 主流量化格式與生態庫：GGUF、AWQ、GPTQ、EXL2</h2>
+
+        <h3>5.1 GGUF 與 k-quants（本機與跨平台霸主）</h3>
+        <p><strong>GGUF</strong> 是由 Georgi Gerganov（llama.cpp 作者）制定的最新模型二進制格式，專為 CPU、Apple Silicon（Metal）與單卡 GPU 邊緣推理而設計。其最大的特點是<strong>將模型超參數、Tokenizer 字典與權重打包在單一 <code>.gguf</code> 檔案中</strong>，並支援 <strong>k-quants 混合精度量化</strong>。</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>GGUF 標記</th>
+                <th>平均位寬 (bpw)</th>
+                <th>量化策略</th>
+                <th>適用場景與評價</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>Q4_0</code></td>
+                <td>4.0 bits</td>
+                <td>原始均勻 4-bit，所有層一視同仁</td>
+                <td>速度快，但現代已不推薦（精度稍弱）</td>
+              </tr>
+              <tr>
+                <td><code>Q4_K_S</code></td>
+                <td>4.5 bits</td>
+                <td>小尺寸 k-quant，部分關鍵矩陣用 4-bit</td>
+                <td>極限顯存壓縮時使用</td>
+              </tr>
+              <tr>
+                <td><strong><code>Q4_K_M</code></strong></td>
+                <td><strong>4.5 bits</strong></td>
+                <td><strong>中型 k-quant：注意力輸出層用 5-bit，其餘用 4-bit</strong></td>
+                <td><span class="badge-pill badge-green">★ 最推薦甜點位</span> 體積與性能極佳平衡</td>
+              </tr>
+              <tr>
+                <td><code>Q5_K_M</code></td>
+                <td>5.5 bits</td>
+                <td>大量關鍵層採用 5-bit 和 6-bit 混合</td>
+                <td>追求近乎無損精度，顯存充裕時首選</td>
+              </tr>
+              <tr>
+                <td><code>Q8_0</code></td>
+                <td>8.5 bits</td>
+                <td>標準 8-bit 整數量化</td>
+                <td>在 CPU 上比 FP16 快且完全無損精度</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>5.2 AWQ（Activation-aware Weight Quantization，激活感知量化）</h3>
+        <ul>
+          <li><strong>核心哲學</strong>：「權重重不重要，由前向傳播的激活值（Activation）說了算。」</li>
+          <li><strong>技術機制</strong>：透過少量校準數據，統計前向推理中哪些維度的激活值最大。針對影響最顯著的前 1% 關鍵權重給予保護，維持低誤差；其餘 99% 的次要權重直接壓至 4-bit。</li>
+          <li><strong>現況</strong>：<strong>vLLM、TGI、TensorRT-LLM 伺服器端部署的默認標準格式</strong>，對長上下文、代碼生成與數學任務的穩定性極高。</li>
+        </ul>
+
+        <h3>5.3 GPTQ（Generalized Post-Training Quantization）</h3>
+        <ul>
+          <li><strong>核心哲學</strong>：「二階 Hessian 矩陣誤差動態補償。」</li>
+          <li><strong>技術機制</strong>：逐行量化權重矩陣時，每當將一個權重四捨五入成整數產生微小誤差 $\Delta w$，演算法會立即利用逆海森矩陣，動態調整後方<strong>尚未量化的其他權重</strong>，將誤差相互抵消。</li>
+          <li><strong>現況</strong>：在 NVIDIA GPU 矩陣核心（Tensor Cores）上推理性能優秀，社群模型存量極大。</li>
+        </ul>
+
+        <h3>5.4 EXL2（ExLlamaV2 專屬格式）</h3>
+        <ul>
+          <li><strong>技術機制</strong>：允許自定義極其精細的小數位寬（例如 <code>3.5-bpw</code>、<code>4.25-bpw</code>）。</li>
+          <li><strong>優勢</strong>：如果你有一張 24GB 顯存的顯卡，而某模型 4-bit 需要 25GB、3-bit 只要 18GB，EXL2 能為你壓出一個剛好佔用 23.2GB 的 <code>3.85-bpw</code> 模型，<strong>榨乾顯存的最後一滴極限性能</strong>。</li>
+        </ul>
+
+        <h3>5.5 未來演進：1-bit / 1.58-bit 架構革命（BitNet b1.58）</h3>
+        <p>微軟在 2024 年提出的 <strong>BitNet b1.58</strong> 開創了全新的模型範式：</p>
+        <ul>
+          <li>所有神經網路權重被約束在三元集：$\{-1, \; 0, \; +1\}$，每個權重僅需 $\log_2(3) \approx 1.58\text{ bits}$。</li>
+          <li><strong>運算革命</strong>：由於權重只有 $-1, 0, 1$，矩陣乘法中的乘法操作（Multiplication）徹底消失，<strong>全部退化為純粹的整數加減法（Addition & Subtraction）</strong>！</li>
+          <li>這意味著推理能源消耗可驟降 70%~80%，標誌著量化已從「事後壓縮技巧（PTQ）」正式邁向「原生架構設計（Native Architecture）」的全新時代。</li>
+        </ul>
+
+        <!-- Section 6 -->
+        <h2 id="section-6">6. 實戰速查表：熱門模型量化等級與硬體配置推薦</h2>
+        <p>以最普及的 <strong>Llama-3 / 3.1 系列</strong> 為基準，在標準對話長度下的記憶體需求與硬體搭配速查：</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>模型規模</th>
+                <th>量化格式</th>
+                <th>檔案大小</th>
+                <th>建議最低顯存</th>
+                <th>推薦運行硬體</th>
+                <th>精度損失體感</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>8B</strong></td>
+                <td>BF16 (未量化)</td>
+                <td>~16.0 GB</td>
+                <td>20 GB</td>
+                <td>RTX 3090 / 4090 (24GB)</td>
+                <td>基準原版</td>
+              </tr>
+              <tr>
+                <td><strong>8B</strong></td>
+                <td>Q8_0</td>
+                <td>~8.5 GB</td>
+                <td>12 GB</td>
+                <td>RTX 3060 12G / RTX 4070</td>
+                <td>完全無損 (< 0.1%)</td>
+              </tr>
+              <tr>
+                <td><strong>8B</strong></td>
+                <td><span class="badge-pill badge-green">Q4_K_M / AWQ</span></td>
+                <td><strong>~4.9 GB</strong></td>
+                <td><strong>8 GB</strong></td>
+                <td><strong>RTX 3050 / 4060 / Mac 16GB</strong></td>
+                <td><strong>極微 (< 0.8%)</strong></td>
+              </tr>
+              <tr style="border-top: 2px solid var(--border);">
+                <td><strong>70B</strong></td>
+                <td>BF16 (未量化)</td>
+                <td>~140.0 GB</td>
+                <td>160 GB+</td>
+                <td>2x A100 80G 或 8x 4090 叢集</td>
+                <td>基準原版</td>
+              </tr>
+              <tr>
+                <td><strong>70B</strong></td>
+                <td>Q8_0</td>
+                <td>~75.0 GB</td>
+                <td>96 GB</td>
+                <td>Mac Studio M2/M3 Ultra (128GB)</td>
+                <td>完全無損 (< 0.1%)</td>
+              </tr>
+              <tr>
+                <td><strong>70B</strong></td>
+                <td><span class="badge-pill badge-green">Q4_K_M / AWQ</span></td>
+                <td><strong>~40.0 GB</strong></td>
+                <td><strong>48 GB</strong></td>
+                <td><strong>雙卡 RTX 3090/4090 (24Gx2) / Mac 64G</strong></td>
+                <td><strong>極微 (< 1.2%)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>70B</strong></td>
+                <td>Q3_K_M / EXL2</td>
+                <td>~32.0 GB</td>
+                <td>38 GB</td>
+                <td>RTX A6000 (48GB) 或 36GB Mac 極限</td>
+                <td>輕度有感 (約 2%~3%)</td>
+              </tr>
+              <tr style="border-top: 2px solid var(--border);">
+                <td><strong>405B</strong></td>
+                <td>FP8 (8-bit)</td>
+                <td>~410.0 GB</td>
+                <td>500 GB+</td>
+                <td>8x H100 80G 企業級節點</td>
+                <td>近無損</td>
+              </tr>
+              <tr>
+                <td><strong>405B</strong></td>
+                <td><span class="badge-pill badge-green">Q4_K_M</span></td>
+                <td><strong>~230.0 GB</strong></td>
+                <td><strong>256 GB</strong></td>
+                <td><strong>頂配 Mac Studio (192G/256G 統一記憶體)</strong></td>
+                <td>極微 (< 1.5%)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 7 -->
+        <h2 id="section-7">7. 工程選型決策指南與總結</h2>
+        <p>在實際部署與落地大語言模型時，請遵循以下決策樹法則：</p>
+
+        <ol>
+          <li><strong>如果你是個人愛好者、Mac / 輕薄筆電用戶，想要搭建本機對話助手</strong>：
+            <ul>
+              <li><strong>首選格式</strong>：<code>.gguf</code> 格式搭配 <code>Q4_K_M</code> 等級。</li>
+              <li><strong>推薦工具</strong>：<a href="./ollama-local-llm.html">Ollama</a>、<a href="./lm-studio-local-llm.html">LM Studio</a> 或 <a href="./llama-cpp-gguf.html">llama.cpp</a>。</li>
+              <li><strong>理由</strong>：最少依賴、免繁瑣 CUDA 安裝、支援 CPU/GPU 混合分載（Offload），開箱即用。</li>
+            </ul>
+          </li>
+          <li><strong>如果你在構建高並發、低延遲的生產級企業 API 服務</strong>：
+            <ul>
+              <li><strong>首選格式</strong>：<code>AWQ</code> 或 <code>FP8</code> 格式。</li>
+              <li><strong>推薦工具</strong>：<code>vLLM</code>、<code>TensorRT-LLM</code> 或 <code>SGLang</code>。</li>
+              <li><strong>理由</strong>：深度優化 GPU 矩陣核心運算，結合 PagedAttention 機制，並發吞吐量（Throughput）比原生 FP16 高出 2~4 倍。</li>
+            </ul>
+          </li>
+          <li><strong>量化等級的終極心法</strong>：
+            <ul>
+              <li><strong>4-bit（Q4_K_M / AWQ）是當前工業界的「甜蜜點（Sweet Spot）」</strong>：用 70% 的體積與顯存節省，換取不到 1%~2% 的綜合能力折損。</li>
+              <li><strong>寧選「大模型量化版」，不選「小模型滿血版」</strong>：實測證明，<strong>70B 的 Q4_K_M 量化版，其推理、邏輯與知識完備度依然全面碾壓 8B 的 FP16 滿血版！</strong></li>
+            </ul>
+          </li>
+        </ol>
+
+        <blockquote>
+          🔗 <strong>延伸閱讀與推薦硬核工具：</strong><br>
+          &nbsp;&nbsp;• <a href="./llama-cpp-gguf.html">本地大模型攻略：Hugging Face 下載 GGUF、llama.cpp 安裝與 GPU 加速</a><br>
+          &nbsp;&nbsp;• <a href="./ollama-local-llm.html">Ollama 本地大模型實戰指南：零配置在本地運行 LLaMA 與 DeepSeek</a><br>
+          &nbsp;&nbsp;• <a href="./lm-studio-local-llm.html">LM Studio 完全圖解教學：開箱即用的本地視覺化 LLM 推理工作站</a><br>
+          &nbsp;&nbsp;• <a href="./deepseek-ai-guide.html">DeepSeek 完整攻略：V3、R1 模型架構、API 定價與私有化部署</a>
+        </blockquote>
+      </article>
+
+      <!-- Article Footer -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">↑ 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+
+  <!-- Interactive Logic for Decoder & Calculator -->
+  <script>
+    // 1. Decoder Pills Interaction
+    document.querySelectorAll('.dec-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.dec-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const desc = pill.getAttribute('data-desc');
+        const descBox = document.getElementById('decoder-desc');
+        if (descBox && desc) {
+          descBox.innerHTML = desc;
+        }
+      });
+    });
+
+    // 2. Interactive VRAM Calculator
+    const paramsSelect = document.getElementById('calc-params');
+    const quantSelect = document.getElementById('calc-quant');
+    const ctxSelect = document.getElementById('calc-ctx');
+
+    const resModelSize = document.getElementById('res-model-size');
+    const resKvCache = document.getElementById('res-kv-cache');
+    const resTotalVram = document.getElementById('res-total-vram');
+    const resHardware = document.getElementById('calc-hardware-recommend');
+
+    function calculateVRAM() {
+      const params = parseFloat(paramsSelect.value); // in Billions
+      const bits = parseFloat(quantSelect.value);    // bits per param
+      const ctx = parseInt(ctxSelect.value, 10);     // tokens
+
+      // 1. Model Static Size: Params * (bits / 8) * overhead(1.05)
+      const bytesPerParam = bits / 8;
+      const modelSizeGB = (params * bytesPerParam * 1.05);
+
+      // 2. KV Cache Estimation:
+      // Approximate formula: 2 * n_layers * n_heads * d_head * ctx_len * 2 bytes (FP16 KV)
+      // Rule of thumb scaling with params:
+      // ~0.035 GB per 1K ctx for 7B, ~0.08 GB per 1K for 14B, ~0.35 GB per 1K for 70B
+      const kvRatio = (params / 7.0) * 0.038;
+      const kvCacheGB = Math.max(0.1, (ctx / 1024) * kvRatio);
+
+      // 3. Recommended Total (Safety buffer 1.2x for CUDA contexts & activations)
+      const totalGB = Math.ceil((modelSizeGB + kvCacheGB) * 1.18);
+
+      // Format outputs
+      resModelSize.textContent = modelSizeGB.toFixed(1) + ' GB';
+      resKvCache.textContent = kvCacheGB.toFixed(1) + ' GB';
+      resTotalVram.textContent = totalGB + ' GB';
+
+      // Recommendations
+      let tip = '';
+      if (totalGB <= 8) {
+        tip = '💡 <strong>硬體推薦：</strong> 入門級顯卡即可流暢運行，如 RTX 3050 (8G) / 4060 (8G) 或 8GB/16GB 筆電及 M1/M2 Mac。';
+      } else if (totalGB <= 12) {
+        tip = '💡 <strong>硬體推薦：</strong> 單張主流顯卡首選，如 RTX 3060 (12G)、RTX 4070 (12G) 或 Apple Mac 16GB/18GB 設備。';
+      } else if (totalGB <= 16) {
+        tip = '💡 <strong>硬體推薦：</strong> 推薦 RTX 4060Ti (16G)、RTX 4080 (16G) 或 Apple Mac 18GB/24GB 統一記憶體設備。';
+      } else if (totalGB <= 24) {
+        tip = '💡 <strong>硬體推薦：</strong> 單張消費級頂規卡即可吃下：RTX 3090 (24G) / RTX 4090 (24G) 或 Apple Mac 32GB/36GB 設備。';
+      } else if (totalGB <= 48) {
+        tip = '💡 <strong>硬體推薦：</strong> 推薦雙卡 RTX 3090/4090 (24G x 2 = 48G)、單張 RTX A6000 (48G) 或 Apple Mac 64GB/96GB 設備。';
+      } else if (totalGB <= 96) {
+        tip = '💡 <strong>硬體推薦：</strong> 需 4x RTX 4090 (96G) 伺服器，或 Apple Mac Studio (M2/M3/M4 Ultra 128GB 統一記憶體)。';
+      } else if (totalGB <= 256) {
+        tip = '💡 <strong>硬體推薦：</strong> 頂配 Apple Mac Studio (192GB / 256GB 統一記憶體) 本機開跑，或 4x A100 80G 企業級節點。';
+      } else {
+        tip = '💡 <strong>硬體推薦：</strong> 需企業級多節點 8x A100 / H100 80G NVLink 伺服器叢集。';
+      }
+      resHardware.innerHTML = tip;
+    }
+
+    paramsSelect.addEventListener('change', calculateVRAM);
+    quantSelect.addEventListener('change', calculateVRAM);
+    ctxSelect.addEventListener('change', calculateVRAM);
+    calculateVRAM();
+  </script>
+</body>
+</html>
