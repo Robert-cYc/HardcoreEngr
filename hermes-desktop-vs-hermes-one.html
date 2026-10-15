@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermes Desktop vs Hermes One 功能及比較差異完全解析：官方原生架構與社群旗艦桌上型 AI 助手深度指南 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="深入解析 Nous Research 官方推出的 Hermes Desktop 與社群旗艦 Hermes One（前身為 fathah/hermes-desktop）的歷史由來、核心架構、Bot Screen、3D Office、多通訊頻道與排程等功能，並提供全維度比較表格與選型決策指南。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/hermes-desktop-vs-hermes-one.html">
+  <meta property="og:title" content="Hermes Desktop vs Hermes One 功能及比較差異完全解析：官方原生架構與社群旗艦桌上型 AI 助手深度指南 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="深入解析 Nous Research 官方推出的 Hermes Desktop 與社群旗艦 Hermes One（前身為 fathah/hermes-desktop）的歷史由來、核心架構、Bot Screen、3D Office、多通訊頻道與排程等功能，並提供全維度比較表格與選型決策指南。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/hermes-desktop-vs-hermes-one.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hermes Desktop vs Hermes One 功能及比較差異完全解析：官方原生架構與社群旗艦桌上型 AI 助手深度指南 — &quot;AI&quot; 硬核工程師">
+  <meta name="twitter:description" content="深入解析 Nous Research 官方推出的 Hermes Desktop 與社群旗艦 Hermes One（前身為 fathah/hermes-desktop）的歷史由來、核心架構、Bot Screen、3D Office、多通訊頻道與排程等功能，並提供全維度比較表格與選型決策指南。">
+  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.25; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.15rem; margin-bottom: 1.5rem; }
+    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; margin-top: 1rem; }
+    .article-body { max-width: 62em; margin: 0 auto; }
+    .article-body h2 { font-size: 2.05rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.55rem; font-weight: 600; margin: 1.6rem 0 0.75rem; color: var(--accent); }
+    .article-body h4 { font-size: 1.25rem; font-weight: 600; margin: 1.2rem 0 0.5rem; }
+    .article-body p { margin-bottom: 1.15rem; line-height: 1.85; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.15em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); font-size: 0.98rem; line-height: 1.6; }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.75; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1.05rem; }
+    .article-body th, .article-body td { padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 700; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .feature-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0 2rem; }
+    .feature-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .feature-card h4 { margin-top: 0; color: var(--accent); font-size: 1.15rem; }
+    .callout-box { background: rgba(56, 189, 248, 0.08); border-left: 4px solid #38bdf8; padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Hermes Desktop vs Hermes One 功能及比較差異完全解析：官方原生架構與社群旗艦桌上型 AI 助手深度指南",
+    "description": "深入解析 Nous Research 官方推出的 Hermes Desktop 與社群旗艦 Hermes One（前身為 fathah/hermes-desktop）的歷史由來、核心架構、Bot Screen、3D Office、多通訊頻道與排程等功能，並提供全維度比較表格與選型決策指南。",
+    "url": "https://ai-hardcore-engineer.com/hermes-desktop-vs-hermes-one.html",
+    "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
+    "image": "https://ai-hardcore-engineer.com/og-image.png",
+    "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/hermes-desktop-vs-hermes-one.html" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="article-hero">
+        <h1>Hermes Desktop vs Hermes One 功能及比較差異完全解析</h1>
+        <div class="article-meta">
+          <span>2026-10-12</span>
+          <span class="separator">·</span>
+          <span>22 分鐘閱讀</span>
+          <span class="separator">·</span>
+          <span>分類：AI 與 Agent</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">Hermes Agent</span>
+          <span class="tag">Hermes Desktop</span>
+          <span class="tag">Hermes One</span>
+          <span class="tag">Nous Research</span>
+          <span class="tag">開源AI</span>
+          <span class="tag">AI 工具比較</span>
+        </div>
+        <img loading="lazy" src="https://picsum.photos/seed/hermes-comparison/1200/400" alt="Hermes Desktop vs Hermes One Banner">
+      </section>
+
+      <article class="article-body">
+        <div class="callout-box">
+          <strong>TL;DR 速覽：</strong><br>
+          • <strong>Hermes Desktop</strong> 是 <strong>Nous Research 官方團隊</strong> 推出的第一方原生桌面 GUI 客戶端，主打 <code>Bot Screen</code>（沙箱即時畫面與人工無縫接管介入）、一鍵式硬體感知 <code>llama.cpp</code> 本地模型推論，以及官方 Nous Portal 雲端網關整合。<br>
+          • <strong>Hermes One</strong> 是社群資深開發者 <strong>fathah</strong> 打造的開源全能桌面工作台（GitHub 原名 <code>fathah/hermes-desktop</code>，後更名為 Hermes One），主打 <strong>3D Hermes Office 空間</strong>、<strong>多通訊軟體樞紐（Telegram/Discord/Slack/WhatsApp 直連）</strong>、視覺化自然語言 <strong>Cron 排程器</strong> 與深層 Persona 人格調校。<br>
+          • 兩者均架構於 Nous Research 開源核心 <strong>Hermes Agent</strong> 之上，共享本機 <code>~/.hermes</code> 設定、記憶庫與 Skills，兩者既能各自獨立使用，也能互補共存！
+        </div>
+
+        <h2>一、背景與淵源：釐清雙方的命名歷史與血緣關係</h2>
+        <p>自 Nous Research 開源推出具備自學習與動態編寫技能特性的 <strong>Hermes Agent</strong> 以來，全球開發者社群為其強大的自主能力所驚豔。然而，原生的 Hermes Agent 主要透過終端機 CLI（Command-Line Interface）與 TUI 運作，對於偏好圖形介面、需要視覺化多工排程、或者希望透過手機即時通訊軟體隨時召喚 Agent 的用戶而言，存在一定的學習與操作門檻。</p>
+        <p>正是在這個背景下，圍繞著桌面圖形化（GUI）的生態中誕生了兩個備受矚目的方案：<strong>Hermes Desktop</strong> 與 <strong>Hermes One</strong>。許多剛接觸 Hermes 生態的工程師經常被這兩個名詞搞混，甚至以為它們是同一個軟體的不同版本。事實上，它們的歷史脈絡如下：</p>
+
+        <div class="feature-card-grid">
+          <div class="feature-card">
+            <h4>🏢 Hermes Desktop（Nous Research 官方）</h4>
+            <p>由 Nous Research 核心開發團隊官方維護。它作為 Hermes Agent 的官方原生圖形延伸，與 CLI、TUI 並駕齊驅。工程師只要在終端機中敲下 <code>hermes desktop</code>，或是透過官方安裝包安裝，即可直接啟動與本機或遠端 Agent 串聯的第一方客戶端。</p>
+          </div>
+          <div class="feature-card">
+            <h4>🌐 Hermes One（社群開發者 fathah）</h4>
+            <p>由開源社群開發者 <strong>fathah</strong> 在 2025~2026 年初期主導開發。該專案最早在 GitHub 上命名為 <code>fathah/hermes-desktop</code>，旨在為 Hermes Agent 打造一個極致好用、整合各大通訊軟體與 3D 視覺空間的桌面伴侶。後來為了與官方 Hermes Desktop 作出明確區隔，專案正式更名為 <strong>Hermes One</strong>（官方網站為 hermesone.org）。</p>
+          </div>
+        </div>
+
+        <p>雖然定位與開發團隊不同，但兩者在架構底層有著共通的基石：它們都是 <strong>Hermes Agent Core</strong> 的圖形前端，共用 <code>~/.hermes</code> 資料夾內的 <code>config.yaml</code>、<code>memories/</code>、<code>skills/</code> 以及 session 資料庫。這意味著你在 CLI 累積的知識與自我進化技能，在 Hermes Desktop 與 Hermes One 裡都能無縫存取。</p>
+
+        <h2>二、Hermes Desktop 深度剖析（Nous Research 官方原生）</h2>
+        <p>官方 Hermes Desktop 的設計哲學是<strong>「深植核心、精準控制、人機無縫協同」</strong>。它緊密圍繞 Nous Research 對於新一代自主 Agent 執行複雜長程任務的願景，提供了數項工業級的原生能力：</p>
+
+        <h3>1. 核心殺手級功能：Bot Screen（沙箱即時桌面與人機接管）</h3>
+        <p>在所有 Agent 桌面客戶端中，Hermes Desktop 最具突破性的創新就是 <strong>Bot Screen</strong>。過去當 Agent 在 Docker 沙箱或遠端 Linux Gateway 中執行瀏覽器或桌面自動化任務時，開發者通常只能透過日誌或截圖獲知進展。一旦遇到以下狀況，傳統 Agent 往往卡死或崩潰：</p>
+        <ul>
+          <li><strong>Cloudflare / Google 人機驗證（CAPTCHA / Turnstile）</strong></li>
+          <li><strong>銀行或高安全性系統的 2FA 簡訊/驗證器驗證</strong></li>
+          <li><strong>需要手動點選授權的 OAuth 視窗</strong></li>
+        </ul>
+        <p>Hermes Desktop 透過低延遲的 VNC/WebRTC 串流技術，將 Bot 在 Linux 沙箱中的即時桌面操作直接投影在應用程式內。更重要的是，它支援<strong>人機共駕（Human-in-the-Loop）</strong>：</p>
+        <pre><code class="language-text">[Bot 正在自動填寫表單...]
+  ↓ 觸發 Google 雙重驗證 (2FA) 彈窗
+[Bot 自動發出等待信號，Bot Screen 提示：User Action Required]
+  ↓
+[工程師直接在 Hermes Desktop 畫面上用滑鼠點擊通過驗證]
+  ↓
+[按下 "Hand back to Bot" 按鈕，Agent 立即恢復自主執行流程]</code></pre>
+        <p>這種「看得見、能接手、隨時放手」的機制，將 Agent 執行真實世界自動化任務的成功率提升了數個數量級。</p>
+
+        <h3>2. 極致的一鍵式本地模型部署（llama.cpp 原生整合）</h3>
+        <p>許多工程師希望完全在本地端（Local-first）執行 Agent，以保障代碼與企業機密不外洩。過去要自行設定 <code>llama.cpp</code>、編譯 Metal/CUDA、下載量化 GGUF 並設定 Context Window 與 GPU 層數（n-gpu-layers），過程繁瑣。</p>
+        <p>Hermes Desktop 內建了<strong>硬體感知引擎</strong>：</p>
+        <ul>
+          <li>自動探測當前硬體架構（Apple Silicon M系列 Unified Memory、NVIDIA RTX 顯示卡 VRAM 容量或純 CPU/AVX512）。</li>
+          <li>自動從 Nous Research 推薦清單中推薦適合該硬體的 Hermes-3 / Hermes-4 GGUF 量化版本（如 Q4_K_M、Q8_0）。</li>
+          <li>一鍵下載、自動分配顯存卸載層數，使用者無需輸入任何指令，即可達成零 API 費用的全離線自主運行。</li>
+        </ul>
+
+        <h3>3. Nous Portal 雲端平台無縫串聯</h3>
+        <p>如果你不想耗費本地算力，Hermes Desktop 原生綁定了 <strong>Nous Portal</strong>。只需一個帳號登入，即可享用 Nous 託管的最新模型池、分散式 Tool Gateways（雲端高速爬蟲、無痕瀏覽器沙箱、即時網路搜尋）以及遠端 Linux Agent 節點管理。</p>
+
+        <h3>4. 官方 Plugin SDK 架構（@hermes/plugin-sdk）</h3>
+        <p>Hermes Desktop 的介面採用模組化設計。開發者可透過官方提供的 <code>@hermes/plugin-sdk</code> 開發自訂 UI 面板（如專案 Kanban 看板、自訂效能監控儀表板、專屬工作區導航欄），且外掛完全融入官方設計語言之中。</p>
+
+        <h2>三、Hermes One 深度剖析（社群先驅 fathah / hermesone.org）</h2>
+        <p>如果說官方 Hermes Desktop 專注於 Agent 本身的執行精度與沙箱接管，那麼 <strong>Hermes One</strong> 的核心哲學則是<strong>「把 Agent 變成你的全能數位管家與個人超級工作台」</strong>。它以令人驚豔的現代化 UI 與超豐富的社群功能著稱：</p>
+
+        <h3>1. 3D 虛擬辦公室視角：Hermes Office（Claw3d 驅動）</h3>
+        <p>Hermes One 最引人注目的視覺功能莫過於 <strong>Hermes Office</strong>。透過整合 <code>Claw3d</code> 輕量化 3D 渲染引擎，它將傳統單調的文字對話框轉化為一個 3D 虛擬辦公空間：</p>
+        <ul>
+          <li>每個 Agent Profile 都可以具象化為辦公室中的不同工作桌或角色立牌。</li>
+          <li>正在執行的任務（如代碼重構、排程爬蟲、日誌分析）會以動態看板形式呈現在 3D 辦公室牆面上。</li>
+          <li>為枯燥的後台自動化增添了極佳的趣味性與沈浸感，讓開發者直觀感知多個 Agent 的運作負載。</li>
+        </ul>
+
+        <h3>2. 多平台即時通訊樞紐（Messaging Gateways Hub）</h3>
+        <p>對於日常頻繁移動、無法整天守在電腦前的工程師而言，Hermes One 的多通訊頻道整合是無可替代的神器。Hermes One 內建了視覺化配置面板，支援一鍵橋接以下主流通訊平台：</p>
+        <ul>
+          <li><strong>Telegram</strong>（透過 Telegram Bot Token）</li>
+          <li><strong>Discord</strong>（透過 Discord Bot Application）</li>
+          <li><strong>Slack</strong>（工作團隊專用 Incoming Webhooks / Socket Mode）</li>
+          <li><strong>WhatsApp & Signal</strong>（透過 Baileys / Signald 協議橋接）</li>
+          <li><strong>Matrix</strong>（去中心化安全加密通訊）</li>
+        </ul>
+        <p>最精采之處在於<strong>跨端連貫性</strong>：你可以在出門上班的捷運上用 Telegram 傳訊息給你的 Agent：「幫我跑一遍 PR #104 的單元測試並整理失敗報表」，回到公司後打開電腦上的 Hermes One，完整的測試對話、生成的日誌與上下文已經整整齊齊記錄在本地會話中。</p>
+
+        <h3>3. 視覺化自然語言排程器（Visual Cron Builder）</h3>
+        <p>Hermes Agent 本身支援排程，但傳統 CLI 需要編寫標準 cron 表達式（如 <code>0 9 * * 1-5</code>）。Hermes One 提供了強大的視覺化排程構建器：</p>
+        <ul>
+          <li><strong>自然語言輸入：</strong>直接輸入「每個平日早上 8:30 抓取 Hacker News 熱門前十名，整理重點推送到我的 Discord」，系統自動解析為底層定時器。</li>
+          <li><strong>守護行程（Daemon）持續性：</strong>即使關閉了 Hermes One 圖形介面，後台的排程守護服務依然安靜執行，並精準將結果發送至設定的通訊管道。</li>
+          <li><strong>任務歷史視覺化檢視：</strong>清楚查看每一次排程任務的執行成功率、耗時與 Token 消耗量。</li>
+        </ul>
+
+        <h3>4. SQLite FTS5 全文搜尋與 Persona 調校（SOUL.md）</h3>
+        <p>Hermes One 內建了高效的 SQLite FTS5（Full-Text Search）搜尋引擎。無論你與 Agent 累積了數萬條對話、查閱過多少代碼片段，都能在 50 毫秒內精準定位關鍵對話與工具執行紀錄。此外，它提供了可視化的 <code>SOUL.md</code> 編輯器，讓你能為不同專案切換不同性格、語氣與嚴謹度的 Persona 設定。</p>
+
+        <h3>5. 一鍵備份與遷移工作室（Backup & Diagnostics）</h3>
+        <p>在軟體設定頁面中，Hermes One 提供了一鍵導出 ZIP 封裝包的功能，能將本機的所有 API 金鑰、Skills、Prompt 模板、記憶庫完整打包。當你更換新電腦時，只需一鍵匯入即可 100% 還原工作環境。</p>
+
+        <h2>四、全維度功能對比矩陣（Comparison Matrix）</h2>
+        <p>為了幫助開發者一目了然兩者的技術規格與功能差異，以下整理了詳盡的對比清單：</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>比較維度</th>
+              <th>Hermes Desktop (官方)</th>
+              <th>Hermes One (社群 fathah)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>開發者與組織</strong></td>
+              <td>Nous Research 官方團隊</td>
+              <td>fathah 及開源社群貢獻者</td>
+            </tr>
+            <tr>
+              <td><strong>專案定位</strong></td>
+              <td>第一方原生 GUI、專注沙箱任務控制與深度模型調試</td>
+              <td>個人全能桌面管家、多端通訊協同、工作流與排程中心</td>
+            </tr>
+            <tr>
+              <td><strong>開源倉庫</strong></td>
+              <td>NousResearch / hermes-agent (內建或配套)</td>
+              <td>fathah / hermes-desktop (現更名 Hermes One)</td>
+            </tr>
+            <tr>
+              <td><strong>沙箱即時畫面 (Bot Screen)</strong></td>
+              <td><strong>有（原生支援）</strong>：可即時觀看 Linux/瀏覽器桌面並滑鼠鍵盤介入</td>
+              <td>無（以對話日誌與進度指示為主）</td>
+            </tr>
+            <tr>
+              <td><strong>3D 視覺空間</strong></td>
+              <td>無（專注於簡潔高效的 2D 聊天視窗與分割預覽）</td>
+              <td><strong>有（Hermes Office）</strong>：Claw3d 驅動的虛擬 3D 工作室</td>
+            </tr>
+            <tr>
+              <td><strong>本地模型部署</strong></td>
+              <td><strong>原生 llama.cpp 自動探測</strong>：自動偵測 GPU/VRAM 並配對 GGUF</td>
+              <td>支援連接外部端點（Ollama, LM Studio, vLLM, LocalAI）</td>
+            </tr>
+            <tr>
+              <td><strong>雲端生態整合</strong></td>
+              <td>深度綁定 <strong>Nous Portal</strong> 官方訂閱與雲端網關</td>
+              <td>全面支援 OpenRouter, OpenAI, Anthropic, Gemini, Groq 等多供應商</td>
+            </tr>
+            <tr>
+              <td><strong>外部通訊軟體整合</strong></td>
+              <td>需透過 CLI 或自訂擴充設定</td>
+              <td><strong>內建視覺化 Hub</strong>：Telegram, Discord, Slack, WhatsApp, Signal, Matrix</td>
+            </tr>
+            <tr>
+              <td><strong>排程管理 (Cron)</strong></td>
+              <td>支援基礎 CLI 定時與排程 SDK</td>
+              <td><strong>視覺化 Natural-language Cron Builder</strong> + 關閉視窗背景運作</td>
+            </tr>
+            <tr>
+              <td><strong>歷史會話檢索</strong></td>
+              <td>標準 session 列表與關鍵字搜尋</td>
+              <td><strong>SQLite FTS5 百萬字級全文檢索</strong></td>
+            </tr>
+            <tr>
+              <td><strong>插件體系</strong></td>
+              <td>官方 <code>@hermes/plugin-sdk</code></td>
+              <td>社群模組與自訂配置腳本</td>
+            </tr>
+            <tr>
+              <td><strong>備份與還原</strong></td>
+              <td>手動管理 <code>~/.hermes</code> 目錄</td>
+              <td><strong>一鍵 GUI 備份打包與無痛匯入</strong></td>
+            </tr>
+            <tr>
+              <td><strong>跨平台支援</strong></td>
+              <td>macOS, Windows, Linux</td>
+              <td>macOS, Windows, Linux</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>五、工程師選型決策指南：你該選擇哪一個？</h2>
+        <p>在面對這兩款優秀的工具時，工程師應根據自身的工作模式與實際需求進行抉擇：</p>
+
+        <h3>情境 A：強烈推薦選擇【Hermes Desktop 官方版】</h3>
+        <ul>
+          <li><strong>你需要頻繁執行複雜的網頁操作或爬蟲：</strong>當 Agent 需要登入具有雙重認證（2FA）或 Google 人機驗證碼的網站時，只有官方的 <code>Bot Screen</code> 能讓你在同一個視窗直接動動滑鼠完成驗證，免去任務失敗重跑的挫折。</li>
+          <li><strong>你追求極致簡單的完全離線本機推論：</strong>你不希望安裝額外的 Ollama 或 LM Studio，只想打開桌面軟體，由系統自動判斷你的顯卡算力並下載最適合的 Hermes GGUF 模型直接跑。</li>
+          <li><strong>你是 Nous Research 官方技術的狂熱追隨者：</strong>希望第一時間嘗試官方實驗性功能、官方 Plugin SDK 以及 Nous Portal 的最新託管服務。</li>
+        </ul>
+
+        <h3>情境 B：強烈推薦選擇【Hermes One 社群版】</h3>
+        <ul>
+          <li><strong>你希望將 Agent 當作 24 小時個人隨身助理：</strong>你經常不在電腦前，希望在手機上用 Telegram、Discord 或 Slack 隨時指揮 Agent 查資料、寫草稿、執行後台腳本。</li>
+          <li><strong>你重視自動化定時工作流：</strong>你需要每天定時抓取產業新聞、自動監控伺服器日誌或產生每日進度摘要，Hermes One 的自然語言 Cron 讓你一分鐘搞定排程。</li>
+          <li><strong>你喜歡細緻的人格設定與視覺化體驗：</strong>想要直觀管理多個角色的 <code>SOUL.md</code>、享受 3D Office 帶來的趣味氛圍，並需要強大的 SQLite FTS5 快速搜尋幾個月前的對話。</li>
+        </ul>
+
+        <h3>情境 C：雙刀流——兩者兼得的最佳實踐</h3>
+        <blockquote>
+          <p><strong>硬核工程師的秘密技巧：</strong>由於 Hermes Desktop 與 Hermes One 都遵循相同的規範，讀寫本機同一個 <code>~/.hermes</code> 核心目錄，因此<strong>你完全可以在同一台電腦上同時安裝這兩者！</strong></p>
+        </blockquote>
+        <p>在實務上，許多高階工程師採用以下「雙刀流」工作流：</p>
+        <ol>
+          <li>在工作機背景運行 <strong>Hermes One</strong>，維持 Telegram / Discord 網關與每日排程任務運作，負責訊息派發與日程管理。</li>
+          <li>當遇到高難度的沙箱操作、本地重度推論除錯或需要 Bot Screen 人工介入的網頁自動化任務時，隨時啟動 <strong>Hermes Desktop</strong> 進行精細控制。</li>
+          <li>兩者所有的交談紀錄、Agent 新學會的 Skills 與更新的長期記憶，完全無痛互通。</li>
+        </ol>
+
+        <h2>六、安裝與快速起步指南</h2>
+
+        <h3>1. 啟動 Hermes Desktop 官方版</h3>
+        <p>如果你已經透過 Python / pipx 安裝了 Hermes CLI，啟動官方桌面版非常簡單：</p>
+        <pre><code class="language-bash"># 透過 pipx 或 pip 安裝最新版 Hermes Agent
+pipx install hermes-agent
+
+# 直接在終端機啟動官方桌面版
+hermes desktop</code></pre>
+        <p>或者造訪 Nous Research 官網或官方 Release 頁面，下載適用於 macOS（.dmg）、Windows（.exe）或 Linux（.AppImage / .deb）的獨立安裝包。</p>
+
+        <h3>2. 安裝 Hermes One 社群版</h3>
+        <p>前往 Hermes One 的 GitHub 發行頁面或官方網站：</p>
+        <pre><code class="language-bash"># 前往專案頁面下載各作業系統對應版本：
+# GitHub: https://github.com/fathah/hermes-desktop
+# 官方站點: https://hermesone.org
+
+# 下載完成後安裝並啟動，初次啟動將引導你設定：
+# 1. 選擇 API 供應商（OpenRouter / Anthropic / 本地 Ollama）
+# 2. 設定 Telegram / Discord Bot Token（可選）
+# 3. 初始化 ~/.hermes 資料夾與記憶庫</code></pre>
+
+        <h3>3. 檢查共用目錄結構</h3>
+        <p>無論使用哪一個客戶端，你可以隨時檢查系統中的核心資料夾，確認狀態同步無誤：</p>
+        <pre><code class="language-bash"># Linux & macOS
+ls -la ~/.hermes/
+
+# Windows PowerShell
+Get-ChildItem $env:USERPROFILE\.hermes
+
+# 核心檔案結構一覽：
+# config.yaml    -> 核心組態與 API 連線配置
+# memories/      -> 長期記憶儲存庫 (Markdown / JSON)
+# skills/        -> Agent 自我進化學會的客製化工具與 Python 技能
+# sessions/      -> 對話記錄與 SQLite 索引檔</code></pre>
+
+        <h2>七、總結</h2>
+        <p>在開源 AI Agent 蓬勃發展的 2026 年，Nous Research 的 Hermes 展現了開放生態最強大的生命力。<strong>Hermes Desktop</strong> 代表了官方團隊在沙箱控制、人機協同與極致本地推論上的深厚技術底蘊；而 <strong>Hermes One</strong> 則體現了開源社群在使用者體驗、跨通訊渠道與工作流自動化上的無窮創造力。</p>
+        <p>理解兩者的定位與特色，能幫助你在建構個人 AI 自動化工作流時做出最合適的技術選型。不論你選擇專注沙箱接管的官方原裝，還是功能琳瑯滿目的社群旗艦，Hermes 生態都能為你提供自主進化的強大助力！</p>
+      </article>
+
+      <div class="article-footer">
+        <a href="./articles.html" class="back-home">← 返回所有文章</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+</body>
+</html>
