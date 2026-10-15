@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15 23:33",
+  "updated": "2026-10-15 23:37",
   "sources": [
     {
       "name": "自由 3C 科技",
@@ -84,30 +84,6 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "俄羅斯 Yandex 被自家 AI 出賣，向假烏軍記者回報資料中心地址",
-          "link": "https://infosecu.technews.tw/2026/10/16/yandex-ai-gives-journalists-data-center-addresses/",
-          "date": "2026-10-15 23:10",
-          "summary": "俄羅斯科技公司 Yandex 在旗下地圖模糊化部分資料中心位置後，卻被記者發現自家 AI 助理 Alice 仍 [&#8230;]"
-        },
-        {
-          "title": "告別單純連網服務！全球電信商邁向「智慧平台」，開闢 AI 新藍海",
-          "link": "https://technews.tw/2026/10/16/global-telecom-operators-embrace-smart-platforms-opening-new-ai-blue-ocean/",
-          "date": "2026-10-15 23:00",
-          "summary": "2026 年全球電信服務收入估達 1.23 兆美元，2029 年溫和成長至 1.32 兆美元，而行動用戶平均收 [&#8230;]"
-        },
-        {
-          "title": "防範 AI 代理風險！字節跳動成立 AI 安全團隊，擬啟動全球招聘計畫",
-          "link": "https://technews.tw/2026/10/16/bytedance-sets-up-ai-safety-team/",
-          "date": "2026-10-15 17:36",
-          "summary": "中國科技巨頭字節跳動旗下 AI 研究部門 Seed 已成立「對齊與預備」（Alignment &#38; Pr [&#8230;]"
-        },
-        {
-          "title": "AI 要改名了？川普力推「超級智慧」（SI）取代人工智慧，盼國際跟進",
-          "link": "https://technews.tw/2026/10/16/us-want-super-intelligence-not-ai/",
-          "date": "2026-10-15 17:17",
-          "summary": "美國財政部高階官員週四（15 日）接受路透社專訪時表示，美國希望全球夥伴將人工智慧（AI）更名為「超級智慧」（ [&#8230;]"
-        },
-        {
           "title": "毅嘉第三季營收創高卻逢獲利逆風！砸重本建大馬廠待「光通訊」爆發",
           "link": "https://finance.technews.tw/2026/10/15/fpca/",
           "date": "2026-10-15 09:28",
@@ -154,6 +130,30 @@
           "link": "https://technews.tw/2026/10/15/turn-idle-mac-into-gpu-cloud/",
           "date": "2026-10-15 06:20",
           "summary": "蘋果研究人員近日公開一套名為「Minions」的內部系統，旨在將網路中閒置的 Apple Silicon Ma [&#8230;]"
+        },
+        {
+          "title": "傳字節跳動與聯發科接近達成資料中心晶片供貨協議，有望成第二大客戶",
+          "link": "https://technews.tw/2026/10/15/bytedance-in-talks-to-secure-mediatek-ai-chips-for-data-centers/",
+          "date": "2026-10-15 06:00",
+          "summary": "彭博引述知情人士，字節跳動接近與聯發科達成協議，向後者採購資料中心 AI 晶片，以確保旗下資料中心的關鍵零組件 [&#8230;]"
+        },
+        {
+          "title": "新加坡也受益 AI 熱潮，經濟成長率僅次台灣",
+          "link": "https://technews.tw/2026/10/15/singapore-also-benefits-from-the-ai-%e2%80%8b%e2%80%8bboom-with-an-economic-growth-rate-second-only-to-taiwans/",
+          "date": "2026-10-15 05:45",
+          "summary": "全球 AI 投資熱潮不只推動台灣經濟高速成長，也讓新加坡成為最大受益者之一。新加坡第三季經濟成長率達 5.4% [&#8230;]"
+        },
+        {
+          "title": "鎖定 AI 鈾礦、稀土與電網！永豐投信「全球戰略資源基金」10/19 開募",
+          "link": "https://finance.technews.tw/2026/10/15/earth/",
+          "date": "2026-10-15 05:32",
+          "summary": "鎖定鈾礦、稀土及電力基礎設施三大戰略領域，永豐投信今日宣布推出「永豐全球戰略資源基金」，預計 10 月 19 [&#8230;]"
+        },
+        {
+          "title": "Shield AI 將首架 V-BAT 運抵台灣，深化與海巡部門合作關係",
+          "link": "https://technews.tw/2026/10/15/shield-ai-delivered-first-v-bat-to-taiwan-coast-guard/",
+          "date": "2026-10-15 05:23",
+          "summary": "美國國防科技公司 Shield AI 宣布，已與合作夥伴漢翔航空工業（AIDC）共同完成首架 V-BAT 垂直 [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,12 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "IBM 攜手西門子推進奈米堆疊半導體技術，邁向埃米世代與 3D 晶片新紀元",
+          "link": "https://technews.tw/2026/10/16/ibm-and-siemens-advance-nano-stacked-semiconductor-technology/",
+          "date": "2026-10-15 23:30",
+          "summary": "IBM 與西門子（Siemens）宣布展開全新研究合作，致力於推進 IBM 於 2026 年稍早推出的「奈米堆 [&#8230;]"
+        },
         {
           "title": "外資指英特爾晶圓代工與先進封裝獲重大突破，取得蘋果、輝達、微軟等廠商訂單",
           "link": "https://finance.technews.tw/2026/10/16/foreign-investors-point-to-major-breakthroughs-in-intels-wafer-foundry-and-advanced-packaging/",
@@ -226,12 +232,6 @@
           "link": "https://finance.technews.tw/2026/10/15/tsmc-raises-prices/",
           "date": "2026-10-15 07:06",
           "summary": "台積電董事長魏哲家今（15）日在第三季法人說明會上表示，台積電已派遣團隊赴美國德州評估擴產機會，並與提出 Te [&#8230;]"
-        },
-        {
-          "title": "魏哲家：AI 需求極其強勁，台積電營收年複合成長率有望超越 50% 高標",
-          "link": "https://finance.technews.tw/2026/10/15/tsmcs-revenue-is-expected-to-achieve-a-compound-annual-growth-rate-exceeding-50-a-high-target/",
-          "date": "2026-10-15 07:00",
-          "summary": "台積電董事長魏哲家針對人工智慧（AI）半導體需求與產能展望強調，目前 AI 需求「非常、極其強勁」，且完全未見 [&#8230;]"
         }
       ]
     },
@@ -239,30 +239,6 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
-        {
-          "title": "外資指英特爾晶圓代工與先進封裝獲重大突破，取得蘋果、輝達、微軟等廠商訂單",
-          "link": "https://finance.technews.tw/2026/10/16/foreign-investors-point-to-major-breakthroughs-in-intels-wafer-foundry-and-advanced-packaging/",
-          "date": "2026-10-15 23:15",
-          "summary": "華爾街投資機構 KeyBanc 分析師在結束近期亞洲考察後發布報告指出，英特爾（Intel）晶圓代工業務（In [&#8230;]"
-        },
-        {
-          "title": "西門子 blue GIS 導入台電、台船，無 SF6 技術拓展電力市場",
-          "link": "https://technews.tw/2026/10/16/siemens-sf6-free-switchgear-taipower-csbc-low-carbon-grid-opportunities/",
-          "date": "2026-10-15 22:00",
-          "summary": "隨著電力設備加速朝低碳化發展，西門子於 2026 台灣國際智慧能源週展示無六氟化硫（SF6）氣體絕緣開關設備（ [&#8230;]"
-        },
-        {
-          "title": "元太新一代 E Ink Kaleido 4 電子紙問世，色彩表現與動態顯示雙升級",
-          "link": "https://technews.tw/2026/10/15/e-ink-announces-next-generation-color-epaper-technology-e-ink-kaleido-4/",
-          "date": "2026-10-15 13:39",
-          "summary": "電子紙大廠 E Ink 元太科技 15 日正式推出新一代彩色電子紙技術 E Ink Kaleido 4，延續電 [&#8230;]"
-        },
-        {
-          "title": "訂單能見度至 2028 年！弘塑美國布局瞄準亞利桑那州，董座：最大瓶頸是缺料、缺人",
-          "link": "https://technews.tw/2026/10/15/gptc-semicon-west-2026/",
-          "date": "2026-10-15 11:15",
-          "summary": "近年先進封裝成為業界焦點，隨著台積電擴大在美支出，同步帶動本土設備商加速海外布局。弘塑科技董事長張鴻泰在 SE [&#8230;]"
-        },
         {
           "title": "毅嘉第三季營收創高卻逢獲利逆風！砸重本建大馬廠待「光通訊」爆發",
           "link": "https://finance.technews.tw/2026/10/15/fpca/",
@@ -276,10 +252,22 @@
           "summary": "台積電董事長兼總裁魏哲家針對外界關注的四大焦點議題，包含產能轉租、High-NA EUV 技術引進時程、A14 [&#8230;]"
         },
         {
+          "title": "魏哲家：AI 需求極其強勁，台積電營收年複合成長率有望超越 50% 高標",
+          "link": "https://finance.technews.tw/2026/10/15/tsmcs-revenue-is-expected-to-achieve-a-compound-annual-growth-rate-exceeding-50-a-high-target/",
+          "date": "2026-10-15 07:00",
+          "summary": "台積電董事長魏哲家針對人工智慧（AI）半導體需求與產能展望強調，目前 AI 需求「非常、極其強勁」，且完全未見 [&#8230;]"
+        },
+        {
           "title": "CCL 漲價幅度超預期！大和資本調高聯茂買進目標價至 1,110 元",
           "link": "https://finance.technews.tw/2026/10/15/e-glass/",
           "date": "2026-10-15 02:24",
           "summary": "受惠於電子級玻璃纖維布（E-glass）與 M4 以下等級銅箔基板（CCL）漲價幅度與持久性優於預期，大和資本 [&#8230;]"
+        },
+        {
+          "title": "AI 算力霸權下現金流大洗牌，摩根大通揭大廠資金轉移力拚輝達喊出 4 兆美元榮景",
+          "link": "https://finance.technews.tw/2026/10/15/jpmorgan-chase-reveals-fund-transfers-by-major-manufacturers/",
+          "date": "2026-10-15 01:50",
+          "summary": "隨著人工智慧（AI）浪潮席捲全球，科技大廠間的資本競逐正在重塑半導體與雲端產業鏈的資金流向。根據外資摩根大通（ [&#8230;]"
         },
         {
           "title": "光寶科亮相 OCP，秀 800 VDC 電源與 2.6MW 液冷系統",
@@ -310,6 +298,18 @@
           "link": "https://technews.tw/2026/10/15/acm-research-semicon-west-sally-ann-henry/",
           "date": "2026-10-14 19:05",
           "summary": "美商 ACM Research 首席技術專家 Sally-Ann Henry 於 SEMICON West 受 [&#8230;]"
+        },
+        {
+          "title": "Wooptix 加速全球布局！明年兩套量測設備出貨亞洲、美國市場",
+          "link": "https://technews.tw/2026/10/15/wooptix-semicon-west-javier-elizalde/",
+          "date": "2026-10-14 18:39",
+          "summary": "半導體波前相位成像量測技術業者 Wooptix 先前宣布已於法國技術研究機構 CEA-Leti 完成首套量產規 [&#8230;]"
+        },
+        {
+          "title": "先進封裝材料挑戰怎解？三菱化學靠計算化學、量子技術加速材料開發",
+          "link": "https://technews.tw/2026/10/14/mitsubishi-chemical-group-sanjiv-bhatt-semicon-west/",
+          "date": "2026-10-14 10:26",
+          "summary": "AI 與 HPC 需求持續推升晶片效能與整合密度，先進封裝也面臨互連密度提高、散熱與翹曲控制等多重挑戰。三菱化 [&#8230;]"
         }
       ]
     },
