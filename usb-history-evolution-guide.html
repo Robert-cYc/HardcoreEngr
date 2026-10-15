@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略 — "AI" 硬核工程師</title>
+  <title>USB 全世代硬核百科：從 USB 1.0、2.0 到 3.x、Type-C、USB4 與 240W PD 快充完整演進指南 — "AI" 硬核工程師</title>
   <link rel="icon" href="data:,🎯">
-  <meta name="description" content="深入剖析通用序列匯流排（USB）的誕生革命、Low/Full/High-Speed 速度模式、黑白與特殊接口顏色密碼、BC 1.2 與 Apple 分壓充電機制、4-Pin 接腳電氣特性與現代依然無法淘汰的底層原因。">
+  <meta name="description" content="最完整的 USB 歷史技術全書：詳解 USB 1.0/1.1、USB 2.0、USB 3.x 換名之亂、Type-C 24-Pin 盲插架構、E-Marker 晶片、Alt Mode 影音輸出、USB PD 3.1 240W 快充、USB4 80Gbps 與 PAM3 編碼全世代演進。">
   <meta name="canonical" href="https://ai-hardcore-engineer.com/usb-history-evolution-guide.html">
-  <meta property="og:title" content="USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略 — "AI" 硬核工程師">
-  <meta property="og:description" content="深入剖析通用序列匯流排（USB）的誕生革命、Low/Full/High-Speed 速度模式、黑白與特殊接口顏色密碼、BC 1.2 與 Apple 分壓充電機制、4-Pin 接腳電氣特性與現代依然無法淘汰的底層原因。">
+  <meta property="og:title" content="USB 全世代硬核百科：從 USB 1.0、2.0 到 3.x、Type-C、USB4 與 240W PD 快充完整演進指南 — "AI" 硬核工程師">
+  <meta property="og:description" content="最完整的 USB 歷史技術全書：詳解 USB 1.0/1.1、USB 2.0、USB 3.x 換名之亂、Type-C 24-Pin 盲插架構、E-Marker 晶片、Alt Mode 影音輸出、USB PD 3.1 240W 快充、USB4 80Gbps 與 PAM3 編碼全世代演進。">
   <meta property="og:url" content="https://ai-hardcore-engineer.com/usb-history-evolution-guide.html">
   <meta property="og:type" content="article">
   <meta property="og:image" content="./images/usb-evolution-guide.jpg">
   <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略 — "AI" 硬核工程師">
-  <meta name="twitter:description" content="深入剖析通用序列匯流排（USB）的誕生革命、Low/Full/High-Speed 速度模式、黑白與特殊接口顏色密碼、BC 1.2 與 Apple 分壓充電機制、4-Pin 接腳電氣特性與現代依然無法淘汰的底層原因。">
+  <meta name="twitter:title" content="USB 全世代硬核百科：從 USB 1.0、2.0 到 3.x、Type-C、USB4 與 240W PD 快充完整演進指南 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="最完整的 USB 歷史技術全書：詳解 USB 1.0/1.1、USB 2.0、USB 3.x 換名之亂、Type-C 24-Pin 盲插架構、E-Marker 晶片、Alt Mode 影音輸出、USB PD 3.1 240W 快充、USB4 80Gbps 與 PAM3 編碼全世代演進。">
   <meta name="twitter:image" content="./images/usb-evolution-guide.jpg">
   <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
@@ -57,7 +57,7 @@
     }
     .hero-image-wrap img {
       width: 100%;
-      max-height: 520px;
+      max-height: 540px;
       object-fit: cover;
       display: block;
     }
@@ -139,7 +139,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 1.1rem;
-      min-width: 620px;
+      min-width: 660px;
     }
     .article-body th, .article-body td {
       padding: 0.75rem 1rem;
@@ -164,6 +164,7 @@
       letter-spacing: 0.02em;
     }
     .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-teal { background: #ccfbf1; color: #0f766e; }
     .badge-green { background: #dcfce7; color: #166534; }
     .badge-purple { background: #f3e8ff; color: #6b21a8; }
     .badge-amber { background: #fef3c7; color: #92400e; }
@@ -171,6 +172,7 @@
     .badge-black { background: #1f2937; color: #f9fafb; border: 1px solid #4b5563; }
     .badge-white { background: #f3f4f6; color: #111827; border: 1px solid #d1d5db; }
     .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-teal { background: #134e4a; color: #99f6e4; }
     .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
     .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
     .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
@@ -178,7 +180,7 @@
     .dark-mode .badge-black { background: #111827; color: #e5e7eb; border-color: #374151; }
     .dark-mode .badge-white { background: #374151; color: #f9fafb; border-color: #4b5563; }
 
-    /* Interactive Pinout & Color Explorer */
+    /* Interactive Box Components */
     .interactive-explorer-box {
       background: var(--bg-alt);
       border: 1px solid var(--border);
@@ -188,48 +190,58 @@
     }
     .exp-title {
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    .pinout-diagram {
-      display: flex;
-      justify-content: center;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .pin-btn {
-      padding: 0.8rem 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-family: "Fira Code", monospace;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      border: 2px solid transparent;
-      user-select: none;
+
+    /* Type-C 24-Pin Interactive Grid */
+    .typec-grid-wrap {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      min-width: 110px;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
     }
-    .pin-btn .pin-num { font-size: 0.8rem; opacity: 0.8; }
-    .pin-btn:hover, .pin-btn.active {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    .typec-row {
+      display: flex;
+      gap: 0.35rem;
+      justify-content: center;
+      min-width: 600px;
+    }
+    .typec-pin {
+      padding: 0.6rem 0.5rem;
+      border-radius: 6px;
+      font-family: "Fira Code", monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      flex: 1;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+    .typec-pin:hover, .typec-pin.active {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       border-color: var(--accent);
     }
-    .pin-vbus { background: #fee2e2; color: #991b1b; }
-    .pin-dm { background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; }
-    .pin-dp { background: #dcfce7; color: #166534; }
-    .pin-gnd { background: #1f2937; color: #f9fafb; }
-    .dark-mode .pin-vbus { background: #7f1d1d; color: #fecaca; }
-    .dark-mode .pin-dm { background: #374151; color: #f3f4f6; }
-    .dark-mode .pin-dp { background: #14532d; color: #bbf7d0; }
-    .dark-mode .pin-gnd { background: #111827; color: #e5e7eb; border: 1px solid #4b5563; }
+    .c-gnd { background: #1f2937; color: #f9fafb; }
+    .c-vbus { background: #fee2e2; color: #991b1b; }
+    .c-cc { background: #fef3c7; color: #92400e; }
+    .c-sbu { background: #f3e8ff; color: #6b21a8; }
+    .c-usb2 { background: #dcfce7; color: #166534; }
+    .c-ss { background: #dbeafe; color: #1e40af; }
+    .dark-mode .c-gnd { background: #111827; color: #e5e7eb; border: 1px solid #374151; }
+    .dark-mode .c-vbus { background: #7f1d1d; color: #fecaca; }
+    .dark-mode .c-cc { background: #78350f; color: #fde68a; }
+    .dark-mode .c-sbu { background: #581c87; color: #e9d5ff; }
+    .dark-mode .c-usb2 { background: #14532d; color: #bbf7d0; }
+    .dark-mode .c-ss { background: #1e3a8a; color: #bfdbfe; }
 
     .pin-detail-card {
       background: var(--bg);
@@ -315,7 +327,9 @@
     }
     .fill-low { background: #ef4444; }
     .fill-full { background: #f59e0b; }
-    .fill-high { background: #10b981; }
+    .fill-high { background: #3b82f6; }
+    .fill-ss { background: #06b6d4; }
+    .fill-usb4 { background: #10b981; }
 
     /* Concept Comparison Grid */
     .concept-grid {
@@ -406,8 +420,8 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略 — \"AI\" 硬核工程師",
-    "description": "深入剖析通用序列匯流排（USB）的誕生革命、Low/Full/High-Speed 速度模式、黑白與特殊接口顏色密碼、BC 1.2 與 Apple 分壓充電機制、4-Pin 接腳電氣特性與現代依然無法淘汰的底層原因。",
+    "headline": "USB 全世代硬核百科：從 USB 1.0、2.0 到 3.x、Type-C、USB4 與 240W PD 快充完整演進指南 — \"AI\" 硬核工程師",
+    "description": "最完整的 USB 歷史技術全書：詳解 USB 1.0/1.1、USB 2.0、USB 3.x 換名之亂、Type-C 24-Pin 盲插架構、E-Marker 晶片、Alt Mode 影音輸出、USB PD 3.1 240W 快充、USB4 80Gbps 與 PAM3 編碼全世代演進。",
     "url": "https://ai-hardcore-engineer.com/usb-history-evolution-guide.html",
     "datePublished": "2026-10-15",
     "author": {
@@ -462,24 +476,25 @@
   <!-- =============== Hero =============== -->
   <section class="article-hero">
     <div class="container">
-      <h1>USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略</h1>
+      <h1>USB 全世代硬核百科：從 USB 1.0、2.0 到 3.x、Type-C、USB4 與 240W PD 快充完整演進指南</h1>
       <div class="article-meta">
         <span>📅 2026-10-15</span>
         <span class="separator">·</span>
-        <span>⏱️ 20 分鐘硬核深度閱讀</span>
+        <span>⏱️ 28 分鐘深度硬核全覽</span>
         <span class="separator">·</span>
         <span>✍️ "AI" 硬核工程師</span>
       </div>
       <div class="article-tags" style="justify-content: center;">
-        <span class="tag">硬體協議</span>
-        <span class="tag">USB 2.0</span>
-        <span class="tag">USB 1.1</span>
-        <span class="tag">充電協定</span>
+        <span class="tag">硬體協定</span>
+        <span class="tag">Type-C 24-Pin</span>
+        <span class="tag">USB 3.2 換名史</span>
+        <span class="tag">USB4 80Gbps</span>
+        <span class="tag">USB PD 240W</span>
+        <span class="tag">E-Marker 晶片</span>
         <span class="tag">差分訊號</span>
-        <span class="tag">硬體架構</span>
       </div>
       <div class="hero-image-wrap">
-        <img src="./images/usb-evolution-guide.jpg" alt="USB 1.1 and USB 2.0 Hardware Evolution and Architecture">
+        <img src="./images/usb-evolution-guide.jpg" alt="All USB Generations Evolution from USB 1.0 to USB4 80Gbps and Type-C 240W">
       </div>
     </div>
   </section>
@@ -489,55 +504,57 @@
     <div class="container">
       <article class="article-body">
         <blockquote>
-          🎯 <strong>重點摘要：</strong> 在 USB 誕生之前，電腦背後是一場接線噩夢：PS/2、LPT、COM、SCSI 各行其道，且幾乎都不支援熱插拔。<br>
+          🎯 <strong>全書重點摘要：</strong> 從 1996 年傳輸僅 1.5 Mbps 的白色接頭，到 2026 年傳輸高達 80 Gbps、供電高達 240W 的對稱 Type-C，USB（通用序列匯流排）徹底改寫了整個數位電子文明。<br>
           本文系統化梳理：<br>
-          &nbsp;&nbsp;① <strong>破局歷史</strong>：Intel、微軟、蘋果等科技巨頭如何聯手催生 USB-IF，終結接頭混亂<br>
-          &nbsp;&nbsp;② <strong>速度模式真相</strong>：從 1.5 Mbps 的 Low-Speed、12 Mbps 的 Full-Speed，到暴漲 40 倍的 480 Mbps High-Speed<br>
-          &nbsp;&nbsp;③ <strong>接口顏色密碼</strong>：白色、黑色與黃/紅色 Always-on 睡眠充電埠的電氣意涵<br>
-          &nbsp;&nbsp;④ <strong>供電與充電演進</strong>：從 500mA 的單位負載、雙頭 Y 型線，到 BC 1.2 的 7.5W 快充與蘋果分壓電阻識別法<br>
-          &nbsp;&nbsp;⑤ <strong>4-Pin 底層接腳與差分訊號</strong>：為何 VBUS 與 GND 比較長？差分抗干擾的物理奧秘<br>
-          &nbsp;&nbsp;⑥ <strong>現代啟示</strong>：為什麼到了今天，你的 Type-C 充電線與滑鼠依然骨子裡離不開 USB 2.0？
+          &nbsp;&nbsp;① <strong>破局歷史</strong>：七大巨頭成立 USB-IF、iMac G3 捨棄舊接口的世紀孤注一擲<br>
+          &nbsp;&nbsp;② <strong>USB 1.x 與 2.0 基礎</strong>：Low/Full/High-Speed 模式、黑白顏色密碼、BC 1.2 供電與 4-Pin 差分訊號架構<br>
+          &nbsp;&nbsp;③ <strong>USB 3.x 狂飆與「改名之亂」</strong>：SuperSpeed 5G/10G/20G、藍色/湖藍綠接口、9-Pin 全雙工與 2.4GHz Wi-Fi 干擾謎題<br>
+          &nbsp;&nbsp;④ <strong>Type-C 終極革命</strong>：24-Pin 對稱結構（CC、VCONN、SBU、高速線）、E-Marker 晶片機制與 DP Alt Mode「一線連」生態<br>
+          &nbsp;&nbsp;⑤ <strong>充電革命</strong>：從 2.5W 單位負載到 USB PD 3.1 EPR 240W（48V/5A）電競筆電供電標準<br>
+          &nbsp;&nbsp;⑥ <strong>極限巔峰 USB4 與 USB4 2.0</strong>：Thunderbolt 3 融合、協定隧道技術（Tunneling）與 PAM3 三電平 80G/120Gbps 新世代<br>
+          &nbsp;&nbsp;文內附贈 <strong>【全世代速率耗時模擬器】</strong>、<strong>【Type-C 24-Pin 互動檢視儀】</strong> 與 <strong>【30年 USB 終極對照總表】</strong>！
         </blockquote>
 
         <!-- Table of Contents -->
         <div class="toc-container">
           <div class="toc-title">📑 本文快速目錄</div>
           <ul class="toc-list">
-            <li><a href="#section-1">1. 前言：在「USB」出現之前的混沌世界</a></li>
-            <li><a href="#section-2">2. 初試啼聲：USB 1.0 與 USB 1.1 的破局與 iMac G3 革命</a></li>
-            <li><a href="#section-3">3. 速度階級解析：Low-Speed、Full-Speed 與 40 倍狂飆的 USB 2.0</a></li>
-            <li><a href="#section-sim">⚡ 互動工具：USB 傳輸速率試算與耗時模擬器</a></li>
-            <li><a href="#section-4">4. 接口顏色密碼（Port Colors）：黑、白、黃、紅代表什麼？</a></li>
-            <li><a href="#section-5">5. 供電與充電演進：從 2.5W、雙頭 Y 型線到 BC 1.2 與 Apple 分壓</a></li>
-            <li><a href="#section-pinout">🔌 互動工具：經典 4-Pin 接腳與差分訊號解析儀</a></li>
-            <li><a href="#section-6">6. 物理形態家族：Type-A、Type-B、Mini-B 與 Micro-B OTG</a></li>
-            <li><a href="#section-7">7. USB 1.x 與 USB 2.0 完整綜合規格對比表</a></li>
-            <li><a href="#section-8">8. 現代冷知識：為什麼到了 2026 年，我們依然離不開 USB 2.0？</a></li>
+            <li><a href="#section-1">1. 序幕：在「USB」出現之前的混沌世界</a></li>
+            <li><a href="#section-2">2. 第一階段：USB 1.0 與 1.1 的破局與 iMac G3 革命</a></li>
+            <li><a href="#section-3">3. 第二階段：USB 2.0 的黃金二十年與 BC 1.2 充電</a></li>
+            <li><a href="#section-4">4. 第三階段：USB 3.0/3.1/3.2 狂飆、藍色接口與惡名昭彰的「改名之亂」</a></li>
+            <li><a href="#section-sim">⚡ 互動工具：全世代 USB 速率試算與耗時模擬器（40,000 倍差距！）</a></li>
+            <li><a href="#section-5">5. 第四階段：Type-C（USB-C）終極革命：正反盲插、24-Pin 架構與 E-Marker 晶片</a></li>
+            <li><a href="#section-typec-pins">🔌 互動工具：USB Type-C 24-Pin 對稱接腳與 Alt Mode 互動解析儀</a></li>
+            <li><a href="#section-6">6. 第五階段：充電技術革命：從 2.5W 到 USB PD 3.1 EPR 240W 快充</a></li>
+            <li><a href="#section-7">7. 第六階段：極限巔峰：USB4 與 USB4 2.0（80Gbps / PAM3 編碼）</a></li>
+            <li><a href="#section-8">8. 接口顏色大觀園：黑、白、藍、湖藍綠、紅、黃完整對照</a></li>
+            <li><a href="#section-9">9. 跨越 30 年：全世代 USB 終極規格總整理大表格</a></li>
+            <li><a href="#section-10">10. 現代冷知識與工程避坑指南</a></li>
           </ul>
         </div>
 
         <!-- Section 1 -->
-        <h2 id="section-1">1. 前言：在「USB」出現之前的混沌世界</h2>
-        <p>在 1990 年代中期以前，每組裝或購買一台新電腦，對工程師與一般使用者而言都是一場接線折磨：</p>
+        <h2 id="section-1">1. 序幕：在「USB」出現之前的混沌世界</h2>
+        <p>在 1990 年代中期以前，每組裝或購買一台新電腦，對工程師與一般使用者而言都是一場接線噩夢：</p>
         <ul>
           <li><strong>滑鼠</strong>：要找綠色的 <strong>PS/2 埠</strong> 或 9 針的 <strong>RS-232 序列埠（COM Port）</strong>。</li>
           <li><strong>鍵盤</strong>：要插紫色的 <strong>PS/2 埠</strong> 或是更古老的巨大 5 針 DIN 接頭。</li>
           <li><strong>印表機</strong>：必須鎖上巨大無比、螺絲笨重且排線極粗的 25 針 <strong>LPT 平行埠（Parallel Port）</strong>。</li>
-          <li><strong>遊戲搖桿</strong>：必須插在獨立音效卡上的 15 針 <strong>Gameport（MIDI 埠）</strong>。</li>
+          <li><strong>遊戲手把</strong>：必須插在獨立音效卡上的 15 針 <strong>Gameport（MIDI 埠）</strong>。</li>
           <li><strong>外接儲存硬碟或高階掃描器</strong>：得安裝昂貴的 <strong>SCSI 介面卡</strong>，手動設定 SCSI ID 跳線（Jumper）與實體終端電阻（Terminator）。</li>
         </ul>
 
         <p>更致命的是，傳統介面<strong>幾乎都不支援熱插拔（Hot-swapping）</strong>。如果在電腦開機運作中拔插 PS/2 滑鼠，輕則作業系統游標直接凍結卡死，重則瞬間突波直接打壞主機板的 Super I/O 控制晶片。</p>
 
-        <p>為了終結這種混亂，1994 年，由 <strong>Intel、Microsoft、IBM、Compaq、DEC、NEC、Nortel</strong> 等七大巨擘組成了 <strong>USB-IF（USB Implementers Forum）</strong>，立下了跨時代目標：<strong>Universal Serial Bus（通用序列匯流排）</strong>——一條外觀統一的線材，兼顧「高速數據傳輸」、「電源供應」、「即插即用（PnP）」與「安全熱插拔」。</p>
+        <p>為了解決這場災難，1994 年，由 <strong>Intel、Microsoft、IBM、Compaq、DEC、NEC、Nortel</strong> 等七大巨擘組成了 <strong>USB-IF（USB Implementers Forum）</strong>，立下了跨時代目標：<strong>Universal Serial Bus（通用序列匯流排）</strong>——一條外觀統一的線材，兼顧「高速數據傳輸」、「電源供應」、「即插即用（Plug and Play）」與「安全熱插拔」。</p>
 
         <!-- Section 2 -->
-        <h2 id="section-2">2. 初試啼聲：USB 1.0 與 USB 1.1 的破局與 iMac G3 革命</h2>
-
+        <h2 id="section-2">2. 第一階段：USB 1.0 與 1.1 的破局與 iMac G3 革命</h2>
         <div class="concept-grid">
           <div class="concept-card">
             <h4>🚧 USB 1.0 (1996 年 1 月)</h4>
-            <p><strong>代號：</strong> 早期規範雛形。</p>
+            <p><strong>代號：</strong> 初代探索規範。</p>
             <p><strong>困境：</strong> 由於各晶片廠商對 Host Controller（主機控制器）的實作存在標準落差，加上對無供電集線器（Unpowered Hubs）的抗干擾力薄弱，傳輸時鐘頻繁漂移。市場上幾乎沒有量產的純 USB 1.0 消費級產品。</p>
           </div>
           <div class="concept-card" style="border: 2px solid var(--accent);">
@@ -547,70 +564,102 @@
           </div>
         </div>
 
+        <h3>速度等級：Low-Speed 與 Full-Speed</h3>
+        <ul>
+          <li><strong>Low-Speed（低速）</strong>：<strong>1.5 Mbps</strong>（實測約 100 ~ 150 KB/s）。專為滑鼠、鍵盤、搖桿設計，容許廉價無屏蔽線材與低成本振盪器。</li>
+          <li><strong>Full-Speed（全速）</strong>：<strong>12 Mbps</strong>（實測約 1.0 ~ 1.2 MB/s）。專為印表機、掃描器、初代隨身碟設計，需雙絞屏蔽線材。</li>
+          <li><strong>標準接口顏色</strong>：<span class="badge-pill badge-white">白色 (White)</span>。</li>
+        </ul>
+
         <!-- Section 3 -->
-        <h2 id="section-3">3. 速度階級解析：Low-Speed、Full-Speed 與 40 倍狂飆的 USB 2.0</h2>
-        <p>USB 發展初期，速度標準的命名與分級非常明確，但後續的商業命名也帶來了不少「行銷陷阱」：</p>
+        <h2 id="section-3">3. 第二階段：USB 2.0 的黃金二十年與 BC 1.2 充電</h2>
+        <p>2000 年 4 月發布的 <strong>USB 2.0（High-Speed）</strong> 是電腦硬體史上最長壽的標準：</p>
+        <ul>
+          <li><strong>速度飆升 40 倍</strong>：頻寬一口氣衝到了 <strong>480 Mbps</strong>（實測極限約 <strong>35 ~ 43 MB/s</strong>），完全向下相容 1.1。</li>
+          <li><strong>擊敗對手 FireWire 400</strong>：蘋果主導的 IEEE 1394 雖然性能優秀，但由於需昂貴授權費與專用控制器，最終在 USB 2.0 的零專利費與低成本海嘯下敗退。</li>
+          <li><strong>標準接口顏色</strong>：<span class="badge-pill badge-black">黑色 (Black)</span>。</li>
+          <li><strong>基礎供電</strong>：5V / 500mA（2.5W）。</li>
+        </ul>
+
+        <h3>BC 1.2 充電協議（2010 年）與 Apple 分壓法</h3>
+        <p>為了解決智慧型手機 500mA 充太慢的瓶頸，USB-IF 發佈了 <strong>BC 1.2（Battery Charging 1.2）</strong>：</p>
+        <ul>
+          <li><strong>SDP（標準電腦埠）</strong>：5V / 500mA（傳數據）。</li>
+          <li><strong>DCP（專用充電頭/豆腐頭）</strong>：將 <strong>D+ 與 D- 兩條數據線短路</strong>（電阻 &lt; 200Ω）。手機偵測到 D+/D- 導通，即刻開啟 <strong>5V / 1.5A (7.5W)</strong> 充電！</li>
+          <li><strong>Apple 分壓電阻識別法</strong>：早期 iPhone 透過 D+/D- 上的固定電阻分壓（如 2.0V/2.7V, 2.7V/2.7V）來識別 1A (5W)、2.1A (10.5W) 或 2.4A (12W)。</li>
+        </ul>
+
+        <!-- Section 4 -->
+        <h2 id="section-4">4. 第三階段：USB 3.0/3.1/3.2 狂飆、藍色接口與惡名昭彰的「改名之亂」</h2>
+
+        <h3>4.1 速度狂飆：從 5 Gbps 到 20 Gbps</h3>
+        <p>2008 年發布的 USB 3.0 帶來了質的飛躍：</p>
+        <ul>
+          <li><strong>SuperSpeed 5 Gbps</strong>：傳輸頻寬提升 10 倍，實測可達 400 ~ 450 MB/s。</li>
+          <li><strong>供電升級</strong>：從 500mA 提升至 <strong>900mA (4.5W)</strong>，外接硬碟再也不需要「雙頭 Y 型線」偷電！</li>
+          <li><strong>9-Pin 接腳與全雙工</strong>：保留前排 4 根 USB 2.0 接腳，在後排深處增加 5 根高速接腳（SSTX+/-, SSRX+/-, GND），達成<strong>真正的全雙工（Full-Duplex，收發可同時進行）</strong>。</li>
+          <li><strong>標準顏色</strong>：標誌性的 <span class="badge-pill badge-blue">藍色 (Pantone 300C)</span>。</li>
+        </ul>
+
+        <h3>4.2 惡名昭彰的 USB-IF「換名之亂」（The Rebranding Chaos）</h3>
+        <p>為了行銷推廣，USB-IF 在隨後十年間進行了兩次災難性的追溯改名，讓消費者與工程師苦不堪言：</p>
 
         <div class="table-responsive">
           <table>
             <thead>
               <tr>
-                <th>速度等級</th>
-                <th>推出版本</th>
-                <th>理論標稱頻寬</th>
-                <th>實際傳輸速率</th>
-                <th>典型應用硬體</th>
-                <th>電氣與線材要求</th>
+                <th>最初名稱 (初代)</th>
+                <th>USB 3.1 時代改名</th>
+                <th>USB 3.2 時代改名</th>
+                <th>技術通道模式</th>
+                <th>理論頻寬</th>
+                <th>標誌性顏色</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Low-Speed（低速）</strong></td>
-                <td>USB 1.0 / 1.1</td>
-                <td><strong>1.5 Mbps</strong></td>
-                <td>約 100 ~ 150 KB/s</td>
-                <td>滑鼠、鍵盤、遊戲手把</td>
-                <td>成本低、無屏蔽廉價線材、時鐘精度容許誤差較大</td>
+                <td><strong>USB 3.0</strong> (2008)</td>
+                <td>USB 3.1 Gen 1</td>
+                <td><strong>USB 3.2 Gen 1x1</strong></td>
+                <td>單通道 5 Gbps</td>
+                <td><strong>5 Gbps</strong> (~450 MB/s)</td>
+                <td><span class="badge-pill badge-blue">藍色 (Blue)</span></td>
               </tr>
               <tr>
-                <td><strong>Full-Speed（全速）</strong></td>
-                <td>USB 1.1</td>
-                <td><strong>12 Mbps</strong></td>
-                <td>約 1.0 ~ 1.2 MB/s</td>
-                <td>印表機、掃描器、初代隨身碟、音效卡</td>
-                <td>需雙絞屏蔽線材（Shielded Twisted Pair）</td>
+                <td>—</td>
+                <td><strong>USB 3.1 Gen 2</strong> (2013)</td>
+                <td><strong>USB 3.2 Gen 2x1</strong></td>
+                <td>單通道 10 Gbps (128b/132b 編碼)</td>
+                <td><strong>10 Gbps</strong> (~1.05 GB/s)</td>
+                <td><span class="badge-pill badge-teal">湖藍綠 (Teal)</span> / <span class="badge-pill badge-rose">紅色</span></td>
               </tr>
               <tr>
-                <td><strong>High-Speed（高速）</strong></td>
-                <td><strong>USB 2.0 (2000年)</strong></td>
-                <td><strong>480 Mbps</strong><br><span class="badge-pill badge-green">飆升 40 倍！</span></td>
-                <td><strong>約 35 ~ 43 MB/s</strong></td>
-                <td>隨身碟、外接硬碟、視訊鏡頭、手機數據傳輸</td>
-                <td>嚴格阻抗匹配（$90\,\Omega \pm 15\%$ 差分阻抗）</td>
+                <td>—</td>
+                <td>—</td>
+                <td><strong>USB 3.2 Gen 2x2</strong> (2017)</td>
+                <td><strong>雙通道 Type-C (10G × 2)</strong></td>
+                <td><strong>20 Gbps</strong> (~2.0 GB/s)</td>
+                <td>僅限 Type-C 接口</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <blockquote>
-          ⚠️ <strong>避坑冷知識：行銷上的「Full Speed」陷阱</strong><br>
-          在 USB 2.0 發布後，USB-IF 曾做過一次爭議性命名修改：把原本 USB 1.1 的 12 Mbps 重新包裝為 <strong>「USB 2.0 Full Speed」</strong>，而真正的 480 Mbps 則稱為 <strong>「USB 2.0 High Speed」</strong>。<br>
-          許多廠商常在包裝盒印上「支援 USB 2.0」，實際骨子裡只是 12 Mbps 的慢速晶片，傳輸一個檔案慢如蝸牛，購買時必須指名認清 <strong>High-Speed</strong> 標誌！
+          💡 <strong>白話總結：</strong><br>
+          只要看到標示 <code>USB 3.2 Gen 1</code>，它本質上就是 <strong>2008 年的 USB 3.0（5 Gbps）</strong>！<br>
+          只有看到 <code>Gen 2</code>（10 Gbps）或 <code>Gen 2x2</code>（20 Gbps），才是真正提速的進階規格。
         </blockquote>
 
-        <h3>為什麼 USB 2.0 的 480 Mbps 跑不滿 60 MB/s？</h3>
-        <p>理論換算：$\frac{480 \text{ Mbps}}{8} = 60 \text{ MB/s}$。但在真實世界中，外接硬碟即使極速也只能跑到約 **38 ~ 43 MB/s**。原因有三：</p>
-        <ol>
-          <li><strong>協議開銷（Protocol Overhead）</strong>：USB 每個數據封包都帶有同步碼（SYNC）、封包標識（PID）、地址與端點號、CRC16 校驗碼與握手應答（ACK/NAK）。</li>
-          <li><strong>主從輪詢架構（Host-Polling Architecture）</strong>：USB 2.0 是嚴格的主從體系。周邊設備不能主動傳送資料，必須苦苦等待主機控制器的 IN/OUT 令牌輪詢，浪費了大量傳輸間隙。</li>
-          <li><strong>半雙工通訊（Half-Duplex）</strong>：由於只有一組差分訊號線（D+ 與 D-），發送和接收無法同時進行，必須來回切換傳輸方向。</li>
-        </ol>
+        <h3>4.3 致命痛點：USB 3.0 摧毀 2.4GHz 無線滑鼠與 Wi-Fi</h3>
+        <p>Intel 曾專門發表白皮書揭露：USB 3.0 在傳輸 5 Gbps 差分數據時，其時脈擴頻雜訊的高階諧波**剛好精確落在 2.4 GHz ~ 2.5 GHz 頻段**！<br>
+        如果你把 2.4GHz 無線滑鼠的接收器插在 USB 3.0 隨身碟旁邊，無線訊號會被嚴重淹沒干擾，導致滑鼠劇烈延遲卡頓。這就是為什麼現代電腦背板依然必須保留黑色的 **USB 2.0 埠** 作為「無線外設安全島」。</p>
 
         <!-- Simulator Widget -->
         <div class="sim-widget" id="section-sim">
           <div class="sim-header">
-            <h3>⚡ USB 傳輸速率試算與耗時模擬器</h3>
-            <p style="margin: 0; color: var(--text-muted); font-size: 1.05rem;">選擇傳輸檔案大小，直觀體驗 USB 1.1 到 USB 2.0 之間高達 40 倍的震撼速度差距！</p>
+            <h3>⚡ 全世代 USB 傳輸速率試算與耗時模擬器</h3>
+            <p style="margin: 0; color: var(--text-muted); font-size: 1.05rem;">從 1996 年的 1.5 Mbps 到 2026 年的 80 Gbps，體驗高達 <strong>40,000 倍</strong> 的震撼速度飛躍！</p>
           </div>
 
           <div class="sim-controls">
@@ -618,303 +667,385 @@
               <label for="sim-file-type">選擇模擬傳輸檔案：</label>
               <select id="sim-file-type">
                 <option value="5">🎵 一首 MP3 音樂 (5 MB)</option>
-                <option value="25" selected>📷 高畫質數位相片輯 (25 MB)</option>
-                <option value="350">🎬 一部 720p 經典電影短片 (350 MB)</option>
-                <option value="1200">📦 一部高畫質藍光電影 (1.2 GB / 1200 MB)</option>
+                <option value="50">📷 數位相機 RAW 相片包 (50 MB)</option>
+                <option value="1000" selected>🎬 一部 1080p 高畫質電影 (1 GB / 1000 MB)</option>
+                <option value="25000">🎮 一款 3A 遊戲安裝包 / 4K 原盤 (25 GB)</option>
+                <option value="100000">💾 100 GB 系統全碟映象檔備份 (100 GB)</option>
               </select>
             </div>
             <div class="sim-field">
               <label>檔案大小換算：</label>
-              <div id="sim-file-desc" style="padding: 0.65rem 0; font-weight: 700; color: var(--accent); font-size: 1.2rem;">25 MB (約 200 Mbits)</div>
+              <div id="sim-file-desc" style="padding: 0.65rem 0; font-weight: 700; color: var(--accent); font-size: 1.2rem;">1.0 GB (約 8,000 Mbits)</div>
             </div>
           </div>
 
           <div class="sim-bars">
             <div class="sim-bar-item">
               <div class="sim-bar-label">
-                <span>🔴 USB 1.1 Low-Speed (1.5 Mbps / 實測 ~120 KB/s)</span>
-                <span id="time-low" style="color: #ef4444;">213.3 秒</span>
+                <span>🔴 USB 1.1 Low-Speed (1.5 Mbps / ~120 KB/s)</span>
+                <span id="time-low" style="color: #ef4444;">2.3 小時</span>
               </div>
               <div class="sim-progress-track">
                 <div class="sim-progress-fill fill-low" id="bar-low" style="width: 100%;"></div>
               </div>
-              <div style="font-size: 0.9rem; color: var(--text-muted);">傳輸極慢，僅適合傳送鍵盤敲擊與滑鼠座標。</div>
             </div>
 
             <div class="sim-bar-item">
               <div class="sim-bar-label">
-                <span>🟡 USB 1.1 Full-Speed (12 Mbps / 實測 ~1.1 MB/s)</span>
-                <span id="time-full" style="color: #f59e0b;">22.7 秒</span>
+                <span>🟡 USB 1.1 Full-Speed (12 Mbps / ~1.1 MB/s)</span>
+                <span id="time-full" style="color: #f59e0b;">15.1 分鐘</span>
               </div>
               <div class="sim-progress-track">
-                <div class="sim-progress-fill fill-full" id="bar-full" style="width: 10%;"></div>
+                <div class="sim-progress-fill fill-full" id="bar-full" style="width: 12%;"></div>
               </div>
-              <div style="font-size: 0.9rem; color: var(--text-muted);">早期 MP3 隨身碟速度，傳大檔案需要耐心等待。</div>
             </div>
 
             <div class="sim-bar-item">
               <div class="sim-bar-label">
-                <span>🟢 USB 2.0 High-Speed (480 Mbps / 實測 ~38 MB/s)</span>
-                <span id="time-high" style="color: #10b981; font-weight: 800;">0.65 秒</span>
+                <span>🔵 USB 2.0 High-Speed (480 Mbps / ~38 MB/s)</span>
+                <span id="time-high" style="color: #3b82f6;">26.3 秒</span>
               </div>
               <div class="sim-progress-track">
-                <div class="sim-progress-fill fill-high" id="bar-high" style="width: 1.8%;"></div>
+                <div class="sim-progress-fill fill-high" id="bar-high" style="width: 2%;"></div>
               </div>
-              <div style="font-size: 0.9rem; color: var(--text-muted);">40 倍狂飆！主流隨身碟與外接裝置的黃金時代標準。</div>
+            </div>
+
+            <div class="sim-bar-item">
+              <div class="sim-bar-label">
+                <span>🔷 USB 3.2 Gen 1 (5 Gbps / ~450 MB/s)</span>
+                <span id="time-ss" style="color: #06b6d4;">2.2 秒</span>
+              </div>
+              <div class="sim-progress-track">
+                <div class="sim-progress-fill fill-ss" id="bar-ss" style="width: 0.5%;"></div>
+              </div>
+            </div>
+
+            <div class="sim-bar-item">
+              <div class="sim-bar-label">
+                <span>🟢 USB4 80Gbps / USB4 2.0 (~7.5 GB/s)</span>
+                <span id="time-usb4" style="color: #10b981; font-weight: 800;">0.13 秒 (瞬傳)</span>
+              </div>
+              <div class="sim-progress-track">
+                <div class="sim-progress-fill fill-usb4" id="bar-usb4" style="width: 0.1%;"></div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- Section 4 -->
-        <h2 id="section-4">4. 接口顏色密碼（Port Colors）：黑、白、黃、紅代表什麼？</h2>
-        <p>走進電腦背後或筆電兩側，USB-A 接口內部的塑膠絕緣墊片顏色並非為了美觀，而是標準化的電氣規格代號：</p>
-
-        <div class="table-responsive">
-          <table>
-            <thead>
-              <tr>
-                <th>接口顏色</th>
-                <th>代表版本 / 規範</th>
-                <th>核心含義與典型用途</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="badge-pill badge-white">白色 (White)</span></td>
-                <td><strong>USB 1.0 / 1.1</strong></td>
-                <td>歷史最悠久的顏色。標配於 1990~2000 年代設備、早期印表機、第一代 iMac G3。如今新電腦已絕跡。</td>
-              </tr>
-              <tr>
-                <td><span class="badge-pill badge-black">黑色 (Black)</span></td>
-                <td><strong>USB 2.0 (High-Speed)</strong></td>
-                <td><strong>USB 2.0 統治世界的標誌性官方色</strong>。專為滑鼠、鍵盤、音效介面、接收器等無需極限頻寬的裝置設計。</td>
-              </tr>
-              <tr>
-                <td><span class="badge-pill badge-amber">黃色 (Yellow)</span><br><span class="badge-pill badge-rose">紅色 (Red)</span></td>
-                <td><strong>Sleep-and-Charge<br>(Always-On 睡眠供電)</strong></td>
-                <td>走 USB 2.0 或 3.0 線路。最大特色是<strong>即使筆電進入睡眠（Sleep）或關機關閉電源，該接口仍持續輸出 5V 供電</strong>，讓手機或耳機能隨時充飽電！</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
         <!-- Section 5 -->
-        <h2 id="section-5">5. 供電與充電演進：從 2.5W、雙頭 Y 型線到 BC 1.2 與 Apple 分壓</h2>
-
-        <h3>5.1 原始標準供電規範（Unit Load 握手機制）</h3>
-        <p>USB 之所以能稱霸，除了數據傳輸外，最重要的就是**匯流排自帶供電（Bus Power）**。在 USB 誕生前，外接裝置通常得外接一顆笨重的「尿袋變壓器」。</p>
-
-        <ul>
-          <li><strong>供電電壓</strong>：固定為標稱 **$5\text{V} \pm 5\%$**（4.75V ~ 5.25V）。</li>
-          <li><strong>單位負載（Unit Load）概念</strong>：
-            <ul>
-              <li><strong>1 個 Unit Load = 100 mA (0.5W)</strong>。</li>
-              <li><strong>低功率設備（Low-Power）</strong>：最高索取 1 個 Unit Load（100 mA），供滑鼠、鍵盤等運作。</li>
-              <li><strong>高功率設備（High-Power）</strong>：裝置插入初期只能抽取 100 mA，向主機發起枚舉列舉（Enumeration）並取得許可後，最多可索取 5 個 Unit Load，即：
-                $$\text{最大功率} = 5\text{V} \times 500\text{ mA} = 2.5\text{W}$$</li>
-            </ul>
-          </li>
-        </ul>
-
-        <blockquote>
-          💾 <strong>回憶殺：外接硬碟的「喀喀」異音與雙頭 Y 型線</strong><br>
-          早期 2.5 吋外接機械硬碟在馬達起轉瞬間的突入電流（Inrush Current）常高達 800mA ~ 1000mA，遠超單一 USB 2.0 埠的 500mA 上限！這導致硬碟供電不足、磁頭不斷復位發出「喀喀」異音。<br>
-          當時硬碟廠商隨盒必附一條**「雙頭 USB-A 的 Y 型線」**：一根主頭傳數據兼供電（500mA），一根副頭只取電（500mA），插滿兩個 USB 埠湊出 1000mA 勉強驅動！
-        </blockquote>
-
-        <h3>5.2 智慧型手機時代的救星：BC 1.2 充電協議（2010 年）</h3>
-        <p>智慧型手機爆發後，500mA 充一支手機需要 4~5 小時，極為緩慢。USB-IF 於是在 2010 年發布了 <strong>BC 1.2（Battery Charging Specification v1.2）</strong>，定義了三大端口類型：</p>
+        <h2 id="section-5">5. 第四階段：Type-C（USB-C）終極革命：正反盲插、24-Pin 架構與 E-Marker 晶片</h2>
+        <p>2014 年 8 月，USB-IF 發布了最具劃時代意義的物理形態革命：<strong>USB Type-C</strong>。</p>
 
         <div class="concept-grid">
           <div class="concept-card">
-            <h4>🖥️ SDP (標準下行埠)</h4>
-            <p><strong>Standard Downstream Port</strong></p>
-            <p>傳統電腦 USB 2.0 埠。支援 480 Mbps 數據傳輸，最大電流限制在 <strong>500 mA (2.5W)</strong>。</p>
+            <h4>🔄 物理正反盲插</h4>
+            <p>徹底告別了過去「第一次插不進、翻面插不進、再翻面才插進」的 USB-A 量子態笑話。耐插拔壽命高達 <strong>10,000 次</strong> 以上。</p>
           </div>
           <div class="concept-card">
-            <h4>🔌 DCP (專用充電埠)</h4>
-            <p><strong>Dedicated Charging Port</strong></p>
-            <p>俗稱充電頭、豆腐頭、行動電源。<strong>不傳輸數據</strong>。內部將 <strong>D+ 與 D- 短路（短接電阻 &lt; 200Ω）</strong>。手機檢測到 D+/D- 導通，即刻開啟 <strong>5V / 1.5A (7.5W)</strong> 充電！</p>
+            <h4>⚡ 240W 極限供電</h4>
+            <p>透過專屬高電流接腳與 USB PD 協議，供電能力從傳統的 2.5W 暴增到 <strong>240W</strong>，全面取代筆電圓孔充電器。</p>
           </div>
           <div class="concept-card">
-            <h4>⚡ CDP (充電下行埠)</h4>
-            <p><strong>Charging Downstream Port</strong></p>
-            <p>兼顧數據與大電流的電腦埠。既具備 480 Mbps 傳輸能力，又能在握手時允許手機抽取高達 <strong>5V / 1.5A (7.5W)</strong> 大電流。</p>
+            <h4>🖥️ Alt Mode「一線連」</h4>
+            <p>透過交替模式直接傳輸 DisplayPort 8K 影音、PCIe 資料，一條線同時搞定「外接顯示器 + 供電 + 傳檔案 + 外接鍵鼠」。</p>
           </div>
         </div>
 
-        <h3>5.3 蘋果的專利電壓分壓法（Apple Divider 1A / 2.1A / 2.4A）</h3>
-        <p>在 BC 1.2 普及前，Apple 為 iPhone 與 iPad 設計了一套巧妙的<strong>分壓電阻識別法</strong>：</p>
-        <p>蘋果充電器在 D+ 和 D- 線路上焊上高精度電阻，提供固定的直流偏壓：</p>
-        <ul>
-          <li><strong>Apple 1A (5W)</strong>：$D+ = 2.0\text{V}, \; D- = 2.7\text{V}$（iPhone 小豆腐頭）。</li>
-          <li><strong>Apple 2.1A (10.5W)</strong>：$D+ = 2.7\text{V}, \; D- = 2.0\text{V}$（初代 iPad 專用大充電頭）。</li>
-          <li><strong>Apple 2.4A (12W)</strong>：$D+ = 2.7\text{V}, \; D- = 2.7\text{V}$。</li>
-        </ul>
-        <p>設備檢測到特定的偏壓組合後，才會放心抽取高達 2.4A 大電流；否則會降級回安全的 500mA 慢慢充電以防燒機。</p>
+        <!-- Section Type-C Pins -->
+        <h2 id="section-typec-pins">6. 深入骨髓：Type-C 24-Pin 對稱接腳定義</h2>
+        <p>Type-C 能夠實現正反插與超高頻寬，秘密全藏在上下對稱的 24 根金屬接腳中：</p>
 
-        <!-- Section Pinout -->
-        <h2 id="section-pinout">6. 經典 4-Pin 接腳與差分訊號解析</h2>
-
-        <!-- Interactive Pinout Box -->
+        <!-- Interactive 24-Pin Box -->
         <div class="interactive-explorer-box">
-          <div class="exp-title">🔌 點擊下方接腳，檢視硬體電氣定義與訊號原理</div>
-          <div class="pinout-diagram">
-            <div class="pin-btn pin-vbus active" data-pin="vbus">
-              <span class="pin-num">Pin 1</span>
-              <span>VBUS</span>
+          <div class="exp-title">🔌 點擊下方 Type-C 接腳，檢視硬體電氣定義與訊號原理</div>
+
+          <div class="typec-grid-wrap">
+            <!-- Row A (Top) -->
+            <div class="typec-row">
+              <div class="typec-pin c-gnd active" data-cpin="GND">A1<br>GND</div>
+              <div class="typec-pin c-ss" data-cpin="TX1p">A2<br>TX1+</div>
+              <div class="typec-pin c-ss" data-cpin="TX1n">A3<br>TX1-</div>
+              <div class="typec-pin c-vbus" data-cpin="VBUS">A4<br>VBUS</div>
+              <div class="typec-pin c-cc" data-cpin="CC1">A5<br>CC1</div>
+              <div class="typec-pin c-usb2" data-cpin="Dp">A6<br>D+</div>
+              <div class="typec-pin c-usb2" data-cpin="Dn">A7<br>D-</div>
+              <div class="typec-pin c-sbu" data-cpin="SBU1">A8<br>SBU1</div>
+              <div class="typec-pin c-vbus" data-cpin="VBUS">A9<br>VBUS</div>
+              <div class="typec-pin c-ss" data-cpin="RX2n">A10<br>RX2-</div>
+              <div class="typec-pin c-ss" data-cpin="RX2p">A11<br>RX2+</div>
+              <div class="typec-pin c-gnd" data-cpin="GND">A12<br>GND</div>
             </div>
-            <div class="pin-btn pin-dm" data-pin="dm">
-              <span class="pin-num">Pin 2</span>
-              <span>D -</span>
-            </div>
-            <div class="pin-btn pin-dp" data-pin="dp">
-              <span class="pin-num">Pin 3</span>
-              <span>D +</span>
-            </div>
-            <div class="pin-btn pin-gnd" data-pin="gnd">
-              <span class="pin-num">Pin 4</span>
-              <span>GND</span>
+            <!-- Row B (Bottom - Inverted Symmetry) -->
+            <div class="typec-row">
+              <div class="typec-pin c-gnd" data-cpin="GND">B12<br>GND</div>
+              <div class="typec-pin c-ss" data-cpin="RX1p">B11<br>RX1+</div>
+              <div class="typec-pin c-ss" data-cpin="RX1n">B10<br>RX1-</div>
+              <div class="typec-pin c-vbus" data-cpin="VBUS">B9<br>VBUS</div>
+              <div class="typec-pin c-sbu" data-cpin="SBU2">B8<br>SBU2</div>
+              <div class="typec-pin c-usb2" data-cpin="Dn">B7<br>D-</div>
+              <div class="typec-pin c-usb2" data-cpin="Dp">B6<br>D+</div>
+              <div class="typec-pin c-cc" data-cpin="CC2">B5<br>CC2</div>
+              <div class="typec-pin c-vbus" data-cpin="VBUS">B4<br>VBUS</div>
+              <div class="typec-pin c-ss" data-cpin="TX2n">B3<br>TX2-</div>
+              <div class="typec-pin c-ss" data-cpin="TX2p">B2<br>TX2+</div>
+              <div class="typec-pin c-gnd" data-cpin="GND">B1<br>GND</div>
             </div>
           </div>
 
-          <div class="pin-detail-card" id="pin-detail-content">
-            <strong>🔴 Pin 1 (VBUS 供電正極)：</strong><br>
-            • <strong>電壓規格</strong>：直流 $+5\text{V}$（允許範圍 $4.75\text{V} \sim 5.25\text{V}$）。標準線芯顏色為<strong>紅色</strong>。<br>
-            • <strong>防呆機制</strong>：Pin 1 與 Pin 4 比中間的 D+/D- <strong>凸出長約 1mm</strong>！確保熱插拔時<strong>「先接通電源建立參考電位、拔出時電源最後斷開（Make-First-Break-Last）」</strong>，有效保護晶片免遭靜電或未接地衝擊。
+          <div class="pin-detail-card" id="typec-detail-content">
+            <strong>⚫ GND（A1, A12, B1, B12 - 電源接地線）：</strong><br>
+            • 四角各有一根粗壯的接地腳，為整個系統提供統一的 0V 參考基準與大電流回路。<br>
+            • 插入時外側先接地，形成靜電放電（ESD）防護。
           </div>
         </div>
 
-        <h3>差分訊號（Differential Signaling）的抗干擾黑科技</h3>
-        <p>傳統並列排線容易受到周圍電磁雜訊（EMI）干擾，而 USB 採用了成對雙絞的 <strong>D+ 與 D- 差分訊號線</strong>：</p>
+        <h3>核心接腳群組解析：</h3>
         <ul>
-          <li>接收端不判斷單根線對地的絕對電壓，而是計算<strong>兩者之間的電位差：$V_{\text{diff}} = V_{D+} - V_{D-}$</strong>。</li>
-          <li>當環境出現電磁雜訊時，干擾會同時、同量疊加在緊密雙絞的 D+ 與 D- 線上（稱為共模雜訊 Common-Mode Noise）。在接收端進行相減運算時，雜訊被<strong>瞬間完全抵消</strong>！這使得 USB 線材即便長達 3 到 5 米，依然能穩定傳輸高頻數據。</li>
+          <li><strong>CC1 / CC2（Configuration Channel 配置通道）— Type-C 的大腦：</strong>
+            <ul>
+              <li><strong>判定正反插方向</strong>：母座兩側都有 CC，但標準線纜內部只有一條實體 CC 線。主機透過檢測哪一端產生了 $R_d$（5.1kΩ 下拉電阻）電壓分壓，瞬間判斷出目前線纜是正插還是反插！</li>
+              <li><strong>主從角色切換（Role Negotiation）</strong>：協商誰是供電方（DFP/Source）、誰是受電方（UFP/Sink）或雙向自適應（DRP）。</li>
+              <li><strong>USB PD 快充通訊載體</strong>：透過 BMC（雙相標記編碼）在 CC 線上傳輸握手資料封包。</li>
+            </ul>
+          </li>
+          <li><strong>VCONN 供電腳</strong>：當 CC1 被選為通訊通道時，另一側未使用的 CC2 就會搖身一變成為 <strong>VCONN（5V / 1W 供電）</strong>，專門替線頭內建的 **E-Marker 晶片** 供電！</li>
+          <li><strong>SBU1 / SBU2（Sideband Use 輔助線）</strong>：在進入 DP Alt Mode（外接螢幕）時，這兩根線被複用為 DisplayPort 的 **AUX 通道**，負責讀取螢幕的 EDID 解析度與 HDCP 密鑰。</li>
+          <li><strong>TX1/2 & RX1/2（4 對高速差分線）</strong>：USB 3.2 雙通道 20Gbps、USB4 40G/80Gbps 以及 4 條 DP 影像訊號的物理高速通道。</li>
         </ul>
+
+        <h3>什麼是 E-Marker 晶片？為什麼便宜線充電被限縮？</h3>
+        <p><strong>E-Marker（Electronic Marked Cable）</strong> 是封裝在 Type-C 接頭內部的小型微控制器（MCU）。它就像線材的「電子身分證」，記錄著：</p>
+        <ul>
+          <li>該線材支援的最大電流（3A 還是 5A？）</li>
+          <li>該線材支援的最大電壓（20V 還是 48V EPR？）</li>
+          <li>該線材的傳輸頻寬等級（USB 2.0、USB 3.2 還是 USB4 40G/80G？）</li>
+        </ul>
+
+        <blockquote>
+          ⚠️ <strong>安全硬限制：</strong><br>
+          根據 USB-IF 規定：<strong>凡是充電功率超過 60W（即電流超過 3A，如 100W/240W 線），或數據傳輸速率達到 10 Gbps 以上的線纜，線頭內部必須強制內嵌 E-Marker 晶片！</strong><br>
+          如果沒有晶片，主機充電器出於安全防起火考量，會強制鎖死在最大 <strong>20V / 3A (60W)</strong>，絕對不允許開啟 5A 大電流。
+        </blockquote>
 
         <!-- Section 6 -->
-        <h2 id="section-6">7. 物理形態家族：Type-A、Type-B、Mini-B 與 Micro-B OTG</h2>
+        <h2 id="section-6">7. 第五階段：充電技術革命：從 2.5W 到 USB PD 3.1 EPR 240W 快充</h2>
+
         <div class="table-responsive">
           <table>
             <thead>
               <tr>
-                <th>接頭外型</th>
-                <th>接腳數</th>
-                <th>常見應用領域</th>
-                <th>硬體特性與歷史命運</th>
+                <th>充電標準</th>
+                <th>發佈年份</th>
+                <th>最大輸出電壓</th>
+                <th>最大輸出電流</th>
+                <th>最高輸出功率</th>
+                <th>核心技術與標誌性特徵</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Type-A</strong></td>
-                <td>4-Pin</td>
-                <td>電腦主機端、充電器、電視、汽車中控台</td>
-                <td>經典長方形接口。只作為 Host（主機端），防止使用者將兩台電腦用公對公線對插導致燒毀。</td>
+                <td><strong>USB 2.0 基礎</strong></td>
+                <td>2000 年</td>
+                <td>5V</td>
+                <td>0.5A</td>
+                <td>2.5W</td>
+                <td>單位負載握手 (Unit Load)</td>
               </tr>
               <tr>
-                <td><strong>Type-B</strong></td>
-                <td>4-Pin</td>
-                <td>印表機、高階掃描器、專業音效卡、DAC 解碼器</td>
-                <td>正方形切兩角。外型厚實抗震動，耐插拔壽命長，工業與專業音訊設備至今仍廣泛使用。</td>
+                <td><strong>BC 1.2</strong></td>
+                <td>2010 年</td>
+                <td>5V</td>
+                <td>1.5A</td>
+                <td>7.5W</td>
+                <td>D+/D- 短路偵測 (DCP 模式)</td>
               </tr>
               <tr>
-                <td><strong>Mini-B (Mini-USB)</strong></td>
-                <td>5-Pin</td>
-                <td>早期 MP3、隨身碟、數位相機、舊款行車紀錄器</td>
-                <td>插拔壽命約 5,000 次。厚度較厚且易損壞，在 2010 年後被全面淘汰。</td>
+                <td><strong>USB PD 2.0 / 3.0</strong></td>
+                <td>2014~2015</td>
+                <td>5V, 9V, 15V, <strong>20V</strong></td>
+                <td>3A / 5A (需 E-Marker)</td>
+                <td><strong>100W</strong></td>
+                <td>固定檔位 (Fixed PDO) 與 CC 線通訊</td>
               </tr>
               <tr>
-                <td><strong>Micro-B (Micro-USB)</strong></td>
-                <td>5-Pin</td>
-                <td>智慧型手機前中期（安卓機霸主）、行動電源、藍牙耳機</td>
-                <td>厚度減半，插拔壽命躍升至 <strong>10,000 次</strong>，附帶金屬彈簧卡扣。第 5 針為 <strong>ID 腳位</strong>，支援 <strong>USB OTG（On-The-Go）</strong> 讓手機能反向接隨身碟與鍵盤。</td>
+                <td><strong>USB PD 3.0 PPS</strong></td>
+                <td>2017 年</td>
+                <td>3.3V ~ 21V (步進可調)</td>
+                <td>最高 5A</td>
+                <td>100W</td>
+                <td><strong>可編程供電</strong>：以 20mV / 50mA 動態微調，發熱量大減</td>
+              </tr>
+              <tr>
+                <td><strong>USB PD 3.1 EPR</strong></td>
+                <td><strong>2021 年起</strong></td>
+                <td><strong>28V, 36V, 48V</strong></td>
+                <td><strong>5A</strong></td>
+                <td><span class="badge-pill badge-green">★ 240W 巔峰</span></td>
+                <td><strong>擴展功率範圍</strong>：全面取代電競筆電、顯示卡、工作站大磚塊充電器！</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <!-- Section 7 -->
-        <h2 id="section-7">8. USB 1.x 與 USB 2.0 完整綜合規格對比表</h2>
+        <h2 id="section-7">8. 第六階段：極限巔峰：USB4 與 USB4 2.0（80Gbps / PAM3 編碼）</h2>
+
+        <h3>8.1 USB4 的誕生：融合 Intel Thunderbolt 3</h3>
+        <p>2019 年，Intel 將其獨佔多年的 **Thunderbolt 3（雷電3）技術免費貢獻給 USB-IF**，USB-IF 隨即以此為基礎推出了 <strong>USB4</strong>：</p>
+        <ul>
+          <li><strong>統一接頭</strong>：USB4 **僅能使用 Type-C 形態**，徹底廢除 Type-A。</li>
+          <li><strong>動態協定隧道技術（Protocol Tunneling）</strong>：過去傳輸影像只能切換為 DP Alt Mode（數據通道被占滿）。USB4 將 <strong>PCIe、DisplayPort 與 USB 3.2 封包混合封裝在同一條高速鏈路中</strong>，由路由器依據當前負載動態分配頻寬！例如螢幕畫面靜止時，自動將 35 Gbps 頻寬分配給外接硬碟全速寫入。</li>
+        </ul>
+
+        <h3>8.2 USB4 2.0（次世代 80 Gbps / 120 Gbps）與 PAM3 調變</h3>
+        <p>2022 年發布的 <strong>USB4 2.0</strong> 再次將物理極限推向神級水準：</p>
+        <ul>
+          <li><strong>PAM3（3-Level Pulse Amplitude Modulation）三電平脈衝調變</strong>：<br>
+            捨棄了傳統二進制的 NRZ（只發送 0 和 1），在同一時脈週期內發送三種電平狀態（-1, 0, +1），能以相同的實體頻率傳輸 1.5 倍以上的有效位元！</li>
+          <li><strong>對稱模式</strong>：雙向各 <strong>80 Gbps</strong>。</li>
+          <li><strong>非對稱超狂模式（Asymmetric Mode）</strong>：為了滿足多台 8K 144Hz 顯示器驅動，可將一對接收通道動態借調給發送端，形成 **120 Gbps 發送 + 40 Gbps 接收** 的不對稱傳輸怪物！</li>
+        </ul>
+
+        <!-- Section 8 -->
+        <h2 id="section-8">9. 接口顏色大觀園：黑、白、藍、湖藍綠、紅、黃完整對照</h2>
         <div class="table-responsive">
           <table>
             <thead>
               <tr>
-                <th>規格維度</th>
-                <th>USB 1.0</th>
-                <th>USB 1.1</th>
-                <th>USB 2.0</th>
+                <th>端口內部顏色</th>
+                <th>官方 / 通用規範標準</th>
+                <th>傳輸速率與功能含義</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>發佈年份</strong></td>
-                <td>1996 年 1 月</td>
-                <td>1998 年 9 月</td>
-                <td><strong>2000 年 4 月</strong></td>
+                <td><span class="badge-pill badge-white">白色 (White)</span></td>
+                <td><strong>USB 1.0 / 1.1</strong></td>
+                <td>1.5 Mbps / 12 Mbps (Low / Full-Speed)。老古董接口。</td>
               </tr>
               <tr>
-                <td><strong>最高理論頻寬</strong></td>
-                <td>12 Mbps</td>
-                <td>12 Mbps</td>
-                <td><strong>480 Mbps (暴增 40 倍)</strong></td>
+                <td><span class="badge-pill badge-black">黑色 (Black)</span></td>
+                <td><strong>USB 2.0</strong></td>
+                <td>480 Mbps (High-Speed)。滑鼠、鍵盤、接收器的最佳避風港。</td>
               </tr>
               <tr>
-                <td><strong>實測最高速度</strong></td>
-                <td>- (未成熟商用)</td>
-                <td>約 1.0 ~ 1.2 MB/s</td>
-                <td><strong>約 35 ~ 43 MB/s</strong></td>
+                <td><span class="badge-pill badge-blue">藍色 (Blue)</span></td>
+                <td><strong>USB 3.0 / 3.1 Gen 1 / 3.2 Gen 1</strong></td>
+                <td><strong>5 Gbps (SuperSpeed)</strong>。高速隨身碟起步標準。</td>
               </tr>
               <tr>
-                <td><strong>速度模式代號</strong></td>
-                <td>Low-Speed (1.5M)<br>Full-Speed (12M)</td>
-                <td>Low-Speed (1.5M)<br>Full-Speed (12M)</td>
-                <td>Low-Speed (1.5M)<br>Full-Speed (12M)<br><strong>High-Speed (480M)</strong></td>
+                <td><span class="badge-pill badge-teal">湖藍綠 (Teal / Cyan)</span></td>
+                <td><strong>USB 3.1 Gen 2 / 3.2 Gen 2</strong></td>
+                <td><strong>10 Gbps (SuperSpeed+)</strong>。通常標註 10G 或 SS+。</td>
               </tr>
               <tr>
-                <td><strong>官方標準端口色</strong></td>
-                <td>白色 (White)</td>
-                <td>白色 (White)</td>
-                <td><strong>黑色 (Black)</strong></td>
+                <td><span class="badge-pill badge-rose">紅色 (Red)</span></td>
+                <td><strong>高階 USB 3.2 Gen 2</strong> 或 大電流埠</td>
+                <td>10 Gbps 高速，且通常具備較高供電電流（如 1.5A ~ 2A）。</td>
               </tr>
               <tr>
-                <td><strong>基礎供電上限</strong></td>
-                <td>5V / 500mA (2.5W)</td>
-                <td>5V / 500mA (2.5W)</td>
-                <td>5V / 500mA (2.5W)</td>
-              </tr>
-              <tr>
-                <td><strong>擴充充電協議</strong></td>
-                <td>無</td>
-                <td>無</td>
-                <td><strong>BC 1.2 (最高 5V/1.5A = 7.5W)</strong><br>Apple Divider 系列</td>
-              </tr>
-              <tr>
-                <td><strong>主要傳輸架構</strong></td>
-                <td>半雙工 / 主機輪詢</td>
-                <td>半雙工 / 主機輪詢</td>
-                <td>半雙工 / 主機輪詢</td>
-              </tr>
-              <tr>
-                <td><strong>歷史地位與評價</strong></td>
-                <td>探索技術的原型版</td>
-                <td>第一款成功普及的通用標準</td>
-                <td><strong>電腦史上生命力最強的周邊匯流排</strong></td>
+                <td><span class="badge-pill badge-amber">黃色 (Yellow)</span></td>
+                <td><strong>Sleep-and-Charge (Always-On)</strong></td>
+                <td>睡眠供電埠。電腦關機或睡眠時，依然能持續輸出 5V 為手機充電。</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <!-- Section 8 -->
-        <h2 id="section-8">9. 現代冷知識：為什麼到了 2026 年，我們依然離不開 USB 2.0？</h2>
-        <p>即使今日 USB4 與 Thunderbolt 4 傳輸頻寬已高達 40 Gbps ~ 80 Gbps，USB-C 更是統一天下，但<strong>底層的 USB 2.0 協議依然無處不在</strong>：</p>
+        <!-- Section 9 -->
+        <h2 id="section-9">10. 跨越 30 年：全世代 USB 終極規格總整理大表格</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>代號標準</th>
+                <th>發佈年份</th>
+                <th>最大理論頻寬</th>
+                <th>實測極限速度</th>
+                <th>通訊模式</th>
+                <th>最高供電</th>
+                <th>主流物理外型</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>USB 1.1</strong></td>
+                <td>1998</td>
+                <td>12 Mbps</td>
+                <td>~1.2 MB/s</td>
+                <td>半雙工 / 輪詢</td>
+                <td>5V / 0.5A (2.5W)</td>
+                <td>Type-A (白) / Type-B</td>
+              </tr>
+              <tr>
+                <td><strong>USB 2.0</strong></td>
+                <td>2000</td>
+                <td>480 Mbps</td>
+                <td>~43 MB/s</td>
+                <td>半雙工 / 輪詢</td>
+                <td>5V / 1.5A (7.5W, BC1.2)</td>
+                <td>Type-A (黑) / Micro-B</td>
+              </tr>
+              <tr>
+                <td><strong>USB 3.0 (3.2 Gen 1)</strong></td>
+                <td>2008</td>
+                <td>5 Gbps</td>
+                <td>~450 MB/s</td>
+                <td>全雙工 (8b/10b)</td>
+                <td>5V / 0.9A (4.5W)</td>
+                <td>Type-A (藍) / Micro-B 3.0</td>
+              </tr>
+              <tr>
+                <td><strong>USB 3.1 (3.2 Gen 2)</strong></td>
+                <td>2013</td>
+                <td>10 Gbps</td>
+                <td>~1.05 GB/s</td>
+                <td>全雙工 (128b/132b)</td>
+                <td>最高 100W (PD)</td>
+                <td>Type-A (湖藍綠) / Type-C</td>
+              </tr>
+              <tr>
+                <td><strong>USB 3.2 Gen 2x2</strong></td>
+                <td>2017</td>
+                <td>20 Gbps</td>
+                <td>~2.05 GB/s</td>
+                <td>全雙工 (雙通道)</td>
+                <td>最高 100W (PD)</td>
+                <td><strong>僅限 Type-C</strong></td>
+              </tr>
+              <tr>
+                <td><strong>USB4 (Gen 3x2)</strong></td>
+                <td>2019</td>
+                <td>40 Gbps</td>
+                <td>~3.8 GB/s</td>
+                <td><strong>協定隧道技術</strong></td>
+                <td>最高 100W / 240W</td>
+                <td><strong>僅限 Type-C</strong></td>
+              </tr>
+              <tr>
+                <td><strong>USB4 2.0</strong></td>
+                <td>2022~今</td>
+                <td><strong>80 / 120 Gbps</strong></td>
+                <td>~7.8 / 11.5 GB/s</td>
+                <td><strong>PAM3 三電平非對稱</strong></td>
+                <td><strong>240W (PD 3.1 EPR)</strong></td>
+                <td><strong>僅限 Type-C</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
+        <!-- Section 10 -->
+        <h2 id="section-10">11. 現代冷知識與工程避坑指南</h2>
         <ol>
-          <li><strong>你的 USB-C 充電編織線，骨子裡其實是 USB 2.0</strong>：<br>
-            市面上絕大多數百元 Type-C 快充線或手機原廠盒裝充電線，內部僅焊了供電的 VBUS、GND、CC（用來握手 PD 快充），以及<strong>一對 USB 2.0 的 D+/D- 數據線</strong>。拿它連接電腦傳送檔案，傳輸速度依然被鎖死在 20 年前的 <strong>480 Mbps（~38 MB/s）</strong>！若要享受 10Gbps+ 高速，必須額外購買標註 USB 3.2 或 USB4 的全功能線材。</li>
-          <li><strong>電競鍵盤與滑鼠永遠不需要 USB 3.0</strong>：<br>
-            即使是 1000Hz 甚至 8000Hz 超高回報率的頂級電競滑鼠，每秒傳輸的座標封包數據量也不到幾百 KB。使用 USB 2.0 成本極低且省電；更關鍵的是，<strong>USB 3.0 的 5Gbps 高頻時脈會對 2.4GHz 頻段（Wi-Fi 與藍牙）產生嚴重的射頻干擾（RFI）</strong>，若無線滑鼠接收器插在 USB 3.0 埠旁常會出現游標卡頓漂移，因此插在黑色的 USB 2.0 埠才是最穩定的黃金解法。</li>
-          <li><strong>主機板必備的救命稻草（BIOS Flashback）</strong>：<br>
-            最新的旗艦主機板背板 I/O 上，一定會刻意保留 1 ~ 2 個黑色的 USB 2.0 埠。因為其協議最簡單、相容性最高，主機板在無 CPU、無記憶體的裸機狀態下進行純硬體 BIOS 盲刷時，只有 USB 2.0 能保證 100% 讀取成功。</li>
+          <li><strong>不要以為長得像 Type-C 就是高速線！</strong><br>
+            市面上 80% 的百元「充電線」或原廠手機充電線，裡面只有 4 根線芯（VBUS, GND, CC, D+/D-）。拿它插上電腦，傳送檔案依然只有 20 年前的 <strong>480 Mbps（USB 2.0）</strong>！要外接硬碟或顯示器，必須認清線身上印有 <code>10Gbps</code>、<code>20Gbps</code> 或 <code>40Gbps / 80Gbps</code> 認證標誌的「全功能線（Full-featured Cable）」。</li>
+          <li><strong>Thunderbolt 4 / 5 與 USB4 的恩怨情仇</strong>：<br>
+            • USB4 是標準協議，但部分規格是「可選（Optional）」的（例如 PCIe 隧道在某些低階 USB4 筆電上可能閹割）。<br>
+            • <strong>Thunderbolt 4 是 Intel 的強制滿血認證版</strong>：只要有閃電標誌，保證支援雙 4K 螢幕、強制支援 PCIe 32Gbps、強制最低 40Gbps 頻寬，相容性最高！</li>
+          <li><strong>為什麼 Type-C 充電頭充不進老舊 Micro-USB 設備？</strong><br>
+            很多早期電子書、手電筒用 Type-A 轉 Type-C 線可以充電，但拿「雙頭 Type-C 線（C-to-C）」插上高階 PD 充電頭卻毫無反應！<br>
+            這是因為不良廠商在設計設備端 Type-C 母座時，<strong>偷省了兩個成本不到幾毛錢的 5.1kΩ 下拉電阻（CC Pin）</strong>。高階 PD 充電器在 CC 線上偵測不到電阻分壓，會判定「沒有設備插入」，出於安全考慮直接完全關閉 5V 輸出！</li>
         </ol>
 
         <blockquote>
@@ -968,80 +1099,141 @@
   <script src="./js/script.js"></script>
   <script src="./js/enhancements.js"></script>
 
-  <!-- Interactive Simulator & Pinout Script -->
+  <!-- Interactive Scripts -->
   <script>
-    // 1. Pinout Detail Inspector
-    const pinData = {
-      vbus: {
-        title: "🔴 Pin 1 (VBUS 供電正極)",
-        desc: "• <strong>電壓規格</strong>：直流 +5V（容許範圍 4.75V ~ 5.25V）。標準線芯顏色為<strong>紅色</strong>。<br>• <strong>硬體特點</strong>：Pin 1 與 Pin 4 比中間的 D+/D- <strong>凸出約 1mm</strong>！確保熱插拔時<strong>「先供電接地、後傳訊號（Make-First-Break-Last）」</strong>，防止晶片遭受瞬態電位衝擊。"
+    // 1. Type-C 24-Pin Interactive Explorer
+    const typecPinData = {
+      GND: {
+        title: "⚫ GND（電源接地腳：A1, A12, B1, B12）",
+        desc: "• <strong>電氣特性</strong>：四角皆有獨立接地腳，構成大電流回流通道（最大承載 5A 電流）。<br>• <strong>物理防護</strong>：插入母座時，外圈金屬外殼與 GND 最先接觸，釋放人體或環境累積的靜電放電（ESD）。"
       },
-      dm: {
-        title: "⚪ Pin 2 (D- 差分數據負極)",
-        desc: "• <strong>訊號定義</strong>：高速差分訊號的反向端。標準線芯顏色為<strong>白色</strong>。<br>• <strong>電氣原理</strong>：與 D+ 緊密雙絞。在 USB 1.1 中低電平為 0V、高電平為 3.3V；在 USB 2.0 High-Speed 模式下訊號幅度縮小至 <strong>400mV</strong> 以降低高頻功耗與電磁輻射。<br>• <strong>充電識別</strong>：在 BC 1.2 DCP 充電模式下，D- 與 D+ 會在充電頭內部直接短接。"
+      VBUS: {
+        title: "🔴 VBUS（供電正極：A4, A9, B4, B9）",
+        desc: "• <strong>電壓規格</strong>：預設為 5V；在 USB PD 協議握手成功後，最高可升壓至 <strong>20V (100W)</strong> 或 USB PD 3.1 EPR 的 <strong>48V (240W)</strong>！<br>• <strong>電流能力</strong>：四根 VBUS 腳位並聯，分攤 5A 大電流以大幅降低接點接觸電阻與發熱。"
       },
-      dp: {
-        title: "🟢 Pin 3 (D+ 差分數據正極)",
-        desc: "• <strong>訊號定義</strong>：高速差分訊號的正向端。標準線芯顏色為<strong>綠色</strong>。<br>• <strong>速度偵測</strong>：設備插入時，Host 會偵測 D+ 或 D- 上的<strong>上拉電阻（Pull-up Resistor）</strong>。若 D+ 接 1.5kΩ 上拉代表 Full-Speed/High-Speed；若 D- 接 1.5kΩ 上拉代表 Low-Speed！"
+      CC1: {
+        title: "🟡 CC1（Configuration Channel 1 配置通道：A5）",
+        desc: "• <strong>核心大腦</strong>：Type-C 的靈魂接腳！用於<strong>偵測正反插方向</strong>（透過 5.1kΩ 下拉電阻判斷）。<br>• <strong>角色協議</strong>：決定誰供電（DFP/Source）與誰受電（UFP/Sink）。<br>• <strong>快充載體</strong>：USB PD 的 BMC 雙相標記編碼通訊全部在此線路上進行！"
       },
-      gnd: {
-        title: "⚫ Pin 4 (GND 電源地線)",
-        desc: "• <strong>訊號定義</strong>：系統參考地線（0V Ground）。標準線芯顏色為<strong>黑色</strong>。<br>• <strong>硬體特點</strong>：與 Pin 1 (VBUS) 共同加長，構成迴路基石。在屏蔽線纜中，外部的金屬編織網（Shielding）還會與 USB 金屬外殼接地，徹底隔絕外在雜訊干擾。"
+      CC2: {
+        title: "🟡 CC2（Configuration Channel 2 / VCONN：B5）",
+        desc: "• <strong>雙重身分</strong>：當 A5 的 CC1 被選定為主要方向通訊時，未使用的 B5 會自動切換為 <strong>VCONN 供電腳（5V / 1W）</strong>，專門為線頭內的 <strong>E-Marker 晶片</strong> 供應電力！"
+      },
+      SBU1: {
+        title: "🟣 SBU1 / SBU2（Sideband Use 輔助訊號：A8, B8）",
+        desc: "• <strong>專門給 Alt Mode 差遣</strong>：在純 USB 傳輸時不使用。<br>• <strong>外接螢幕的神經線</strong>：當切換為 DisplayPort Alt Mode 時，SBU 腳位被複用為 DP 的 <strong>AUX 差分輔助通道</strong>，用來讀取螢幕的 EDID 解析度、更新率與 HDCP 數位版權認證。"
+      },
+      Dp: {
+        title: "🟢 D+ / D-（USB 2.0 差分向下相容：A6/A7, B6/B7）",
+        desc: "• <strong>向下相容二十年</strong>：母座上下兩排均保留一對 D+/D-，確保無論正插或反插，USB 2.0 裝置（或沒焊高速線的普通充電線）都能以 480 Mbps 正常工作。"
+      },
+      Dn: {
+        title: "🟢 D+ / D-（USB 2.0 差分向下相容：A6/A7, B6/B7）",
+        desc: "• <strong>向下相容二十年</strong>：母座上下兩排均保留一對 D+/D-，確保無論正插或反插，USB 2.0 裝置都能以 480 Mbps 正常通訊。"
+      },
+      TX1p: {
+        title: "🔵 SuperSpeed 差分發送端 (TX1+, TX1-：A2, A3)",
+        desc: "• <strong>極速發送通道</strong>：支援 USB 3.2 10Gbps、USB4 20G/40G，或在 DP Alt Mode 中轉為 DisplayPort Lane 0 影像發送通道。"
+      },
+      TX1n: {
+        title: "🔵 SuperSpeed 差分發送端 (TX1+, TX1-：A2, A3)",
+        desc: "• <strong>極速發送通道</strong>：支援 USB 3.2 10Gbps、USB4 20G/40G，或在 DP Alt Mode 中轉為 DisplayPort Lane 0 影像發送通道。"
+      },
+      RX1p: {
+        title: "🔵 SuperSpeed 差分接收端 (RX1+, RX1-：B11, B10)",
+        desc: "• <strong>極速接收通道</strong>：構成全雙工接收鏈路。在 USB4 2.0 非對稱模式下，可被借調反轉為發送端以達到 120 Gbps 超高頻寬！"
+      },
+      RX1n: {
+        title: "🔵 SuperSpeed 差分接收端 (RX1+, RX1-：B11, B10)",
+        desc: "• <strong>極速接收通道</strong>：構成全雙工接收鏈路。在 USB4 2.0 非對稱模式下，可被借調反轉為發送端以達到 120 Gbps 超高頻寬！"
+      },
+      TX2p: {
+        title: "🔵 第二組 SuperSpeed 差分通道 (TX2+, TX2-：B2, B3)",
+        desc: "• <strong>雙通道 20Gbps / 40Gbps 關鍵</strong>：與 TX1 組合達成雙通道傳輸，或提供額外兩條 DP 影像數據通道驅動高解析雙螢幕。"
+      },
+      TX2n: {
+        title: "🔵 第二組 SuperSpeed 差分通道 (TX2+, TX2-：B2, B3)",
+        desc: "• <strong>雙通道 20Gbps / 40Gbps 關鍵</strong>：與 TX1 組合達成雙通道傳輸，或提供額外兩條 DP 影像數據通道驅動高解析雙螢幕。"
+      },
+      RX2p: {
+        title: "🔵 第二組 SuperSpeed 接收通道 (RX2+, RX2-：A11, A10)",
+        desc: "• <strong>雙通道高速接收</strong>：與 RX1 協同運作，實現對稱 40Gbps / 80Gbps 高速傳輸。"
+      },
+      RX2n: {
+        title: "🔵 第二組 SuperSpeed 接收通道 (RX2+, RX2-：A11, A10)",
+        desc: "• <strong>雙通道高速接收</strong>：與 RX1 協同運作，實現對稱 40Gbps / 80Gbps 高速傳輸。"
       }
     };
 
-    document.querySelectorAll('.pin-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.pin-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const pinKey = btn.getAttribute('data-pin');
-        const data = pinData[pinKey];
+    document.querySelectorAll('.typec-pin').forEach(pin => {
+      pin.addEventListener('click', () => {
+        document.querySelectorAll('.typec-pin').forEach(p => p.classList.remove('active'));
+        pin.classList.add('active');
+        const cpinKey = pin.getAttribute('data-cpin');
+        const data = typecPinData[cpinKey];
         if (data) {
-          document.getElementById('pin-detail-content').innerHTML = `<strong>${data.title}：</strong><br>${data.desc}`;
+          document.getElementById('typec-detail-content').innerHTML = `<strong>${data.title}：</strong><br>${data.desc}`;
         }
       });
     });
 
-    // 2. Transfer Simulator
+    // 2. Full Generations Speed Simulator
     const fileSelect = document.getElementById('sim-file-type');
     const fileDesc = document.getElementById('sim-file-desc');
     const timeLow = document.getElementById('time-low');
     const timeFull = document.getElementById('time-full');
     const timeHigh = document.getElementById('time-high');
+    const timeSs = document.getElementById('time-ss');
+    const timeUsb4 = document.getElementById('time-usb4');
 
     const barLow = document.getElementById('bar-low');
     const barFull = document.getElementById('bar-full');
     const barHigh = document.getElementById('bar-high');
+    const barSs = document.getElementById('bar-ss');
+    const barUsb4 = document.getElementById('bar-usb4');
 
     function updateSimulation() {
       const mb = parseFloat(fileSelect.value);
-      fileDesc.textContent = `${mb >= 1000 ? (mb/1000).toFixed(1) + ' GB' : mb + ' MB'} (約 ${Math.round(mb * 8)} Mbits)`;
+      fileDesc.textContent = `${mb >= 1000 ? (mb/1000).toFixed(1) + ' GB' : mb + ' MB'} (約 ${Math.round(mb * 8).toLocaleString()} Mbits)`;
 
-      // Speed in MB/s:
-      // Low: ~0.12 MB/s
-      // Full: ~1.1 MB/s
-      // High: ~38 MB/s
+      // Approximate practical throughput in MB/s:
+      // Low: 0.12 MB/s
+      // Full: 1.1 MB/s
+      // High (USB 2.0): 38 MB/s
+      // SS (USB 3.2 Gen 1): 450 MB/s
+      // USB4 80Gbps: 7,500 MB/s
       const secLow = mb / 0.12;
       const secFull = mb / 1.1;
       const secHigh = mb / 38;
+      const secSs = mb / 450;
+      const secUsb4 = mb / 7500;
 
       function fmtTime(sec) {
+        if (sec < 0.001) return '< 1 毫秒 (瞬傳)';
         if (sec < 1) return (sec * 1000).toFixed(0) + ' 毫秒';
-        if (sec < 60) return sec.toFixed(1) + ' 秒';
-        const m = Math.floor(sec / 60);
-        const s = Math.round(sec % 60);
-        return `${m} 分 ${s} 秒`;
+        if (sec < 60) return sec.toFixed(2) + ' 秒';
+        if (sec < 3600) {
+          const m = Math.floor(sec / 60);
+          const s = Math.round(sec % 60);
+          return `${m} 分 ${s} 秒`;
+        }
+        const h = (sec / 3600).toFixed(1);
+        return `${h} 小時`;
       }
 
       timeLow.textContent = fmtTime(secLow);
       timeFull.textContent = fmtTime(secFull);
       timeHigh.textContent = fmtTime(secHigh);
+      timeSs.textContent = fmtTime(secSs);
+      timeUsb4.textContent = fmtTime(secUsb4);
 
       // Relative bar width
       const maxTime = secLow;
       barLow.style.width = '100%';
       barFull.style.width = Math.max(3, (secFull / maxTime) * 100).toFixed(1) + '%';
-      barHigh.style.width = Math.max(1.5, (secHigh / maxTime) * 100).toFixed(1) + '%';
+      barHigh.style.width = Math.max(1.5, (secHigh / maxTime) * 100).toFixed(2) + '%';
+      barSs.style.width = Math.max(0.8, (secSs / maxTime) * 100).toFixed(2) + '%';
+      barUsb4.style.width = Math.max(0.4, (secUsb4 / maxTime) * 100).toFixed(2) + '%';
     }
 
     fileSelect.addEventListener('change', updateSimulation);
