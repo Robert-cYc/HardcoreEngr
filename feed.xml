@@ -46,15 +46,19 @@
     <category>教學</category>
   </item>
   <item>
-    <title>PyInstaller 完全操作指南：安裝、--onefile 與 --onedir 核心指令詳解、資源打包與除錯避坑手冊</title>
+    <title>PyInstaller 完全操作指南：安裝、--onefile 與 --onedir 核心指令詳解、資源打包、動態 Hook 與除錯避坑手冊</title>
     <link>https://ai-hardcore-engineer.com/pyinstaller-python-packaging-guide.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/pyinstaller-python-packaging-guide.html</guid>
-    <description>深入解析 Python 最強打包神器 PyInstaller：詳細介紹安裝方式、核心指令參數（--onefile、--onedir、--windowed、--add-data、--hidden-import）、sys._MEIPASS 資源路徑解析、.spec 規格檔進階配置與常見閃退、體積肥大等避坑指南。</description>
+    <description>深入解析 Python 打包神器 PyInstaller：詳細介紹安裝方式、核心參數、sys._MEIPASS 與真實路徑解析、.spec 規格檔、動態 Hook 與 metadata 收集、Windows 多行程 Fork 炸彈防護、反編譯真相與 Cython/PyArmor 代碼保護，以及 GitHub Actions 多平台 CI/CD 自動化建置避坑實戰。</description>
     <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
     <category>PyInstaller</category>
     <category>Python 打包</category>
     <category>exe 製作</category>
     <category>CLI 指令</category>
+    <category>動態 Hook</category>
+    <category>多行程避坑</category>
+    <category>代碼安全防護</category>
+    <category>GitHub Actions</category>
     <category>開發工具</category>
     <category>教學</category>
   </item>
