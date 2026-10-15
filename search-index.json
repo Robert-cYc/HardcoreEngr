@@ -1,5 +1,11 @@
 [
   {
+    "url": "usb-history-evolution-guide.html",
+    "title": "USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略",
+    "excerpt": "深入剖析通用序列匯流排（USB）的誕生革命、Low/Full/High-Speed 速度模式、黑白與特殊接口顏色密碼、BC 1.2 與 Apple 分壓充電機制、4-Pin 接腳電氣特性與現代依然無法淘汰的底層原因。",
+    "tags": ["USB", "USB 2.0", "USB 1.1", "充電協議", "BC 1.2", "硬體協定", "差分訊號", "教學"]
+  },
+  {
     "url": "llm-naming-quantization-guide.html",
     "title": "大語言模型（LLM）命名學、參數量級與量化壓縮全攻略",
     "excerpt": "深度解析大語言模型命名代號規則（Instruct、MoE 8x7B、128K）、參數量級與顯存換算、模型壓縮三大流派，以及 GGUF、AWQ、GPTQ、EXL2 與 BitNet 1.58-bit 量化實戰對比。",

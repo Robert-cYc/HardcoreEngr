@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🎯">
+  <meta name="description" content="深入剖析通用序列匯流排（USB）的誕生革命、Low/Full/High-Speed 速度模式、黑白與特殊接口顏色密碼、BC 1.2 與 Apple 分壓充電機制、4-Pin 接腳電氣特性與現代依然無法淘汰的底層原因。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/usb-history-evolution-guide.html">
+  <meta property="og:title" content="USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略 — "AI" 硬核工程師">
+  <meta property="og:description" content="深入剖析通用序列匯流排（USB）的誕生革命、Low/Full/High-Speed 速度模式、黑白與特殊接口顏色密碼、BC 1.2 與 Apple 分壓充電機制、4-Pin 接腳電氣特性與現代依然無法淘汰的底層原因。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/usb-history-evolution-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/usb-evolution-guide.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略 — "AI" 硬核工程師">
+  <meta name="twitter:description" content="深入剖析通用序列匯流排（USB）的誕生革命、Low/Full/High-Speed 速度模式、黑白與特殊接口顏色密碼、BC 1.2 與 Apple 分壓充電機制、4-Pin 接腳電氣特性與現代依然無法淘汰的底層原因。">
+  <meta name="twitter:image" content="./images/usb-evolution-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 3.5rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-body {
+      max-width: 62em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h3 {
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.75rem;
+      color: var(--text);
+    }
+    .article-body p {
+      margin-bottom: 1.15rem;
+      line-height: 1.85;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      background: var(--bg-alt);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      font-size: 1.05em;
+      color: #e11d48;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .article-body code {
+      color: #f43f5e;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      border: none;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1.1rem 1.6rem;
+      margin: 1.6rem 0;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.6rem;
+      line-height: 1.75;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.8rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.1rem;
+      min-width: 620px;
+    }
+    .article-body th, .article-body td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .article-body th {
+      font-weight: 700;
+      color: var(--text);
+      background: var(--bg-alt);
+    }
+    .article-body tr:hover td {
+      background: rgba(37, 99, 235, 0.04);
+    }
+    .badge-pill {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .badge-black { background: #1f2937; color: #f9fafb; border: 1px solid #4b5563; }
+    .badge-white { background: #f3f4f6; color: #111827; border: 1px solid #d1d5db; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+    .dark-mode .badge-black { background: #111827; color: #e5e7eb; border-color: #374151; }
+    .dark-mode .badge-white { background: #374151; color: #f9fafb; border-color: #4b5563; }
+
+    /* Interactive Pinout & Color Explorer */
+    .interactive-explorer-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 2rem 0;
+    }
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pinout-diagram {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .pin-btn {
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: "Fira Code", monospace;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 110px;
+    }
+    .pin-btn .pin-num { font-size: 0.8rem; opacity: 0.8; }
+    .pin-btn:hover, .pin-btn.active {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      border-color: var(--accent);
+    }
+    .pin-vbus { background: #fee2e2; color: #991b1b; }
+    .pin-dm { background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; }
+    .pin-dp { background: #dcfce7; color: #166534; }
+    .pin-gnd { background: #1f2937; color: #f9fafb; }
+    .dark-mode .pin-vbus { background: #7f1d1d; color: #fecaca; }
+    .dark-mode .pin-dm { background: #374151; color: #f3f4f6; }
+    .dark-mode .pin-dp { background: #14532d; color: #bbf7d0; }
+    .dark-mode .pin-gnd { background: #111827; color: #e5e7eb; border: 1px solid #4b5563; }
+
+    .pin-detail-card {
+      background: var(--bg);
+      border-left: 4px solid var(--accent);
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      border: 1px solid var(--border);
+      border-left-width: 4px;
+    }
+
+    /* Simulator Widget */
+    .sim-widget {
+      background: var(--bg-alt);
+      border: 2px solid var(--accent);
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+    }
+    .sim-header h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.6rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sim-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin: 1.5rem 0;
+    }
+    .sim-field label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+    .sim-field select {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1.1rem;
+      font-family: inherit;
+    }
+    .sim-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .sim-bar-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+    }
+    .sim-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+    .sim-progress-track {
+      width: 100%;
+      height: 12px;
+      background: var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 0.4rem;
+    }
+    .sim-progress-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.4s ease;
+    }
+    .fill-low { background: #ef4444; }
+    .fill-full { background: #f59e0b; }
+    .fill-high { background: #10b981; }
+
+    /* Concept Comparison Grid */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+    .concept-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .concept-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .concept-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .toc-container {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .toc-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.8rem;
+    }
+    .toc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .toc-list li {
+      margin-bottom: 0.5rem;
+    }
+    .toc-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .toc-list a:hover {
+      text-decoration: underline;
+    }
+
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3.5rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 1.15rem;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略 — \"AI\" 硬核工程師",
+    "description": "深入剖析通用序列匯流排（USB）的誕生革命、Low/Full/High-Speed 速度模式、黑白與特殊接口顏色密碼、BC 1.2 與 Apple 分壓充電機制、4-Pin 接腳電氣特性與現代依然無法淘汰的底層原因。",
+    "url": "https://ai-hardcore-engineer.com/usb-history-evolution-guide.html",
+    "datePublished": "2026-10-15",
+    "author": {
+      "@type": "Person",
+      "name": "Robert cYc"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "\"AI\" 硬核工程師",
+      "url": "https://ai-hardcore-engineer.com"
+    },
+    "image": "https://ai-hardcore-engineer.com/images/usb-evolution-guide.jpg",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "url": "https://ai-hardcore-engineer.com/usb-history-evolution-guide.html"
+    }
+  }
+  </script>
+</head>
+<body id="top">
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <!-- =============== Hero =============== -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略</h1>
+      <div class="article-meta">
+        <span>📅 2026-10-15</span>
+        <span class="separator">·</span>
+        <span>⏱️ 20 分鐘硬核深度閱讀</span>
+        <span class="separator">·</span>
+        <span>✍️ "AI" 硬核工程師</span>
+      </div>
+      <div class="article-tags" style="justify-content: center;">
+        <span class="tag">硬體協議</span>
+        <span class="tag">USB 2.0</span>
+        <span class="tag">USB 1.1</span>
+        <span class="tag">充電協定</span>
+        <span class="tag">差分訊號</span>
+        <span class="tag">硬體架構</span>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="./images/usb-evolution-guide.jpg" alt="USB 1.1 and USB 2.0 Hardware Evolution and Architecture">
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== Main Content =============== -->
+  <main>
+    <div class="container">
+      <article class="article-body">
+        <blockquote>
+          🎯 <strong>重點摘要：</strong> 在 USB 誕生之前，電腦背後是一場接線噩夢：PS/2、LPT、COM、SCSI 各行其道，且幾乎都不支援熱插拔。<br>
+          本文系統化梳理：<br>
+          &nbsp;&nbsp;① <strong>破局歷史</strong>：Intel、微軟、蘋果等科技巨頭如何聯手催生 USB-IF，終結接頭混亂<br>
+          &nbsp;&nbsp;② <strong>速度模式真相</strong>：從 1.5 Mbps 的 Low-Speed、12 Mbps 的 Full-Speed，到暴漲 40 倍的 480 Mbps High-Speed<br>
+          &nbsp;&nbsp;③ <strong>接口顏色密碼</strong>：白色、黑色與黃/紅色 Always-on 睡眠充電埠的電氣意涵<br>
+          &nbsp;&nbsp;④ <strong>供電與充電演進</strong>：從 500mA 的單位負載、雙頭 Y 型線，到 BC 1.2 的 7.5W 快充與蘋果分壓電阻識別法<br>
+          &nbsp;&nbsp;⑤ <strong>4-Pin 底層接腳與差分訊號</strong>：為何 VBUS 與 GND 比較長？差分抗干擾的物理奧秘<br>
+          &nbsp;&nbsp;⑥ <strong>現代啟示</strong>：為什麼到了今天，你的 Type-C 充電線與滑鼠依然骨子裡離不開 USB 2.0？
+        </blockquote>
+
+        <!-- Table of Contents -->
+        <div class="toc-container">
+          <div class="toc-title">📑 本文快速目錄</div>
+          <ul class="toc-list">
+            <li><a href="#section-1">1. 前言：在「USB」出現之前的混沌世界</a></li>
+            <li><a href="#section-2">2. 初試啼聲：USB 1.0 與 USB 1.1 的破局與 iMac G3 革命</a></li>
+            <li><a href="#section-3">3. 速度階級解析：Low-Speed、Full-Speed 與 40 倍狂飆的 USB 2.0</a></li>
+            <li><a href="#section-sim">⚡ 互動工具：USB 傳輸速率試算與耗時模擬器</a></li>
+            <li><a href="#section-4">4. 接口顏色密碼（Port Colors）：黑、白、黃、紅代表什麼？</a></li>
+            <li><a href="#section-5">5. 供電與充電演進：從 2.5W、雙頭 Y 型線到 BC 1.2 與 Apple 分壓</a></li>
+            <li><a href="#section-pinout">🔌 互動工具：經典 4-Pin 接腳與差分訊號解析儀</a></li>
+            <li><a href="#section-6">6. 物理形態家族：Type-A、Type-B、Mini-B 與 Micro-B OTG</a></li>
+            <li><a href="#section-7">7. USB 1.x 與 USB 2.0 完整綜合規格對比表</a></li>
+            <li><a href="#section-8">8. 現代冷知識：為什麼到了 2026 年，我們依然離不開 USB 2.0？</a></li>
+          </ul>
+        </div>
+
+        <!-- Section 1 -->
+        <h2 id="section-1">1. 前言：在「USB」出現之前的混沌世界</h2>
+        <p>在 1990 年代中期以前，每組裝或購買一台新電腦，對工程師與一般使用者而言都是一場接線折磨：</p>
+        <ul>
+          <li><strong>滑鼠</strong>：要找綠色的 <strong>PS/2 埠</strong> 或 9 針的 <strong>RS-232 序列埠（COM Port）</strong>。</li>
+          <li><strong>鍵盤</strong>：要插紫色的 <strong>PS/2 埠</strong> 或是更古老的巨大 5 針 DIN 接頭。</li>
+          <li><strong>印表機</strong>：必須鎖上巨大無比、螺絲笨重且排線極粗的 25 針 <strong>LPT 平行埠（Parallel Port）</strong>。</li>
+          <li><strong>遊戲搖桿</strong>：必須插在獨立音效卡上的 15 針 <strong>Gameport（MIDI 埠）</strong>。</li>
+          <li><strong>外接儲存硬碟或高階掃描器</strong>：得安裝昂貴的 <strong>SCSI 介面卡</strong>，手動設定 SCSI ID 跳線（Jumper）與實體終端電阻（Terminator）。</li>
+        </ul>
+
+        <p>更致命的是，傳統介面<strong>幾乎都不支援熱插拔（Hot-swapping）</strong>。如果在電腦開機運作中拔插 PS/2 滑鼠，輕則作業系統游標直接凍結卡死，重則瞬間突波直接打壞主機板的 Super I/O 控制晶片。</p>
+
+        <p>為了終結這種混亂，1994 年，由 <strong>Intel、Microsoft、IBM、Compaq、DEC、NEC、Nortel</strong> 等七大巨擘組成了 <strong>USB-IF（USB Implementers Forum）</strong>，立下了跨時代目標：<strong>Universal Serial Bus（通用序列匯流排）</strong>——一條外觀統一的線材，兼顧「高速數據傳輸」、「電源供應」、「即插即用（PnP）」與「安全熱插拔」。</p>
+
+        <!-- Section 2 -->
+        <h2 id="section-2">2. 初試啼聲：USB 1.0 與 USB 1.1 的破局與 iMac G3 革命</h2>
+
+        <div class="concept-grid">
+          <div class="concept-card">
+            <h4>🚧 USB 1.0 (1996 年 1 月)</h4>
+            <p><strong>代號：</strong> 早期規範雛形。</p>
+            <p><strong>困境：</strong> 由於各晶片廠商對 Host Controller（主機控制器）的實作存在標準落差，加上對無供電集線器（Unpowered Hubs）的抗干擾力薄弱，傳輸時鐘頻繁漂移。市場上幾乎沒有量產的純 USB 1.0 消費級產品。</p>
+          </div>
+          <div class="concept-card" style="border: 2px solid var(--accent);">
+            <h4>🏆 USB 1.1 (1998 年 9 月)</h4>
+            <p><strong>代號：</strong> 首個成熟商業化標準。</p>
+            <p><strong>破局：</strong> 修復了時序與集線器電氣問題。1998 年 Apple 賈伯斯推出 <strong>iMac G3</strong>，大膽砍除所有舊接口、全機僅配備 2 個 USB 埠，迫使羅技、微軟、Epson 全力生產 USB 周邊，掀起普及狂潮！</p>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <h2 id="section-3">3. 速度階級解析：Low-Speed、Full-Speed 與 40 倍狂飆的 USB 2.0</h2>
+        <p>USB 發展初期，速度標準的命名與分級非常明確，但後續的商業命名也帶來了不少「行銷陷阱」：</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>速度等級</th>
+                <th>推出版本</th>
+                <th>理論標稱頻寬</th>
+                <th>實際傳輸速率</th>
+                <th>典型應用硬體</th>
+                <th>電氣與線材要求</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Low-Speed（低速）</strong></td>
+                <td>USB 1.0 / 1.1</td>
+                <td><strong>1.5 Mbps</strong></td>
+                <td>約 100 ~ 150 KB/s</td>
+                <td>滑鼠、鍵盤、遊戲手把</td>
+                <td>成本低、無屏蔽廉價線材、時鐘精度容許誤差較大</td>
+              </tr>
+              <tr>
+                <td><strong>Full-Speed（全速）</strong></td>
+                <td>USB 1.1</td>
+                <td><strong>12 Mbps</strong></td>
+                <td>約 1.0 ~ 1.2 MB/s</td>
+                <td>印表機、掃描器、初代隨身碟、音效卡</td>
+                <td>需雙絞屏蔽線材（Shielded Twisted Pair）</td>
+              </tr>
+              <tr>
+                <td><strong>High-Speed（高速）</strong></td>
+                <td><strong>USB 2.0 (2000年)</strong></td>
+                <td><strong>480 Mbps</strong><br><span class="badge-pill badge-green">飆升 40 倍！</span></td>
+                <td><strong>約 35 ~ 43 MB/s</strong></td>
+                <td>隨身碟、外接硬碟、視訊鏡頭、手機數據傳輸</td>
+                <td>嚴格阻抗匹配（$90\,\Omega \pm 15\%$ 差分阻抗）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <blockquote>
+          ⚠️ <strong>避坑冷知識：行銷上的「Full Speed」陷阱</strong><br>
+          在 USB 2.0 發布後，USB-IF 曾做過一次爭議性命名修改：把原本 USB 1.1 的 12 Mbps 重新包裝為 <strong>「USB 2.0 Full Speed」</strong>，而真正的 480 Mbps 則稱為 <strong>「USB 2.0 High Speed」</strong>。<br>
+          許多廠商常在包裝盒印上「支援 USB 2.0」，實際骨子裡只是 12 Mbps 的慢速晶片，傳輸一個檔案慢如蝸牛，購買時必須指名認清 <strong>High-Speed</strong> 標誌！
+        </blockquote>
+
+        <h3>為什麼 USB 2.0 的 480 Mbps 跑不滿 60 MB/s？</h3>
+        <p>理論換算：$\frac{480 \text{ Mbps}}{8} = 60 \text{ MB/s}$。但在真實世界中，外接硬碟即使極速也只能跑到約 **38 ~ 43 MB/s**。原因有三：</p>
+        <ol>
+          <li><strong>協議開銷（Protocol Overhead）</strong>：USB 每個數據封包都帶有同步碼（SYNC）、封包標識（PID）、地址與端點號、CRC16 校驗碼與握手應答（ACK/NAK）。</li>
+          <li><strong>主從輪詢架構（Host-Polling Architecture）</strong>：USB 2.0 是嚴格的主從體系。周邊設備不能主動傳送資料，必須苦苦等待主機控制器的 IN/OUT 令牌輪詢，浪費了大量傳輸間隙。</li>
+          <li><strong>半雙工通訊（Half-Duplex）</strong>：由於只有一組差分訊號線（D+ 與 D-），發送和接收無法同時進行，必須來回切換傳輸方向。</li>
+        </ol>
+
+        <!-- Simulator Widget -->
+        <div class="sim-widget" id="section-sim">
+          <div class="sim-header">
+            <h3>⚡ USB 傳輸速率試算與耗時模擬器</h3>
+            <p style="margin: 0; color: var(--text-muted); font-size: 1.05rem;">選擇傳輸檔案大小，直觀體驗 USB 1.1 到 USB 2.0 之間高達 40 倍的震撼速度差距！</p>
+          </div>
+
+          <div class="sim-controls">
+            <div class="sim-field">
+              <label for="sim-file-type">選擇模擬傳輸檔案：</label>
+              <select id="sim-file-type">
+                <option value="5">🎵 一首 MP3 音樂 (5 MB)</option>
+                <option value="25" selected>📷 高畫質數位相片輯 (25 MB)</option>
+                <option value="350">🎬 一部 720p 經典電影短片 (350 MB)</option>
+                <option value="1200">📦 一部高畫質藍光電影 (1.2 GB / 1200 MB)</option>
+              </select>
+            </div>
+            <div class="sim-field">
+              <label>檔案大小換算：</label>
+              <div id="sim-file-desc" style="padding: 0.65rem 0; font-weight: 700; color: var(--accent); font-size: 1.2rem;">25 MB (約 200 Mbits)</div>
+            </div>
+          </div>
+
+          <div class="sim-bars">
+            <div class="sim-bar-item">
+              <div class="sim-bar-label">
+                <span>🔴 USB 1.1 Low-Speed (1.5 Mbps / 實測 ~120 KB/s)</span>
+                <span id="time-low" style="color: #ef4444;">213.3 秒</span>
+              </div>
+              <div class="sim-progress-track">
+                <div class="sim-progress-fill fill-low" id="bar-low" style="width: 100%;"></div>
+              </div>
+              <div style="font-size: 0.9rem; color: var(--text-muted);">傳輸極慢，僅適合傳送鍵盤敲擊與滑鼠座標。</div>
+            </div>
+
+            <div class="sim-bar-item">
+              <div class="sim-bar-label">
+                <span>🟡 USB 1.1 Full-Speed (12 Mbps / 實測 ~1.1 MB/s)</span>
+                <span id="time-full" style="color: #f59e0b;">22.7 秒</span>
+              </div>
+              <div class="sim-progress-track">
+                <div class="sim-progress-fill fill-full" id="bar-full" style="width: 10%;"></div>
+              </div>
+              <div style="font-size: 0.9rem; color: var(--text-muted);">早期 MP3 隨身碟速度，傳大檔案需要耐心等待。</div>
+            </div>
+
+            <div class="sim-bar-item">
+              <div class="sim-bar-label">
+                <span>🟢 USB 2.0 High-Speed (480 Mbps / 實測 ~38 MB/s)</span>
+                <span id="time-high" style="color: #10b981; font-weight: 800;">0.65 秒</span>
+              </div>
+              <div class="sim-progress-track">
+                <div class="sim-progress-fill fill-high" id="bar-high" style="width: 1.8%;"></div>
+              </div>
+              <div style="font-size: 0.9rem; color: var(--text-muted);">40 倍狂飆！主流隨身碟與外接裝置的黃金時代標準。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+        <h2 id="section-4">4. 接口顏色密碼（Port Colors）：黑、白、黃、紅代表什麼？</h2>
+        <p>走進電腦背後或筆電兩側，USB-A 接口內部的塑膠絕緣墊片顏色並非為了美觀，而是標準化的電氣規格代號：</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>接口顏色</th>
+                <th>代表版本 / 規範</th>
+                <th>核心含義與典型用途</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge-pill badge-white">白色 (White)</span></td>
+                <td><strong>USB 1.0 / 1.1</strong></td>
+                <td>歷史最悠久的顏色。標配於 1990~2000 年代設備、早期印表機、第一代 iMac G3。如今新電腦已絕跡。</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pill badge-black">黑色 (Black)</span></td>
+                <td><strong>USB 2.0 (High-Speed)</strong></td>
+                <td><strong>USB 2.0 統治世界的標誌性官方色</strong>。專為滑鼠、鍵盤、音效介面、接收器等無需極限頻寬的裝置設計。</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pill badge-amber">黃色 (Yellow)</span><br><span class="badge-pill badge-rose">紅色 (Red)</span></td>
+                <td><strong>Sleep-and-Charge<br>(Always-On 睡眠供電)</strong></td>
+                <td>走 USB 2.0 或 3.0 線路。最大特色是<strong>即使筆電進入睡眠（Sleep）或關機關閉電源，該接口仍持續輸出 5V 供電</strong>，讓手機或耳機能隨時充飽電！</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 5 -->
+        <h2 id="section-5">5. 供電與充電演進：從 2.5W、雙頭 Y 型線到 BC 1.2 與 Apple 分壓</h2>
+
+        <h3>5.1 原始標準供電規範（Unit Load 握手機制）</h3>
+        <p>USB 之所以能稱霸，除了數據傳輸外，最重要的就是**匯流排自帶供電（Bus Power）**。在 USB 誕生前，外接裝置通常得外接一顆笨重的「尿袋變壓器」。</p>
+
+        <ul>
+          <li><strong>供電電壓</strong>：固定為標稱 **$5\text{V} \pm 5\%$**（4.75V ~ 5.25V）。</li>
+          <li><strong>單位負載（Unit Load）概念</strong>：
+            <ul>
+              <li><strong>1 個 Unit Load = 100 mA (0.5W)</strong>。</li>
+              <li><strong>低功率設備（Low-Power）</strong>：最高索取 1 個 Unit Load（100 mA），供滑鼠、鍵盤等運作。</li>
+              <li><strong>高功率設備（High-Power）</strong>：裝置插入初期只能抽取 100 mA，向主機發起枚舉列舉（Enumeration）並取得許可後，最多可索取 5 個 Unit Load，即：
+                $$\text{最大功率} = 5\text{V} \times 500\text{ mA} = 2.5\text{W}$$</li>
+            </ul>
+          </li>
+        </ul>
+
+        <blockquote>
+          💾 <strong>回憶殺：外接硬碟的「喀喀」異音與雙頭 Y 型線</strong><br>
+          早期 2.5 吋外接機械硬碟在馬達起轉瞬間的突入電流（Inrush Current）常高達 800mA ~ 1000mA，遠超單一 USB 2.0 埠的 500mA 上限！這導致硬碟供電不足、磁頭不斷復位發出「喀喀」異音。<br>
+          當時硬碟廠商隨盒必附一條**「雙頭 USB-A 的 Y 型線」**：一根主頭傳數據兼供電（500mA），一根副頭只取電（500mA），插滿兩個 USB 埠湊出 1000mA 勉強驅動！
+        </blockquote>
+
+        <h3>5.2 智慧型手機時代的救星：BC 1.2 充電協議（2010 年）</h3>
+        <p>智慧型手機爆發後，500mA 充一支手機需要 4~5 小時，極為緩慢。USB-IF 於是在 2010 年發布了 <strong>BC 1.2（Battery Charging Specification v1.2）</strong>，定義了三大端口類型：</p>
+
+        <div class="concept-grid">
+          <div class="concept-card">
+            <h4>🖥️ SDP (標準下行埠)</h4>
+            <p><strong>Standard Downstream Port</strong></p>
+            <p>傳統電腦 USB 2.0 埠。支援 480 Mbps 數據傳輸，最大電流限制在 <strong>500 mA (2.5W)</strong>。</p>
+          </div>
+          <div class="concept-card">
+            <h4>🔌 DCP (專用充電埠)</h4>
+            <p><strong>Dedicated Charging Port</strong></p>
+            <p>俗稱充電頭、豆腐頭、行動電源。<strong>不傳輸數據</strong>。內部將 <strong>D+ 與 D- 短路（短接電阻 &lt; 200Ω）</strong>。手機檢測到 D+/D- 導通，即刻開啟 <strong>5V / 1.5A (7.5W)</strong> 充電！</p>
+          </div>
+          <div class="concept-card">
+            <h4>⚡ CDP (充電下行埠)</h4>
+            <p><strong>Charging Downstream Port</strong></p>
+            <p>兼顧數據與大電流的電腦埠。既具備 480 Mbps 傳輸能力，又能在握手時允許手機抽取高達 <strong>5V / 1.5A (7.5W)</strong> 大電流。</p>
+          </div>
+        </div>
+
+        <h3>5.3 蘋果的專利電壓分壓法（Apple Divider 1A / 2.1A / 2.4A）</h3>
+        <p>在 BC 1.2 普及前，Apple 為 iPhone 與 iPad 設計了一套巧妙的<strong>分壓電阻識別法</strong>：</p>
+        <p>蘋果充電器在 D+ 和 D- 線路上焊上高精度電阻，提供固定的直流偏壓：</p>
+        <ul>
+          <li><strong>Apple 1A (5W)</strong>：$D+ = 2.0\text{V}, \; D- = 2.7\text{V}$（iPhone 小豆腐頭）。</li>
+          <li><strong>Apple 2.1A (10.5W)</strong>：$D+ = 2.7\text{V}, \; D- = 2.0\text{V}$（初代 iPad 專用大充電頭）。</li>
+          <li><strong>Apple 2.4A (12W)</strong>：$D+ = 2.7\text{V}, \; D- = 2.7\text{V}$。</li>
+        </ul>
+        <p>設備檢測到特定的偏壓組合後，才會放心抽取高達 2.4A 大電流；否則會降級回安全的 500mA 慢慢充電以防燒機。</p>
+
+        <!-- Section Pinout -->
+        <h2 id="section-pinout">6. 經典 4-Pin 接腳與差分訊號解析</h2>
+
+        <!-- Interactive Pinout Box -->
+        <div class="interactive-explorer-box">
+          <div class="exp-title">🔌 點擊下方接腳，檢視硬體電氣定義與訊號原理</div>
+          <div class="pinout-diagram">
+            <div class="pin-btn pin-vbus active" data-pin="vbus">
+              <span class="pin-num">Pin 1</span>
+              <span>VBUS</span>
+            </div>
+            <div class="pin-btn pin-dm" data-pin="dm">
+              <span class="pin-num">Pin 2</span>
+              <span>D -</span>
+            </div>
+            <div class="pin-btn pin-dp" data-pin="dp">
+              <span class="pin-num">Pin 3</span>
+              <span>D +</span>
+            </div>
+            <div class="pin-btn pin-gnd" data-pin="gnd">
+              <span class="pin-num">Pin 4</span>
+              <span>GND</span>
+            </div>
+          </div>
+
+          <div class="pin-detail-card" id="pin-detail-content">
+            <strong>🔴 Pin 1 (VBUS 供電正極)：</strong><br>
+            • <strong>電壓規格</strong>：直流 $+5\text{V}$（允許範圍 $4.75\text{V} \sim 5.25\text{V}$）。標準線芯顏色為<strong>紅色</strong>。<br>
+            • <strong>防呆機制</strong>：Pin 1 與 Pin 4 比中間的 D+/D- <strong>凸出長約 1mm</strong>！確保熱插拔時<strong>「先接通電源建立參考電位、拔出時電源最後斷開（Make-First-Break-Last）」</strong>，有效保護晶片免遭靜電或未接地衝擊。
+          </div>
+        </div>
+
+        <h3>差分訊號（Differential Signaling）的抗干擾黑科技</h3>
+        <p>傳統並列排線容易受到周圍電磁雜訊（EMI）干擾，而 USB 採用了成對雙絞的 <strong>D+ 與 D- 差分訊號線</strong>：</p>
+        <ul>
+          <li>接收端不判斷單根線對地的絕對電壓，而是計算<strong>兩者之間的電位差：$V_{\text{diff}} = V_{D+} - V_{D-}$</strong>。</li>
+          <li>當環境出現電磁雜訊時，干擾會同時、同量疊加在緊密雙絞的 D+ 與 D- 線上（稱為共模雜訊 Common-Mode Noise）。在接收端進行相減運算時，雜訊被<strong>瞬間完全抵消</strong>！這使得 USB 線材即便長達 3 到 5 米，依然能穩定傳輸高頻數據。</li>
+        </ul>
+
+        <!-- Section 6 -->
+        <h2 id="section-6">7. 物理形態家族：Type-A、Type-B、Mini-B 與 Micro-B OTG</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>接頭外型</th>
+                <th>接腳數</th>
+                <th>常見應用領域</th>
+                <th>硬體特性與歷史命運</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Type-A</strong></td>
+                <td>4-Pin</td>
+                <td>電腦主機端、充電器、電視、汽車中控台</td>
+                <td>經典長方形接口。只作為 Host（主機端），防止使用者將兩台電腦用公對公線對插導致燒毀。</td>
+              </tr>
+              <tr>
+                <td><strong>Type-B</strong></td>
+                <td>4-Pin</td>
+                <td>印表機、高階掃描器、專業音效卡、DAC 解碼器</td>
+                <td>正方形切兩角。外型厚實抗震動，耐插拔壽命長，工業與專業音訊設備至今仍廣泛使用。</td>
+              </tr>
+              <tr>
+                <td><strong>Mini-B (Mini-USB)</strong></td>
+                <td>5-Pin</td>
+                <td>早期 MP3、隨身碟、數位相機、舊款行車紀錄器</td>
+                <td>插拔壽命約 5,000 次。厚度較厚且易損壞，在 2010 年後被全面淘汰。</td>
+              </tr>
+              <tr>
+                <td><strong>Micro-B (Micro-USB)</strong></td>
+                <td>5-Pin</td>
+                <td>智慧型手機前中期（安卓機霸主）、行動電源、藍牙耳機</td>
+                <td>厚度減半，插拔壽命躍升至 <strong>10,000 次</strong>，附帶金屬彈簧卡扣。第 5 針為 <strong>ID 腳位</strong>，支援 <strong>USB OTG（On-The-Go）</strong> 讓手機能反向接隨身碟與鍵盤。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 7 -->
+        <h2 id="section-7">8. USB 1.x 與 USB 2.0 完整綜合規格對比表</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>規格維度</th>
+                <th>USB 1.0</th>
+                <th>USB 1.1</th>
+                <th>USB 2.0</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>發佈年份</strong></td>
+                <td>1996 年 1 月</td>
+                <td>1998 年 9 月</td>
+                <td><strong>2000 年 4 月</strong></td>
+              </tr>
+              <tr>
+                <td><strong>最高理論頻寬</strong></td>
+                <td>12 Mbps</td>
+                <td>12 Mbps</td>
+                <td><strong>480 Mbps (暴增 40 倍)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>實測最高速度</strong></td>
+                <td>- (未成熟商用)</td>
+                <td>約 1.0 ~ 1.2 MB/s</td>
+                <td><strong>約 35 ~ 43 MB/s</strong></td>
+              </tr>
+              <tr>
+                <td><strong>速度模式代號</strong></td>
+                <td>Low-Speed (1.5M)<br>Full-Speed (12M)</td>
+                <td>Low-Speed (1.5M)<br>Full-Speed (12M)</td>
+                <td>Low-Speed (1.5M)<br>Full-Speed (12M)<br><strong>High-Speed (480M)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>官方標準端口色</strong></td>
+                <td>白色 (White)</td>
+                <td>白色 (White)</td>
+                <td><strong>黑色 (Black)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>基礎供電上限</strong></td>
+                <td>5V / 500mA (2.5W)</td>
+                <td>5V / 500mA (2.5W)</td>
+                <td>5V / 500mA (2.5W)</td>
+              </tr>
+              <tr>
+                <td><strong>擴充充電協議</strong></td>
+                <td>無</td>
+                <td>無</td>
+                <td><strong>BC 1.2 (最高 5V/1.5A = 7.5W)</strong><br>Apple Divider 系列</td>
+              </tr>
+              <tr>
+                <td><strong>主要傳輸架構</strong></td>
+                <td>半雙工 / 主機輪詢</td>
+                <td>半雙工 / 主機輪詢</td>
+                <td>半雙工 / 主機輪詢</td>
+              </tr>
+              <tr>
+                <td><strong>歷史地位與評價</strong></td>
+                <td>探索技術的原型版</td>
+                <td>第一款成功普及的通用標準</td>
+                <td><strong>電腦史上生命力最強的周邊匯流排</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 8 -->
+        <h2 id="section-8">9. 現代冷知識：為什麼到了 2026 年，我們依然離不開 USB 2.0？</h2>
+        <p>即使今日 USB4 與 Thunderbolt 4 傳輸頻寬已高達 40 Gbps ~ 80 Gbps，USB-C 更是統一天下，但<strong>底層的 USB 2.0 協議依然無處不在</strong>：</p>
+
+        <ol>
+          <li><strong>你的 USB-C 充電編織線，骨子裡其實是 USB 2.0</strong>：<br>
+            市面上絕大多數百元 Type-C 快充線或手機原廠盒裝充電線，內部僅焊了供電的 VBUS、GND、CC（用來握手 PD 快充），以及<strong>一對 USB 2.0 的 D+/D- 數據線</strong>。拿它連接電腦傳送檔案，傳輸速度依然被鎖死在 20 年前的 <strong>480 Mbps（~38 MB/s）</strong>！若要享受 10Gbps+ 高速，必須額外購買標註 USB 3.2 或 USB4 的全功能線材。</li>
+          <li><strong>電競鍵盤與滑鼠永遠不需要 USB 3.0</strong>：<br>
+            即使是 1000Hz 甚至 8000Hz 超高回報率的頂級電競滑鼠，每秒傳輸的座標封包數據量也不到幾百 KB。使用 USB 2.0 成本極低且省電；更關鍵的是，<strong>USB 3.0 的 5Gbps 高頻時脈會對 2.4GHz 頻段（Wi-Fi 與藍牙）產生嚴重的射頻干擾（RFI）</strong>，若無線滑鼠接收器插在 USB 3.0 埠旁常會出現游標卡頓漂移，因此插在黑色的 USB 2.0 埠才是最穩定的黃金解法。</li>
+          <li><strong>主機板必備的救命稻草（BIOS Flashback）</strong>：<br>
+            最新的旗艦主機板背板 I/O 上，一定會刻意保留 1 ~ 2 個黑色的 USB 2.0 埠。因為其協議最簡單、相容性最高，主機板在無 CPU、無記憶體的裸機狀態下進行純硬體 BIOS 盲刷時，只有 USB 2.0 能保證 100% 讀取成功。</li>
+        </ol>
+
+        <blockquote>
+          🔗 <strong>推薦延伸閱讀：</strong><br>
+          &nbsp;&nbsp;• <a href="./api-architecture-guide.html">API 架構與原理完全解析：從基礎概念到實戰應用指南</a><br>
+          &nbsp;&nbsp;• <a href="./industrial-protocols-guide.html">工業通訊協定全攻略：Modbus、PROFINET、EtherCAT 深度解析</a><br>
+          &nbsp;&nbsp;• <a href="./llm-naming-quantization-guide.html">大語言模型（LLM）命名學、參數量級與量化壓縮全攻略</a>
+        </blockquote>
+      </article>
+
+      <!-- Article Footer -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">↑ 返回頁首</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+
+  <!-- Interactive Simulator & Pinout Script -->
+  <script>
+    // 1. Pinout Detail Inspector
+    const pinData = {
+      vbus: {
+        title: "🔴 Pin 1 (VBUS 供電正極)",
+        desc: "• <strong>電壓規格</strong>：直流 +5V（容許範圍 4.75V ~ 5.25V）。標準線芯顏色為<strong>紅色</strong>。<br>• <strong>硬體特點</strong>：Pin 1 與 Pin 4 比中間的 D+/D- <strong>凸出約 1mm</strong>！確保熱插拔時<strong>「先供電接地、後傳訊號（Make-First-Break-Last）」</strong>，防止晶片遭受瞬態電位衝擊。"
+      },
+      dm: {
+        title: "⚪ Pin 2 (D- 差分數據負極)",
+        desc: "• <strong>訊號定義</strong>：高速差分訊號的反向端。標準線芯顏色為<strong>白色</strong>。<br>• <strong>電氣原理</strong>：與 D+ 緊密雙絞。在 USB 1.1 中低電平為 0V、高電平為 3.3V；在 USB 2.0 High-Speed 模式下訊號幅度縮小至 <strong>400mV</strong> 以降低高頻功耗與電磁輻射。<br>• <strong>充電識別</strong>：在 BC 1.2 DCP 充電模式下，D- 與 D+ 會在充電頭內部直接短接。"
+      },
+      dp: {
+        title: "🟢 Pin 3 (D+ 差分數據正極)",
+        desc: "• <strong>訊號定義</strong>：高速差分訊號的正向端。標準線芯顏色為<strong>綠色</strong>。<br>• <strong>速度偵測</strong>：設備插入時，Host 會偵測 D+ 或 D- 上的<strong>上拉電阻（Pull-up Resistor）</strong>。若 D+ 接 1.5kΩ 上拉代表 Full-Speed/High-Speed；若 D- 接 1.5kΩ 上拉代表 Low-Speed！"
+      },
+      gnd: {
+        title: "⚫ Pin 4 (GND 電源地線)",
+        desc: "• <strong>訊號定義</strong>：系統參考地線（0V Ground）。標準線芯顏色為<strong>黑色</strong>。<br>• <strong>硬體特點</strong>：與 Pin 1 (VBUS) 共同加長，構成迴路基石。在屏蔽線纜中，外部的金屬編織網（Shielding）還會與 USB 金屬外殼接地，徹底隔絕外在雜訊干擾。"
+      }
+    };
+
+    document.querySelectorAll('.pin-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pin-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const pinKey = btn.getAttribute('data-pin');
+        const data = pinData[pinKey];
+        if (data) {
+          document.getElementById('pin-detail-content').innerHTML = `<strong>${data.title}：</strong><br>${data.desc}`;
+        }
+      });
+    });
+
+    // 2. Transfer Simulator
+    const fileSelect = document.getElementById('sim-file-type');
+    const fileDesc = document.getElementById('sim-file-desc');
+    const timeLow = document.getElementById('time-low');
+    const timeFull = document.getElementById('time-full');
+    const timeHigh = document.getElementById('time-high');
+
+    const barLow = document.getElementById('bar-low');
+    const barFull = document.getElementById('bar-full');
+    const barHigh = document.getElementById('bar-high');
+
+    function updateSimulation() {
+      const mb = parseFloat(fileSelect.value);
+      fileDesc.textContent = `${mb >= 1000 ? (mb/1000).toFixed(1) + ' GB' : mb + ' MB'} (約 ${Math.round(mb * 8)} Mbits)`;
+
+      // Speed in MB/s:
+      // Low: ~0.12 MB/s
+      // Full: ~1.1 MB/s
+      // High: ~38 MB/s
+      const secLow = mb / 0.12;
+      const secFull = mb / 1.1;
+      const secHigh = mb / 38;
+
+      function fmtTime(sec) {
+        if (sec < 1) return (sec * 1000).toFixed(0) + ' 毫秒';
+        if (sec < 60) return sec.toFixed(1) + ' 秒';
+        const m = Math.floor(sec / 60);
+        const s = Math.round(sec % 60);
+        return `${m} 分 ${s} 秒`;
+      }
+
+      timeLow.textContent = fmtTime(secLow);
+      timeFull.textContent = fmtTime(secFull);
+      timeHigh.textContent = fmtTime(secHigh);
+
+      // Relative bar width
+      const maxTime = secLow;
+      barLow.style.width = '100%';
+      barFull.style.width = Math.max(3, (secFull / maxTime) * 100).toFixed(1) + '%';
+      barHigh.style.width = Math.max(1.5, (secHigh / maxTime) * 100).toFixed(1) + '%';
+    }
+
+    fileSelect.addEventListener('change', updateSimulation);
+    updateSimulation();
+  </script>
+</body>
+</html>

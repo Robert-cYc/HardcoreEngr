@@ -13,6 +13,19 @@
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
   <item>
+    <title>USB 1.0/1.1 到 USB 2.0 完全解析：演進歷史、接口顏色、速度階級與充電協議全攻略</title>
+    <link>https://ai-hardcore-engineer.com/usb-history-evolution-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/usb-history-evolution-guide.html</guid>
+    <description>深入剖析通用序列匯流排（USB）的誕生革命、Low/Full/High-Speed 速度模式、黑白與特殊接口顏色密碼、BC 1.2 與 Apple 分壓充電機制、4-Pin 接腳電氣特性與現代依然無法淘汰的底層原因。</description>
+    <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+    <category>USB</category>
+    <category>USB 2.0</category>
+    <category>USB 1.1</category>
+    <category>充電協議</category>
+    <category>BC 1.2</category>
+    <category>硬體協定</category>
+  </item>
+  <item>
     <title>大語言模型（LLM）命名學、參數量級與量化壓縮全攻略</title>
     <link>https://ai-hardcore-engineer.com/llm-naming-quantization-guide.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/llm-naming-quantization-guide.html</guid>
