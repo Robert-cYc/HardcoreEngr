@@ -19,9 +19,9 @@
   },
   {
     "url": "slm-small-language-models-guide.html",
-    "title": "小型語言模型 (SLM) 全面概覽：核心優勢、技術突破、主流家族與邊緣落地實戰指南",
-    "excerpt": "深入剖析小型語言模型（SLM）的崛起浪潮：探討 SLM 與 LLM 的核心差異、推動突破的知識蒸餾與合成數據技術，全景解析 Microsoft Phi、Google Gemma 2、Meta Llama 3.2、Qwen 2.5 與 SmolLM2 等主流模型家族，並提供邊緣端量化部署與端雲協同實戰指南。",
-    "tags": ["SLM", "小型語言模型", "邊緣運算", "Llama 3.2", "Phi-4", "Gemma 2", "開源AI", "教學"]
+    "title": "小型語言模型 (SLM) 全面概覽：核心優勢、技術突破、主流家族、端側 NPU 與邊緣落地實戰指南",
+    "excerpt": "深度解析小型語言模型（SLM）的崛起浪潮：探討 SLM 與 LLM 的核心差異、合成數據與知識蒸餾、思考型小模型（DeepSeek-R1 Distill / Phi-4）、主流家族全景、投機解碼與階梯式路由架構、端側 NPU 與 WebGPU 部署，以及在單張消費級顯卡上的 QLoRA 微調實戰。",
+    "tags": ["SLM", "小型語言模型", "邊緣運算", "端側 NPU", "投機解碼", "DeepSeek-R1", "Phi-4", "Llama 3.2", "QLoRA", "WebGPU", "開源AI", "教學"]
   },
   {
     "url": "rag-technology-guide.html",
