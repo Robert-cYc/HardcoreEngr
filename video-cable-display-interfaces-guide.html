@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>螢幕視訊介面終極指南：VGA、DVI、HDMI、DisplayPort (DP) 規格頻寬與技術原理全方位比較表 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🖥️">
+  <meta name="description" content="最詳盡的視訊纜線與螢幕介面硬核技術指南：全面橫向評測 VGA、DVI (Single/Dual Link)、HDMI (1.4/2.0/2.1b)、DisplayPort (1.2/1.4a/2.1) 與 USB-C DP Alt Mode。深度剖析類比與數位訊號轉換、TMDS 與 FRL 編碼機制、DP 微封包架構與 MST 菊花鏈、DSC 視覺無損壓縮、Chroma 4:4:4 色彩採樣，附贈互動式顯示頻寬與介面相容性試算器。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/video-cable-display-interfaces-guide.html">
+  <meta property="og:title" content="螢幕視訊介面終極指南：VGA、DVI、HDMI、DisplayPort (DP) 規格頻寬與技術原理全方位比較表 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="全面橫向評測 VGA、DVI、HDMI 與 DisplayPort (DP)。含規格效能大表、TMDS vs FRL、微封包架構、MST 菊花鏈、DSC 壓縮及互動式顯示頻寬計算器。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/video-cable-display-interfaces-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/video-interfaces-guide.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="螢幕視訊介面終極指南：VGA、DVI、HDMI、DisplayPort 規格頻寬全方位比較表">
+  <meta name="twitter:description" content="全面橫向評測 VGA、DVI、HDMI 與 DisplayPort (DP)。含規格效能大表、TMDS vs FRL、微封包架構、MST 菊花鏈、DSC 壓縮及互動式顯示頻寬計算器。">
+  <meta name="twitter:image" content="./images/video-interfaces-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 3.5rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border);
+      margin-bottom: 2.2rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-height: 540px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-body {
+      max-width: 62em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.05rem;
+      font-weight: 700;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.75rem;
+      color: var(--text);
+    }
+    .article-body p {
+      margin-bottom: 1.2rem;
+      line-height: 1.85;
+      font-size: 1.05rem;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      background: var(--bg-alt);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.95em;
+      color: #e11d48;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .article-body code {
+      color: #f43f5e;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      border: none;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1.1rem 1.6rem;
+      margin: 1.6rem 0;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.6rem;
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 900px;
+    }
+    .article-body th, .article-body td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .article-body th {
+      font-weight: 700;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .article-body tr:hover td {
+      background: rgba(37, 99, 235, 0.05);
+    }
+    .badge-pill {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-teal { background: #ccfbf1; color: #0f766e; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .badge-gray { background: #f3f4f6; color: #374151; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-teal { background: #134e4a; color: #99f6e4; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+    .dark-mode .badge-gray { background: #374151; color: #e5e7eb; }
+
+    /* Interactive Box Components */
+    .interactive-explorer-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 2.2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    /* Bandwidth Calculator styles */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .calc-control {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .calc-control label {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .calc-select {
+      padding: 0.65rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .calc-select:focus {
+      border-color: var(--accent);
+    }
+    .calc-summary-board {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      text-align: center;
+    }
+    .calc-metric-val {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--accent);
+      font-family: "Fira Code", monospace;
+    }
+    .calc-metric-lbl {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .interface-match-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.8rem;
+    }
+    .match-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+    .match-card-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .match-status {
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+    .status-native { background: #dcfce7; color: #166534; }
+    .status-dsc { background: #fef3c7; color: #92400e; }
+    .status-fail { background: #fee2e2; color: #991b1b; }
+    .dark-mode .status-native { background: #14532d; color: #bbf7d0; }
+    .dark-mode .status-dsc { background: #78350f; color: #fde68a; }
+    .dark-mode .status-fail { background: #7f1d1d; color: #fecaca; }
+
+    /* Key concept callout cards */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+    .tech-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      position: relative;
+    }
+    .tech-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .tech-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Decision matrix */
+    .decision-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .decision-scenario {
+      font-weight: 600;
+      min-width: 180px;
+      font-size: 1rem;
+    }
+    .decision-rec {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Quick TOC */
+    .toc-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .toc-title {
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .toc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.5rem;
+    }
+    .toc-list li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .toc-list li a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">"AI" 硬核工程師</a>
+      <button class="menu-toggle" aria-label="切換選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html">所有文章</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./about.html">關於我</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍 搜尋</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切換深淺色模式">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <div class="search-header">
+        <input type="text" class="search-input" placeholder="輸入關鍵字搜尋文章..." aria-label="搜尋">
+        <button class="search-close" aria-label="關閉搜尋">✕</button>
+      </div>
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <main class="article-page">
+    <div class="container">
+      <section class="article-hero">
+        <h1>螢幕視訊介面終極指南：VGA、DVI、HDMI、DisplayPort (DP) 規格頻寬與技術原理全方位比較表</h1>
+        <div class="article-meta">
+          <span>📅 2026-10-16</span>
+          <span class="separator">·</span>
+          <span>⏳ 28 分鐘閱讀</span>
+          <span class="separator">·</span>
+          <span>✍️ Robert</span>
+        </div>
+        <div class="article-tags" style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+          <span class="tag">視訊介面</span>
+          <span class="tag">DisplayPort</span>
+          <span class="tag">HDMI 2.1</span>
+          <span class="tag">VGA</span>
+          <span class="tag">DVI</span>
+          <span class="tag">Type-C Alt Mode</span>
+          <span class="tag">硬體協定</span>
+          <span class="tag">頻寬計算</span>
+        </div>
+        <div class="hero-image-wrap">
+          <img loading="lazy" src="./images/video-interfaces-guide.jpg" alt="VGA, DVI, HDMI, DisplayPort and USB-C Video Cable Connectors">
+        </div>
+      </section>
+
+      <article class="article-body">
+        <!-- Quick TOC -->
+        <div class="toc-card">
+          <div class="toc-title">📑 本文快速章節導覽</div>
+          <ul class="toc-list">
+            <li><a href="#physics">0. 視訊傳輸的物理本質：頻寬公式</a></li>
+            <li><a href="#master-table">1. 視訊介面全世代規格極速大表</a></li>
+            <li><a href="#deep-vga">2. VGA：類比時代的長青活化石</a></li>
+            <li><a href="#deep-dvi">3. DVI：數位轉型期的混血兒</a></li>
+            <li><a href="#deep-hdmi">4. HDMI：客廳家電與主機的影音霸主</a></li>
+            <li><a href="#deep-dp">5. DisplayPort：PC 電競與專業王者</a></li>
+            <li><a href="#deep-typec">6. Type-C DP Alt Mode 與一線通</a></li>
+            <li><a href="#bandwidth-calc">7. 互動工具：顯示頻寬與介面試算器</a></li>
+            <li><a href="#technical-traps">8. 轉接線、DSC 壓縮與色彩採樣暗坑</a></li>
+            <li><a href="#buyer-matrix">9. 工程師選型與配線實戰指引</a></li>
+          </ul>
+        </div>
+
+        <p>「組了一台高階電競主機，接上 4K 144Hz 螢幕，為什麼更新率死活只能選 60Hz，而且文字邊緣還發紅發虛？」</p>
+        <p>「買了一條標榜支援 4K 的 HDMI 線，插上去畫面卻時不時黑屏閃爍兩三秒？」</p>
+        <p>「為什麼筆電的 DisplayPort 轉 HDMI 隨便買一條被動線就能亮，但反過來把主機的 HDMI 轉到 DP 螢幕，卻必須買帶 USB 供電的主動轉接盒？」</p>
+        <p>視訊介面（Video Display Interfaces）是連接運算核心（GPU）與人眼感知（Display）的物理生命線。從 1987 年的類比藍色 D-Sub VGA，到如今頻寬高達 <strong>80 Gbps</strong>、直推 8K 165Hz 的 <strong>DisplayPort 2.1</strong> 與 <strong>HDMI 2.1b</strong>，這段橫跨近 40 年的演進史，凝聚了電磁學、差分信號、封包交換與高動態範圍壓縮的硬核技術突破。</p>
+        <p>本文將為你徹底解構 VGA、DVI、HDMI、DisplayPort 以及 USB-C DP Alt Mode 的底層電氣特性、訊號架構、頻寬瓶頸與轉接陷阱，並附上全維度規格大表與互動試算工具！</p>
+
+        <hr>
+
+        <!-- Section 0 -->
+        <h2 id="physics">0. 視訊傳輸的物理本質：頻寬是如何計算出來的？</h2>
+        <p>在看懂所有介面之前，我們必須先掌握一個工程師不可不知的底層數學公式：<strong>「一台螢幕到底需要吃掉多少傳輸頻寬？」</strong></p>
+
+        <h3>0.1 無壓縮原始數據速率 (Raw Video Data Rate) 計算公式</h3>
+        <p>螢幕是由像素陣列（Pixels）構成的，每一次畫面重繪，GPU 都要向螢幕推送整屏像素的色彩數值：</p>
+        $$\text{未壓縮數據頻寬 (Gbps)} = H_{\text{total}} \times V_{\text{total}} \times \text{Refresh Rate} \times \text{bpp} \div 10^9$$
+
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>📏 1. 總像素與消隱期 (Blanking Interval)</h4>
+            <p><strong>$H_{\text{total}} \times V_{\text{total}}$ 不等於螢幕解析度！</strong> 為了繼承陰極射線管 (CRT) 時代電子槍掃描換行的回掃時間，信號中必須包含前肩 (Front Porch)、同步脈衝 (Sync Pulse) 與後肩 (Back Porch)。現代液晶螢幕採用 CVT-RB (協調視頻定時簡化消隱) 標準，<strong>消隱期額外消耗約 8% ~ 20% 的頻寬開銷</strong>。</p>
+          </div>
+          <div class="tech-card">
+            <h4>🎨 2. 每像素色彩位元數 (Bits Per Pixel, bpp)</h4>
+            <p>• <strong>8-bit (SDR, 1670 萬色)</strong>：紅、綠、藍各 8 位元，在未壓縮 RGB 4:4:4 格式下為 $8 \times 3 = \mathbf{24\text{ bpp}}$。<br>
+            • <strong>10-bit (HDR, 10.7 億色)</strong>：紅、綠、藍各 10 位元，未壓縮為 $10 \times 3 = \mathbf{30\text{ bpp}}$。<br>
+            • <strong>12-bit (Dolby Vision)</strong>：為 $12 \times 3 = \mathbf{36\text{ bpp}}$。</p>
+          </div>
+        </div>
+
+        <p><strong>實例換算：一台 4K (3840×2160) 144Hz 10-bit HDR 螢幕需要多少頻寬？</strong></p>
+        <ul>
+          <li>考慮 CVT-RB 簡化消隱後，$H_{\text{total}} \approx 3920$，$V_{\text{total}} \approx 2222$。</li>
+          <li>每秒傳輸像素數：$3920 \times 2222 \times 144 \approx 1,254,274,560\text{ 像素/秒}$。</li>
+          <li>10-bit RGB 4:4:4 數據量：$1.254 \times 10^9 \times 30\text{ bits} \approx \mathbf{37.63\text{ Gbps}}$！</li>
+        </ul>
+        <p>這意味著，如果你使用的是頻寬上限僅 <strong>18 Gbps</strong> 的 HDMI 2.0，根本無法原生支援 4K 144Hz 10-bit，必須強制降低更新率（降到 60Hz）或破壞畫質（降至 8-bit YCbCr 4:2:0 壓縮）！</p>
+
+        <hr>
+
+        <!-- Section 1 -->
+        <h2 id="master-table">1. 視訊介面全世代規格極速比較大表</h2>
+        <p>以下橫跨類比 VGA、數位先鋒 DVI、家電霸主 HDMI、PC 王者 DisplayPort，以及當代 USB-C DP Alt Mode 進行全維度橫向對抗：</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>介面版本</th>
+                <th>發布年份</th>
+                <th>實體訊號形態</th>
+                <th>物理總頻寬</th>
+                <th>實效資料頻寬 (扣除編碼)</th>
+                <th>原生無壓縮極限解析度</th>
+                <th>DSC 壓縮後極限</th>
+                <th>音訊傳輸</th>
+                <th>HDR / 色深</th>
+                <th>VRR (可變更新率)</th>
+                <th>菊花鏈 (MST)</th>
+                <th>授權模式</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>VGA (D-Sub 15)</strong></td>
+                <td>1987</td>
+                <td>純類比 RGB 電壓</td>
+                <td>約 400 MHz (類比)</td>
+                <td>類比無編碼損耗</td>
+                <td><span class="badge-pill badge-amber">1080p 60Hz</span> (模糊)</td>
+                <td>❌ 不支援</td>
+                <td>❌ 無</td>
+                <td>❌ 僅類比 8-bit SDR</td>
+                <td>❌ 無</td>
+                <td>❌ 無</td>
+                <td>完全開放</td>
+              </tr>
+              <tr>
+                <td><strong>DVI-D (Single-Link)</strong></td>
+                <td>1999</td>
+                <td>TMDS 差分數位 (3通道)</td>
+                <td>4.95 Gbps</td>
+                <td>3.96 Gbps (8b/10b)</td>
+                <td><span class="badge-pill badge-amber">1920×1200 60Hz</span></td>
+                <td>❌ 不支援</td>
+                <td>❌ 無官方標準</td>
+                <td>8-bit SDR</td>
+                <td>❌ 無</td>
+                <td>❌ 無</td>
+                <td>開放標準</td>
+              </tr>
+              <tr>
+                <td><strong>DVI-D (Dual-Link)</strong></td>
+                <td>1999</td>
+                <td>TMDS 差分數位 (6通道)</td>
+                <td>9.90 Gbps</td>
+                <td>7.92 Gbps (8b/10b)</td>
+                <td><span class="badge-pill badge-teal">2560×1600 60Hz / 1080p 144Hz</span></td>
+                <td>❌ 不支援</td>
+                <td>❌ 無官方標準</td>
+                <td>8-bit SDR</td>
+                <td>❌ 無</td>
+                <td>❌ 無</td>
+                <td>開放標準</td>
+              </tr>
+              <tr>
+                <td><strong>HDMI 1.4b</strong></td>
+                <td>2009</td>
+                <td>TMDS 差分數位 (3通道)</td>
+                <td>10.2 Gbps</td>
+                <td>8.16 Gbps (8b/10b)</td>
+                <td><span class="badge-pill badge-amber">1080p 120Hz / 4K 30Hz</span></td>
+                <td>❌ 不支援</td>
+                <td>8ch LPCM / ARC</td>
+                <td>8-bit SDR</td>
+                <td>❌ 無</td>
+                <td>❌ 無</td>
+                <td>專利授權 (需年費)</td>
+              </tr>
+              <tr>
+                <td><strong>HDMI 2.0b</strong></td>
+                <td>2016</td>
+                <td>TMDS 差分數位 (3通道)</td>
+                <td>18.0 Gbps</td>
+                <td>14.4 Gbps (8b/10b)</td>
+                <td><span class="badge-pill badge-blue">4K 60Hz 8-bit / 1440p 144Hz</span></td>
+                <td>❌ 不支援</td>
+                <td>32ch / ARC / Atmos</td>
+                <td>HDR10 / 10-bit</td>
+                <td>部分私有 (FreeSync)</td>
+                <td>❌ 無</td>
+                <td>專利授權 (需年費)</td>
+              </tr>
+              <tr>
+                <td><strong>HDMI 2.1b</strong></td>
+                <td>2023</td>
+                <td>FRL 固定速率 (4通道)</td>
+                <td><strong>48.0 Gbps</strong></td>
+                <td><strong>42.6 Gbps</strong> (16b/18b)</td>
+                <td><span class="badge-pill badge-purple">4K 120Hz 12-bit / 8K 60Hz</span></td>
+                <td><span class="badge-pill badge-rose">8K 120Hz / 10K</span></td>
+                <td>eARC (Atmos / TrueHD)</td>
+                <td>動態 HDR / 12-bit</td>
+                <td>✅ 官方 HDMI VRR</td>
+                <td>❌ 無</td>
+                <td>專利授權 (高額授權)</td>
+              </tr>
+              <tr>
+                <td><strong>DisplayPort 1.2</strong></td>
+                <td>2010</td>
+                <td>微封包架構 (4通道)</td>
+                <td>21.6 Gbps</td>
+                <td>17.28 Gbps (8b/10b)</td>
+                <td><span class="badge-pill badge-blue">4K 60Hz / 1440p 165Hz</span></td>
+                <td>❌ 不支援</td>
+                <td>8ch LPCM</td>
+                <td>8-bit SDR</td>
+                <td>✅ G-Sync / FreeSync</td>
+                <td>✅ <strong>支援 MST</strong></td>
+                <td>VESA 免授權費</td>
+              </tr>
+              <tr>
+                <td><strong>DisplayPort 1.4a</strong></td>
+                <td>2018</td>
+                <td>微封包架構 (4通道)</td>
+                <td>32.4 Gbps</td>
+                <td>25.92 Gbps (8b/10b)</td>
+                <td><span class="badge-pill badge-teal">4K 120Hz 8-bit / 1440p 240Hz</span></td>
+                <td><span class="badge-pill badge-purple">4K 240Hz / 8K 60Hz HDR</span></td>
+                <td>32ch LPCM</td>
+                <td>HDR10 / 10-bit</td>
+                <td>✅ G-Sync / FreeSync</td>
+                <td>✅ <strong>支援 MST</strong></td>
+                <td>VESA 免授權費</td>
+              </tr>
+              <tr>
+                <td><strong>DisplayPort 2.1 (UHBR20)</strong></td>
+                <td>2022</td>
+                <td>微封包 (128b/132b)</td>
+                <td><strong>80.0 Gbps</strong></td>
+                <td><strong>77.37 Gbps</strong></td>
+                <td><span class="badge-pill badge-rose">4K 240Hz 10-bit / 8K 165Hz</span></td>
+                <td><span class="badge-pill badge-rose">16K 60Hz HDR</span></td>
+                <td>32ch LPCM</td>
+                <td>HDR10+ / 12-bit</td>
+                <td>✅ Adaptive-Sync</td>
+                <td>✅ <strong>支援 MST</strong></td>
+                <td>VESA 免授權費</td>
+              </tr>
+              <tr>
+                <td><strong>USB-C (DP Alt Mode)</strong></td>
+                <td>-</td>
+                <td>複用 4 組高速差分對</td>
+                <td>等同 DP 1.4a 或 DP 2.1</td>
+                <td>等同 DP 協定</td>
+                <td>依主機與螢幕 DP 世代而定</td>
+                <td>支援 DSC</td>
+                <td>隨 DP 協定傳輸</td>
+                <td>隨 DP 協定</td>
+                <td>✅ 支援</td>
+                <td>✅ <strong>支援 MST</strong></td>
+                <td>開放 / USB-IF</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <!-- Section 2 -->
+        <h2 id="deep-vga">2. VGA (D-Sub 15)：類比時代的長青活化石</h2>
+        <p>1987 年，IBM 為了推廣其 PS/2 個人電腦，推出了 <strong>VGA (Video Graphics Array)</strong> 介面，採用梯形 15 針 D-sub 接頭。在 CRT（大頭顯像管）螢幕稱霸的時代，VGA 統治了個人電腦顯示領域近二十年。</p>
+
+        <h3>2.1 物理讀寫機制：三原色電壓連續波形</h3>
+        <p>VGA 是純粹的<strong>類比信號傳輸介面</strong>：</p>
+        <ul>
+          <li><strong>Pin 1 (RED)、Pin 2 (GREEN)、Pin 3 (BLUE)</strong>：三根同軸屏蔽線分別傳輸紅、綠、藍三原色的電壓信號，電壓範圍在 <strong>0.0V (全黑) 到 0.7V (全亮)</strong> 之間連續變化。</li>
+          <li><strong>Pin 13 (HSYNC) 與 Pin 14 (VSYNC)</strong>：分別傳輸 TTL 數位水平同步信號與垂直同步信號，告訴顯示器電子槍「何時該換到下一行」以及「何時該換到下一幀」。</li>
+        </ul>
+
+        <h3>2.2 類比傳輸的原罪：為什麼液晶螢幕插 VGA 字體總是發虛？</h3>
+        <p>在 CRT 時代，VGA 非常完美，因為 CRT 電子槍本來就需要類比電壓來控制電子束偏轉強度。但當時代邁入<strong>液晶顯示器 (LCD)</strong> 時，災難發生了：</p>
+        <ol>
+          <li><strong>雙重轉換失真 (DAC $\to$ ADC)</strong>：GPU 生成的影像原本是純粹的數位矩陣（0 與 1），為了 VGA 輸出，顯卡晶片內的 <strong>RAMDAC</strong> 必須將其轉換為 0~0.7V 類比電壓；訊號經銅線傳到液晶螢幕後，螢幕內部的 <strong>ADC (類比轉數位晶片)</strong> 又必須重新對電壓採樣還原成數位矩陣。在兩次電氣轉換過程中，量化誤差、電磁噪聲與信號衰減不可逆地發生了！</li>
+          <li><strong>高頻衰減與幽靈重影 (Ghosting)</strong>：解析度越高，像素時脈頻率越快（例如 1080p 60Hz 像素時脈約 148.5 MHz）。高頻類比信號在銅線傳輸時衰減極快，且若阻抗不嚴格匹配（75Ω），信號會在線纜兩端反彈形成反射波，在畫面上產生淡淡的<strong>重影邊緣</strong>。</li>
+          <li><strong>為什麼每次插 VGA 都要按「Auto 自動校準」？</strong> 液晶螢幕必須依賴內建的 PLL (鎖相迴路) 去猜測輸入電壓波形的取樣相位（Phase）與時脈（Clock）。一旦猜錯哪怕半個週期，文字邊緣就會出現垂直波紋與嚴重模糊。</li>
+        </ol>
+
+        <hr>
+
+        <!-- Section 3 -->
+        <h2 id="deep-dvi">3. DVI (Digital Visual Interface)：數位轉型期的混血兒</h2>
+        <p>1999 年，Intel、Silicon Image、Compaq、HP 等組成的數位顯示工作小組 (DDWG) 發表了 <strong>DVI 規範</strong>，其核心使命就是：<strong>消滅 DAC/ADC 雙重轉換，實現顯卡到螢幕的端到端純數位點對點傳輸！</strong></p>
+
+        <h3>3.1 DVI 龐雜混亂的家族接頭</h3>
+        <p>正因為當時處於「CRT 尚未消亡、LCD 正在崛起」的過渡時期，DVI 妥協性地設計了三種接頭：</p>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>DVI-A (Analog Only)</h4>
+            <p>純類比接頭。僅傳輸 RGB 類比電壓，實質上就是把 VGA 的 15 根針腳換成了 DVI 形狀，極其罕見。</p>
+          </div>
+          <div class="tech-card">
+            <h4>DVI-D (Digital Only)</h4>
+            <p>純數位接頭。右側只有一條扁平接地片，沒有十字針腳。現代液晶螢幕最常見的 DVI 形態，杜絕任何類比干擾。</p>
+          </div>
+          <div class="tech-card">
+            <h4>DVI-I (Integrated)</h4>
+            <p>數位與類比整合型接頭。右側有十字形針腳（4 根 C1-C4 針腳傳輸類比信號）。<strong>只需插上一個便宜的被動轉接頭，就能直接輸出 VGA 信號！</strong></p>
+          </div>
+        </div>
+
+        <h3>3.2 Single-Link vs Dual-Link 雙通道革命</h3>
+        <p>DVI 採用 <strong>TMDS (過渡調製差分訊號)</strong> 技術：</p>
+        <ul>
+          <li><strong>DVI Single-Link (單通道)</strong>：擁有 3 條 TMDS 數據對（對應 R、G、B）與 1 條 TMDS 時脈對。其單鏈路最高時脈限制在 165 MHz，扣除 8b/10b 編碼後實效頻寬為 <strong>3.96 Gbps</strong>，極限解析度為 <strong>1920×1200 60Hz</strong>。</li>
+          <li><strong>DVI Dual-Link (雙通道)</strong>：中間多了 6 根針腳，物理上增加了第二組 3 條 TMDS 數據對！這使得像素點可以交替在兩個通道傳輸，突破 165MHz 限制，頻寬翻倍至 <strong>7.92 Gbps</strong>，歷史上首次推動了 <strong>2560×1600 60Hz</strong> 以及 <strong>1080p 144Hz</strong> 早期電競螢幕。</li>
+        </ul>
+
+        <blockquote>
+          <strong>⚠️ DVI 為什麼被歷史淘汰？</strong><br>
+          • <strong>體積龐大笨重</strong>：需要手擰兩顆固定螺絲，無法適應筆記型電腦與輕薄化需求。<br>
+          • <strong>官方無音訊定義</strong>：最初定義僅傳輸影像，不支援多聲道環繞音訊。<br>
+          • <strong>無動態 HDR 與現代 HDCP 升級潛力</strong>：無法相容 4K HDR、Dolby Vision 以及現代串流平台（Netflix 4K 等）強制要求的 HDCP 2.2 版權保護。
+        </blockquote>
+
+        <hr>
+
+        <!-- Section 4 -->
+        <h2 id="deep-hdmi">4. HDMI：客廳家電、影音主機的絕對盟主</h2>
+        <p>2002 年，Sony、Panasonic、Toshiba、飛利浦等家電與娛樂巨頭聯合創立了 <strong>HDMI (高畫質多媒體介面)</strong>。其設計初衷非常明確：<strong>用一條小巧、支援熱插拔的纜線，同時把無壓縮數位視訊、8 聲道頂級音訊與遙控協議 (CEC) 一併傳輸！</strong></p>
+
+        <h3>4.1 世代核心技術躍進：TMDS 到 FRL 的物理層革命</h3>
+        <p>HDMI 的演進史，是一部對傳輸頻寬極限的榨取史：</p>
+        <ul>
+          <li><strong>HDMI 1.4 (2009)</strong>：頻寬 10.2 Gbps。首度支援 4K 解析度，但<strong>受限於頻寬，4K 只能跑 30Hz</strong>。這成了 PC 玩家的噩夢——30Hz 下鼠標軌跡嚴重頓挫，完全無法作為桌面電腦使用。</li>
+          <li><strong>HDMI 2.0 / 2.0b (2013-2016)</strong>：頻寬提升至 18 Gbps (實效 14.4 Gbps)。TMDS 時脈頻率從 340MHz 拉高到 600MHz，<strong>正式普及 4K 60Hz 8-bit RGB</strong> 與 HDR10。</li>
+          <li><strong>HDMI 2.1 / 2.1b (2017-2023)</strong>：頻寬直接跳躍 2.6 倍來到 <strong>48 Gbps (實效 42.6 Gbps)</strong>！全面釋放 4K 120Hz、8K 60Hz 以及 PS5 / Xbox Series X 次世代主機的全部潛能。</li>
+        </ul>
+
+        <div class="tech-grid">
+          <div class="tech-card" style="border-left: 4px solid #3b82f6;">
+            <h4>📡 HDMI 1.4 ~ 2.0：TMDS 編碼架構</h4>
+            <p>採用 3 條數據通道 + 1 條獨立差分時脈通道。使用 <strong>8b/10b 編碼</strong>，每傳輸 8 位元數據需消耗 10 位元實體信號，編碼損耗高達 <strong>20%</strong>。獨立時脈通道在高頻下極易產生時脈抖動（Jitter）。</p>
+          </div>
+          <div class="tech-card" style="border-left: 4px solid #8b5cf6;">
+            <h4>🚀 HDMI 2.1：FRL (Fixed Rate Link) 固定速率架構</h4>
+            <p>徹底廢除獨立時脈通道！<strong>原本的時脈通道直接改為第 4 條高速數據通道</strong>。時脈信號直接嵌入在數據封包流中。改用超高效率的 <strong>16b/18b 編碼</strong>（損耗降至 11.1%），4 通道每通道最高 12 Gbps，實現 $12 \times 4 = \mathbf{48\text{ Gbps}}$ 的恐怖吞吐！</p>
+          </div>
+        </div>
+
+        <h3>4.2 家電領域無可替代的影音黑科技</h3>
+        <ul>
+          <li><strong>eARC (增強音訊回傳通道)</strong>：頻寬從傳統 ARC 的 1~3 Mbps 暴增至 37 Mbps，能夠直接將電視上播放的 Dolby Atmos (TrueHD 無損壓縮) 與 DTS:X 7.1 環繞音效回傳給高階擴大機或 Soundbar。</li>
+          <li><strong>HDMI VRR (可變更新率)</strong>：由 HDMI 官方制定的硬體標準，消除畫面撕裂與卡頓，次世代家用主機（PS5）唯一支援的防撕裂協定。</li>
+          <li><strong>ALLM (自動低延遲模式)</strong>：主機開機時，電視會自動關閉所有影像後製插幀演算法，切換到極致低延遲的「遊戲模式」。</li>
+        </ul>
+
+        <h3>4.3 HDMI 的兩大硬傷：命名詐欺與開源授權壁壘</h3>
+        <blockquote>
+          <strong>⚠️ 警惕「假 HDMI 2.1」：</strong><br>
+          HDMI 協會（HDMI Licensing Administrator）在 2021 年做了一個臭名昭著的決定：<strong>取消 HDMI 2.0 認證，所有舊款 18Gbps 設備一律改稱 HDMI 2.1！</strong> 製造商只需在規格表不起眼處標註「不支援 FRL 48Gbps」。這導致市場上充斥著大量跑不動 4K 120Hz 的「假 2.1」螢幕。選購時必須看清是否具備 <strong>「FRL 48Gbps / 4K 120Hz」</strong>！
+        </blockquote>
+        <blockquote>
+          <strong>🐧 Linux 開源社群的痛：</strong><br>
+          HDMI 協會要求簽署嚴苛的 NDA 且禁止向第三方公開實作規範。這直接導致 AMD 官方開源 Linux 驅動無法合法加入 HDMI 2.1 48Gbps 支援，Linux 使用者接 HDMI 只能被迫降速使用 HDMI 2.0！在 PC 領域，這正是 DisplayPort 大獲全勝的重要原因。
+        </blockquote>
+
+        <hr>
+
+        <!-- Section 5 -->
+        <h2 id="deep-dp">5. DisplayPort (DP)：PC 電競、專業工作站與開源標準的王者</h2>
+        <p>2006 年，由 PC 顯示標準權威組織 <strong>VESA (視訊電子標準協會)</strong> 主導推出了 <strong>DisplayPort (簡稱 DP)</strong>。與 HDMI 濃厚的「家電專利封閉色彩」不同，DP 是完全針對 PC 電腦架構打造的<strong>免版稅、全開放、高效能標準</strong>。</p>
+
+        <h3>5.1 顛覆性的傳輸架構：像網際網路一樣的「微封包技術 (Micro-packet)」</h3>
+        <p>HDMI 和 DVI 傳輸畫面時，使用的是傳統的「光柵時序模式」——信號像打字機一樣，一列一列不斷把像素傳給螢幕。如果螢幕不亮，整條線依然在空轉發送信號。</p>
+        <p><strong>DisplayPort 顛覆了這一切：它將視訊資料徹底「封包化」！</strong></p>
+        <ul>
+          <li><strong>數據封包傳輸</strong>：視訊像素、多聲道音訊、控制信號被打包成一個個獨立的 Micro-packets，封包標頭帶有時間戳與虛擬通道 ID。</li>
+          <li><strong>MST (Multi-Stream Transport) 菊花鏈多螢幕串接</strong>：因為是封包傳輸，<strong>一條 DP 纜線內部可以同時封裝多路完全不同的顯示器畫面！</strong> 這意味著：顯卡只需拉出一條 DP 線接到螢幕 A，螢幕 A 的 DP Out 孔再拉一條線接到螢幕 B，兩台螢幕就能實現獨立的雙螢幕延伸顯示（Daisy Chaining），桌面上再也不需要雜亂的雙線！</li>
+        </ul>
+
+        <h3>5.2 世代演進：從 DP 1.4a 到 DP 2.1 的極限超越</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>DP 規格</th>
+                <th>通道鏈路速率</th>
+                <th>實體總頻寬</th>
+                <th>實效頻寬 (扣除編碼開銷)</th>
+                <th>核心技術與代表性解析度</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>DP 1.2</strong></td>
+                <td>HBR2 (5.4 Gbps × 4)</td>
+                <td>21.6 Gbps</td>
+                <td>17.28 Gbps (8b/10b)</td>
+                <td>普及 4K 60Hz 8-bit、初代 MST 菊花鏈</td>
+              </tr>
+              <tr>
+                <td><strong>DP 1.4a</strong></td>
+                <td>HBR3 (8.1 Gbps × 4)</td>
+                <td>32.4 Gbps</td>
+                <td>25.92 Gbps (8b/10b)</td>
+                <td>引入 <strong>DSC 1.2 視覺無損壓縮</strong>、HDR10，推動 4K 144Hz HDR 與 8K 60Hz</td>
+              </tr>
+              <tr>
+                <td><strong>DP 2.1 (UHBR10)</strong></td>
+                <td>UHBR10 (10 Gbps × 4)</td>
+                <td>40.0 Gbps</td>
+                <td>38.69 Gbps (128b/132b)</td>
+                <td>支援標準被動長銅線，原生 4K 144Hz 10-bit HDR</td>
+              </tr>
+              <tr>
+                <td><strong>DP 2.1 (UHBR13.5)</strong></td>
+                <td>UHBR13.5 (13.5 Gbps × 4)</td>
+                <td>54.0 Gbps</td>
+                <td>52.22 Gbps (128b/132b)</td>
+                <td>筆電與工作站擴充塢主流標準</td>
+              </tr>
+              <tr>
+                <td><strong>DP 2.1 (UHBR20)</strong></td>
+                <td>UHBR20 (20 Gbps × 4)</td>
+                <td><strong>80.0 Gbps</strong></td>
+                <td><strong>77.37 Gbps</strong> (128b/132b)</td>
+                <td><strong>當前人類視訊傳輸天花板！原生 4K 240Hz 10-bit HDR、8K 165Hz</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>5.3 AUX 獨立輔助通道：雙向通信的中樞神經</h3>
+        <p>除了 4 條高速 Main Link，DisplayPort 額外配備了一對獨立的 <strong>AUX 輔助通道</strong>（1 Mbps 曼徹斯特編碼或 720 Mbps 高速通道）：</p>
+        <ul>
+          <li>它不需要占用影像傳輸頻寬，專責讀取螢幕的 <strong>EDID (硬體身份識別)</strong> 與 <strong>DPCD (顯示暫存器)</strong>。</li>
+          <li>實現了由電腦軟體直接調節螢幕亮度與色溫（DDC/CI）、傳輸螢幕後方 USB 集線器資料、以及進行毫秒級的鏈路自適應訓練（Link Training）。</li>
+        </ul>
+
+        <hr>
+
+        <!-- Section 6 -->
+        <h2 id="deep-typec">6. USB-C (DP Alt Mode) 與 Thunderbolt：一線通的未來</h2>
+        <p>在現代筆記型電腦（如 MacBook、ThinkPad、Dell XPS）上，傳統的 HDMI 與 DP 接口正在迅速消失，取而代之的是通用的 <strong>USB Type-C 接口</strong>。</p>
+
+        <h3>6.1 DP Alt Mode (DisplayPort 替代模式) 是如何運作的？</h3>
+        <p>USB Type-C 內部共有 24 根針腳，包含 4 組極高頻寬的差分高速通道（TX1/RX1、TX2/RX2）。當你將 Type-C 線插入螢幕時：</p>
+        <ol>
+          <li>兩端的 PD 晶片透過 CC 腳位進行「握手談判」。</li>
+          <li>確認支援視訊輸出後，主機端晶片觸發多工器（Mux），<strong>將實體 Type-C 內部的 4 條差分高速通道直接「借」給 DisplayPort 協定使用！</strong></li>
+          <li>此時這條 Type-C 線在物理上就變身成了一條血統純正的 DisplayPort 纜線！</li>
+        </ol>
+
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>🔌 4-Lane DP 模式 (極致畫質)</h4>
+            <p>4 條差分通道全給 DisplayPort 跑畫面。能跑滿 DP 1.4a 或 DP 2.1 的全部頻寬（如 4K 144Hz 或 8K）。但此時 USB 數據傳輸只能降速走獨立的 USB 2.0 專用針腳（480 Mbps）。</p>
+          </div>
+          <div class="tech-card">
+            <h4>⚖️ 2-Lane DP + 2-Lane USB 3.2 模式 (全功能工作塢)</h4>
+            <p>分出 2 條跑 DisplayPort 影像，另外 2 條跑 10Gbps USB 3.2 資料傳輸！同時透過 VBUS 傳遞 100W/240W 筆電充電。<strong>一條線同時搞定螢幕顯示、高速外接硬碟、有線網路與充電！</strong></p>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Section 7 -->
+        <h2 id="bandwidth-calc">7. 互動工具：顯示頻寬需求與介面相容性試算器</h2>
+        <p>想知道你的螢幕配置需要多少傳輸頻寬？哪種纜線才能完全滿足需求？透過下方試算器即時計算：</p>
+
+        <div class="interactive-explorer-box">
+          <div class="exp-title">
+            <span>⚡ 顯示頻寬與介面相容性試算器</span>
+          </div>
+
+          <div class="calc-grid">
+            <div class="calc-control">
+              <label for="calc-res">🖥️ 螢幕解析度：</label>
+              <select id="calc-res" class="calc-select">
+                <option value="1920,1080" data-ht="2080" data-vt="1111">1080p Full HD (1920×1080)</option>
+                <option value="2560,1440" data-ht="2720" data-vt="1481" selected>2K QHD (2560×1440)</option>
+                <option value="3440,1440" data-ht="3600" data-vt="1481">21:9 超寬 2K (3440×1440)</option>
+                <option value="3840,2160" data-ht="3920" data-vt="2222">4K Ultra HD (3840×2160)</option>
+                <option value="5120,2880" data-ht="5280" data-vt="2962">5K 專業視網膜 (5120×2880)</option>
+                <option value="7680,4320" data-ht="7840" data-vt="4444">8K 超極致解析度 (7680×4320)</option>
+              </select>
+            </div>
+
+            <div class="calc-control">
+              <label for="calc-hz">🔄 螢幕更新率：</label>
+              <select id="calc-hz" class="calc-select">
+                <option value="60">60 Hz (日常辦公)</option>
+                <option value="120">120 Hz (高刷電視/主流)</option>
+                <option value="144" selected>144 Hz (電競主流)</option>
+                <option value="165">165 Hz (電競強化)</option>
+                <option value="240">240 Hz (職業 FPS 電競)</option>
+                <option value="360">360 Hz (極限競技)</option>
+              </select>
+            </div>
+
+            <div class="calc-control">
+              <label for="calc-depth">🎨 色彩深度 (HDR)：</label>
+              <select id="calc-depth" class="calc-select">
+                <option value="8">8-bit SDR (1670 萬色)</option>
+                <option value="10" selected>10-bit HDR (10.7 億色，主流)</option>
+                <option value="12">12-bit Dolby Vision (極致色深)</option>
+              </select>
+            </div>
+
+            <div class="calc-control">
+              <label for="calc-chroma">👁️ 色彩採樣格式：</label>
+              <select id="calc-chroma" class="calc-select">
+                <option value="1.0" selected>RGB 4:4:4 / YCbCr 4:4:4 (無損文字清晰)</option>
+                <option value="0.6667">YCbCr 4:2:2 (壓縮色彩，減省頻寬)</option>
+                <option value="0.5">YCbCr 4:2:0 (劇烈壓縮，文字發虛)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-summary-board">
+            <div>
+              <div id="metric-raw" class="calc-metric-val">17.4 Gbps</div>
+              <div class="calc-metric-lbl">原始無壓縮頻寬需求 (Raw Data Rate)</div>
+            </div>
+            <div>
+              <div id="metric-dsc" class="calc-metric-val">5.8 Gbps</div>
+              <div class="calc-metric-lbl">DSC 3:1 壓縮後頻寬需求</div>
+            </div>
+            <div>
+              <div id="metric-pixels" class="calc-metric-val">580 M/s</div>
+              <div class="calc-metric-lbl">每秒推送像素總數 (Pixel Clock)</div>
+            </div>
+          </div>
+
+          <h4 style="margin: 1.2rem 0 0.8rem; font-size:1.05rem;">🔗 各視訊介面支援相容性動態判定：</h4>
+          <div id="interface-matches" class="interface-match-grid">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Section 8 -->
+        <h2 id="technical-traps">8. 關鍵技術硬核剖析：轉接線、DSC 壓縮與色彩採樣暗坑</h2>
+
+        <h3>8.1 轉接線的單向物理定律：為什麼 DP 轉 HDMI 可以被動，反過來必須主動？</h3>
+        <p>很多工程師都遇過這個幽靈 bug：電腦顯卡只有 DP 孔，買了一條 100 元的「DP 轉 HDMI 線」接電視，畫面亮了；但把這條線拿去接「HDMI 顯卡到 DP 螢幕」，螢幕一片漆黑！為什麼？</p>
+        <div class="tech-grid">
+          <div class="tech-card" style="border-left: 4px solid #10b981;">
+            <h4>✅ DP 轉 HDMI：支援 DP++ (Dual-Mode DP) 被動轉接</h4>
+            <p>多數 PC 顯卡的 DP 孔都帶有 <strong>DP++ (雙模標誌)</strong>。當顯卡偵測到接頭插入的是 HDMI 轉接頭時，顯卡內部的 GPU 主控會<strong>自動將輸出協定切換為 HDMI 的 TMDS 差分信號</strong>，線纜內部不需要任何晶片，只需要簡單的電壓電平轉換（3.3V 轉 5V），因此被動線就能亮！</p>
+          </div>
+          <div class="tech-card" style="border-left: 4px solid #ef4444;">
+            <h4>❌ HDMI 轉 DP：必須購買帶晶片與外部供電的主動式轉接盒</h4>
+            <p>HDMI 接口內部<strong>根本沒有支援 DisplayPort 微封包協定的硬體電路</strong>！它只會傻傻地吐出 TMDS 或 FRL 信號。要讓 DP 螢幕識別，轉接線內部必須內嵌一顆高功耗的協議轉換 SoC 晶片（如 Parade PS188），將 TMDS 信號解調並重新打包成 DP 微封包，且必須透過額外的 USB 孔提供 5V 外部電力！</p>
+          </div>
+        </div>
+
+        <h3>8.2 DSC (Display Stream Compression) 是什麼？人眼真能做到無損？</h3>
+        <p>當你在 4K 144Hz 或 8K 螢幕規格上看到 <strong>「支援 DSC 1.2a」</strong> 時，這代表一項革命性的技術：</p>
+        <ul>
+          <li><strong>VESA DSC 標準</strong>：一種專為顯示鏈路設計的<strong>超低延遲、行內即時無失真壓縮演算法</strong>。延遲僅有幾微秒（人眼完全不可感知，甚至小於一個像素掃描時間）。</li>
+          <li><strong>壓縮比最高達 3:1</strong>：能將原本需要 38 Gbps 的 4K 144Hz 10-bit 信號，無損壓縮塞進 DP 1.4a 的 25.9 Gbps 管道內！</li>
+          <li><strong>視覺無損認證</strong>：在國際標準組織 ISO/IEC 29170-2 的嚴格雙盲測試下，專業圖像工程師在放大鏡下也無法區分原生畫面與 DSC 畫面。</li>
+        </ul>
+
+        <h3>8.3 色彩採樣 (Chroma Subsampling)：電視當電腦螢幕的文字發虛之謎</h3>
+        <p>很多人將筆電插到客廳電視時，發現看電影很棒，但<strong>電腦桌面上的小字邊緣出現嚴重的紅藍毛邊與鋸齒彩邊</strong>：</p>
+        <ul>
+          <li><strong>RGB 4:4:4</strong>：每個像素都擁有完整的紅、綠、藍亮度與色彩資訊。PC 桌面文字渲染（如 ClearType 亞像素渲染）必須在 4:4:4 下才能呈現鋒利黑白邊緣。</li>
+          <li><strong>YCbCr 4:2:0</strong>：人眼對亮度（Y）敏感，對色彩（Cb, Cr）遲鈍。4:2:0 將每 4 個相鄰像素共用一組色彩數據，<strong>直接砍掉 50% 頻寬</strong>！電影本來就是 4:2:0 壓制的，所以看影片毫無違和感；但電腦文字只有 1 個像素寬，色彩被共用後，邊緣立即模糊破爛！</li>
+        </ul>
+
+        <hr>
+
+        <!-- Section 9 -->
+        <h2 id="buyer-matrix">9. 工程師選型與配線實戰決策矩陣</h2>
+        <p>面對市面上五花八門的視訊纜線與接頭，請依照你的實際使用場景挑選最優解：</p>
+
+        <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--bg); margin:1.8rem 0;">
+          <div class="decision-row" style="background:var(--bg-alt);">
+            <div class="decision-scenario">應用環境與硬體設備</div>
+            <div style="font-weight:700;">推薦最優連接介面與線材等級</div>
+          </div>
+
+          <div class="decision-row">
+            <div class="decision-scenario">🎮 1. PC 旗艦電競 (高刷 / G-Sync)</div>
+            <div class="decision-rec">
+              <span class="badge-pill badge-rose">DisplayPort 1.4a 或 DP 2.1 (UHBR)</span>
+              <p style="margin:0.3rem 0 0; font-size:0.9rem; color:var(--text-muted);">
+                首選 DP！G-Sync / FreeSync 支援最完善，原生支援 DSC 視覺無損壓縮，徹底釋放 2K 240Hz / 4K 144Hz+ 極限戰力。
+              </p>
+            </div>
+          </div>
+
+          <div class="decision-row">
+            <div class="decision-scenario">📺 2. 客廳影音家庭劇院 (PS5 / Xbox / Apple TV)</div>
+            <div class="decision-rec">
+              <span class="badge-pill badge-purple">認證 Ultra High Speed HDMI 2.1 (48Gbps)</span>
+              <p style="margin:0.3rem 0 0; font-size:0.9rem; color:var(--text-muted);">
+                必須指名帶有官方防偽 QR 標籤的 48Gbps 認證線材。解鎖 4K 120Hz、HDR10+、Dolby Vision 與 eARC 頂級天空聲道回傳。
+              </p>
+            </div>
+          </div>
+
+          <div class="decision-row">
+            <div class="decision-scenario">💻 3. 現代筆電辦公與多螢幕工作站 (Mac / PC)</div>
+            <div class="decision-rec">
+              <span class="badge-pill badge-blue">全功能 USB-C / Thunderbolt 4 (支援 DP Alt Mode)</span>
+              <p style="margin:0.3rem 0 0; font-size:0.9rem; color:var(--text-muted);">
+                一線通終極解法！單一線纜整合 4K 60/144Hz 視訊輸出、100W PD 快充與螢幕後置 USB Hub，搭配 DP MST 可輕鬆串聯雙螢幕。
+              </p>
+            </div>
+          </div>
+
+          <div class="decision-row">
+            <div class="decision-scenario">🏢 4. 舊會議室投影機 / 機房維護 (Legacy)</div>
+            <div class="decision-rec">
+              <span class="badge-pill badge-amber">HDMI 轉 VGA 主動式轉接器 (自備 3.5mm 音訊孔)</span>
+              <p style="margin:0.3rem 0 0; font-size:0.9rem; color:var(--text-muted);">
+                工程師出差除錯必備應急工具。注意必須內建 DAC 晶片，並能將 HDMI 數位音訊分離為 3.5mm 類比輸出供喇叭使用。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <h2>10. 結語：回歸物理本質，精準點亮視界</h2>
+        <p>從 1987 年類比電壓波動的 <strong>VGA</strong>，到 1999 年消除轉換噪聲的 <strong>DVI</strong>，再到如今家電影音霸主 <strong>HDMI 2.1</strong> 與專為高刷新率、多螢幕菊花鏈而生的 <strong>DisplayPort 2.1</strong>，視訊介面的演進史本質上就是一場<strong>「與銅線電磁物理極限抗衡的頻寬革命」</strong>。</p>
+        <p>當你下次為工作站或電競主機配線時，不再需要被花俏的行銷名詞所迷惑：計算像素時脈、看懂 FRL 與微封包架構、分清 DSC 壓縮邊界，你就能精準選出最契合硬體效能的視訊纜線，讓每一顆像素都能以極致純粹的姿態在螢幕上完美盛放！</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+
+  <!-- Interactive Bandwidth & Interface Matcher Script -->
+  <script>
+    const displayInterfaces = [
+      { name: "VGA (D-Sub 15)", maxRaw: 3.5, dsc: false, note: "類比信號極限，僅建議 1080p 60Hz 內" },
+      { name: "DVI-D Single-Link", maxRaw: 3.96, dsc: false, note: "上限 1920×1200 60Hz" },
+      { name: "DVI-D Dual-Link", maxRaw: 7.92, dsc: false, note: "上限 2560×1600 60Hz / 1080p 144Hz" },
+      { name: "HDMI 1.4b", maxRaw: 8.16, dsc: false, note: "上限 4K 30Hz / 1080p 120Hz" },
+      { name: "HDMI 2.0b (18G)", maxRaw: 14.4, dsc: false, note: "滿血支援 4K 60Hz 8-bit / 2K 144Hz" },
+      { name: "DisplayPort 1.2", maxRaw: 17.28, dsc: false, note: "主流 4K 60Hz / 2K 165Hz" },
+      { name: "DisplayPort 1.4a", maxRaw: 25.92, dsc: true, maxDsc: 77.76, note: "支援 DSC 3:1 壓縮，支援 4K 144Hz+ / 8K" },
+      { name: "HDMI 2.1b (FRL 48G)", maxRaw: 42.6, dsc: true, maxDsc: 127.8, note: "次世代主機標準，原生 4K 120Hz 12-bit" },
+      { name: "DisplayPort 2.1 (UHBR20)", maxRaw: 77.37, dsc: true, maxDsc: 232.1, note: "頂級天花板，原生無壓縮 4K 240Hz / 8K 165Hz" }
+    ];
+
+    function calculateBandwidth() {
+      const resSelect = document.getElementById("calc-res");
+      const opt = resSelect.options[resSelect.selectedIndex];
+      const hTotal = parseFloat(opt.getAttribute("data-ht"));
+      const vTotal = parseFloat(opt.getAttribute("data-vt"));
+
+      const hz = parseFloat(document.getElementById("calc-hz").value);
+      const depth = parseFloat(document.getElementById("calc-depth").value);
+      const chroma = parseFloat(document.getElementById("calc-chroma").value);
+
+      // Bits per pixel: depth * 3 channels * chroma factor
+      const bpp = depth * 3 * chroma;
+
+      // Raw video bandwidth in Gbps
+      const totalPixelsPerSec = hTotal * vTotal * hz;
+      const rawGbps = (totalPixelsPerSec * bpp) / 1e9;
+      const dscGbps = rawGbps / 3.0; // DSC typical 3:1 compression
+
+      document.getElementById("metric-raw").textContent = rawGbps.toFixed(2) + " Gbps";
+      document.getElementById("metric-dsc").textContent = dscGbps.toFixed(2) + " Gbps";
+      document.getElementById("metric-pixels").textContent = (totalPixelsPerSec / 1e6).toFixed(0) + " M/s";
+
+      // Match against display interfaces
+      const container = document.getElementById("interface-matches");
+      container.innerHTML = "";
+
+      displayInterfaces.forEach(iface => {
+        let statusClass = "status-fail";
+        let statusText = "❌ 頻寬不足";
+
+        if (rawGbps <= iface.maxRaw) {
+          statusClass = "status-native";
+          statusText = "✅ 原生未壓縮滿血支援";
+        } else if (iface.dsc && dscGbps <= iface.maxRaw) {
+          statusClass = "status-dsc";
+          statusText = "⚠️ 需 DSC 視覺無損壓縮";
+        }
+
+        const card = document.createElement("div");
+        card.className = "match-card";
+        card.innerHTML = `
+          <div class="match-card-name">
+            <strong>${iface.name}</strong>
+            <small style="color:var(--text-muted); font-size:0.8rem; display:block;">實效上限: ${iface.maxRaw} Gbps</small>
+          </div>
+          <span class="match-status ${statusClass}">${statusText}</span>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    document.querySelectorAll(".calc-select").forEach(el => {
+      el.addEventListener("change", calculateBandwidth);
+    });
+    calculateBandwidth();
+  </script>
+</body>
+</html>

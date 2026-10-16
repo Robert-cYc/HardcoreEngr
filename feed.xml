@@ -5,13 +5,33 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 16 Oct 2026 02:20:08 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 03:26:19 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>螢幕視訊介面終極指南：VGA、DVI、HDMI、DisplayPort (DP) 規格頻寬與技術原理全方位比較表</title>
+    <link>https://ai-hardcore-engineer.com/video-cable-display-interfaces-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/video-cable-display-interfaces-guide.html</guid>
+    <description>全維度橫向評測 VGA、DVI、HDMI (1.4/2.0/2.1b) 與 DisplayPort (1.2/1.4a/2.1) 及 Type-C DP Alt Mode。深入解析類比/數位訊號轉換、TMDS 與 FRL 編碼機制、DP 微封包與 MST 菊花鏈、DSC 視覺無損壓縮，附贈互動式顯示頻寬試算器。</description>
+    <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+    <category>視訊介面</category>
+    <category>DisplayPort</category>
+    <category>HDMI</category>
+    <category>HDMI 2.1</category>
+    <category>DP 2.1</category>
+    <category>VGA</category>
+    <category>DVI</category>
+    <category>Type-C</category>
+    <category>DP Alt Mode</category>
+    <category>MST菊花鏈</category>
+    <category>DSC壓縮</category>
+    <category>硬體指南</category>
+    <category>教學</category>
+  </item>
   <item>
     <title>儲存裝置極速指南：HDD、2.5&quot; SATA SSD、M.2 NVMe 與 USB 規格與效能終極比較表</title>
     <link>https://ai-hardcore-engineer.com/storage-spec-performance-comparison.html</link>
