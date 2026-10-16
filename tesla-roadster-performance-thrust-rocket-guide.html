@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>特斯拉第二代 Roadster 終極解密：Performance、Thrust 與 Rocket 三大版本功能與航太工程全剖析 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,⚡">
+  <meta name="description" content="深度解析特斯拉全新第二代 Tesla Roadster 三大版本配置：Performance 公路版、Thrust 競速版與 Rocket 飛行火箭版。深入探討三電機全輪驅動、底盤主動地面吸力真空風扇、SpaceX 航太級 10,000 psi COPV 冷氣體噴氣推進器、全周邊 10 噴嘴 3D 姿態控制 RCS，以及 0-60mph 突破 0.59 秒 (4.6G) 的人體極限工程。附贈動態彈射加速模擬器與規格對比大表。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/tesla-roadster-performance-thrust-rocket-guide.html">
+  <meta property="og:title" content="特斯拉第二代 Roadster 終極解密：Performance、Thrust 與 Rocket 三大版本功能與航太工程全剖析 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="全維度解析 Tesla Roadster 2 的 Performance、Thrust 與 Rocket 三版本！含底盤地面真空吸附系統、SpaceX 冷氣體火箭噴嘴、0-60mph 0.59秒與互動彈射模擬器。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/tesla-roadster-performance-thrust-rocket-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/tesla-roadster-trinity.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="特斯拉第二代 Roadster 終極解密：Performance、Thrust 與 Rocket 三大版本功能全剖析">
+  <meta name="twitter:description" content="全維度解析 Tesla Roadster 2 的 Performance、Thrust 與 Rocket 三版本！含底盤地面真空吸附系統、SpaceX 冷氣體火箭噴嘴、0-60mph 0.59秒與互動彈射模擬器。">
+  <meta name="twitter:image" content="./images/tesla-roadster-trinity.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 3.5rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border);
+      margin-bottom: 2.2rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-body {
+      max-width: 62em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.05rem;
+      font-weight: 700;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.75rem;
+      color: var(--text);
+    }
+    .article-body p {
+      margin-bottom: 1.2rem;
+      line-height: 1.85;
+      font-size: 1.05rem;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      background: var(--bg-alt);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.95em;
+      color: #e11d48;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .article-body code {
+      color: #f43f5e;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1.1rem 1.6rem;
+      margin: 1.6rem 0;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.6rem;
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 900px;
+    }
+    .article-body th, .article-body td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .article-body th {
+      font-weight: 700;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .article-body tr:hover td {
+      background: rgba(37, 99, 235, 0.05);
+    }
+    .badge-pill {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-teal { background: #ccfbf1; color: #0f766e; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .badge-gray { background: #f3f4f6; color: #374151; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-teal { background: #134e4a; color: #99f6e4; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+    .dark-mode .badge-gray { background: #374151; color: #e5e7eb; }
+
+    /* Interactive Box Components */
+    .interactive-explorer-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 2.2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    /* Model Cards & Grid */
+    .model-trio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.4rem;
+      margin: 2rem 0;
+    }
+    .model-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .model-card:hover {
+      transform: translateY(-3px);
+    }
+    .card-perf { border-top: 5px solid #ef4444; }
+    .card-thrust { border-top: 5px solid #3b82f6; }
+    .card-rocket { border-top: 5px solid #8b5cf6; }
+
+    .model-badge-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    .model-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin: 0;
+    }
+    .model-accel {
+      font-size: 2.2rem;
+      font-weight: 900;
+      font-family: "Fira Code", monospace;
+      margin: 0.8rem 0 0.2rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+    .model-accel small {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .model-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      font-size: 0.92rem;
+    }
+    .model-feature-list li {
+      padding: 0.35rem 0;
+      border-bottom: 1px dashed var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .model-feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Interactive Simulator */
+    .sim-selector {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .sim-tab-btn {
+      padding: 0.65rem 1.1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .sim-tab-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .sim-tab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .sim-dashboard {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .dash-val {
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: "Fira Code", monospace;
+      color: var(--accent);
+    }
+    .dash-lbl {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+    .sim-track-wrap {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+    }
+    .track-bar-outer {
+      height: 18px;
+      background: var(--bg-alt);
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin: 0.8rem 0;
+    }
+    .track-bar-inner {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .bar-p { background: linear-gradient(90deg, #ef4444, #f87171); }
+    .bar-t { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+    .bar-r { background: linear-gradient(90deg, #8b5cf6, #c084fc); }
+
+    /* Key concepts cards */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+    .tech-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      position: relative;
+    }
+    .tech-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .tech-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Quick TOC */
+    .toc-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .toc-title {
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .toc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.5rem;
+    }
+    .toc-list li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .toc-list li a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">"AI" 硬核工程師</a>
+      <button class="menu-toggle" aria-label="切換選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html">所有文章</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./about.html">關於我</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍 搜尋</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切換深淺色模式">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <div class="search-header">
+        <input type="text" class="search-input" placeholder="輸入關鍵字搜尋文章..." aria-label="搜尋">
+        <button class="search-close" aria-label="關閉搜尋">✕</button>
+      </div>
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <main class="article-page">
+    <div class="container">
+      <section class="article-hero">
+        <h1>特斯拉第二代 Roadster 終極解密：Performance、Thrust 與 Rocket 三大版本功能與航太工程全剖析</h1>
+        <div class="article-meta">
+          <span>📅 2026-10-16</span>
+          <span class="separator">·</span>
+          <span>⏳ 25 分鐘閱讀</span>
+          <span class="separator">·</span>
+          <span>✍️ Robert</span>
+        </div>
+        <div class="article-tags" style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+          <span class="tag">Tesla</span>
+          <span class="tag">Roadster 2</span>
+          <span class="tag">SpaceX Package</span>
+          <span class="tag">冷氣體推進器</span>
+          <span class="tag">底盤真空吸附</span>
+          <span class="tag">電動超跑</span>
+          <span class="tag">航太工程</span>
+        </div>
+        <div class="hero-image-wrap">
+          <img loading="lazy" src="./images/tesla-roadster-trinity.jpg" alt="Tesla Roadster Performance, Thrust, and Rocket Configurations in SpaceX Hangar">
+        </div>
+      </section>
+
+      <article class="article-body">
+        <!-- Quick TOC -->
+        <div class="toc-card">
+          <div class="toc-title">📑 本文快速章節導覽</div>
+          <ul class="toc-list">
+            <li><a href="#physics-limit">0. 輪胎摩擦力極限與反作用力革命</a></li>
+            <li><a href="#master-table">1. 三大版本全維度極速對比大表</a></li>
+            <li><a href="#deep-perf">2. Performance：底盤真空吸附與地面效應</a></li>
+            <li><a href="#deep-thrust">3. Thrust：SpaceX 雙尾噴冷氣體推進系統</a></li>
+            <li><a href="#deep-rocket">4. Rocket：單座戰鬥座艙與空中躍越特技</a></li>
+            <li><a href="#g-force-sim">5. 互動工具：三版本彈射加速度模擬器</a></li>
+            <li><a href="#spacex-synergy">6. 跨界工程啟示：為什麼傳統超跑做不出？</a></li>
+            <li><a href="#conclusion">7. 總結：汽車工業的終極分水嶺</a></li>
+          </ul>
+        </div>
+
+        <p>「這不是一輛普通的量產車，它甚至不再只是傳統意義上的汽車。」——伊隆·馬斯克（Elon Musk）在揭開這款籌備多年的純電猛獸時如此說道。</p>
+        <p>自 2017 年初代原型車亮相以來，<strong>全新第二代 Tesla Roadster</strong> 始終籠罩在神秘的光環之中。而如今，隨著量產工程定型與生產線規劃浮出水面，特斯拉正式將這款跨界巔峰之作劃分為三大性能階梯：<strong>Performance（公路性能版）</strong>、<strong>Thrust（賽道推進版）</strong>與令人瞠目結舌的 <strong>Rocket（飛行火箭版）</strong>。</p>
+        <p>從三電機全輪驅動突破 25,000 RPM 的碳纖維轉子，到借鑑 F1 風扇車的底盤主動真空吸附系統，再到直接移植自 SpaceX 獵鷹火箭與星艦的 <strong>10,000 psi COPV 冷氣體噴氣推進器（Cold-Gas Thrusters）</strong>，這款超級跑車正在將人類陸地行駛的物理極限改寫為 <strong>0-60 mph 僅需 0.59 秒（高達 4.64G 加速度）</strong>的航太奇蹟。</p>
+        <p>本文將為你深度拆解這三款怪獸車型的每一項核心技術細節、底層熱力學物理原理、車身結構差異與動態能力！</p>
+
+        <hr>
+
+        <!-- Section 0 -->
+        <h2 id="physics-limit">0. 物理破壁：為什麼傳統輪胎再也快不起來了？</h2>
+        <p>在探討這三個版本之前，我們必須先理解現代超跑工程師面臨的<strong>「摩擦力絕壁（Tire Friction Limit）」</strong>。</p>
+
+        <h3>0.1 輪胎靜摩擦圓與理論加速天花板</h3>
+        <p>傳統汽車依靠輪胎橡膠與柏油路面的分子相互嵌合來產生驅動力。根據庫侖摩擦定律：</p>
+        $$F_{\text{traction}} = \mu \times N = \mu \times (m \cdot g)$$
+        <p>其中 $\mu$ 為摩擦係數，$N$ 為車重正向力。在最理想的平整柏油路面上，即使使用最頂級的熱熔光頭賽車胎（Racing Slicks），乾地摩擦係數 $\mu$ 極限通常也只有 <strong>1.3 ~ 1.5</strong> 左右。</p>
+        <p>將加速度公式 $a = \frac{F}{m} = \mu \cdot g$ 帶入換算，純靠輪胎摩擦力加速時，車輛的最大極限加速度約為：</p>
+        $$a_{\text{max}} \approx 1.5 \times 9.8\text{ m/s}^2 = 14.7\text{ m/s}^2 \approx 1.5\text{G}$$
+        <p>這意味著，<strong>0 到 60 mph（約 96.56 km/h = 26.82 m/s）的理論純輪胎物理極限時間大約死死卡在：</strong></p>
+        $$t_{\text{limit}} = \frac{26.82}{14.7} \approx \mathbf{1.82\text{ 秒}}$$
+        <p>這就是為什麼當前市面上最強的量產純電超跑（如 Tesla Model S Plaid、Rimac Nevera、Lucid Air Sapphire），在扣除「起跑翻滾補償（1-foot rollout）」後，0-60mph 實測成績全都在 <strong>1.8 ~ 2.0 秒</strong> 之間原地踏步——<strong>不是電機馬力不夠大，而是輪胎已經在瘋狂打滑！</strong></p>
+
+        <h3>0.2 特斯拉的兩招「降維打擊」解法</h3>
+        <p>為了徹底轟碎 1.8 秒這堵物理高牆，特斯拉在三款車型上拿出了兩套截然不同的解決方案：</p>
+        <ol>
+          <li><strong>在 Performance 版上：人為暴增正向力 $N$</strong>。透過底盤風扇吸力將車底空氣抽空，創造幾噸的地面真空負壓，即使輪胎摩擦係數 $\mu$ 不變，輪胎抓地力也能翻倍！</li>
+          <li><strong>在 Thrust 與 Rocket 版上：引入不依賴輪胎的反作用力推力</strong>。直接加裝 SpaceX 航太級高壓冷氣體火箭噴嘴，利用牛頓第三定律 $F = \dot{m} v_e$，直接在空氣中推動車身前進！</li>
+        </ol>
+
+        <hr>
+
+        <!-- Section 1 -->
+        <h2 id="master-table">1. 三大版本全維度極速比較大表</h2>
+        <p>以下為 Tesla 官方架構與工程規格的全面橫向評測對比：</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>核心指標 / 規格維度</th>
+                <th>Performance (公路性能版)</th>
+                <th>Thrust (賽道推進版)</th>
+                <th>Rocket (飛行火箭版)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>定位屬性</strong></td>
+                <td><span class="badge-pill badge-blue">Road Ready (街道究極體)</span></td>
+                <td><span class="badge-pill badge-teal">Race Ready (賽道終結者)</span></td>
+                <td><span class="badge-pill badge-rose">Air Ready (航太特技概念)</span></td>
+              </tr>
+              <tr>
+                <td><strong>座艙座椅配置</strong></td>
+                <td>雙座 (2 Seats) + 後置小置物空間</td>
+                <td>雙座 (2 Seats)</td>
+                <td><strong>單座 (1 Seat, 中央戰鬥機座艙)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>0–60 mph (0–96 km/h)</strong></td>
+                <td><span class="badge-pill badge-green">&lt; 1.6 秒</span></td>
+                <td><span class="badge-pill badge-purple">&lt; 0.9 秒 (實測約 0.81s)</span></td>
+                <td><span class="badge-pill badge-rose"><strong>&lt; 0.59 秒 (超限破壞)</strong></span></td>
+              </tr>
+              <tr>
+                <td><strong>0–100 km/h 加速</strong></td>
+                <td>~1.65 秒</td>
+                <td>~0.85 秒</td>
+                <td><strong>~0.62 秒</strong></td>
+              </tr>
+              <tr>
+                <td><strong>彈射瞬間峰值 G 值</strong></td>
+                <td>約 <strong>1.75 G</strong></td>
+                <td>約 <strong>3.38 G</strong> (超越航天飛機發射)</td>
+                <td>約 <strong>4.64 G</strong> (逼近航母彈射戰機)</td>
+              </tr>
+              <tr>
+                <td><strong>動力驅動核心</strong></td>
+                <td>三電機全輪驅動 (1前2後)<br>碳纖維包裹轉子</td>
+                <td>三電機 AWD +<br><strong>SpaceX 雙尾部冷氣體噴嘴</strong></td>
+                <td>三電機 AWD +<br><strong>全周邊 10 噴嘴 3D RCS 推進矩陣</strong></td>
+              </tr>
+              <tr>
+                <td><strong>氣動與下壓力技術</strong></td>
+                <td>底盤主動地面真空吸附風扇<br>主動式尾翼與空氣分流器</td>
+                <td>地面吸力風扇 +<br>後向推進器反衝下壓</td>
+                <td>高密度多向向量噴嘴<br>姿態控制系統 (Pitch / Roll / Yaw)</td>
+              </tr>
+              <tr>
+                <td><strong>高壓氣瓶儲能系統</strong></td>
+                <td>無 (純電池動力)</td>
+                <td>600L 超高強度 COPV 複合氣瓶<br>工作壓力 <strong>10,000 psi (~700 bar)</strong></td>
+                <td>超大容量多組 COPV 氣瓶陣列<br>(完全占滿副駕與後排空間)</td>
+              </tr>
+              <tr>
+                <td><strong>氣瓶補能方式</strong></td>
+                <td>-</td>
+                <td>車載大功率全電高壓壓縮機<br>(行駛/煞車動能回收自動充氣)</td>
+                <td>車載雙聯高壓增壓壓縮機 +<br>地面超快高壓充氣口</td>
+              </tr>
+              <tr>
+                <td><strong>純電續航里程 (EPA)</strong></td>
+                <td>約 <strong>1,000 km (620 英里)</strong></td>
+                <td>約 850 ~ 900 km</td>
+                <td>約 700 ~ 750 km (載重受氣瓶影響)</td>
+              </tr>
+              <tr>
+                <td><strong>極速 (Top Speed)</strong></td>
+                <td>400+ km/h (250+ mph)</td>
+                <td>400+ km/h</td>
+                <td>400+ km/h (平地) / 具備短距低空離地能力</td>
+              </tr>
+              <tr>
+                <td><strong>超常規特技能力</strong></td>
+                <td>傾斜曲面/倒掛天花板行駛能力</td>
+                <td>極限出彎暴衝、煞車距離縮短 50%</td>
+                <td><strong>原地離地懸停、越障跳躍 (Short Hops)、空中側翻</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <!-- Section 2 -->
+        <h2 id="deep-perf">2. 第一章：Performance 版本 —— 地面真空吸附與極致抓地力</h2>
+        <p><strong>Performance 是 Roadster 家族的基石之作。</strong> 雖然它沒有搭載 SpaceX 的高壓噴氣推進器，但它在傳統輪圈驅動的維度上，將現代機械工程發揮到了極限。</p>
+
+        <div class="model-trio-grid">
+          <div class="model-card card-perf">
+            <div class="model-badge-header">
+              <span class="model-title">Roadster Performance</span>
+              <span class="badge-pill badge-rose">Road Ready</span>
+            </div>
+            <div class="model-accel">
+              &lt; 1.6s <small>0–60 mph</small>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.5rem 0;">純輪圈動力學的天花板，搭載主動地面效應抽風系統，公路合法上路的終極純電超跑。</p>
+            <ul class="model-feature-list">
+              <li><span>三電機總功率</span><strong>超過 1,500 hp</strong></li>
+              <li><span>輪上扭矩 (Wheel Torque)</span><strong>10,000 Nm</strong></li>
+              <li><span>底盤真空負壓</span><strong>最高產生 1.8 噸等效下壓力</strong></li>
+              <li><span>座椅配置</span><strong>2 座 + 掀背行李廂</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>2.1 三電機全輪驅動與碳纖維包裹轉子 (Carbon-Sleeved Rotors)</h3>
+        <p>傳統高功率電機在轉速超過 20,000 RPM 時，巨大的離心力會使轉子外的銅矽鋼片發生微米級膨脹，導致轉子摩擦定子甚至瞬間解體。Tesla 在 Model S Plaid 上首次驗證了<strong>「碳纖維纏繞轉子」</strong>技術，而在 Roadster Performance 上進一步升級：</p>
+        <ul>
+          <li><strong>超高轉速極限</strong>：轉子被高張力碳纖維絲緊密捆紮包覆，轉速極限拉高至 <strong>25,000+ RPM</strong>。</li>
+          <li><strong>全程不衰減的扭矩曲線</strong>：從 0 km/h 起步直到 400 km/h 破極速，三台電機（前軸單電機 + 後軸雙獨立扭矩向量電機）維持極為平坦的超高功率輸出，彻底解決傳統電車後段加速軟腳的問題。</li>
+        </ul>
+
+        <h3>2.2 主動地面真空吸附風扇（Fan Car 技術重現）</h3>
+        <p>1978 年，F1 賽場上的 Brabham BT46B「風扇車」曾憑藉車尾的巨大抽風扇統治賽道並隨即被國際汽聯強制禁用；近年英國 McMurtry Spéirling 純電賽車更是在古德伍德速度節上以風扇吸力創下歷史紀錄。Tesla Roadster Performance 成為全球首款<strong>將地面吸附風扇合法量產化</strong>的公路超跑：</p>
+        <ul>
+          <li><strong>底盤動態密閉裙邊</strong>：車底邊緣配備微調碳纖維活動滑板，在激進操駕時自動降至貼地幾毫米處，形成封閉低壓腔體。</li>
+          <li><strong>高轉速電機離心風扇</strong>：由 48V 低壓系統獨立驅動的高壓離心扇，以極大風量將車底殘存空氣抽排出去，瞬間在車底創造出極低的氣壓負壓。</li>
+          <li><strong>倒掛行駛的物理奇蹟</strong>：車身淨重約 1,900 公斤，但風扇產生的等效下壓力高達 <strong>1,800 ~ 2,200 公斤</strong>！這意味著當吸力全開時，車輛產生的吸附力甚至超過了車身重力——理論上<strong>能在曲面立體隧道頂部倒掛行駛</strong>而不會掉落！</li>
+        </ul>
+
+        <hr>
+
+        <!-- Section 3 -->
+        <h2 id="deep-thrust">3. 第二章：Thrust 版本 —— SpaceX 雙尾噴冷氣體推進系統</h2>
+        <p>如果說 Performance 版是將輪胎摩擦力壓榨到了極致，那麼 <strong>Thrust（賽道推進版）</strong> 則是正式打破汽車工程疆界、邁入航太反作用力推進的轉折點。</p>
+
+        <div class="model-trio-grid">
+          <div class="model-card card-thrust">
+            <div class="model-badge-header">
+              <span class="model-title">Roadster Thrust</span>
+              <span class="badge-pill badge-blue">Race Ready</span>
+            </div>
+            <div class="model-accel">
+              &lt; 0.9s <small>0–60 mph (0.81s 實測)</small>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.5rem 0;">移植 SpaceX 獵鷹火箭微調噴嘴，車尾超音速雙噴射，在 1 秒內擊碎人類感官界限。</p>
+            <ul class="model-feature-list">
+              <li><span>冷氣體噴嘴</span><strong>車尾隱藏式雙超音速拉伐爾噴嘴</strong></li>
+              <li><span>工作氣體壓力</span><strong>10,000 psi (~700 bar)</strong></li>
+              <li><span>儲氣單元</span><strong>600L 碳纖維纏繞氣瓶 (COPV)</strong></li>
+              <li><span>回充機制</span><strong>行駛/煞車動能全電超高壓壓縮</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>3.1 什麼是「冷氣體噴氣推進 (Cold-Gas Thruster)」？</h3>
+        <p>很多人誤以為「Rocket 推進」是指像燃油火箭那樣在車尾噴出滾滾烈焰，這在公路交通法規上顯然是不可能的。SpaceX 的工程師選擇了衛星與載人太空艙最常使用的<strong>冷氣體推進技術</strong>：</p>
+        <ul>
+          <li><strong>純物理超音速膨脹</strong>：高壓氣體（超乾燥空氣或高純度氮氣）儲存在氣罐中，在毫秒級高速電磁閥門開啟時，氣體經過精密設計的<strong>拉伐爾噴嘴（de Laval Nozzle）</strong>，氣流在收縮段被加速到音速，隨後在擴張段超音速膨脹噴出！</li>
+          <li><strong>冷冽的白色激波</strong>：噴出的氣體溫度極低（因絕熱膨脹效應產生焦耳-湯姆孫效應），在空氣中形成一道道白色的低溫凝結氣流與超音速馬赫環（Shock Diamonds），完全無明火、無煙霧污染。</li>
+        </ul>
+
+        <h3>3.2 COPV (複合材料纏繞壓力容器) 的航太黑科技</h3>
+        <p>要儲存足以推動 2 噸超跑的氣體推力，壓力必須達到前所未見的 <strong>10,000 psi (約 700 大氣壓，70 MPa)</strong>。普通鋼瓶在這種壓力下重達數百公斤且極易脆裂爆炸：</p>
+        <ul>
+          <li><strong>航太級 COPV 工藝</strong>：內層為極薄的無縫鋁合金或聚合物內膽，外層由 SpaceX 專業纏繞機以數萬米超高模量碳纖維環向與螺旋交錯纏繞，最後浸漬耐高溫環氧樹脂固化。</li>
+          <li><strong>極致容積效率</strong>：Thrust 版在後軸上方整合了容量約 600 公升的 COPV 系統。這套氣瓶耐壓冗餘度達 2.5 倍以上，即使遭遇嚴重追撞也能確保高壓氣體安全洩壓而不發生爆裂。</li>
+        </ul>
+
+        <h3>3.3 0.81 秒彈射與動態增益實測</h3>
+        <p>在車尾牌照翻轉開啟的瞬間，雙冷氣體噴嘴以高達 <strong>數百公斤的額外反作用推力</strong> 爆發噴射：</p>
+        $$F_{\text{total}} = F_{\text{tires}} + F_{\text{rocket}} = (\mu N) + \dot{m} v_e$$
+        <p>額外的氣體推力不僅直接作用於車身重心，更在出彎瞬間抵抗離心力，提供前所未見的<strong>向量推力出彎（Thrust Vectoring）</strong>。煞車時，車身電腦更可反向調度氣流或藉由尾翼空阻，使 100-0 km/h 煞車距離直接<strong>縮短至 15 公尺以內</strong>！</p>
+
+        <hr>
+
+        <!-- Section 4 -->
+        <h2 id="deep-rocket">4. 第三章：Rocket 版本 —— 單座戰鬥座艙與空中躍越特技</h2>
+        <p><strong>這不再是一輛超跑，這是一架貼地飛行器。</strong> 如果說 Thrust 版是為頂級賽道而生，那麼 <strong>Rocket（飛行火箭版）</strong> 就是馬斯克對「量產飛車」終極幻想的狂暴具現化。</p>
+
+        <div class="model-trio-grid">
+          <div class="model-card card-rocket">
+            <div class="model-badge-header">
+              <span class="model-title">Roadster Rocket</span>
+              <span class="badge-pill badge-purple">Air Ready</span>
+            </div>
+            <div class="model-accel">
+              &lt; 0.59s <small>0–60 mph (4.64 G 極限)</small>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.5rem 0;">全車環繞 10 顆 3D 向量噴嘴矩陣，單人中置座艙，實現短暫懸停與越障躍飛。</p>
+            <ul class="model-feature-list">
+              <li><span>座艙布局</span><strong>純單座 (中置戰鬥機駕駛位)</strong></li>
+              <li><span>推進器矩陣</span><strong>10 顆多向冷氣體推進器 (RCS)</strong></li>
+              <li><span>峰值瞬時推力</span><strong>超過 1.2 噸外加空間推力</strong></li>
+              <li><span>特殊機能</span><strong>障礙物跳躍、離地懸停、空中微調</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>4.1 為什麼必須犧牲為「單人座 (Single-Seater)」？</h3>
+        <p>要讓一輛近兩噸的汽車實現全方位姿態控制甚至離地跳躍，所需的氣體體積呈幾何倍數暴增。為此，特斯拉工程團隊做出了激進的取捨：</p>
+        <ul>
+          <li><strong>副駕與後座全面清空</strong>：整個右側座艙與車內後半部，被一組組巨大的航太級碳纖維高壓氣罐、雙聯增壓壓縮機、氣動導管與快速壓電電磁閥全面占據。</li>
+          <li><strong>中置戰鬥座艙</strong>：駕駛座被移至車體中央，獲得最完美的視野與配重感知。座椅為碳纖維單體桶椅，並配備<strong>戰鬥機等級的五點式安全帶與抗 G 氣動充氣背心</strong>，在彈射瞬間自動收緊充氣，防止血液因極端加速倒流下肢引起黑視（G-LOC）。</li>
+        </ul>
+
+        <h3>4.2 全周邊 10 噴嘴 3D RCS 向量姿態矩陣</h3>
+        <p>Rocket 版在車身全周邊布置了 10 顆隱藏式冷氣體噴氣噴嘴：</p>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>💨 車尾主噴嘴 (2組)</h4>
+            <p>負責極限直線加速，單純後向推力即可提供 <strong>0.59 秒內將車速推上 60 mph</strong> 的狂暴推力。</p>
+          </div>
+          <div class="tech-card">
+            <h4>⬆️ 底盤反推噴嘴 (4組)</h4>
+            <p>分別位於四個懸吊支點附近，垂直朝下噴射。提供瞬間<strong>向上跳躍動力</strong>，或在彈射起步瞬間反向壓低車身重心。</p>
+          </div>
+          <div class="tech-card">
+            <h4>🔄 兩側側向噴嘴 (4組)</h4>
+            <p>位於車頭與車側兩翼，用於高速過彎時產生向心力修正，並在空中提供偏航（Yaw）與橫滾（Roll）姿態控制。</p>
+          </div>
+        </div>
+
+        <h3>4.3 超越地表的三大科幻級動作展示</h3>
+        <ol>
+          <li><strong>越障跳躍 (Short Hops)</strong>：當車載 Autopilot / FSD 感測器偵測到前方路面出現掉落物、坑洞或減速坡時，底盤 4 顆垂直噴嘴在 2 毫秒內同步釋放高壓氣體，整輛車直接原地<strong>離地躍起 30 ~ 50 公分</strong>，平穩跳過障礙後落地！</li>
+          <li><strong>原地離地懸停 (Brief Hovering)</strong>：在特定的極限展示模式下，底盤推進器可克服重力，讓車輛在幾秒鐘內四輪離地、短暫懸停在半空中。</li>
+          <li><strong>空中姿態微調 (Mid-Air Attitude Control)</strong>：如果車輛在極限飛坡或賽道彈跳時離地，車載六軸陀螺儀會立即接管 RCS 系統，在空中噴射微調，確保四個輪胎以絕對水平、完美的角度接觸地面，杜絕翻車風險。</li>
+        </ol>
+
+        <hr>
+
+        <!-- Section 5 -->
+        <h2 id="g-force-sim">5. 互動工具：Roadster 三大版本彈射加速度模擬器</h2>
+        <p>0.59 秒究竟有多快？點擊下方按鈕切換三大版本與對照組，即時感受各車型的物理數據與人體承受加速度（G 值）：</p>
+
+        <div class="interactive-explorer-box">
+          <div class="exp-title">
+            <span>⚡ Roadster 三階彈射起步物理模擬器</span>
+          </div>
+
+          <div class="sim-selector">
+            <button class="sim-tab-btn active" data-model="perf">Performance (1.6s)</button>
+            <button class="sim-tab-btn" data-model="thrust">Thrust (0.81s)</button>
+            <button class="sim-tab-btn" data-model="rocket">Rocket (0.59s)</button>
+            <button class="sim-tab-btn" data-model="plaid">對照：Model S Plaid (2.0s)</button>
+            <button class="sim-tab-btn" data-model="f1">對照：F1 賽車 (1.7s)</button>
+          </div>
+
+          <div class="sim-dashboard">
+            <div>
+              <div id="disp-accel" class="dash-val">1.60 s</div>
+              <div class="dash-lbl">0–60 mph (0–96 km/h) 耗時</div>
+            </div>
+            <div>
+              <div id="disp-gforce" class="dash-val">1.71 G</div>
+              <div class="dash-lbl">彈射平均加速度 (G-Force)</div>
+            </div>
+            <div>
+              <div id="disp-dist" class="dash-val">21.4 m</div>
+              <div class="dash-lbl">破百所需行駛距離 (Distance)</div>
+            </div>
+            <div>
+              <div id="disp-propulsion" class="dash-val">真空風扇+三電機</div>
+              <div class="dash-lbl">核心推進系統</div>
+            </div>
+          </div>
+
+          <div class="sim-track-wrap">
+            <div style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;">
+              <span>起跑線 (0 km/h)</span>
+              <span id="disp-model-name">Roadster Performance</span>
+              <span>衝線 (60 mph / 96.5 km/h)</span>
+            </div>
+            <div class="track-bar-outer">
+              <div id="sim-progress-bar" class="track-bar-inner bar-p" style="width: 100%;"></div>
+            </div>
+            <p id="disp-commentary" style="margin:0.5rem 0 0; font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+              依靠底盤真空吸力產生近 2 噸下壓力，突破普通輪胎抓地極限，合法街道上最強純電超跑。
+            </p>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Section 6 -->
+        <h2 id="spacex-synergy">6. 跨界工程啟示：為什麼傳統超跑廠商根本做不出這種車？</h2>
+        <p>法拉利、藍寶堅尼、保時捷或麥拉倫擁有近百年的內燃機造車底蘊，但為什麼全世界只有特斯拉能造出帶火箭噴嘴的跑車？這背後是極其特殊的<strong>集團跨界協同優勢（Cross-Company Synergy）</strong>：</p>
+
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>🚀 1. 火箭材料與流體力學專利池</h4>
+            <p>製造 10,000 psi 超高壓氣瓶與耐高頻疲勞的拉伐爾噴嘴，需要極深厚的航太金屬冶金學與複材纏繞工藝。傳統車廠如果向航太供應商採購，成本將高到不可想像，而這在 SpaceX 只是 Falcon 9 火箭最基礎的量產零件。</p>
+          </div>
+          <div class="tech-card">
+            <h4>🧠 2. 毫秒級姿態控制軟體算力</h4>
+            <p>10 顆噴嘴在不同車速、轉向角與抓地力下的微秒級協同，本質上就是<strong>火箭垂直回收與星艦著陸的導航姿態算法（GNC）</strong>。特斯拉的車載神經網路晶片（HW4/HW5）擁有數百 TOPS 算力，能直接移植成熟的火箭飛控閉環算法。</p>
+          </div>
+          <div class="tech-card">
+            <h4>🔋 3. 48V 與千伏高壓電氣架構</h4>
+            <p>在車內運行能在幾分鐘內將 600 公升氣體壓縮至 700 大氣壓的增壓泵，需要數十千瓦的瞬間電能。傳統車廠的 12V 鉛酸架構連電磁閥都難以驅動，唯有特斯拉在 Cybertruck 普及的 <strong>48V 低壓架構與 800V/1000V 動力電池</strong> 才能支撐這種功耗。</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Section 7 -->
+        <h2 id="conclusion">7. 結語：汽車工業的終極分水嶺</h2>
+        <p>特斯拉第二代 Roadster 的三階產品矩陣，本質上代表了人類對陸地交通工具理解的徹底演進：</p>
+        <ul>
+          <li><strong>Performance</strong> 告訴世人：純輪圈驅動的極限在哪裡，地面效應如何打破物理慣例；</li>
+          <li><strong>Thrust</strong> 宣告了航太推進系統降維打擊超級跑車的時代正式來臨；</li>
+          <li><strong>Rocket</strong> 則是一面映照未來的鏡子——當輪胎不再是推動車身的唯一媒介，<strong>汽車與飛行器的界限，自此徹底灰飛煙滅。</strong></li>
+        </ul>
+        <p>無論最終各國法規將如何審查那些噴射出超音速氣流的噴嘴，這三款車型的誕生，已經注定在世界汽車工業與航太發展史上留下濃墨重彩的永恆篇章！</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+
+  <!-- Interactive Accelerator Simulator Script -->
+  <script>
+    const roadsterSpecs = {
+      perf: {
+        name: "Tesla Roadster Performance (公路版)",
+        time: "1.60 s",
+        gforce: "1.71 G",
+        dist: "21.4 m",
+        propulsion: "三電機 + 底盤真空風扇",
+        barClass: "bar-p",
+        commentary: "依靠底盤離心風扇抽真空產生接近 2 噸的巨大下壓力，突破普通輪胎摩擦力極限，合法街道上最強純電超跑。"
+      },
+      thrust: {
+        name: "Tesla Roadster Thrust (SpaceX 競速版)",
+        time: "0.81 s",
+        gforce: "3.38 G",
+        dist: "10.8 m",
+        propulsion: "三電機 + 尾部雙冷氣體噴嘴",
+        barClass: "bar-t",
+        commentary: "車尾雙超音速噴嘴瞬間噴出 10,000 psi 高壓氣流，反作用力直接打破輪胎極限，加速 G 值超越航天飛機發射！"
+      },
+      rocket: {
+        name: "Tesla Roadster Rocket (單座飛行版)",
+        time: "0.59 s",
+        gforce: "4.64 G",
+        dist: "7.9 m",
+        propulsion: "10 顆 3D 向量噴嘴 RCS 矩陣",
+        barClass: "bar-r",
+        commentary: "0.59 秒破百，4.64G 極限加速度逼近航空母艦彈射戰鬥機！副駕全部塞滿高壓氣瓶，具備短距懸停與跳躍越障特技。"
+      },
+      plaid: {
+        name: "Tesla Model S Plaid (參考對照組)",
+        time: "2.06 s",
+        gforce: "1.33 G",
+        dist: "27.6 m",
+        propulsion: "三電機四驅 (純輪圈)",
+        barClass: "bar-p",
+        commentary: "當前量產四門轎車之王，在扣除 1-foot rollout 後約 2.06 秒，代表當前純輪圈驅動的極高水準。"
+      },
+      f1: {
+        name: "Formula 1 一級方程式賽車 (參考對照組)",
+        time: "1.70 s",
+        gforce: "1.61 G",
+        dist: "22.8 m",
+        propulsion: "V6 混動後驅 + 賽道熱熔胎",
+        barClass: "bar-t",
+        commentary: "頂級賽事專用熱熔光頭胎在精心保溫鋪膠賽道上的極致起步表現，依然無法超越配備冷氣體噴嘴的 Roadster。"
+      }
+    };
+
+    document.querySelectorAll(".sim-tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".sim-tab-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const mKey = btn.getAttribute("data-model");
+        const data = roadsterSpecs[mKey];
+        if (!data) return;
+
+        document.getElementById("disp-accel").textContent = data.time;
+        document.getElementById("disp-gforce").textContent = data.gforce;
+        document.getElementById("disp-dist").textContent = data.dist;
+        document.getElementById("disp-propulsion").textContent = data.propulsion;
+        document.getElementById("disp-model-name").textContent = data.name;
+        document.getElementById("disp-commentary").textContent = data.commentary;
+
+        const bar = document.getElementById("sim-progress-bar");
+        bar.className = "track-bar-inner " + data.barClass;
+        bar.style.width = "0%";
+        setTimeout(() => {
+          bar.style.width = "100%";
+        }, 50);
+      });
+    });
+  </script>
+</body>
+</html>
