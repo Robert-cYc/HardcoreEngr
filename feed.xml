@@ -5,13 +5,30 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 16 Oct 2026 00:17:22 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 01:10:19 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>JSON 核心架構與實戰完全攻略：語法規範、資料結構、序列化與反序列化、JSON Schema 驗證及跨語言操作避坑手冊</title>
+    <link>https://ai-hardcore-engineer.com/json-architecture-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/json-architecture-guide.html</guid>
+    <description>全方位深入剖析 JSON（JavaScript Object Notation）：從底層語法結構、RFC 8259 規範、資料型別與失真陷阱，到跨語言（JavaScript、Python、Go）序列化與反序列化實戰、JSON Schema 契約驗證、LLM Structured Outputs 應用，以及大整數精度遺失、循環引用與串流解析等企業級避坑守則。</description>
+    <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+    <category>JSON</category>
+    <category>RFC 8259</category>
+    <category>JSON Schema</category>
+    <category>序列化</category>
+    <category>Structured Outputs</category>
+    <category>JavaScript</category>
+    <category>Python</category>
+    <category>Go</category>
+    <category>架構設計</category>
+    <category>教學</category>
+  </item>
   <item>
     <title>USB 全世代硬核百科：從 USB 1.0、2.0 到 3.x、Type-C、USB4 與 240W PD 快充完整演進指南</title>
     <link>https://ai-hardcore-engineer.com/usb-history-evolution-guide.html</link>
