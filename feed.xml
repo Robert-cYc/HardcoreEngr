@@ -5,7 +5,7 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 16 Oct 2026 08:30:20 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 09:55:54 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
@@ -710,16 +710,19 @@
     <category>教學</category>
   </item>
   <item>
-    <title>Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧</title>
+    <title>Ollama 本地大模型部署完全攻略：安裝、指令、Modelfile 客製化、API 整合與顯存調校指南</title>
     <link>https://ai-hardcore-engineer.com/ollama-local-llm.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/ollama-local-llm.html</guid>
-    <description>Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。</description>
-    <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
+    <description>零成本、保護隱私！深度解析 Ollama 本地模型部署：CLI 指令速查、VRAM 顯存計算與選型、Modelfile 封裝自製 GGUF、環境變數調校、OpenAI 相容 API 及互動式 VRAM 試算工具。</description>
+    <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
     <category>Ollama</category>
     <category>本地部署</category>
     <category>LLM</category>
-    <category>指令</category>
-    <category>API</category>
+    <category>Modelfile</category>
+    <category>GGUF</category>
+    <category>VRAM</category>
+    <category>顯存計算</category>
+    <category>OpenAI API</category>
     <category>GPU</category>
     <category>教學</category>
   </item>

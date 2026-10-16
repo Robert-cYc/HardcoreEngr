@@ -551,15 +551,18 @@
     ]
   },
   {
-    "title": "Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧",
-    "excerpt": "Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。",
+    "title": "Ollama 本地大模型部署完全攻略：安裝、指令、Modelfile 客製化、API 整合與顯存調校指南",
+    "excerpt": "零成本、保護隱私！深度解析 Ollama 本地模型部署：CLI 指令速查、VRAM 顯存計算與選型、Modelfile 封裝自製 GGUF、環境變數調校、OpenAI 相容 API 及互動式 VRAM 試算工具。",
     "url": "ollama-local-llm.html",
     "tags": [
       "Ollama",
       "本地部署",
       "LLM",
-      "指令",
-      "API",
+      "Modelfile",
+      "GGUF",
+      "VRAM",
+      "顯存計算",
+      "OpenAI API",
       "GPU",
       "教學"
     ]

@@ -3,181 +3,366 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧 — "AI" 硬核工程師</title>
-  <link rel="icon" href="data:,🎯">
-  <meta name="description" content="Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。">
+  <title>Ollama 本地大模型部署完全攻略：安裝、指令、Modelfile 客製化、API 整合與顯存調校指南 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🦙">
+  <meta name="description" content="最完整的 Ollama 本地大模型工程部署指南：深入解析 Windows、macOS 與 Linux 跨平台安裝、核心指令大全、VRAM 顯存估算公式與量化精度選型、環境變數深度調校（OLLAMA_HOST、OLLAMA_MODELS、多併發設定）、Modelfile 自製模型與 Hugging Face GGUF 外部匯入、OpenAI 相容端點整合（Continue、Open-WebUI、Dify）、Function Calling 工具調用與多模態視覺模型實戰。附贈互動式 VRAM 顯存試算器。">
   <meta name="canonical" href="https://ai-hardcore-engineer.com/ollama-local-llm.html">
-  <meta property="og:title" content="Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧 — "AI" 硬核工程師">
-  <meta property="og:description" content="Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。">
+  <meta property="og:title" content="Ollama 本地大模型部署完全攻略：安裝、指令、Modelfile 客製化、API 整合與顯存調校指南 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="零成本、保護隱私！深度解析 Ollama 本地模型部署：CLI 指令速查、顯存計算與選型、Modelfile 封裝、環境變數調校、OpenAI 相容 API 及互動式 VRAM 試算工具。">
   <meta property="og:url" content="https://ai-hardcore-engineer.com/ollama-local-llm.html">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:image" content="./images/ollama-guide.jpg">
   <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧 — "AI" 硬核工程師">
-  <meta name="twitter:description" content="Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。">
-  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
-  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>    <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <meta name="twitter:title" content="Ollama 本地大模型部署完全攻略：安裝、指令、Modelfile 客製化、API 整合與顯存調校指南">
+  <meta name="twitter:description" content="零成本、保護隱私！深度解析 Ollama 本地模型部署：CLI 指令速查、顯存計算與選型、Modelfile 封裝、環境變數調校、OpenAI 相容 API 及互動式 VRAM 試算工具。">
+  <meta name="twitter:image" content="./images/ollama-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
   <style>
     .article-hero {
       text-align: center;
-      padding: 4rem 0 2rem;
+      padding: 3.5rem 0 2rem;
     }
     .article-hero h1 {
-      font-size: 2.97rem;
+      font-size: 2.6rem;
       font-weight: 800;
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
+      line-height: 1.25;
     }
     .article-hero .article-meta {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.6rem;
       color: var(--text-muted);
-      font-size: 1.21rem;
-      margin-bottom: 2rem;
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
     }
-    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border);
+      margin-bottom: 2.2rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+      display: block;
+    }
     .article-body {
-      max-width: 60em;
+      max-width: 62em;
       margin: 0 auto;
     }
     .article-body h2 {
-      font-size: 2.145rem;
+      font-size: 2.05rem;
       font-weight: 700;
-      margin: 2.5rem 0 1rem;
+      margin: 2.8rem 0 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     .article-body h3 {
-      font-size: 1.65rem;
+      font-size: 1.5rem;
       font-weight: 600;
-      margin: 1.5rem 0 0.75rem;
+      margin: 1.8rem 0 0.75rem;
+      color: var(--text);
     }
     .article-body p {
-      margin-bottom: 1rem;
-      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      line-height: 1.85;
+      font-size: 1.05rem;
     }
     .article-body code {
-      font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
       background: var(--bg-alt);
-      padding: 0.15rem 0.4rem;
+      padding: 0.2rem 0.45rem;
       border-radius: 4px;
-      font-size: 1.21em;
+      font-size: 0.95em;
       color: #e11d48;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .article-body code {
+      color: #f43f5e;
     }
     .article-body pre {
       background: var(--bg-alt);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 1rem;
+      padding: 1.2rem;
       overflow-x: auto;
       margin: 1.5rem 0;
+      position: relative;
     }
     .article-body pre code {
       background: none;
       padding: 0;
+      border: none;
       color: var(--text);
+      font-size: 0.95rem;
     }
     .article-body blockquote {
       border-left: 4px solid var(--accent);
       background: var(--bg-alt);
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
+      padding: 1.1rem 1.6rem;
+      margin: 1.6rem 0;
       border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
     .article-body ul, .article-body ol {
-      margin: 1rem 0;
+      margin: 1rem 0 1.5rem;
       padding-left: 2rem;
     }
     .article-body li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.75;
+      font-size: 1.02rem;
     }
-    .article-body img {
-      border-radius: 8px;
-      margin: 1.5rem auto;
-      display: block;
-      max-width: 100%;
+    .table-responsive {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
     }
     .article-body table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
+      min-width: 800px;
     }
     .article-body th, .article-body td {
-      padding: 0.5rem 0.75rem;
+      padding: 0.85rem 1rem;
       text-align: left;
       border-bottom: 1px solid var(--border);
+      vertical-align: middle;
     }
     .article-body th {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text);
       background: var(--bg-alt);
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+      z-index: 2;
     }
-    .article-tags {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
+    .article-body tr:hover td {
+      background: rgba(37, 99, 235, 0.05);
     }
-    .article-footer {
-      text-align: center;
-      padding: 3rem 0;
-      border-top: 1px solid var(--border);
-      margin-top: 3rem;
-    }
-    .back-home {
-      color: var(--accent);
+    .badge-pill {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
       font-weight: 600;
-      display: inline-flex;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-teal { background: #ccfbf1; color: #0f766e; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .badge-gray { background: #f3f4f6; color: #374151; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-teal { background: #134e4a; color: #99f6e4; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+    .dark-mode .badge-gray { background: #374151; color: #e5e7eb; }
+
+    /* Interactive Box Components */
+    .interactive-explorer-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 2.2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    /* VRAM Calculator styles */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .calc-control {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .calc-control label {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .calc-select {
+      padding: 0.65rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .calc-select:focus {
+      border-color: var(--accent);
+    }
+    .calc-summary-board {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      margin-bottom: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+      text-align: center;
+    }
+    .calc-metric-val {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--accent);
+      font-family: "Fira Code", monospace;
+    }
+    .calc-metric-lbl {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Key concepts cards */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+    .tech-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      position: relative;
+    }
+    .tech-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+      display: flex;
       align-items: center;
       gap: 0.4rem;
     }
+    .tech-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Quick TOC */
+    .toc-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .toc-title {
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .toc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.5rem;
+    }
+    .toc-list li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .toc-list li a:hover {
+      color: var(--accent);
+    }
   </style>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧 — \"AI\" 硬核工程師",
-  "description": "Ollama 是一個讓你在本地輕鬆部署與執行大語言模型的工具。本文詳細介紹 Ollama 的安裝方式（Windows/macOS/Linux）、常用指令、模型管理、進階設定與實用技巧。",
-  "url": "https://ai-hardcore-engineer.com/ollama-local-llm.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "\"AI\" 硬核工程師",
-    "url": "https://ai-hardcore-engineer.com"
-  },
-  "image": "https://ai-hardcore-engineer.com/og-image.png",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "url": "https://ai-hardcore-engineer.com/ollama-local-llm.html"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Ollama 本地大模型部署完全攻略：安裝、指令、Modelfile 客製化、API 整合與顯存調校指南 — \"AI\" 硬核工程師",
+    "description": "最完整的 Ollama 本地大模型工程部署指南：深入解析安裝、指令、VRAM 顯存估算公式、環境變數深度調校、Modelfile 封裝自製模型與 GGUF 匯入、OpenAI 相容端點整合與多模態視覺模型實戰。",
+    "url": "https://ai-hardcore-engineer.com/ollama-local-llm.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "\"AI\" 硬核工程師",
+      "url": "https://ai-hardcore-engineer.com"
+    },
+    "image": "https://ai-hardcore-engineer.com/images/ollama-guide.jpg",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "url": "https://ai-hardcore-engineer.com/ollama-local-llm.html"
+    }
   }
-}
   </script>
 </head>
 <body>
   <!-- =============== Header =============== -->
-  <header class="site-header">
+  <header class="site-header" id="top">
     <div class="waves" aria-hidden="true">
       <canvas id="wave-canvas"></canvas>
     </div>
     <div class="container header-inner">
-      <div class="logo">
-        <div>"AI" 硬核工程師</div>
-        <div class="tagline">Talk is cheap. Show me the code</div>
-      </div>
-      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a href="./index.html" class="logo">"AI" 硬核工程師</a>
+      <button class="menu-toggle" aria-label="切換選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="nav">
         <a href="./index.html">首頁</a>
+        <a href="./articles.html">所有文章</a>
         <a href="./tech-news.html">科技新知</a>
-        <a href="./articles.html" class="active">文章</a>
-        <a href="./about.html">關於</a>
-        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
-        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+        <a href="./about.html">關於我</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍 搜尋</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切換深淺色模式">🌙</button>
       </nav>
     </div>
   </header>
@@ -185,316 +370,491 @@
   <!-- =============== Search Overlay =============== -->
   <div class="search-overlay">
     <div class="search-container">
-      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-header">
+        <input type="text" class="search-input" placeholder="輸入關鍵字搜尋文章..." aria-label="搜尋">
+        <button class="search-close" aria-label="關閉搜尋">✕</button>
+      </div>
       <div class="search-results"></div>
-      <div class="search-close">按 Esc 關閉</div>
     </div>
   </div>
 
   <!-- =============== Hero =============== -->
-  <section class="article-hero">
+  <main class="article-page">
     <div class="container">
-      <h1>Ollama 本地大模型部署完全攻略：安裝、指令與實用技巧</h1>
-      <div class="article-meta">
-        <span>2026-08-22</span>
-        <span class="separator">·</span>
-        <span>18 分鐘閱讀</span>
-      </div>
-      <img loading="lazy" src="https://picsum.photos/seed/ollama/1200/400" alt="Ollama 本地大模型">
-    </div>
-  </section>
+      <section class="article-hero">
+        <h1>Ollama 本地大模型部署完全攻略：安裝、指令、Modelfile 客製化、API 整合與顯存調校指南</h1>
+        <div class="article-meta">
+          <span>📅 2026-10-16 (全面重構升級)</span>
+          <span class="separator">·</span>
+          <span>⏳ 28 分鐘深度閱讀</span>
+          <span class="separator">·</span>
+          <span>✍️ Robert</span>
+        </div>
+        <div class="article-tags" style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+          <span class="tag">Ollama</span>
+          <span class="tag">本地LLM</span>
+          <span class="tag">DeepSeek-R1</span>
+          <span class="tag">Modelfile</span>
+          <span class="tag">GGUF</span>
+          <span class="tag">VRAM顯存計算</span>
+          <span class="tag">OpenAI-API</span>
+          <span class="tag">教學</span>
+        </div>
+        <div class="hero-image-wrap">
+          <img loading="lazy" src="./images/ollama-guide.jpg" alt="Ollama 本地大模型部署完全攻略與硬體工程工作站">
+        </div>
+      </section>
 
-  <!-- =============== Article Body =============== -->
-  <main>
-    <div class="container">
+      <!-- =============== Article Body =============== -->
       <article class="article-body">
+        <!-- Quick TOC -->
+        <div class="toc-card">
+          <div class="toc-title">📑 本文快速章節導覽</div>
+          <ul class="toc-list">
+            <li><a href="#why-ollama">1. 為什麼選擇 Ollama？底層架構</a></li>
+            <li><a href="#install">2. 三大平台安裝與背景守護進程</a></li>
+            <li><a href="#cli-master">3. Ollama 核心 CLI 指令極速大全</a></li>
+            <li><a href="#vram-math">4. VRAM 顯存精算與量化選型法則</a></li>
+            <li><a href="#interactive-calc">5. ⚡ 互動工具：VRAM 顯存需求試算器</a></li>
+            <li><a href="#env-vars">6. 生產級環境變數深層調校</a></li>
+            <li><a href="#modelfile-deep">7. Modelfile 語法與外部 GGUF 匯入</a></li>
+            <li><a href="#openai-api">8. OpenAI 相容端點與生態系整合</a></li>
+            <li><a href="#vision-tools">9. 視覺多模態與 Function Calling</a></li>
+            <li><a href="#troubleshooting">10. 顯卡未吃滿與效能除錯指南</a></li>
+          </ul>
+        </div>
+
         <blockquote>
-          🎯 <strong>重點摘要：</strong> 本文帶你從零開始在 Windows / macOS / Linux 上安裝並使用 <strong>Ollama</strong>，本地跑起 Llama、Mistral、Qwen 等開源 LLM：<br>
-          &nbsp;&nbsp;① 安裝 Ollama（支援三大平台）<br>
-          &nbsp;&nbsp;② 使用 <code>ollama pull</code> 下載模型，<code>ollama run</code> 開始對話<br>
-          &nbsp;&nbsp;③ 學會 <code>ollama ls</code>、<code>ollama rm</code>、<code>ollama show</code> 等指令管理模型<br>
-          &nbsp;&nbsp;④ 進階設定 Modelfile 客製化提示模板、記憶上下文、GPU 加速<br>
-          &nbsp;&nbsp;5 分鐘就能擁有一個私隱無外洩、0 API 費的本地 AI 助理！
+          🎯 <strong>核心導讀：</strong> 本文全面重構升級！不再只是簡單的 <code>ollama run</code> 入門，而是從<strong>底層 llama.cpp 引擎運作機制、VRAM 顯存容量數學精算、Hugging Face 外部 GGUF 封裝自製模型，到生產環境的跨網綁定、多併發佇列與 OpenAI 相容生態系</strong>進行全方位工程級剖析。5 分鐘上手，一小時掌握企業級本地私有化 AI 部署！
         </blockquote>
 
-        <h2>前言 — 什麼是 Ollama？</h2>
-        <p>Ollama 是一個開源工具，讓你能在本地電腦上下載、管理與執行大語言模型。它支援多種熱門開源模型（如 Llama 2/3、Mistral、Qwen、Gemma 等），並提供簡單的 CLI 介面讓你馬上就能跟模型對話。</p>
-        <p>與 llama.cpp 不同，Ollama 預設包裝了模型下載、格式轉換、記憶體管理等功能，對新手更加友好 — 就像 <code>docker</code> 對容器技術一樣，Ollama 讓本地 LLM 部署變得像吃飽喝水那麼簡單。</p>
+        <hr>
 
-        <h2>支援的平台與模型</h2>
-        <p>Ollama 目前支援 Windows 10/11、macOS（Intel &amp; Apple Silicon）、Linux（Ubuntu/Debian）。常見支援模型包括：</p>
+        <!-- Section 1 -->
+        <h2 id="why-ollama">1. 為什麼選擇 Ollama？底層架構與核心優勢</h2>
+        <p>在本地運行開源大語言模型（如 DeepSeek-R1、Llama 3.3、Qwen 2.5、Mistral）的世界中，底層技術實質上由著名開源專案 <strong>llama.cpp</strong>（以純 C/C++ 編寫的推理引擎）所統治。然而，編譯 llama.cpp、手動配置 CUDA 鏈路、設定 GGUF 分割檔案與調整繁雜的超參數，對大多數工程師與開發者而言門檻極高。</p>
+
+        <p><strong>Ollama 的出現，就如同 Docker 之於 Linux 容器技術：</strong></p>
         <ul>
-          <li><strong>Meta Llama</strong>：llama2、llama3、llama3.1、llama3.2（各版本都有）</li>
-          <li><strong>Mistral</strong>：mistral、mistral-nemo、mixtral-8x7b 等</li>
-          <li><strong>Qwen</strong>：qwen、qwen2.5、qwen2.5-coder 等（阿里模型）</li>
-          <li><strong>Gemma</strong>：Google 開源的 2B/7B 模型</li>
-          <li><strong>Phi</strong>：Microsoft 的小型語言模型</li>
-          <li><strong>DeepSeek</strong>：deepseek-coder 等程式語言模型</li>
+          <li><strong>統一封裝格式（Model Manifest）</strong>：將權重檔、量化參數、Prompt 模板、System Prompt 與推理超參數整合成單一模型單元。</li>
+          <li><strong>智慧硬體加速偵測</strong>：自動偵測 NVIDIA CUDA、AMD ROCm、Apple Silicon Metal 以及 Intel oneAPI，自動完成跨層卸載（GPU Offload）。</li>
+          <li><strong>背景守護進程與 REST API</strong>：開機自動常駐，原生暴露標準 HTTP API，更內建了與 <strong>OpenAI 相容的 <code>/v1</code> 端點</strong>。</li>
+          <li><strong>零資料外洩、零 API 費用</strong>：所有 Token 生成均在本地晶片完成，徹底杜絕企業機密或代碼外流。</li>
         </ul>
 
-        <blockquote>
-          💡 <strong>提示：</strong> 模型名稱後面可以加上 <code>:latest</code> 或版本號來指定下載特定版本，例如 <code>ollama pull llama3.1:8b</code>。
-        </blockquote>
+        <hr>
 
-        <h2>如何安裝 Ollama</h2>
+        <!-- Section 2 -->
+        <h2 id="install">2. 三大平台安裝與背景守護進程管理</h2>
 
-        <h3>Windows 安裝</h3>
-        <ol>
-          <li>前往 <a href="https://ollama.com/download" target="_blank">Ollama 官方下載頁面</a></li>
-          <li>下載 Windows 版本的安裝程式 <code>OllamaSetup.exe</code></li>
-          <li>雙擊執行，按照精靈完成安裝</li>
-          <li>安裝完成後，Ollama 會自動在背景啟動服務</li>
-        </ol>
-        <p>驗證安裝：</p>
-<pre><code>ollama version</code></pre>
-
-        <h3>macOS 安裝</h3>
-        <p>你可以使用 <code>brew</code> 或直接下載 dmg 安裝：</p>
-<pre><code># 使用 Homebrew 安裝
+        <h3>2.1 macOS 安裝（Apple Silicon 首選）</h3>
+        <p>在配備 M 系列晶片（M1/M2/M3/M4）的 Mac 上，Ollama 能夠直接利用 Apple 的<strong>統一記憶體架構（Unified Memory Architecture）</strong>，GPU 與 CPU 共享高達數百 GB/s 的記憶體頻寬，是體驗 70B 大模型的性價比神器。</p>
+        <pre><code class="language-bash"># 推薦使用 Homebrew 安裝
 brew install ollama
 
-# 啟動 Ollama 服務
+# 啟動 Ollama 背景服務
 ollama serve</code></pre>
-        <p>也可以直接下載 dmg 安裝包，拖曳到 Applications 資料夾即可。</p>
+        <p>亦可至官網下載 <code>Ollama-darwin.zip</code>，將 Ollama.app 拖入應用程式資料夾即可常駐選單列。</p>
 
-        <blockquote>
-          🍎 <strong>Apple Silicon 注意：</strong> M1/M2/M3 等 ARM Mac 會自動下載 ARM 版本的模型，效能非常不錯！
-        </blockquote>
+        <h3>2.2 Windows 10/11 原生安裝</h3>
+        <p>早期 Ollama 依賴 WSL2，如今已提供<strong>完全原生的 Windows 安裝包</strong>，直接調用本機 NVIDIA / AMD 顯示卡驅動：</p>
+        <ol>
+          <li>前往 <a href="https://ollama.com/download" target="_blank" rel="noopener">Ollama 官網</a> 下載 <code>OllamaSetup.exe</code>。</li>
+          <li>執行安裝後，工作列右下角會出現羊駝圖示，表示服務已在 <code>127.0.0.1:11434</code> 成功監聽。</li>
+          <li>開啟 PowerShell 或 Windows Terminal，輸入 <code>ollama --version</code> 即可驗證。</li>
+        </ol>
 
-        <h3>Linux 安裝</h3>
-        <p>Linux 使用者可以用官方提供的指令一鍵安裝：</p>
-<pre><code>curl -fsSL https://ollama.com/install.sh | sh</code></pre>
-        <p>或者使用套件管理器（以 Ubuntu 為例）：</p>
-<pre><code># 添加 Ollama 的 repository key
+        <h3>2.3 Linux (Ubuntu / Debian / CentOS) 生產伺服器一鍵安裝</h3>
+        <pre><code class="language-bash"># 官方一鍵安裝腳本（自動配置 systemd 守護進程與 NVIDIA 驅動識別）
 curl -fsSL https://ollama.com/install.sh | sh
 
-# 啟動服務
-sudo systemctl start ollama</code></pre>
+# 管理 Ollama 服務狀態
+sudo systemctl status ollama
+sudo systemctl restart ollama
+sudo journalctl -u ollama -f  # 即時查看推理日誌</code></pre>
 
-        <h2>OLLAMA 基礎指令大全</h2>
-        <p>以下是 Ollama 的核心指令，幫助你快速上手。</p>
+        <hr>
 
-        <h3>常用指令速查表</h3>
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-              <th>範例</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>ollama pull</code></td>
-              <td>下載模型</td>
-              <td><code>ollama pull llama3.1</code></td>
-            </tr>
-            <tr>
-              <td><code>ollama run</code></td>
-              <td>啟動並對話</td>
-              <td><code>ollama run llama3.1</code></td>
-            </tr>
-            <tr>
-              <td><code>ollama ls</code></td>
-              <td>列出已下載模型</td>
-              <td><code>ollama ls</code></td>
-            </tr>
-            <tr>
-              <td><code>ollama rm</code></td>
-              <td>刪除模型</td>
-              <td><code>ollama rm llama3.1</code></td>
-            </tr>
-            <tr>
-              <td><code>ollama show</code></td>
-              <td>顯示模型詳細資訊</td>
-              <td><code>ollama show llama3.1</code></td>
-            </tr>
-            <tr>
-              <td><code>ollama update</code></td>
-              <td>更新 Ollama 版本</td>
-              <td><code>ollama update</code></td>
-            </tr>
-            <tr>
-              <td><code>ollama serve</code></td>
-              <td>啟動 Ollama 伺服器服務</td>
-              <td><code>ollama serve</code></td>
-            </tr>
-            <tr>
-              <td><code>ollama cp</code></td>
-              <td>複製模型為新名稱</td>
-              <td><code>ollama cp llama3.1 my-llama</code></td>
-            </tr>
-            <tr>
-              <td><code>ollama create</code></td>
-              <td>從 Modelfile 建立客製化模型</td>
-              <td><code>ollama create my-model -f Modelfile</code></td>
-            </tr>
-            <tr>
-              <td><code>ollama push</code></td>
-              <td>推送模型到 Ollama 雲端</td>
-              <td><code>ollama push my-model</code></td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- Section 3 -->
+        <h2 id="cli-master">3. Ollama 核心 CLI 指令極速大全</h2>
+        <p>熟練掌握 Ollama 命令列是每位 AI 工程師的基本功：</p>
 
-        <h2>如何下載並執行第一個模型</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>CLI 指令</th>
+                <th>功能說明</th>
+                <th>硬核使用範例</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>ollama run &lt;model&gt;</code></td>
+                <td>啟動模型並進入互動終端（若本地無權重則自動下載）</td>
+                <td><code>ollama run deepseek-r1:14b</code></td>
+              </tr>
+              <tr>
+                <td><code>ollama pull &lt;model&gt;</code></td>
+                <td>從遠端官方庫預先拉取模型權重</td>
+                <td><code>ollama pull qwen2.5-coder:32b</code></td>
+              </tr>
+              <tr>
+                <td><code>ollama ls</code> / <code>list</code></td>
+                <td>列出本地已安裝的所有模型、大小及量化格式</td>
+                <td><code>ollama ls</code></td>
+              </tr>
+              <tr>
+                <td><code>ollama ps</code></td>
+                <td><strong>即時查看當前加載進顯存的模型、VRAM 佔用與 CPU 卸載率</strong></td>
+                <td><code>ollama ps</code></td>
+              </tr>
+              <tr>
+                <td><code>ollama show &lt;model&gt;</code></td>
+                <td>檢視該模型的系統資訊、Modelfile 模板與參數量</td>
+                <td><code>ollama show --modelfile llama3.3</code></td>
+              </tr>
+              <tr>
+                <td><code>ollama create &lt;name&gt; -f &lt;file&gt;</code></td>
+                <td>依據自訂 Modelfile 構建並封裝全新模型</td>
+                <td><code>ollama create my-assistant -f ./Modelfile</code></td>
+              </tr>
+              <tr>
+                <td><code>ollama cp &lt;src&gt; &lt;dest&gt;</code></td>
+                <td>複製現有模型為新標籤名稱</td>
+                <td><code>ollama cp deepseek-r1:8b my-coder:latest</code></td>
+              </tr>
+              <tr>
+                <td><code>ollama rm &lt;model&gt;</code></td>
+                <td>刪除指定的本地模型以釋放磁碟空間</td>
+                <td><code>ollama rm mistral-nemo:12b</code></td>
+              </tr>
+              <tr>
+                <td><code>ollama stop &lt;model&gt;</code></td>
+                <td><strong>立即將指定模型自顯存 (VRAM) 卸載釋放</strong></td>
+                <td><code>ollama stop deepseek-r1:14b</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <h3>步驟 1️⃣：下載模型</h3>
-        <p>最簡單的方式是使用 <code>ollama pull</code> 來下載模型：</p>
-<pre><code>ollama pull llama3.1</code></pre>
-        <p>下載完成後，你會看到類似這樣的訊息：</p>
-<pre><code>pulling manifest
-pulling 8994806... 100%
-pulling 7f3c7684... 100%
-pulling 43a6dfa8... 100%
-pulling cc740a25... 100%
-pulling 1d83f75d... 100%
-pulling 7bec07c3... 100%
-verified 8a5b8d1e99e468129b9356749af49a021c276b1f7b8b8a60f4c81f66d2851617</code></pre>
+        <hr>
 
-        <h3>步驟 2️⃣：開始對話</h3>
-        <p>下載完成後，使用 <code>ollama run</code> 開始與模型對話：</p>
-<pre><code>ollama run llama3.1</code></pre>
-        <p>進入互動模式後，你可以直接輸入問題：</p>
-<pre><code>>>> 你好，請簡介一下你自己。
-你好！我是 Llama，你是問什麼呢？
-（按下 Ctrl+C 兩次或輸入 /bye 離開）</code></pre>
+        <!-- Section 4 -->
+        <h2 id="vram-math">4. VRAM 顯存精算與量化選型法則</h2>
+        <p>很多初學者經常遇到「跑模型速度只有每秒 2 個 token」的窘境，本質原因就是<strong>顯存爆滿，部分權重被回退（Fallback）到慢速的 CPU 與系統記憶體</strong>。</p>
 
-        <blockquote>
-          💬 <strong>快速對話：</strong> 如果你只想問一次問題，可以直接在指令結尾加上提示：
-          <pre><code>ollama run llama3.1 "請介紹一下 Python 的 lambda 表達式"</code></pre>
-        </blockquote>
+        <h3>4.1 模型顯存開銷公式</h3>
+        <p>本地運行大模型，所需的實質顯存由三大塊構成：</p>
+        $$\text{總顯存需求 (GB)} = \text{模型權重大小} + \text{KV Cache (上下文記憶體)} + \text{CUDA 推理開銷 (約 1~1.5GB)}$$
 
-        <h3>步驟 3️⃣：查詢已下載模型</h3>
-        <p>使用 <code>ollama ls</code> 列出目前已下載的模型：</p>
-<pre><code>NAME           ID                                    SIZE    MODIFIED
-llama3.1       860c7560e7b4                4.9 GB    2 minutes ago</code></pre>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>📦 1. 權重大小估算</h4>
+            <p>在主流 <strong>Q4_K_M (4-bit 量化)</strong> 下，平均每個參數消耗約 0.55 ~ 0.6 Bytes：
+            $$\text{7B/8B 模型} \approx 4.8 \sim 5.2 \text{ GB}$$
+            $$\text{14B 模型} \approx 9.0 \sim 9.5 \text{ GB}$$
+            $$\text{32B 模型} \approx 20.0 \sim 21.0 \text{ GB}$$
+            $$\text{70B 模型} \approx 42.0 \sim 44.0 \text{ GB}$$</p>
+          </div>
+          <div class="tech-card">
+            <h4>🧠 2. KV Cache 上下文擴張開銷</h4>
+            <p>上下文長度（Context Window）越長，儲存注意力鍵值對的顯存呈線性甚至二次方暴增。例如 32B 模型在 <strong>32K 上下文</strong> 下，僅 KV Cache 就需額外吞噬 <strong>4~6 GB 顯存</strong>！</p>
+          </div>
+        </div>
 
-        <h3>清理與管理模型</h3>
-        <p>如果磁碟空間不足，可以使用 <code>ollama rm</code> 刪除不常用的模型：</p>
-<pre><code># 刪除單一模型
-ollama rm llama3.1
+        <h3>4.2 主流量化等級（Quantization）對照指南</h3>
+        <ul>
+          <li><strong>Q4_K_M (4-bit Medium)</strong>：Ollama 官方庫的<strong>預設黃金標準</strong>。兼顧速度、顯存與語言理解，困惑度（Perplexity）僅比全精度損失約 1%~2%。</li>
+          <li><strong>Q5_K_M (5-bit Medium)</strong>：如果顯存有少許餘裕，5-bit 能在數學推理與複雜代碼生成中顯著減少幻覺。</li>
+          <li><strong>Q8_0 (8-bit)</strong>：精度極度逼近 FP16，但體積接近翻倍，適合 7B/8B 小模型在 16GB 顯卡上求取極致品質。</li>
+        </ul>
 
-# 刪除所有未使用的模型
-ollama prune</code></pre>
+        <hr>
 
-        <h2>如何使用 Ollama API</h2>
-        <p>Ollama 提供 HTTP API 供應程式與 AI 模型進行整合。你可以透過簡單的 HTTP 請求與模型溝通。</p>
+        <!-- Section 5: Interactive Tool -->
+        <h2 id="interactive-calc">5. ⚡ 互動工具：本地模型顯存需求與硬體選型試算器</h2>
+        <p>不知道你的顯示卡能跑多大的模型？透過下方互動試算器，即時評估顯存需求與硬體推薦：</p>
 
-        <h3>Ollama REST API</h3>
-        <p>Ollama 預設監聽 <code>http://localhost:11434</code>，你可以發送 POST 請求：</p>
-<pre><code># 啟動 API 服務
-ollama serve
+        <div class="interactive-explorer-box">
+          <div class="exp-title">
+            <span>🧮 本地大模型 VRAM 顯存需求即時精算器</span>
+          </div>
 
-# 發送聊天請求
-curl http://localhost:11434/api/generate -d '{
+          <div class="calc-grid">
+            <div class="calc-control">
+              <label for="calc-params">🤖 模型參數量級：</label>
+              <select id="calc-params" class="calc-select">
+                <option value="1.5">1.5B (極輕量端側，如 Qwen-2.5-1.5B)</option>
+                <option value="3">3B (小型推理，如 Llama-3.2-3B)</option>
+                <option value="7">7B / 8B (主流主力，如 Llama-3.1-8B, DeepSeek-R1-8B)</option>
+                <option value="14" selected>14B (高智商甜點，如 Qwen-2.5-14B, DeepSeek-14B)</option>
+                <option value="32">32B (代碼與邏輯旗艦，如 Qwen-2.5-Coder-32B)</option>
+                <option value="70">70B / 72B (頂級開源旗艦，如 Llama-3.3-70B)</option>
+              </select>
+            </div>
+
+            <div class="calc-control">
+              <label for="calc-quant">⚖️ 量化精度 (Quantization)：</label>
+              <select id="calc-quant" class="calc-select">
+                <option value="4.5">Q4_K_M (約 4.5 bits/param，推薦首選)</option>
+                <option value="5.5">Q5_K_M (約 5.5 bits/param，高保真)</option>
+                <option value="8.5">Q8_0 (約 8.5 bits/param，近無損)</option>
+                <option value="16.0">FP16 (16 bits/param，無量化未壓縮)</option>
+              </select>
+            </div>
+
+            <div class="calc-control">
+              <label for="calc-ctx">📖 預期上下文長度 (Context Tokens)：</label>
+              <select id="calc-ctx" class="calc-select">
+                <option value="2048">2K (簡短問答)</option>
+                <option value="8192" selected>8K (日常代碼與長文對話)</option>
+                <option value="32768">32K (長文檔閱讀與專案級代碼)</option>
+                <option value="65536">64K (超長文檔分析)</option>
+                <option value="131072">128K (全書級/多專案檢索)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-summary-board">
+            <div>
+              <div id="vram-weights" class="calc-metric-val">9.2 GB</div>
+              <div class="calc-metric-lbl">模型權重估算大小</div>
+            </div>
+            <div>
+              <div id="vram-kv" class="calc-metric-val">1.6 GB</div>
+              <div class="calc-metric-lbl">KV Cache 顯存開銷</div>
+            </div>
+            <div>
+              <div id="vram-total" class="calc-metric-val">12.0 GB</div>
+              <div class="calc-metric-lbl">建議最低 VRAM 顯存總量</div>
+            </div>
+          </div>
+
+          <div id="hardware-recommendation" style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.1rem 1.4rem; font-size:0.95rem; line-height:1.7;">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Section 6 -->
+        <h2 id="env-vars">6. 生產級環境變數深層調校 (Advanced Environment Variables)</h2>
+        <p>很多工程師將 Ollama 部署到雲端或家庭伺服器時，常遇到「外網連不上」、「C 槽爆滿」、「多個請求卡死排隊」等問題。這些都可以透過環境變數完美解決！</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>環境變數名稱</th>
+                <th>預設值</th>
+                <th>推薦生產設定</th>
+                <th>功能說明與硬核場景</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>OLLAMA_HOST</code></td>
+                <td><code>127.0.0.1:11434</code></td>
+                <td><code>0.0.0.0:11434</code></td>
+                <td><strong>開放跨區網監聽</strong>。讓區域網路內的手機、同事電腦或 Docker 容器能直接調用 API。</td>
+              </tr>
+              <tr>
+                <td><code>OLLAMA_ORIGINS</code></td>
+                <td>限制本機</td>
+                <td><code>"*"</code></td>
+                <td><strong>解除跨域資源共享 (CORS) 限制</strong>。連接瀏覽器插件（如 Page Assist）或外部 WebUI 必配。</td>
+              </tr>
+              <tr>
+                <td><code>OLLAMA_MODELS</code></td>
+                <td>預設系統目錄</td>
+                <td><code>/data/ollama/models</code><br>或 <code>D:\OllamaModels</code></td>
+                <td><strong>重定向大模型儲存路徑</strong>。將數十 GB 的模型搬到大容量 NVMe SSD，拯救 C 槽或根目錄。</td>
+              </tr>
+              <tr>
+                <td><code>OLLAMA_NUM_PARALLEL</code></td>
+                <td><code>1</code></td>
+                <td><code>2</code> 或 <code>4</code></td>
+                <td><strong>啟用多併發平行請求處理</strong>。允許多位用戶同時提問而無需排隊（會成倍消耗 KV Cache 顯存）。</td>
+              </tr>
+              <tr>
+                <td><code>OLLAMA_MAX_LOADED_MODELS</code></td>
+                <td><code>1</code></td>
+                <td><code>2</code> 或 <code>3</code></td>
+                <td><strong>顯存同時常駐模型數</strong>。例如同時在顯存加載一個 LLM 和一個 Embedding 模型，無需頻繁換入換出。</td>
+              </tr>
+              <tr>
+                <td><code>OLLAMA_KEEP_ALIVE</code></td>
+                <td><code>5m</code> (5分鐘)</td>
+                <td><code>24h</code> 或 <code>-1</code></td>
+                <td><strong>模型在顯存中的駐留時間</strong>。設為 <code>24h</code> 避免每次提問都要等待數秒重新加載模型權重。</td>
+              </tr>
+              <tr>
+                <td><code>CUDA_VISIBLE_DEVICES</code></td>
+                <td>所有 GPU</td>
+                <td><code>0</code> 或 <code>0,1</code></td>
+                <td>指定 Ollama 運行的特定顯卡編號，在多卡伺服器上隔離運算資源。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>6.1 如何持久化設定這些環境變數？</h3>
+        <ul>
+          <li><strong>Linux (systemd)</strong>：
+            <pre><code class="language-bash">sudo systemctl edit ollama.service
+# 在開啟的文件中加入：
+[Service]
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+Environment="OLLAMA_ORIGINS=*"
+Environment="OLLAMA_MODELS=/mnt/nvme/ollama"
+Environment="OLLAMA_NUM_PARALLEL=4"
+Environment="OLLAMA_KEEP_ALIVE=24h"
+
+# 存檔後重載並重啟
+sudo systemctl daemon-reload
+sudo systemctl restart ollama</code></pre>
+          </li>
+          <li><strong>Windows</strong>：在「系統內容」$\to$「環境變數」$\to$「系統變數」中新增上述變數，隨後在工作列右下角完全退出 Ollama 並重新啟動。</li>
+          <li><strong>macOS (GUI App)</strong>：
+            <pre><code class="language-bash">launchctl setenv OLLAMA_HOST "0.0.0.0:11434"
+launchctl setenv OLLAMA_ORIGINS "*"</code></pre>
+          </li>
+        </ul>
+
+        <hr>
+
+        <!-- Section 7 -->
+        <h2 id="modelfile-deep">7. Modelfile 語法與外部 GGUF 匯入實戰</h2>
+        <p>Ollama 的精髓在於類似 Dockerfile 的 <strong>Modelfile</strong> 機制。你可以自由微調系統提示詞、限制輸出長度，甚至把從 Hugging Face 下載的任意 GGUF 封裝成專屬的私有模型！</p>
+
+        <h3>7.1 從零封裝 Hugging Face 上的自訂 GGUF</h3>
+        <p>假設你從 Hugging Face 下載了一個微調過的開源量化模型 <code>MyModel-Q4_K_M.gguf</code>，只需建立一個名為 <code>Modelfile</code> 的純文字檔：</p>
+
+        <pre><code class="language-dockerfile"># 1. 指向本地 GGUF 檔案路徑
+FROM ./MyModel-Q4_K_M.gguf
+
+# 2. 定義對話 Prompt 模板 (以 ChatML 格式為例)
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+{{ .Response }}<|im_end|>"""
+
+# 3. 固化專業 System Prompt
+SYSTEM """你是一位任職於頂尖科技公司的 Staff AI 架構師。
+你的回答必須遵循：專業、直擊痛點、附帶 Production-ready 範例代碼，並使用繁體中文。"""
+
+# 4. 推理核心超參數配置
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95
+PARAMETER top_k 40
+PARAMETER num_ctx 32768
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|im_end|>"</code></pre>
+
+        <p>接著在終端機執行一鍵封裝：</p>
+        <pre><code class="language-bash"># 構建專屬模型並命名為 my-architect
+ollama create my-architect -f ./Modelfile
+
+# 立即在終端機啟動並對話
+ollama run my-architect</code></pre>
+
+        <hr>
+
+        <!-- Section 8 -->
+        <h2 id="openai-api">8. OpenAI 相容端點與現代生態系整合</h2>
+        <p>Ollama 最具戰略價值的特性之一，是它內建了<strong>相容 OpenAI API 規格的端點</strong>。這意味著：任何支援自定義 OpenAI API URL 的軟體，都能<strong>無縫將遠端雲端模型替換為你的本地私有化 Ollama！</strong></p>
+
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>💻 Continue.dev (VS Code / JetBrains 插件)</h4>
+            <p>在 <code>~/.continue/config.json</code> 中配置 Ollama，讓 <code>qwen2.5-coder:14b</code> 成為你 IDE 內的免費 Copilot，Tab 自動補全與代碼重構完全在本地斷網運行！</p>
+          </div>
+          <div class="tech-card">
+            <h4>🌐 Open-WebUI (媲美 ChatGPT 的頂級介面)</h4>
+            <p>透過 Docker 一秒部署：<br>
+            <code>docker run -d -p 3000:8080 -e OLLAMA_BASE_URL=http://host.docker.internal:11434 ghcr.io/open-webui/open-webui:main</code><br>
+            解鎖多模型對比、聯網搜尋、語音對話與 RAG 知識庫功能。</p>
+          </div>
+        </div>
+
+        <h3>8.1 Python 調用 OpenAI 官方 SDK 示範</h3>
+        <pre><code class="language-python">from openai import OpenAI
+
+# 將 base_url 指向本機 Ollama 的相容端點，api_key 隨意填寫即可
+client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama"
+)
+
+response = client.chat.completions.create(
+    model="deepseek-r1:14b",
+    messages=[
+        {"role": "system", "content": "你是一個專業助手"},
+        {"role": "user", "content": "請用繁體中文解釋什麼是浮點數精度損失？"}
+    ],
+    temperature=0.7,
+    stream=True
+)
+
+for chunk in response:
+    content = chunk.choices[0].delta.content
+    if content:
+        print(content, end="", flush=True)
+print()</code></pre>
+
+        <hr>
+
+        <!-- Section 9 -->
+        <h2 id="vision-tools">9. 視覺多模態與 Function Calling 工具調用</h2>
+
+        <h3>9.1 多模態視覺模型 (Vision Models) 圖片辨識實戰</h3>
+        <p>Ollama 支援 <code>llama3.2-vision</code>、<code>llava</code>、<code>minicpm-v</code> 等多模態模型，可直接傳入本機圖片進行 OCR、圖表分析或錯誤截圖診斷：</p>
+        <pre><code class="language-bash"># 下載視覺模型
+ollama pull llama3.2-vision:11b
+
+# 在命令列中直接指定圖片路徑與問題
+ollama run llama3.2-vision:11b "請分析這張圖表中的趨勢與異常值：/path/to/chart.png"</code></pre>
+
+        <h3>9.2 結構化輸出 (Structured JSON Output)</h3>
+        <p>在構建自動化工作流（Agent）時，模型輸出不穩定的純文字往往會導致後續解析爆掉。Ollama 支援 <code>format: "json"</code> 強制輸出合法 JSON：</p>
+        <pre><code class="language-bash">curl http://localhost:11434/api/generate -d '{
   "model": "llama3.1",
-  "prompt": "請問台灣的首都是哪裡？",
+  "prompt": "請擷取以下文字的姓名與年齡：小明今年28歲，住在台北市。",
+  "format": "json",
   "stream": false
 }'</code></pre>
 
-        <h3>API 參數說明</h3>
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>參數</th>
-              <th>類型</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>model</code></td>
-              <td>string</td>
-              <td>模型名稱</td>
-            </tr>
-            <tr>
-              <td><code>prompt</code></td>
-              <td>string</td>
-              <td>提示問題</td>
-            </tr>
-            <tr>
-              <td><code>stream</code></td>
-              <td>boolean</td>
-              <td>是否逐字回應 (True/False)</td>
-            </tr>
-            <tr>
-              <td><code>temperature</code></td>
-              <td>float</td>
-              <td>隨機性（0~1）</td>
-            </tr>
-            <tr>
-              <td><code>top_p</code></td>
-              <td>float</td>
-              <td>核取詞彙累積機率</td>
-            </tr>
-            <tr>
-              <td><code>top_k</code></td>
-              <td>int</td>
-              <td>取 top-k 候選詞</td>
-            </tr>
-            <tr>
-              <td><code>num_ctx</code></td>
-              <td>int</td>
-              <td>上下文最大長度（tokens）</td>
-            </tr>
-          </tbody>
-        </table>
+        <hr>
 
-        <h3>Python 整合</h3>
-        <p>如果你要在 Python 中使用 Ollama，可以透過<code>requests</code>呼叫 API：</p>
-<pre><code>import requests
+        <!-- Section 10 -->
+        <h2 id="troubleshooting">10. 顯卡未吃滿與效能除錯指南 (Troubleshooting)</h2>
 
-def chat_ollama(model, prompt):
-    r = requests.post(
-        "http://localhost:11434/api/generate",
-        json={"model": model, "prompt": prompt, "stream": False}
-    )
-    return r.json()["response"]
+        <div class="tech-grid">
+          <div class="tech-card" style="border-left: 4px solid #ef4444;">
+            <h4>🚨 問題 1：模型運行極度緩慢，CPU 佔用 100%？</h4>
+            <p><strong>診斷：</strong> 執行 <code>ollama ps</code> 檢查。如果 <code>PROCESSOR</code> 欄位顯示 <code>100% CPU</code> 或 <code>30%/70% CPU/GPU</code>，說明顯存不足導致部分 Layer 被回退到系統 RAM。<br>
+            <strong>解方：</strong> 下載更小量化等級（如 Q4_K_M 代替 Q8_0）或縮小 <code>num_ctx</code> 上下文長度。</p>
+          </div>
+          <div class="tech-card" style="border-left: 4px solid #f59e0b;">
+            <h4>⚠️ 問題 2：Linux 伺服器無法識別 NVIDIA 顯卡？</h4>
+            <p><strong>診斷：</strong> 檢查 <code>nvidia-smi</code> 是否正常，以及是否安裝了 <code>nvidia-container-toolkit</code>。<br>
+            <strong>解方：</strong> 確保 systemd 服務具有讀取 GPU 裝置節點的權限，並於日誌中確認出現 <code>CUDA compute capability discovered</code> 字樣。</p>
+          </div>
+        </div>
 
-print(chat_ollama("llama3.1", "請問台灣的首都是哪裡？"))</code></pre>
+        <hr>
 
-        <blockquote>
-          🔌 <strong>注意：</strong> 如果你已經安裝了<code>ollama-python</code>，也可以使用官方 SDK來呼叫模型，更加方便。
-        </blockquote>
+        <h2>11. 結語：擁抱私有化 AI 的自由新紀元</h2>
+        <p>在隱私合規與邊緣計算愈發關鍵的今天，<strong>Ollama 不僅僅是一個工具，更是一把讓個人與企業拿回「算力與資料主權」的鑰匙</strong>。從日常終端機輔助、自製開發團隊私有知識庫，到高併發的生產級 Agent 引擎，掌握 Ollama 的底層調校與架構配置，將是每位 AI 硬核工程師不可或缺的堅實基石！</p>
 
-        <h2>進階 — 如何客製化模型 (Modelfile)</h2>
-        <p>Ollama 支援<strong>Modelfile</strong>讓你可以客製化模型行為，類似於 Dockerfile 的概念。</p>
-
-        <h3>基本 Modelfile 語法</h3>
-<pre><code># 基於 llama3.1 建立新模型
-FROM llama3.1
-
-# 設定系統提示
-SYSTEM 你是一個友善且專業的 AI 助理，會用繁體中文回答所有問題。
-
-# 設定參數
-PARAMETER temperature 0.7
-PARAMETER num_ctx 4096
-        &lt;h2&gt;結語&lt;/h2&gt;
-        &lt;p&gt;Ollama 讓本地部署 LLM 變得前所未有地簡單 — 無論你是希望保護隱私、節省 API 費用，或是想要一個可離線使用的 AI 助理，Ollama 都是極佳的選擇。&lt;/p&gt;
-        &lt;blockquote&gt;
-          🎯 &lt;strong&gt;快速回顧步驟：&lt;/strong&gt;&lt;br&gt;
-          &nbsp;&nbsp;1️⃣ 下載並安裝 Ollama（支援 Windows/macOS/Linux）&lt;br&gt;
-          &nbsp;&nbsp;2️⃣ &lt;code&gt;ollama pull &lt;model&gt;</code> 下載模型<br>
-          &nbsp;&nbsp;3️⃣ <code>ollama run &lt;model&gt;</code> 開始對話<br>
-          &nbsp;&nbsp;4️⃣ 使用 Modelfile 客製化行為<br>
-          &nbsp;&nbsp;5️⃣ 透過 API 整合進自己的應用<br><br>
-          整個流程不到 10 分鐘，就能擁有一個私隱無外洩、0 API 費的本地 AI 助理。
-        </blockquote>
-        <blockquote>
-          🔗 <strong>推薦資源：</strong><br>
-          &nbsp;&nbsp;• <a href="https://ollama.com" target="_blank">Ollama 官網</a><br>
-          &nbsp;&nbsp;• <a href="https://github.com/ollama/ollama" target="_blank">Ollama GitHub</a><br>
-          &nbsp;&nbsp;• <a href="https://github.com/ollama/ollama/blob/main/docs/modelfile.md" target="_blank">Modelfile 官方文檔</a><br>
-          &nbsp;&nbsp;• <a href="https://github.com/ollama/ollama/blob/main/docs/api.md" target="_blank">API 文檔</a>
-        </blockquote>
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <a href="#top" class="back-home">← 返回頁首</a>
+        </div>
       </article>
-
-      <!-- =============== Article Footer =============== -->
-      <div class="article-footer">
-        <a href="#top" class="back-home">← 返回頁首</a>
-      </div>
     </div>
   </main>
 
@@ -506,7 +866,8 @@ PARAMETER num_ctx 4096
           <h4>"AI" 硬核工程師</h4>
           <div class="footer-links">
             <a href="./about.html">關於我</a>
-            <a href="./articles.html">所有文章</a>          </div>
+            <a href="./articles.html">所有文章</a>
+          </div>
         </div>
         <div class="footer-column">
           <h4>聯絡方式</h4>
@@ -531,5 +892,54 @@ PARAMETER num_ctx 4096
   <script src="./js/bg-effects.js?v=10"></script>
   <script src="./js/script.js"></script>
   <script src="./js/enhancements.js"></script>
+
+  <!-- Interactive VRAM Calculator Script -->
+  <script>
+    function updateVramCalc() {
+      const paramsB = parseFloat(document.getElementById("calc-params").value);
+      const bits = parseFloat(document.getElementById("calc-quant").value);
+      const ctxTokens = parseFloat(document.getElementById("calc-ctx").value);
+
+      // Model weights size (GB): (params * 1e9 * bits / 8) / (1024^3) * 1.15 (overhead)
+      const weightsGB = (paramsB * bits / 8) * 1.15;
+
+      // KV Cache size approx (GB): 2 * 2 * n_layers * n_heads * head_dim * bytes_per_elem * ctx
+      // Empirical rule: ~0.15MB per token for 70B, ~0.04MB for 14B, ~0.02MB for 7B
+      const kvRateMB = (paramsB / 70) * 0.14 + 0.015;
+      const kvGB = (ctxTokens * kvRateMB) / 1024;
+
+      // CUDA runtime overhead
+      const cudaOverhead = 1.2;
+
+      const totalVram = weightsGB + kvGB + cudaOverhead;
+
+      document.getElementById("vram-weights").textContent = weightsGB.toFixed(1) + " GB";
+      document.getElementById("vram-kv").textContent = kvGB.toFixed(1) + " GB";
+      document.getElementById("vram-total").textContent = totalVram.toFixed(1) + " GB";
+
+      // Recommendation text
+      let recHtml = "";
+      if (totalVram <= 8) {
+        recHtml = `🟢 <strong>輕量流暢：</strong> 你的配置僅需 <strong>${totalVram.toFixed(1)} GB</strong> VRAM。主流 <strong>RTX 3060 12G / 4060 8G</strong> 或配備 16GB RAM 的 Mac 即可 100% 全顯存卸載，享受滿血推理速度！`;
+      } else if (totalVram <= 12) {
+        recHtml = `🟡 <strong>中等負荷：</strong> 建議配備 <strong>12GB ~ 16GB 顯存</strong>（如 RTX 3060 12GB、RTX 4070 12GB 或 Apple M 系列 24GB 統一記憶體）。可完美流暢運行，無需依賴慢速 CPU！`;
+      } else if (totalVram <= 16) {
+        recHtml = `🟠 <strong>高階顯卡必備：</strong> 總需 <strong>${totalVram.toFixed(1)} GB</strong> VRAM。強烈推薦 <strong>RTX 4060 Ti 16GB、RTX 4080 16GB</strong>，或配備 32GB 統一記憶體的 Mac。`;
+      } else if (totalVram <= 24) {
+        recHtml = `🟣 <strong>旗艦級顯存挑戰：</strong> 總需 <strong>${totalVram.toFixed(1)} GB</strong> VRAM。需要消費級旗艦卡皇 <strong>RTX 3090 / 4090 24GB</strong>，或 Mac 36GB/48GB 統一記憶體方可完整容納！`;
+      } else if (totalVram <= 48) {
+        recHtml = `🔴 <strong>工作站 / 雙卡門檻：</strong> 總需 <strong>${totalVram.toFixed(1)} GB</strong> VRAM。一般單卡無法勝任，建議配置 <strong>雙 RTX 3090/4090 (24GB × 2)</strong>，或配備 64GB / 96GB 統一記憶體的 <strong>Mac Studio (M2/M4 Max)</strong>！`;
+      } else {
+        recHtml = `🔥 <strong>極限企業級算力：</strong> 總需高達 <strong>${totalVram.toFixed(1)} GB</strong> VRAM！建議使用專業卡（如 NVIDIA A100 / H100），或配備 <strong>128GB / 192GB 記憶體的 Mac Studio (M2/M3/M4 Ultra)</strong>！`;
+      }
+
+      document.getElementById("hardware-recommendation").innerHTML = recHtml;
+    }
+
+    document.querySelectorAll(".calc-select").forEach(el => {
+      el.addEventListener("change", updateVramCalc);
+    });
+    updateVramCalc();
+  </script>
 </body>
 </html>
