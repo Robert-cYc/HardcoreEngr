@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>儲存裝置極速指南：HDD、2.5" SATA SSD、M.2 NVMe 與 USB 隨身碟/PSSD 規格與效能終極比較表 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,💾">
+  <meta name="description" content="最詳盡的儲存裝置全景技術指南：全維度橫向評測 3.5/2.5 吋 HDD 機械硬碟、2.5 吋 SATA SSD、M.2 (SATA / PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟 / PSSD 外接硬碟。深入剖析循序頻寬、4K 隨機 IOPS、存取延遲、CMR/SMR 避坑、AHCI vs NVMe 佇列架構、SLC Cache 掉速機制與 UASP 協定，附贈互動式傳輸時間模擬器與選購決策指南。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/storage-spec-performance-comparison.html">
+  <meta property="og:title" content="儲存裝置極速指南：HDD、2.5&quot; SATA SSD、M.2 NVMe 與 USB 隨身碟/PSSD 規格與效能終極比較表 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="全維度橫向評測 HDD、2.5 吋 SATA SSD、M.2 (PCIe 3.0/4.0/5.0 NVMe) 與 USB 隨身碟/PSSD。含規格效能大表、4K IOPS 與延遲比較、SLC 快取機制及互動式檔案傳輸模擬器。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/storage-spec-performance-comparison.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/storage-spec-performance-guide.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="儲存裝置極速指南：HDD、2.5&quot; SATA SSD、M.2 NVMe 與 USB 隨身碟/PSSD 規格與效能終極比較表">
+  <meta name="twitter:description" content="全維度橫向評測 HDD、2.5 吋 SATA SSD、M.2 (PCIe 3.0/4.0/5.0 NVMe) 與 USB 隨身碟/PSSD。含規格效能大表、4K IOPS 與延遲比較、SLC 快取機制及互動式檔案傳輸模擬器。">
+  <meta name="twitter:image" content="./images/storage-spec-performance-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 3.5rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border);
+      margin-bottom: 2.2rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-height: 540px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-body {
+      max-width: 62em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.05rem;
+      font-weight: 700;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.75rem;
+      color: var(--text);
+    }
+    .article-body p {
+      margin-bottom: 1.2rem;
+      line-height: 1.85;
+      font-size: 1.05rem;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      background: var(--bg-alt);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.95em;
+      color: #e11d48;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .article-body code {
+      color: #f43f5e;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      border: none;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1.1rem 1.6rem;
+      margin: 1.6rem 0;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.6rem;
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 900px;
+    }
+    .article-body th, .article-body td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .article-body th {
+      font-weight: 700;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .article-body tr:hover td {
+      background: rgba(37, 99, 235, 0.05);
+    }
+    .badge-pill {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-teal { background: #ccfbf1; color: #0f766e; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .badge-gray { background: #f3f4f6; color: #374151; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-teal { background: #134e4a; color: #99f6e4; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+    .dark-mode .badge-gray { background: #374151; color: #e5e7eb; }
+
+    /* Interactive Box Components */
+    .interactive-explorer-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 2.2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    /* Simulator styles */
+    .sim-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sim-control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .sim-control-group label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .sim-select, .sim-input {
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .sim-select:focus, .sim-input:focus {
+      border-color: var(--accent);
+    }
+    .sim-result-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .sim-result-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    .sim-device-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .sim-device-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .sim-device-time {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-family: "Fira Code", monospace;
+    }
+    .sim-bar-bg {
+      width: 100%;
+      height: 10px;
+      background: var(--bg-alt);
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .sim-bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease;
+    }
+    .bar-hdd { background: linear-gradient(90deg, #f59e0b, #d97706); }
+    .bar-sata { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+    .bar-gen3 { background: linear-gradient(90deg, #06b6d4, #0891b2); }
+    .bar-gen4 { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
+    .bar-gen5 { background: linear-gradient(90deg, #ec4899, #db2777); }
+    .bar-usb2 { background: linear-gradient(90deg, #ef4444, #dc2626); }
+    .bar-usb3 { background: linear-gradient(90deg, #10b981, #059669); }
+    .bar-usb4 { background: linear-gradient(90deg, #6366f1, #4f46e5); }
+
+    .sim-stats-sub {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Key concept callout cards */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+    .tech-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      position: relative;
+    }
+    .tech-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .tech-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Decision matrix pills */
+    .decision-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .decision-scenario {
+      font-weight: 600;
+      min-width: 180px;
+      font-size: 1rem;
+    }
+    .decision-rec {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Quick TOC */
+    .toc-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .toc-title {
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .toc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.5rem;
+    }
+    .toc-list li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .toc-list li a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">"AI" 硬核工程師</a>
+      <button class="menu-toggle" aria-label="切換選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html">所有文章</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./about.html">關於我</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍 搜尋</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切換深淺色模式">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <div class="search-header">
+        <input type="text" class="search-input" placeholder="輸入關鍵字搜尋文章..." aria-label="搜尋">
+        <button class="search-close" aria-label="關閉搜尋">✕</button>
+      </div>
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <main class="article-page">
+    <div class="container">
+      <section class="article-hero">
+        <h1>儲存裝置極速指南：HDD、2.5" SATA SSD、M.2 NVMe 與 USB 規格與效能終極比較表</h1>
+        <div class="article-meta">
+          <span>📅 2026-10-16</span>
+          <span class="separator">·</span>
+          <span>⏳ 26 分鐘閱讀</span>
+          <span class="separator">·</span>
+          <span>✍️ Robert</span>
+        </div>
+        <div class="article-tags" style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+          <span class="tag">儲存裝置</span>
+          <span class="tag">HDD</span>
+          <span class="tag">M.2 NVMe</span>
+          <span class="tag">SATA SSD</span>
+          <span class="tag">USB 3.2 / USB4</span>
+          <span class="tag">硬體架構</span>
+          <span class="tag">效能評測</span>
+        </div>
+        <div class="hero-image-wrap">
+          <img loading="lazy" src="./images/storage-spec-performance-guide.jpg" alt="HDD, SATA SSD, M.2 NVMe, and USB External SSD Storage Evolution">
+        </div>
+      </section>
+
+      <article class="article-body">
+        <!-- Quick TOC -->
+        <div class="toc-card">
+          <div class="toc-title">📑 本文快速章節導覽</div>
+          <ul class="toc-list">
+            <li><a href="#dimension">0. 儲存名詞防坑：三維度解構</a></li>
+            <li><a href="#master-table">1. 全世代規格與效能極速大表</a></li>
+            <li><a href="#deep-hdd">2. HDD 機械硬碟與 CMR/SMR 陷阱</a></li>
+            <li><a href="#deep-sata">3. 2.5 吋 SATA SSD 與 AHCI 天花板</a></li>
+            <li><a href="#deep-m2">4. M.2 世代革命：Gen3 到 Gen5 狂飆</a></li>
+            <li><a href="#deep-usb">5. USB 隨身碟與外接 PSSD 協定迷思</a></li>
+            <li><a href="#interactive-sim">6. 互動工具：檔案傳輸耗時模擬器</a></li>
+            <li><a href="#buyer-matrix">7. 工程師終極選購與配置決策矩陣</a></li>
+          </ul>
+        </div>
+
+        <p>「明明換了宣傳寫著 <strong>7,500 MB/s</strong> 的 PCIe 4.0 旗艦 M.2 SSD，為什麼開機和進遊戲的速度，體感跟以前 <strong>550 MB/s</strong> 的 SATA SSD 差不多？」</p>
+        <p>「買了一顆 20Gbps 的 USB 3.2 Gen 2x2 隨身行動固態硬碟，插上最新款 MacBook 卻只能跑出 1,000 MB/s？」</p>
+        <p>「組裝 NAS 時貪便宜買了便宜的大容量硬碟，為什麼做 RAID 陣列重建時卡死、硬碟瘋狂掉盤？」</p>
+        <p>在現代電腦硬體體系中，儲存裝置（Storage Devices）往往是被最多「行銷數字煙幕彈」包裝的領域。廠商總愛在彩盒上印上動輒數千 MB/s 的連續傳輸（Sequential）頻寬，但<strong>在真實的工程開發、作業系統開機、資料庫運作與 3A 遊戲載入中，決定你體驗的往往是完全不同的物理機制</strong>。</p>
+        <p>本文將為你建立一套清晰、可驗證、深達物理與底層通訊協定的儲存硬體全景認知，並附上極致詳盡的規格效能對比大表與互動模擬器，徹底治癒你的儲存選型焦慮。</p>
+
+        <hr>
+
+        <!-- Section 0 -->
+        <h2 id="dimension">0. 觀念破壁：破解儲存名詞的「三維度混淆」</h2>
+        <p>許多人在討論「M.2、SSD、SATA、NVMe」時會語無倫次，本質上是因為混淆了以下三個完全獨立的維度：</p>
+
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>📐 1. 物理外觀尺寸 (Form Factor)</h4>
+            <p><strong>「它長什麼樣子、量體多大」</strong>：例如 3.5 吋、2.5 吋、M.2 (2280/2230/2242)、U.2、隨身隨身碟。這只代表外觀與螺絲孔位，不代表速度！</p>
+          </div>
+          <div class="tech-card">
+            <h4>🔌 2. 實體匯流排介面 (Bus Interface)</h4>
+            <p><strong>「電氣訊號走哪條實體線路」</strong>：例如 SATA 3.0 (6Gbps)、PCIe (PCI Express Gen 3/4/5)、USB (USB 2.0 / 3.2 / USB4)、Thunderbolt。這決定了物理傳輸頻寬上限。</p>
+          </div>
+          <div class="tech-card">
+            <h4>📜 3. 邏輯通訊協定 (Protocol / Layer)</h4>
+            <p><strong>「作業系統與主控晶片如何對話」</strong>：例如舊式的 IDE/ATA、為磁碟設計的 AHCI、專為快閃記憶體設計的 NVMe、以及 USB 上的 BOT 與 UASP。這決定了指令佇列深度與延遲表現。</p>
+          </div>
+        </div>
+
+        <blockquote>
+          <strong>💡 硬核速記法：</strong><br>
+          • <strong>M.2 不是速度代名詞！</strong> 早期有 M.2 SATA SSD，速度跟 2.5 吋 SATA SSD 一模一樣只有 550 MB/s。<br>
+          • <strong>NVMe 才是速度的靈魂！</strong> 走 PCIe 通道的 M.2 NVMe SSD 才能跑出 3,500 ~ 14,000+ MB/s 的超狂頻寬。<br>
+          • <strong>Type-C 只是接頭形狀！</strong> 一條 Type-C 線可能只跑 USB 2.0 (480Mbps)，也可能跑 Thunderbolt 4 (40Gbps)。
+        </blockquote>
+
+        <hr>
+
+        <!-- Section 1 -->
+        <h2 id="master-table">1. 全世代規格與效能極速比較大表</h2>
+        <p>以下橫跨傳統機械硬碟 (HDD)、2.5 吋 SATA 固態硬碟、主流與次世代 M.2 NVMe，以及各級 USB 外接儲存，進行全方位實測與技術指標大對決：</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>裝置類型</th>
+                <th>實體介面 / Form</th>
+                <th>通訊協定</th>
+                <th>理論頻寬上限</th>
+                <th>實測循序讀/寫 (MB/s)</th>
+                <th>4K 隨機讀/寫 (IOPS)</th>
+                <th>存取延遲 (Latency)</th>
+                <th>功耗與發熱</th>
+                <th>抗震能力</th>
+                <th>每 GB 成本</th>
+                <th>最佳核心定位</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>3.5" 機械硬碟 (7200 RPM)</strong></td>
+                <td>SATA III 6Gbps (3.5")</td>
+                <td>ATA / AHCI</td>
+                <td>600 MB/s</td>
+                <td><span class="badge-pill badge-amber">180 ~ 270</span></td>
+                <td><span class="badge-pill badge-rose">75 ~ 150</span></td>
+                <td>10 ~ 15 ms (極高)</td>
+                <td>6 ~ 10 W (溫溫的)</td>
+                <td>❌ 脆弱 (怕摔震)</td>
+                <td><span class="badge-pill badge-green">極低 (~$0.015/GB)</span></td>
+                <td>NAS 儲存池、冷備份、監控錄影</td>
+              </tr>
+              <tr>
+                <td><strong>2.5" 機械硬碟 (5400 RPM)</strong></td>
+                <td>SATA III 6Gbps (2.5")</td>
+                <td>ATA / AHCI</td>
+                <td>600 MB/s</td>
+                <td><span class="badge-pill badge-amber">90 ~ 140</span></td>
+                <td><span class="badge-pill badge-rose">50 ~ 100</span></td>
+                <td>15 ~ 20 ms (極高)</td>
+                <td>2 ~ 4 W (低)</td>
+                <td>❌ 脆弱 (怕摔震)</td>
+                <td>低 (~$0.03/GB)</td>
+                <td>舊式外接硬碟、老筆電替換</td>
+              </tr>
+              <tr>
+                <td><strong>2.5" SATA SSD</strong></td>
+                <td>SATA III 6Gbps (2.5")</td>
+                <td>AHCI (Queue 32)</td>
+                <td>600 MB/s</td>
+                <td><span class="badge-pill badge-blue">540 / 520</span></td>
+                <td><span class="badge-pill badge-blue">50K ~ 95K</span></td>
+                <td>50 ~ 100 μs</td>
+                <td>2 ~ 4 W (涼爽)</td>
+                <td>✅ 優異 (純晶片)</td>
+                <td>中低 (~$0.06/GB)</td>
+                <td>舊機升級、靜音倉庫、平價擴充</td>
+              </tr>
+              <tr>
+                <td><strong>M.2 SATA SSD</strong></td>
+                <td>M.2 B+M Key (2280)</td>
+                <td>AHCI (Queue 32)</td>
+                <td>600 MB/s</td>
+                <td><span class="badge-pill badge-blue">540 / 520</span></td>
+                <td><span class="badge-pill badge-blue">50K ~ 90K</span></td>
+                <td>50 ~ 100 μs</td>
+                <td>2 ~ 3 W (涼爽)</td>
+                <td>✅ 優異</td>
+                <td>中低 (漸被淘汰)</td>
+                <td>舊款輕薄筆電專用</td>
+              </tr>
+              <tr>
+                <td><strong>M.2 PCIe 3.0 NVMe</strong></td>
+                <td>M.2 M-Key (2280)</td>
+                <td>NVMe 1.3/1.4</td>
+                <td>3.94 GB/s</td>
+                <td><span class="badge-pill badge-teal">3,500 / 3,000</span></td>
+                <td><span class="badge-pill badge-teal">350K ~ 600K</span></td>
+                <td>20 ~ 30 μs</td>
+                <td>3 ~ 6 W (微溫)</td>
+                <td>✅ 優異</td>
+                <td><span class="badge-pill badge-green">CP值甜點 (~$0.065/GB)</span></td>
+                <td>主流辦公、平價遊戲碟、省電筆電</td>
+              </tr>
+              <tr>
+                <td><strong>M.2 PCIe 4.0 NVMe</strong></td>
+                <td>M.2 M-Key (2280)</td>
+                <td>NVMe 1.4/2.0</td>
+                <td>7.88 GB/s</td>
+                <td><span class="badge-pill badge-purple">7,450 / 6,900</span></td>
+                <td><span class="badge-pill badge-purple">800K ~ 1,400K</span></td>
+                <td>12 ~ 20 μs</td>
+                <td>5 ~ 9 W (需金屬散熱片)</td>
+                <td>✅ 優異</td>
+                <td>主流標準 (~$0.08/GB)</td>
+                <td><strong>當前最佳系統開機碟、PS5 擴充、3A 遊戲</strong></td>
+              </tr>
+              <tr>
+                <td><strong>M.2 PCIe 5.0 NVMe</strong></td>
+                <td>M.2 M-Key (2280)</td>
+                <td>NVMe 2.0</td>
+                <td>15.75 GB/s</td>
+                <td><span class="badge-pill badge-rose">14,500 / 12,000</span></td>
+                <td><span class="badge-pill badge-rose">1.5M ~ 2.4M</span></td>
+                <td>8 ~ 15 μs</td>
+                <td>10 ~ 14 W (<strong>高熱！需主動風扇</strong>)</td>
+                <td>✅ 優異</td>
+                <td>極高 (~$0.18/GB)</td>
+                <td>極限發燒友、8K RAW 影片即時渲染</td>
+              </tr>
+              <tr>
+                <td><strong>平價 USB 2.0 隨身碟</strong></td>
+                <td>USB Type-A</td>
+                <td>BOT (單向阻塞)</td>
+                <td>480 Mbps</td>
+                <td><span class="badge-pill badge-gray">25 ~ 35 / 8 ~ 15</span></td>
+                <td><span class="badge-pill badge-rose">50 ~ 200</span></td>
+                <td>10 ~ 50 ms</td>
+                <td>0.5 ~ 1 W (冰涼)</td>
+                <td>✅ 優異</td>
+                <td>超低 (但極慢)</td>
+                <td>印表機插孔、一次性文件傳送</td>
+              </tr>
+              <tr>
+                <td><strong>USB 3.2 Gen 1 隨身碟</strong></td>
+                <td>USB Type-A / Type-C</td>
+                <td>BOT / UASP (少數)</td>
+                <td>5 Gbps</td>
+                <td><span class="badge-pill badge-amber">120 ~ 250 / 30 ~ 80</span></td>
+                <td><span class="badge-pill badge-rose">200 ~ 1,000</span></td>
+                <td>5 ~ 15 ms</td>
+                <td>1 ~ 2 W</td>
+                <td>✅ 優異</td>
+                <td>平價</td>
+                <td>系統安裝隨身碟 (PE/Ubuntu)、暫存</td>
+              </tr>
+              <tr>
+                <td><strong>USB 3.2 Gen 2 行動固態 (PSSD)</strong></td>
+                <td>USB Type-C</td>
+                <td>NVMe + UASP</td>
+                <td>10 Gbps</td>
+                <td><span class="badge-pill badge-teal">1,050 / 1,000</span></td>
+                <td><span class="badge-pill badge-teal">30K ~ 60K</span></td>
+                <td>80 ~ 150 μs</td>
+                <td>3 ~ 5 W (金屬外殼微溫)</td>
+                <td>✅ 優異</td>
+                <td>中 (~$0.10/GB)</td>
+                <td><strong>跨平台工作交換、剪輯外錄 (ProRes)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>USB4 / Thunderbolt 4 外接 SSD</strong></td>
+                <td>USB Type-C (40Gbps)</td>
+                <td>PCIe Tunnel + NVMe</td>
+                <td>40 Gbps</td>
+                <td><span class="badge-pill badge-purple">3,100 / 2,800</span></td>
+                <td><span class="badge-pill badge-purple">250K ~ 500K</span></td>
+                <td>30 ~ 50 μs</td>
+                <td>5 ~ 8 W (需鋁合金散熱)</td>
+                <td>✅ 優異</td>
+                <td>較高 (~$0.15/GB)</td>
+                <td>Mac 外接系統碟、專業 4K/8K 雙向剪輯</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <!-- Section 2 -->
+        <h2 id="deep-hdd">2. HDD 機械硬碟：每 GB 成本霸主與致命的 SMR 深坑</h2>
+        <p>雖然在消費級電腦上，HDD 幾乎已經被徹底驅逐出「開機碟」與「遊戲碟」的範疇，但在資料中心、NAS (網路附加儲存) 與監控安防領域，<strong>機械硬碟依然牢牢統治著全世界 80% 以上的資料儲存總量</strong>。原因很簡單：<strong>容量大、每 GB 成本便宜到快閃記憶體望塵莫及</strong>。</p>
+
+        <h3>2.1 物理讀寫機制：為什麼 HDD 隨機讀寫爛到只有 0.5 MB/s？</h3>
+        <p>HDD 內部是由旋轉的鋁合金或玻璃磁盤（Platters）與機械臂（Actuator Arm）組成：</p>
+        <ul>
+          <li><strong>循序讀寫 (Sequential)</strong>：當讀寫大檔案時，磁頭只要維持在同一個磁軌上，隨著磁盤旋轉（5400/7200 RPM），就能一口氣讀取大量資料。現代 3.5 吋高密度硬碟的內圈循序讀寫約 150 MB/s，外圈甚至可達 <strong>260 ~ 280 MB/s</strong>。</li>
+          <li><strong>4K 隨機讀寫 (Random)</strong>：當要讀取分散在硬碟各處的微小檔案時，機械臂必須進行<strong>物理尋道 (Seek Time，約 4~9ms)</strong>，磁盤還必須轉到對應扇區（<strong>旋轉延遲 Rotational Latency，7200RPM 約需 4.16ms</strong>）。這使得硬碟一次 4K 隨機尋址總耗時高達 <strong>10 ~ 15 毫秒 (ms)</strong>！換算成 IOPS（每秒輸入輸出操作次數）：
+          $$IOPS = \frac{1000\text{ ms}}{\text{平均尋道延遲 (10ms)}} \approx 75 \sim 100 \text{ IOPS}$$
+          $100 \times 4\text{KB} = 0.4 \text{ MB/s}$！這就是為什麼用機械硬碟跑 Windows 10/11 會瘋狂卡在「硬碟 100%」，任何零碎的系統背景日誌更新都會讓機械硬碟徹底癱瘓。
+          </li>
+        </ul>
+
+        <h3>2.2 CMR (PMR) vs SMR：NAS 與資料安全的「世紀大坑」</h3>
+        <div class="tech-grid">
+          <div class="tech-card" style="border-left: 4px solid #10b981;">
+            <h4>✅ CMR (Conventional Magnetic Recording) 傳統磁記錄</h4>
+            <p>磁軌與磁軌之間保留足夠的安全保護間隔。寫入一個磁軌完全不會干擾相鄰磁軌。隨機寫入性能穩定，<strong>NAS 陣列重建（Rebuild）迅速且可靠</strong>。選購硬碟請指名 CMR（如 WD Red Plus/Pro、Seagate IronWolf/Exos、Toshiba N300/MG 系列）。</p>
+          </div>
+          <div class="tech-card" style="border-left: 4px solid #ef4444;">
+            <h4>⚠️ SMR (Shingled Magnetic Recording) 疊瓦式磁記錄</h4>
+            <p>為了在相同面積多塞 25% 容量，把磁軌像屋頂瓦片一樣重疊排列。寫入磁頭比讀取磁頭寬，<strong>一旦要修改中間某一條磁軌，整組疊瓦區塊全部要讀出、修改、重寫！</strong>造成極端嚴重的「寫入放大」。NAS 混入 SMR 碟，陣列重建時寫入速度會崩跌至幾百 KB/s，導致重建耗時數天甚至陣列直接崩潰！</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Section 3 -->
+        <h2 id="deep-sata">3. 2.5 吋 SATA SSD：老機救星與 AHCI 的歷史天花板</h2>
+        <p>固態硬碟（SSD）消除了所有機械運動部件，依靠 NAND Flash 快閃記憶體晶片與主控晶片以電子方式定址，延遲直接從機械硬碟的 10ms 暴降至 <strong>0.05ms (50μs)</strong>，整整快了 <strong>200 倍</strong>！這就是為什麼老電腦從 HDD 換成任何一顆平價 SATA SSD，日常流暢度會有「換了新電腦」般的質變。</p>
+
+        <h3>3.1 SATA III 與 AHCI 的「物理枷鎖」</h3>
+        <p>很多初學者問：「為什麼市場上幾百種 2.5 吋 SATA SSD，不管是三星、美光還是金士頓，標示的最高速度永遠都是 <strong>550 MB/s 讀取、520 MB/s 寫入</strong>？」</p>
+        <p>答案在於 SATA 傳輸介面的規格極限：</p>
+        <ul>
+          <li><strong>SATA 3.0 介面時脈</strong>：6.0 Gbps。</li>
+          <li><strong>8b/10b 實體層線路編碼</strong>：每傳輸 8 位元有效數據，就需要 10 位元的實體信號，損耗高達 20%。
+          $$實體有效頻寬 = 6.0 \text{ Gbps} \times \frac{8}{10} = 4.8 \text{ Gbps} = 600 \text{ MB/s}$$</li>
+          <li><strong>協定開銷 (Overhead)</strong>：扣除 SATA 訊框頭、校驗碼與檔案系統開銷，實質資料吞吐量最高就死死卡在 <strong>550 ~ 560 MB/s</strong>。</li>
+          <li><strong>AHCI 協定瓶頸</strong>：AHCI（進階主機控制器介面）早在 2004 年由 Intel 主導制定，本質是為了給高延遲的旋轉機械硬碟優化指令排列（NCQ Native Command Queuing）。它<strong>只有單一指令佇列（Single Queue），佇列深度最多只有 32 條指令</strong>。面對現代並行度極高的多核心 CPU 與快閃記憶體陣列，AHCI 早就成了嚴重的交通堵塞瓶頸。</li>
+        </ul>
+
+        <hr>
+
+        <!-- Section 4 -->
+        <h2 id="deep-m2">4. M.2 世代革命：PCIe 3.0、4.0 到 5.0 與 NVMe 協定解放</h2>
+        <p>為了打破 SATA 與 AHCI 的雙重枷鎖，工程界誕生了 <strong>M.2 介面</strong> 與 <strong>NVMe (Non-Volatile Memory Express)</strong> 傳輸協定。</p>
+
+        <h3>4.1 NVMe 協定為什麼這麼快？</h3>
+        <p>NVMe 捨棄了轉接南橋 SATA 控制器的迂迴路線，直接讓 SSD 透過 PCIe 匯流排直通 CPU：</p>
+        <ul>
+          <li><strong>64,000 佇列深度</strong>：從 AHCI 的「1 個佇列、深度 32」，一舉提升到「<strong>最多 64,000 個獨立佇列，每個佇列可容納 64,000 個指令</strong>」！這意味著現代多核心 CPU（如 16 核 32 緒）的每一個核心都能擁有專屬的佇列，徹底消除佇列鎖定競爭。</li>
+          <li><strong>指令延遲腰斬</strong>：每條命令從 100 條暫存器暫態開銷減少至幾條輕量指令，CPU 輪詢與中斷延遲縮小到 10 微秒（μs）級別。</li>
+        </ul>
+
+        <h3>4.2 PCIe 世代頻寬翻倍演進（以主流 x4 通道為例）</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>PCIe 世代</th>
+                <th>通道編碼 (Encoding)</th>
+                <th>單通道頻寬 (x1)</th>
+                <th>主流 SSD 通道 (x4) 理論極限</th>
+                <th>實測最高循序讀寫</th>
+                <th>典型功耗與代表性產品</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>PCIe 3.0</strong></td>
+                <td>128b/130b (損耗僅 1.5%)</td>
+                <td>985 MB/s</td>
+                <td><strong>3.94 GB/s</strong></td>
+                <td>~3,500 MB/s</td>
+                <td>3~5W (無散熱片也安全) / 三星 970 EVO Plus、海力士 P31</td>
+              </tr>
+              <tr>
+                <td><strong>PCIe 4.0</strong></td>
+                <td>128b/130b</td>
+                <td>1.97 GB/s</td>
+                <td><strong>7.88 GB/s</strong></td>
+                <td>~7,450 MB/s</td>
+                <td>6~9W (建議金屬散熱片) / 三星 990 Pro、WD SN850X、美光 T500</td>
+              </tr>
+              <tr>
+                <td><strong>PCIe 5.0</strong></td>
+                <td>128b/130b</td>
+                <td>3.94 GB/s</td>
+                <td><strong>15.75 GB/s</strong></td>
+                <td>~14,500 MB/s</td>
+                <td>11~14W (<strong>需超厚重散熱片或微型風扇</strong>) / 美光 Crucial T705</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>4.3 為什麼 7,500 MB/s 的 Gen4 跟 14,000 MB/s 的 Gen5 日常體感無感？</h3>
+        <p>這是一個非常經典的硬體盲區：<strong>「循序讀寫 (Sequential)」只在傳輸極大單一連續檔案時發揮作用</strong>（例如拷貝單檔 100GB 4K 藍光影片）。但在系統開機、開啟 Photoshop、載入遊戲時，電腦讀取的是成千上萬個數 KB 到數十 KB 的零碎組態檔與程式庫。</p>
+        <p>這時決定流暢度的是 <strong>4K 隨機讀取 (單佇列 QD1 延遲)</strong>：</p>
+        <ul>
+          <li>7200 RPM 機械硬碟的 4K QD1 讀取：約 <strong>0.6 MB/s</strong></li>
+          <li>SATA SSD 的 4K QD1 讀取：約 <strong>35 ~ 45 MB/s</strong>（提升 70 倍，體感震撼！）</li>
+          <li>PCIe 3.0 NVMe SSD 的 4K QD1 讀取：約 <strong>55 ~ 65 MB/s</strong></li>
+          <li>PCIe 4.0 NVMe 旗艦的 4K QD1 讀取：約 <strong>80 ~ 95 MB/s</strong></li>
+          <li>PCIe 5.0 NVMe 頂級旗艦的 4K QD1 讀取：約 <strong>95 ~ 110 MB/s</strong></li>
+        </ul>
+        <p>看到了嗎？從 SATA 到 PCIe 4.0，循序速度從 500 飆到 7,000（飆了 14 倍），但真實決定體感的 4K 單佇列速度只從 40 提高到 85（只差 2 倍左右）。從 Gen4 換到 Gen5，4K QD1 更是只提升了 15% 左右，但價格與發熱量卻翻倍！這就是「日常體驗邊際效益遞減」的核心物理真相。</p>
+
+        <hr>
+
+        <!-- Section 5 -->
+        <h2 id="deep-usb">5. USB 儲存裝置：隨身碟與外接 PSSD 的協定暗坑</h2>
+        <p>很多使用者發現：明明買了號稱 <strong>USB 3.2 100MB/s 讀取</strong> 的平價隨身碟，剛開始拷貝檔案很快，但傳了幾秒鐘後，寫入速度直接跳崖暴跌到 <strong>5 MB/s 甚至 0 KB/s</strong>，比 20 年前的 USB 2.0 還慢！為什麼？</p>
+
+        <h3>5.1 隨身碟掉速真相：黑片顆粒與 SLC 快取耗盡</h3>
+        <p>現代快閃記憶體主要有以下四種類型：</p>
+        <ul>
+          <li><strong>SLC (1 bit/cell)</strong>：速度極快、壽命 100,000 次擦寫，但成本極高。</li>
+          <li><strong>TLC (3 bit/cell)</strong>：現代主流 SSD 核心，壽命約 1,000~3,000 次。</li>
+          <li><strong>QLC (4 bit/cell)</strong>：便宜隨身碟最愛，壽命僅 100~300 次，且<strong>真實原始寫入速度（裸寫速度）只有慘不忍睹的 8 ~ 30 MB/s</strong>。</li>
+        </ul>
+        <p>為了做出漂亮的宣傳跑分，廉價隨身碟與低階 SSD 會劃分一小塊容量作為 <strong>SLC Cache（模擬 SLC 快取）</strong>。當你傳入前 5GB 資料時，主控用 SLC 模式高速寫入，速度可達 200 MB/s；但一旦這 5GB 緩存爆滿，主控必須一邊將舊資料搬移壓縮回 QLC 區塊，一邊接收新資料，速度瞬間發生<strong>「斷崖式坍塌」</strong>，直接跌落到 5~10 MB/s 並產生嚴重卡頓。</p>
+
+        <h3>5.2 BOT 傳輸 vs UASP 傳輸協定</h3>
+        <p>外接儲存的另一個分水嶺在於通訊傳輸協定：</p>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>🔴 BOT (Bulk-Only Transport)</h4>
+            <p>1999 年隨 USB 1.1 誕生。<strong>單向半雙工、單指令阻塞式通訊</strong>。發送一個寫入指令後，主機端必須乾等儲存裝置回傳完成訊號，才能發送下一個指令。遇到零碎檔案時效率奇差，隨機讀寫完全崩潰。</p>
+          </div>
+          <div class="tech-card">
+            <h4>🟢 UASP (USB Attached SCSI Protocol)</h4>
+            <p>隨 USB 3.0 制定。<strong>將 SCSI 架構命令佇列引入 USB 傳輸</strong>，支援最多 32 個命令佇列與全雙工同時收發。配合行動固態硬碟（PSSD）可減少 80% 傳輸延遲，小檔讀寫效率暴增 4~6 倍！</p>
+          </div>
+        </div>
+
+        <h3>5.3 外接 PSSD 的 20Gbps 尷尬與 Mac 的相容地雷</h3>
+        <p>市面上標註 <strong>USB 3.2 Gen 2x2 (20Gbps, ~2,000 MB/s)</strong> 的行動硬碟（例如金士頓 XS2000、SanDisk Extreme PRO 20G）：</p>
+        <ul>
+          <li><strong>Apple Mac 痛點</strong>：所有配備 M1/M2/M3/M4 晶片的 Mac 電腦，其 Type-C 介面支援 USB 3.2 Gen 2 (10Gbps)、USB4 (40Gbps) 與 Thunderbolt 3/4，<strong>但硬體上完全不支援 USB 3.2 Gen 2x2 雙通道協議！</strong></li>
+          <li>當你把 20Gbps 的硬碟插上 Mac，它只能協商回單通道模式，<strong>降速至 10Gbps（實測約 1,000 MB/s）</strong>。</li>
+          <li><strong>解方</strong>：Mac 用戶若追求 2,500 ~ 3,000 MB/s 以上的真極速外接傳輸，必須購買支援 <strong>USB4 或 Thunderbolt 3/4 (40Gbps)</strong> 的外接盒或 PSSD（如配備 ASMedia ASM2464PD 或 Intel JHL7440 主控晶片）。</li>
+        </ul>
+
+        <hr>
+
+        <!-- Section 6 -->
+        <h2 id="interactive-sim">6. 互動工具：全儲存裝置傳輸耗時與吞吐量模擬器</h2>
+        <p>透過下方實戰模擬器，親自體驗不同情境下，從傳統機械硬碟到 PCIe 5.0 與 USB4 的巨大傳輸差距：</p>
+
+        <div class="interactive-explorer-box">
+          <div class="exp-title">
+            <span>⚡ 儲存裝置實測傳輸耗時模擬器</span>
+          </div>
+
+          <div class="sim-controls">
+            <div class="sim-control-group">
+              <label for="calc-scenario">📁 選擇傳輸任務情境：</label>
+              <select id="calc-scenario" class="sim-select">
+                <option value="video_10gb" data-size="10" data-type="seq">10GB 4K 影片檔 (單一大型連續檔案)</option>
+                <option value="game_100gb" data-size="100" data-type="mix">100GB 現代 3A 遊戲安裝庫 (大型包與解壓縮)</option>
+                <option value="code_5gb" data-size="5" data-type="rand">5GB 包含 12 萬個零碎檔案的 Node_modules/Git 專案</option>
+                <option value="backup_1000gb" data-size="1000" data-type="sust">1TB (1000GB) 系統整機備份 (持續寫入考驗)</option>
+              </select>
+            </div>
+            <div class="sim-control-group">
+              <label>📊 當前傳輸任務特性：</label>
+              <div id="scenario-hint" style="font-size:0.95rem; color:var(--text-muted); padding:0.65rem 0.5rem;">
+                單純考驗硬碟的連續循序寫入頻寬，無隨機尋道干擾。
+              </div>
+            </div>
+          </div>
+
+          <div id="sim-results-list">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Section 7 -->
+        <h2 id="buyer-matrix">7. 工程師終極選購與配置決策矩陣</h2>
+        <p>綜合所有規格、傳輸協定、發熱量、可靠性與預算，以下是各類電腦情境的最佳搭配指南：</p>
+
+        <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--bg); margin:1.8rem 0;">
+          <div class="decision-row" style="background:var(--bg-alt);">
+            <div class="decision-scenario">應用需求情境</div>
+            <div style="font-weight:700;">推薦最優解與硬體配置規格</div>
+          </div>
+
+          <div class="decision-row">
+            <div class="decision-scenario">💻 1. 主作業系統開機碟 (Windows / Linux)</div>
+            <div class="decision-rec">
+              <span class="badge-pill badge-purple">首選 PCIe 4.0 x4 M.2 NVMe (1TB ~ 2TB)</span>
+              <p style="margin:0.3rem 0 0; font-size:0.9rem; color:var(--text-muted);">
+                指名 4K 隨機讀取強悍、自帶 DRAM 快取或優質 HMB 主控的產品（如 Samsung 990 Pro、WD SN850X、KIOXIA Exceria Pro）。開機迅捷、多工極致流暢。
+              </p>
+            </div>
+          </div>
+
+          <div class="decision-row">
+            <div class="decision-scenario">🎮 2. Steam / Epic 遊戲庫副碟</div>
+            <div class="decision-rec">
+              <span class="badge-pill badge-teal">優質平價 PCIe 4.0 或 PCIe 3.0 M.2 (2TB ~ 4TB)</span>
+              <p style="margin:0.3rem 0 0; font-size:0.9rem; color:var(--text-muted);">
+                遊戲主要是大量讀取、少寫入，選 DRAM-less 支援 HMB 的高 CP 值型號（如聯斐 MAP1602 主控產品）即可，溫度低又實惠。
+              </p>
+            </div>
+          </div>
+
+          <div class="decision-row">
+            <div class="decision-scenario">🎬 3. 影音剪輯高速暫存碟 (Scratch / Cache)</div>
+            <div class="decision-rec">
+              <span class="badge-pill badge-rose">高耐寫度 (High TBW) PCIe 4.0/5.0 或 USB4 PSSD</span>
+              <p style="margin:0.3rem 0 0; font-size:0.9rem; color:var(--text-muted);">
+                4K/8K RAW 剪輯時即時產生大量代理檔與快取，挑選 SLC 快取區龐大、掉速平緩、TBW 高的大容量 TLC 固態硬碟。
+              </p>
+            </div>
+          </div>
+
+          <div class="decision-row">
+            <div class="decision-scenario">🗄️ 4. NAS 網路儲存伺服器與資料中心</div>
+            <div class="decision-rec">
+              <span class="badge-pill badge-amber">3.5 吋 7200 RPM CMR 機械硬碟陣列</span>
+              <p style="margin:0.3rem 0 0; font-size:0.9rem; color:var(--text-muted);">
+                <strong>絕對避開 SMR！</strong> 指定企業級或 NAS 專用 CMR 碟（Seagate IronWolf / Exos、WD Red Plus / Gold、Toshiba N300）。可配置 2 條 M.2 NVMe SSD 作為讀取快取（Read Cache）。
+              </p>
+            </div>
+          </div>
+
+          <div class="decision-row">
+            <div class="decision-scenario">💼 5. 隨身出差 / 跨平台資料交換 (EDC)</div>
+            <div class="decision-rec">
+              <span class="badge-pill badge-blue">USB 3.2 Gen 2 (10Gbps) Type-C 外接 PSSD</span>
+              <p style="margin:0.3rem 0 0; font-size:0.9rem; color:var(--text-muted);">
+                主流推薦 Samsung T7、SanDisk Extreme E61 或自組 RTL9210B 外接盒。隨插即用支援 PC、Mac、iPad 與 iPhone 15/16 Pro 4K 60fps ProRes 外錄。
+              </p>
+            </div>
+          </div>
+
+          <div class="decision-row">
+            <div class="decision-scenario">🍏 6. Mac 專業影音外接擴充系統碟</div>
+            <div class="decision-rec">
+              <span class="badge-pill badge-purple">USB4 / Thunderbolt 4 (40Gbps) 外接盒 + Gen4 SSD</span>
+              <p style="margin:0.3rem 0 0; font-size:0.9rem; color:var(--text-muted);">
+                避開 20Gbps 的 Gen 2x2！使用 ASM2464PD 晶片的 USB4 外接盒，直接跑滿 3,100 MB/s 頻寬，體驗幾乎等同 Mac 內建板載 SSD。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <h2>8. 結語：回歸真實需求，遠離數字陷阱</h2>
+        <p>在儲存的世界裡，<strong>「最昂貴」永遠不等於「最適合」</strong>。PCIe 5.0 高達 14,000 MB/s 的頻寬令人血脈賁張，但換來的是 80°C 的高溫與吵雜的微型風扇；廉價隨身碟標榜 200MB/s 傳輸，卻可能在拷貝大檔案時因 QLC 掉速而讓你痛不欲生。</p>
+        <p>理解硬體結構的真實物理邊界：在需要海量吞吐與低延遲的地方交給 <strong>M.2 PCIe 4.0 NVMe</strong>；在需要穩固長遠儲存的地方信賴 <strong>3.5" CMR HDD</strong>；在行動生產力領域善用 <strong>10Gbps/40Gbps UASP 外接 PSSD</strong>。看懂規格表背後的邏輯，你就是掌控資料流速的硬核工程師！</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+
+  <!-- Interactive Simulator Script -->
+  <script>
+    // Storage Device Performance Profiles:
+    // seqSpeed: practical Sequential Write speed in MB/s
+    // randSpeed: practical 4K random write throughput in MB/s
+    // sustSpeed: sustained write speed after SLC cache exhaust in MB/s
+    const storageDevices = [
+      {
+        id: "hdd7200",
+        name: "3.5\" 機械硬碟 (7200 RPM CMR)",
+        tag: "HDD",
+        badgeClass: "badge-amber",
+        barClass: "bar-hdd",
+        seqSpeed: 210,
+        randSpeed: 0.6,
+        sustSpeed: 210, // CMR doesn't drop
+        desc: "循序讀寫平穩，但遇到 12 萬個零碎檔案時機械尋道將造成嚴重延遲。"
+      },
+      {
+        id: "sata_ssd",
+        name: "2.5\" SATA III SSD (主流 TLC)",
+        tag: "SATA SSD",
+        badgeClass: "badge-blue",
+        barClass: "bar-sata",
+        seqSpeed: 520,
+        randSpeed: 65,
+        sustSpeed: 380,
+        desc: "SATA 6Gbps 介面天花板，受限於 AHCI 佇列，但小檔效能比機械硬碟強 100 倍。"
+      },
+      {
+        id: "m2_gen3",
+        name: "M.2 NVMe PCIe 3.0 x4 SSD",
+        tag: "M.2 Gen3",
+        badgeClass: "badge-teal",
+        barClass: "bar-gen3",
+        seqSpeed: 2800,
+        randSpeed: 180,
+        sustSpeed: 800,
+        desc: "溫度低且極速可達 2.8 GB/s，日常辦公與遊戲幾乎無瓶頸。"
+      },
+      {
+        id: "m2_gen4",
+        name: "M.2 NVMe PCIe 4.0 x4 旗艦 SSD",
+        tag: "M.2 Gen4",
+        badgeClass: "badge-purple",
+        barClass: "bar-gen4",
+        seqSpeed: 6800,
+        randSpeed: 350,
+        sustSpeed: 1800,
+        desc: "當前世代黃金標準，極致 4K 隨機寫入，完美滿足 3A 遊戲 DirectStorage。"
+      },
+      {
+        id: "m2_gen5",
+        name: "M.2 NVMe PCIe 5.0 x4 頂級 SSD",
+        tag: "M.2 Gen5",
+        badgeClass: "badge-rose",
+        barClass: "bar-gen5",
+        seqSpeed: 12000,
+        randSpeed: 500,
+        sustSpeed: 3500,
+        desc: "次世代極限頻寬，瞬間吞吐 12 GB/s，需嚴密主動散熱避免熱降速。"
+      },
+      {
+        id: "usb2_flash",
+        name: "平價 USB 2.0 隨身碟",
+        tag: "USB 2.0",
+        badgeClass: "badge-gray",
+        barClass: "bar-usb2",
+        seqSpeed: 12,
+        randSpeed: 0.15,
+        sustSpeed: 8,
+        desc: "BOT 半雙工傳輸，頻寬極低且無快取，傳輸大檔或大量小檔耗時驚人。"
+      },
+      {
+        id: "usb3_flash",
+        name: "一般 USB 3.2 Gen 1 隨身碟 (QLC)",
+        tag: "USB 3.2 隨身碟",
+        badgeClass: "badge-amber",
+        barClass: "bar-usb3",
+        seqSpeed: 80,
+        randSpeed: 1.2,
+        sustSpeed: 15, // Cache exhaustion cliff
+        desc: "前幾 GB 有 SLC 快取，一旦快取爆滿速度將斷崖跌至 15 MB/s。"
+      },
+      {
+        id: "usb3_pssd",
+        name: "USB 3.2 Gen 2 (10Gbps) 行動固態硬碟 (PSSD)",
+        tag: "PSSD 10Gbps",
+        badgeClass: "badge-teal",
+        barClass: "bar-usb3",
+        seqSpeed: 950,
+        randSpeed: 90,
+        sustSpeed: 600,
+        desc: "支援 UASP 協定，1GB/s 穩定傳輸，兼顧體積、相容性與高速。"
+      },
+      {
+        id: "usb4_pssd",
+        name: "USB4 / Thunderbolt 4 (40Gbps) 外接 SSD",
+        tag: "USB4 / TB4",
+        badgeClass: "badge-purple",
+        barClass: "bar-usb4",
+        seqSpeed: 2800,
+        randSpeed: 220,
+        sustSpeed: 1500,
+        desc: "PCIe 隧道直通 CPU，打破 USB 瓶頸，媲美內接 NVMe 固態硬碟。"
+      }
+    ];
+
+    const scenarioHints = {
+      video_10gb: "單純考驗硬碟的連續循序寫入頻寬，無隨機尋道干擾，極致展現 NVMe 與 USB4 的頻寬優勢。",
+      game_100gb: "混合大型壓縮包與數千個資源材質檔，綜合考驗循序頻寬與一定程度的隨機讀寫速度。",
+      code_5gb: "高達 12 萬個零碎小文字檔與目錄遍歷，極限考驗 4K 隨機讀寫與指令佇列深度，機械硬碟與廉價隨身碟的惡夢！",
+      backup_1000gb: "1TB 海量持續寫入，SLC 動態快取必定用盡，直接考驗顆粒原始寫入（裸寫）與降速後的持續性能。"
+    };
+
+    function formatTime(seconds) {
+      if (seconds < 0.1) return "< 0.1 秒 (瞬傳)";
+      if (seconds < 1) return (seconds * 1000).toFixed(0) + " 毫秒";
+      if (seconds < 60) return seconds.toFixed(1) + " 秒";
+      if (seconds < 3600) {
+        const m = Math.floor(seconds / 60);
+        const s = Math.round(seconds % 60);
+        return `${m} 分 ${s} 秒`;
+      }
+      const h = Math.floor(seconds / 3600);
+      const m = Math.round((seconds % 3600) / 60);
+      return `${h} 小時 ${m} 分`;
+    }
+
+    function runSimulation() {
+      const select = document.getElementById("calc-scenario");
+      const opt = select.options[select.selectedIndex];
+      const sizeGB = parseFloat(opt.getAttribute("data-size"));
+      const type = opt.getAttribute("data-type");
+      const totalMB = sizeGB * 1024;
+
+      document.getElementById("scenario-hint").textContent = scenarioHints[select.value] || "";
+
+      // Calculate time for each device
+      const results = storageDevices.map(dev => {
+        let effectiveSpeed = dev.seqSpeed;
+        if (type === "rand") {
+          effectiveSpeed = dev.randSpeed;
+        } else if (type === "mix") {
+          effectiveSpeed = dev.seqSpeed * 0.7 + dev.randSpeed * 0.3;
+        } else if (type === "sust") {
+          effectiveSpeed = dev.sustSpeed;
+        }
+
+        const sec = totalMB / effectiveSpeed;
+        return {
+          ...dev,
+          sec: sec,
+          effectiveSpeed: effectiveSpeed
+        };
+      });
+
+      // Find max time for relative bar width
+      const maxSec = Math.max(...results.map(r => r.sec));
+
+      const container = document.getElementById("sim-results-list");
+      container.innerHTML = "";
+
+      results.forEach(r => {
+        const widthPct = Math.max(1.5, Math.min(100, (r.sec / maxSec) * 100));
+
+        const card = document.createElement("div");
+        card.className = "sim-result-card";
+        card.innerHTML = `
+          <div class="sim-device-header">
+            <span class="sim-device-name">
+              <span class="badge-pill ${r.badgeClass}">${r.tag}</span>
+              ${r.name}
+            </span>
+            <span class="sim-device-time">預估耗時：${formatTime(r.sec)}</span>
+          </div>
+          <div class="sim-bar-bg">
+            <div class="sim-bar-fill ${r.barClass}" style="width: ${widthPct.toFixed(1)}%;"></div>
+          </div>
+          <div class="sim-stats-sub">
+            <span>實效寫入頻寬：約 <strong>${r.effectiveSpeed.toLocaleString()} MB/s</strong></span>
+            <span>${r.desc}</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    document.getElementById("calc-scenario").addEventListener("change", runSimulation);
+    runSimulation();
+  </script>
+</body>
+</html>
