@@ -1,10 +1,22 @@
 {
-  "updated": "2026-10-16 00:01",
+  "updated": "2026-10-16 00:17",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "iPhone Duo蘋果官網今晚預購！想首日開箱先做好這三招",
+          "link": "https://3c.ltn.com.tw/news/67952",
+          "date": "2026/10/16 08:10",
+          "summary": "蘋果首款摺疊手機iPhone Duo將於今(16日)晚間8點在蘋果官網開放預購，10月23日上市，儘管最低售價就要7 ..."
+        },
+        {
+          "title": "Panasonic台灣召修1.8萬台洗衣機！3款型號受影響 免費換零件",
+          "link": "https://3c.ltn.com.tw/news/67954",
+          "date": "2026/10/16 08:00",
+          "summary": "日本家電大廠Panasonic宣布大規模召回洗衣機，由於部分LX系列滾筒式洗脫烘衣機的洗劑自動投入裝置存在瑕疵，可能 ..."
+        },
         {
           "title": "【時尚大道】iPhone OOTD訂製我的科技美學",
           "link": "https://3c.ltn.com.tw/news/67927",
@@ -64,18 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67933",
           "date": "2026/10/15 12:10",
           "summary": "蘋果首款摺疊手機iPhone Duo即將於明（16日）開放預購，10月23日正式上市，售價從74,900元一路到11 ..."
-        },
-        {
-          "title": "YouTube留言區進入迷因時代！開放GIF動圖 11月全面上線",
-          "link": "https://3c.ltn.com.tw/news/67938",
-          "date": "2026/10/15 11:01",
-          "summary": "以後在YouTube看影片，留言區可能比影片還精彩。YouTube在9月預告將升級留言功能，其中一項備受關注的新改變 ..."
-        },
-        {
-          "title": "Google Gemini付費方案縮水！用戶收通知信 11月砍Pro模型",
-          "link": "https://3c.ltn.com.tw/news/67939",
-          "date": "2026/10/15 10:00",
-          "summary": "Google最近調整Gemini的模型權限，免費版自上週10月9日開始，只能使用Flash-Lite模型，Googl ..."
         }
       ]
     },
@@ -83,6 +83,12 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "日本數位好萊塢大學全校導入 Claude 創日本首例，師生用量無上限",
+          "link": "https://technews.tw/2026/10/16/jp-dhu-claude/",
+          "date": "2026-10-16 00:10",
+          "summary": "日媒 ITmedia 報導，位於東京千代田區的數位好萊塢大學（Digital Hollywood Univer [&#8230;]"
+        },
         {
           "title": "誰在替你下指令？AI 助理出錯，責任算誰的？",
           "link": "https://technews.tw/2026/10/16/who-responsible-when-ai-assistants-make-mistakes/",
@@ -148,12 +154,6 @@
           "link": "https://technews.tw/2026/10/15/nvidia-semicon-west-timothy-costa/",
           "date": "2026-10-15 08:45",
           "summary": "NVIDIA 副總裁暨工業與計算工程總經理 Timothy Costa 在 SEMICON West 主題演講 [&#8230;]"
-        },
-        {
-          "title": "台積電全球擴產加速！近 20 座廠依計畫進行，台美日產能再升級",
-          "link": "https://technews.tw/2026/10/15/ai-applications-flourish-tsmc-foresees-continued-growth-advanced-process-demand/",
-          "date": "2026-10-15 07:57",
-          "summary": "台積電今（15）日舉行第三季法人說明會，董事長魏哲家表示，隨著 AI 及先進製程需求持續強勁，公司正以前所未有 [&#8230;]"
         }
       ]
     },
@@ -161,42 +161,6 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
-        {
-          "title": "IBM 攜手西門子推進奈米堆疊半導體技術，邁向埃米世代與 3D 晶片新紀元",
-          "link": "https://technews.tw/2026/10/16/ibm-and-siemens-advance-nano-stacked-semiconductor-technology/",
-          "date": "2026-10-15 23:30",
-          "summary": "IBM 與西門子（Siemens）宣布展開全新研究合作，致力於推進 IBM 於 2026 年稍早推出的「奈米堆 [&#8230;]"
-        },
-        {
-          "title": "外資指英特爾晶圓代工與先進封裝獲重大突破，取得蘋果、輝達、微軟等廠商訂單",
-          "link": "https://finance.technews.tw/2026/10/16/foreign-investors-point-to-major-breakthroughs-in-intels-wafer-foundry-and-advanced-packaging/",
-          "date": "2026-10-15 23:15",
-          "summary": "華爾街投資機構 KeyBanc 分析師在結束近期亞洲考察後發布報告指出，英特爾（Intel）晶圓代工業務（In [&#8230;]"
-        },
-        {
-          "title": "記憶體價格引爆口水戰，特斯拉遭三星員工指控惡劣壓價與挖角",
-          "link": "https://technews.tw/2026/10/16/memory-prices-ignite-a-war-of-words/",
-          "date": "2026-10-15 23:00",
-          "summary": "特斯拉（Tesla）執行長馬斯克（Elon Musk）近期公開讚揚美光（Micron）的記憶體價格合理，並暗示 [&#8230;]"
-        },
-        {
-          "title": "台灣美光先進封裝與測試二廠啟用，深化 AI 時代高頻寬記憶體布局",
-          "link": "https://technews.tw/2026/10/15/micron-taiwans-advanced-packaging-and-testing-plant-2-commences-operation/",
-          "date": "2026-10-15 12:50",
-          "summary": "記憶體大廠美光科技 15 日於台中舉行台灣美光先進封裝與測試二廠（Micron Advanced Assemb [&#8230;]"
-        },
-        {
-          "title": "訂單能見度至 2028 年！弘塑美國布局瞄準亞利桑那州，董座：最大瓶頸是缺料、缺人",
-          "link": "https://technews.tw/2026/10/15/gptc-semicon-west-2026/",
-          "date": "2026-10-15 11:15",
-          "summary": "近年先進封裝成為業界焦點，隨著台積電擴大在美支出，同步帶動本土設備商加速海外布局。弘塑科技董事長張鴻泰在 SE [&#8230;]"
-        },
-        {
-          "title": "台積電營收看增 44% 評估德州設廠，法說會重點一次看",
-          "link": "https://finance.technews.tw/2026/10/15/tsmc-earnings-call-2610/",
-          "date": "2026-10-15 10:40",
-          "summary": "人工智慧需求強勁，晶圓代工廠台積電第三季營運繳出亮麗成績單，單季賺進將近三個股本，第四季展望依然樂觀，預估美元 [&#8230;]"
-        },
         {
           "title": "毅嘉第三季營收創高卻逢獲利逆風！砸重本建大馬廠待「光通訊」爆發",
           "link": "https://finance.technews.tw/2026/10/15/fpca/",
@@ -229,9 +193,45 @@
         },
         {
           "title": "赴德州評估擴產！魏哲家霸氣回應：晶圓廠須由台積電營運",
-          "link": "https://finance.technews.tw/2026/10/15/tsmc-raises-prices/",
+          "link": "https://technews.tw/2026/10/15/tsmc-raises-prices/",
           "date": "2026-10-15 07:06",
           "summary": "台積電董事長魏哲家今（15）日在第三季法人說明會上表示，台積電已派遣團隊赴美國德州評估擴產機會，並與提出 Te [&#8230;]"
+        },
+        {
+          "title": "魏哲家：AI 需求極其強勁，台積電營收年複合成長率有望超越 50% 高標",
+          "link": "https://finance.technews.tw/2026/10/15/tsmcs-revenue-is-expected-to-achieve-a-compound-annual-growth-rate-exceeding-50-a-high-target/",
+          "date": "2026-10-15 07:00",
+          "summary": "台積電董事長魏哲家針對人工智慧（AI）半導體需求與產能展望強調，目前 AI 需求「非常、極其強勁」，且完全未見 [&#8230;]"
+        },
+        {
+          "title": "SK 海力士赴美設廠有條件？傳要求放行擴產大連廠",
+          "link": "https://technews.tw/2026/10/15/sk-hynix-conditions-new-us-factory-on-more-us-chip-equipment-exports-to-china/",
+          "date": "2026-10-15 06:40",
+          "summary": "美國川普政府積極施壓外國晶片業者赴美設廠，韓國記憶體大廠 SK 海力士（SK Hynix）卻試圖反向運用美國製 [&#8230;]"
+        },
+        {
+          "title": "魏哲家：台積電 2026 全年營收成長率將達約 44%，絕不將任何商機拱手讓人",
+          "link": "https://finance.technews.tw/2026/10/15/tsmcs-revenue-growth-rate-for-the-full-year-of-2026-is-expected-to-reach-approximately-44/",
+          "date": "2026-10-15 06:40",
+          "summary": "邁入 2026 年第四季，台積電董事長魏哲家表示，在先進製程技術強勁需求的支撐下，預估以美元計價的 2026 [&#8230;]"
+        },
+        {
+          "title": "蘋果發表「Minions」系統，將閒置 Mac 打造為虛擬 GPU 雲端，算力縮短至數分鐘",
+          "link": "https://technews.tw/2026/10/15/turn-idle-mac-into-gpu-cloud/",
+          "date": "2026-10-15 06:20",
+          "summary": "蘋果研究人員近日公開一套名為「Minions」的內部系統，旨在將網路中閒置的 Apple Silicon Ma [&#8230;]"
+        },
+        {
+          "title": "傳字節跳動與聯發科接近達成資料中心晶片供貨協議，有望成第二大客戶",
+          "link": "https://technews.tw/2026/10/15/bytedance-in-talks-to-secure-mediatek-ai-chips-for-data-centers/",
+          "date": "2026-10-15 06:00",
+          "summary": "彭博引述知情人士，字節跳動接近與聯發科達成協議，向後者採購資料中心 AI 晶片，以確保旗下資料中心的關鍵零組件 [&#8230;]"
+        },
+        {
+          "title": "台積電第三季 EPS 29.43 元創新高，先進製程占比 79%，2 奈米貢獻營收達 8%",
+          "link": "https://finance.technews.tw/2026/10/15/tsmcs-third-quarter-eps-hit-a-new-high-of-nt29-43/",
+          "date": "2026-10-15 05:40",
+          "summary": "晶圓代工龍頭台積電 15 日公布 2026 年第三季財務報告。受惠於市場強勁需求與先進製程持續發威，台積電第三 [&#8230;]"
         }
       ]
     },
