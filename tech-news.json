@@ -1,10 +1,16 @@
 {
-  "updated": "2026-10-16 09:56",
+  "updated": "2026-10-16 15:48",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "全台果粉搶機！iPhone Duo頂規近12萬也秒殺 慢一步等12月",
+          "link": "https://3c.ltn.com.tw/news/67958",
+          "date": "2026/10/16 20:25",
+          "summary": "誰說手機賣太貴就沒人買？蘋果首款摺疊iPhone Duo終於開賣，今晚(16日)8點正式在蘋果官網開放預購，儘管最低 ..."
+        },
         {
           "title": "三星摺疊手機玩更大！傳明年一口氣推6款 還有伸縮新機",
           "link": "https://3c.ltn.com.tw/news/67949",
@@ -70,12 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67927",
           "date": "2026/10/16 05:46",
           "summary": "手機配件早已跨越單純的防撞保護，慢慢走進時尚領域，如同衣櫃裡百搭基本款與亮點單品的配對，現在的iPhone也擁有專屬 ..."
-        },
-        {
-          "title": "《新楓之谷：經典版》大改版！解鎖三轉12職業 推萬聖節原創企劃",
-          "link": "https://3c.ltn.com.tw/news/67946",
-          "date": "2026/10/15 18:10",
-          "summary": "遊戲橘子旗下、韓國遊戲公司 Nexon 打造的《新楓之谷：經典版》吸引大量老玩家，今（15）日正式推出重大改版，開放 ..."
         }
       ]
     },
@@ -83,36 +83,6 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
-        {
-          "title": "日本數位好萊塢大學全校導入 Claude 創日本首例，師生用量無上限",
-          "link": "https://technews.tw/2026/10/16/jp-dhu-claude/",
-          "date": "2026-10-16 00:10",
-          "summary": "日媒 ITmedia 報導，位於東京千代田區的數位好萊塢大學（Digital Hollywood Univer [&#8230;]"
-        },
-        {
-          "title": "誰在替你下指令？AI 助理出錯，責任算誰的？",
-          "link": "https://technews.tw/2026/10/16/who-responsible-when-ai-assistants-make-mistakes/",
-          "date": "2026-10-16 00:00",
-          "summary": "9 月 29 日 OpenAI 在 DevDay 發表 Dots，搭載 GPT-6 Astra，有雲端電腦與瀏 [&#8230;]"
-        },
-        {
-          "title": "台灣繁中語料庫難拓展制度哪卡關？著作權法未鬆綁，主權 AI 訓練語料僅 1% 來自民間",
-          "link": "https://technews.tw/2026/10/16/taiwan-md/",
-          "date": "2026-10-15 23:50",
-          "summary": "ChatGPT、Gemini 等 AI 模型幾乎只靠簡體資料來認識中文世界，讓 AI 向中國價值觀傾斜。台灣政 [&#8230;]"
-        },
-        {
-          "title": "馬斯克大讚黃仁勳！SpaceX 攜手輝達打造 Star Mind，明年量產",
-          "link": "https://technews.tw/2026/10/16/elon-musk-praises-jensen-huang-spacex-nvidia-star-mind-mass-production-next-year/",
-          "date": "2026-10-15 23:50",
-          "summary": "特斯拉執行長馬斯克近日透露，SpaceX 與輝達共同開發的 Star Mind AI 電腦，性能表現遠超多數人 [&#8230;]"
-        },
-        {
-          "title": "AI 益處終將大於風險，DeepMind 整備長拋三大提問助企業無痛轉型",
-          "link": "https://technews.tw/2026/10/16/google-deepmind-lila-ibrahim/",
-          "date": "2026-10-15 23:40",
-          "summary": "Google DeepMind 首席 AI 整備長萊拉·易卜拉欣（Lila Ibrahim）表示，她之所以願意 [&#8230;]"
-        },
         {
           "title": "俄羅斯 Yandex 被自家 AI 出賣，向假烏軍記者回報資料中心地址",
           "link": "https://infosecu.technews.tw/2026/10/16/yandex-ai-gives-journalists-data-center-addresses/",
@@ -154,6 +124,36 @@
           "link": "https://technews.tw/2026/10/15/nvidia-semicon-west-timothy-costa/",
           "date": "2026-10-15 08:45",
           "summary": "NVIDIA 副總裁暨工業與計算工程總經理 Timothy Costa 在 SEMICON West 主題演講 [&#8230;]"
+        },
+        {
+          "title": "台積電全球擴產加速！近 20 座廠依計畫進行，台美日產能再升級",
+          "link": "https://technews.tw/2026/10/15/ai-applications-flourish-tsmc-foresees-continued-growth-advanced-process-demand/",
+          "date": "2026-10-15 07:57",
+          "summary": "台積電今（15）日舉行第三季法人說明會，董事長魏哲家表示，隨著 AI 及先進製程需求持續強勁，公司正以前所未有 [&#8230;]"
+        },
+        {
+          "title": "在家辦公最大遺產是 AI？史丹佛經濟學家：數位溝通激增成 LLM 訓練寶庫",
+          "link": "https://technews.tw/2026/10/15/wfh-helped-create-the-ai-revolution/",
+          "date": "2026-10-15 07:00",
+          "summary": "史丹佛大學（Stanford University）經濟學家古拉斯·布魯姆（Nick Bloom）估計居家辦公 [&#8230;]"
+        },
+        {
+          "title": "串流平台 AI 政策大不同，YouTube Music 推出專屬標籤保障聽眾知情權",
+          "link": "https://technews.tw/2026/10/15/youtube-music-launches-ai-music-tags/",
+          "date": "2026-10-15 06:50",
+          "summary": "YouTube Music 自 2026 年 10 月 14 日起，在播放頁面針對主要以生成式 AI 製作的歌 [&#8230;]"
+        },
+        {
+          "title": "美國女子提告 OpenAI ChatGPT「竊取」數百萬兒童資料，要求依 token 數分配公司股權",
+          "link": "https://infosecu.technews.tw/2026/10/15/lawsuit-alleges-openai-stole-childrens-user-data/",
+          "date": "2026-10-15 06:30",
+          "summary": "住在美國夏威夷的一名女子 13 日代表 12 歲的女兒與 16 歲的兒子對 OpenAI 提起擬議集體訴訟，案 [&#8230;]"
+        },
+        {
+          "title": "蘋果發表「Minions」系統，將閒置 Mac 打造為虛擬 GPU 雲端，算力縮短至數分鐘",
+          "link": "https://technews.tw/2026/10/15/turn-idle-mac-into-gpu-cloud/",
+          "date": "2026-10-15 06:20",
+          "summary": "蘋果研究人員近日公開一套名為「Minions」的內部系統，旨在將網路中閒置的 Apple Silicon Ma [&#8230;]"
         }
       ]
     },
@@ -162,30 +162,6 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
-          "title": "台法學者探討台灣半導體產業核心地位，釐清 5 大誤解",
-          "link": "https://technews.tw/2026/10/16/taiwanese-french-scholars-discuss-taiwan-semiconductor-industry-core-status-clarifying-5-major-misconceptions/",
-          "date": "2026-10-16 01:10",
-          "summary": "法國智庫關注台灣半導體產業的戰略地位與安全挑戰。法國學者倪雅玲說，台海穩定是歐洲經濟安全一環；來自台灣的方怡然 [&#8230;]"
-        },
-        {
-          "title": "多物理模擬重要性日增，思渤科技扮演系統解決方案供應商",
-          "link": "https://technews.tw/2026/10/16/cybernet-ansys-simulation-ai-agent/",
-          "date": "2026-10-16 01:00",
-          "summary": "隨著 AI 伺服器、機器人及先進封裝等產品朝高效能與高整合發展，產品設計也從過去針對單一元件進行驗證，逐漸轉向 [&#8230;]"
-        },
-        {
-          "title": "台灣 AI 紅利待擴散，學者籲拓展半導體上下游布局",
-          "link": "https://technews.tw/2026/10/16/taiwan-ai-dividend-awaits-wider-diffusion-scholars-urge-expanding-semiconductor-upstream-downstream-layout/",
-          "date": "2026-10-16 00:50",
-          "summary": "AI 熱潮帶動半導體需求，WTO 首席經濟學家史泰格表示，目前尚未看到 AI 熱潮放緩的跡象。港大經管學院副院 [&#8230;]"
-        },
-        {
-          "title": "IBM 攜手西門子推進奈米堆疊半導體技術，邁向埃米世代與 3D 晶片新紀元",
-          "link": "https://technews.tw/2026/10/16/ibm-and-siemens-advance-nano-stacked-semiconductor-technology/",
-          "date": "2026-10-15 23:30",
-          "summary": "IBM 與西門子（Siemens）宣布展開全新研究合作，致力於推進 IBM 於 2026 年稍早推出的「奈米堆 [&#8230;]"
-        },
-        {
           "title": "外資指英特爾晶圓代工與先進封裝獲重大突破，取得蘋果、輝達、微軟等廠商訂單",
           "link": "https://finance.technews.tw/2026/10/16/foreign-investors-point-to-major-breakthroughs-in-intels-wafer-foundry-and-advanced-packaging/",
           "date": "2026-10-15 23:15",
@@ -193,15 +169,15 @@
         },
         {
           "title": "記憶體價格引爆口水戰，特斯拉遭三星員工指控惡劣壓價與挖角",
-          "link": "https://technews.tw/2026/10/16/memory-prices-ignite-a-war-of-words/",
+          "link": "https://finance.technews.tw/2026/10/16/memory-prices-ignite-a-war-of-words/",
           "date": "2026-10-15 23:00",
           "summary": "特斯拉（Tesla）執行長馬斯克（Elon Musk）近期公開讚揚美光（Micron）的記憶體價格合理，並暗示 [&#8230;]"
         },
         {
           "title": "台灣美光先進封裝與測試二廠啟用，深化 AI 時代高頻寬記憶體布局",
-          "link": "https://technews.tw/2026/10/15/micron-taiwans-advanced-packaging-and-testing-plant-2-commences-operation/",
+          "link": "https://finance.technews.tw/2026/10/15/micron-taiwans-advanced-packaging-and-testing-plant-2-commences-operation/",
           "date": "2026-10-15 12:50",
-          "summary": "記憶體大廠美光科技 15 日於台中舉行台灣美光先進封裝與測試二廠（Micron Advanced Assemb [&#8230;]"
+          "summary": "記憶體大廠美光科技15日於台中舉行台灣美光先進封裝與測試二廠（Micron Advanced Assembly [&#8230;]"
         },
         {
           "title": "訂單能見度至 2028 年！弘塑美國布局瞄準亞利桑那州，董座：最大瓶頸是缺料、缺人",
@@ -232,6 +208,30 @@
           "link": "https://technews.tw/2026/10/15/ai-applications-flourish-tsmc-foresees-continued-growth-advanced-process-demand/",
           "date": "2026-10-15 07:57",
           "summary": "台積電今（15）日舉行第三季法人說明會，董事長魏哲家表示，隨著 AI 及先進製程需求持續強勁，公司正以前所未有 [&#8230;]"
+        },
+        {
+          "title": "AI 晶片需求有多強？魏哲家：所有 AI 業者都與台積電合作",
+          "link": "https://technews.tw/2026/10/15/tsmc-ai-demand-is-booming/",
+          "date": "2026-10-15 07:18",
+          "summary": "台積電今（15）日舉行第三季法人說明會，董事長魏哲家表示，隨著 AI 應用快速發展，無論業者採取何種技術路線， [&#8230;]"
+        },
+        {
+          "title": "台積電將於 2030 年開始採用 High-NA EUV，客戶 A14 參與度高於 N2",
+          "link": "https://finance.technews.tw/2026/10/15/tsmc-will-begin-adopting-high-na-euv-in-2030/",
+          "date": "2026-10-15 07:15",
+          "summary": "台積電董事長兼總裁魏哲家針對外界關注的四大焦點議題，包含產能轉租、High-NA EUV 技術引進時程、A14 [&#8230;]"
+        },
+        {
+          "title": "赴德州評估擴產！魏哲家霸氣回應：晶圓廠須由台積電營運",
+          "link": "https://finance.technews.tw/2026/10/15/tsmc-raises-prices/",
+          "date": "2026-10-15 07:06",
+          "summary": "台積電董事長魏哲家今（15）日在第三季法人說明會上表示，台積電已派遣團隊赴美國德州評估擴產機會，並與提出 Te [&#8230;]"
+        },
+        {
+          "title": "魏哲家：AI 需求極其強勁，台積電營收年複合成長率有望超越 50% 高標",
+          "link": "https://finance.technews.tw/2026/10/15/tsmcs-revenue-is-expected-to-achieve-a-compound-annual-growth-rate-exceeding-50-a-high-target/",
+          "date": "2026-10-15 07:00",
+          "summary": "台積電董事長魏哲家針對人工智慧（AI）半導體需求與產能展望強調，目前 AI 需求「非常、極其強勁」，且完全未見 [&#8230;]"
         }
       ]
     },
