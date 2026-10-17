@@ -1,10 +1,34 @@
 {
-  "updated": "2026-10-17 00:30",
+  "updated": "2026-10-17 02:12",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "iPhone Duo輸了！Sony新款金磚Walkman一台竟要19萬",
+          "link": "https://3c.ltn.com.tw/news/67963",
+          "date": "2026/10/17 10:00",
+          "summary": "Walkman一直是Sony的經典，直到現在仍持續推出相關產品，Sony宣布推出3款全新Walkman數位隨身聽 ， ..."
+        },
+        {
+          "title": "蘋果官網自己爆雷！iPad mini 8意外曝光 傳10月底登場",
+          "link": "https://3c.ltn.com.tw/news/67961",
+          "date": "2026/10/17 09:30",
+          "summary": "蘋果又自己爆雷了！市場盛傳蘋果將在10月底推出新一代iPad mini 8，沒想到新機還沒發表，蘋果自家官網就意外出 ..."
+        },
+        {
+          "title": "不只台灣買不到！iPhone Duo全球大缺貨 出貨都排到2027年",
+          "link": "https://3c.ltn.com.tw/news/67960",
+          "date": "2026/10/17 09:00",
+          "summary": "蘋果首款摺疊iPhone Duo於昨晚(16日)開放預購，10月23日上市，蘋果官網首批現貨幾乎是一開賣就售罄，就連 ..."
+        },
+        {
+          "title": "Canon嶄新運動主題體驗店盛大開幕！進駐台北大巨蛋打造創意展銷空間",
+          "link": "https://3c.ltn.com.tw/news/67959",
+          "date": "2026/10/17 08:40",
+          "summary": "Canon近日宣布「台北大巨蛋Canon展售體驗店」正式開幕，打造全新運動主題空間，提供更優質的產品體驗及服務，而為 ..."
+        },
         {
           "title": "果粉太狂！iPhone Duo官網預購塞爆 頂規近12萬也秒殺",
           "link": "https://3c.ltn.com.tw/news/67958",
@@ -52,30 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67955",
           "date": "2026/10/16 10:00",
           "summary": "根據外媒最新消息，蘋果（Apple）將在10/28舉辦10月第二波新品發表會，預計是由首款觸控MacBook、新一代 ..."
-        },
-        {
-          "title": "摺疊iPhone Duo太貴買不下手！這招最高可一次折抵36,200元",
-          "link": "https://3c.ltn.com.tw/news/67953",
-          "date": "2026/10/16 08:40",
-          "summary": "蘋果首款摺疊手機iPhone Duo將於今(16日)晚間8點在蘋果官網開放預購，10月23日正式上市，儘管最低售價就 ..."
-        },
-        {
-          "title": "iPhone Duo蘋果官網今晚預購！想首日開箱先做好這三招",
-          "link": "https://3c.ltn.com.tw/news/67952",
-          "date": "2026/10/16 08:10",
-          "summary": "蘋果首款摺疊手機iPhone Duo將於今(16日)晚間8點在蘋果官網開放預購，10月23日上市，儘管最低售價就要7 ..."
-        },
-        {
-          "title": "Panasonic台灣召修1.8萬台洗衣機！3款型號受影響 免費換零件",
-          "link": "https://3c.ltn.com.tw/news/67954",
-          "date": "2026/10/16 08:00",
-          "summary": "日本家電大廠Panasonic宣布大規模召回洗衣機，由於部分LX系列滾筒式洗脫烘衣機的洗劑自動投入裝置存在瑕疵，可能 ..."
-        },
-        {
-          "title": "【時尚大道】iPhone OOTD訂製我的科技美學",
-          "link": "https://3c.ltn.com.tw/news/67927",
-          "date": "2026/10/16 05:46",
-          "summary": "手機配件早已跨越單純的防撞保護，慢慢走進時尚領域，如同衣櫃裡百搭基本款與亮點單品的配對，現在的iPhone也擁有專屬 ..."
         }
       ]
     },
@@ -83,6 +83,24 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "別再想 100％ 防堵了！駭客只靠「聊天」就能哄騙你的 AI",
+          "link": "https://infosecu.technews.tw/2026/10/17/hackers-can-trick-your-ai-through-chat-alone/",
+          "date": "2026-10-17 02:00",
+          "summary": "如果每一次資安事件發生，警鈴就會響起，那這個鈴聲，很可能再也停不下來。因為 AI 正在改寫資安戰場的樣貌。 A [&#8230;]"
+        },
+        {
+          "title": "從「很悶」熬到因 AI「蹦起來」，群聯潘健成：台灣產業已是自己種樹自己涼",
+          "link": "https://finance.technews.tw/2026/10/17/taiwan-electronics-industry-stagnant-booming-ai-pua-kian-seng-taiwan-industries-creating-advantages/",
+          "date": "2026-10-17 01:00",
+          "summary": "根據《財訊》雙週刊報導，群聯創辦人暨執行長潘健成，14 日出席潘文淵文教基金會舉辦的《潘文淵──孕育台灣半導體 [&#8230;]"
+        },
+        {
+          "title": "逾七成消費者靠 AI 找折扣！AI 逐漸接管購物決策，近四成用戶願為推薦「變心」換品牌",
+          "link": "https://technews.tw/2026/10/17/study-shows-ai-chatbots-offer-the-rich-higher-price-recommendations/",
+          "date": "2026-10-17 00:30",
+          "summary": "最新研究指出，Claude、ChatGPT 等 AI 購物助理在搜尋商品時，可能會依使用者的財富狀況提供不同的 [&#8230;]"
+        },
         {
           "title": "從缺席黃仁勳「兆元宴」覺醒：仁寶如何撕下 AI 門外漢標籤、急追中段班",
           "link": "https://finance.technews.tw/2026/10/17/how-compal-is-pivoting-to-ai-servers/",
@@ -136,24 +154,6 @@
           "link": "https://finance.technews.tw/2026/10/16/taiwan-moea-texas-ai-supply-chain-4-billion-investment-per-park/",
           "date": "2026-10-16 05:50",
           "summary": "為協助台廠赴美投資，經濟部今天表示，將由政府與電電公會合作推動，規劃採「業者出資、政府協助」的模式進行，單一園 [&#8230;]"
-        },
-        {
-          "title": "美、歐、中三條路線大不同，資料中心競賽的勝負取決於能源與實體基礎設施",
-          "link": "https://technews.tw/2026/10/16/the-ai-data-center-race-is-a-strategic-contest/",
-          "date": "2026-10-16 03:10",
-          "summary": "隨著各國加速布局人工智慧基礎設施，圍繞「主權 AI」與資料中心的競賽，正從技術話題升級為地緣政治與國家戰略議題 [&#8230;]"
-        },
-        {
-          "title": "Google AI 搜尋介面大改版！內嵌連結全面置頂，助攻原始網站點擊率",
-          "link": "https://technews.tw/2026/10/16/google-ai-search-major-redesign/",
-          "date": "2026-10-16 02:40",
-          "summary": "Google 於 15 日宣布針對 AI 搜尋體驗進行升級，未來在 AI 模式（AI Mode）與 AI 摘要 [&#8230;]"
-        },
-        {
-          "title": "不打 AI 模型軍備競賽，蘋果高層定調：專注打造最佳實體裝置與體驗",
-          "link": "https://technews.tw/2026/10/16/apples-ternus-retains-focus-on-hardware-rather-than-creating-ai-model-of-the-month/",
-          "date": "2026-10-16 02:35",
-          "summary": "蘋果（Apple）高層約翰‧特努斯（John Ternus）近日接受《時代》（TIME）雜誌專訪時表示，蘋果的 [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,24 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "中國新創企業開發出 EUV 光源，預估距離正式商用最快 3 年",
+          "link": "https://finance.technews.tw/2026/10/17/chinese-startup-develops-euv-light-source/",
+          "date": "2026-10-17 02:00",
+          "summary": "在美國與荷蘭深化半導體出口管制的背景下，中國半導體設備國產化迎來重大技術突破。中國新創企業朗道矽斯（Langd [&#8230;]"
+        },
+        {
+          "title": "從「很悶」熬到因 AI「蹦起來」，群聯潘健成：台灣產業已是自己種樹自己涼",
+          "link": "https://finance.technews.tw/2026/10/17/taiwan-electronics-industry-stagnant-booming-ai-pua-kian-seng-taiwan-industries-creating-advantages/",
+          "date": "2026-10-17 01:00",
+          "summary": "根據《財訊》雙週刊報導，群聯創辦人暨執行長潘健成，14 日出席潘文淵文教基金會舉辦的《潘文淵──孕育台灣半導體 [&#8230;]"
+        },
+        {
+          "title": "馬斯克預言中國 2028 年生產大量 DRAM，衝擊記憶體產業雪上加霜",
+          "link": "https://finance.technews.tw/2026/10/17/musk-predicts-that-china-will-produce-a-large-amount-of-dram-by-2028/",
+          "date": "2026-10-17 01:00",
+          "summary": "特斯拉執行長馬斯克（Elon Musk）近日的一句簡短留言，將韓國國內的經濟政策討論推升為全球記憶體晶片市場的 [&#8230;]"
+        },
         {
           "title": "台灣將收緊對中國先進晶片出口，未許可輸出產品將首度列刑事犯罪",
           "link": "https://finance.technews.tw/2026/10/16/taiwan-to-tighten-export-controls-on-advanced-chips-to-china/",
@@ -214,24 +232,6 @@
           "link": "https://finance.technews.tw/2026/10/16/tsmcs-third-quarter-results-were-impressive-earning-praise-from-foreign-investors/",
           "date": "2026-10-16 02:30",
           "summary": "全球晶圓代工龍頭台積電公布最新第 3 季財報，受惠於高效能運算（HPC）與 AI 晶片的強勁需求，單季營收達新 [&#8230;]"
-        },
-        {
-          "title": "Meta 開放權重模型 Muse Spark Open，攜手蘋果讓開發者在 Mac Studio 本機執行",
-          "link": "https://technews.tw/2026/10/16/meta-introduces-muse-spark-open/",
-          "date": "2026-10-16 02:14",
-          "summary": "Meta 15 日釋出 Muse Spark Open 模型權重，聲稱這是目前美國能力最強的開放權重模型。首次 [&#8230;]"
-        },
-        {
-          "title": "不只是儲存還能跑 AI，SK 海力士用 3D FeNAND 實現記憶體內運算",
-          "link": "https://technews.tw/2026/10/16/sk-hynix-unveils-3d-fenand-for-ai-computing/",
-          "date": "2026-10-16 02:10",
-          "summary": "SK 海力士（SK hynix）於 15 日公布最新研究，展示如何利用鐵電三維 NAND（3D FeNAND） [&#8230;]"
-        },
-        {
-          "title": "輝達 CPO 布局再升級：推出「中介層光學」技術，邁向量產新里程",
-          "link": "https://technews.tw/2026/10/16/nvidia-cpo-technology-breakthrough-and-ecosystem/",
-          "date": "2026-10-16 01:50",
-          "summary": "輝達（NVIDIA）近期公開發表新一代共同封裝光學（CPO）技術，其核心突破在於將光學引擎從傳統的封裝基板，直 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,12 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "中國新創企業開發出 EUV 光源，預估距離正式商用最快 3 年",
+          "link": "https://finance.technews.tw/2026/10/17/chinese-startup-develops-euv-light-source/",
+          "date": "2026-10-17 02:00",
+          "summary": "在美國與荷蘭深化半導體出口管制的背景下，中國半導體設備國產化迎來重大技術突破。中國新創企業朗道矽斯（Langd [&#8230;]"
+        },
         {
           "title": "布局面板級先進封裝！海德漢推出新平台，運動控制精度瞄準 5 奈米",
           "link": "https://technews.tw/2026/10/16/heidenhain-semicon-west-david-doyle/",
@@ -304,12 +310,6 @@
           "link": "https://finance.technews.tw/2026/10/15/tsmc-will-begin-adopting-high-na-euv-in-2030/",
           "date": "2026-10-15 07:15",
           "summary": "台積電董事長兼總裁魏哲家針對外界關注的四大焦點議題，包含產能轉租、High-NA EUV 技術引進時程、A14 [&#8230;]"
-        },
-        {
-          "title": "CCL 漲價幅度超預期！大和資本調高聯茂買進目標價至 1,110 元",
-          "link": "https://finance.technews.tw/2026/10/15/e-glass/",
-          "date": "2026-10-15 02:24",
-          "summary": "受惠於電子級玻璃纖維布（E-glass）與 M4 以下等級銅箔基板（CCL）漲價幅度與持久性優於預期，大和資本 [&#8230;]"
         }
       ]
     },
