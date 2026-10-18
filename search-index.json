@@ -1,5 +1,11 @@
 [
   {
+    "url": "libre-hardware-monitor-guide.html",
+    "title": "Libre Hardware Monitor 完全攻略：底層原理、HTTP JSON API、.NET 整合、WMI 自動化與硬體監控實戰",
+    "excerpt": "深度解析開源硬體監控神器 Libre Hardware Monitor：Ring 0 驅動與 MSR/Super I/O 底層讀取原理、/data.json HTTP Web Server 解析、Python 與 JS 跨語言串接、C# .NET SDK 整合與 WMI 自動化告警腳本，附互動式感測器模擬儀表板。",
+    "tags": ["Libre Hardware Monitor", "硬體監控", "API", "C#", ".NET", "WMI", "PowerShell", "Python", "Super IO", "MSR", "感測器", "硬體指南", "教學"]
+  },
+  {
     "url": "tesla-roadster-performance-thrust-rocket-guide.html",
     "title": "特斯拉第二代 Roadster 終極解密：Performance、Thrust 與 Rocket 三大版本功能與航太工程全剖析",
     "excerpt": "全維度解析全新 Tesla Roadster 2：Performance 底盤真空吸附風扇、Thrust 雙尾噴冷氣體推進器（0-60mph 0.81s），以及 Rocket 單座戰鬥座艙與全周邊 10 噴嘴 3D 姿態控制（0-60mph 0.59s / 4.64G）。附規格大表與彈射模擬器。",

@@ -3,58 +3,452 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Libre Hardware Monitor 完全攻略：使用教學、HTTP JSON API、.NET 整合與 WMI 應用 — "AI" 硬核工程師</title>
+  <title>Libre Hardware Monitor 完全攻略：底層原理、HTTP JSON API、.NET 整合、WMI 自動化與硬體監控實戰 — "AI" 硬核工程師</title>
   <link rel="icon" href="data:,🎯">
-  <meta name="description" content="Libre Hardware Monitor 完整教學：涵蓋基本使用方法、啟用 HTTP Web Server 解析 JSON API、C# .NET 整合讀取與 WMI 感測器查詢應用。">
+  <meta name="description" content="最完整的 Libre Hardware Monitor 硬核工程指南：深入解析 Ring 0 內核驅動與 MSR/Super I/O 底層讀取原理、啟用 HTTP Web Server 解析 /data.json 樹狀結構、Python 與 JavaScript 跨語言串接、C# .NET LibreHardwareMonitorLib 深度整合、WMI 自動化告警腳本，以及橫向評測大對比。附贈互動式硬體感測器模擬儀表板與 JSON 解析工具。">
   <meta name="canonical" href="https://ai-hardcore-engineer.com/libre-hardware-monitor-guide.html">
-  <meta property="og:title" content="Libre Hardware Monitor 完全攻略：使用教學、HTTP JSON API、.NET 整合與 WMI 應用 — &quot;AI&quot; 硬核工程師">
-  <meta property="og:description" content="Libre Hardware Monitor 完整教學：涵蓋基本使用方法、啟用 HTTP Web Server 解析 JSON API、C# .NET 整合讀取與 WMI 感測器查詢應用。">
+  <meta property="og:title" content="Libre Hardware Monitor 完全攻略：底層原理、HTTP JSON API、.NET 整合、WMI 自動化與硬體監控實戰 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="零成本、高彈性開源硬體監控！深度解析 Libre Hardware Monitor：底層 Ring 0 原理、HTTP JSON API、.NET SDK 整合、PowerShell WMI 自動化腳本與互動式感測器模擬儀表板。">
   <meta property="og:url" content="https://ai-hardcore-engineer.com/libre-hardware-monitor-guide.html">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:image" content="./images/libre-hardware-monitor-guide.jpg">
   <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Libre Hardware Monitor 完全攻略：使用教學、HTTP JSON API、.NET 整合與 WMI 應用 — &quot;AI&quot; 硬核工程師">
-  <meta name="twitter:description" content="Libre Hardware Monitor 完整教學：涵蓋基本使用方法、啟用 HTTP Web Server 解析 JSON API、C# .NET 整合讀取與 WMI 感測器查詢應用。">
-  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta name="twitter:title" content="Libre Hardware Monitor 完全攻略：底層原理、HTTP JSON API、.NET 整合、WMI 自動化與硬體監控實戰">
+  <meta name="twitter:description" content="零成本、高彈性開源硬體監控！深度解析 Libre Hardware Monitor：底層 Ring 0 原理、HTTP JSON API、.NET SDK 整合、PowerShell WMI 自動化腳本與互動式感測器模擬儀表板。">
+  <meta name="twitter:image" content="./images/libre-hardware-monitor-guide.jpg">
   <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
   <style>
-    .article-hero { text-align: center; padding: 4rem 0 2rem; }
-    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
-    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
-    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
-    .article-body { max-width: 60em; margin: 0 auto; }
-    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
-    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
-    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
-    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
-    .article-body pre code { background: none; padding: 0; color: var(--text); }
-    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
-    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; }
-    .article-body li { margin-bottom: 0.5rem; }
-    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.21rem; }
-    .article-body th, .article-body td { padding: 0.4rem 0.5rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
-    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
-    .cmd-table td:first-child { font-family: "Fira Code", "SF Mono", Consolas, monospace; font-weight: 700; color: var(--accent); white-space: nowrap; }
-    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center; }
-    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
-    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
-    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .article-hero {
+      text-align: center;
+      padding: 3.5rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border);
+      margin-bottom: 2.2rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-height: 540px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-body {
+      max-width: 62em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h3 {
+      font-size: 1.45rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.75rem;
+      color: var(--text);
+    }
+    .article-body p {
+      margin-bottom: 1.2rem;
+      line-height: 1.85;
+      font-size: 1.05rem;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      background: var(--bg-alt);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.95em;
+      color: #e11d48;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .article-body code {
+      color: #f43f5e;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      border: none;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1.1rem 1.6rem;
+      margin: 1.6rem 0;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.6rem;
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 900px;
+    }
+    .article-body th, .article-body td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .article-body th {
+      font-weight: 700;
+      color: var(--text);
+      background: var(--bg-alt);
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .article-body tr:hover td {
+      background: rgba(37, 99, 235, 0.05);
+    }
+    .badge-pill {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-teal { background: #ccfbf1; color: #0f766e; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .badge-gray { background: #f3f4f6; color: #374151; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-teal { background: #134e4a; color: #99f6e4; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+    .dark-mode .badge-gray { background: #374151; color: #e5e7eb; }
+
+    .article-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Quick Navigation TOC */
+    .quick-nav-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .quick-nav-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+    .quick-nav-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.5rem 1.5rem;
+    }
+    .quick-nav-list li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .quick-nav-list li a:hover {
+      color: var(--accent);
+      transform: translateX(3px);
+    }
+
+    /* Architecture Diagram Box */
+    .arch-diagram-box {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 2rem 0;
+      color: #f8fafc;
+      font-family: "Fira Code", monospace;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .arch-diagram-title {
+      color: #38bdf8;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Interactive Simulator Box */
+    .interactive-explorer-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 2.2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+    .sim-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sim-control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .sim-label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text);
+    }
+    .sim-range {
+      width: 100%;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .sim-select {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.8rem;
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    /* Simulator Tabs */
+    .sim-tabs {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.2rem;
+    }
+    .sim-tab-btn {
+      background: none;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .sim-tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Dashboard Cards Grid */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .dash-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .dash-card-header {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .dash-card-value {
+      font-size: 1.85rem;
+      font-weight: 800;
+      font-family: "Fira Code", monospace;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+    .dash-card-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .dash-meter-bar {
+      height: 6px;
+      background: var(--border);
+      border-radius: 999px;
+      margin-top: 0.75rem;
+      overflow: hidden;
+    }
+    .dash-meter-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* JSON & Code Viewers in Sim */
+    .sim-code-box {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 1.2rem;
+      font-family: "Fira Code", monospace;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      max-height: 380px;
+      overflow-y: auto;
+      border: 1px solid #1e293b;
+    }
+    .sim-code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .sim-copy-btn {
+      background: #1e293b;
+      color: #38bdf8;
+      border: 1px solid #334155;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .sim-copy-btn:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
   </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Libre Hardware Monitor 完全攻略：使用教學、HTTP JSON API、.NET 整合與 WMI 應用",
-    "description": "Libre Hardware Monitor 完整教學：涵蓋基本使用方法、啟用 HTTP Web Server 解析 JSON API、C# .NET 整合讀取與 WMI 感測器查詢應用。",
+    "headline": "Libre Hardware Monitor 完全攻略：底層原理、HTTP JSON API、.NET 整合、WMI 自動化與硬體監控實戰",
+    "description": "最完整的 Libre Hardware Monitor 硬核工程指南：深入解析 Ring 0 內核驅動與 MSR/Super I/O 底層讀取原理、啟用 HTTP Web Server 解析 /data.json 樹狀結構、Python 與 JavaScript 跨語言串接、C# .NET LibreHardwareMonitorLib 深度整合、WMI 自動化告警腳本，以及橫向評測大對比。附贈互動式硬體感測器模擬儀表板與 JSON 解析工具。",
     "url": "https://ai-hardcore-engineer.com/libre-hardware-monitor-guide.html",
     "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
-    "image": "https://ai-hardcore-engineer.com/og-image.png",
+    "image": "https://ai-hardcore-engineer.com/images/libre-hardware-monitor-guide.jpg",
     "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/libre-hardware-monitor-guide.html" }
   }
   </script>
@@ -90,176 +484,781 @@
   <main>
     <div class="container">
       <section class="article-hero">
-        <h1>Libre Hardware Monitor 完全攻略：使用教學、HTTP JSON API、.NET 整合與 WMI 應用</h1>
+        <h1>Libre Hardware Monitor 完全攻略：底層原理、HTTP JSON API、.NET 整合、WMI 自動化與硬體監控實戰</h1>
         <div class="article-meta">
-          <span>2026-10-09</span>
+          <span>2026-10-09（更新於 2026-10-18）</span>
           <span class="separator">·</span>
-          <span>15 分鐘閱讀</span>
+          <span>25 分鐘閱讀</span>
+          <span class="separator">·</span>
+          <span>硬體工程 / 系統架構 / API 整合</span>
         </div>
         <div class="article-tags">
           <span class="tag">工具</span>
           <span class="tag">硬體監控</span>
+          <span class="tag">LibreHardwareMonitor</span>
           <span class="tag">API</span>
           <span class="tag">C#</span>
           <span class="tag">WMI</span>
+          <span class="tag">PowerShell</span>
+          <span class="tag">Python</span>
           <span class="tag">.NET</span>
+          <span class="tag">教學</span>
         </div>
-        <img loading="lazy" src="https://picsum.photos/seed/computer-hardware/1200/400" alt="Libre Hardware Monitor 教學">
+        <div class="hero-image-wrap">
+          <img loading="lazy" src="./images/libre-hardware-monitor-guide.jpg" alt="Libre Hardware Monitor 完全攻略">
+        </div>
       </section>
 
       <article class="article-body">
         <blockquote>
-          🎯 <strong>重點摘要：</strong><br>
-          &nbsp;&nbsp;① <strong>什麼是 Libre Hardware Monitor：</strong>這是一款免費開源的硬體監控軟體，從經典的 Open Hardware Monitor 分支而來，支援最新的 CPU、GPU 與主機板晶片。<br>
-          &nbsp;&nbsp;② <strong>HTTP JSON API：</strong>內建 Web Server，可輕鬆透過 HTTP 請求取得即時的硬體數據 JSON。<br>
-          &nbsp;&nbsp;③ <strong>.NET (C#) 整合：</strong>可以透過匯入 LibreHardwareMonitorLib，在自己的程式中建立 Computer 實體直接讀取感測器。<br>
-          &nbsp;&nbsp;④ <strong>WMI 整合：</strong>支援將數據發布至 Windows Management Instrumentation (WMI)，讓 PowerShell 等腳本也能輕鬆撈取資料。
+          🎯 <strong>硬核精華摘要：</strong><br>
+          &nbsp;&nbsp;① <strong>開源傳承與現代晶片支援：</strong>承接停滯的 Open Hardware Monitor，LHM 支援全世代 Intel Core Ultra/14代、AMD Ryzen 9000、NVIDIA RTX 40/50 系列與最新主機板感測晶片。<br>
+          &nbsp;&nbsp;② <strong>穿透 Ring 3 到 Ring 0：</strong>深度揭秘為什麼必須以「系統管理員」啟動——透過 <code>WinRing0x64.sys</code> / <code>InpOutx64.sys</code> 內核驅動執行特權指令 <code>RDMSR</code> 讀取 CPU DTS 數位熱敏溫度與 Super I/O 晶片 LPC 總線定址。<br>
+          &nbsp;&nbsp;③ <strong>HTTP JSON API 數據中樞：</strong>內建 Remote Web Server，提供 <code>/data.json</code> 完整階層式樹狀資料，秒級串接 Python、前端儀表板與 Home Assistant。<br>
+          &nbsp;&nbsp;④ <strong>.NET (C#) 企業級 SDK：</strong>透過 <code>LibreHardwareMonitorLib</code> 與 Visitor Pattern 優雅遍歷硬體樹，支援軟體級風扇 PWM 曲線動態控制與無感背景常駐。<br>
+          &nbsp;&nbsp;⑤ <strong>WMI 自動化防護：</strong>發布至 <code>root\LibreHardwareMonitor</code> 命名空間，編寫 PowerShell 腳本實現 CPU/GPU 超溫自動告警與系統事件日誌記錄。
         </blockquote>
 
-        <h2>什麼是 Libre Hardware Monitor？</h2>
-        <p><strong>Libre Hardware Monitor</strong> 是一款開源的系統硬體監控軟體。由於知名的 Open Hardware Monitor 開發進度放緩且對新硬體的支援較慢，社群便分支 (Fork) 出了 Libre Hardware Monitor。</p>
-        <p>它可以讀取溫度感測器、風扇轉速、電壓、負載 (Load) 以及電腦的時脈速度。支援的硬體包含多數現代的 Intel 和 AMD 處理器、NVIDIA 和 AMD 顯示卡、多數主機板的監控晶片 (Nuvoton, ITE, Fintek 等) 以及硬碟的 S.M.A.R.T. 資訊。</p>
+        <!-- Quick Navigation -->
+        <div class="quick-nav-box">
+          <div class="quick-nav-title">📑 內容快速導覽</div>
+          <ul class="quick-nav-list">
+            <li><a href="#origin-positioning">1. 誕生緣起與核心定位</a></li>
+            <li><a href="#low-level-architecture">2. 底層運作機制硬核剖析 (Ring 0 / MSR / Super I/O)</a></li>
+            <li><a href="#monitoring-tools-comparison">3. 主流硬體監控工具橫向全維度評測大表</a></li>
+            <li><a href="#setup-daemon">4. 基礎安裝、介面功能與開機常駐無感運行</a></li>
+            <li><a href="#http-json-api">5. HTTP JSON API 深度實戰與跨語言串接 (JS/Python/HomeAssistant)</a></li>
+            <li><a href="#dotnet-csharp-sdk">6. .NET (C#) LibreHardwareMonitorLib 深度二次開發</a></li>
+            <li><a href="#wmi-powershell-automation">7. WMI 整合與系統管理員 PowerShell 自動化告警</a></li>
+            <li><a href="#interactive-simulator">8. ⚡ 互動工具：即時感測器模擬儀表板與 JSON API 解析器</a></li>
+            <li><a href="#troubleshooting-faq">9. 實務避坑手冊與常見問題 FAQ</a></li>
+            <li><a href="#conclusion">10. 結語與延伸架構思維</a></li>
+          </ul>
+        </div>
 
-        <h2>基本使用教學</h2>
-        <h3>下載與安裝</h3>
-        <ol>
-          <li>前往 <a href="https://github.com/LibreHardwareMonitor/LibreHardwareMonitor" target="_blank">Libre Hardware Monitor 的 GitHub Release 頁面</a>。</li>
-          <li>下載最新版的 <code>.zip</code> 壓縮檔。</li>
-          <li>解壓縮後，由於軟體需要存取底層硬體資訊，請<strong>以系統管理員身分執行 <code>LibreHardwareMonitor.exe</code></strong>。</li>
-        </ol>
-        
-        <h3>介面與設定</h3>
-        <p>打開軟體後，你會看到一個樹狀結構，列出你的主機板、CPU、GPU、記憶體等裝置。你可以展開節點查看詳細的溫度與電壓資訊。在選單列的 <strong>Options</strong> 中，你可以設定開機自動啟動 (Run on Windows Startup) 以及將應用程式縮小至系統匣 (Minimize to Tray)。</p>
+        <hr>
 
-        <h2>透過 HTTP JSON API 獲取數據</h2>
-        <p>Libre Hardware Monitor 內建了一個 Web 伺服器，允許我們透過 HTTP 請求獲取即時的硬體數據，這對於自己開發 Dashboard (如結合 Grafana 或自建網頁) 非常實用。</p>
-        
-        <h3>1. 啟用 Remote Web Server</h3>
-        <p>在 Libre Hardware Monitor 視窗中，點擊選單的 <strong>Options</strong> -> <strong>Remote Web Server</strong> -> <strong>Run</strong>。預設的連接埠是 8085。你也可以透過 <strong>Port</strong> 選項來更改。</p>
-
-        <h3>2. 獲取 JSON 數據</h3>
-        <p>打開瀏覽器或使用任何 HTTP 客戶端 (如 <code>curl</code>、Postman 等)，造訪以下 URL：</p>
-        <pre><code>http://localhost:8085/data.json</code></pre>
-        <p>這會回傳一個層次結構的 JSON。其結構對應了 UI 上的樹狀視圖。每個節點包含以下重要屬性：</p>
+        <!-- Section 1 -->
+        <h2 id="origin-positioning">1. 誕生緣起與核心定位</h2>
+        <p>在 PC 硬體工程師、超頻玩家、自組伺服器系統管理員或物聯網 (IoT) 儀表板開發者的日常工作中，<strong>精準、即時、輕量且能被程式化讀取的硬體監測數據</strong>是一切調校與保護機制的基石。</p>
+        <p>長久以來，Windows 平台上雖然有許多知名的監控工具，但多數面臨以下瓶頸：</p>
         <ul>
-          <li><code>id</code>：感測器的唯一識別碼 (整數)。</li>
-          <li><code>Text</code>：顯示名稱 (例如 "CPU Package")。</li>
-          <li><code>Value</code>：當前數值 (例如 "45.0 °C")。</li>
-          <li><code>Min</code> / <code>Max</code>：歷史最小/最大值。</li>
-          <li><code>Children</code>：子節點陣列，包含下一層的硬體或感測器。</li>
+          <li><strong>Open Hardware Monitor (OHM)：</strong>曾是開源硬體監控的黃金標準，但其維護節奏自 2016 年後大幅放緩，無法及時支援 Intel 12/13/14 代混合架構 (P-Core/E-Core)、AMD AM5 Zen 4/5 架構、NVIDIA RTX 40/50 系列顯卡及新型 Super I/O 監控晶片。</li>
+          <li><strong>HWiNFO64 & AIDA64：</strong>功能極度強大、偵測極為完整，但本質為<strong>商業閉源軟體</strong>。商業環境使用需採購授權，且官方 Shared Memory 或 API 介面在免費版有 12 小時重啟限制或需專業版授權，對自建自動化服務非常不友善。</li>
+          <li><strong>原廠驅動軟體 (如 Corsair iCUE、NZXT CAM、ASUS Armoury Crate)：</strong>體積龐大臃腫，動輒佔用數百 MB 記憶體與 3%~8% CPU 使用率，甚至存在各家感測器互斥搶占 LPC 總線的衝突問題。</li>
+        </ul>
+        <p>為了解決上述痛點，開源社群以 <strong>Mozilla Public License 2.0 (MPL 2.0)</strong> 協議分支 (Fork) 出 <strong>Libre Hardware Monitor (LHM)</strong>。它保留了極簡無廣告的純淨傳統，並由全球開源社群積極更新驅動程式與晶片定址表，成為目前 Windows 平台上<strong>生態最開放、二次開發最便利、授權最友善的開源硬體遙測基礎設施</strong>。</p>
+
+        <hr>
+
+        <!-- Section 2 -->
+        <h2 id="low-level-architecture">2. 底層運作機制硬核剖析：從 Ring 3 穿透至 Ring 0</h2>
+        <p>許多初學者最常問的問題是：<em>「為什麼隨便寫一個 C# 或 Python 程式讀不到 CPU 核心溫度？為什麼 Libre Hardware Monitor 必須以系統管理員權限執行？」</em></p>
+        <p>答案隱藏在現代 x86/x64 處理器與 Windows 作業系統的<strong>硬體特權等級 (Privilege Rings)</strong> 與硬體架構中：</p>
+
+        <div class="arch-diagram-box">
+          <div class="arch-diagram-title">🖥️ Windows 硬體遙測特權穿透架構 (Hardware Telemetry Architecture)</div>
+┌────────────────────────────────────────────────────────────────────────┐
+│ [Ring 3: 使用者模式 (User Mode)]                                       │
+│   ┌──────────────────────────────────────────────────────────────┐     │
+│   │ 應用層: LibreHardwareMonitor.exe / 你的自製程式 / Python / JS │     │
+│   └──────────────────────────────┬───────────────────────────────┘     │
+│                                  │ P/Invoke (DeviceIoControl)          │
+├──────────────────────────────────┼─────────────────────────────────────┤
+│ [Ring 0: 核心模式 (Kernel Mode)]  ▼                                    │
+│   ┌──────────────────────────────────────────────────────────────┐     │
+│   │ 內核驅動: WinRing0x64.sys / InpOutx64.sys                   │     │
+│   │ 具備特權指令執行權限: IN, OUT, RDMSR, WRMSR, CLI, STI        │     │
+│   └───────────────┬───────────────────────────────┬──────────────┘     │
+└───────────────────┼───────────────────────────────┼────────────────────┘
+                    ▼ (RDMSR 特權讀取)              ▼ (I/O Port 0x2E/0x2F)
+┌───────────────────────────────────────┐ ┌──────────────────────────────┐
+│ CPU 內部晶粒 (CPU Die)                │ │ 主機板 Super I/O 晶片 (LPC/eSPI)│
+│  • IA32_THERM_STATUS (MSR 0x19C)      │ │  • Nuvoton NCT6798D / ITE IT8688E│
+│  • IA32_TEMPERATURE_TARGET (0x1A2)    │ │  • 類比熱敏電阻 ADC 轉換         │
+│  • 數位熱敏感測器 (Digital Thermal S.)│ │  • 主機板 VRM 供電/晶片組溫度    │
+│  • 封裝功耗計數器 (RAPL MSR 0x611)    │ │  • 風扇轉速計數器 (Tachometer)   │
+│  • Core VID 電壓標記暫存器            │ │  • PWM 風扇轉速工作週期控制暫存器│
+└───────────────────────────────────────┘ └──────────────────────────────┘
+        </div>
+
+        <h3>2.1 CPU 核心溫度讀取：MSR 暫存器與 DTS 計算公式</h3>
+        <p>現代 Intel 與 AMD 處理器並不是依靠外部溫度計測量晶圓溫度，而是在每個核心內部整合了<strong>數位熱敏感測器 (Digital Thermal Sensor, DTS)</strong>。這個數值儲存在 CPU 特定的 <strong>Model-Specific Registers (MSR)</strong> 中。</p>
+        <p>在 x86 架構下，讀取 MSR 必須調用組合語言特權指令 <code>RDMSR</code> (Opcode: <code>0F 32</code>)。這條指令<strong>只能在 Ring 0 核心模式下執行</strong>，若在 Ring 3 執行會直接觸發一般保護錯誤 (General Protection Fault, #GP)。</p>
+        <p>LHM 驅動程式深入 CPU 暫存器，讀取過程如下：</p>
+        <ol>
+          <li>讀取 <code>IA32_TEMPERATURE_TARGET</code> (MSR <code>0x1A2</code>)，獲取處理器的最大結溫（$T_{jmax}$，通常在 100°C ~ 115°C 之間）。</li>
+          <li>讀取各核心的 <code>IA32_THERM_STATUS</code> (MSR <code>0x19C</code>)，其中第 16 到 22 位元儲存的是距離 $T_{jmax}$ 的負偏移量（$\Delta T$）。</li>
+          <li>依據硬體規範精確計算各核心即時溫度：
+            $$T_{\text{core}} = T_{jmax} - \text{Reading}_{\text{DTS}}$$
+          </li>
+        </ol>
+
+        <h3>2.2 主機板電壓與風扇轉速：Super I/O 晶片與 LPC/eSPI 總線通訊</h3>
+        <p>主機板上的 CPU 風扇轉速 (RPM)、機殼風扇、+12V / +5V / +3.3V 電壓軌以及主機板各部位溫度，是由主機板上的 <strong>Super I/O (SIO) 晶片</strong>（如 Nuvoton NCT67xx 系列、ITE IT86xx 系列、Fintek）負責採樣。</p>
+        <p>Super I/O 晶片掛載在主機板的 LPC (Low Pin Count) 或 eSPI 總線上，作業系統與其通訊需透過 I/O 連接埠定址：</p>
+        <ul>
+          <li><strong>索引連接埠 (Index Port)：</strong>通常為 <code>0x2E</code> 或 <code>0x4E</code>。</li>
+          <li><strong>資料連接埠 (Data Port)：</strong>通常為 <code>0x2F</code> 或 <code>0x4F</code>。</li>
+        </ul>
+        <p>LHM 會向索引埠寫入晶片的邏輯裝置編號 (Logical Device Number, LDN)，解鎖硬體監控模組 (Hardware Monitor Device)，接著使用 <code>IN</code> / <code>OUT</code> 指令讀取內部暫存器。風扇轉速則是透過計算風扇霍爾感測器產生的脈衝間隔轉速計數器（Tachometer Counter）反推得出：</p>
+        $$RPM = \frac{60 \times f_{\text{internal}}}{Count \times PulsesPerRevolution}$$
+
+        <h3>2.3 顯示卡與儲存裝置監控介面</h3>
+        <ul>
+          <li><strong>GPU 遙測：</strong>LHM 不需要驅動直接操作 PCI 空間，而是調用原廠提供的使用者模式動態函式庫——NVIDIA 呼叫 <code>nvapi64.dll</code> (NVAPI)，AMD 呼叫 <code>atidxx64.dll</code> / ADLX 介面，讀取 GPU 核心溫度、Hot Spot 結溫、顯存 VRAM 溫度、風扇轉速百分比與 Board Power 瓦數。</li>
+          <li><strong>NVMe SSD / SATA 硬碟：</strong>透過 Windows Win32 API <code>CreateFile</code> 開啟磁碟實體控制把柄（如 <code>\\.\PhysicalDrive0</code>），並發送 <code>DeviceIoControl</code> 搭配 <code>SMART_RCV_DRIVE_DATA</code> 或 <code>IOCTL_STORAGE_PROTOCOL_COMMAND</code>，解析 S.M.A.R.T. 屬性表與 NVMe Log Page 0x02，獲取複合溫度 (Composite Temperature) 與可用備用空間壽命百分比。</li>
         </ul>
 
-        <h3>3. JavaScript 呼叫範例</h3>
-        <p>你可以輕鬆使用 <code>fetch</code> 來取得資料：</p>
-        <pre><code class="language-javascript">async function fetchHardwareData() {
-  try {
-    const response = await fetch('http://localhost:8085/data.json');
-    const data = await response.json();
-    console.log(data);
-    // 遍歷 Children 尋找你需要的節點...
-  } catch (error) {
-    console.error('無法取得硬體資料:', error);
-  }
+        <hr>
+
+        <!-- Section 3 -->
+        <h2 id="monitoring-tools-comparison">3. 主流硬體監控工具全維度橫向評測大表</h2>
+        <p>工程師在評估監控架構時，選型至關重要。以下橫向對比 5 款主流軟體的架構特性與二次開發支援度：</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>指標維度</th>
+                <th>Libre Hardware Monitor</th>
+                <th>HWiNFO64</th>
+                <th>Open Hardware Monitor</th>
+                <th>AIDA64 Extreme</th>
+                <th>btop (Linux/macOS)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>開源協議 / 授權</strong></td>
+                <td><span class="badge-pill badge-green">開源 (MPL 2.0)</span></td>
+                <td><span class="badge-pill badge-amber">免費個人 / 商業閉源付費</span></td>
+                <td><span class="badge-pill badge-green">開源 (MPL 2.0)</span></td>
+                <td><span class="badge-pill badge-rose">商業閉源付費 (無免費版)</span></td>
+                <td><span class="badge-pill badge-green">開源 (Apache 2.0)</span></td>
+              </tr>
+              <tr>
+                <td><strong>HTTP JSON REST API</strong></td>
+                <td><span class="badge-pill badge-green">內建 Web Server (免插件)</span></td>
+                <td><span class="badge-pill badge-gray">無 (需第三方外掛橋接)</span></td>
+                <td><span class="badge-pill badge-green">內建 Web Server</span></td>
+                <td><span class="badge-pill badge-blue">支援 (RemoteSensor 網頁)</span></td>
+                <td><span class="badge-pill badge-gray">無 (以 TUI 終端為主)</span></td>
+              </tr>
+              <tr>
+                <td><strong>SDK / 程式庫原生引用</strong></td>
+                <td><span class="badge-pill badge-green">.NET NuGet 套件自由匯入</span></td>
+                <td><span class="badge-pill badge-amber">僅 C++ SDK (商業版專屬)</span></td>
+                <td><span class="badge-pill badge-blue">.NET DLL 引用</span></td>
+                <td><span class="badge-pill badge-gray">無官方 SDK</span></td>
+                <td><span class="badge-pill badge-gray">無 SDK (C++ 核心)</span></td>
+              </tr>
+              <tr>
+                <td><strong>WMI 系統廣播發布</strong></td>
+                <td><span class="badge-pill badge-green">一鍵勾選發布 (標準類別)</span></td>
+                <td><span class="badge-pill badge-amber">支援 (有輪詢間隔與上限)</span></td>
+                <td><span class="badge-pill badge-green">支援</span></td>
+                <td><span class="badge-pill badge-blue">支援 WMI 共享</span></td>
+                <td><span class="badge-pill badge-gray">不適用 (Unix 體系)</span></td>
+              </tr>
+              <tr>
+                <td><strong>新世代硬體更新週期</strong></td>
+                <td><span class="badge-pill badge-green">積極 (每月/季度更新)</span></td>
+                <td><span class="badge-pill badge-green">極快 (幾乎每週發布 Beta)</span></td>
+                <td><span class="badge-pill badge-rose">極慢 (數年無重大架構更新)</span></td>
+                <td><span class="badge-pill badge-green">快 (穩定維護)</span></td>
+                <td><span class="badge-pill badge-green">活躍 (跨平台持續維護)</span></td>
+              </tr>
+              <tr>
+                <td><strong>自訂風扇曲線控制</strong></td>
+                <td><span class="badge-pill badge-green">支援 (Control Sensors 可寫)</span></td>
+                <td><span class="badge-pill badge-amber">僅少數特定品牌筆電支援</span></td>
+                <td><span class="badge-pill badge-blue">部分晶片支援</span></td>
+                <td><span class="badge-pill badge-gray">無控制功能 (純監控)</span></td>
+                <td><span class="badge-pill badge-gray">純監控</span></td>
+              </tr>
+              <tr>
+                <td><strong>自組 Dashboard 整合難度</strong></td>
+                <td><span class="badge-pill badge-green">極低 (直接 Fetch JSON / WMI)</span></td>
+                <td><span class="badge-pill badge-rose">高 (依賴 Shared Memory C++)</span></td>
+                <td><span class="badge-pill badge-green">低 (JSON API)</span></td>
+                <td><span class="badge-pill badge-amber">中 (LCD/SensorPanel 格式)</span></td>
+                <td><span class="badge-pill badge-amber">中 (需解析 /proc 或輸出)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <!-- Section 4 -->
+        <h2 id="setup-daemon">4. 基礎安裝、介面功能與開機常駐無感運行</h2>
+        
+        <h3>4.1 下載與正確解壓縮</h3>
+        <ol>
+          <li>前往 <a href="https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/releases" target="_blank" rel="noopener noreferrer">Libre Hardware Monitor GitHub 官方 Releases</a> 下載最新發布的 <code>LibreHardwareMonitor-net472.zip</code>。</li>
+          <li><strong>解除安全鎖定：</strong>在下載的 ZIP 檔案上點擊右鍵 → <strong>內容</strong> → 勾選最下方的 <strong>「解除封鎖 (Unblock)」</strong>，然後按確定（防止 Windows SmartScreen 封鎖內部 DLL）。</li>
+          <li>解壓縮至不會被輕易移動的固定目錄，建議放在 <code>C:\Program Files\LibreHardwareMonitor\</code> 或 <code>C:\Tools\LibreHardwareMonitor\</code>。</li>
+          <li>右鍵點擊 <code>LibreHardwareMonitor.exe</code>，選擇<strong>「以系統管理員身分執行」</strong>。</li>
+        </ol>
+
+        <h3>4.2 核心介面配置與功能</h3>
+        <ul>
+          <li><strong>樹狀階層視圖 (Hierarchy View)：</strong>展開各節點即可查看各零件的即時值 (Value)、最小值 (Min) 與最大值 (Max)。在感測器上點右鍵可選擇 <strong>Show in Tray</strong>（常駐系統匣即時顯示小圖示）或 <strong>Show in Plot</strong>（繪製即時折線圖）。</li>
+          <li><strong>懸浮小工具 (Show Desktop Gadget)：</strong>點選選單 <strong>View</strong> → <strong>Show Gadget</strong>，即可在桌面上顯示一個半透明置頂懸浮面板，隨意拖拉放置你關心的 CPU 溫度或 GPU 負載。</li>
+        </ul>
+
+        <h3>4.3 生產級開機無感常駐：跳過 UAC 彈窗的「工作排程器」設定法</h3>
+        <p>很多工程師發現：如果只在軟體內部勾選 <em>Options → Run On Windows Startup</em>，每次重開機登入 Windows 都會跳出煩人的 <strong>「使用者帳戶控制 (UAC)」黃色確認彈窗</strong>，甚至導致自動化腳本卡死在登入階段。</p>
+        <p><strong>最佳實踐解法：</strong>使用 Windows 工作排程器 (Task Scheduler) 設定以「最高權限」自動啟動：</p>
+        
+        <pre><code class="language-powershell"># 以系統管理員權限打開 PowerShell，執行以下指令自動註冊排程任務
+$Action = New-ScheduledTaskAction -Execute "C:\Tools\LibreHardwareMonitor\LibreHardwareMonitor.exe"
+$Trigger = New-ScheduledTaskTrigger -AtLogOn
+$Principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" -LogonType Interactive -RunLevel Highest
+$Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit 0
+
+Register-ScheduledTask -TaskName "LibreHardwareMonitor_AutoStart" -Action $Action -Trigger $Trigger -Principal $Principal -Settings $Settings</code></pre>
+        <p>這樣一來，無論何時開機登入，軟體都會在背景以系統管理員最高權限無縫啟動，完全不會彈出 UAC 警告！</p>
+
+        <hr>
+
+        <!-- Section 5 -->
+        <h2 id="http-json-api">5. HTTP JSON API 深度實戰與跨語言串接</h2>
+        <p>Libre Hardware Monitor 最吸引工程師的旗艦功能之一，就是它<strong>自帶輕量級 HTTP Web Server</strong>。你不需要安裝任何外部中介軟體，就能把電腦變身為硬體遙測伺服器！</p>
+
+        <h3>5.1 啟用 Web Server 與網路連線綁定</h3>
+        <ol>
+          <li>在軟體選單點擊 <strong>Options</strong> → <strong>Remote Web Server</strong> → 點擊 <strong>Run</strong>。</li>
+          <li>預設連接埠為 <code>8085</code>。若要變更，可點擊 <strong>Port</strong> 輸入你想要的埠號（如 <code>9090</code>）。</li>
+          <li>在瀏覽器中造訪 <code>http://localhost:8085/data.json</code>，即可看到結構完整的即時 JSON 樹狀資料。</li>
+        </ol>
+
+        <h3>5.2 深入解析 `/data.json` 樹狀資料結構</h3>
+        <p>LHM 的 JSON 並非扁平的鍵值對，而是<strong>嚴格鏡像 UI 階層的遞迴樹 (Recursive Tree)</strong>：</p>
+        <pre><code class="language-json">{
+  "id": 0,
+  "Text": "Sensor",
+  "Children": [
+    {
+      "id": 1,
+      "Text": "DESKTOP-HARDCORE",
+      "ImageURL": "images_icon/computer.png",
+      "Children": [
+        {
+          "id": 2,
+          "Text": "Intel Core i9-14900K",
+          "ImageURL": "images_icon/cpu.png",
+          "Children": [
+            {
+              "id": 3,
+              "Text": "Temperatures",
+              "Children": [
+                {
+                  "id": 4,
+                  "Text": "CPU Package",
+                  "Value": "52.0 °C",
+                  "Min": "38.0 °C",
+                  "Max": "86.0 °C",
+                  "ImageURL": "images_icon/temperature.png"
+                }
+              ]
+            },
+            {
+              "id": 10,
+              "Text": "Powers",
+              "Children": [
+                {
+                  "id": 11,
+                  "Text": "CPU Package",
+                  "Value": "65.4 W",
+                  "Min": "18.2 W",
+                  "Max": "253.0 W"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }</code></pre>
 
-        <h2>透過 C# (.NET) 程式碼整合</h2>
-        <p>如果你的專案是 .NET 應用程式，最直接且高效的方法是直接引用它的 Library，而不是透過 HTTP。</p>
+        <h3>5.3 跨語言實戰範例 1：現代前端 JavaScript 非同步輪詢</h3>
+        <p>以下程式碼展示如何在自製網頁儀表板中，透過遞迴函數精準搜尋感測器並提取數值：</p>
+        <pre><code class="language-javascript">// 遞迴搜尋樹狀結構中的指定感測器
+function findSensor(node, targetText, parentCategory = null) {
+  if (node.Text === targetText && (!parentCategory || node._category === parentCategory)) {
+    return node;
+  }
+  if (node.Children) {
+    for (const child of node.Children) {
+      if (['Temperatures', 'Loads', 'Powers', 'Fans'].includes(node.Text)) {
+        child._category = node.Text;
+      } else if (node._category) {
+        child._category = node._category;
+      }
+      const found = findSensor(child, targetText, parentCategory);
+      if (found) return found;
+    }
+  }
+  return null;
+}
 
-        <h3>1. 匯入 Library</h3>
-        <p>你可以透過 NuGet 安裝 <code>LibreHardwareMonitorLib</code>，或者直接將下載的 <code>LibreHardwareMonitorLib.dll</code> 加入專案的參考中。</p>
+// 定時抓取並更新畫面
+async function pollHardwareTelemetry() {
+  try {
+    const res = await fetch('http://localhost:8085/data.json');
+    const root = await res.json();
+    
+    // 取得 CPU Package 溫度
+    const cpuTempNode = findSensor(root, 'CPU Package', 'Temperatures');
+    // 取得 CPU 總負載
+    const cpuLoadNode = findSensor(root, 'CPU Total', 'Loads');
 
-        <h3>2. 撰寫讀取程式碼</h3>
-        <p>LHM 使用 <code>Visitor</code> 模式來遍歷硬體樹。以下是完整的 C# Console Application 範例：</p>
+    if (cpuTempNode) {
+      console.log(`即時 CPU 溫度: ${cpuTempNode.Value} (峰值: ${cpuTempNode.Max})`);
+      document.getElementById('cpu-temp').innerText = cpuTempNode.Value;
+    }
+  } catch (err) {
+    console.warn('無法連線至 Libre Hardware Monitor Remote Server:', err);
+  }
+}
+
+setInterval(pollHardwareTelemetry, 1000);</code></pre>
+
+        <h3>5.4 跨語言實戰範例 2：Python 自動化監控與高溫蜂鳴報警腳本</h3>
+        <p>這段 Python 腳本會自動扁平化 JSON 樹，以乾淨的終端機即時儀表印出當前 CPU/GPU 狀態，並在溫度超過警戒值時發出系統蜂鳴聲或警報：</p>
+        <pre><code class="language-python">import time
+import requests
+import winsound  # Windows 原生發聲模組
+
+LHM_API_URL = "http://localhost:8085/data.json"
+TEMP_THRESHOLD = 85.0  # 超溫警報門檻 (攝氏)
+
+def flatten_sensors(node, hardware_name="System"):
+    """遞迴攤平 LHM 樹狀結構為清單字典"""
+    results = []
+    current_hw = hardware_name
+    
+    # 若當前節點帶有圖示或為頂層裝置，更新硬體名稱
+    if "ImageURL" in node and ("cpu" in node["ImageURL"] or "nvidia" in node["ImageURL"]):
+        current_hw = node["Text"]
+
+    if "Value" in node:
+        results.append({
+            "hardware": current_hw,
+            "sensor": node.get("Text"),
+            "value": node.get("Value"),
+            "min": node.get("Min"),
+            "max": node.get("Max")
+        })
+
+    for child in node.get("Children", []):
+        results.extend(flatten_sensors(child, current_hw))
+    return results
+
+def monitor_loop():
+    print("🚀 啟動 Libre Hardware Monitor 自動監控守護程式...")
+    while True:
+        try:
+            resp = requests.get(LHM_API_URL, timeout=2)
+            data = resp.json()
+            sensors = flatten_sensors(data)
+
+            # 抓取 CPU 與 GPU 關鍵溫度
+            for s in sensors:
+                if s["sensor"] in ["CPU Package", "GPU Core"] and "°C" in s["value"]:
+                    temp_val = float(s["value"].replace(" °C", "").replace(",", "."))
+                    print(f"[{s['hardware']}] {s['sensor']}: {temp_val:.1f} °C (Max: {s['max']})")
+                    
+                    if temp_val >= TEMP_THRESHOLD:
+                        print(f"⚠️ 警告！{s['hardware']} 溫度過高 ({temp_val}°C)，觸發警報！")
+                        winsound.Beep(1200, 400) # 頻率 1200Hz，持續 400ms
+
+        except requests.exceptions.RequestException as e:
+            print(f"❌ 連線失敗，請確認 LHM Remote Web Server 已啟動: {e}")
+        
+        time.sleep(1.5)
+
+if __name__ == "__main__":
+    monitor_loop()</code></pre>
+
+        <h3>5.5 實戰範例 3：Home Assistant 智慧家庭與 Prometheus 串接思路</h3>
+        <p>如果你想將客廳遊戲主機的負載與溫度整合進 Home Assistant 智慧家庭儀表板，只需在 Home Assistant 的 <code>configuration.yaml</code> 宣告 REST Sensor：</p>
+        <pre><code class="language-yaml">sensor:
+  - platform: rest
+    name: "Gaming PC CPU Temp"
+    resource: "http://192.168.1.100:8085/data.json"
+    value_template: >
+      {% set root = value_json.Children[0].Children[0] %}
+      {{ root.Children[0].Children[1].Children[0].Value | replace(' °C', '') }}
+    unit_of_measurement: "°C"
+    scan_interval: 10</code></pre>
+
+        <hr>
+
+        <!-- Section 6 -->
+        <h2 id="dotnet-csharp-sdk">6. .NET (C#) LibreHardwareMonitorLib 深度二次開發實戰</h2>
+        <p>如果你正在開發 Windows 原生桌面程式（WPF、WinForms、Avalonia、.NET MAUI 或 Windows 服務），你<strong>完全不需要透過 HTTP 繞路</strong>。直接引入官方提供的 <code>LibreHardwareMonitorLib</code>，能獲得最高效能、零延遲的記憶體原生呼叫！</p>
+
+        <h3>6.1 安裝 NuGet 套件</h3>
+        <pre><code class="language-shell">dotnet add package LibreHardwareMonitorLib</code></pre>
+
+        <h3>6.2 深入理解 Visitor 模式架構</h3>
+        <p>為什麼 LHM 要採用經典的 <strong>訪問者模式 (Visitor Pattern)</strong>？因為硬體拓撲結構非常複雜（Computer 包含多個 Hardware，Hardware 包含 SubHardware 與多個 Sensor）。如果每次讀取都要手動寫深層迴圈，代碼會非常混亂且缺乏彈性。透過 <code>IVisitor</code>，只要寫一個 Visitor 類別傳入 <code>computer.Accept(visitor)</code>，就能自動遍歷整顆硬體樹！</p>
+
+        <h3>6.3 生產級高效能 C# 類別程式碼範例</h3>
+        <p>以下是具備<strong>資源自動釋放 (IDisposable)</strong>、<strong>選擇性硬體開啟 (降低啟動耗時 90%)</strong> 的完整實作：</p>
+
         <pre><code class="language-csharp">using System;
+using System.Threading;
+using System.Threading.Tasks;
 using LibreHardwareMonitor.Hardware;
 
-class Program
+namespace HardcoreEngineer.Telemetry
 {
-    // 實作 IVisitor 介面來遍歷感測器
-    public class UpdateVisitor : IVisitor
+    public sealed class HardwareMonitorService : IDisposable
     {
-        public void VisitComputer(IComputer computer)
-        {
-            computer.Traverse(this);
-        }
-        public void VisitHardware(IHardware hardware)
-        {
-            hardware.Update();
-            foreach (IHardware subHardware in hardware.SubHardware) subHardware.Accept(this);
-        }
-        public void VisitSensor(ISensor sensor) { }
-        public void VisitParameter(IParameter parameter) { }
-    }
+        private readonly Computer _computer;
+        private readonly UpdateVisitor _visitor;
+        private bool _disposed;
 
-    static void Main(string[] args)
-    {
-        // 建立 Computer 物件並啟用需要監控的硬體
-        Computer computer = new Computer
+        public class UpdateVisitor : IVisitor
         {
-            IsCpuEnabled = true,
-            IsGpuEnabled = true,
-            IsMemoryEnabled = true,
-            IsMotherboardEnabled = true,
-            IsControllerEnabled = true,
-            IsNetworkEnabled = true,
-            IsStorageEnabled = true
-        };
-
-        computer.Open();
-        computer.Accept(new UpdateVisitor());
-
-        // 遍歷並印出資料
-        foreach (IHardware hardware in computer.Hardware)
-        {
-            Console.WriteLine($"硬體: {hardware.Name}");
-            foreach (ISensor sensor in hardware.Sensors)
+            public void VisitComputer(IComputer computer) => computer.Traverse(this);
+            public void VisitHardware(IHardware hardware)
             {
-                Console.WriteLine($"\t感測器: {sensor.Name}, 類型: {sensor.SensorType}, 數值: {sensor.Value}");
+                hardware.Update(); // 向底層驅動發送即時採樣更新指令
+                foreach (IHardware subHardware in hardware.SubHardware)
+                    subHardware.Accept(this);
+            }
+            public void VisitSensor(ISensor sensor) { }
+            public void VisitParameter(IParameter parameter) { }
+        }
+
+        public HardwareMonitorService()
+        {
+            _visitor = new UpdateVisitor();
+
+            // 最佳化秘訣：只開啟業務所需的硬體！
+            // 全開會導致探測所有 Storage、PCI 晶片，啟動耗時高達 2~3 秒
+            _computer = new Computer
+            {
+                IsCpuEnabled = true,
+                IsGpuEnabled = true,
+                IsMemoryEnabled = true,
+                IsMotherboardEnabled = false, // 若不需要主機板電壓，關閉可極速啟動
+                IsControllerEnabled = false,
+                IsNetworkEnabled = false,
+                IsStorageEnabled = false
+            };
+
+            _computer.Open(); // 載入 WinRing0x64.sys 驅動並初始化把柄
+        }
+
+        /// <summary>
+        /// 採樣硬體遙測並印出數據
+        /// </summary>
+        public void SampleTelemetry()
+        {
+            if (_disposed) throw new ObjectDisposedException(nameof(HardwareMonitorService));
+
+            _computer.Accept(_visitor); // 執行訪問者更新
+
+            foreach (IHardware hardware in _computer.Hardware)
+            {
+                Console.WriteLine($"\n🔹 硬體組件: {hardware.Name} [{hardware.HardwareType}]");
+                foreach (ISensor sensor in hardware.Sensors)
+                {
+                    if (sensor.SensorType == SensorType.Temperature || sensor.SensorType == SensorType.Load)
+                    {
+                        Console.WriteLine($"   ├── 感測器: {sensor.Name,-24} | 類型: {sensor.SensorType,-12} | 當前值: {sensor.Value:F1}");
+                    }
+                }
             }
         }
 
-        computer.Close();
-    }
-}</code></pre>
-        <p><strong>注意：</strong> 由於需要存取底層硬體，你的程式必須以<strong>系統管理員權限</strong>執行才能讀取到所有資料（尤其是 CPU 溫度）。</p>
-
-        <h2>透過 WMI 獲取數據</h2>
-        <p>WMI (Windows Management Instrumentation) 是 Windows 作業系統管理資料的標準架構。將 LHM 資料發布到 WMI 後，你可以輕鬆使用 PowerShell 腳本來存取，適合用來寫系統管理自動化腳本。</p>
-
-        <h3>1. 啟用 WMI Provider</h3>
-        <p>在 Libre Hardware Monitor 中，點擊選單 <strong>Options</strong> -> <strong>WMI</strong> -> 勾選 <strong>Enable WMI</strong>。</p>
-
-        <h3>2. 使用 PowerShell 查詢</h3>
-        <p>LHM 會將資料寫入 <code>root\LibreHardwareMonitor</code> 命名空間中，並提供兩個主要類別：<code>Hardware</code> 與 <code>Sensor</code>。</p>
-        <p>開啟 PowerShell，輸入以下指令查詢所有溫度感測器：</p>
-        <pre><code class="language-powershell"># 查詢所有感測器
-Get-WmiObject -Namespace "root\LibreHardwareMonitor" -Class Sensor
-
-# 查詢 CPU 溫度
-Get-WmiObject -Namespace "root\LibreHardwareMonitor" -Class Sensor | Where-Object { $_.SensorType -eq "Temperature" -and $_.Name -like "*CPU*" } | Select-Object Name, Value</code></pre>
-
-        <h3>3. 使用 C# 查詢 WMI</h3>
-        <p>在 C# 中，你可以使用 <code>System.Management</code> 命名空間來存取 WMI：</p>
-        <pre><code class="language-csharp">using System;
-using System.Management;
-
-class Program
-{
-    static void Main()
-    {
-        ManagementScope scope = new ManagementScope(@"root\LibreHardwareMonitor");
-        ObjectQuery query = new ObjectQuery("SELECT * FROM Sensor WHERE SensorType='Temperature'");
-        ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
-
-        foreach (ManagementObject obj in searcher.Get())
+        /// <summary>
+        /// 支援風扇 PWM 控制範例 (僅適用於具備 Control 類型的晶片)
+        /// </summary>
+        public void SetFanSpeedPercentage(string fanName, float percent)
         {
-            Console.WriteLine($"{obj["Name"]}: {obj["Value"]} °C");
+            foreach (IHardware hardware in _computer.Hardware)
+            {
+                foreach (ISensor sensor in hardware.Sensors)
+                {
+                    if (sensor.SensorType == SensorType.Control && sensor.Name.Contains(fanName))
+                    {
+                        sensor.Control.SetSoftware(percent);
+                        Console.WriteLine($"⚡ 已將風扇 [{sensor.Name}] 轉速鎖定為 {percent}%");
+                        return;
+                    }
+                }
+            }
+        }
+
+        public void Dispose()
+        {
+            if (!_disposed)
+            {
+                _computer.Close(); // 重要！務必關閉以正確卸載驅動與釋放核心把柄
+                _disposed = true;
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            using var monitor = new HardwareMonitorService();
+            for (int i = 0; i < 3; i++)
+            {
+                monitor.SampleTelemetry();
+                Thread.Sleep(1000);
+            }
         }
     }
 }</code></pre>
 
-        <h2>結語</h2>
-        <p>Libre Hardware Monitor 不只是一個簡單的監控工具，其豐富的整合介面（HTTP JSON、.NET Library、WMI）讓工程師可以極具彈性地將硬體監控數據整合到各種自動化腳本與儀表板系統中。趕快試試看，為你的電腦打造專屬的監控系統吧！</p>
+        <hr>
+
+        <!-- Section 7 -->
+        <h2 id="wmi-powershell-automation">7. WMI 整合與系統管理員 PowerShell 自動化告警</h2>
+        <p>Windows Management Instrumentation (WMI) 是微軟標準的企業管理架構。Libre Hardware Monitor 支援將所有感測器數據即時廣播到 Windows 系統的 WMI 資料庫中，讓系統工程師使用 <strong>PowerShell</strong> 就能進行全自動巡檢！</p>
+
+        <h3>7.1 啟用 WMI 廣播</h3>
+        <p>在 Libre Hardware Monitor 視窗中，點擊選單 <strong>Options</strong> → <strong>WMI</strong> → 勾選 <strong>Enable WMI</strong> 即可。數據會直接注入到專屬的 <code>root\LibreHardwareMonitor</code> 命名空間中。</p>
+
+        <h3>7.2 WMI 結構與 SensorType 完整對照表</h3>
+        <p>在 <code>root\LibreHardwareMonitor</code> 中，有兩個核心 WMI 類別：</p>
+        <ul>
+          <li><strong>Hardware 類別：</strong>代表實體零件，具備 <code>Identifier</code>, <code>Name</code>, <code>HardwareType</code> 等欄位。</li>
+          <li><strong>Sensor 類別：</strong>代表各項遙測指標，核心欄位包含：<code>Identifier</code>, <code>Name</code>, <code>SensorType</code>, <code>Value</code>, <code>Min</code>, <code>Max</code>, <code>Index</code>。</li>
+        </ul>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>SensorType 列舉名稱</th>
+                <th>物理單位</th>
+                <th>典型應用情境</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>Voltage</code></td><td>伏特 (V)</td><td>CPU Vcore、DRAM 電壓、主機板 +12V / +5V 供電穩定度</td></tr>
+              <tr><td><code>Clock</code></td><td>兆赫 (MHz)</td><td>CPU 核心時脈、GPU 核心與顯存時脈</td></tr>
+              <tr><td><code>Temperature</code></td><td>攝氏度 (°C)</td><td>CPU Package、GPU Hotspot、NVMe SSD 複合溫度</td></tr>
+              <tr><td><code>Load</code></td><td>百分比 (%)</td><td>CPU 總使用率、GPU 3D 渲染負載、記憶體佔用率</td></tr>
+              <tr><td><code>Fan</code></td><td>轉速 (RPM)</td><td>水冷幫浦轉速、機殼風扇即時轉速</td></tr>
+              <tr><td><code>Flow</code></td><td>公升/小時 (L/h)</td><td>分體式水冷專用水流計流量</td></tr>
+              <tr><td><code>Control</code></td><td>百分比 (%)</td><td>PWM 風扇驅動佔空比控制信號</td></tr>
+              <tr><td><code>Level</code></td><td>百分比 (%)</td><td>筆電電池殘量、水冷水箱液位</td></tr>
+              <tr><td><code>Power</code></td><td>瓦特 (W)</td><td>CPU Package 瓦數、GPU Board 功耗、電源供應器負載</td></tr>
+              <tr><td><code>Data</code></td><td>吉位元組 (GB)</td><td>記憶體已使用容量、SSD 累積寫入量 (TBW)</td></tr>
+              <tr><td><code>Throughput</code></td><td>字節/秒 (B/s)</td><td>網卡下載/上傳速率、磁碟循序讀寫即時吞吐量</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>7.3 PowerShell 實戰 1：一鍵硬體全景健檢清單</h3>
+        <pre><code class="language-powershell"># 查詢所有溫度大於 50°C 的感測器
+Get-CimInstance -Namespace "root\LibreHardwareMonitor" -ClassName Sensor | 
+    Where-Object { $_.SensorType -eq "Temperature" -and $_.Value -gt 50 } | 
+    Select-Object Name, @{Name="溫度 (°C)"; Expression={"$($_.Value) °C"}}, @{Name="峰值"; Expression={"$($_.Max) °C"}} | 
+    Format-Table -AutoSize</code></pre>
+
+        <h3>7.4 PowerShell 實戰 2：超溫自動發送 Windows 桌面通知與事件日誌記錄</h3>
+        <p>這段腳本可設定為 Windows 背景定期工作，當發現 CPU 溫度破表時，自動透過 PowerShell 觸發 Windows 10/11 桌面 Toast 通知，並寫入系統事件簿 (Event Log)：</p>
+        <pre><code class="language-powershell"># 定義警戒門檻
+$MaxCpuTemp = 85.0
+$Namespace = "root\LibreHardwareMonitor"
+
+# 抓取 CPU 溫度
+$CpuTempSensor = Get-CimInstance -Namespace $Namespace -ClassName Sensor | 
+    Where-Object { $_.SensorType -eq "Temperature" -and $_.Name -like "*CPU Package*" } | 
+    Select-Object -First 1
+
+if ($CpuTempSensor -and $CpuTempSensor.Value -ge $MaxCpuTemp) {
+    $CurrentTemp = $CpuTempSensor.Value
+    $Msg = "⚠️ 警告：CPU Package 溫度已達到 $($CurrentTemp)°C，超過警戒線 $($MaxCpuTemp)°C！"
+    Write-Warning $Msg
+
+    # 1. 寫入 Windows 系統事件日誌 (Application Log)
+    Write-EventLog -LogName Application -Source "HardwareWatchdog" -EntryType Warning -EventId 9001 -Message $Msg -ErrorAction SilentlyContinue
+
+    # 2. 發送 Windows 10/11 桌面原生氣泡通知
+    [reflection.assembly]::loadwithpartialname("System.Windows.Forms") | Out-Null
+    $notify = New-Object System.Windows.Forms.NotifyIcon
+    $notify.Icon = [System.Drawing.SystemIcons]::Warning
+    $notify.Visible = $true
+    $notify.ShowBalloonTip(5000, "硬體高溫警報！", $Msg, [System.Windows.Forms.ToolTipIcon]::Warning)
+}</code></pre>
+
+        <hr>
+
+        <!-- Section 8: Interactive Simulator -->
+        <h2 id="interactive-simulator">8. ⚡ 互動工具：即時感測器模擬儀表板與 JSON API 解析器</h2>
+        <p>為方便大家直觀理解 Libre Hardware Monitor 的遙測演算法與 <code>/data.json</code> 節點聯動關係，我們製作了這款互動式模擬儀表板。你可以任意調節負載與室溫，並切換檢視即時儀表、JSON 原始結構與多語言提取代碼：</p>
+
+        <div class="interactive-explorer-box">
+          <div class="exp-title">
+            <span>🎛️ Libre Hardware Monitor 即時遙測模擬面板</span>
+          </div>
+
+          <div class="sim-controls">
+            <div class="sim-control-group">
+              <label class="sim-label" for="sim-cpu-load">
+                <span>🔥 CPU 負載 (Load)：</span>
+                <span id="lbl-cpu-load">35%</span>
+              </label>
+              <input type="range" id="sim-cpu-load" class="sim-range" min="0" max="100" value="35">
+            </div>
+
+            <div class="sim-control-group">
+              <label class="sim-label" for="sim-gpu-load">
+                <span>🎮 GPU 負載 (3D Load)：</span>
+                <span id="lbl-gpu-load">45%</span>
+              </label>
+              <input type="range" id="sim-gpu-load" class="sim-range" min="0" max="100" value="45">
+            </div>
+
+            <div class="sim-control-group">
+              <label class="sim-label" for="sim-ambient-temp">
+                <span>🌡️ 環境室溫 (Ambient)：</span>
+                <span id="lbl-ambient-temp">24°C</span>
+              </label>
+              <input type="range" id="sim-ambient-temp" class="sim-range" min="15" max="38" value="24">
+            </div>
+
+            <div class="sim-control-group">
+              <label class="sim-label" for="sim-fan-profile">
+                <span>🌀 風扇調速曲線：</span>
+              </label>
+              <select id="sim-fan-profile" class="sim-select">
+                <option value="silent">靜音模式 (Silent - 低轉速)</option>
+                <option value="balanced" selected>標準平衡 (Balanced - 動態響應)</option>
+                <option value="performance">極限散熱 (Performance - 高轉速)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sim-tabs">
+            <button class="sim-tab-btn active" data-tab="tab-dashboard">📊 儀表板視覺視圖</button>
+            <button class="sim-tab-btn" data-tab="tab-json">🌳 /data.json 原始結構視圖</button>
+            <button class="sim-tab-btn" data-tab="tab-code">💻 多語言代碼速查</button>
+          </div>
+
+          <!-- Tab 1: Dashboard -->
+          <div id="tab-dashboard" class="sim-tab-content">
+            <div class="dashboard-grid">
+              <div class="dash-card">
+                <div class="dash-card-header">CPU Package 溫度</div>
+                <div id="val-cpu-temp" class="dash-card-value">48.2 °C</div>
+                <div class="dash-card-sub" id="sub-cpu-temp">TjMax 餘裕: 51.8°C</div>
+                <div class="dash-meter-bar">
+                  <div id="meter-cpu-temp" class="dash-meter-fill" style="width: 48%; background: #10b981;"></div>
+                </div>
+              </div>
+
+              <div class="dash-card">
+                <div class="dash-card-header">CPU 總功耗 (Power)</div>
+                <div id="val-cpu-power" class="dash-card-value">75 W</div>
+                <div class="dash-card-sub">RAPL MSR 採樣</div>
+                <div class="dash-meter-bar">
+                  <div id="meter-cpu-power" class="dash-meter-fill" style="width: 30%; background: #3b82f6;"></div>
+                </div>
+              </div>
+
+              <div class="dash-card">
+                <div class="dash-card-header">GPU Core 溫度</div>
+                <div id="val-gpu-temp" class="dash-card-value">54.0 °C</div>
+                <div class="dash-card-sub" id="sub-gpu-hotspot">Hot Spot: 65.2 °C</div>
+                <div class="dash-meter-bar">
+                  <div id="meter-gpu-temp" class="dash-meter-fill" style="width: 54%; background: #10b981;"></div>
+                </div>
+              </div>
+
+              <div class="dash-card">
+                <div class="dash-card-header">CPU 風扇轉速 (RPM)</div>
+                <div id="val-fan-rpm" class="dash-card-value">1280 RPM</div>
+                <div class="dash-card-sub" id="sub-fan-pwm">PWM 工作週期: 52%</div>
+                <div class="dash-meter-bar">
+                  <div id="meter-fan-rpm" class="dash-meter-fill" style="width: 52%; background: #f59e0b;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Raw JSON Tree -->
+          <div id="tab-json" class="sim-tab-content" style="display:none;">
+            <div class="sim-code-box">
+              <div class="sim-code-header">
+                <span>HTTP GET http://localhost:8085/data.json 即時回傳 payload：</span>
+                <button class="sim-copy-btn" id="btn-copy-json">複製 JSON</button>
+              </div>
+              <pre id="json-preview-code"><code></code></pre>
+            </div>
+          </div>
+
+          <!-- Tab 3: Code Generator -->
+          <div id="tab-code" class="sim-tab-content" style="display:none;">
+            <div class="sim-code-box">
+              <div class="sim-code-header">
+                <span>選擇你偏好的開發語言獲取當前 CPU 溫度：</span>
+                <div>
+                  <button class="sim-copy-btn" id="btn-copy-code">複製代碼</button>
+                </div>
+              </div>
+              <pre><code id="code-snippet-preview"></code></pre>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Section 9: FAQ -->
+        <h2 id="troubleshooting-faq">9. 實務避坑手冊與常見問題 FAQ</h2>
+
+        <h3>Q1: 為什麼打開軟體後看不到 CPU 溫度，或者數值全部顯示為 0？</h3>
+        <p><strong>原因：</strong>這 99% 是因為<strong>沒有以系統管理員身分執行</strong>。如第二章所述，存取 MSR 暫存器需要核心模式驅動權限。如果只是普通權限點開，Windows 會拒絕加載 <code>WinRing0x64.sys</code>，導致 CPU/主機板節點空白。請務必右鍵點選「以系統管理員身分執行」，或依照第四章設定工作排程器。</p>
+
+        <h3>Q2: 遇到微軟「易受攻擊驅動程式封鎖清單 (Vulnerable Driver Blocklist)」或 Windows Defender 封鎖怎麼辦？</h3>
+        <p><strong>原因：</strong>微軟自 Windows 11 22H2 起啟用了內核驅動嚴格審查機制。早期版本的 Open Hardware Monitor 或極舊版 LHM 使用的舊版 WinRing0 驅動曾被黑客拿來進行權限提升，因而被列入微軟封鎖清單。</p>
+        <p><strong>解法：</strong></p>
+        <ul>
+          <li>確保使用 <strong>Libre Hardware Monitor 最新發布版本</strong>，新版已更新經過安全修補與受信任憑證簽署的內核驅動。</li>
+          <li>若在特殊環境仍然受阻，可以在 Windows 安全性中檢查「核心隔離 (Core Isolation)」裡面的「易受攻擊的驅動程式封鎖清單」，並為 LHM 執行目錄加入白名單排除。</li>
+        </ul>
+
+        <h3>Q3: 同時開啟 HWiNFO64、ASUS Armoury Crate 或 Corsair iCUE 時，風扇轉速狂跳或感測器數值卡死？</h3>
+        <p><strong>原因：LPC 總線競爭與互斥鎖 (Mutex) 衝突。</strong> 主機板上的 Super I/O 晶片只有一個 I/O 埠定址管道。當多個監控軟體在同一毫秒發送 <code>IN/OUT</code> 指令存取同一個暫存器時，就會引發競態條件 (Race Condition)，導致讀回 <code>0xFF</code> 異常值。</p>
+        <p><strong>最佳實踐：</strong>在各監控軟體中啟用<strong>「全域硬體監控互斥鎖 (Global Hardware Monitor Mutex)」</strong>，或者避免同時執行兩個以上會高頻輪詢 Super I/O 的軟體。</p>
+
+        <h3>Q4: Remote Web Server 只能在本機存取，如何允許區網 (LAN) 其他電腦或手機連線？</h3>
+        <p><strong>原因：</strong>Windows Defender 防火牆預設會阻擋外部設備存取 8085 連接埠。</p>
+        <p><strong>解法：</strong>在 Windows 系統管理員 PowerShell 中執行一行指令開放防火牆入站規則：</p>
+        <pre><code class="language-powershell">New-NetFirewallRule -DisplayName "LibreHardwareMonitor WebServer" -Direction Inbound -LocalPort 8085 -Protocol TCP -Action Allow</code></pre>
+
+        <h3>Q5: 如何在無人登入的 Windows Server 伺服器上當作 Windows Service 常駐運行？</h3>
+        <p><strong>原因：</strong>Windows Service 運行在 <strong>Session 0</strong> 隔離環境中，某些依賴使用者桌面 session 的驅動通訊在 Session 0 可能受到安全限制。</p>
+        <p><strong>解法：</strong>建議使用本指南第四章推薦的<strong>工作排程器 (Task Scheduler)</strong>，觸發條件設定為「啟動電腦時 (At startup)」，並指定以 <code>SYSTEM</code> 帳戶或具備本機管理員權限的服務帳戶運行，勾選「不論使用者登入與否均執行」。</p>
+
+        <hr>
+
+        <!-- Section 10 -->
+        <h2 id="conclusion">10. 結語與延伸架構思維</h2>
+        <p>Libre Hardware Monitor 絕不僅僅是一款擺在桌面看溫度的視覺工具，它更是一套<strong>低延遲、開源、模組化的系統遙測底層引擎</strong>。</p>
+        <p>無論你是要：</p>
+        <ul>
+          <li>為自己的機房伺服器建立 Grafana + Prometheus 硬體健康度監控；</li>
+          <li>為自組水冷遊戲主機開發專屬副螢幕儀表板；</li>
+          <li>在 C# 商業專案中即時監測工控機或渲染農場的負載與風扇保護；</li>
+          <li>抑或是寫一段幾十行的 Python / PowerShell 腳本打造超溫自動告警與保護降載；</li>
+        </ul>
+        <p>Libre Hardware Monitor 都憑藉其豐富的介面（HTTP JSON API、.NET 函式庫、WMI 廣播）為工程師提供了極大的自由度與無限可能。掌握它的底層原理與串接方式，將讓你的系統架構在穩定性與可觀測性上更上一層樓！</p>
       </article>
 
       <div class="article-footer">
@@ -301,5 +1300,246 @@ class Program
   <script src="./js/bg-effects.js?v=10"></script>
   <script src="./js/script.js"></script>
   <script src="./js/enhancements.js"></script>
+
+  <!-- Interactive Telemetry Simulator Script -->
+  <script>
+    (function() {
+      // DOM Elements
+      const cpuLoadInput = document.getElementById('sim-cpu-load');
+      const gpuLoadInput = document.getElementById('sim-gpu-load');
+      const ambientTempInput = document.getElementById('sim-ambient-temp');
+      const fanProfileSelect = document.getElementById('sim-fan-profile');
+
+      const lblCpuLoad = document.getElementById('lbl-cpu-load');
+      const lblGpuLoad = document.getElementById('lbl-gpu-load');
+      const lblAmbientTemp = document.getElementById('lbl-ambient-temp');
+
+      const valCpuTemp = document.getElementById('val-cpu-temp');
+      const subCpuTemp = document.getElementById('sub-cpu-temp');
+      const meterCpuTemp = document.getElementById('meter-cpu-temp');
+
+      const valCpuPower = document.getElementById('val-cpu-power');
+      const meterCpuPower = document.getElementById('meter-cpu-power');
+
+      const valGpuTemp = document.getElementById('val-gpu-temp');
+      const subGpuHotspot = document.getElementById('sub-gpu-hotspot');
+      const meterGpuTemp = document.getElementById('meter-gpu-temp');
+
+      const valFanRpm = document.getElementById('val-fan-rpm');
+      const subFanPwm = document.getElementById('sub-fan-pwm');
+      const meterFanRpm = document.getElementById('meter-fan-rpm');
+
+      const jsonPreview = document.getElementById('json-preview-code');
+      const codePreview = document.getElementById('code-snippet-preview');
+
+      const tabBtns = document.querySelectorAll('.sim-tab-btn');
+      const tabContents = {
+        'tab-dashboard': document.getElementById('tab-dashboard'),
+        'tab-json': document.getElementById('tab-json'),
+        'tab-code': document.getElementById('tab-code')
+      };
+
+      // Tab Switching
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const target = btn.dataset.tab;
+          Object.keys(tabContents).forEach(key => {
+            tabContents[key].style.display = (key === target) ? 'block' : 'none';
+          });
+        });
+      });
+
+      function updateSimulation() {
+        const cpuLoad = parseFloat(cpuLoadInput.value);
+        const gpuLoad = parseFloat(gpuLoadInput.value);
+        const ambient = parseFloat(ambientTempInput.value);
+        const profile = fanProfileSelect.value;
+
+        lblCpuLoad.innerText = cpuLoad + '%';
+        lblGpuLoad.innerText = gpuLoad + '%';
+        lblAmbientTemp.innerText = ambient + '°C';
+
+        // Cooling profiles
+        let coolFactor = 1.0;
+        let fanBase = 800;
+        if (profile === 'silent') {
+          coolFactor = 1.25;
+          fanBase = 600;
+        } else if (profile === 'performance') {
+          coolFactor = 0.8;
+          fanBase = 1100;
+        }
+
+        // Calculations
+        // CPU Temp = ambient + load * 0.52 * coolFactor
+        const cpuTemp = Math.min(105, ambient + (cpuLoad * 0.52 * coolFactor));
+        const tjMax = 100;
+        const tjMargin = Math.max(0, tjMax - cpuTemp);
+
+        // CPU Power: 25W idle to 240W full load
+        const cpuPower = 25 + Math.round((cpuLoad / 100) * 215);
+
+        // GPU Temp = ambient + load * 0.46 * coolFactor
+        const gpuTemp = Math.min(95, ambient + (gpuLoad * 0.46 * coolFactor));
+        const gpuHotspot = gpuTemp + 11.5 + (gpuLoad * 0.05);
+
+        // Fan RPM & PWM
+        const maxStress = Math.max(cpuLoad, gpuLoad);
+        let fanPwm = 35 + Math.round((maxStress / 100) * 65);
+        if (profile === 'silent') fanPwm = Math.max(25, fanPwm - 15);
+        if (profile === 'performance') fanPwm = Math.min(100, fanPwm + 18);
+
+        const fanRpm = Math.round(fanBase + (fanPwm / 100) * 1600);
+
+        // Update Dashboard DOM
+        valCpuTemp.innerText = cpuTemp.toFixed(1) + ' °C';
+        subCpuTemp.innerText = `TjMax 餘裕: ${tjMargin.toFixed(1)} °C`;
+        meterCpuTemp.style.width = Math.min(100, (cpuTemp / 100) * 100) + '%';
+        meterCpuTemp.style.backgroundColor = cpuTemp > 85 ? '#ef4444' : (cpuTemp > 72 ? '#f59e0b' : '#10b981');
+
+        valCpuPower.innerText = cpuPower + ' W';
+        meterCpuPower.style.width = Math.min(100, (cpuPower / 250) * 100) + '%';
+
+        valGpuTemp.innerText = gpuTemp.toFixed(1) + ' °C';
+        subGpuHotspot.innerText = `Hot Spot: ${gpuHotspot.toFixed(1)} °C`;
+        meterGpuTemp.style.width = Math.min(100, (gpuTemp / 100) * 100) + '%';
+        meterGpuTemp.style.backgroundColor = gpuTemp > 82 ? '#ef4444' : (gpuTemp > 70 ? '#f59e0b' : '#10b981');
+
+        valFanRpm.innerText = fanRpm + ' RPM';
+        subFanPwm.innerText = `PWM 工作週期: ${fanPwm}%`;
+        meterFanRpm.style.width = fanPwm + '%';
+
+        // Generate JSON Structure
+        const mockJson = {
+          id: 0,
+          Text: "Sensor",
+          Children: [
+            {
+              id: 1,
+              Text: "HARDCORE-WORKSTATION",
+              ImageURL: "images_icon/computer.png",
+              Children: [
+                {
+                  id: 2,
+                  Text: "Intel Core i9-14900K",
+                  ImageURL: "images_icon/cpu.png",
+                  Children: [
+                    {
+                      id: 3,
+                      Text: "Temperatures",
+                      Children: [
+                        { id: 4, Text: "CPU Package", Value: cpuTemp.toFixed(1) + " °C", Min: ambient.toFixed(1) + " °C", Max: (cpuTemp + 2).toFixed(1) + " °C" },
+                        { id: 5, Text: "CPU Core #1", Value: (cpuTemp - 1.5).toFixed(1) + " °C", Min: ambient.toFixed(1) + " °C", Max: (cpuTemp + 1).toFixed(1) + " °C" }
+                      ]
+                    },
+                    {
+                      id: 6,
+                      Text: "Loads",
+                      Children: [
+                        { id: 7, Text: "CPU Total", Value: cpuLoad.toFixed(1) + " %", Min: "0.0 %", Max: "100.0 %" }
+                      ]
+                    },
+                    {
+                      id: 8,
+                      Text: "Powers",
+                      Children: [
+                        { id: 9, Text: "CPU Package", Value: cpuPower.toFixed(1) + " W", Min: "25.0 W", Max: "253.0 W" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  id: 10,
+                  Text: "NVIDIA GeForce RTX 4090",
+                  ImageURL: "images_icon/nvidia.png",
+                  Children: [
+                    {
+                      id: 11,
+                      Text: "Temperatures",
+                      Children: [
+                        { id: 12, Text: "GPU Core", Value: gpuTemp.toFixed(1) + " °C", Min: ambient.toFixed(1) + " °C", Max: (gpuTemp + 3).toFixed(1) + " °C" },
+                        { id: 13, Text: "GPU Memory Junction", Value: (gpuTemp + 8).toFixed(1) + " °C", Min: ambient.toFixed(1) + " °C", Max: "92.0 °C" }
+                      ]
+                    },
+                    {
+                      id: 14,
+                      Text: "Loads",
+                      Children: [
+                        { id: 15, Text: "GPU Core", Value: gpuLoad.toFixed(1) + " %", Min: "0.0 %", Max: "100.0 %" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  id: 20,
+                  Text: "Nuvoton NCT6798D",
+                  ImageURL: "images_icon/mainboard.png",
+                  Children: [
+                    {
+                      id: 21,
+                      Text: "Fans",
+                      Children: [
+                        { id: 22, Text: "CPU Fan", Value: fanRpm + " RPM", Min: fanBase + " RPM", Max: "2700 RPM" }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        };
+
+        jsonPreview.querySelector('code').innerText = JSON.stringify(mockJson, null, 2);
+
+        // Generate Code Snippets
+        const codeSnippet = `// === [1. JavaScript Fetch 範例] ===
+const res = await fetch('http://localhost:8085/data.json');
+const data = await res.json();
+// 當前 CPU Package 溫度數值為: "${cpuTemp.toFixed(1)} °C"
+
+# === [2. Python Requests 範例] ===
+import requests
+resp = requests.get('http://localhost:8085/data.json')
+cpu_temp = "${cpuTemp.toFixed(1)} °C"  # 自動解析 Children
+
+# === [3. PowerShell WMI 查詢指令] ===
+Get-CimInstance -Namespace "root\\LibreHardwareMonitor" -ClassName Sensor |
+  Where-Object { $_.SensorType -eq "Temperature" -and $_.Name -like "*CPU Package*" } |
+  Select-Object Name, Value
+# 當前回傳數值: ${cpuTemp.toFixed(1)}
+
+// === [4. C# (.NET) 讀取程式碼] ===
+// sensor.Name == "CPU Package" => sensor.Value == ${cpuTemp.toFixed(1)}f;`;
+
+        codePreview.innerText = codeSnippet;
+      }
+
+      // Event listeners for inputs
+      cpuLoadInput.addEventListener('input', updateSimulation);
+      gpuLoadInput.addEventListener('input', updateSimulation);
+      ambientTempInput.addEventListener('input', updateSimulation);
+      fanProfileSelect.addEventListener('change', updateSimulation);
+
+      // Copy buttons
+      document.getElementById('btn-copy-json').addEventListener('click', function() {
+        navigator.clipboard.writeText(jsonPreview.querySelector('code').innerText);
+        const originalText = this.innerText;
+        this.innerText = '已複製！';
+        setTimeout(() => this.innerText = originalText, 1500);
+      });
+
+      document.getElementById('btn-copy-code').addEventListener('click', function() {
+        navigator.clipboard.writeText(codePreview.innerText);
+        const originalText = this.innerText;
+        this.innerText = '已複製！';
+        setTimeout(() => this.innerText = originalText, 1500);
+      });
+
+      // Initial run
+      updateSimulation();
+    })();
+  </script>
 </body>
 </html>
