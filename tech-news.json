@@ -1,10 +1,16 @@
 {
-  "updated": "2026-10-18 00:03",
+  "updated": "2026-10-18 01:29",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "LINE改錯字也要收錢！編輯訊息功能下週終止免費使用",
+          "link": "https://3c.ltn.com.tw/news/67972",
+          "date": "2026/10/18 09:00",
+          "summary": "LINE又有功能要收費了！目前在「LINE Labs」開放所有用戶免費試用的「編輯訊息」功能，將從10月20日起結束 ..."
+        },
         {
           "title": "三星S27 Ultra傳換心臟！高通旗艦晶片爆過熱 官方急澄清",
           "link": "https://3c.ltn.com.tw/news/67966",
@@ -70,12 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67959",
           "date": "2026/10/17 08:40",
           "summary": "Canon近日宣布「台北大巨蛋Canon展售體驗店」正式開幕，打造全新運動主題空間，提供更優質的產品體驗及服務，而為 ..."
-        },
-        {
-          "title": "果粉太狂！iPhone Duo官網預購塞爆 頂規近12萬也秒殺",
-          "link": "https://3c.ltn.com.tw/news/67958",
-          "date": "2026/10/16 20:25",
-          "summary": "誰說手機賣太貴就沒人買？蘋果首款摺疊iPhone Duo終於開賣，今晚(16日)8點正式在蘋果官網開放預購，儘管最低 ..."
         }
       ]
     },
@@ -83,6 +83,18 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "拆解 Deepfake 與 AI 幻覺，蘇格蘭高中設立全英首位「AI 素養專責教師」",
+          "link": "https://technews.tw/2026/10/18/ai-literacy-teachers/",
+          "date": "2026-10-18 00:30",
+          "summary": "蘇格蘭東倫弗魯郡的米恩斯城堡高中（Mearns Castle High School）近日成為英國首批、也是被 [&#8230;]"
+        },
+        {
+          "title": "Instagram 私訊也能作曲，Meta AI 新功能讓文字一鍵變成歌",
+          "link": "https://technews.tw/2026/10/18/instagrams-ai-music-creation-feature/",
+          "date": "2026-10-17 16:00",
+          "summary": "Instagram（IG）最近在私訊（DM）加入 AI 作曲功能，用戶只要輸入文字或自訂歌詞，再選擇音樂風格， [&#8230;]"
+        },
         {
           "title": "不禁 AI 但拒絕 AI 垃圾內容，YouTube、TikTok 等社群平台齊改規則",
           "link": "https://technews.tw/2026/10/17/from-substack-to-youtube-here-are-the-social-platforms-cracking-down-on-ai-slop/",
@@ -142,18 +154,6 @@
           "link": "https://finance.technews.tw/2026/10/17/morgan-stanley-memory-and-ai-supply-chain-outlook/",
           "date": "2026-10-17 03:00",
           "summary": "外資摩根士丹利（Morgan Stanley；大摩）最新研究報告指出，受惠於AI需求推動與產能排擠效應，記憶體 [&#8230;]"
-        },
-        {
-          "title": "別再想 100％ 防堵了！駭客只靠「聊天」就能哄騙你的 AI",
-          "link": "https://infosecu.technews.tw/2026/10/17/hackers-can-trick-your-ai-through-chat-alone/",
-          "date": "2026-10-17 02:00",
-          "summary": "如果每一次資安事件發生，警鈴就會響起，那這個鈴聲，很可能再也停不下來。因為 AI 正在改寫資安戰場的樣貌。 A [&#8230;]"
-        },
-        {
-          "title": "從「很悶」熬到因 AI「蹦起來」，群聯潘健成：台灣產業已是自己種樹自己涼",
-          "link": "https://finance.technews.tw/2026/10/17/taiwan-electronics-industry-stagnant-booming-ai-pua-kian-seng-taiwan-industries-creating-advantages/",
-          "date": "2026-10-17 01:00",
-          "summary": "根據《財訊》雙週刊報導，群聯創辦人暨執行長潘健成，14 日出席潘文淵文教基金會舉辦的《潘文淵──孕育台灣半導體 [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,12 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "台股叩關五萬點怎麼布局？名家公開「真 AI」供應鏈口袋名單",
+          "link": "https://finance.technews.tw/2026/10/18/which-taiwan-ai-stocks-are-worth-buying/",
+          "date": "2026-10-18 00:00",
+          "summary": "台股挑戰五萬點該買什麼股票？哪些 AI 股拉回值得安心布局？投資名家們在此分享他們的口袋名單與操作策略。 台股 [&#8230;]"
+        },
         {
           "title": "日本核准台積電熊本二廠升級 3 奈米計畫，預計 2028 年底投產",
           "link": "https://finance.technews.tw/2026/10/17/japan-approves-tsmcs-kumamoto-fab-2-upgrade-plan-to-3nm-process/",
@@ -226,12 +232,6 @@
           "link": "https://finance.technews.tw/2026/10/17/musk-predicts-that-china-will-produce-a-large-amount-of-dram-by-2028/",
           "date": "2026-10-17 01:00",
           "summary": "特斯拉執行長馬斯克（Elon Musk）近日的一句簡短留言，將韓國國內的經濟政策討論推升為全球記憶體晶片市場的 [&#8230;]"
-        },
-        {
-          "title": "台灣將收緊對中國先進晶片出口，未許可輸出產品將首度列刑事犯罪",
-          "link": "https://finance.technews.tw/2026/10/16/taiwan-to-tighten-export-controls-on-advanced-chips-to-china/",
-          "date": "2026-10-16 14:35",
-          "summary": "為進一步同步美國的出口管制政策，並配合川普政府對先進半導體走私至中國的管制，台灣正準備收緊人工智慧（AI）晶片 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,12 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "台股叩關五萬點怎麼布局？名家公開「真 AI」供應鏈口袋名單",
+          "link": "https://finance.technews.tw/2026/10/18/which-taiwan-ai-stocks-are-worth-buying/",
+          "date": "2026-10-18 00:00",
+          "summary": "台股挑戰五萬點該買什麼股票？哪些 AI 股拉回值得安心布局？投資名家們在此分享他們的口袋名單與操作策略。 台股 [&#8230;]"
+        },
         {
           "title": "台積電亮眼財報背後，市場關注隱憂關鍵浮現",
           "link": "https://finance.technews.tw/2026/10/17/behind-tsmcs-impressive-financial-report-key-concerns-have-emerged-that-have-drawn-market-attention/",
@@ -304,12 +310,6 @@
           "link": "https://technews.tw/2026/10/16/siemens-sf6-free-switchgear-taipower-csbc-low-carbon-grid-opportunities/",
           "date": "2026-10-15 22:00",
           "summary": "隨著電力設備加速朝低碳化發展，西門子於 2026 台灣國際智慧能源週展示無六氟化硫（SF6）氣體絕緣開關設備（ [&#8230;]"
-        },
-        {
-          "title": "元太新一代 E Ink Kaleido 4 電子紙問世，色彩表現與動態顯示雙升級",
-          "link": "https://technews.tw/2026/10/15/e-ink-announces-next-generation-color-epaper-technology-e-ink-kaleido-4/",
-          "date": "2026-10-15 13:39",
-          "summary": "電子紙大廠 E Ink 元太科技 15 日正式推出新一代彩色電子紙技術 E Ink Kaleido 4，延續電 [&#8230;]"
         }
       ]
     },
