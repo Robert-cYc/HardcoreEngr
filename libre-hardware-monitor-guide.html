@@ -256,29 +256,169 @@
       transform: translateX(3px);
     }
 
-    /* Architecture Diagram Box */
+    /* Architecture Diagram Box (Modern Responsive UI) */
     .arch-diagram-box {
-      background: #0f172a;
+      background: #0b1120;
       border: 1px solid #1e293b;
       border-radius: 12px;
       padding: 1.8rem;
-      margin: 2rem 0;
+      margin: 2.2rem 0;
       color: #f8fafc;
-      font-family: "Fira Code", monospace;
-      font-size: 0.88rem;
-      line-height: 1.6;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
     .arch-diagram-title {
       color: #38bdf8;
       font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      margin-bottom: 1.4rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 0.75rem;
+    }
+    .arch-layer {
+      position: relative;
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin-bottom: 0.5rem;
+      border: 1px dashed #334155;
+    }
+    .arch-layer.ring-3 {
+      background: rgba(30, 41, 59, 0.4);
+      border-color: #38bdf8;
+    }
+    .arch-layer.ring-0 {
+      background: rgba(30, 41, 59, 0.6);
+      border-color: #f43f5e;
+    }
+    .layer-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .ring-3-badge {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+    .ring-0-badge {
+      background: rgba(244, 63, 94, 0.15);
+      color: #fb7185;
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+    .layer-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+    }
+    .layer-card .card-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #f1f5f9;
+      margin-bottom: 0.3rem;
+    }
+    .layer-card .card-desc {
+      font-size: 0.88rem;
+      color: #94a3b8;
+    }
+    .priv-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+    .priv-tag {
+      background: #0f172a;
+      border: 1px solid #475569;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-family: "Fira Code", monospace;
+      color: #e2e8f0;
+    }
+    .arch-arrow {
+      text-align: center;
+      padding: 0.6rem 0;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .arch-arrow .arrow-label {
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 0.15rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      color: #38bdf8;
+    }
+    .arch-split-arrows {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      text-align: center;
+      padding: 0.8rem 0;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      font-family: "Fira Code", monospace;
+    }
+    .split-arrow-item {
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      color: #38bdf8;
+    }
+    .arch-hw-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .hw-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 1.1rem;
+    }
+    .hw-box.cpu-die {
+      border-left: 4px solid #38bdf8;
+    }
+    .hw-box.super-io {
+      border-left: 4px solid #f59e0b;
+    }
+    .hw-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.7rem;
+      color: #f8fafc;
+    }
+    .hw-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+    .hw-list li {
+      margin-bottom: 0.45rem;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 1.1rem;
+    }
+    .hw-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0.2rem;
+      color: #38bdf8;
     }
 
     /* Interactive Simulator Box */
@@ -558,28 +698,69 @@
 
         <div class="arch-diagram-box">
           <div class="arch-diagram-title">🖥️ Windows 硬體遙測特權穿透架構 (Hardware Telemetry Architecture)</div>
-┌────────────────────────────────────────────────────────────────────────┐
-│ [Ring 3: 使用者模式 (User Mode)]                                       │
-│   ┌──────────────────────────────────────────────────────────────┐     │
-│   │ 應用層: LibreHardwareMonitor.exe / 你的自製程式 / Python / JS │     │
-│   └──────────────────────────────┬───────────────────────────────┘     │
-│                                  │ P/Invoke (DeviceIoControl)          │
-├──────────────────────────────────┼─────────────────────────────────────┤
-│ [Ring 0: 核心模式 (Kernel Mode)]  ▼                                    │
-│   ┌──────────────────────────────────────────────────────────────┐     │
-│   │ 內核驅動: WinRing0x64.sys / InpOutx64.sys                   │     │
-│   │ 具備特權指令執行權限: IN, OUT, RDMSR, WRMSR, CLI, STI        │     │
-│   └───────────────┬───────────────────────────────┬──────────────┘     │
-└───────────────────┼───────────────────────────────┼────────────────────┘
-                    ▼ (RDMSR 特權讀取)              ▼ (I/O Port 0x2E/0x2F)
-┌───────────────────────────────────────┐ ┌──────────────────────────────┐
-│ CPU 內部晶粒 (CPU Die)                │ │ 主機板 Super I/O 晶片 (LPC/eSPI)│
-│  • IA32_THERM_STATUS (MSR 0x19C)      │ │  • Nuvoton NCT6798D / ITE IT8688E│
-│  • IA32_TEMPERATURE_TARGET (0x1A2)    │ │  • 類比熱敏電阻 ADC 轉換         │
-│  • 數位熱敏感測器 (Digital Thermal S.)│ │  • 主機板 VRM 供電/晶片組溫度    │
-│  • 封裝功耗計數器 (RAPL MSR 0x611)    │ │  • 風扇轉速計數器 (Tachometer)   │
-│  • Core VID 電壓標記暫存器            │ │  • PWM 風扇轉速工作週期控制暫存器│
-└───────────────────────────────────────┘ └──────────────────────────────┘
+          
+          <!-- Ring 3: User Mode -->
+          <div class="arch-layer ring-3">
+            <div class="layer-badge ring-3-badge">Ring 3: 使用者模式 (User Mode)</div>
+            <div class="layer-card">
+              <div class="card-title">應用層 (Application Layer)</div>
+              <div class="card-desc">LibreHardwareMonitor.exe · 自製 C# 程式 · Python / Node.js 腳本</div>
+            </div>
+          </div>
+
+          <!-- Arrow down: P/Invoke DeviceIoControl -->
+          <div class="arch-arrow">
+            <span class="arrow-label">P/Invoke (DeviceIoControl) 請求特權通道</span>
+            <span class="arrow-head">▼</span>
+          </div>
+
+          <!-- Ring 0: Kernel Mode -->
+          <div class="arch-layer ring-0">
+            <div class="layer-badge ring-0-badge">Ring 0: 核心模式 (Kernel Mode)</div>
+            <div class="layer-card kernel-driver">
+              <div class="card-title">內核驅動 (Kernel Driver)</div>
+              <div class="card-desc"><strong>WinRing0x64.sys / InpOutx64.sys</strong></div>
+              <div class="priv-tags">
+                <span class="priv-tag">特權指令: IN / OUT</span>
+                <span class="priv-tag">RDMSR / WRMSR</span>
+                <span class="priv-tag">CLI / STI</span>
+                <span class="priv-tag">PCI Config Access</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Split Branch Down Arrows -->
+          <div class="arch-split-arrows">
+            <div class="split-arrow-item">
+              <span>▼ RDMSR 特權讀取</span>
+            </div>
+            <div class="split-arrow-item">
+              <span>▼ I/O Port 0x2E/0x2F 總線定址</span>
+            </div>
+          </div>
+
+          <!-- Bottom Hardware Targets Grid -->
+          <div class="arch-hw-grid">
+            <div class="hw-box cpu-die">
+              <div class="hw-title">🔥 CPU 內部晶粒 (CPU Die)</div>
+              <ul class="hw-list">
+                <li><strong>IA32_THERM_STATUS</strong> (MSR 0x19C) 核心數位熱感測 (DTS)</li>
+                <li><strong>IA32_TEMPERATURE_TARGET</strong> (MSR 0x1A2) TjMax 結溫讀取</li>
+                <li><strong>RAPL 功耗計數器</strong> (MSR 0x611) Package 瓦數遙測</li>
+                <li><strong>Core VID 暫存器</strong> 各核心即時電壓採樣</li>
+              </ul>
+            </div>
+
+            <div class="hw-box super-io">
+              <div class="hw-title">🎛️ 主機板 Super I/O 晶片 (LPC/eSPI)</div>
+              <ul class="hw-list">
+                <li><strong>Nuvoton NCT6798D / ITE IT8688E</strong> 控制暫存器</li>
+                <li><strong>類比熱敏電阻 ADC 轉換</strong> 主機板 VRM 供電/晶片組溫度</li>
+                <li><strong>風扇轉速計數器 (Tachometer)</strong> 即時轉速 (RPM) 採樣</li>
+                <li><strong>PWM 工作週期控制暫存器</strong> 風扇轉速百分比動態寫入</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <h3>2.1 CPU 核心溫度讀取：MSR 暫存器與 DTS 計算公式</h3>
