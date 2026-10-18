@@ -39,8 +39,8 @@ def get_lastmod_from_html(url: str) -> str:
     if not html_path.exists():
         return datetime.now(timezone.utc).strftime("%a, %d %b %Y 00:00:00 +0000")
     content = html_path.read_text(encoding="utf-8", errors="replace")
-    # Look for <lastmod>YYYY-MM-DD</lastmod> or <span>YYYY-MM-DD</span>
-    m = re.search(r'<span>(\d{4}-\d{2}-\d{2})</span>', content)
+    # Look for 更新於 YYYY-MM-DD or <span>YYYY-MM-DD
+    m = re.search(r'更新於\s*(\d{4}-\d{2}-\d{2})', content) or re.search(r'<span>(\d{4}-\d{2}-\d{2})', content)
     if m:
         try:
             dt = datetime.strptime(m.group(1), "%Y-%m-%d").replace(tzinfo=timezone.utc)

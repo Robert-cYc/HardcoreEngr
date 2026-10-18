@@ -5,49 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘 — "AI" 硬核工程師</title>
   <link rel="icon" href="data:,💻">
-  <meta name="description" content="深入剖析全球四大晶片巨頭與架構：Intel 的反擊、AMD 的 Zen 5 奇蹟、NVIDIA 的 Blackwell AI 霸權，以及 ASIC (如 Google TPU, Groq) 如何在特定領域達成算力輾壓。">
+  <meta name="description" content="深入剖析全球半導體四大晶片巨頭與架構戰局：摩爾定律極限與先進封裝 CoWoS/Foveros/SoIC、Intel IDM 2.0 與 18A RibbonFET/PowerVia、AMD Zen 5 與 3D V-Cache 及 MI300X/MI325X、NVIDIA Blackwell B200 與 GB200 NVL72 霸權，以及 ASIC (Google TPUv5p/v6、Groq LPU、AWS Trainium) 如何在特定領域達成算力輾壓。附贈互動式 AI 晶片 Roofline 算力頻寬精算器。">
   <meta name="canonical" href="https://ai-hardcore-engineer.com/chip-wars-intel-amd-nvidia-asic.html">
-  <meta property="og:title" content="晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC — &quot;AI&quot; 硬核工程師">
-  <meta property="og:description" content="深入剖析全球四大晶片巨頭與架構：Intel 的反擊、AMD 的 Zen 5 奇蹟、NVIDIA 的 Blackwell AI 霸權，以及 ASIC 如何在特定領域達成算力輾壓。">
+  <meta property="og:title" content="晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="算力即新石油！全維度解析 Intel、AMD、NVIDIA 與 ASIC 架構博弈：先進封裝 CoWoS、Blackwell B200、Zen 5、MI300X、Groq LPU 與互動式 Roofline 算力模擬器。">
   <meta property="og:url" content="https://ai-hardcore-engineer.com/chip-wars-intel-amd-nvidia-asic.html">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta property="og:image" content="./images/chip-wars-guide.jpg">
   <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC — &quot;AI&quot; 硬核工程師">
-  <meta name="twitter:description" content="深入剖析全球四大晶片巨頭與架構：Intel 的反擊、AMD 的 Zen 5 奇蹟、NVIDIA 的 Blackwell AI 霸權，以及 ASIC 如何在特定領域達成算力輾壓。">
-  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
+  <meta name="twitter:title" content="晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘">
+  <meta name="twitter:description" content="算力即新石油！全維度解析 Intel、AMD、NVIDIA 與 ASIC 架構博弈：先進封裝 CoWoS、Blackwell B200、Zen 5、MI300X、Groq LPU 與互動式 Roofline 算力模擬器。">
+  <meta name="twitter:image" content="./images/chip-wars-guide.jpg">
   <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
   <style>
-    .article-hero { text-align: center; padding: 4rem 0 2rem; }
-    .article-hero h1 { font-size: 2.97rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
-    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.21rem; margin-bottom: 2rem; }
-    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
-    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+    .article-hero { text-align: center; padding: 3.5rem 0 2rem; }
+    .article-hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.3; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.6rem; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.8rem; }
+    .hero-image-wrap { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.18); border: 1px solid var(--border); margin-bottom: 2.2rem; }
+    .hero-image-wrap img { width: 100%; max-height: 540px; object-fit: cover; display: block; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; }
     .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
-    .article-body { max-width: 60em; margin: 0 auto; }
-    .article-body h2 { font-size: 2.145rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-    .article-body h3 { font-size: 1.65rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
-    .article-body p { margin-bottom: 1rem; line-height: 1.8; }
-    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, "Liberation Mono", monospace; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 1.21em; color: #e11d48; }
-    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
-    .article-body pre code { background: none; padding: 0; color: var(--text); }
-    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
-    .article-body ul, .article-body ol { margin: 1rem 0; padding-left: 2rem; line-height: 1.8; }
-    .article-body li { margin-bottom: 0.5rem; }
-    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1.1rem; }
-    .article-body th, .article-body td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
-    .article-body th { font-weight: 600; color: var(--text); background: var(--bg-alt); }
+    .article-body { max-width: 62em; margin: 0 auto; }
+    .article-body h2 { font-size: 2rem; font-weight: 700; margin: 2.8rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 0.5rem; }
+    .article-body h3 { font-size: 1.45rem; font-weight: 600; margin: 1.8rem 0 0.75rem; color: var(--text); }
+    .article-body p { margin-bottom: 1.2rem; line-height: 1.85; font-size: 1.05rem; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.2rem 0.45rem; border-radius: 4px; font-size: 0.95em; color: #e11d48; border: 1px solid var(--border); }
+    .dark-mode .article-body code { color: #f43f5e; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; overflow-x: auto; margin: 1.5rem 0; }
+    .article-body pre code { background: none; padding: 0; border: none; color: var(--text); font-size: 0.95rem; }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1.1rem 1.6rem; margin: 1.6rem 0; border-radius: 0 8px 8px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.75; font-size: 1.02rem; }
+    
+    .table-responsive { overflow-x: auto; margin: 2rem 0; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+    .article-body table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 900px; }
+    .article-body th, .article-body td { padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .article-body th { font-weight: 700; color: var(--text); background: var(--bg-alt); white-space: nowrap; position: sticky; top: 0; z-index: 2; }
+    .article-body tr:hover td { background: rgba(37, 99, 235, 0.05); }
+
+    .badge-pill { display: inline-block; padding: 0.2rem 0.55rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-teal { background: #ccfbf1; color: #0f766e; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .badge-gray { background: #f3f4f6; color: #374151; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-teal { background: #134e4a; color: #99f6e4; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+    .dark-mode .badge-gray { background: #374151; color: #e5e7eb; }
+
+    /* Tech grid cards */
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+    .tech-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .tech-card h4 { margin-top: 0; margin-bottom: 0.8rem; font-size: 1.15rem; color: var(--text); display: flex; align-items: center; gap: 0.5rem; }
+    .tech-card p { font-size: 0.95rem; line-height: 1.65; margin-bottom: 0.5rem; }
+
+    /* Quick Navigation TOC */
+    .quick-nav-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.8rem; margin: 2rem 0; }
+    .quick-nav-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text); }
+    .quick-nav-list { list-style: none; padding-left: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.5rem 1.5rem; }
+    .quick-nav-list li a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s ease, transform 0.2s ease; }
+    .quick-nav-list li a:hover { color: var(--accent); transform: translateX(3px); }
+
+    /* Interactive Simulator Box */
+    .interactive-explorer-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 1.8rem; margin: 2.2rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    .exp-title { font-weight: 700; font-size: 1.25rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text); }
+    .sim-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-bottom: 1.5rem; }
+    .sim-control-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .sim-label { font-weight: 600; font-size: 0.95rem; color: var(--text); }
+    .sim-select { background: var(--bg); border: 1px solid var(--border); padding: 0.65rem 0.8rem; border-radius: 6px; color: var(--text); font-size: 0.95rem; outline: none; }
+    .sim-results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+    .sim-res-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-align: center; }
+    .sim-res-label { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.35rem; }
+    .sim-res-value { font-size: 1.6rem; font-weight: 800; font-family: "Fira Code", monospace; color: var(--text); }
+    .sim-res-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; }
+
     .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘",
+    "description": "深入剖析全球半導體四大晶片巨頭與架構戰局：摩爾定律極限與先進封裝 CoWoS/Foveros/SoIC、Intel IDM 2.0 與 18A RibbonFET/PowerVia、AMD Zen 5 與 3D V-Cache 及 MI300X/MI325X、NVIDIA Blackwell B200 與 GB200 NVL72 霸權，以及 ASIC 如何在特定領域達成算力輾壓。",
+    "url": "https://ai-hardcore-engineer.com/chip-wars-intel-amd-nvidia-asic.html",
+    "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
+    "image": "https://ai-hardcore-engineer.com/images/chip-wars-guide.jpg",
+    "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/chip-wars-intel-amd-nvidia-asic.html" }
+  }
+  </script>
 </head>
 <body>
   <!-- =============== Header =============== -->
-  <header class="site-header">
+  <header class="site-header" id="top">
     <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
     <div class="container header-inner">
       <div class="logo">
@@ -81,114 +146,419 @@
       <section class="article-hero">
         <h1>晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘</h1>
         <div class="article-meta">
-          <span>2026-10-03</span>
+          <span>2026-10-03（更新於 2026-10-18）</span>
           <span class="separator">·</span>
-          <span>18 分鐘閱讀</span>
+          <span>28 分鐘閱讀</span>
+          <span class="separator">·</span>
+          <span>半導體工程 / 先進封裝 / AI 算力</span>
         </div>
         <div class="article-tags">
           <span class="tag">硬體架構</span>
-          <span class="tag">Intel</span>
-          <span class="tag">AMD</span>
-          <span class="tag">NVIDIA</span>
+          <span class="tag">Intel 18A</span>
+          <span class="tag">AMD Zen 5</span>
+          <span class="tag">NVIDIA Blackwell</span>
+          <span class="tag">CoWoS 先進封裝</span>
           <span class="tag">ASIC</span>
+          <span class="tag">Google TPU</span>
+          <span class="tag">Groq LPU</span>
           <span class="tag">AI 晶片</span>
         </div>
-        <img loading="lazy" src="https://picsum.photos/seed/cpu-gpu-asic/1200/400" alt="半導體晶片架構與 AI 算力">
+        <div class="hero-image-wrap">
+          <img loading="lazy" src="./images/chip-wars-guide.jpg" alt="晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘">
+        </div>
       </section>
 
       <!-- =============== Article Body =============== -->
       <article class="article-body">
-        <p>隨著大型語言模型 (LLM) 與人工智慧的爆發，算力已經成為現代科技的「新石油」。在這個算力為王的時代，底層硬體的架構決定了上層軟體的極限。我們每天寫的 Python、C++ 或 CUDA 程式碼，最終都要落實到矽晶片上的電晶體跳動。</p>
-        <p>這篇文章，我們將以硬核工程師的角度，深入剖析目前主宰運算世界的四大天王：<strong>Intel (通用運算老大哥)</strong>、<strong>AMD (跨界逆襲的勇者)</strong>、<strong>NVIDIA (AI 時代的絕對霸主)</strong>，以及 <strong>ASIC (為單一目標而生的終極武器)</strong>。我們將探討他們最新的處理器架構設計、核心技術優勢，以及最適合的應用場景。</p>
+        <blockquote>
+          🎯 <strong>硬核精華摘要：</strong><br>
+          &nbsp;&nbsp;① <strong>算力即新石油：</strong>隨著大語言模型參數量從百億飆升至數千億，單純微縮電晶體的 Dennard Scaling 已經崩潰，「記憶體牆 (Memory Wall)」與「光罩面積極限 (Reticle Limit)」成為瓶頸，先進封裝 (CoWoS / Foveros / SoIC) 取代製程成為勝負手。<br>
+          &nbsp;&nbsp;② <strong>Intel 的豪賭：</strong>IDM 2.0 戰略全面拆分小晶片 (Disaggregated Tile)，並押注 18A 製程革命——結合 RibbonFET (全環繞柵極 GAA) 與 PowerVia (背面供電技術)，全力迎戰台積電。<br>
+          &nbsp;&nbsp;③ <strong>AMD 的 Chiplet 與 3D V-Cache 奇蹟：</strong>Zen 5 實現跨代 IPC 躍升；利用台積電 SoIC 混合鍵合堆疊 64MB SRAM，在遊戲與伺服器市場連戰連勝；MI300X/MI325X 挾 192GB~256GB HBM3E 正面迎擊 NVIDIA。<br>
+          &nbsp;&nbsp;④ <strong>NVIDIA 的降維打擊：</strong>Blackwell B200 雙晶粒 10TB/s 互連、FP4/FP8 精度革命，配合 GB200 NVL72 液冷機櫃與 CUDA 軟體護城河，賣的已不是晶片，而是整座「AI 工廠」。<br>
+          &nbsp;&nbsp;⑤ <strong>ASIC 異軍突起：</strong>Google TPU (v5p / v6 Trillium) 脈動陣列深耕分散式訓練、Groq LPU 純 SRAM 達成每秒千 Token 極速推理，CSP 巨頭（AWS/微軟/Meta）掀起去 NVIDIA 化的自研晶片浪潮。
+        </blockquote>
 
-        <h2>1. Intel：巨頭的覺醒與架構轉型</h2>
-        <p>曾幾何時，Intel 是 CPU 的代名詞。但在經歷了 10nm 製程延宕與 AMD 的強力挑戰後，Intel 正在透過全新的 <strong>IDM 2.0</strong> 戰略與先進封裝技術，試圖奪回王座。</p>
-        
-        <h3>核心架構：小晶片 (Chiplet) 與大小核 (Hybrid Architecture)</h3>
+        <!-- Quick Navigation -->
+        <div class="quick-nav-box">
+          <div class="quick-nav-title">📑 內容快速導覽</div>
+          <ul class="quick-nav-list">
+            <li><a href="#moore-law-bottleneck">1. 矽島戰國時代：摩爾定律極限、記憶體牆與先進封裝</a></li>
+            <li><a href="#intel-turnaround">2. Intel 的浴火反擊：IDM 2.0、Foveros 3D 封裝與 18A 製程</a></li>
+            <li><a href="#amd-zen-revolution">3. AMD Zen 5 奇蹟與 3D 封裝：Chiplet 宗師與 MI300X/MI325X</a></li>
+            <li><a href="#nvidia-ai-empire">4. NVIDIA AI 霸權帝國：Blackwell B200、NVLink 5 與 GB200 NVL72</a></li>
+            <li><a href="#asic-custom-silicon">5. ASIC 與客製化晶片浪潮：Google TPU、Groq LPU 與雲端巨頭造芯</a></li>
+            <li><a href="#architecture-comparison-table">6. 四大架構全維度橫向終極評測大表 (CPU vs GPU vs ASIC vs NPU)</a></li>
+            <li><a href="#interactive-roofline-calc">7. ⚡ 互動工具：AI 晶片 Roofline Model 與算力頻寬精算器</a></li>
+            <li><a href="#future-semiconductor-battle">8. 半導體未來戰場：光子互連 (CPO)、晶圓級供電與 1nm 埃米時代</a></li>
+            <li><a href="#conclusion">9. 結語：異質運算時代的硬核工程師選型思考</a></li>
+          </ul>
+        </div>
+
+        <hr>
+
+        <!-- Section 1 -->
+        <h2 id="moore-law-bottleneck">1. 矽島戰國時代：摩爾定律極限、記憶體牆與先進封裝</h2>
+        <p>隨著 ChatGPT、Claude、DeepSeek 等大語言模型參數量從 70 億 (7B) 狂飆至 4,050 億 (405B) 乃至破兆，<strong>算力已實質成為現代文明的「新石油」</strong>。我們每天呼叫的 API、訓練的 LoRA、執行的 CUDA Kernel，最終都必須精確對應到半導體晶圓上的電晶體狀態切換。</p>
+
+        <p>然而，當前半導體產業正同時撞上三大致命的物理高牆：</p>
+
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>🧱 1. Dennard Scaling 崩潰與散熱牆</h4>
+            <p>1974 年提出的登納德縮放定律（Dennard Scaling）曾預言：電晶體尺寸縮小一半，功耗密度保持不變。但自 2005 年製程進入 90nm 以下後，<strong>量子穿隧效應導致靜態漏電流暴增</strong>。晶片熱通量密度已逼近核反應堆爐心（超過 100 W/cm²），CPU 時脈因此被死死鎖定在 5~6 GHz 無法突破。</p>
+          </div>
+
+          <div class="tech-card">
+            <h4>🧠 2. 馮·紐曼架構「記憶體牆 (Memory Wall)」</h4>
+            <p>過去 40 年間，運算單元 (FLOPs) 的速度提升了數萬倍，但 <strong>DRAM 記憶體頻寬的年增長率僅約 10%</strong>。在 LLM 生成 Token 時，每讀寫 1 個 Byte 所耗費的電能，是執行一次 16 位元浮點運算的 <strong>100 到 200 倍</strong>！算力再高，算力核心也只能乾等資料送達。</p>
+          </div>
+
+          <div class="tech-card">
+            <h4>📏 3. 光學光罩面積極限 (Reticle Limit)</h4>
+            <p>ASML 的高數值孔徑極紫外光 (EUV) 曝光機，其單次曝光面積上限約為 <strong>858 mm²</strong>。若製造單顆面積超過光罩極限的巨大晶片 (Monolithic Die)，邊角良率將慘跌至趨近於零，這使得單晶片算力遭遇物理尺寸天花板。</p>
+          </div>
+        </div>
+
+        <h3>先進封裝 (Advanced Packaging)：超越摩爾定律的救贖之道</h3>
+        <p>既然無法把單顆晶片做得更大，半導體巨頭們轉向了<strong>「先進封裝」</strong>——將大晶片切成多個小型模組（Chiplet / 小晶片），再透過微米級的微凸塊 (Micro-bumps) 與矽中介層 (Silicon Interposer) 高密度拼接在同一個載板上：</p>
         <ul>
-          <li><strong>消費級 - Core Ultra 系列 (Meteor Lake / Arrow Lake)：</strong>Intel 徹底放棄了單一宏大晶片 (Monolithic Die) 的設計，轉向 <strong>Foveros 3D 封裝技術</strong>。將 CPU、GPU、IO 與 NPU (神經網絡處理單元) 拆分成不同的 Tile (小晶片)，並交由不同製程代工 (包含台積電)。全新的架構導入了 <strong>NPU</strong>，正式宣示「AI PC」時代的到來，讓背景模糊、語音降噪與輕量 AI 推理能在極低功耗下運行。</li>
-          <li><strong>伺服器端 - Xeon 處理器 (Emerald Rapids / Granite Rapids)：</strong>Intel 的資料中心處理器強調的是<strong>「內建加速器 (Built-in Accelerators)」</strong>。除了強大的通用運算能力，Xeon 內建了 AMX (Advanced Matrix Extensions) 指令集，專門用來加速深度學習中的矩陣乘法，讓許多不需要龐大 GPU 的中小型 AI 推理任務，可以直接在 CPU 上高效完成。</li>
+          <li><strong>台積電 CoWoS (Chip-on-Wafer-on-Substrate)：</strong>全球 AI 晶片的生命線。將 GPU 核心與高頻寬記憶體 (HBM3e) 透過微米級矽中介層並排互連，目前已演進到 CoWoS-L（面積達到 3.3 倍光罩極限）。所有 NVIDIA H100、Blackwell B200 與 AMD MI300X 都高度爭搶此產能。</li>
+          <li><strong>台積電 SoIC (System-on-Integrated-Chips)：</strong>真正的 <strong>3D 晶圓級混合鍵合 (Hybrid Bonding)</strong>。沒有傳統凸塊，直接透過銅對銅 (Cu-Cu) 熔合垂直堆疊晶片，接點密度高達 10,000/mm² 以上，AMD 的 3D V-Cache 即依賴此技術。</li>
+          <li><strong>Intel Foveros & EMIB：</strong>Intel 的 3D 堆疊 (Foveros) 與嵌入式多晶片互連橋接 (EMIB)，成就了 Intel Core Ultra (Lunar Lake / Arrow Lake) 的小晶片瓦片架構。</li>
         </ul>
 
-        <h2>2. AMD：Zen 架構的奇蹟與多角化反擊</h2>
-        <p>AMD 在 Lisa Su (蘇姿丰) 的帶領下，憑藉 <strong>Zen 架構</strong> 完成了科技史上最經典的絕地大反攻。如今的 AMD 不僅在 CPU 領域與 Intel 平起平坐，在 GPU 領域更是唯一有能力挑戰 NVIDIA 的對手。</p>
-        
-        <h3>核心架構：Zen 5 與 MI300X</h3>
+        <hr>
+
+        <!-- Section 2 -->
+        <h2 id="intel-turnaround">2. Intel 的浴火反擊：IDM 2.0、Foveros 3D 封裝與 18A 製程</h2>
+        <p>作為 x86 架構的奠基者與昔日的霸主，Intel 在 14nm「++++」製程停滯與蘋果 M 系列轉向 ARM 架構後遭遇了空前挫折。執行長 Pat Gelsinger (基辛格) 提出了雄心勃勃的 <strong>IDM 2.0</strong> 戰略，一方面成立 Intel Foundry 晶圓代工事業，另一方面徹底顛覆內部處理器架構設計。</p>
+
+        <h3>2.1 架構巨變：瓦片化小晶片架構 (Tile Architecture)</h3>
+        <p>從代號 <strong>Meteor Lake</strong>、<strong>Lunar Lake (Core Ultra 200V)</strong> 到 <strong>Arrow Lake (Core Ultra 200S)</strong>，Intel 徹底向過去維持數十年的「單一宏大單晶片 (Monolithic)」告別，轉為高度解耦的模組化架構：</p>
         <ul>
-          <li><strong>消費級與伺服器 CPU - Ryzen 9000 & EPYC (Zen 5 架構)：</strong>AMD 是最早將 <strong>Chiplet (小晶片) 架構</strong>發揚光大的公司。透過將運算核心 (CCD) 與 I/O 核心 (IOD) 分離，AMD 能夠以極高的良率與超低的成本堆疊出 64 核甚至 128 核的怪獸級處理器。最新的 <strong>Zen 5 架構</strong>在 IPC (每時脈週期指令數) 上再次大幅提升，並強化了 AVX-512 向量運算能力，在資料中心與虛擬化市場攻城掠地。</li>
-          <li><strong>資料中心 GPU - Instinct MI300X：</strong>這是 AMD 針對 NVIDIA 發出的最強戰書。MI300X 採用了極其複雜的 3D 封裝技術，將 CPU 與 GPU 封裝在一起 (MI300A)，或是提供純 GPU 版本 (MI300X)。它提供了高達 <strong>192GB 的 HBM3 記憶體</strong>，這對於需要極大記憶體頻寬的 LLM (大型語言模型) 推理來說，是極大的優勢。</li>
+          <li><strong>運算瓦片 (Compute Tile)：</strong>採用最先進製程（部分甚至委外由台積電 N3B 代工），專注於極限 IPC 與高能效核心。</li>
+          <li><strong>圖形瓦片 (Graphics Tile)：</strong>搭載 Xe-LPG 架構 GPU，具備硬體級光線追蹤與 XMX (Xe Matrix eXtensions) AI 矩陣引擎。</li>
+          <li><strong>SoC 瓦片 (SoC Tile)：</strong>內建記憶體控制器、PCIe 5.0 匯流排，以及<strong>第三代神經網路處理器 (NPU)</strong>，提供超過 45 TOPS 的 INT8 本地算力，滿足微軟 Copilot+ PC 標準。</li>
+          <li><strong>記憶體整合封裝 (Memory on Package, MoP)：</strong>在 Lunar Lake 輕薄筆電架構上，Intel 首度將兩顆 LPDDR5X 快取晶片直接焊在 CPU 封裝基板上，延遲大幅降低，並為筆電機身省下 250 mm² 的主機板布線面積。</li>
         </ul>
 
-        <h2>3. NVIDIA：AI 時代的絕對霸主</h2>
-        <p>「皮衣刀客」黃仁勳帶領的 NVIDIA，如今已經是全球市值最高的公司之一。NVIDIA 的成功不僅僅是因為硬體，更是因為他們花了十幾年建立的 <strong>CUDA 軟體生態系</strong>，這是一道幾乎無法逾越的護城河。</p>
-        
-        <h3>核心架構：Hopper 與 Blackwell</h3>
+        <h3>2.2 伺服器 Xeon 6 與製程反擊戰：Intel 18A</h3>
+        <p>在資料中心領域，Intel 推出了雙軌戰略：專為超高併發雲端原生設計的 <strong>Sierra Forest (純 E-Core 效率核，最多 288 核)</strong> 與專注於高效能運算的 <strong>Granite Rapids (純 P-Core 效能核)</strong>，全系列支援 <strong>AMX (Advanced Matrix Extensions)</strong> 指令集，讓中小型 AI 推理任務無需昂貴的獨立 GPU 即可跑出媲美入門加速卡的效能。</p>
+        <p>而 Intel 扭轉戰局的最大賭注，是即將量產的 <strong>Intel 18A (1.8nm 等級)</strong> 製程。它導入了兩大顛覆性技術：</p>
+        <ol>
+          <li><strong>RibbonFET (GAA 全環繞柵極電晶體)：</strong>摒棄 FinFET，改用四層奈米薄片全包覆電流通道，徹底抑制奈米級漏電。</li>
+          <li><strong>PowerVia (背面供電技術 BSPDN)：</strong>全球首創將電源傳輸線路移至晶圓背面，正面完全留給高速訊號線。這解決了傳統供電壓降 (IR Drop) 難題，並使晶片運算頻率提升 6%，能效比改善 30%！</li>
+        </ol>
+
+        <hr>
+
+        <!-- Section 3 -->
+        <h2 id="amd-zen-revolution">3. AMD Zen 5 奇蹟與 3D 封裝：Chiplet 宗師與 MI300X/MI325X</h2>
+        <p>在執行長 Lisa Su (蘇姿丰) 博士的帶領下，AMD 展現了半導體歷史上最驚人的技術韌性。從瀕臨破產到今天在資料中心與遊戲市場全面壓制 Intel，其背後的靈魂支柱就是<strong>「Zen 架構」</strong>與<strong>「小晶片 (Chiplet)」哲學</strong>。</p>
+
+        <h3>3.1 小晶片 (Chiplet) 的成本降維打擊</h3>
+        <p>當 Intel 早期還在堅持製造 600 mm² 的昂貴大晶片時，AMD 率先將晶片拆解為：</p>
         <ul>
-          <li><strong>消費級 GPU - RTX 40 / 50 系列 (Ada Lovelace / Next-Gen)：</strong>除了傳統的 Rasterization (光柵化) 效能提升，NVIDIA 的核心競爭力在於 <strong>RT Core (光線追蹤)</strong> 與 <strong>Tensor Core (張量核心)</strong>。搭配 DLSS 3 (深度學習超級採樣) 技術，利用 AI 進行補幀，讓遊戲效能突破了硬體的物理限制。</li>
-          <li><strong>資料中心 AI 巨獸 - Blackwell 架構 (B200 / GB200)：</strong>繼 H100 統治世界後，NVIDIA 推出了新一代 Blackwell 架構。B200 包含了高達 2080 億個電晶體。最可怕的是 <strong>GB200 NVL72 系統</strong>，它將 36 個 Grace CPU 與 72 個 Blackwell GPU 透過 NVLink 串聯成一個「巨型 GPU」。這解決了訓練兆級參數模型 (如 GPT-4, GPT-5) 時，跨節點通訊延遲的致命痛點。NVIDIA 賣的已經不是晶片，而是整套 AI 基礎設施。</li>
+          <li><strong>CCD (Core Complex Die)：</strong>面積僅約 70 mm² 的運算核心晶粒，採用台積電最昂貴的頂級先進製程（Zen 5 採用 TSMC 4nm/3nm）。由於面積小，良率高達 90% 以上。</li>
+          <li><strong>cIOD (Central I/O Die)：</strong>將不隨製程縮小而受益的記憶體控制器、SATA、PCIe 等模組，放在成本便宜數倍的成熟製程（TSMC 6nm）晶粒上。</li>
+        </ul>
+        <p>透過 Infinity Fabric 總線互連，AMD 能像搭樂高積木一樣，用 8 個或 16 個 CCD 拼出 128 核心的 EPYC 伺服器怪物，成本只有對手的數分之一！</p>
+
+        <h3>3.2 遊戲神物：3D V-Cache 垂直混合鍵合技術</h3>
+        <p>AMD 的 <strong>Ryzen 7 7800X3D</strong> 與新一代 <strong>Ryzen 7 9800X3D</strong> 在全球 PC 遊戲圈被奉為無可撼動的「遊戲神晶片」，其核心技術在於 <strong>3D V-Cache</strong>：</p>
+        <p>傳統 CPU 的 L3 快取通常為 32MB。AMD 透過台積電的 <strong>SoIC 3D 垂直混合鍵合技術</strong>，把一片經過化學機械平坦化 (CMP) 研磨至僅數十微米厚的 <strong>64MB SRAM 晶粒</strong>，以分子間的凡德瓦力與銅對銅鍵合，直接垂直拍在 CCD 的正上方！</p>
+        <p>這樣一來，單一 CPU 核心複合體的 L3 快取總量暴增至 <strong>96MB ~ 128MB+</strong>。對於遊戲這種需要頻繁從記憶體載入紋理位置、骨架座標的任務，快取命中率 (Cache Hit Rate) 達到恐怖的 95% 以上，資料根本不需要遠赴記憶體讀取，直接在片上完成，一舉擊碎記憶體牆！</p>
+
+        <h3>3.3 AI GPU 終極戰神：Instinct MI300X 與 MI325X</h3>
+        <p>面對 NVIDIA 的統治，AMD 祭出了目前業界封裝複雜度最高的 AI 晶片——<strong>Instinct MI300X</strong>：</p>
+        <ul>
+          <li><strong>3D + 2.5D 極限封裝：</strong>由 4 顆 6nm I/O 晶粒作為底座，上方垂直堆疊 8 顆 5nm 加速運算晶粒 (XCD)，周圍環繞 8 顆高頻寬記憶體 (HBM3)。</li>
+          <li><strong>記憶體容量輾壓：</strong>MI300X 搭載高達 <strong>192GB HBM3</strong>（新一代 MI325X 更是高達 <strong>256GB HBM3e</strong>，頻寬達 6 TB/s）。相較 NVIDIA H100 的 80GB，AMD 單張卡就能完整塞入一個 Meta Llama 3.1 70B 浮點模型，在多卡分散式推理時能省下大量張量並行 (Tensor Parallelism) 的跨節點傳輸消耗。</li>
+          <li><strong>ROCm 軟體生態：</strong>AMD 正透過 ROCm 6.x 與開源社群緊密合作，透過 Triton 與 PyTorch 原生適配，積極突破 CUDA 獨占壁壘。</li>
         </ul>
 
-        <h2>4. ASIC (特殊應用積體電路)：為單一目標而生的終極武器</h2>
-        <p>通用 CPU (如 Intel/AMD) 什麼都能做，但效率普通；GPU (如 NVIDIA) 擅長並行矩陣運算，效率極高。但如果你「只」想做一件特定的事 (例如：只做 Transformer 模型的推理，或只挖某種加密貨幣)，那你需要的就是 <strong>ASIC (Application-Specific Integrated Circuit)</strong>。</p>
-        
-        <h3>核心架構：拋棄通用性，換取極致的效能功耗比</h3>
+        <hr>
+
+        <!-- Section 4 -->
+        <h2 id="nvidia-ai-empire">4. NVIDIA AI 霸權帝國：Blackwell B200、NVLink 5 與 GB200 NVL72</h2>
+        <p>市值突破數兆美元的 NVIDIA，在執行長黃仁勳（Jensen Huang）的領導下，早已超越了傳統顯示卡製造商的定義。NVIDIA 的本質是一家<strong>「垂直整合全棧 AI 運算系統架構公司」</strong>。</p>
+
+        <h3>4.1 Blackwell B200 架構：雙晶粒 10TB/s NV-HBI 互連</h3>
+        <p>單一晶片面積已經碰到了 858 mm² 的物理光罩上限，NVIDIA 的工程師在 <strong>Blackwell B200</strong> 展現了極致工程妥協：</p>
+        <ol>
+          <li>製造兩顆達到物理光罩極限大小的 GPU 晶粒（各自包含約 1,040 億個電晶體，由台積電 4NP 特規製程打造）。</li>
+          <li>使用 <strong>NV-HBI (NV-HighBandwidth Interface)</strong> 專屬超低延遲介面將兩顆晶粒並排封裝，<strong>互連頻寬達到駭人的 10 TB/s</strong>！</li>
+          <li>這讓兩顆晶粒在軟體與 CUDA 開發者眼中，完全就是「同一顆連續統一記憶體空間的巨大 GPU」。整顆 B200 整合 192GB HBM3e，記憶體頻寬達 8 TB/s，FP4 精度峰值算力高達 <strong>20 PFLOPS (千萬億次浮點運算)</strong>！</li>
+        </ol>
+
+        <h3>4.2 第二代 Transformer 引擎與 FP4 精度革命</h3>
+        <p>訓練大模型使用 FP16 或 BF16，而在超大規模推理時，精度往往過剩。Blackwell 導入了全新的 <strong>第二代 Transformer Engine</strong>，支援微小格式浮點數 <strong>FP4</strong> 與 <strong>FP8</strong>：</p>
+        <p>透過逐層動態微縮 (Micro-scaling) 演算法，在幾乎不損失模型回答品質的前提下，將權重儲存空間縮減為 FP16 的四分之一，推論吞吐量暴增 4 倍！</p>
+
+        <h3>4.3 真正的護城河：GB200 NVL72 液冷超級電腦與 NVLink 5</h3>
+        <p>許多競爭對手試圖在單顆晶片的跑分上超越 NVIDIA，但 NVIDIA 真正的殺手鐧在於<strong>「叢集網路互連 (Scale-Up Networking)」</strong>：</p>
+
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>🌐 NVLink 5 雙向 1.8 TB/s 頻寬</h4>
+            <p>傳統 PCIe 5.0 x16 雙向頻寬僅 128 GB/s，而第 5 代 NVLink 提供 <strong>1,800 GB/s</strong> 雙向極速頻寬，是 PCIe 的 14 倍以上！配合 NVLink Switch 晶片，跨 GPU 資料搬移幾無延遲。</p>
+          </div>
+          <div class="tech-card">
+            <h4>❄️ GB200 NVL72 全水冷機櫃</h4>
+            <p>將 36 個 Grace ARM 處理器與 72 個 Blackwell B200 GPU 整合進單一標準機櫃。背後連接超過 <strong>5,000 條全銅直連纜線 (Copper Pass-Through)</strong>，總長度超過 2 英里，整機具備 13.5TB 超高速 HBM3e 共享池，總算力高達 <strong>1.4 ExaFLOPS (百億億次)</strong>！</p>
+          </div>
+        </div>
+
+        <p>這解決了當前 GPT-5 級別數兆參數巨型模型訓練與推理時，過去仰賴 InfiniBand 網路卡導致的跨機節點延遲噩夢。NVIDIA 賣的不再是一張張顯示卡，而是直接出貨整櫃整機的「AI 發電廠」。</p>
+
+        <hr>
+
+        <!-- Section 5 -->
+        <h2 id="asic-custom-silicon">5. ASIC 與客製化晶片浪潮：Google TPU、Groq LPU 與雲端巨頭造芯</h2>
+        <p>通用 CPU 具備最複雜的控制單元，什麼都能做，但算力能效比低；通用 GPU 具備極強的並行浮點運算能力，但仍需負擔龐大的指令解碼與調度開銷。如果工程師的目的<strong>「只為了加速特定神經網路運算」</strong>，那麼拋棄一切通用包袱的 <strong>ASIC (特殊應用積體電路)</strong> 便是終極答案。</p>
+
+        <h3>5.1 Google TPU (Tensor Processing Unit)：脈動陣列十年磨一劍</h3>
+        <p>Google 是全球最早意識到「不能被 GPU 綁架」的巨頭。早在 2015 年，Google 就部署了 TPUv1，至今已迭代至 <strong>TPUv5p</strong> 與最新第六代 <strong>Trillium (TPUv6)</strong>：</p>
         <ul>
-          <li><strong>Google TPU (Tensor Processing Unit)：</strong>Google 很早就意識到不能完全依賴 NVIDIA，於是開發了專為 TensorFlow 與矩陣乘法設計的 TPU。最新的 TPUv5 在互連頻寬 (ICI) 上有著巨大優勢，是 Google 訓練 Gemini 模型的底層基石。</li>
-          <li><strong>Groq (LPU - Language Processing Unit)：</strong>近期爆紅的 Groq 採用了極端的架構設計：<strong>完全放棄外部記憶體 (如 HBM)，將所有模型權重全部塞入晶片內建的 SRAM (靜態隨機存取記憶體)</strong>。SRAM 的速度極快，這讓 Groq 在生成 LLM 文字時，能達到每秒幾百甚至上千 Token 的恐怖速度，完全輾壓 NVIDIA 的 GPU 推理速度。雖然成本極高且模型容量受限，但展示了 ASIC 的極致潛力。</li>
-          <li><strong>AWS Inferentia / Trainium：</strong>雲端巨頭自己開發的客製化晶片，主要目的是降低大規模部署 AI 服務時的硬體與耗電成本。</li>
+          <li><strong>脈動陣列 (Systolic Array) 架構：</strong>傳統 CPU/GPU 每次做乘加運算都要讀寫暫存器堆。TPU 的矩陣乘法單元 (MXU) 採用脈動陣列設計——資料從陣列一端灌入，在 128×128 的二維計算單元中如同血液般「一波波向右、向下流動傳遞」，中途完全不存回快取，計算完成後才輸出。資料重用率極高，能效比驚人。</li>
+          <li><strong>光學電路交換機 (Optical Circuit Switch, OCS)：</strong>Google 的超級優勢在於將上萬顆 TPU 透過「微機電 (MEMS) 反射鏡與光纖」直接在光學層面動態重新組態拓撲結構，訓練 Gemini 旗艦模型時完全不依賴傳統昂貴的電訊號交換機。</li>
         </ul>
 
-        <h2>硬核對決：CPU vs GPU vs ASIC</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>硬體類型</th>
-              <th>代表產品</th>
-              <th>架構特性</th>
-              <th>最強優勢</th>
-              <th>最弱劣勢</th>
-              <th>最佳應用場景</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>通用 CPU</strong></td>
-              <td>Intel Core/Xeon, AMD Ryzen/EPYC</td>
-              <td>極度複雜的控制邏輯、大容量快取、少數強大核心</td>
-              <td>通用性最強、分支預測準確、適合循序執行</td>
-              <td>並行運算能力極差、矩陣運算效率低</td>
-              <td>作業系統、資料庫、Web 後端、複雜業務邏輯</td>
-            </tr>
-            <tr>
-              <td><strong>GPU</strong></td>
-              <td>NVIDIA RTX/Blackwell, AMD Radeon/Instinct</td>
-              <td>成千上萬個簡單核心、專注於浮點與矩陣運算</td>
-              <td>強大的平行運算能力、極高記憶體頻寬</td>
-              <td>控制邏輯弱、不擅長頻繁的分支跳轉 (If-Else)</td>
-              <td>遊戲渲染、AI 模型訓練 (Training)、科學模擬</td>
-            </tr>
-            <tr>
-              <td><strong>ASIC</strong></td>
-              <td>Google TPU, Groq LPU, 礦機晶片</td>
-              <td>將特定演算法直接「燒」成硬體電路，沒有通用指令集</td>
-              <td>在特定任務下的效能與功耗比 (Perf/Watt) 舉世無雙</td>
-              <td>毫無彈性，一旦演算法改變，晶片直接變廢鐵</td>
-              <td>AI 專用推理 (Inference)、比特幣挖礦、影片編碼加速</td>
-            </tr>
-          </tbody>
-        </table>
+        <h3>5.2 Groq LPU (Language Processing Unit)：純 SRAM 極速推理神話</h3>
+        <p>在 AI 社群引發震動的 <strong>Groq</strong>，採用了極度激進的硬體設計哲學：</p>
+        <p><em>「為什麼 LLM 推理會卡頓？因為從 HBM 搬資料太慢了！那就把外部記憶體徹底拔掉！」</em></p>
+        <ul>
+          <li><strong>片上狂塞 230MB SRAM：</strong>Groq LPU 晶片上完全沒有 HBM 或 DDR 記憶體，只焊接超高速的 <strong>SRAM (靜態隨機存取記憶體)</strong>，內部頻寬高達 <strong>80 TB/s</strong>（是 H100 的 24 倍）。</li>
+          <li><strong>軟體編譯器接管一切：</strong>Groq 拋棄了一切硬體分支預測器、亂序執行引擎與快取階層。晶片上的每一個時脈週期要執行什麼指令、資料要在哪微秒抵達哪個運算核心，全部在編譯時期由軟體算死（確定性排程 Deterministic Execution）。</li>
+          <li><strong>結果：</strong>產生文字的速度達到每秒 <strong>500 到 1,000+ Tokens</strong>，讓使用者感受不到任何生成延遲。缺點是單顆晶片只能放 230MB 權重，要跑 70B 模型必須串聯數百張 LPU 卡，硬體建造成本極高。</li>
+        </ul>
 
-        <h2>總結：算力的未來走向</h2>
-        <p>晶片戰爭已經從單純的「時脈與製程之爭」演變成<strong>「架構、封裝與軟體生態系的全面戰爭」</strong>。Intel 與 AMD 正在努力將 AI 運算 (NPU/加速器) 融入通用 CPU 中；NVIDIA 則持續用 NVLink 與 CUDA 擴大其在資料中心的統治地位；而 Google、AWS 與各類新創公司，則試圖用極致特化的 ASIC 架構，在龐大的 AI 推理市場中撕開缺口。</p>
-        <p>對於開發者而言，未來的運算環境將是<strong>異質運算 (Heterogeneous Computing)</strong> 的天下。了解這些底層硬體的特性，將幫助我們寫出更高效、更貼近硬體極限的優雅程式碼。</p>
+        <h3>5.3 Cerebras WSE-3：整張 12 吋晶圓做成一顆晶片！</h3>
+        <p>如果說 Groq 嫌晶片內 SRAM 不夠大，那麼 <strong>Cerebras</strong> 的做法更是瘋狂：<strong>「晶圓級引擎 (Wafer-Scale Engine)」</strong>：</p>
+        <p>傳統半導體廠會將一張 12 吋晶圓切割成數百顆晶片。Cerebras <strong>完全不切割整張晶圓</strong>，透過突破光罩接合限制，直接在單一晶圓上蝕刻出：</p>
+        <ul>
+          <li><strong>4 兆個電晶體</strong>（相比 B200 僅 2,080 億個）。</li>
+          <li><strong>90 萬個 AI 最佳化核心</strong>。</li>
+          <li><strong>44GB 超高速片上 SRAM 記憶體</strong>，內部片上頻寬達到驚人的 <strong>21 PB/s (每秒 2.1 萬 TB)</strong>！</li>
+        </ul>
+
+        <h3>5.4 雲端三大巨頭的「去 NVIDIA 化」自研自救</h3>
+        <p>由於 NVIDIA GPU 價格居高不下且供不應求，三大雲端服務商 (CSP) 紛紛投入自有矽晶片研發：</p>
+        <ul>
+          <li><strong>Amazon AWS：</strong>打造專注於訓練的 <strong>Trainium 2</strong> 與推理晶片 <strong>Inferentia 2</strong>，在 EC2 租用成本較同級 GPU 降低 40%~50%。</li>
+          <li><strong>微軟 Azure：</strong>發布 <strong>Maia 100 AI 加速晶片</strong> 與 <strong>Cobalt 100 ARM CPU</strong>，專為 OpenAI 大規模運算工作負載量身訂做。</li>
+          <li><strong>Meta：</strong>開發 <strong>MTIA (Meta Training and Inference Accelerator)</strong>，針對其龐大的 Facebook/Instagram 演算法推薦系統進行極致省電的最佳化。</li>
+        </ul>
+
+        <hr>
+
+        <!-- Section 6 -->
+        <h2 id="architecture-comparison-table">6. 四大架構全維度橫向終極評測大表</h2>
+        <p>理解四大運算陣營的底層差異，是現代架構師進行系統設計與硬體選型的核心前提：</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>指標維度</th>
+                <th>通用 CPU (Intel / AMD)</th>
+                <th>圖形與 AI GPU (NVIDIA)</th>
+                <th>專用 ASIC (Google TPU / Groq)</th>
+                <th>邊緣 NPU (Apple / Qualcomm / Intel)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>架構設計哲學</strong></td>
+                <td>低延遲、複雜控制流、強大的單執行緒循序執行</td>
+                <td>高吞吐量、海量 SIMT 執行緒並行矩陣運算</td>
+                <td>極致特化、拋棄一切非必要通用邏輯與快取</td>
+                <td>超低功耗、固定架構模型運算、端側電池續航優先</td>
+              </tr>
+              <tr>
+                <td><strong>代表晶片型號</strong></td>
+                <td>Intel Core Ultra / Xeon 6<br>AMD Ryzen 9000 / EPYC</td>
+                <td>NVIDIA H100 / Blackwell B200<br>AMD MI300X</td>
+                <td>Google TPUv5p / v6<br>Groq LPU / Cerebras WSE-3</td>
+                <td>Apple M4 Neural Engine<br>高通 Snapdragon X NPU</td>
+              </tr>
+              <tr>
+                <td><strong>主記憶體架構</strong></td>
+                <td>DDR5 / LPDDR5X (頻寬約 50 ~ 100 GB/s)</td>
+                <td>HBM3 / HBM3e (頻寬約 3.3 ~ 8.0 TB/s)</td>
+                <td>TPU: HBM3 / Groq: 純片上 SRAM (80 TB/s)</td>
+                <td>統一記憶體架構 UMA (頻寬 100 ~ 800 GB/s)</td>
+              </tr>
+              <tr>
+                <td><strong>軟體開發難度與生態</strong></td>
+                <td><span class="badge-pill badge-green">極度成熟 (C++, Python, x86/ARM)</span></td>
+                <td><span class="badge-pill badge-green">霸權 (CUDA, TensorRT, PyTorch 原生)</span></td>
+                <td><span class="badge-pill badge-amber">中等 (依賴專屬編譯器 XLA / Compiler)</span></td>
+                <td><span class="badge-pill badge-blue">框架受限 (CoreML, ONNX, QNN)</span></td>
+              </tr>
+              <tr>
+                <td><strong>靈活度與算法變更適應力</strong></td>
+                <td><span class="badge-pill badge-green">100% 任意代碼皆可執行</span></td>
+                <td><span class="badge-pill badge-green">極高 (可隨時更新 CUDA Kernel)</span></td>
+                <td><span class="badge-pill badge-rose">極低 (算法架構劇變則效率腰斬)</span></td>
+                <td><span class="badge-pill badge-amber">中等 (算子支援度有限)</span></td>
+              </tr>
+              <tr>
+                <td><strong>能效比 (TOPS / Watt)</strong></td>
+                <td>1x (基準，能效比最低)</td>
+                <td>10x ~ 30x (針對矩陣運算優化)</td>
+                <td><strong>50x ~ 100x (極致特化)</strong></td>
+                <td><strong>40x ~ 80x (極致低電壓運作)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>最佳應用場景</strong></td>
+                <td>作業系統核心、資料庫事務、Web 後端、分支邏輯</td>
+                <td><strong>大模型訓練 (Training)、多模態、通用 AI 推理</strong></td>
+                <td><strong>特定雲端模型超大規模推理與超低延遲生成</strong></td>
+                <td>手機/筆電端語音辨識、視訊背景虛化、輕量即時感知</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <!-- Section 7: Interactive Roofline Model -->
+        <h2 id="interactive-roofline-calc">7. ⚡ 互動工具：AI 晶片 Roofline Model 與算力頻寬精算器</h2>
+        <p>在高效能運算 (HPC) 與深度學習中，<strong>Roofline 模型 (屋頂模型)</strong> 是判斷系統究竟是<strong>「算力受限 (Compute Bound)」</strong>還是<strong>「記憶體頻寬受限 (Memory Bound)」</strong>的黃金標準。</p>
+        <p>透過下方實戰模擬器，選定晶片與模型任務，即時評估推論極限與瓶頸所在：</p>
+
+        <div class="interactive-explorer-box">
+          <div class="exp-title">
+            <span>🧮 AI 加速晶片運算瓶頸與吞吐量即時試算器</span>
+          </div>
+
+          <div class="sim-controls">
+            <div class="sim-control-group">
+              <label for="calc-chip" class="sim-label">🖥️ 選擇運算晶片：</label>
+              <select id="calc-chip" class="sim-select">
+                <option value="b200" selected>NVIDIA Blackwell B200 (20 PFLOPS FP4, 8 TB/s HBM3e)</option>
+                <option value="h100">NVIDIA H100 SXM5 (4 PFLOPS FP8, 3.35 TB/s HBM3)</option>
+                <option value="mi300x">AMD Instinct MI300X (2.6 PFLOPS FP8, 5.3 TB/s HBM3)</option>
+                <option value="tpu_v5p">Google TPU v5p (459 TFLOPS BF16, 4.8 TB/s HBM2e)</option>
+                <option value="groq">Groq LPU (SRAM 純片上, 80 TB/s 片上頻寬)</option>
+                <option value="ryzen9">AMD Ryzen 9 9950X CPU (AVX-512, 80 GB/s DDR5)</option>
+                <option value="m4max">Apple M4 Max (16-Core CPU, 40-Core GPU, 546 GB/s UMA)</option>
+              </select>
+            </div>
+
+            <div class="sim-control-group">
+              <label for="calc-task" class="sim-label">🤖 選擇模型與運算階段：</label>
+              <select id="calc-task" class="sim-select">
+                <option value="decode_70b" selected>Llama-3.1-70B 文本生成 (Decode 階段 - 單 Token 產生)</option>
+                <option value="prefill_70b">Llama-3.1-70B 長文本理解 (Prefill 階段 - 16K 上下文)</option>
+                <option value="decode_8b">Llama-3.1-8B 輕量模型即時問答 (Decode 階段)</option>
+                <option value="train_405b">405B 超大模型分散式預訓練 (Training 階段)</option>
+              </select>
+            </div>
+
+            <div class="sim-control-group">
+              <label for="calc-quant" class="sim-label">⚖️ 權重精度格式：</label>
+              <select id="calc-quant" class="sim-select">
+                <option value="4" selected>FP4 / INT4 (0.5 Byte / 參數)</option>
+                <option value="8">FP8 / INT8 (1.0 Byte / 參數)</option>
+                <option value="16">FP16 / BF16 (2.0 Bytes / 參數)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sim-results-grid">
+            <div class="sim-res-card">
+              <div class="sim-res-label">任務運算強度 (Arithmetic Intensity)</div>
+              <div id="res-intensity" class="sim-res-value">2.0 FLOPs/B</div>
+              <div class="sim-res-desc">每次記憶體搬移執行的浮點次數</div>
+            </div>
+
+            <div class="sim-res-card">
+              <div class="sim-res-label">當前主要物理瓶頸</div>
+              <div id="res-bottleneck" class="sim-res-value" style="color:#ef4444;">頻寬瓶頸 (Memory Wall)</div>
+              <div class="sim-res-desc">受限於記憶體傳輸速率而非算力</div>
+            </div>
+
+            <div class="sim-res-card">
+              <div class="sim-res-label">理論每秒生成速率 (Token/s)</div>
+              <div id="res-tokens" class="sim-res-value" style="color:#38bdf8;">228 T/s</div>
+              <div class="sim-res-desc">單晶片理論最高生成速度</div>
+            </div>
+
+            <div class="sim-res-card">
+              <div class="sim-res-label">硬體算力利用率 (MFU)</div>
+              <div id="res-utilization" class="sim-res-value">4.2 %</div>
+              <div class="sim-res-desc">由於記憶體搬移，絕大部分算力處於等待狀態</div>
+            </div>
+          </div>
+
+          <div id="roofline-explanation" style="margin-top:1.2rem; background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.1rem; font-size:0.95rem; line-height:1.7;">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Section 8 -->
+        <h2 id="future-semiconductor-battle">8. 半導體未來戰場：光子互連 (CPO)、晶圓級供電與 1nm 埃米時代</h2>
+        <p>當矽原子尺寸僅有 0.2 奈米時，半導體製程已逼近物理極限。未來五到十年，算力競賽將轉移到以下三大前沿技術：</p>
+
+        <h3>8.1 光電共封裝 (Co-Packaged Optics, CPO) 與矽光子 (Silicon Photonics)</h3>
+        <p>傳統晶片之間透過銅導線傳輸電訊號，當傳輸速率超過 100 Gbps 時，電訊號衰減極為嚴重，發熱驚人。<strong>矽光子技術將雷射與光學調變器直接封裝進晶片基板上</strong>，晶片之間不再「通電」，而是「發光」！傳輸頻寬提升 10 倍以上，通訊功耗直降 70%，徹底顛覆資料中心的交換機架構。</p>
+
+        <h3>8.2 全環繞柵極 (GAA) 與高數值孔徑 High-NA EUV</h3>
+        <p>台積電的 2nm (N2 / N2P) 與 1.6nm (A16) 製程，將全面由 FinFET 轉向 <strong>Nanosheet (奈米片 GAA)</strong>；Intel 則在 18A 導入 RibbonFET。搭配要價數億美元的 <strong>High-NA EUV 曝光機</strong>（數值孔徑提升至 0.55），讓半導體正式跨入以埃米 (Angstrom, 1Å = 0.1nm) 命名的全新時代。</p>
+
+        <h3>8.3 開源指令集 RISC-V 的地緣政治突圍</h3>
+        <p>在 x86 由 Intel/AMD 雙寡頭壟斷、ARM 授權費高昂且受地緣政治牽制的背景下，開源、精簡、無授權包袱的 <strong>RISC-V 指令集</strong> 成為全球造芯的新希望。Google 已將 RISC-V 列為 Android 一級支援架構；中國科技巨頭（阿里平頭哥、字節跳動）亦在自研雲端 AI 加速器中廣泛採用 RISC-V 作為控制晶片，半導體指令集的第三極正在迅速崛起。</p>
+
+        <hr>
+
+        <!-- Section 9 -->
+        <h2 id="conclusion">9. 結語：異質運算時代的硬核工程師選型思考</h2>
+        <p>回顧這場晶片戰爭，沒有任何單一架構能在所有場景中贏者全拿：</p>
+        <ul>
+          <li><strong>通用 CPU (Intel / AMD)：</strong>永遠是系統的指揮官與業務邏輯的基石，誰也無法替代。</li>
+          <li><strong>通用 GPU (NVIDIA)：</strong>憑藉 CUDA 生態與 NVLink 叢集網路，在多變的 AI 大模型訓練與前沿演算法探索中，依然是無可撼動的霸主。</li>
+          <li><strong>專用 ASIC (Google TPU / Groq / CSP 自研)：</strong>在業務模型架構收斂、追求極限成本效益與毫秒級超高吞吐的商業部署中，展現出無可比擬的每瓦性價比。</li>
+        </ul>
+        <p>未來的軟體架構，不再是「單靠升級 CPU 或換張新顯卡」就能解決問題。優秀的硬核工程師，必須懂得<strong>「如何將正確的運算負載，精準調度到最適合它的矽晶片上」</strong>——在異質計算 (Heterogeneous Computing) 的星辰大海中，誰理解底層矽晶片的物理極限，誰就掌握了架構的未來！</p>
       </article>
+
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
+      </div>
     </div>
   </main>
 
   <!-- =============== Footer =============== -->
-  <footer class="article-footer">
+  <footer class="site-footer">
     <div class="container">
-      <p>"AI" 硬核工程師 — Talk is cheap. Show me the code.</p>
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>"AI" 硬核工程師</h4>
+          <div class="footer-links">
+            <a href="./about.html">關於我</a>
+            <a href="./articles.html">所有文章</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
     </div>
   </footer>
 
@@ -197,5 +567,109 @@
   <script src="./js/bg-effects.js?v=10"></script>
   <script src="./js/script.js"></script>
   <script src="./js/enhancements.js"></script>
+
+  <!-- Interactive Roofline Calculator Script -->
+  <script>
+    (function() {
+      const chipSelect = document.getElementById('calc-chip');
+      const taskSelect = document.getElementById('calc-task');
+      const quantSelect = document.getElementById('calc-quant');
+
+      const resIntensity = document.getElementById('res-intensity');
+      const resBottleneck = document.getElementById('res-bottleneck');
+      const resTokens = document.getElementById('res-tokens');
+      const resUtilization = document.getElementById('res-utilization');
+      const explanationEl = document.getElementById('roofline-explanation');
+
+      // Chip specs database
+      const CHIPS = {
+        'b200': { name: 'NVIDIA Blackwell B200', peakFlops: 20000, bandwidth: 8000, type: 'GPU' },
+        'h100': { name: 'NVIDIA H100 SXM5', peakFlops: 3958, bandwidth: 3350, type: 'GPU' },
+        'mi300x': { name: 'AMD Instinct MI300X', peakFlops: 2610, bandwidth: 5300, type: 'GPU' },
+        'tpu_v5p': { name: 'Google TPU v5p', peakFlops: 459, bandwidth: 4800, type: 'ASIC' },
+        'groq': { name: 'Groq LPU (SRAM)', peakFlops: 750, bandwidth: 80000, type: 'ASIC' },
+        'ryzen9': { name: 'AMD Ryzen 9 9950X', peakFlops: 3.5, bandwidth: 80, type: 'CPU' },
+        'm4max': { name: 'Apple M4 Max (UMA)', peakFlops: 104, bandwidth: 546, type: 'SOC' }
+      };
+
+      // Task specs database
+      const TASKS = {
+        'decode_70b': { name: '70B 參數大模型單 Token 解碼 (Decode)', params: 70, intensity: 2.0, isDecode: true },
+        'prefill_70b': { name: '70B 參數 16K 長文本預填充 (Prefill)', params: 70, intensity: 280.0, isDecode: false },
+        'decode_8b': { name: '8B 參數輕量模型即時問答 (Decode)', params: 8, intensity: 2.0, isDecode: true },
+        'train_405b': { name: '405B 預訓練反向傳播 (Training)', params: 405, intensity: 120.0, isDecode: false }
+      };
+
+      function updateRoofline() {
+        const chip = CHIPS[chipSelect.value];
+        const task = TASKS[taskSelect.value];
+        const bytesPerParam = parseFloat(quantSelect.value) / 8.0;
+
+        // Effective memory needed to read model weights once
+        const modelSizeBytes = task.params * 1e9 * bytesPerParam;
+        const modelSizeGB = modelSizeBytes / (1024 * 1024 * 1024);
+
+        // Intensity in FLOPs/Byte
+        const intensity = task.intensity;
+        resIntensity.innerText = intensity.toFixed(1) + ' FLOPs/B';
+
+        // Roofline ridge point: Peak FLOPS / Bandwidth
+        const ridgePoint = (chip.peakFlops * 1e12) / (chip.bandwidth * 1e9);
+
+        let bottleneck = '';
+        let achievableFlops = 0;
+        let isMemoryBound = false;
+
+        if (intensity < ridgePoint) {
+          isMemoryBound = true;
+          bottleneck = '頻寬瓶頸 (Memory Bound)';
+          achievableFlops = (chip.bandwidth * 1e9) * intensity;
+        } else {
+          isMemoryBound = false;
+          bottleneck = '算力瓶頸 (Compute Bound)';
+          achievableFlops = chip.peakFlops * 1e12;
+        }
+
+        resBottleneck.innerText = bottleneck;
+        resBottleneck.style.color = isMemoryBound ? '#ef4444' : '#10b981';
+
+        // MFU calculation
+        const mfu = (achievableFlops / (chip.peakFlops * 1e12)) * 100;
+        resUtilization.innerText = mfu.toFixed(1) + ' %';
+        resUtilization.style.color = mfu > 40 ? '#10b981' : (mfu > 15 ? '#f59e0b' : '#ef4444');
+
+        // Token generation speed calculation (for decode phase)
+        let tokenRate = 0;
+        if (task.isDecode) {
+          // Tokens/sec = Memory Bandwidth (Bytes/s) / Model Size (Bytes)
+          tokenRate = (chip.bandwidth * 1e9) / modelSizeBytes;
+          resTokens.innerText = tokenRate >= 1000 ? Math.round(tokenRate) + ' T/s' : tokenRate.toFixed(1) + ' T/s';
+        } else {
+          // In prefill/training, tokens per second is compute bound
+          const flopsPerToken = task.params * 2 * 1e9;
+          tokenRate = achievableFlops / flopsPerToken;
+          resTokens.innerText = tokenRate >= 1000 ? Math.round(tokenRate) + ' T/s' : tokenRate.toFixed(1) + ' T/s';
+        }
+
+        // Detailed Explanation Note
+        let hint = `<strong>📌 Roofline 物理原理解析：</strong><br>`;
+        hint += `• 當前晶片 <strong>${chip.name}</strong> 的平衡轉折點 (Ridge Point) 為 <strong>${ridgePoint.toFixed(1)} FLOPs/Byte</strong>。<br>`;
+        if (isMemoryBound) {
+          hint += `• 目前任務運算強度為 <strong>${intensity} FLOPs/Byte</strong>，遠低於轉折點。這意味著<strong>晶片的算力核心大多在「挨餓 (Starving)」乾等記憶體把權重送達</strong>！<br>`;
+          hint += `• 模型權重體積約 <strong>${modelSizeGB.toFixed(1)} GB</strong>。提升頻寬（如 HBM3e 或 Groq 片上 SRAM）或將精度降至 FP4，能直接讓生成速度成倍翻漲！`;
+        } else {
+          hint += `• 目前任務運算強度高達 <strong>${intensity} FLOPs/Byte</strong>，已進入算力飽和區。<strong>記憶體頻寬已不再是瓶頸，決定速度的是核心 Tensor/Matrix 運算單元的極限效能</strong>！`;
+        }
+
+        explanationEl.innerHTML = hint;
+      }
+
+      chipSelect.addEventListener('change', updateRoofline);
+      taskSelect.addEventListener('change', updateRoofline);
+      quantSelect.addEventListener('change', updateRoofline);
+
+      updateRoofline();
+    })();
+  </script>
 </body>
 </html>

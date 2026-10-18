@@ -162,7 +162,7 @@
   },
   {
     "title": "晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘",
-    "excerpt": "深入剖析全球四大晶片巨頭與架構：Intel 的反擊、AMD 的 Zen 5 奇蹟、NVIDIA 的 Blackwell AI 霸權，以及 ASIC (如 Google TPU, Groq) 如何在特定領域達成算力輾壓。",
+    "excerpt": "從 Dennard Scaling 崩潰到 CoWoS/Foveros 先進封裝，全維度解析 Intel 18A RibbonFET、AMD Zen 5 / MI300X、NVIDIA Blackwell B200 / NVLink 5 及 Google TPU / Groq LPU，附 Roofline 算力頻寬試算器。",
     "url": "chip-wars-intel-amd-nvidia-asic.html",
     "tags": [
       "硬體架構",
@@ -170,7 +170,13 @@
       "AMD",
       "NVIDIA",
       "ASIC",
-      "AI 晶片"
+      "AI 晶片",
+      "Blackwell",
+      "Zen 5",
+      "CoWoS",
+      "先進封裝",
+      "TPU",
+      "Groq"
     ]
   },
   {
