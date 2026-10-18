@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>儲存裝置極速指南：HDD、2.5" SATA SSD、M.2 NVMe 與 USB 隨身碟/PSSD 規格與效能終極比較表 — "AI" 硬核工程師</title>
   <link rel="icon" href="data:,💾">
-  <meta name="description" content="最詳盡的儲存裝置全景技術指南：全維度橫向評測 3.5/2.5 吋 HDD 機械硬碟、2.5 吋 SATA SSD、M.2 (SATA / PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟 / PSSD 外接硬碟。深入剖析循序頻寬、4K 隨機 IOPS、存取延遲、CMR/SMR 避坑、AHCI vs NVMe 佇列架構、SLC Cache 掉速機制與 UASP 協定，附贈互動式傳輸時間模擬器與選購決策指南。">
+  <meta name="description" content="最詳盡的儲存裝置全景技術指南：全維度橫向評測 3.5/2.5 吋 HDD 機械硬碟、2.5 吋 SATA SSD、M.2 (2230/2242/2280 尺寸、PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟 / PSSD 外接硬碟。深入剖析循序頻寬、4K 隨機 IOPS、存取延遲、CMR/SMR 避坑、掌機與家機擴充改裝、AHCI vs NVMe 佇列架構、SLC Cache 掉速機制與 UASP 協定，附贈互動式傳輸時間模擬器與選購決策指南。">
   <meta name="canonical" href="https://ai-hardcore-engineer.com/storage-spec-performance-comparison.html">
   <meta property="og:title" content="儲存裝置極速指南：HDD、2.5&quot; SATA SSD、M.2 NVMe 與 USB 隨身碟/PSSD 規格與效能終極比較表 — &quot;AI&quot; 硬核工程師">
-  <meta property="og:description" content="全維度橫向評測 HDD、2.5 吋 SATA SSD、M.2 (PCIe 3.0/4.0/5.0 NVMe) 與 USB 隨身碟/PSSD。含規格效能大表、4K IOPS 與延遲比較、SLC 快取機制及互動式檔案傳輸模擬器。">
+  <meta property="og:description" content="全維度橫向評測 HDD、2.5 吋 SATA SSD、M.2 (2230/2242/2280、PCIe 3.0/4.0/5.0 NVMe) 與 USB 隨身碟/PSSD。含規格大表、M.2 尺寸規格詳解、4K IOPS 與延遲比較、SLC 快取機制及互動式檔案傳輸模擬器。">
   <meta property="og:url" content="https://ai-hardcore-engineer.com/storage-spec-performance-comparison.html">
   <meta property="og:type" content="article">
   <meta property="og:image" content="./images/storage-spec-performance-guide.jpg">
@@ -16,7 +16,7 @@
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="儲存裝置極速指南：HDD、2.5&quot; SATA SSD、M.2 NVMe 與 USB 隨身碟/PSSD 規格與效能終極比較表">
-  <meta name="twitter:description" content="全維度橫向評測 HDD、2.5 吋 SATA SSD、M.2 (PCIe 3.0/4.0/5.0 NVMe) 與 USB 隨身碟/PSSD。含規格效能大表、4K IOPS 與延遲比較、SLC 快取機制及互動式檔案傳輸模擬器。">
+  <meta name="twitter:description" content="全維度橫向評測 HDD、2.5 吋 SATA SSD、M.2 (2230/2242/2280、PCIe 3.0/4.0/5.0 NVMe) 與 USB 隨身碟/PSSD。含規格大表、M.2 尺寸規格詳解、4K IOPS 與延遲比較、SLC 快取機制及互動式檔案傳輸模擬器。">
   <meta name="twitter:image" content="./images/storage-spec-performance-guide.jpg">
   <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
@@ -435,8 +435,10 @@
           <span class="tag">儲存裝置</span>
           <span class="tag">HDD</span>
           <span class="tag">M.2 NVMe</span>
+          <span class="tag">M.2 2280/2230</span>
           <span class="tag">SATA SSD</span>
           <span class="tag">USB 3.2 / USB4</span>
+          <span class="tag">掌機家機擴充</span>
           <span class="tag">硬體架構</span>
           <span class="tag">效能評測</span>
         </div>
@@ -454,7 +456,7 @@
             <li><a href="#master-table">1. 全世代規格與效能極速大表</a></li>
             <li><a href="#deep-hdd">2. HDD 機械硬碟與 CMR/SMR 陷阱</a></li>
             <li><a href="#deep-sata">3. 2.5 吋 SATA SSD 與 AHCI 天花板</a></li>
-            <li><a href="#deep-m2">4. M.2 世代革命：Gen3 到 Gen5 狂飆</a></li>
+            <li><a href="#deep-m2">4. M.2 世代革命：Gen3 到 Gen5 狂飆與外觀尺寸規格 (2230/2242/2280)</a></li>
             <li><a href="#deep-usb">5. USB 隨身碟與外接 PSSD 協定迷思</a></li>
             <li><a href="#interactive-sim">6. 互動工具：檔案傳輸耗時模擬器</a></li>
             <li><a href="#buyer-matrix">7. 工程師終極選購與配置決策矩陣</a></li>
@@ -777,6 +779,154 @@
           <li>PCIe 5.0 NVMe 頂級旗艦的 4K QD1 讀取：約 <strong>95 ~ 110 MB/s</strong></li>
         </ul>
         <p>看到了嗎？從 SATA 到 PCIe 4.0，循序速度從 500 飆到 7,000（飆了 14 倍），但真實決定體感的 4K 單佇列速度只從 40 提高到 85（只差 2 倍左右）。從 Gen4 換到 Gen5，4K QD1 更是只提升了 15% 左右，但價格與發熱量卻翻倍！這就是「日常體驗邊際效益遞減」的核心物理真相。</p>
+
+        <!-- Section 4.4: M.2 Form Factors -->
+        <h3>4.4 M.2 物理外觀尺寸 (Form Factors) 與長度規格全解析：2230 / 2242 / 2280 / 22110</h3>
+        <p>除了上述的 PCIe 傳輸通道與 NVMe 協定世代之外，在實際選購、自行更換或升級遊戲掌機、輕薄筆電、PS5 家用主機或桌上型電腦時，另一個讓無數玩家與工程師容易買錯的關鍵硬體參數就是<strong>「M.2 SSD 的物理長度與尺寸規格 (Form Factor)」</strong>。</p>
+
+        <div class="img-container" style="text-align: center; margin: 2rem 0;">
+          <img loading="lazy" src="./images/m2-ssd-sizes-comparison.png" alt="M.2 SSD 固態硬碟長度與規格比較 (2230, 2242, 2280)" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid var(--border); background: #ffffff;">
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.8rem; font-weight: 500;">▲ M.2 SSD 固態硬碟常見長度規格與典型應用：2230 (掌機)、2242 (輕薄筆電) 與 2280 (桌機與家機)</p>
+        </div>
+
+        <h4>📐 1. 命名數字的幾何密碼 (Naming Convention)</h4>
+        <p>M.2 規格代號如 <code>2230</code>、<code>2242</code>、<code>2280</code> 並不是隨機命名的型號，而是<strong>直接反映 PCB 印刷電路板的「寬度」與「長度」（單位：毫米 mm）</strong>：</p>
+        <ul>
+          <li><strong>前兩位數字 (22)：</strong>代表 PCB 的<strong>寬度為 22 mm</strong>。目前消費級市場上絕大多數 M.2 固態硬碟的寬度均標準化為 22 mm（罕見特殊工控規格有 16mm 或 30mm）。</li>
+          <li><strong>後兩位（或三位）數字：</strong>代表 PCB 的<strong>長度 (Length)</strong>：
+            <ul>
+              <li><code>30</code> = 長度 <strong>30 mm</strong></li>
+              <li><code>42</code> = 長度 <strong>42 mm</strong></li>
+              <li><code>60</code> = 長度 <strong>60 mm</strong>（較為罕見，早期部分 OEM 筆電使用，現已邊緣化）</li>
+              <li><code>80</code> = 長度 <strong>80 mm</strong>（<strong>全球市場絕對主力與出貨量冠軍</strong>）</li>
+              <li><code>110</code> = 長度 <strong>110 mm</strong>（多見於企業級伺服器與資料中心）</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>🎮 2. 主流 M.2 尺寸規格深度剖析與應用場景</h4>
+        
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>🕹️ M.2 2230 (22 mm × 30 mm)</h4>
+            <p><strong>【核心用途】：遊戲掌機容量擴充 (Steam Deck、ROG Ally、Legion Go)</strong></p>
+            <p><strong>硬體特性與工程極限：</strong></p>
+            <ul style="font-size: 0.95rem; padding-left: 1.2rem; margin: 0.5rem 0;">
+              <li><strong>極致微型化</strong>：PCB 表面積僅 660 mm²，是所有 M.2 SSD 中最小巧的規格。</li>
+              <li><strong>DRAM-less + HMB 主流</strong>：因為空間極度有限，無法容納獨立的實體 DRAM 快取晶片，主要依賴 <strong>HMB (Host Memory Buffer)</strong> 技術借用主機 64MB 系統記憶體存放快閃記憶體對映表 (FTL)。</li>
+              <li><strong>顆粒密度與容量</strong>：多數僅能焊接 1 顆 3D NAND 晶片，主流容量為 512GB、1TB，少數採用極致堆疊或 QLC 技術達到 2TB。</li>
+              <li><strong>⚠️ 掌機升級避坑要點</strong>：<strong>務必選購「單面顆粒 (Single-sided)」</strong>！Steam Deck 與 ROG Ally 內部的屏蔽罩與主機板間隙只有零點幾公釐，若買成背面焊有元件的雙面顆粒 SSD，硬鎖會造成 PCB 彎曲形變，壓迫主機板供電電路造成短路損毀。</li>
+            </ul>
+          </div>
+
+          <div class="tech-card">
+            <h4>💻 M.2 2242 (22 mm × 42 mm)</h4>
+            <p><strong>【核心用途】：輕薄型筆電容量擴充 (Ultrabook、ThinkPad、Mini PC)</strong></p>
+            <p><strong>硬體特性與工程極限：</strong></p>
+            <ul style="font-size: 0.95rem; padding-left: 1.2rem; margin: 0.5rem 0;">
+              <li><strong>空間折衷產物</strong>：長度比 2230 多出 12 mm，為輕薄型商務筆電（如 Lenovo ThinkPad 系列的 WWAN/LTE 擴充槽、微軟早期 Surface）或迷你電腦 (Mini PC) 設計。</li>
+              <li><strong>零組件餘裕</strong>：部分 2242 產品具備充裕空間容納 2 顆快閃記憶體晶片或小容量獨立緩存。</li>
+              <li><strong>市場選型限制</strong>：零售消費市場的現貨選型遠少於 2280，每 GB 單價略高。常有玩家利用「2230 轉 2242 延長支架」直接將 2230 轉接安裝在 2242 插槽中。</li>
+            </ul>
+          </div>
+
+          <div class="tech-card">
+            <h4>🖥️ M.2 2280 (22 mm × 80 mm)</h4>
+            <p><strong>【核心用途】：電腦桌機主機板、電競筆電、家用遊戲機 (Sony PS5)</strong></p>
+            <p><strong>硬體特性與工程極限：</strong></p>
+            <ul style="font-size: 0.95rem; padding-left: 1.2rem; margin: 0.5rem 0;">
+              <li><strong>黃金工業標準</strong>：全球消費市場佔有率超過 90% 的絕對標準，擁有最完整的供應鏈競爭與最便宜的每 GB 價格。</li>
+              <li><strong>旗艦架構滿血配置</strong>：80 mm 的長度能完美佈局：
+                <br>① 高速 8 通道頂級主控晶片（支援 PCIe 4.0 / 5.0，如 Phison E26/E18、Samsung Elpis/Pascal）；
+                <br>② <strong>獨立實體 LPDDR4/DDR4 DRAM 高速緩存</strong>（提供 1GB:1TB 的快顯記憶體黃金比例，4K 隨機寫入性能大幅提升且不掉速）；
+                <br>③ 多達 2~4 顆大容量快閃記憶體顆粒，單條輕鬆達成 2TB、4TB 乃至 8TB 海量容量。</li>
+              <li><strong>成熟散熱生態</strong>：主機板原廠皆標配厚重的金屬散熱鎧甲或熱導管，亦相容各類第三方改裝散熱器。</li>
+            </ul>
+          </div>
+
+          <div class="tech-card">
+            <h4>🏢 M.2 22110 (22 mm × 110 mm)</h4>
+            <p><strong>【核心用途】：企業級伺服器、雲端運算節點、企業資料中心 (Data Center)</strong></p>
+            <p><strong>硬體特性與工程極限：</strong></p>
+            <ul style="font-size: 0.95rem; padding-left: 1.2rem; margin: 0.5rem 0;">
+              <li><strong>企業級專屬加長型</strong>：比常規 2280 長出整整 30 mm，通常一般家用主機板無法容納（少數高階工作站主機板會提供 22110 鎖孔）。</li>
+              <li><strong>PLP 掉電保護電容陣列 (Power Loss Protection)</strong>：多出的空間並非單純塞更多記憶體，而是焊接整排固態鉭質電容。當機房電力異常中斷時，電容瞬間放電支撐 30~50 毫秒，促使主控將 DRAM 緩存中未落盤的交易紀錄安全 Flush 至 NAND，避免資料庫結構損毀。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>🔌 3. M.2 防呆缺口金手指 (Keying)：千萬別買錯插槽協定！</h4>
+        <p>除了長度之外，M.2 的金手指缺口（稱為 <strong>Key</strong>）直接決定了電氣特性相容性：</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>金手指缺口類型</th>
+                <th>物理缺口針腳位置</th>
+                <th>支援匯流排與傳輸協定</th>
+                <th>外觀特徵與識別避坑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>M Key (主流旗艦)</strong></td>
+                <td>缺口位於第 59 到 66 腳位（右側缺口）</td>
+                <td><strong>PCIe x4 (Gen3/4/5) / SATA</strong></td>
+                <td>所有高速 NVMe SSD 的標準缺口。只能插在主機板的 M-Key 插槽上，能跑滿完整 PCIe 4 通道頻寬。</td>
+              </tr>
+              <tr>
+                <td><strong>B Key (少見/網卡)</strong></td>
+                <td>缺口位於第 12 到 19 腳位（左側缺口）</td>
+                <td>PCIe x2 / SATA / USB / SMBus</td>
+                <td>早期平價 SSD 或 4G/5G LTE 數據通訊模組。最高僅支援 PCIe 2 通道。</td>
+              </tr>
+              <tr>
+                <td><strong>B + M Key (雙缺口)</strong></td>
+                <td>同時具備 B Key 與 M Key 兩個缺口</td>
+                <td><strong>SATA 協定 / PCIe x2</strong></td>
+                <td><span class="badge-pill badge-rose">重大避坑點！</span> 市面上的 B+M Key 固態硬碟<strong>90% 以上是骨子裡走 SATA 協定的舊規格</strong>（速度極限僅 550 MB/s）。許多新款主機板 M.2 插槽已取消 SATA 線路，插上去會<strong>完全讀不到硬碟</strong>！</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>🛠️ 4. 家用主機 (PS5) 與遊戲掌機改裝實戰規格指南</h4>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>升級擴充裝置</th>
+                <th>官方指定 / 最佳 M.2 規格</th>
+                <th>推薦循序讀取速率</th>
+                <th>散熱尺寸與厚度物理硬性限制</th>
+                <th>市售熱門推薦選型</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sony PlayStation 5 (PS5 / PS5 Pro)</strong></td>
+                <td><strong>M.2 2280 PCIe 4.0 x4 NVMe</strong><br>(亦相容 2230/2242/2260/22110)</td>
+                <td><strong>≥ 5,500 MB/s</strong> (推薦 7,000+ MB/s)</td>
+                <td><strong style="color:#ef4444;">含散熱片總厚度 ≤ 11.25 mm</strong><br>（散熱片本體頂部不能超過 8.0 mm，底部不能超過 2.45 mm，否則金屬艙蓋無法閉合）</td>
+                <td>三星 990 Pro 含散熱片版、WD Black SN850X、美光 Crucial T500、KIOXIA Exceria Pro</td>
+              </tr>
+              <tr>
+                <td><strong>Valve Steam Deck (LCD / OLED)</strong></td>
+                <td><strong>M.2 2230 PCIe 3.0/4.0 x4 NVMe</strong></td>
+                <td>≥ 3,500 MB/s (受限於掌機主控，Gen3/Gen4 均可)</td>
+                <td><strong style="color:#ef4444;">嚴禁雙面顆粒！</strong><br>必須為單面佈線 (Single-Sided)，需套回原廠金屬抗干擾遮蔽金屬套管。建議挑選低功耗主控以延長掌機續航。</td>
+                <td>WD SN770M 2230、美光 Crucial P310 2230、Corsair MP600 Mini、KIOXIA BG5</td>
+              </tr>
+              <tr>
+                <td><strong>ASUS ROG Ally / Ally X</strong></td>
+                <td>ROG Ally: <strong>M.2 2230</strong><br>ROG Ally X: <strong>原生支援 M.2 2280</strong></td>
+                <td>≥ 5,000 MB/s (原生支援 PCIe 4.0 x4)</td>
+                <td>ROG Ally 舊款僅限 2230；Ally X 則已加大機身改為標準 2280 槽。注意風道不得被過厚副廠散熱片干涉。</td>
+                <td>ROG Ally: WD SN770M / Sabrent Rocket 2230<br>Ally X: 三星 990 Pro / WD SN850X 2280</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <hr>
 

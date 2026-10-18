@@ -5,7 +5,7 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 18 Oct 2026 01:29:29 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 01:41:15 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
@@ -72,12 +72,18 @@
     <title>儲存裝置極速指南：HDD、2.5&quot; SATA SSD、M.2 NVMe 與 USB 規格與效能終極比較表</title>
     <link>https://ai-hardcore-engineer.com/storage-spec-performance-comparison.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/storage-spec-performance-comparison.html</guid>
-    <description>全維度橫向評測 3.5&quot;/2.5&quot; HDD、2.5 吋 SATA SSD、M.2 (PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟/PSSD。含規格效能大表、4K IOPS 與延遲比較、SLC 快取機制、UASP 協定分析及互動式傳輸耗時模擬器。</description>
+    <description>全維度橫向評測 3.5&quot;/2.5&quot; HDD、2.5 吋 SATA SSD、M.2 (2230/2242/2280 尺寸、PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟/PSSD。含規格效能大表、M.2 尺寸規格詳解、PS5 與掌機擴充改裝、4K IOPS 與延遲比較、SLC 快取機制及互動式傳輸耗時模擬器。</description>
     <pubDate>Sun, 18 Oct 2026 00:00:00 +0000</pubDate>
     <category>儲存裝置</category>
     <category>HDD</category>
     <category>SSD</category>
     <category>M.2</category>
+    <category>M.2 2280</category>
+    <category>M.2 2230</category>
+    <category>M.2 2242</category>
+    <category>PS5擴充</category>
+    <category>Steam Deck</category>
+    <category>ROG Ally</category>
     <category>NVMe</category>
     <category>SATA</category>
     <category>PCIe 4.0</category>

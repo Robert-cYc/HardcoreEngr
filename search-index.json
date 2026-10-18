@@ -20,8 +20,8 @@
   {
     "url": "storage-spec-performance-comparison.html",
     "title": "儲存裝置極速指南：HDD、2.5\" SATA SSD、M.2 NVMe 與 USB 規格與效能終極比較表",
-    "excerpt": "全維度橫向評測 3.5\"/2.5\" HDD、2.5 吋 SATA SSD、M.2 (PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟/PSSD。含規格效能大表、4K IOPS 與延遲比較、SLC 快取機制、UASP 協定分析及互動式傳輸耗時模擬器。",
-    "tags": ["儲存裝置", "HDD", "SSD", "M.2", "NVMe", "SATA", "PCIe 4.0", "PCIe 5.0", "USB 3.2", "USB4", "Thunderbolt", "效能評測", "硬體指南", "教學"]
+    "excerpt": "全維度橫向評測 3.5\"/2.5\" HDD、2.5 吋 SATA SSD、M.2 (2230/2242/2280 尺寸、PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟/PSSD。含規格效能大表、M.2 尺寸規格詳解、PS5 與掌機擴充改裝、4K IOPS 與延遲比較、SLC 快取機制及互動式傳輸耗時模擬器。",
+    "tags": ["儲存裝置", "HDD", "SSD", "M.2", "M.2 2280", "M.2 2230", "M.2 2242", "PS5擴充", "Steam Deck", "ROG Ally", "NVMe", "SATA", "PCIe 4.0", "PCIe 5.0", "USB 3.2", "USB4", "Thunderbolt", "效能評測", "硬體指南", "教學"]
   },
   {
     "url": "json-architecture-guide.html",
