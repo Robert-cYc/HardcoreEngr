@@ -5,13 +5,32 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 18 Oct 2026 12:07:24 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 12:23:50 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>API 架構與原理完全解析：RESTful, GraphQL, gRPC, WebSocket 與架構選型實戰指南</title>
+    <link>https://ai-hardcore-engineer.com/api-architecture-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/api-architecture-guide.html</guid>
+    <description>從單體到分散式系統：深入剖析 RESTful 成熟度模型 Level 0-3 與冪等性、GraphQL AST 執行與 N+1 DataLoader 破解、gRPC Protobuf 二進位編碼、WebSocket 與 SSE (AI 串流)、限流演算法及互動式架構選型精算器。</description>
+    <pubDate>Sun, 18 Oct 2026 00:00:00 +0000</pubDate>
+    <category>API</category>
+    <category>RESTful</category>
+    <category>GraphQL</category>
+    <category>gRPC</category>
+    <category>WebSocket</category>
+    <category>SSE</category>
+    <category>Webhook</category>
+    <category>API Gateway</category>
+    <category>後端架構</category>
+    <category>分散式系統</category>
+    <category>限流演算法</category>
+    <category>OAuth 2.1</category>
+  </item>
   <item>
     <title>Libre Hardware Monitor 完全攻略：底層原理、HTTP JSON API、.NET 整合、WMI 自動化與硬體監控實戰</title>
     <link>https://ai-hardcore-engineer.com/libre-hardware-monitor-guide.html</link>

@@ -1,5 +1,11 @@
 [
   {
+    "url": "api-architecture-guide.html",
+    "title": "API 架構與原理完全解析：RESTful, GraphQL, gRPC, WebSocket 與架構選型實戰指南",
+    "excerpt": "從單體到分散式系統：深入剖析 RESTful 成熟度模型 Level 0-3 與冪等性、GraphQL AST 執行與 N+1 DataLoader 破解、gRPC Protobuf 二進位編碼、WebSocket 與 SSE (AI 串流)、限流演算法及互動式架構選型精算器。",
+    "tags": ["API", "RESTful", "GraphQL", "gRPC", "WebSocket", "SSE", "Webhook", "API Gateway", "後端架構", "分散式系統", "限流演算法", "OAuth 2.1"]
+  },
+  {
     "url": "libre-hardware-monitor-guide.html",
     "title": "Libre Hardware Monitor 完全攻略：底層原理、HTTP JSON API、.NET 整合、WMI 自動化與硬體監控實戰",
     "excerpt": "深度解析開源硬體監控神器 Libre Hardware Monitor：Ring 0 驅動與 MSR/Super I/O 底層讀取原理、/data.json HTTP Web Server 解析、Python 與 JS 跨語言串接、C# .NET SDK 整合與 WMI 自動化告警腳本，附互動式感測器模擬儀表板。",
