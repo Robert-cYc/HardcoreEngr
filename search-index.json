@@ -1,5 +1,11 @@
 [
   {
+    "url": "rtx-spark-vs-dgx-spark-guide.html",
+    "title": "RTX Spark vs DGX Spark 完全對決：Windows Laptop vs Linux 桌面級 AI 超級電腦架構評測與選型指南",
+    "excerpt": "深度橫向評測 NVIDIA GB10 Grace Blackwell 超級晶片兩大化身：RTX Spark (Windows on Arm 旗艦筆電) vs DGX Spark (Linux 個人 AI 超級電腦)。全面拆解 128GB 統一記憶體、1 Petaflop 算力、WSL2 與原生核心損耗、TDP 散熱牆，以及 ConnectX-7 雙機 256GB 跑 405B 模型，附顯存與推論速度精算器。",
+    "tags": ["NVIDIA", "GB10", "Grace Blackwell", "RTX Spark", "DGX Spark", "Windows on Arm", "DGX OS Linux", "統一記憶體", "ConnectX-7", "本地大模型", "硬體指南", "AI 晶片"]
+  },
+  {
     "url": "api-architecture-guide.html",
     "title": "API 架構與原理完全解析：RESTful, GraphQL, gRPC, WebSocket 與架構選型實戰指南",
     "excerpt": "從單體到分散式系統：深入剖析 RESTful 成熟度模型 Level 0-3 與冪等性、GraphQL AST 執行與 N+1 DataLoader 破解、gRPC Protobuf 二進位編碼、WebSocket 與 SSE (AI 串流)、限流演算法及互動式架構選型精算器。",
