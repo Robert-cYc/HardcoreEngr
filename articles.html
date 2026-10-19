@@ -1,27 +1,28 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>所有文章 — "AI" 硬核工程師</title>
-  <link rel="icon" href="data:,🎯">
-  <meta name="description" content="瀏覽所有技術文章，包含 Node.js、Linux、Mac、Git 指令教學、AI 模型比較與 Claude Code 使用指南。">
-  <meta name="canonical" href="https://ai-hardcore-engineer.com/articles.html">
-  <meta property="og:title" content="所有文章 — &quot;AI&quot; 硬核工程師">
-  <meta property="og:description" content="瀏覽所有技術文章，包含 Node.js、Linux、Mac、Git 指令教學、AI 模型比較與 Claude Code 使用指南。">
-  <meta property="og:url" content="https://ai-hardcore-engineer.com/articles.html">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
-  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
-  <meta property="og:locale" content="zh_TW">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="所有文章 — &quot;AI&quot; 硬核工程師">
-  <meta name="twitter:description" content="瀏覽所有技術文章，包含 Node.js、Linux、Mac、Git 指令教學、AI 模型比較與 Claude Code 使用指南。">
-  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
-  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>    <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>所有文章 — "AI" 硬核工程師</title>
+<link href="data:,🎯" rel="icon"/>
+<meta content="瀏覽所有技術文章，包含 Node.js、Linux、Mac、Git 指令教學、AI 模型比較與 Claude Code 使用指南。" name="description"/>
+<meta href="https://ai-hardcore-engineer.com/articles.html" name="canonical"/>
+<meta content='所有文章 — "AI" 硬核工程師' property="og:title"/>
+<meta content="瀏覽所有技術文章，包含 Node.js、Linux、Mac、Git 指令教學、AI 模型比較與 Claude Code 使用指南。" property="og:description"/>
+<meta content="https://ai-hardcore-engineer.com/articles.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ai-hardcore-engineer.com/og-image.png" property="og:image"/>
+<meta content='"AI" 硬核工程師' property="og:site_name"/>
+<meta content="zh_TW" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content='所有文章 — "AI" 硬核工程師' name="twitter:title"/>
+<meta content="瀏覽所有技術文章，包含 Node.js、Linux、Mac、Git 指令教學、AI 模型比較與 Claude Code 使用指南。" name="twitter:description"/>
+<meta content="https://ai-hardcore-engineer.com/og-image.png" name="twitter:image"/>
+<script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script> <link href="https://ai-hardcore-engineer.com/feed.xml" rel="alternate" title="AI 硬核工程師 RSS" type="application/rss+xml"/>
+<link href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="./css/style.css" rel="stylesheet"/>
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -32,38 +33,36 @@
   </script>
 </head>
 <body>
-  <!-- =============== Header =============== -->
-  <header class="site-header" id="top">
-    <div class="waves" aria-hidden="true">
-      <canvas id="wave-canvas"></canvas>
-    </div>
-    <div class="container header-inner">
-      <div class="logo">
-        <div>"AI" 硬核工程師</div>
-        <div class="tagline">Talk is cheap. Show me the code</div>
-      </div>
-      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="nav">
-        <a href="./index.html">首頁</a>
-        <a href="./tech-news.html">科技新知</a>
-        <a href="./articles.html" class="active">文章</a>
-        <a href="./about.html">關於</a>
-        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
-        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- =============== Search Overlay =============== -->
-  <div class="search-overlay">
-    <div class="search-container">
-      <input type="text" placeholder="搜尋文章..." autocomplete="off">
-      <div class="search-results"></div>
-      <div class="search-close">按 Esc 關閉</div>
-    </div>
-  </div>
-
-  <style>
+<!-- =============== Header =============== -->
+<header class="site-header" id="top">
+<div aria-hidden="true" class="waves">
+<canvas id="wave-canvas"></canvas>
+</div>
+<div class="container header-inner">
+<div class="logo">
+<div>"AI" 硬核工程師</div>
+<div class="tagline">Talk is cheap. Show me the code</div>
+</div>
+<button aria-expanded="false" aria-label="選單" class="menu-toggle"><span></span><span></span><span></span></button>
+<nav class="nav">
+<a href="./index.html">首頁</a>
+<a href="./tech-news.html">科技新知</a>
+<a class="active" href="./articles.html">文章</a>
+<a href="./about.html">關於</a>
+<a aria-label="搜尋" class="nav-search-toggle" href="#">🔍</a>
+<a aria-label="切換深淺色模式" class="theme-toggle" href="#" id="theme-toggle">🌙</a>
+</nav>
+</div>
+</header>
+<!-- =============== Search Overlay =============== -->
+<div class="search-overlay">
+<div class="search-container">
+<input autocomplete="off" placeholder="搜尋文章..." type="text"/>
+<div class="search-results"></div>
+<div class="search-close">按 Esc 關閉</div>
+</div>
+</div>
+<style>
     .filter-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -109,1026 +108,948 @@
       font-size: 1.1rem;
     }
   </style>
-
-  <main>
-    <div class="container">
-      <section class="section-sm">
-        <h1 class="page-title">所有文章</h1>
-        <p class="page-subtitle">關於前端開發、後端技術、Git 與 AI 開發的筆記。</p>
-
-        <div class="filter-tabs" id="filter-tabs" role="group" aria-label="文章分類篩選">
-          <button class="filter-tab active" data-filter="all" id="filter-all">✦ 全部</button>
-          <button class="filter-tab" data-filter="ai" id="filter-ai">🤖 AI 與 Agent</button>
-          <button class="filter-tab" data-filter="terminal" id="filter-terminal">💻 終端機與系統</button>
-          <button class="filter-tab" data-filter="devops" id="filter-devops">🛠️ 開發與容器</button>
-          <button class="filter-tab" data-filter="network" id="filter-network">🌐 網路與雲端</button>
-          <button class="filter-tab" data-filter="tools" id="filter-tools">🔧 工具與設計</button>
-          <button class="filter-tab" data-filter="frontend" id="filter-frontend">⚛️ 前端開發</button>
-        </div>
-
-        <div class="article-grid" id="article-grid">
-
-          <!-- 2026-10-19 -->
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="./images/nas-storage-guide.jpg" alt="主流 NAS 終極解析：商業旗艦 vs 開源 DIY 全方位架構實戰評測指南">
-            <div class="article-content">
-              <h3>主流 NAS 終極解析：Synology, QNAP, Asustor 商業旗艦 vs TrueNAS, Unraid, PVE 開源 DIY 全方位架構實戰評測指南</h3>
-              <p class="article-excerpt">全維度深入剖析現代 NAS 儲存架構：從 3-2-1-1-0 備份準則、Btrfs CoW 快照與 ZFS Merkle Tree 自我修復、SHR 動態切片與 RAID-Z 擴容機制，到四大商業品牌（群暉 DSM、威聯通 QuTS hero、華芸 ADM、綠聯/極空間）及開源 DIY 方案（TrueNAS SCALE、Unraid、Proxmox VE + SAS HBA 直通）。內建互動式 NAS 儲存容量、RAID 容錯與重建時間試算器。</p>
-              <div class="article-meta">
-                <span>2026-10-19</span>
-                <span class="separator">·</span>
-                <span>38 分鐘閱讀</span>
-              </div>
-              <a href="./nas-storage-comparison.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-18 -->
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="./images/rtx-spark-vs-dgx-spark-guide.jpg" alt="RTX Spark vs DGX Spark 完全對決：Windows Laptop vs Linux 桌面級 AI 超級電腦">
-            <div class="article-content">
-              <h3>RTX Spark vs DGX Spark 完全對決：Windows Laptop vs Linux 桌面級 AI 超級電腦架構評測與選型指南</h3>
-              <p class="article-excerpt">深度橫向評測 NVIDIA GB10 Grace Blackwell 超級晶片兩大化身：RTX Spark (Windows on Arm 旗艦筆電) vs DGX Spark (Linux 個人 AI 超級電腦)。全面拆解 128GB 統一記憶體、1 Petaflop 算力、WSL2 與原生核心損耗、TDP 散熱牆，以及 ConnectX-7 雙機 256GB 跑 405B 模型，附顯存與推論速度精算器。</p>
-              <div class="article-meta">
-                <span>2026-10-18</span>
-                <span class="separator">·</span>
-                <span>28 分鐘閱讀</span>
-              </div>
-              <a href="./rtx-spark-vs-dgx-spark-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-16 -->
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="./images/tesla-roadster-trinity.jpg" alt="特斯拉第二代 Roadster 終極解密：Performance、Thrust 與 Rocket 三大版本">
-            <div class="article-content">
-              <h3>特斯拉第二代 Roadster 終極解密：Performance、Thrust 與 Rocket 三大版本功能與航太工程全剖析</h3>
-              <p class="article-excerpt">全維度解析全新 Tesla Roadster 2：Performance 底盤真空吸附風扇、Thrust 雙尾噴冷氣體推進器（0-60mph 0.81s），以及 Rocket 單座戰鬥座艙與全周邊 10 噴嘴 3D 姿態控制（0-60mph 0.59s / 4.64G）。附規格大表與彈射模擬器。</p>
-              <div class="article-meta">
-                <span>2026-10-16</span>
-                <span class="separator">·</span>
-                <span>25 分鐘閱讀</span>
-              </div>
-              <a href="./tesla-roadster-performance-thrust-rocket-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-16 -->
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="./images/video-interfaces-guide.jpg" alt="螢幕視訊介面終極指南：VGA、DVI、HDMI、DisplayPort 規格頻寬全方位比較表">
-            <div class="article-content">
-              <h3>螢幕視訊介面終極指南：VGA、DVI、HDMI、DisplayPort (DP) 規格頻寬與技術原理全方位比較表</h3>
-              <p class="article-excerpt">全維度橫向評測 VGA、DVI、HDMI (1.4/2.0/2.1b) 與 DisplayPort (1.2/1.4a/2.1) 及 Type-C DP Alt Mode。深入解析類比/數位訊號轉換、TMDS 與 FRL 編碼機制、DP 微封包與 MST 菊花鏈、DSC 視覺無損壓縮，附贈互動式顯示頻寬試算器。</p>
-              <div class="article-meta">
-                <span>2026-10-16</span>
-                <span class="separator">·</span>
-                <span>28 分鐘閱讀</span>
-              </div>
-              <a href="./video-cable-display-interfaces-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-16 -->
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="./images/storage-spec-performance-guide.jpg" alt="儲存裝置極速指南：HDD、SATA SSD、M.2 NVMe 與 USB 規格與效能比較表">
-            <div class="article-content">
-              <h3>儲存裝置極速指南：HDD、2.5" SATA SSD、M.2 NVMe 與 USB 規格與效能終極比較表</h3>
-              <p class="article-excerpt">全維度橫向評測 3.5"/2.5" HDD、2.5 吋 SATA SSD、M.2 (2230/2242/2280 尺寸、PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟/PSSD。含規格大表、M.2 尺寸規格詳解、PS5 與掌機擴充改裝、4K IOPS 與延遲比較及互動傳輸模擬器。</p>
-              <div class="article-meta">
-                <span>2026-10-16</span>
-                <span class="separator">·</span>
-                <span>26 分鐘閱讀</span>
-              </div>
-              <a href="./storage-spec-performance-comparison.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-16 -->
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="./images/json-architecture-guide.jpg" alt="JSON 核心架構與實戰完全攻略">
-            <div class="article-content">
-              <h3>JSON 核心架構與實戰完全攻略：語法規範、資料結構、序列化與反序列化、JSON Schema 驗證及跨語言操作避坑手冊</h3>
-              <p class="article-excerpt">全方位深入剖析 JSON：從底層語法結構、RFC 8259 規範、資料型別與失真陷阱，到跨語言（JavaScript、Python、Go）序列化與反序列化實戰、JSON Schema 契約驗證、LLM Structured Outputs 應用，以及大整數精度遺失、循環引用與串流解析等企業級避坑守則。</p>
-              <div class="article-meta">
-                <span>2026-10-16</span>
-                <span class="separator">·</span>
-                <span>28 分鐘深度閱讀</span>
-              </div>
-              <a href="./json-architecture-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-15 -->
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="./images/usb-evolution-guide.jpg" alt="USB 全世代硬核百科：從 USB 1.0 到 USB4、Type-C 與 240W 快充">
-            <div class="article-content">
-              <h3>USB 全世代硬核百科：從 USB 1.0、2.0 到 3.x、Type-C、USB4 與 240W PD 快充完整演進指南</h3>
-              <p class="article-excerpt">最完整的 USB 歷史技術全書：詳解 USB 1.0/1.1、USB 2.0、USB 3.x 換名之亂、Type-C 24-Pin 盲插架構、E-Marker 晶片、Alt Mode 影音輸出、USB PD 3.1 240W 快充、USB4 80Gbps 與 PAM3 編碼全世代演進。</p>
-              <div class="article-meta">
-                <span>2026-10-15</span>
-                <span class="separator">·</span>
-                <span>28 分鐘閱讀</span>
-              </div>
-              <a href="./usb-history-evolution-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-14 -->
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="./images/llm-quantization-guide.jpg" alt="LLM 命名學、參數量級與量化壓縮">
-            <div class="article-content">
-              <h3>大語言模型（LLM）命名學、參數量級與量化壓縮全攻略</h3>
-              <p class="article-excerpt">深度解析大語言模型命名代號規則（Instruct、MoE 8x7B、128K）、參數量級與顯存換算、模型壓縮三大流派，以及 GGUF、AWQ、GPTQ、EXL2 與 BitNet 1.58-bit 量化實戰對比。</p>
-              <div class="article-meta">
-                <span>2026-10-14</span>
-                <span class="separator">·</span>
-                <span>25 分鐘閱讀</span>
-              </div>
-              <a href="./llm-naming-quantization-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-13 -->
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="./images/pyinstaller-guide.jpg" alt="PyInstaller 完全操作指南">
-            <div class="article-content">
-              <h3>PyInstaller 完全操作指南：安裝、--onefile 與 --onedir 核心指令詳解、資源打包、動態 Hook 與除錯避坑手冊</h3>
-              <p class="article-excerpt">深入解析 Python 打包神器 PyInstaller：詳細介紹安裝方式、核心參數、sys._MEIPASS 與真實路徑解析、.spec 規格檔、動態 Hook 與 metadata 收集、Windows 多行程 Fork 炸彈防護、反編譯真相與 Cython/PyArmor 代碼保護，以及 GitHub Actions 多平台 CI/CD 自動化建置避坑實戰。</p>
-              <div class="article-meta">
-                <span>2026-10-13（更新）</span>
-                <span class="separator">·</span>
-                <span>28 分鐘深度閱讀</span>
-              </div>
-              <a href="./pyinstaller-python-packaging-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-13 -->
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="./images/slm-guide.jpg" alt="小型語言模型 (SLM) 全面概覽">
-            <div class="article-content">
-              <h3>小型語言模型 (SLM) 全面概覽：核心優勢、技術突破、主流家族、端側 NPU 與邊緣落地實戰指南</h3>
-              <p class="article-excerpt">深度解析小型語言模型（SLM）的崛起浪潮：探討 SLM 與 LLM 的核心差異、合成數據與知識蒸餾、思考型小模型（DeepSeek-R1 Distill / Phi-4）、主流家族全景、投機解碼與階梯式路由架構、端側 NPU 與 WebGPU 部署，以及在單張消費級顯卡上的 QLoRA 微調實戰。</p>
-              <div class="article-meta">
-                <span>2026-10-13（更新）</span>
-                <span class="separator">·</span>
-                <span>26 分鐘深度閱讀</span>
-              </div>
-              <a href="./slm-small-language-models-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-13 -->
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="./images/rag-guide.jpg" alt="RAG 技術完全攻略">
-            <div class="article-content">
-              <h3>RAG 技術完全攻略：核心原理、架構演進、關鍵元件與從零到落地實戰指南</h3>
-              <p class="article-excerpt">全面剖析檢索增強生成（RAG）技術：深入解析 Naive RAG、Advanced RAG、Modular RAG 與 GraphRAG 架構演進，涵蓋語意分塊、向量資料庫選型、混合檢索（BM25 + Dense）、重排序（Reranking），並提供完整 Python 端到端實戰程式碼與企業級評估最佳實踐。</p>
-              <div class="article-meta">
-                <span>2026-10-13</span>
-                <span class="separator">·</span>
-                <span>25 分鐘閱讀</span>
-              </div>
-              <a href="./rag-technology-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-12 -->
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/hermes-comparison/600/340" alt="Hermes Desktop vs Hermes One">
-            <div class="article-content">
-              <h3>Hermes Desktop vs Hermes One 功能及比較差異完全解析</h3>
-              <p class="article-excerpt">深入解析 Nous Research 官方推出的 Hermes Desktop 與社群旗艦 Hermes One 的核心架構、Bot Screen、3D Office、多通訊頻道與排程等功能，並提供全維度比較表格與選型決策指南。</p>
-              <div class="article-meta">
-                <span>2026-10-12</span>
-                <span class="separator">·</span>
-                <span>22 分鐘閱讀</span>
-              </div>
-              <a href="./hermes-desktop-vs-hermes-one.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-09 -->
-          <article class="article-card" data-category="network">
-            <img loading="lazy" src="./images/api-architecture-guide.jpg" alt="API 架構與原理完全解析">
-            <div class="article-content">
-              <h3>API 架構與原理完全解析：RESTful, GraphQL, gRPC, WebSocket 與架構選型實戰指南</h3>
-              <p class="article-excerpt">從單體到分散式系統：深入剖析 RESTful 成熟度模型 Level 0-3 與冪等性、GraphQL AST 執行與 N+1 DataLoader 破解、gRPC Protobuf 二進位編碼、WebSocket 與 SSE (AI 串流)、限流演算法及互動式架構選型精算器。</p>
-              <div class="article-meta">
-                <span>2026-10-18</span>
-                <span class="separator">·</span>
-                <span>30 分鐘閱讀</span>
-              </div>
-              <a href="./api-architecture-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="./images/libre-hardware-monitor-guide.jpg" alt="Libre Hardware Monitor 教學">
-            <div class="article-content">
-              <h3>Libre Hardware Monitor 完全攻略：底層原理、HTTP JSON API、.NET 整合、WMI 自動化與硬體監控實戰</h3>
-              <p class="article-excerpt">深度解析開源硬體監控神器 Libre Hardware Monitor：Ring 0 驅動與 MSR/Super I/O 底層讀取原理、/data.json HTTP Web Server 解析、Python 與 JS 跨語言串接、C# .NET SDK 整合與 WMI 自動化告警腳本，附互動式感測器模擬儀表板。</p>
-              <div class="article-meta">
-                <span>2026-10-09</span>
-                <span class="separator">·</span>
-                <span>25 分鐘閱讀</span>
-              </div>
-              <a href="./libre-hardware-monitor-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-06 -->
-          <article class="article-card" data-category="terminal">
-            <img loading="lazy" src="./images/wsl-content.jpg" alt="WSL 完整教學">
-            <div class="article-content">
-              <h3>Windows Subsystem for Linux (WSL) 完全攻略：在 Windows 上享受原生 Linux 開發體驗</h3>
-              <p class="article-excerpt">Windows Subsystem for Linux (WSL) 讓開發者能在 Windows 上直接執行原生 Linux 環境。本文詳細介紹 WSL2 的架構、安裝方式、與 VS Code 的完美整合，以及進階網路與效能調校技巧。</p>
-              <div class="article-meta">
-                <span>2026-10-06</span>
-                <span class="separator">·</span>
-                <span>18 分鐘閱讀</span>
-              </div>
-              <a href="./wsl-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="./images/github-actions.jpg" alt="GitHub Actions 教學">
-            <div class="article-content">
-              <h3>GitHub Actions 完全攻略：原生 CI/CD 與自動化工作流指南</h3>
-              <p class="article-excerpt">GitHub Actions 是 GitHub 內建的原生自動化與 CI/CD 平台。本文詳細介紹 GitHub Actions 的核心概念、工作流語法、常見應用場景與實戰範例。</p>
-              <div class="article-meta">
-                <span>2026-10-06</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./github-actions-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-05 -->
-          <article class="article-card" data-category="tech">
-            <img loading="lazy" src="./images/microsoft-ecosystem.jpg" alt="Microsoft Ecosystem">
-            <div class="article-content">
-              <h3>Microsoft 產品與服務生態圈總覽：從視窗霸主到 AI 雲端巨擘</h3>
-              <p class="article-excerpt">深入剖析微軟 (Microsoft) 橫跨個人電腦、企業生產力、Azure 雲端運算與引領全球的 Copilot AI 戰略生態系。</p>
-              <div class="article-meta">
-                <span>2026-10-05</span>
-                <span class="separator">·</span>
-                <span>16 分鐘閱讀</span>
-              </div>
-              <a href="./microsoft-services-ecosystem.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-05 -->
-          <article class="article-card" data-category="tech">
-            <img loading="lazy" src="./images/apple-ecosystem.jpg" alt="Apple 生態圈總覽">
-            <div class="article-content">
-              <h3>Apple 產品與服務生態圈總覽：從極致硬體到 Apple Intelligence</h3>
-              <p class="article-excerpt">深入剖析 Apple 封閉卻極致完美的生態系，涵蓋核心硬體矩陣、作業系統、訂閱服務以及引領未來體驗的 Apple Intelligence。</p>
-              <div class="article-meta">
-                <span>2026-10-05</span>
-                <span class="separator">·</span>
-                <span>16 分鐘閱讀</span>
-              </div>
-              <a href="./apple-services-ecosystem.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <!-- 2026-10-05 -->
-          <article class="article-card" data-category="tech">
-            <img loading="lazy" src="./images/google-ecosystem.jpg" alt="Google 生態圈總覽">
-            <div class="article-content">
-              <h3>Google 產品與服務生態圈總覽：從個人應用到 AI 雲端帝國</h3>
-              <p class="article-excerpt">Google 的產品與服務橫跨個人消費、企業協作、AI 開發及雲端運算，本文按功能領域詳細分類整理 Google 龐大的服務生態。</p>
-              <div class="article-meta">
-                <span>2026-10-05</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./google-services-ecosystem.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="https://picsum.photos/seed/googlecolab/600/340" alt="Google Colab">
-            <div class="article-content">
-              <h3>Google Colab 完整攻略：雲端 Jupyter Notebook 介紹、功能與實戰指南</h3>
-              <p class="article-excerpt">Google Colab 是一個免費的雲端 Jupyter Notebook 環境。本文詳細介紹 Colab 的核心功能、如何掛載 Google Drive、使用免費 GPU/TPU 資源，以及進階使用技巧。</p>
-              <div class="article-meta">
-                <span>2026-10-05</span>
-                <span class="separator">·</span>
-                <span>8 分鐘閱讀</span>
-              </div>
-              <a href="./google-colab-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="./images/tesla_car_hero.jpg" alt="Tesla 車系與 Cybertruck">
-            <div class="article-content">
-              <h3>顛覆汽車工業的純電巨頭：Tesla 特斯拉車系與核心技術總覽</h3>
-              <p class="article-excerpt">詳細梳理 Tesla 目前的核心車系矩陣（S3XY 家族、Cybertruck），以及其背後的關鍵技術：FSD、OTA 與超級充電網路。</p>
-              <div class="article-meta">
-                <span>2026-10-05</span>
-                <span class="separator">·</span>
-                <span>12 分鐘閱讀</span>
-              </div>
-              <a href="./tesla-model-lineup-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="https://picsum.photos/seed/apache-tomcat/600/340" alt="Apache HTTP Server 與 Tomcat">
-            <div class="article-content">
-              <h3>Apache HTTP Server 與 Apache Tomcat 全面解析</h3>
-              <p class="article-excerpt">深入解析 Apache HTTP Server 與 Apache Tomcat，涵蓋它們的各自定位、功能差異，以及在實際架構中如何協同工作，以硬核工程師視角拆解底層架構。</p>
-              <div class="article-meta">
-                <span>2026-10-05</span>
-                <span class="separator">·</span>
-                <span>10 分鐘閱讀</span>
-              </div>
-              <a href="./apache-vs-tomcat.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/aiautomation/600/340" alt="AI 自動化">
-            <div class="article-content">
-              <h3>AI 實現自動化的方法與工具詳細介紹</h3>
-              <p class="article-excerpt">探討現代 AI 技術如何顛覆傳統自動化。從 Prompt Engineering 到 Agentic Workflows，詳細介紹 LangChain, AutoGen, n8n 等熱門 AI 自動化工具與落地方法。</p>
-              <div class="article-meta">
-                <span>2026-10-04</span>
-                <span class="separator">·</span>
-                <span>20 分鐘閱讀</span>
-              </div>
-              <a href="./ai-automation-tools-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="terminal">
-            <img loading="lazy" src="./images/os-diagram.jpg" alt="四大作業系統架構與核心">
-            <div class="article-content">
-              <h3>作業系統 (OS) 底層架構全解析：Windows, macOS, Linux 與 Android</h3>
-              <p class="article-excerpt">深入探討現代四大作業系統的核心架構。從 Windows 的 NT 核心、macOS 的 Mach/BSD 混合核心、Linux 的宏核心，到 Android 基於 Linux 的客製化與 ART 虛擬機，解析各自的設計哲學與適用場景。</p>
-              <div class="article-meta">
-                <span>2026-10-03</span>
-                <span class="separator">·</span>
-                <span>18 分鐘閱讀</span>
-              </div>
-              <a href="./os-architecture-comparison.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="./images/chip-wars-guide.jpg" alt="晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘">
-            <div class="article-content">
-              <h3>晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘</h3>
-              <p class="article-excerpt">從 Dennard Scaling 崩潰到 CoWoS/Foveros 先進封裝，全維度解析 Intel 18A RibbonFET、AMD Zen 5 / MI300X、NVIDIA Blackwell B200 / NVLink 5 及 Google TPU / Groq LPU，附 Roofline 算力頻寬試算器。</p>
-              <div class="article-meta">
-                <span>2026-10-18</span>
-                <span class="separator">·</span>
-                <span>28 分鐘閱讀</span>
-              </div>
-              <a href="./chip-wars-intel-amd-nvidia-asic.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="https://picsum.photos/seed/virtual-machine/600/340" alt="虛擬機器架構比較">
-            <div class="article-content">
-              <h3>虛擬機器 (VM) 終極對決：VMware vs VirtualBox vs Hyper-V</h3>
-              <p class="article-excerpt">深入探討主流虛擬機器軟體的架構與優缺點：VMware Workstation 的極致效能、VirtualBox 的開源靈活、Hyper-V 的原生整合，以及 macOS 專屬的 Parallels Desktop。幫你找出最適合的 VM 工具。</p>
-              <div class="article-meta">
-                <span>2026-10-03</span>
-                <span class="separator">·</span>
-                <span>16 分鐘閱讀</span>
-              </div>
-              <a href="./virtual-machine-comparison.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="https://picsum.photos/seed/java-nodejs/600/340" alt="Java 與 Node.js 技術棧">
-            <div class="article-content">
-              <h3>Java, Node.js 與 npm 全面解析：從企業級巨獸到非同步 I/O 王者</h3>
-              <p class="article-excerpt">深入剖析後端兩大主流技術棧：Java 及其 JVM 生態系，與基於 V8 引擎的 Node.js 及其龐大的 npm 套件管理系統。以硬核工程師視角，拆解底層差異與適用場景。</p>
-              <div class="article-meta">
-                <span>2026-10-03</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./java-nodejs-npm-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="network">
-            <img loading="lazy" src="https://picsum.photos/seed/ot-protocols/600/340" alt="Industrial OT Protocols">
-            <div class="article-content">
-              <h3>工業通訊協定全解析：RS232/RS485, Modbus, DDE 到 OPC DA/UA</h3>
-              <p class="article-excerpt">深入解析工業物聯網 (IIoT) 中最核心的通訊協定與介面，從硬體層的 RS232、RS485，到網路層的 Modbus RTU/TCP，再到軟體交換層的 DDE、OPC DA 與現代化的 OPC UA，帶你一次搞懂 OT 架構。</p>
-              <div class="article-meta">
-                <span>2026-10-03</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./industrial-protocols-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/llm2026/600/340" alt="Top 5 LLMs in 2026">
-            <div class="article-content">
-              <h3>2026 年度 TOP 5 大語言模型全面解析：閉源巨頭與開源王者</h3>
-              <p class="article-excerpt">深入解析目前最強的 Top 5 大語言模型，涵蓋 GPT-5、Claude 4.5、Gemini 2.5 閉源巨頭，以及 Llama 4、DeepSeek V4 等開源王者，從架構、效能到實戰應用全面解析。</p>
-              <div class="article-meta">
-                <span>2026-10-03</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./top-5-llms-2026.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="https://picsum.photos/seed/influxdb/600/340" alt="InfluxDB 時間序列資料庫">
-            <div class="article-content">
-              <h3>InfluxDB 入門到進階：時間序列資料庫的巧妙之處</h3>
-              <p class="article-excerpt">InfluxDB 是專門為時間序列資料打造的資料庫。完整教學涵蓋資料模型（Buckets、Measurements、Tags、Fields）、Flux 查詢語言、InfluxQL、Docker 安裝、保留政策、降措、Tasks 與實戰應用場景。</p>
-              <div class="article-meta">
-                <span>2026-10-02</span>
-                <span class="separator">·</span>
-                <span>22 分鐘閱讀</span>
-              </div>
-              <a href="./influxdb-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-
-          <article class="article-card" data-category="frontend">
-            <img loading="lazy" src="https://picsum.photos/seed/react/600/340" alt="React 是什麼">
-            <div class="article-content">
-              <h3>React 是什麼？Meta 開發的開源 JavaScript 函式庫完整介紹</h3>
-              <p class="article-excerpt">React 由 Meta（前身 Facebook）開發維護的開源 JS 函式庫。完整介紹核心概念、元件化開發、虛擬 DOM、JSX 語法、Hooks 與生態系統。</p>
-              <div class="article-meta">
-                <span>2026-09-28</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./react-introduction.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/mcp-skill/600/340" alt="Claude Code Skill MCP Plugin">
-            <div class="article-content">
-              <h3>Claude Code Skill、MCP 與 Plugin 深度解析：三個擴展機制讓 AI 變成你的專屬工程師</h3>
-              <p class="article-excerpt">深入解析 Claude Code 的三大擴展機制：Skill（可重用指令）、MCP（外部資料連接）與 Plugin（打包分享）。從設定到實戰，把 Claude Code 打造成真正的個人工程平台。</p>
-              <div class="article-meta">
-                <span>2026-09-20</span>
-                <span class="separator">·</span>
-                <span>25 分鐘閱讀</span>
-              </div>
-              <a href="./claude-skill-mcp-plugin-deep.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="https://picsum.photos/seed/canva/600/340" alt="Canva 設計工具">
-            <div class="article-content">
-              <h3>Canva 完整入門與進階技巧</h3>
-              <p class="article-excerpt">Canva 完整介紹與實戰教學：從帳號、介面、範本與拖曳編輯器，到品牌套件、AI 工具、協作、影片製作、匯出設定與進階設計技巧。</p>
-              <div class="article-meta">
-                <span>2026-09-17</span>
-                <span class="separator">·</span>
-                <span>25 分鐘閱讀</span>
-              </div>
-              <a href="./canva-tutorial.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-
-          <article class="article-card" data-category="network">
-            <img loading="lazy" src="https://picsum.photos/seed/cloudflare-guide/600/340" alt="Cloudflare 雲端服務">
-            <div class="article-content">
-              <h3>Cloudflare 功能詳解：CDN、DNS、SSL、WAF、Workers 與 Pages</h3>
-              <p class="article-excerpt">Cloudflare 完整教學：CDN 加速、DNS 管理、SSL TLS 加密、WAF 防護、DDoS 防禦、Cloudflare Workers、Pages 部署、Tunnel 內網穿透、R2 物件存儲與 Analytics 功能介紹。</p>
-              <div class="article-meta">
-                <span>2026-09-14</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./cloudflare-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="https://picsum.photos/seed/license/600/340" alt="開源授權條款">
-            <div class="article-content">
-              <h3>開源授權條款完全指南：寬鬆型 vs 強傳染型（著佐權）</h3>
-              <p class="article-excerpt">深入解析開源軟體的兩大授權陣營——寬鬆型（MIT、Apache-2.0、BSD）與強傳染型著佐權（GPL、AGPL、SSPL）。幫你搞懂商用閉源、傳染範圍、專利保護與實戰選擇策略。</p>
-              <div class="article-meta">
-                <span>2026-09-10</span>
-                <span class="separator">·</span>
-                <span>18 分鐘閱讀</span>
-              </div>
-              <a href="./open-source-licenses.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/prompt-engineering/600/340" alt="Prompt Engineering 提示工程">
-            <div class="article-content">
-              <h3>Prompt Engineering 提示工程入門 — 學會「下指令」讓 AI 變得更好用</h3>
-              <p class="article-excerpt">提示工程是什麼？怎麼下指令讓 ChatGPT / Claude 更好用？分享零樣本、少樣本、Chain-of-Thought 思維鏈技巧，以及實戰 prompt 模板。</p>
-              <div class="article-meta">
-                <span>2026-09-02</span>
-                <span class="separator">·</span>
-                <span>12 分鐘閱讀</span>
-              </div>
-              <a href="./prompt-engineering-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/ai-algo/600/340" alt="AI 演算法地圖">
-            <div class="article-content">
-              <h3>AI 人工智慧演算法列表 — 從搜尋到深度學習的完整地圖</h3>
-              <p class="article-excerpt">整理自維基百科的 AI 演算法列表，涵蓋搜尋優化、機器學習、神經網路、強化學習、電腦視覺與遊戲 AI 等 11 大類別，超過 50 種演算法輕鬆認識。</p>
-              <div class="article-meta">
-                <span>2026-09-01</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./ai-algorithms.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="https://picsum.photos/seed/uv/600/340" alt="Python 開發工具 uv">
-            <div class="article-content">
-              <h3>Python 高效開發利器 uv 全指南：取代 pip/pipenv/poetry/pyenv 的極速解決方案</h3>
-              <p class="article-excerpt">uv 完整教學：安裝、專案管理、pyproject.toml、虛擬環境、Python 版本管理、uvx 工具執行、行內腳本、Workspaces 工作區、發布包裝與從 pip/pipenv/poetry 遷移。10-100x 速度提升的全面指南。</p>
-              <div class="article-meta">
-                <span>2026-08-27</span>
-                <span class="separator">·</span>
-                <span>35 分鐘閱讀</span>
-              </div>
-              <a href="./uv-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="https://picsum.photos/seed/docker-compose/600/340" alt="Docker Compose 多容器編排">
-            <div class="article-content">
-              <h3>Docker Compose 完全攻略：多容器編排從入門到實戰</h3>
-              <p class="article-excerpt">Compose 完整教學：compose.yaml 核心語法、volumes 與 networks、depends_on 搭配 healthcheck 控制啟動順序、profiles 按需啟動服務、Compose Watch 開發熱重載與常用指令速查表。</p>
-              <div class="article-meta">
-                <span>2026-08-26</span>
-                <span class="separator">·</span>
-                <span>25 分鐘閱讀</span>
-              </div>
-              <a href="./docker-compose-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/claude-hooks/600/340" alt="Claude Code Hooks">
-            <div class="article-content">
-              <h3>Claude Code Hooks 完全攻略：用生命週期掛鉤打造自動化開發工作流</h3>
-              <p class="article-excerpt">Hooks 完整教學：32 種生命週期事件詳解、settings.json 設定結構、stdin JSON 輸入、退出碼與 JSON 輸出控制，含自動格式化、保護敏感檔案、攔截危險指令等實戰食譜。</p>
-              <div class="article-meta">
-                <span>2026-08-26</span>
-                <span class="separator">·</span>
-                <span>28 分鐘閱讀</span>
-              </div>
-              <a href="./claude-code-hooks-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/antigravity/600/340" alt="Google Antigravity IDE">
-            <div class="article-content">
-              <h3>Google Antigravity 完全攻略：Agent-First IDE 詳細介紹、安裝教學與實戰使用指南</h3>
-              <p class="article-excerpt">Antigravity 完整教學：Agent Manager 任務指揮中心、Artifacts 驗收機制、瀏覽器整合、Fast/Planning 模式、支援模型與定價、Antigravity 2.0 新功能與 slash 指令速查表。</p>
-              <div class="article-meta">
-                <span>2026-08-26</span>
-                <span class="separator">·</span>
-                <span>22 分鐘閱讀</span>
-              </div>
-              <a href="./google-antigravity-ide-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="terminal">
-            <img loading="lazy" src="https://picsum.photos/seed/tmux/600/340" alt="tmux 終端機多工器">
-            <div class="article-content">
-              <h3>tmux 終端機多工神器完整手冊：安裝教學、快捷鍵大全與進階配置</h3>
-              <p class="article-excerpt">tmux 完整教學：核心概念、macOS/Linux/WSL 安裝、Session/Window/Pane 快捷鍵大全、.tmux.conf 進階配置、SSH 斷線存活實戰與指令速查表。</p>
-              <div class="article-meta">
-                <span>2026-08-25</span>
-                <span class="separator">·</span>
-                <span>20 分鐘閱讀</span>
-              </div>
-              <a href="./tmux-terminal-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/mcp-skill/600/340" alt="Claude Code MCP and Skill">
-            <div class="article-content">
-              <h3>Claude Code MCP &amp; Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門</h3>
-              <p class="article-excerpt">深入解析 Claude Code 的 MCP（Model Context Protocol）與 Skill 功能。教你如何安裝 MCP Server、撰寫 .mcp.json 配置、建立自定義 Skill、撰寫 Hooks 自動化，以及 MCP、Skill、Plugin 的關係。</p>
-              <div class="article-meta">
-                <span>2026-08-25</span>
-                <span class="separator">·</span>
-                <span>30 分鐘閱讀</span>
-              </div>
-              <a href="./claude-code-mcp-skill-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/deepseek/600/340" alt="DeepSeek 模型">
-            <div class="article-content">
-              <h3>DeepSeek 完整攻略：V3、V3.2、R1 模型介紹、API 定價與本地部署</h3>
-              <p class="article-excerpt">DeepSeek AI 開源模型家族，包括 V3、V3.2、R1 等。本文詳細介紹模型架構、API 定價（比 OpenAI 便宜 5–30 倍）、本地部署方法與 CLI 使用教學。</p>
-              <div class="article-meta">
-                <span>2026-08-24</span>
-                <span class="separator">·</span>
-                <span>28 分鐘閱讀</span>
-              </div>
-              <a href="./deepseek-ai-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="terminal">
-            <img loading="lazy" src="https://picsum.photos/seed/btop/600/340" alt="btop 終端資源監控">
-            <div class="article-content">
-              <h3>btop 終端資源監控神器 — 取代 top/htop 的全面性能工具</h3>
-              <p class="article-excerpt">btop 是一個強大的 terminal-based 資源監控工具，整合 CPU、記憶體、磁碟 IO、網路流量與進程監控。本文詳細介紹安裝、操作快捷鍵、配置與進階功能。</p>
-              <div class="article-meta">
-                <span>2026-08-24</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./btop-monitor-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="https://picsum.photos/seed/obsidian/1200/400" alt="Obsidian 知識管理">
-            <div class="article-content">
-              <h3>Obsidian 完整入門手冊：安裝、操作、插件與 Claude AI 整合</h3>
-              <p class="article-excerpt">Obsidian 知識管理工具完整入門教學：Windows/macOS/Linux 安裝、Vault 建立、Markdown 基礎、核心插件與社群插件介紹，以及 Text Generator、Vault Companion for Claude 等 Claude AI 插件設定。</p>
-              <div class="article-meta">
-                <span>2026-08-24</span>
-                <span class="separator">·</span>
-                <span>25 分鐘閱讀</span>
-              </div>
-              <a href="./obsidian-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="https://picsum.photos/seed/notion/1200/400" alt="Notion 工作區">
-            <div class="article-content">
-              <h3>Notion 完整入門手冊：工作區設定、資料庫設計、Claude AI 整合與進階技巧</h3>
-              <p class="article-excerpt">Notion 全面入門教學：工作區建立、頁面設計、資料庫 relation&amp;rollup、模板庫應用、AI 功能與 Claude 整合技巧，以及進階自動化與嵌入式開發。</p>
-              <div class="article-meta">
-                <span>2026-08-24</span>
-                <span class="separator">·</span>
-                <span>30 分鐘閱讀</span>
-              </div>
-              <a href="./notion-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/gpt5/600/340" alt="GPT-5 模型">
-            <div class="article-content">
-              <h3>GPT-5 完整攻略：OpenAI 新世代模型家族功能、定價與應用場景</h3>
-              <p class="article-excerpt">OpenAI GPT-5 系列包含 GPT-5、GPT-5 Turbo、GPT-5 Mini 等多個版本。本文詳細介紹各模型的架構、上下文窗口、程式碼能力、定價與 OpenAI 生態整合。</p>
-              <div class="article-meta">
-                <span>2026-08-23</span>
-                <span class="separator">·</span>
-                <span>20 分鐘閱讀</span>
-              </div>
-              <a href="./gpt-5-model-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/grok/600/340" alt="xAI Grok">
-            <div class="article-content">
-              <h3>xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景</h3>
-              <p class="article-excerpt">xAI Grok 2.5 由 Elon Musk 領導的 xAI 開發，支援即時搜尋、Twitter/X 整合、語音對話與多模態功能。</p>
-              <div class="article-meta">
-                <span>2026-08-23</span>
-                <span class="separator">·</span>
-                <span>18 分鐘閱讀</span>
-              </div>
-              <a href="./grok-model-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/gemini-models/600/340" alt="Google Gemini">
-            <div class="article-content">
-              <h3>Google Gemini 完整攻略：1.5、2.0、2.5 系列模型介紹、功能與應用場景</h3>
-              <p class="article-excerpt">Google Gemini 系列模型包含 1.5、2.0、2.5 多個版本。本文詳細介紹各模型的多模態能力、上下文窗口、定價、程式碼表現與 Google 生態整合。</p>
-              <div class="article-meta">
-                <span>2026-08-23</span>
-                <span class="separator">·</span>
-                <span>20 分鐘閱讀</span>
-              </div>
-              <a href="./gemini-model-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/claude-models/600/340" alt="Claude 模型">
-            <div class="article-content">
-              <h3>Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景</h3>
-              <p class="article-excerpt">Anthropic Claude 5 系列模型包括 Fable、Opus、Sonnet、Haiku 四大型號。本文詳細介紹各模型的功能、效能、定價與應用場景，幫你選擇最適合的 Claude 模型。</p>
-              <div class="article-meta">
-                <span>2026-08-23</span>
-                <span class="separator">·</span>
-                <span>22 分鐘閱讀</span>
-              </div>
-              <a href="./claude-model-families.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="https://picsum.photos/seed/kubernetes/600/340" alt="Kubernetes 容器編排">
-            <div class="article-content">
-              <h3>Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例</h3>
-              <p class="article-excerpt">Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。</p>
-              <div class="article-meta">
-                <span>2026-08-22</span>
-                <span class="separator">·</span>
-                <span>25 分鐘閱讀</span>
-              </div>
-              <a href="./kubernetes-beginner-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="https://picsum.photos/seed/zapier-comparison/600/340" alt="Zapier Make n8n 比較">
-            <div class="article-content">
-              <h3>Zapier vs Make vs n8n：2026 工作流程自動化三大平台詳細比較</h3>
-              <p class="article-excerpt">Zapier、Make.com、n8n 三大工作流程自動化平台在定價、功能、AI 整合與自架能力上的全面比較，包含 2026 年費用情境分析。</p>
-              <div class="article-meta">
-                <span>2026-08-22</span>
-                <span class="separator">·</span>
-                <span>20 分鐘閱讀</span>
-              </div>
-              <a href="./zapier-make-n8n-comparison.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/hermes/600/340" alt="Hermes Agent">
-            <div class="article-content">
-              <h3>Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用</h3>
-              <p class="article-excerpt">Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。</p>
-              <div class="article-meta">
-                <span>2026-08-22</span>
-                <span class="separator">·</span>
-                <span>35 分鐘閱讀</span>
-              </div>
-              <a href="./hermes-agent-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/openclaw/600/340" alt="OpenClaw AI 助手">
-            <div class="article-content">
-              <h3>OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用</h3>
-              <p class="article-excerpt">OpenClaw 是一個開源、自架的 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm）、完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）與進階技巧。</p>
-              <div class="article-meta">
-                <span>2026-08-22</span>
-                <span class="separator">·</span>
-                <span>32 分鐘閱讀</span>
-              </div>
-              <a href="./openclaw-ai-assistant.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="network">
-            <img loading="lazy" src="https://picsum.photos/seed/wireshark/600/340" alt="Wireshark 封包分析">
-            <div class="article-content">
-              <h3>Wireshark 網路封包分析完全攻略：安裝、基本使用與進階技巧</h3>
-              <p class="article-excerpt">Wireshark 是網路封包分析的利器。本文詳細介紹 Wireshark 的安裝（Windows/macOS/Linux）、介面操作、顯示過濾、通訊協定分析與進階技巧。</p>
-              <div class="article-meta">
-                <span>2026-08-22</span>
-                <span class="separator">·</span>
-                <span>28 分鐘閱讀</span>
-              </div>
-              <a href="./wireshark-network-analysis.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="https://picsum.photos/seed/docker/600/340" alt="Docker 容器">
-            <div class="article-content">
-              <h3>Docker 容器化指南：安裝、基本指令與進階使用</h3>
-              <p class="article-excerpt">Docker 是一個開源的容器化平台。本文詳細介紹 Docker 的概念、安裝方式、基本指令、Docker Compose 與進階技巧。</p>
-              <div class="article-meta">
-                <span>2026-08-22</span>
-                <span class="separator">·</span>
-                <span>18 分鐘閱讀</span>
-              </div>
-              <a href="./docker-container-guide.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="tools">
-            <img loading="lazy" src="https://picsum.photos/seed/n8n/600/340" alt="n8n 自動化">
-            <div class="article-content">
-              <h3>n8n 工作流程自動化完全攻略：安裝、使用與進階技巧</h3>
-              <p class="article-excerpt">n8n 是一個開源的工作流程自動化工具。本文詳細介紹 n8n 的特色、安裝方式、基本操作、常見整合案例與進階技巧。</p>
-              <div class="article-meta">
-                <span>2026-08-22</span>
-                <span class="separator">·</span>
-                <span>16 分鐘閱讀</span>
-              </div>
-              <a href="./n8n-workflow-automation.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/lmstudio/600/340" alt="LM Studio">
-            <div class="article-content">
-              <h3>LM Studio 本地大模型攻略：下載、安裝、模型管理與 GPU 加速</h3>
-              <p class="article-excerpt">LM Studio 是一個強大的本地 LLM 桌面應用程式。本文詳細介紹 LM Studio 的下載安裝、模型管理、對話功能、GPU 加速設定與實用技巧。</p>
-              <div class="article-meta">
-                <span>2026-08-22</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./lm-studio-local-llm.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="./images/ollama-guide.jpg" alt="Ollama 本地大模型部署完全攻略">
-            <div class="article-content">
-              <h3>Ollama 本地大模型部署完全攻略：安裝、指令、Modelfile 客製化、API 整合與顯存調校指南</h3>
-              <p class="article-excerpt">零成本、保護隱私！深度解析 Ollama 本地模型部署：CLI 指令速查、VRAM 顯存計算與選型、Modelfile 封裝自製 GGUF、環境變數調校、OpenAI 相容 API 及互動式 VRAM 試算工具。</p>
-              <div class="article-meta">
-                <span>2026-10-16</span>
-                <span class="separator">·</span>
-                <span>28 分鐘閱讀</span>
-              </div>
-              <a href="./ollama-local-llm.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/llamacpp/600/340" alt="llama.cpp GGUF">
-            <div class="article-content">
-              <h3>本地大模型攻略：Hugging Face 下載 GGUF、llama.cpp 安裝與 GPU 加速</h3>
-              <p class="article-excerpt">從 Hugging Face 下載 GGUF 格式模型，安裝 llama.cpp 在 Windows 上本地推理，設定 GPU Offload（CUDA/Vulkan/DirectML）與 Context 長度，一次搞懂。</p>
-              <div class="article-meta">
-                <span>2026-08-22</span>
-                <span class="separator">·</span>
-                <span>22 分鐘閱讀</span>
-              </div>
-              <a href="./llama-cpp-gguf.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/claude-code/600/340" alt="Claude Code">
-            <div class="article-content">
-              <h3>Claude Code 功能介紹、指令集及如何使用</h3>
-              <p class="article-excerpt">Claude Code 是 Anthropic 推出的 AI 編碼助手，支援 Terminal、VS Code、Web 等多平台。本文整理其六大核心能力、完整的 CLI 命令與內建斜線指令速查。</p>
-              <div class="article-meta">
-                <span>2026-08-21</span>
-                <span class="separator">·</span>
-                <span>25 分鐘閱讀</span>
-              </div>
-              <a href="./claude-code-commands.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="terminal">
-            <img loading="lazy" src="https://picsum.photos/seed/macmini/600/340" alt="Mac 指令">
-            <div class="article-content">
-              <h3>Mac mini 常用指令入門 — 150 個指令一次搞懂</h3>
-              <p class="article-excerpt">macOS 終端機結合 BSD Unix 與 Apple 圖形層強大功能。本文整理 150 個 macOS 常用指令，包含 Homebrew、剪貼簿、網路與開發工具。</p>
-              <div class="article-meta">
-                <span>2026-08-21</span>
-                <span class="separator">·</span>
-                <span>16 分鐘閱讀</span>
-              </div>
-              <a href="./mac-commands.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="frontend">
-            <img loading="lazy" src="https://picsum.photos/seed/nodejs/600/340" alt="Node.js 指令">
-            <div class="article-content">
-              <h3>Node.js、npm、npx 完整指令入門 — 60 個指令一次搞懂</h3>
-              <p class="article-excerpt">Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。</p>
-              <div class="article-meta">
-                <span>2026-08-21</span>
-                <span class="separator">·</span>
-                <span>20 分鐘閱讀</span>
-              </div>
-              <a href="./node-js-commands.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="terminal">
-            <img loading="lazy" src="https://picsum.photos/seed/linux/600/340" alt="Linux 指令">
-            <div class="article-content">
-              <h3>Linux 常用指令入門 — 150 個指令一次搞懂</h3>
-              <p class="article-excerpt">Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。</p>
-              <div class="article-meta">
-                <span>2026-08-21</span>
-                <span class="separator">·</span>
-                <span>18 分鐘閱讀</span>
-              </div>
-              <a href="./linux-commands.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="devops">
-            <img loading="lazy" src="https://picsum.photos/seed/git/600/340" alt="Git 版本控制">
-            <div class="article-content">
-              <h3>Git 常用指令入門 — 從零開始掌握版本控制</h3>
-              <p class="article-excerpt">Git 是全球最流行的分散式版本控制系統。本文整理核心概念與日常使用指令，從初始化到進階操作一次搞懂。</p>
-              <div class="article-meta">
-                <span>2026-08-20</span>
-                <span class="separator">·</span>
-                <span>12 分鐘閱讀</span>
-              </div>
-              <a href="./git-commands.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-category="ai">
-            <img loading="lazy" src="https://picsum.photos/seed/aimodels/600/340" alt="AI 模型比較">
-            <div class="article-content">
-              <h3>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較</h3>
-              <p class="article-excerpt">ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。</p>
-              <div class="article-meta">
-                <span>2026-08-18</span>
-                <span class="separator">·</span>
-                <span>15 分鐘閱讀</span>
-              </div>
-              <a href="./ai-models.html" class="read-more">閱讀更多 →</a>
-            </div>
-          </article>
-          <div id="no-results">😔 沒有符合此分類的文章</div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- =============== Footer =============== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-column">
-          <h4>"AI" 硬核工程師</h4>
-          <div class="footer-links">
-            <a href="./about.html">關於我</a>
-            <a href="./articles.html">所有文章</a>
-          </div>
-        </div>
-        <div class="footer-column">
-          <h4>聯絡方式</h4>
-          <div class="footer-links">
-            <a href="mailto:cai100.cyc@gmail.com">信件</a>
-            <a href="https://github.com/Robert-cYc">GitHub</a>
-            <a href="https://x.com/">Twitter</a>
-          </div>
-        </div>
-      </div>
-      <div class="marquee-container">
-        <div class="marquee-content"></div>
-      </div>
-      <div class="footer-bottom">
-        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
-  <script src="./js/wave.js"></script>
-  <script src="./js/bg-effects.js?v=10"></script>
-  <script src="./js/script.js"></script>
-  <script src="./js/enhancements.js"></script>
-  <script>
+<main>
+<div class="container">
+<section class="section-sm">
+<h1 class="page-title">所有文章</h1>
+<p class="page-subtitle">關於前端開發、後端技術、Git 與 AI 開發的筆記。</p>
+<div aria-label="文章分類篩選" class="filter-tabs" id="filter-tabs" role="group">
+<button class="filter-tab active" data-filter="all" id="filter-all">✦ 全部</button>
+<button class="filter-tab" data-filter="ai" id="filter-ai">🤖 AI 與 Agent</button>
+<button class="filter-tab" data-filter="terminal" id="filter-terminal">💻 終端機與系統</button>
+<button class="filter-tab" data-filter="devops" id="filter-devops">🛠️ 開發與容器</button>
+<button class="filter-tab" data-filter="network" id="filter-network">🌐 網路與雲端</button>
+<button class="filter-tab" data-filter="tools" id="filter-tools">🔧 工具與設計</button>
+<button class="filter-tab" data-filter="frontend" id="filter-frontend">⚛️ 前端開發</button>
+</div>
+<div class="article-grid" id="article-grid">
+<!-- 2026-10-19 -->
+<article class="article-card" data-category="devops">
+<img alt="主流 NAS 終極解析：商業旗艦 vs 開源 DIY 全方位架構實戰評測指南" loading="lazy" src="./images/nas-storage-guide.jpg"/>
+<div class="article-content">
+<h3>主流 NAS 終極解析：Synology, QNAP, Asustor 商業旗艦 vs TrueNAS, Unraid, PVE 開源 DIY 全方位架構實戰評測指南</h3>
+<p class="article-excerpt">全維度深入剖析現代 NAS 儲存架構：從 3-2-1-1-0 備份準則、Btrfs CoW 快照與 ZFS Merkle Tree 自我修復、SHR 動態切片與 RAID-Z 擴容機制，到四大商業品牌（群暉 DSM、威聯通 QuTS hero、華芸 ADM、綠聯/極空間）及開源 DIY 方案（TrueNAS SCALE、Unraid、Proxmox VE + SAS HBA 直通）。內建互動式 NAS 儲存容量、RAID 容錯與重建時間試算器。</p>
+<div class="article-meta">
+<span>2026-10-19</span>
+<span class="separator">·</span>
+<span>38 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./nas-storage-comparison.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-18 -->
+<article class="article-card" data-category="ai">
+<img alt="RTX Spark vs DGX Spark 完全對決：Windows Laptop vs Linux 桌面級 AI 超級電腦" loading="lazy" src="./images/rtx-spark-vs-dgx-spark-guide.jpg"/>
+<div class="article-content">
+<h3>RTX Spark vs DGX Spark 完全對決：Windows Laptop vs Linux 桌面級 AI 超級電腦架構評測與選型指南</h3>
+<p class="article-excerpt">深度橫向評測 NVIDIA GB10 Grace Blackwell 超級晶片兩大化身：RTX Spark (Windows on Arm 旗艦筆電) vs DGX Spark (Linux 個人 AI 超級電腦)。全面拆解 128GB 統一記憶體、1 Petaflop 算力、WSL2 與原生核心損耗、TDP 散熱牆，以及 ConnectX-7 雙機 256GB 跑 405B 模型，附顯存與推論速度精算器。</p>
+<div class="article-meta">
+<span>2026-10-18</span>
+<span class="separator">·</span>
+<span>28 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./rtx-spark-vs-dgx-spark-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-16 -->
+<article class="article-card" data-category="tools">
+<img alt="特斯拉第二代 Roadster 終極解密：Performance、Thrust 與 Rocket 三大版本" loading="lazy" src="./images/tesla-roadster-trinity.jpg"/>
+<div class="article-content">
+<h3>特斯拉第二代 Roadster 終極解密：Performance、Thrust 與 Rocket 三大版本功能與航太工程全剖析</h3>
+<p class="article-excerpt">全維度解析全新 Tesla Roadster 2：Performance 底盤真空吸附風扇、Thrust 雙尾噴冷氣體推進器（0-60mph 0.81s），以及 Rocket 單座戰鬥座艙與全周邊 10 噴嘴 3D 姿態控制（0-60mph 0.59s / 4.64G）。附規格大表與彈射模擬器。</p>
+<div class="article-meta">
+<span>2026-10-16</span>
+<span class="separator">·</span>
+<span>25 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./tesla-roadster-performance-thrust-rocket-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-16 -->
+<article class="article-card" data-category="tools">
+<img alt="螢幕視訊介面終極指南：VGA、DVI、HDMI、DisplayPort 規格頻寬全方位比較表" loading="lazy" src="./images/video-interfaces-guide.jpg"/>
+<div class="article-content">
+<h3>螢幕視訊介面終極指南：VGA、DVI、HDMI、DisplayPort (DP) 規格頻寬與技術原理全方位比較表</h3>
+<p class="article-excerpt">全維度橫向評測 VGA、DVI、HDMI (1.4/2.0/2.1b) 與 DisplayPort (1.2/1.4a/2.1) 及 Type-C DP Alt Mode。深入解析類比/數位訊號轉換、TMDS 與 FRL 編碼機制、DP 微封包與 MST 菊花鏈、DSC 視覺無損壓縮，附贈互動式顯示頻寬試算器。</p>
+<div class="article-meta">
+<span>2026-10-16</span>
+<span class="separator">·</span>
+<span>28 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./video-cable-display-interfaces-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-16 -->
+<article class="article-card" data-category="tools">
+<img alt="儲存裝置極速指南：HDD、SATA SSD、M.2 NVMe 與 USB 規格與效能比較表" loading="lazy" src="./images/storage-spec-performance-guide.jpg"/>
+<div class="article-content">
+<h3>儲存裝置極速指南：HDD、2.5" SATA SSD、M.2 NVMe 與 USB 規格與效能終極比較表</h3>
+<p class="article-excerpt">全維度橫向評測 3.5"/2.5" HDD、2.5 吋 SATA SSD、M.2 (2230/2242/2280 尺寸、PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟/PSSD。含規格大表、M.2 尺寸規格詳解、PS5 與掌機擴充改裝、4K IOPS 與延遲比較及互動傳輸模擬器。</p>
+<div class="article-meta">
+<span>2026-10-16</span>
+<span class="separator">·</span>
+<span>26 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./storage-spec-performance-comparison.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-16 -->
+<article class="article-card" data-category="tools">
+<img alt="JSON 核心架構與實戰完全攻略" loading="lazy" src="./images/json-architecture-guide.jpg"/>
+<div class="article-content">
+<h3>JSON 核心架構與實戰完全攻略：語法規範、資料結構、序列化與反序列化、JSON Schema 驗證及跨語言操作避坑手冊</h3>
+<p class="article-excerpt">全方位深入剖析 JSON：從底層語法結構、RFC 8259 規範、資料型別與失真陷阱，到跨語言（JavaScript、Python、Go）序列化與反序列化實戰、JSON Schema 契約驗證、LLM Structured Outputs 應用，以及大整數精度遺失、循環引用與串流解析等企業級避坑守則。</p>
+<div class="article-meta">
+<span>2026-10-16</span>
+<span class="separator">·</span>
+<span>28 分鐘深度閱讀</span>
+</div>
+<a class="read-more" href="./json-architecture-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-15 -->
+<article class="article-card" data-category="tools">
+<img alt="USB 全世代硬核百科：從 USB 1.0 到 USB4、Type-C 與 240W 快充" loading="lazy" src="./images/usb-evolution-guide.jpg"/>
+<div class="article-content">
+<h3>USB 全世代硬核百科：從 USB 1.0、2.0 到 3.x、Type-C、USB4 與 240W PD 快充完整演進指南</h3>
+<p class="article-excerpt">最完整的 USB 歷史技術全書：詳解 USB 1.0/1.1、USB 2.0、USB 3.x 換名之亂、Type-C 24-Pin 盲插架構、E-Marker 晶片、Alt Mode 影音輸出、USB PD 3.1 240W 快充、USB4 80Gbps 與 PAM3 編碼全世代演進。</p>
+<div class="article-meta">
+<span>2026-10-15</span>
+<span class="separator">·</span>
+<span>28 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./usb-history-evolution-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-14 -->
+<article class="article-card" data-category="ai">
+<img alt="LLM 命名學、參數量級與量化壓縮" loading="lazy" src="./images/llm-quantization-guide.jpg"/>
+<div class="article-content">
+<h3>大語言模型（LLM）命名學、參數量級與量化壓縮全攻略</h3>
+<p class="article-excerpt">深度解析大語言模型命名代號規則（Instruct、MoE 8x7B、128K）、參數量級與顯存換算、模型壓縮三大流派，以及 GGUF、AWQ、GPTQ、EXL2 與 BitNet 1.58-bit 量化實戰對比。</p>
+<div class="article-meta">
+<span>2026-10-14</span>
+<span class="separator">·</span>
+<span>25 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./llm-naming-quantization-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-13 -->
+<article class="article-card" data-category="tools">
+<img alt="PyInstaller 完全操作指南" loading="lazy" src="./images/pyinstaller-guide.jpg"/>
+<div class="article-content">
+<h3>PyInstaller 完全操作指南：安裝、--onefile 與 --onedir 核心指令詳解、資源打包、動態 Hook 與除錯避坑手冊</h3>
+<p class="article-excerpt">深入解析 Python 打包神器 PyInstaller：詳細介紹安裝方式、核心參數、sys._MEIPASS 與真實路徑解析、.spec 規格檔、動態 Hook 與 metadata 收集、Windows 多行程 Fork 炸彈防護、反編譯真相與 Cython/PyArmor 代碼保護，以及 GitHub Actions 多平台 CI/CD 自動化建置避坑實戰。</p>
+<div class="article-meta">
+<span>2026-10-13（更新）</span>
+<span class="separator">·</span>
+<span>28 分鐘深度閱讀</span>
+</div>
+<a class="read-more" href="./pyinstaller-python-packaging-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-13 -->
+<article class="article-card" data-category="ai">
+<img alt="小型語言模型 (SLM) 全面概覽" loading="lazy" src="./images/slm-guide.jpg"/>
+<div class="article-content">
+<h3>小型語言模型 (SLM) 全面概覽：核心優勢、技術突破、主流家族、端側 NPU 與邊緣落地實戰指南</h3>
+<p class="article-excerpt">深度解析小型語言模型（SLM）的崛起浪潮：探討 SLM 與 LLM 的核心差異、合成數據與知識蒸餾、思考型小模型（DeepSeek-R1 Distill / Phi-4）、主流家族全景、投機解碼與階梯式路由架構、端側 NPU 與 WebGPU 部署，以及在單張消費級顯卡上的 QLoRA 微調實戰。</p>
+<div class="article-meta">
+<span>2026-10-13（更新）</span>
+<span class="separator">·</span>
+<span>26 分鐘深度閱讀</span>
+</div>
+<a class="read-more" href="./slm-small-language-models-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-13 -->
+<article class="article-card" data-category="ai">
+<img alt="RAG 技術完全攻略" loading="lazy" src="./images/rag-guide.jpg"/>
+<div class="article-content">
+<h3>RAG 技術完全攻略：核心原理、架構演進、關鍵元件與從零到落地實戰指南</h3>
+<p class="article-excerpt">全面剖析檢索增強生成（RAG）技術：深入解析 Naive RAG、Advanced RAG、Modular RAG 與 GraphRAG 架構演進，涵蓋語意分塊、向量資料庫選型、混合檢索（BM25 + Dense）、重排序（Reranking），並提供完整 Python 端到端實戰程式碼與企業級評估最佳實踐。</p>
+<div class="article-meta">
+<span>2026-10-13</span>
+<span class="separator">·</span>
+<span>25 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./rag-technology-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-12 -->
+<article class="article-card" data-category="ai">
+<img alt="Hermes Desktop vs Hermes One" loading="lazy" src="./images/hermes-agent-guide.jpg"/>
+<div class="article-content">
+<h3>Hermes Desktop vs Hermes One 功能及比較差異完全解析</h3>
+<p class="article-excerpt">深入解析 Nous Research 官方推出的 Hermes Desktop 與社群旗艦 Hermes One 的核心架構、Bot Screen、3D Office、多通訊頻道與排程等功能，並提供全維度比較表格與選型決策指南。</p>
+<div class="article-meta">
+<span>2026-10-12</span>
+<span class="separator">·</span>
+<span>22 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./hermes-desktop-vs-hermes-one.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-09 -->
+<article class="article-card" data-category="network">
+<img alt="API 架構與原理完全解析" loading="lazy" src="./images/api-architecture-guide.jpg"/>
+<div class="article-content">
+<h3>API 架構與原理完全解析：RESTful, GraphQL, gRPC, WebSocket 與架構選型實戰指南</h3>
+<p class="article-excerpt">從單體到分散式系統：深入剖析 RESTful 成熟度模型 Level 0-3 與冪等性、GraphQL AST 執行與 N+1 DataLoader 破解、gRPC Protobuf 二進位編碼、WebSocket 與 SSE (AI 串流)、限流演算法及互動式架構選型精算器。</p>
+<div class="article-meta">
+<span>2026-10-18</span>
+<span class="separator">·</span>
+<span>30 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./api-architecture-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="tools">
+<img alt="Libre Hardware Monitor 教學" loading="lazy" src="./images/libre-hardware-monitor-guide.jpg"/>
+<div class="article-content">
+<h3>Libre Hardware Monitor 完全攻略：底層原理、HTTP JSON API、.NET 整合、WMI 自動化與硬體監控實戰</h3>
+<p class="article-excerpt">深度解析開源硬體監控神器 Libre Hardware Monitor：Ring 0 驅動與 MSR/Super I/O 底層讀取原理、/data.json HTTP Web Server 解析、Python 與 JS 跨語言串接、C# .NET SDK 整合與 WMI 自動化告警腳本，附互動式感測器模擬儀表板。</p>
+<div class="article-meta">
+<span>2026-10-09</span>
+<span class="separator">·</span>
+<span>25 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./libre-hardware-monitor-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-06 -->
+<article class="article-card" data-category="terminal">
+<img alt="WSL 完整教學" loading="lazy" src="./images/wsl-content.jpg"/>
+<div class="article-content">
+<h3>Windows Subsystem for Linux (WSL) 完全攻略：在 Windows 上享受原生 Linux 開發體驗</h3>
+<p class="article-excerpt">Windows Subsystem for Linux (WSL) 讓開發者能在 Windows 上直接執行原生 Linux 環境。本文詳細介紹 WSL2 的架構、安裝方式、與 VS Code 的完美整合，以及進階網路與效能調校技巧。</p>
+<div class="article-meta">
+<span>2026-10-06</span>
+<span class="separator">·</span>
+<span>18 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./wsl-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="GitHub Actions 教學" loading="lazy" src="./images/github-actions.jpg"/>
+<div class="article-content">
+<h3>GitHub Actions 完全攻略：原生 CI/CD 與自動化工作流指南</h3>
+<p class="article-excerpt">GitHub Actions 是 GitHub 內建的原生自動化與 CI/CD 平台。本文詳細介紹 GitHub Actions 的核心概念、工作流語法、常見應用場景與實戰範例。</p>
+<div class="article-meta">
+<span>2026-10-06</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./github-actions-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-05 -->
+<article class="article-card" data-category="tech">
+<img alt="Microsoft Ecosystem" loading="lazy" src="./images/microsoft-ecosystem.jpg"/>
+<div class="article-content">
+<h3>Microsoft 產品與服務生態圈總覽：從視窗霸主到 AI 雲端巨擘</h3>
+<p class="article-excerpt">深入剖析微軟 (Microsoft) 橫跨個人電腦、企業生產力、Azure 雲端運算與引領全球的 Copilot AI 戰略生態系。</p>
+<div class="article-meta">
+<span>2026-10-05</span>
+<span class="separator">·</span>
+<span>16 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./microsoft-services-ecosystem.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-05 -->
+<article class="article-card" data-category="tech">
+<img alt="Apple 生態圈總覽" loading="lazy" src="./images/apple-ecosystem.jpg"/>
+<div class="article-content">
+<h3>Apple 產品與服務生態圈總覽：從極致硬體到 Apple Intelligence</h3>
+<p class="article-excerpt">深入剖析 Apple 封閉卻極致完美的生態系，涵蓋核心硬體矩陣、作業系統、訂閱服務以及引領未來體驗的 Apple Intelligence。</p>
+<div class="article-meta">
+<span>2026-10-05</span>
+<span class="separator">·</span>
+<span>16 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./apple-services-ecosystem.html">閱讀更多 →</a>
+</div>
+</article>
+<!-- 2026-10-05 -->
+<article class="article-card" data-category="tech">
+<img alt="Google 生態圈總覽" loading="lazy" src="./images/google-ecosystem.jpg"/>
+<div class="article-content">
+<h3>Google 產品與服務生態圈總覽：從個人應用到 AI 雲端帝國</h3>
+<p class="article-excerpt">Google 的產品與服務橫跨個人消費、企業協作、AI 開發及雲端運算，本文按功能領域詳細分類整理 Google 龐大的服務生態。</p>
+<div class="article-meta">
+<span>2026-10-05</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./google-services-ecosystem.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="tools">
+<img alt="Google Colab" loading="lazy" src="./images/google-colab-guide.jpg"/>
+<div class="article-content">
+<h3>Google Colab 完整攻略：雲端 Jupyter Notebook 介紹、功能與實戰指南</h3>
+<p class="article-excerpt">Google Colab 是一個免費的雲端 Jupyter Notebook 環境。本文詳細介紹 Colab 的核心功能、如何掛載 Google Drive、使用免費 GPU/TPU 資源，以及進階使用技巧。</p>
+<div class="article-meta">
+<span>2026-10-05</span>
+<span class="separator">·</span>
+<span>8 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./google-colab-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="tools">
+<img alt="Tesla 車系與 Cybertruck" loading="lazy" src="./images/tesla_car_hero.jpg"/>
+<div class="article-content">
+<h3>顛覆汽車工業的純電巨頭：Tesla 特斯拉車系與核心技術總覽</h3>
+<p class="article-excerpt">詳細梳理 Tesla 目前的核心車系矩陣（S3XY 家族、Cybertruck），以及其背後的關鍵技術：FSD、OTA 與超級充電網路。</p>
+<div class="article-meta">
+<span>2026-10-05</span>
+<span class="separator">·</span>
+<span>12 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./tesla-model-lineup-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="Apache HTTP Server 與 Tomcat" loading="lazy" src="./images/apache-tomcat-guide.jpg"/>
+<div class="article-content">
+<h3>Apache HTTP Server 與 Apache Tomcat 全面解析</h3>
+<p class="article-excerpt">深入解析 Apache HTTP Server 與 Apache Tomcat，涵蓋它們的各自定位、功能差異，以及在實際架構中如何協同工作，以硬核工程師視角拆解底層架構。</p>
+<div class="article-meta">
+<span>2026-10-05</span>
+<span class="separator">·</span>
+<span>10 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./apache-vs-tomcat.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="AI 自動化" loading="lazy" src="./images/workflow-automation-guide.jpg"/>
+<div class="article-content">
+<h3>AI 實現自動化的方法與工具詳細介紹</h3>
+<p class="article-excerpt">探討現代 AI 技術如何顛覆傳統自動化。從 Prompt Engineering 到 Agentic Workflows，詳細介紹 LangChain, AutoGen, n8n 等熱門 AI 自動化工具與落地方法。</p>
+<div class="article-meta">
+<span>2026-10-04</span>
+<span class="separator">·</span>
+<span>20 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./ai-automation-tools-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="terminal">
+<img alt="四大作業系統架構與核心" loading="lazy" src="./images/os-diagram.jpg"/>
+<div class="article-content">
+<h3>作業系統 (OS) 底層架構全解析：Windows, macOS, Linux 與 Android</h3>
+<p class="article-excerpt">深入探討現代四大作業系統的核心架構。從 Windows 的 NT 核心、macOS 的 Mach/BSD 混合核心、Linux 的宏核心，到 Android 基於 Linux 的客製化與 ART 虛擬機，解析各自的設計哲學與適用場景。</p>
+<div class="article-meta">
+<span>2026-10-03</span>
+<span class="separator">·</span>
+<span>18 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./os-architecture-comparison.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘" loading="lazy" src="./images/chip-wars-guide.jpg"/>
+<div class="article-content">
+<h3>晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘</h3>
+<p class="article-excerpt">從 Dennard Scaling 崩潰到 CoWoS/Foveros 先進封裝，全維度解析 Intel 18A RibbonFET、AMD Zen 5 / MI300X、NVIDIA Blackwell B200 / NVLink 5 及 Google TPU / Groq LPU，附 Roofline 算力頻寬試算器。</p>
+<div class="article-meta">
+<span>2026-10-18</span>
+<span class="separator">·</span>
+<span>28 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./chip-wars-intel-amd-nvidia-asic.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="虛擬機器架構比較" loading="lazy" src="./images/virtual-machine-guide.jpg"/>
+<div class="article-content">
+<h3>虛擬機器 (VM) 終極對決：VMware vs VirtualBox vs Hyper-V</h3>
+<p class="article-excerpt">深入探討主流虛擬機器軟體的架構與優缺點：VMware Workstation 的極致效能、VirtualBox 的開源靈活、Hyper-V 的原生整合，以及 macOS 專屬的 Parallels Desktop。幫你找出最適合的 VM 工具。</p>
+<div class="article-meta">
+<span>2026-10-03</span>
+<span class="separator">·</span>
+<span>16 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./virtual-machine-comparison.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="Java 與 Node.js 技術棧" loading="lazy" src="./images/nodejs-javascript-guide.jpg"/>
+<div class="article-content">
+<h3>Java, Node.js 與 npm 全面解析：從企業級巨獸到非同步 I/O 王者</h3>
+<p class="article-excerpt">深入剖析後端兩大主流技術棧：Java 及其 JVM 生態系，與基於 V8 引擎的 Node.js 及其龐大的 npm 套件管理系統。以硬核工程師視角，拆解底層差異與適用場景。</p>
+<div class="article-meta">
+<span>2026-10-03</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./java-nodejs-npm-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="network">
+<img alt="Industrial OT Protocols" loading="lazy" src="./images/industrial-protocols-guide.jpg"/>
+<div class="article-content">
+<h3>工業通訊協定全解析：RS232/RS485, Modbus, DDE 到 OPC DA/UA</h3>
+<p class="article-excerpt">深入解析工業物聯網 (IIoT) 中最核心的通訊協定與介面，從硬體層的 RS232、RS485，到網路層的 Modbus RTU/TCP，再到軟體交換層的 DDE、OPC DA 與現代化的 OPC UA，帶你一次搞懂 OT 架構。</p>
+<div class="article-meta">
+<span>2026-10-03</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./industrial-protocols-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Top 5 LLMs in 2026" loading="lazy" src="./images/frontier-llms-guide.jpg"/>
+<div class="article-content">
+<h3>2026 年度 TOP 5 大語言模型全面解析：閉源巨頭與開源王者</h3>
+<p class="article-excerpt">深入解析目前最強的 Top 5 大語言模型，涵蓋 GPT-5、Claude 4.5、Gemini 2.5 閉源巨頭，以及 Llama 4、DeepSeek V4 等開源王者，從架構、效能到實戰應用全面解析。</p>
+<div class="article-meta">
+<span>2026-10-03</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./top-5-llms-2026.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="InfluxDB 時間序列資料庫" loading="lazy" src="./images/influxdb-timeseries-guide.jpg"/>
+<div class="article-content">
+<h3>InfluxDB 入門到進階：時間序列資料庫的巧妙之處</h3>
+<p class="article-excerpt">InfluxDB 是專門為時間序列資料打造的資料庫。完整教學涵蓋資料模型（Buckets、Measurements、Tags、Fields）、Flux 查詢語言、InfluxQL、Docker 安裝、保留政策、降措、Tasks 與實戰應用場景。</p>
+<div class="article-meta">
+<span>2026-10-02</span>
+<span class="separator">·</span>
+<span>22 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./influxdb-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="frontend">
+<img alt="React 是什麼" loading="lazy" src="./images/react-framework-guide.jpg"/>
+<div class="article-content">
+<h3>React 是什麼？Meta 開發的開源 JavaScript 函式庫完整介紹</h3>
+<p class="article-excerpt">React 由 Meta（前身 Facebook）開發維護的開源 JS 函式庫。完整介紹核心概念、元件化開發、虛擬 DOM、JSX 語法、Hooks 與生態系統。</p>
+<div class="article-meta">
+<span>2026-09-28</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./react-introduction.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Claude Code Skill MCP Plugin" loading="lazy" src="./images/claude-code-guide.jpg"/>
+<div class="article-content">
+<h3>Claude Code Skill、MCP 與 Plugin 深度解析：三個擴展機制讓 AI 變成你的專屬工程師</h3>
+<p class="article-excerpt">深入解析 Claude Code 的三大擴展機制：Skill（可重用指令）、MCP（外部資料連接）與 Plugin（打包分享）。從設定到實戰，把 Claude Code 打造成真正的個人工程平台。</p>
+<div class="article-meta">
+<span>2026-09-20</span>
+<span class="separator">·</span>
+<span>25 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./claude-skill-mcp-plugin-deep.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="tools">
+<img alt="Canva 設計工具" loading="lazy" src="./images/canva-design-guide.jpg"/>
+<div class="article-content">
+<h3>Canva 完整入門與進階技巧</h3>
+<p class="article-excerpt">Canva 完整介紹與實戰教學：從帳號、介面、範本與拖曳編輯器，到品牌套件、AI 工具、協作、影片製作、匯出設定與進階設計技巧。</p>
+<div class="article-meta">
+<span>2026-09-17</span>
+<span class="separator">·</span>
+<span>25 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./canva-tutorial.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="network">
+<img alt="Cloudflare 雲端服務" loading="lazy" src="./images/cloudflare-network-guide.jpg"/>
+<div class="article-content">
+<h3>Cloudflare 功能詳解：CDN、DNS、SSL、WAF、Workers 與 Pages</h3>
+<p class="article-excerpt">Cloudflare 完整教學：CDN 加速、DNS 管理、SSL TLS 加密、WAF 防護、DDoS 防禦、Cloudflare Workers、Pages 部署、Tunnel 內網穿透、R2 物件存儲與 Analytics 功能介紹。</p>
+<div class="article-meta">
+<span>2026-09-14</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./cloudflare-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="開源授權條款" loading="lazy" src="./images/open-source-licenses-guide.jpg"/>
+<div class="article-content">
+<h3>開源授權條款完全指南：寬鬆型 vs 強傳染型（著佐權）</h3>
+<p class="article-excerpt">深入解析開源軟體的兩大授權陣營——寬鬆型（MIT、Apache-2.0、BSD）與強傳染型著佐權（GPL、AGPL、SSPL）。幫你搞懂商用閉源、傳染範圍、專利保護與實戰選擇策略。</p>
+<div class="article-meta">
+<span>2026-09-10</span>
+<span class="separator">·</span>
+<span>18 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./open-source-licenses.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Prompt Engineering 提示工程" loading="lazy" src="./images/prompt-engineering-guide.jpg"/>
+<div class="article-content">
+<h3>Prompt Engineering 提示工程入門 — 學會「下指令」讓 AI 變得更好用</h3>
+<p class="article-excerpt">提示工程是什麼？怎麼下指令讓 ChatGPT / Claude 更好用？分享零樣本、少樣本、Chain-of-Thought 思維鏈技巧，以及實戰 prompt 模板。</p>
+<div class="article-meta">
+<span>2026-09-02</span>
+<span class="separator">·</span>
+<span>12 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./prompt-engineering-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="AI 演算法地圖" loading="lazy" src="./images/ai-algorithms-guide.jpg"/>
+<div class="article-content">
+<h3>AI 人工智慧演算法列表 — 從搜尋到深度學習的完整地圖</h3>
+<p class="article-excerpt">整理自維基百科的 AI 演算法列表，涵蓋搜尋優化、機器學習、神經網路、強化學習、電腦視覺與遊戲 AI 等 11 大類別，超過 50 種演算法輕鬆認識。</p>
+<div class="article-meta">
+<span>2026-09-01</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./ai-algorithms.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="Python 開發工具 uv" loading="lazy" src="./images/python-uv-guide.jpg"/>
+<div class="article-content">
+<h3>Python 高效開發利器 uv 全指南：取代 pip/pipenv/poetry/pyenv 的極速解決方案</h3>
+<p class="article-excerpt">uv 完整教學：安裝、專案管理、pyproject.toml、虛擬環境、Python 版本管理、uvx 工具執行、行內腳本、Workspaces 工作區、發布包裝與從 pip/pipenv/poetry 遷移。10-100x 速度提升的全面指南。</p>
+<div class="article-meta">
+<span>2026-08-27</span>
+<span class="separator">·</span>
+<span>35 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./uv-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="Docker Compose 多容器編排" loading="lazy" src="./images/docker-guide.jpg"/>
+<div class="article-content">
+<h3>Docker Compose 完全攻略：多容器編排從入門到實戰</h3>
+<p class="article-excerpt">Compose 完整教學：compose.yaml 核心語法、volumes 與 networks、depends_on 搭配 healthcheck 控制啟動順序、profiles 按需啟動服務、Compose Watch 開發熱重載與常用指令速查表。</p>
+<div class="article-meta">
+<span>2026-08-26</span>
+<span class="separator">·</span>
+<span>25 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./docker-compose-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Claude Code Hooks" loading="lazy" src="./images/claude-code-guide.jpg"/>
+<div class="article-content">
+<h3>Claude Code Hooks 完全攻略：用生命週期掛鉤打造自動化開發工作流</h3>
+<p class="article-excerpt">Hooks 完整教學：32 種生命週期事件詳解、settings.json 設定結構、stdin JSON 輸入、退出碼與 JSON 輸出控制，含自動格式化、保護敏感檔案、攔截危險指令等實戰食譜。</p>
+<div class="article-meta">
+<span>2026-08-26</span>
+<span class="separator">·</span>
+<span>28 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./claude-code-hooks-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Google Antigravity IDE" loading="lazy" src="./images/google-antigravity-guide.jpg"/>
+<div class="article-content">
+<h3>Google Antigravity 完全攻略：Agent-First IDE 詳細介紹、安裝教學與實戰使用指南</h3>
+<p class="article-excerpt">Antigravity 完整教學：Agent Manager 任務指揮中心、Artifacts 驗收機制、瀏覽器整合、Fast/Planning 模式、支援模型與定價、Antigravity 2.0 新功能與 slash 指令速查表。</p>
+<div class="article-meta">
+<span>2026-08-26</span>
+<span class="separator">·</span>
+<span>22 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./google-antigravity-ide-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="terminal">
+<img alt="tmux 終端機多工器" loading="lazy" src="./images/tmux-terminal-guide.jpg"/>
+<div class="article-content">
+<h3>tmux 終端機多工神器完整手冊：安裝教學、快捷鍵大全與進階配置</h3>
+<p class="article-excerpt">tmux 完整教學：核心概念、macOS/Linux/WSL 安裝、Session/Window/Pane 快捷鍵大全、.tmux.conf 進階配置、SSH 斷線存活實戰與指令速查表。</p>
+<div class="article-meta">
+<span>2026-08-25</span>
+<span class="separator">·</span>
+<span>20 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./tmux-terminal-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Claude Code MCP and Skill" loading="lazy" src="./images/claude-code-guide.jpg"/>
+<div class="article-content">
+<h3>Claude Code MCP &amp; Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門</h3>
+<p class="article-excerpt">深入解析 Claude Code 的 MCP（Model Context Protocol）與 Skill 功能。教你如何安裝 MCP Server、撰寫 .mcp.json 配置、建立自定義 Skill、撰寫 Hooks 自動化，以及 MCP、Skill、Plugin 的關係。</p>
+<div class="article-meta">
+<span>2026-08-25</span>
+<span class="separator">·</span>
+<span>30 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./claude-code-mcp-skill-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="DeepSeek 模型" loading="lazy" src="./images/deepseek-ai-guide.jpg"/>
+<div class="article-content">
+<h3>DeepSeek 完整攻略：V3、V3.2、R1 模型介紹、API 定價與本地部署</h3>
+<p class="article-excerpt">DeepSeek AI 開源模型家族，包括 V3、V3.2、R1 等。本文詳細介紹模型架構、API 定價（比 OpenAI 便宜 5–30 倍）、本地部署方法與 CLI 使用教學。</p>
+<div class="article-meta">
+<span>2026-08-24</span>
+<span class="separator">·</span>
+<span>28 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./deepseek-ai-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="terminal">
+<img alt="btop 終端資源監控" loading="lazy" src="./images/btop-monitor-guide.jpg"/>
+<div class="article-content">
+<h3>btop 終端資源監控神器 — 取代 top/htop 的全面性能工具</h3>
+<p class="article-excerpt">btop 是一個強大的 terminal-based 資源監控工具，整合 CPU、記憶體、磁碟 IO、網路流量與進程監控。本文詳細介紹安裝、操作快捷鍵、配置與進階功能。</p>
+<div class="article-meta">
+<span>2026-08-24</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./btop-monitor-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="tools">
+<img alt="Obsidian 知識管理" loading="lazy" src="./images/obsidian-pkm-guide.jpg"/>
+<div class="article-content">
+<h3>Obsidian 完整入門手冊：安裝、操作、插件與 Claude AI 整合</h3>
+<p class="article-excerpt">Obsidian 知識管理工具完整入門教學：Windows/macOS/Linux 安裝、Vault 建立、Markdown 基礎、核心插件與社群插件介紹，以及 Text Generator、Vault Companion for Claude 等 Claude AI 插件設定。</p>
+<div class="article-meta">
+<span>2026-08-24</span>
+<span class="separator">·</span>
+<span>25 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./obsidian-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="tools">
+<img alt="Notion 工作區" loading="lazy" src="./images/notion-workspace-guide.jpg"/>
+<div class="article-content">
+<h3>Notion 完整入門手冊：工作區設定、資料庫設計、Claude AI 整合與進階技巧</h3>
+<p class="article-excerpt">Notion 全面入門教學：工作區建立、頁面設計、資料庫 relation&amp;rollup、模板庫應用、AI 功能與 Claude 整合技巧，以及進階自動化與嵌入式開發。</p>
+<div class="article-meta">
+<span>2026-08-24</span>
+<span class="separator">·</span>
+<span>30 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./notion-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="GPT-5 模型" loading="lazy" src="./images/gpt5-model-guide.jpg"/>
+<div class="article-content">
+<h3>GPT-5 完整攻略：OpenAI 新世代模型家族功能、定價與應用場景</h3>
+<p class="article-excerpt">OpenAI GPT-5 系列包含 GPT-5、GPT-5 Turbo、GPT-5 Mini 等多個版本。本文詳細介紹各模型的架構、上下文窗口、程式碼能力、定價與 OpenAI 生態整合。</p>
+<div class="article-meta">
+<span>2026-08-23</span>
+<span class="separator">·</span>
+<span>20 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./gpt-5-model-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="xAI Grok" loading="lazy" src="./images/grok-model-guide.jpg"/>
+<div class="article-content">
+<h3>xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景</h3>
+<p class="article-excerpt">xAI Grok 2.5 由 Elon Musk 領導的 xAI 開發，支援即時搜尋、Twitter/X 整合、語音對話與多模態功能。</p>
+<div class="article-meta">
+<span>2026-08-23</span>
+<span class="separator">·</span>
+<span>18 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./grok-model-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Google Gemini" loading="lazy" src="./images/gemini-model-guide.jpg"/>
+<div class="article-content">
+<h3>Google Gemini 完整攻略：1.5、2.0、2.5 系列模型介紹、功能與應用場景</h3>
+<p class="article-excerpt">Google Gemini 系列模型包含 1.5、2.0、2.5 多個版本。本文詳細介紹各模型的多模態能力、上下文窗口、定價、程式碼表現與 Google 生態整合。</p>
+<div class="article-meta">
+<span>2026-08-23</span>
+<span class="separator">·</span>
+<span>20 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./gemini-model-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Claude 模型" loading="lazy" src="./images/claude-model-guide.jpg"/>
+<div class="article-content">
+<h3>Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景</h3>
+<p class="article-excerpt">Anthropic Claude 5 系列模型包括 Fable、Opus、Sonnet、Haiku 四大型號。本文詳細介紹各模型的功能、效能、定價與應用場景，幫你選擇最適合的 Claude 模型。</p>
+<div class="article-meta">
+<span>2026-08-23</span>
+<span class="separator">·</span>
+<span>22 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./claude-model-families.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="Kubernetes 容器編排" loading="lazy" src="./images/kubernetes-guide.jpg"/>
+<div class="article-content">
+<h3>Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例</h3>
+<p class="article-excerpt">Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。</p>
+<div class="article-meta">
+<span>2026-08-22</span>
+<span class="separator">·</span>
+<span>25 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./kubernetes-beginner-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="tools">
+<img alt="Zapier Make n8n 比較" loading="lazy" src="./images/workflow-automation-guide.jpg"/>
+<div class="article-content">
+<h3>Zapier vs Make vs n8n：2026 工作流程自動化三大平台詳細比較</h3>
+<p class="article-excerpt">Zapier、Make.com、n8n 三大工作流程自動化平台在定價、功能、AI 整合與自架能力上的全面比較，包含 2026 年費用情境分析。</p>
+<div class="article-meta">
+<span>2026-08-22</span>
+<span class="separator">·</span>
+<span>20 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./zapier-make-n8n-comparison.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Hermes Agent" loading="lazy" src="./images/hermes-agent-guide.jpg"/>
+<div class="article-content">
+<h3>Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用</h3>
+<p class="article-excerpt">Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。</p>
+<div class="article-meta">
+<span>2026-08-22</span>
+<span class="separator">·</span>
+<span>35 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./hermes-agent-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="OpenClaw AI 助手" loading="lazy" src="./images/openclaw-agent-guide.jpg"/>
+<div class="article-content">
+<h3>OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用</h3>
+<p class="article-excerpt">OpenClaw 是一個開源、自架的 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm）、完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）與進階技巧。</p>
+<div class="article-meta">
+<span>2026-08-22</span>
+<span class="separator">·</span>
+<span>32 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./openclaw-ai-assistant.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="network">
+<img alt="Wireshark 封包分析" loading="lazy" src="./images/wireshark-packet-guide.jpg"/>
+<div class="article-content">
+<h3>Wireshark 網路封包分析完全攻略：安裝、基本使用與進階技巧</h3>
+<p class="article-excerpt">Wireshark 是網路封包分析的利器。本文詳細介紹 Wireshark 的安裝（Windows/macOS/Linux）、介面操作、顯示過濾、通訊協定分析與進階技巧。</p>
+<div class="article-meta">
+<span>2026-08-22</span>
+<span class="separator">·</span>
+<span>28 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./wireshark-network-analysis.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="Docker 容器" loading="lazy" src="./images/docker-guide.jpg"/>
+<div class="article-content">
+<h3>Docker 容器化指南：安裝、基本指令與進階使用</h3>
+<p class="article-excerpt">Docker 是一個開源的容器化平台。本文詳細介紹 Docker 的概念、安裝方式、基本指令、Docker Compose 與進階技巧。</p>
+<div class="article-meta">
+<span>2026-08-22</span>
+<span class="separator">·</span>
+<span>18 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./docker-container-guide.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="tools">
+<img alt="n8n 自動化" loading="lazy" src="./images/workflow-automation-guide.jpg"/>
+<div class="article-content">
+<h3>n8n 工作流程自動化完全攻略：安裝、使用與進階技巧</h3>
+<p class="article-excerpt">n8n 是一個開源的工作流程自動化工具。本文詳細介紹 n8n 的特色、安裝方式、基本操作、常見整合案例與進階技巧。</p>
+<div class="article-meta">
+<span>2026-08-22</span>
+<span class="separator">·</span>
+<span>16 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./n8n-workflow-automation.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="LM Studio" loading="lazy" src="./images/local-llm-inference-guide.jpg"/>
+<div class="article-content">
+<h3>LM Studio 本地大模型攻略：下載、安裝、模型管理與 GPU 加速</h3>
+<p class="article-excerpt">LM Studio 是一個強大的本地 LLM 桌面應用程式。本文詳細介紹 LM Studio 的下載安裝、模型管理、對話功能、GPU 加速設定與實用技巧。</p>
+<div class="article-meta">
+<span>2026-08-22</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./lm-studio-local-llm.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Ollama 本地大模型部署完全攻略" loading="lazy" src="./images/ollama-guide.jpg"/>
+<div class="article-content">
+<h3>Ollama 本地大模型部署完全攻略：安裝、指令、Modelfile 客製化、API 整合與顯存調校指南</h3>
+<p class="article-excerpt">零成本、保護隱私！深度解析 Ollama 本地模型部署：CLI 指令速查、VRAM 顯存計算與選型、Modelfile 封裝自製 GGUF、環境變數調校、OpenAI 相容 API 及互動式 VRAM 試算工具。</p>
+<div class="article-meta">
+<span>2026-10-16</span>
+<span class="separator">·</span>
+<span>28 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./ollama-local-llm.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="llama.cpp GGUF" loading="lazy" src="./images/local-llm-inference-guide.jpg"/>
+<div class="article-content">
+<h3>本地大模型攻略：Hugging Face 下載 GGUF、llama.cpp 安裝與 GPU 加速</h3>
+<p class="article-excerpt">從 Hugging Face 下載 GGUF 格式模型，安裝 llama.cpp 在 Windows 上本地推理，設定 GPU Offload（CUDA/Vulkan/DirectML）與 Context 長度，一次搞懂。</p>
+<div class="article-meta">
+<span>2026-08-22</span>
+<span class="separator">·</span>
+<span>22 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./llama-cpp-gguf.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="Claude Code" loading="lazy" src="./images/claude-code-guide.jpg"/>
+<div class="article-content">
+<h3>Claude Code 功能介紹、指令集及如何使用</h3>
+<p class="article-excerpt">Claude Code 是 Anthropic 推出的 AI 編碼助手，支援 Terminal、VS Code、Web 等多平台。本文整理其六大核心能力、完整的 CLI 命令與內建斜線指令速查。</p>
+<div class="article-meta">
+<span>2026-08-21</span>
+<span class="separator">·</span>
+<span>25 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./claude-code-commands.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="terminal">
+<img alt="Mac 指令" loading="lazy" src="./images/linux-terminal-guide.jpg"/>
+<div class="article-content">
+<h3>Mac mini 常用指令入門 — 150 個指令一次搞懂</h3>
+<p class="article-excerpt">macOS 終端機結合 BSD Unix 與 Apple 圖形層強大功能。本文整理 150 個 macOS 常用指令，包含 Homebrew、剪貼簿、網路與開發工具。</p>
+<div class="article-meta">
+<span>2026-08-21</span>
+<span class="separator">·</span>
+<span>16 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./mac-commands.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="frontend">
+<img alt="Node.js 指令" loading="lazy" src="./images/nodejs-javascript-guide.jpg"/>
+<div class="article-content">
+<h3>Node.js、npm、npx 完整指令入門 — 60 個指令一次搞懂</h3>
+<p class="article-excerpt">Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。</p>
+<div class="article-meta">
+<span>2026-08-21</span>
+<span class="separator">·</span>
+<span>20 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./node-js-commands.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="terminal">
+<img alt="Linux 指令" loading="lazy" src="./images/linux-terminal-guide.jpg"/>
+<div class="article-content">
+<h3>Linux 常用指令入門 — 150 個指令一次搞懂</h3>
+<p class="article-excerpt">Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。</p>
+<div class="article-meta">
+<span>2026-08-21</span>
+<span class="separator">·</span>
+<span>18 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./linux-commands.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="devops">
+<img alt="Git 版本控制" loading="lazy" src="./images/git-commands-guide.jpg"/>
+<div class="article-content">
+<h3>Git 常用指令入門 — 從零開始掌握版本控制</h3>
+<p class="article-excerpt">Git 是全球最流行的分散式版本控制系統。本文整理核心概念與日常使用指令，從初始化到進階操作一次搞懂。</p>
+<div class="article-meta">
+<span>2026-08-20</span>
+<span class="separator">·</span>
+<span>12 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./git-commands.html">閱讀更多 →</a>
+</div>
+</article>
+<article class="article-card" data-category="ai">
+<img alt="AI 模型比較" loading="lazy" src="./images/frontier-llms-guide.jpg"/>
+<div class="article-content">
+<h3>ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較</h3>
+<p class="article-excerpt">ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。</p>
+<div class="article-meta">
+<span>2026-08-18</span>
+<span class="separator">·</span>
+<span>15 分鐘閱讀</span>
+</div>
+<a class="read-more" href="./ai-models.html">閱讀更多 →</a>
+</div>
+</article>
+<div id="no-results">😔 沒有符合此分類的文章</div>
+</div>
+</section>
+</div>
+</main>
+<!-- =============== Footer =============== -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-top">
+<div class="footer-column">
+<h4>"AI" 硬核工程師</h4>
+<div class="footer-links">
+<a href="./about.html">關於我</a>
+<a href="./articles.html">所有文章</a>
+</div>
+</div>
+<div class="footer-column">
+<h4>聯絡方式</h4>
+<div class="footer-links">
+<a href="mailto:cai100.cyc@gmail.com">信件</a>
+<a href="https://github.com/Robert-cYc">GitHub</a>
+<a href="https://x.com/">Twitter</a>
+</div>
+</div>
+</div>
+<div class="marquee-container">
+<div class="marquee-content"></div>
+</div>
+<div class="footer-bottom">
+<p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+<script src="./js/wave.js"></script>
+<script src="./js/bg-effects.js?v=10"></script>
+<script src="./js/script.js"></script>
+<script src="./js/enhancements.js"></script>
+<script>
     // ===== Article Category Filter =====
     (function () {
       var tabs = document.querySelectorAll('.filter-tab');

@@ -1,28 +1,29 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prompt Engineering 提示工程入門 — 學會「下指令」讓 AI 變得更好用 — "AI" 硬核工程師</title>
-  <link rel="icon" href="data:,🎯">
-  <meta name="description" content="Prompt Engineering 是什麼？怎麼下指令讓 ChatGPT / Claude 更好用？本文帶你認識零樣本、少樣本、Chain-of-Thought 思維鏈技巧，以及實戰 prompt 模板。">
-  <meta name="canonical" href="https://ai-hardcore-engineer.com/prompt-engineering-guide.html">
-  <meta property="og:title" content="Prompt Engineering 提示工程入門 — &quot;AI&quot; 硬核工程師">
-  <meta property="og:description" content="學會「下指令」讓 AI 變得更好用！分享零樣本、少樣本、Chain-of-Thought 技巧與實戰 prompt 模板。">
-  <meta property="og:url" content="https://ai-hardcore-engineer.com/prompt-engineering-guide.html">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
-  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
-  <meta property="og:locale" content="zh_TW">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Prompt Engineering 提示工程入門 — &quot;AI&quot; 硬核工程師">
-  <meta name="twitter:description" content="學會「下指令」讓 AI 變得更好用！分享零樣本、少樣本、Chain-of-Thought 技巧與實戰 prompt 模板。">
-  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
-  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
-    <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="./css/style.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prompt Engineering 提示工程入門 — 學會「下指令」讓 AI 變得更好用 — "AI" 硬核工程師</title>
+<link href="data:,🎯" rel="icon"/>
+<meta content="Prompt Engineering 是什麼？怎麼下指令讓 ChatGPT / Claude 更好用？本文帶你認識零樣本、少樣本、Chain-of-Thought 思維鏈技巧，以及實戰 prompt 模板。" name="description"/>
+<meta href="https://ai-hardcore-engineer.com/prompt-engineering-guide.html" name="canonical"/>
+<meta content='Prompt Engineering 提示工程入門 — "AI" 硬核工程師' property="og:title"/>
+<meta content="學會「下指令」讓 AI 變得更好用！分享零樣本、少樣本、Chain-of-Thought 技巧與實戰 prompt 模板。" property="og:description"/>
+<meta content="https://ai-hardcore-engineer.com/prompt-engineering-guide.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="./images/prompt-engineering-guide.jpg" property="og:image"/>
+<meta content='"AI" 硬核工程師' property="og:site_name"/>
+<meta content="zh_TW" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content='Prompt Engineering 提示工程入門 — "AI" 硬核工程師' name="twitter:title"/>
+<meta content="學會「下指令」讓 AI 變得更好用！分享零樣本、少樣本、Chain-of-Thought 技巧與實戰 prompt 模板。" name="twitter:description"/>
+<meta content="./images/prompt-engineering-guide.jpg" name="twitter:image"/>
+<script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+<link href="https://ai-hardcore-engineer.com/feed.xml" rel="alternate" title="AI 硬核工程師 RSS" type="application/rss+xml"/>
+<link href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="./css/style.css" rel="stylesheet"/>
+<style>
     .article-hero {
       text-align: center;
       padding: 4rem 0 2rem;
@@ -117,7 +118,7 @@
     }
       .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
   </style>
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -138,123 +139,111 @@
   </script>
 </head>
 <body>
-  <!-- =============== Header =============== -->
-  <header class="site-header" id="top">
-    <div class="waves" aria-hidden="true">
-      <canvas id="wave-canvas"></canvas>
-    </div>
-    <div class="container header-inner">
-      <div class="logo">
-        <div>"AI" 硬核工程師</div>
-        <div class="tagline">Talk is cheap. Show me the code</div>
-      </div>
-      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="nav">
-        <a href="./index.html">首頁</a>
-        <a href="./tech-news.html">科技新知</a>
-        <a href="./articles.html">文章</a>
-        <a href="./about.html">關於</a>
-        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
-        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- =============== Search Overlay =============== -->
-  <div class="search-overlay">
-    <div class="search-container">
-      <input type="text" placeholder="搜尋文章..." autocomplete="off">
-      <div class="search-results"></div>
-      <div class="search-close">按 Esc 關閉</div>
-    </div>
-  </div>
-
-  <main>
-    <article>
-      <!-- Hero -->
-      <section class="article-hero">
-        <div class="container">
-          <h1>Prompt Engineering 提示工程入門</h1>
-          <p style="font-size:1.35rem; color:var(--text-muted); max-width:50em; margin:0 auto; line-height:1.7;">
+<!-- =============== Header =============== -->
+<header class="site-header" id="top">
+<div aria-hidden="true" class="waves">
+<canvas id="wave-canvas"></canvas>
+</div>
+<div class="container header-inner">
+<div class="logo">
+<div>"AI" 硬核工程師</div>
+<div class="tagline">Talk is cheap. Show me the code</div>
+</div>
+<button aria-expanded="false" aria-label="選單" class="menu-toggle"><span></span><span></span><span></span></button>
+<nav class="nav">
+<a href="./index.html">首頁</a>
+<a href="./tech-news.html">科技新知</a>
+<a href="./articles.html">文章</a>
+<a href="./about.html">關於</a>
+<a aria-label="搜尋" class="nav-search-toggle" href="#">🔍</a>
+<a aria-label="切換深淺色模式" class="theme-toggle" href="#" id="theme-toggle">🌙</a>
+</nav>
+</div>
+</header>
+<!-- =============== Search Overlay =============== -->
+<div class="search-overlay">
+<div class="search-container">
+<input autocomplete="off" placeholder="搜尋文章..." type="text"/>
+<div class="search-results"></div>
+<div class="search-close">按 Esc 關閉</div>
+</div>
+</div>
+<main>
+<article>
+<!-- Hero -->
+<section class="article-hero">
+<div class="container">
+<h1>Prompt Engineering 提示工程入門</h1>
+<p style="font-size:1.35rem; color:var(--text-muted); max-width:50em; margin:0 auto; line-height:1.7;">
             學會怎麼「下指令」讓 ChatGPT / Claude 變得更好用！帶你認識零樣本、少樣本、Chain-of-Thought 思維鏈技巧，以及實戰 prompt 模板。
           </p>
-          <div class="article-meta">
-            <span>2026-09-02</span>
-            <span>·</span>
-            <span>12 分鐘閱讀</span>
-            <span>·</span>
-            <span>來源：learnprompting.org</span>
-          </div>
-          <div class="article-tags">
-            <span class="tag">Prompt Engineering</span>
-            <span class="tag">提示工程</span>
-            <span class="tag">AI</span>
-            <span class="tag">LLM</span>
-            <span class="tag">ChatGPT</span>
-            <span class="tag">Claude</span>
-            <span class="tag">教學</span>
-          </div>
-          <img loading="lazy" src="https://picsum.photos/seed/prompt-engineering/1200/400" alt="Prompt Engineering 提示工程">
-        </div>
-      </section>
-
-      <div class="container">
-        <div class="article-body">
-
-          <!-- 重點摘要 -->
-          <div class="highlight-box" style="margin-top:0;">
-            <strong style="font-size:1.3rem; display:block; margin-bottom:0.6rem;">✦ 重點摘要</strong>
-            <p style="margin-bottom:0.4rem;">
+<div class="article-meta">
+<span>2026-09-02</span>
+<span>·</span>
+<span>12 分鐘閱讀</span>
+<span>·</span>
+<span>來源：learnprompting.org</span>
+</div>
+<div class="article-tags">
+<span class="tag">Prompt Engineering</span>
+<span class="tag">提示工程</span>
+<span class="tag">AI</span>
+<span class="tag">LLM</span>
+<span class="tag">ChatGPT</span>
+<span class="tag">Claude</span>
+<span class="tag">教學</span>
+</div>
+<img alt="Prompt Engineering 提示工程" loading="lazy" src="./images/prompt-engineering-guide.jpg"/>
+</div>
+</section>
+<div class="container">
+<div class="article-body">
+<!-- 重點摘要 -->
+<div class="highlight-box" style="margin-top:0;">
+<strong style="font-size:1.3rem; display:block; margin-bottom:0.6rem;">✦ 重點摘要</strong>
+<p style="margin-bottom:0.4rem;">
               提示工程（Prompt Engineering）就是學會怎麼跟 AI 有效溝通。本文整理了學習路線（基礎 → 進階 → 可靠性 → 圖像），以及三種核心技巧：Zero-shot（零樣本）、Few-shot（少樣本）、Chain-of-Thought（思維鏈）。掌握正確結構（角色 → 背景 → 任務 → 規則 → 格式 → 思考）後，你的 prompt 效果能翻好幾倍！
             </p>
-          </div>
-
-          <h2>前言：為什麼「下指令」這麼重要？</h2>
-          <p>嘿，最近跟朋友聊天的時候，發現很多人覺得 ChatGPT 或 Claude 很好玩，但問到「怎麼讓它變得更好用？」的時候，就卡住了。有些人會亂試亂猜，輸入一個句子就等著看結果；有些人則會覺得「反正 AI 會理解的」，然後抱怨結果不如預期。</p>
-          <p>實際上，<strong>提示工程（Prompt Engineering）</strong> 其富有趣的「下指令術」 — 就像你在跟一個非常聰明但有點孤立的助手溝通，關鍵是怎麼下手。</p>
-          <p>本文參考 <a href="https://learnprompting.org/zh-tw/docs/introduction" target="_blank">learnprompting.org</a> 的系統教學，帶你從零開始認識這門學問。</p>
-
-          <h2>什麼是提示工程？</h2>
-          <p>提示工程的定義很簡單，但實踐起來可沒這麼容易：</p>
-          <blockquote>
-            <strong>提示工程（Prompt Engineering）是「與 AI 進行有效溝通來實現預期結果的過程」。</strong><br>
+</div>
+<h2>前言：為什麼「下指令」這麼重要？</h2>
+<p>嘿，最近跟朋友聊天的時候，發現很多人覺得 ChatGPT 或 Claude 很好玩，但問到「怎麼讓它變得更好用？」的時候，就卡住了。有些人會亂試亂猜，輸入一個句子就等著看結果；有些人則會覺得「反正 AI 會理解的」，然後抱怨結果不如預期。</p>
+<p>實際上，<strong>提示工程（Prompt Engineering）</strong> 其富有趣的「下指令術」 — 就像你在跟一個非常聰明但有點孤立的助手溝通，關鍵是怎麼下手。</p>
+<p>本文參考 <a href="https://learnprompting.org/zh-tw/docs/introduction" target="_blank">learnprompting.org</a> 的系統教學，帶你從零開始認識這門學問。</p>
+<h2>什麼是提示工程？</h2>
+<p>提示工程的定義很簡單，但實踐起來可沒這麼容易：</p>
+<blockquote>
+<strong>提示工程（Prompt Engineering）是「與 AI 進行有效溝通來實現預期結果的過程」。</strong><br/>
             — 來源：<a href="https://learnprompting.org/zh-tw/docs/introduction" target="_blank">learnprompting.org</a>
-          </blockquote>
-          <p>換句話說，就是怎麼讓你的提示更清楚、更有結構，讓 AI 知道你到底要幹嘛 - 而不是胡亂猜測你的意思。</p>
-
-          <h2>學習路線圖：從入門到進階</h2>
-          <p>learnprompting.org 把提示工程分成了幾個等級，你可以根據自己的需求跳著讀：</p>
-
-          <div class="highlight-box">
-            <strong>學習等級</strong>
-            <ul style="margin: 0.5rem 0 0 0;">
-              <li><strong>🟢 基礎（Basics）</strong> — AI 與 PE 入門，適合零基礎</li>
-              <li><strong>🟦 基本應用（Basic Applications）</strong> — 實用的提示技巧</li>
-              <li><strong>◆ 中級（Intermediate）</strong> — 基於研究的技術，較中等複雜</li>
-              <li><strong>◆◆ 進階（Advanced）</strong> — 強大的複雜提示工程應用</li>
-              <li><strong>可靠性</strong> — 增強 LLM 穩定性</li>
-              <li><strong>圖像提示</strong> — DALL·E / Stable Diffusion 提示詞</li>
-              <li><strong>提示駭客攻擊</strong> — 安全性議題</li>
-              <li><strong>工具</strong> — 提示工程 IDE 與工具</li>
-              <li><strong>可訓練提示</strong> — 梯度最佳化技術</li>
-            </ul>
-          </div>
-
-          <h3>學習建議</h3>
-          <p>不需要照順序讀，可以根據興趣跳轉。初學者建議從<strong>基礎</strong>開始；熟悉者可直接看<strong>中級</strong>或<strong>基本應用</strong>。</p>
-
-          <h2>三種核心技巧</h2>
-
-          <h3>1. Zero-shot（零樣本）</h3>
-          <p>直接描述任務，不給例子：</p>
-          <pre><code>請將以下英文翻譯成中文：
+</blockquote>
+<p>換句話說，就是怎麼讓你的提示更清楚、更有結構，讓 AI 知道你到底要幹嘛 - 而不是胡亂猜測你的意思。</p>
+<h2>學習路線圖：從入門到進階</h2>
+<p>learnprompting.org 把提示工程分成了幾個等級，你可以根據自己的需求跳著讀：</p>
+<div class="highlight-box">
+<strong>學習等級</strong>
+<ul style="margin: 0.5rem 0 0 0;">
+<li><strong>🟢 基礎（Basics）</strong> — AI 與 PE 入門，適合零基礎</li>
+<li><strong>🟦 基本應用（Basic Applications）</strong> — 實用的提示技巧</li>
+<li><strong>◆ 中級（Intermediate）</strong> — 基於研究的技術，較中等複雜</li>
+<li><strong>◆◆ 進階（Advanced）</strong> — 強大的複雜提示工程應用</li>
+<li><strong>可靠性</strong> — 增強 LLM 穩定性</li>
+<li><strong>圖像提示</strong> — DALL·E / Stable Diffusion 提示詞</li>
+<li><strong>提示駭客攻擊</strong> — 安全性議題</li>
+<li><strong>工具</strong> — 提示工程 IDE 與工具</li>
+<li><strong>可訓練提示</strong> — 梯度最佳化技術</li>
+</ul>
+</div>
+<h3>學習建議</h3>
+<p>不需要照順序讀，可以根據興趣跳轉。初學者建議從<strong>基礎</strong>開始；熟悉者可直接看<strong>中級</strong>或<strong>基本應用</strong>。</p>
+<h2>三種核心技巧</h2>
+<h3>1. Zero-shot（零樣本）</h3>
+<p>直接描述任務，不給例子：</p>
+<pre><code>請將以下英文翻譯成中文：
 "The quick brown fox jumps over the lazy dog."</code></pre>
-          <p><strong>適合：</strong>簡單的分類、翻譯、摘要等任務。</p>
-          <p><strong>缺點：</strong>複雜任務準確度不穩定。</p>
-
-          <h3>2. Few-shot（少樣本）</h3>
-          <p>給 2~5 個例子示範格式與邏輯：</p>
-          <pre><code>請根據示例進行情感分類：
+<p><strong>適合：</strong>簡單的分類、翻譯、摘要等任務。</p>
+<p><strong>缺點：</strong>複雜任務準確度不穩定。</p>
+<h3>2. Few-shot（少樣本）</h3>
+<p>給 2~5 個例子示範格式與邏輯：</p>
+<pre><code>請根據示例進行情感分類：
 
 示例1：
 文本："這家餐廳的服務太棒了！"
@@ -267,28 +256,25 @@
 現在請分類：
 文本："雖然有點貴，但食材新鮮，值得推薦！"
 情感：</code></pre>
-          <p><strong>技巧：</strong>3~5 個例子就好，太多會浪費 token；把最重要的例子放最後。</p>
-
-          <h3>3. Chain-of-Thought（思維鏈）</h3>
-          <p>讓 AI <strong>一步一步想</strong>，而不是直接給答案：</p>
-          <pre><code>問題：如果一輛車以60km/h的速度行駛，需要多長時間才能行駛150公里？
+<p><strong>技巧：</strong>3~5 個例子就好，太多會浪費 token；把最重要的例子放最後。</p>
+<h3>3. Chain-of-Thought（思維鏈）</h3>
+<p>讓 AI <strong>一步一步想</strong>，而不是直接給答案：</p>
+<pre><code>問題：如果一輛車以60km/h的速度行駛，需要多長時間才能行駛150公里？
 
 讓我們一步一步思考：
 1. 已知速度 = 60km/h，距離 = 150km
 2. 公式：時間 = 距離 ÷ 速度
 3. 帶入：150 ÷ 60 = 2.5 小時
 答案：2.5 小時</code></pre>
-          <p><strong>常用觸發語：</strong>"Let's think step by step" 或 "請先推理後回答"</p>
-
-          <h2>怎麼寫一個「好提示」？</h2>
-          <p>高品質的提示通常遵循這個結構：</p>
-          <div class="highlight-box">
-            <strong>結構模式：</strong><br>
+<p><strong>常用觸發語：</strong>"Let's think step by step" 或 "請先推理後回答"</p>
+<h2>怎麼寫一個「好提示」？</h2>
+<p>高品質的提示通常遵循這個結構：</p>
+<div class="highlight-box">
+<strong>結構模式：</strong><br/>
             角色設定 → 背景脈絡 → 任務說明 → 規則限制 → 格式要求 → 思考提示
           </div>
-
-          <h3>實戰範例：寫部落格文章</h3>
-          <pre><code>你是一位 15 年經驗的內容編輯，專注於科技與職場。
+<h3>實戰範例：寫部落格文章</h3>
+<pre><code>你是一位 15 年經驗的內容編輯，專注於科技與職場。
 
 背景：
 目標讀者是剛踏入職場的年輕人，對 AI 工具感到好奇但不知道如何上手。
@@ -305,11 +291,9 @@
 1. 引言 2. 核心論點 3. 實例分享 4. 結論
 
 請一步一步思考，先列出大綱再展開。</code></pre>
-
-          <h2>常見應用場景 + 好提示分享</h2>
-
-          <h3>🔧 技術：Code Review</h3>
-          <pre><code>&lt;system&gt;
+<h2>常見應用場景 + 好提示分享</h2>
+<h3>🔧 技術：Code Review</h3>
+<pre><code>&lt;system&gt;
 你是資深工程師，20 年經驗，專精於安全與程式碼品質。
 &lt;/system&gt;
 
@@ -321,9 +305,8 @@
 - 列出具體行號與嚴重程度（CRITICAL/HIGH/MEDIUM/LOW）
 - 提供修改建議，不要重寫整個檔案
 &lt;/rules&gt;</code></pre>
-
-          <h3>📊 商業：數據分析</h3>
-          <pre><code>&lt;system&gt;
+<h3>📊 商業：數據分析</h3>
+<pre><code>&lt;system&gt;
 你是 SaaS 公司的 CFO，負責 Q2 財報分析。
 &lt;/system&gt;
 
@@ -342,9 +325,8 @@
 - 列出 3~5 個可行動項目
 - 直言不諱，避免模稜兩可
 &lt;/rules&gt;</code></pre>
-
-          <h3>🐛 調試：Bug 追查</h3>
-          <pre><code>你是分布式系統的除錯專家。
+<h3>🐛 調試：Bug 追查</h3>
+<pre><code>你是分布式系統的除錯專家。
 
 背景：
 - 生產環境 /api/user 偶發 401 錯誤
@@ -352,49 +334,41 @@
 - 錯誤日誌顯示「Invalid or expired token」
 
 請推理出根本原因，並提出最小化修復方案。</code></pre>
-
-          <h2>實用 Tips</h2>
-          <ol>
-            <li><strong>清楚 &gt; 聽話</strong>：不要期望 AI 默懂你的脈絡，盡可能具體描述。</li>
-            <li><strong>結構化標籤</strong>：用 XML 或標點符號區隔角色、任務、規則。</li>
-            <li><strong>加入「思考」環節</strong>：讓 AI 自己推理後再回答，品質會好很多。</li>
-            <li><strong>多問、多改</strong>：如果結果不滿意，不是埋怨 AI，而是回去優化你的提示。</li>
-          </ol>
-
-          <h2>結語</h2>
-          <p>提示工程其實沒有那麼可怕。就像學習一門語言差不多 — 剛開始會覺得詞彙、語法規則無趣，但習慣了之後，就可以流利地「下指令」，讓 AI 成為你的得力助手。</p>
-
-          <p>下次你在跟 AI 聊天之前，試著先想想：</p>
-          <ul>
-            <li>它是誰？（角色）</li>
-            <li>它知道什麼？（背景）</li>
-            <li>它要做什麼？（任務）</li>
-            <li>該怎麼做？（規則與格式）</li>
-          </ul>
-
-          <blockquote>
-            <strong>🎯 關鍵回憶：</strong>
+<h2>實用 Tips</h2>
+<ol>
+<li><strong>清楚 &gt; 聽話</strong>：不要期望 AI 默懂你的脈絡，盡可能具體描述。</li>
+<li><strong>結構化標籤</strong>：用 XML 或標點符號區隔角色、任務、規則。</li>
+<li><strong>加入「思考」環節</strong>：讓 AI 自己推理後再回答，品質會好很多。</li>
+<li><strong>多問、多改</strong>：如果結果不滿意，不是埋怨 AI，而是回去優化你的提示。</li>
+</ol>
+<h2>結語</h2>
+<p>提示工程其實沒有那麼可怕。就像學習一門語言差不多 — 剛開始會覺得詞彙、語法規則無趣，但習慣了之後，就可以流利地「下指令」，讓 AI 成為你的得力助手。</p>
+<p>下次你在跟 AI 聊天之前，試著先想想：</p>
+<ul>
+<li>它是誰？（角色）</li>
+<li>它知道什麼？（背景）</li>
+<li>它要做什麼？（任務）</li>
+<li>該怎麼做？（規則與格式）</li>
+</ul>
+<blockquote>
+<strong>🎯 關鍵回憶：</strong>
             Zero-shot 適合簡單任務，Few-shot 適合模式示範，
             CoT 適合推理鏈。結構清晰的提示永遠比冗長的描述更有效。
           </blockquote>
-
-          <p>想要我幫你客製化一個好提示嗎？直接說出你的需求，比如「幫我寫一份行銷文案」或「幫我把這段程式碼加上註解」，我們一起來練手吧！</p>
-
-        </div>
-      </div>
-    </article>
-  </main>
-
-  <!-- =============== Footer =============== -->
-  <footer style="text-align:center; padding:3rem 1rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:4rem;">
-    <p>"AI" 硬核工程師 — Talk is cheap. Show me the code.</p>
-    <p style="font-size:0.9rem; margin-top:0.5rem;">文章參考：<a href="https://learnprompting.org/zh-tw/docs/introduction" target="_blank">learnprompting.org — Prompt Engineering Guide</a></p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
-  <script src="./js/wave.js"></script>
-  <script src="./js/bg-effects.js?v=10"></script>
-  <script src="./js/script.js"></script>
-  <script src="./js/enhancements.js"></script>
+<p>想要我幫你客製化一個好提示嗎？直接說出你的需求，比如「幫我寫一份行銷文案」或「幫我把這段程式碼加上註解」，我們一起來練手吧！</p>
+</div>
+</div>
+</article>
+</main>
+<!-- =============== Footer =============== -->
+<footer style="text-align:center; padding:3rem 1rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:4rem;">
+<p>"AI" 硬核工程師 — Talk is cheap. Show me the code.</p>
+<p style="font-size:0.9rem; margin-top:0.5rem;">文章參考：<a href="https://learnprompting.org/zh-tw/docs/introduction" target="_blank">learnprompting.org — Prompt Engineering Guide</a></p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+<script src="./js/wave.js"></script>
+<script src="./js/bg-effects.js?v=10"></script>
+<script src="./js/script.js"></script>
+<script src="./js/enhancements.js"></script>
 </body>
 </html>

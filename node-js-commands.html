@@ -1,27 +1,28 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Node.js、npm、npx 完整指令入門 — "AI" 硬核工程師</title>
-  <link rel="icon" href="data:,🎯">
-  <meta name="description" content="Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。">
-  <meta name="canonical" href="https://ai-hardcore-engineer.com/node-js-commands.html">
-  <meta property="og:title" content="Node.js、npm、npx 完整指令入門 — &quot;AI&quot; 硬核工程師">
-  <meta property="og:description" content="Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。">
-  <meta property="og:url" content="https://ai-hardcore-engineer.com/node-js-commands.html">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
-  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
-  <meta property="og:locale" content="zh_TW">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Node.js、npm、npx 完整指令入門 — &quot;AI&quot; 硬核工程師">
-  <meta name="twitter:description" content="Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。">
-  <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
-  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>    <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="./css/style.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Node.js、npm、npx 完整指令入門 — "AI" 硬核工程師</title>
+<link href="data:,🎯" rel="icon"/>
+<meta content="Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。" name="description"/>
+<meta href="https://ai-hardcore-engineer.com/node-js-commands.html" name="canonical"/>
+<meta content='Node.js、npm、npx 完整指令入門 — "AI" 硬核工程師' property="og:title"/>
+<meta content="Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。" property="og:description"/>
+<meta content="https://ai-hardcore-engineer.com/node-js-commands.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="./images/nodejs-javascript-guide.jpg" property="og:image"/>
+<meta content='"AI" 硬核工程師' property="og:site_name"/>
+<meta content="zh_TW" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content='Node.js、npm、npx 完整指令入門 — "AI" 硬核工程師' name="twitter:title"/>
+<meta content="Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。" name="twitter:description"/>
+<meta content="./images/nodejs-javascript-guide.jpg" name="twitter:image"/>
+<script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script> <link href="https://ai-hardcore-engineer.com/feed.xml" rel="alternate" title="AI 硬核工程師 RSS" type="application/rss+xml"/>
+<link href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="./css/style.css" rel="stylesheet"/>
+<style>
     .article-hero {
       text-align: center;
       padding: 4rem 0 2rem;
@@ -149,7 +150,7 @@
       gap: 0.4rem;
     }
   </style>
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -170,173 +171,161 @@
   </script>
 </head>
 <body>
-  <!-- =============== Header =============== -->
-  <header class="site-header" id="top">
-    <div class="waves" aria-hidden="true">
-      <canvas id="wave-canvas"></canvas>
-    </div>
-    <div class="container header-inner">
-      <div class="logo">
-        <div>"AI" 硬核工程師</div>
-        <div class="tagline">Talk is cheap. Show me the code</div>
-      </div>
-      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="nav">
-        <a href="./index.html">首頁</a>
-        <a href="./tech-news.html">科技新知</a>
-        <a href="./articles.html">文章</a>
-        <a href="./about.html">關於</a>
-        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
-        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- =============== Search Overlay =============== -->
-  <div class="search-overlay">
-    <div class="search-container">
-      <input type="text" placeholder="搜尋文章..." autocomplete="off">
-      <div class="search-results"></div>
-      <div class="search-close">按 Esc 關閉</div>
-    </div>
-  </div>
-
-  <main>
-    <div class="container">
-      <!-- =============== Article Header =============== -->
-      <section class="article-hero">
-        <h1>Node.js、npm、npx 完整指令入門 — 60 個指令一次搞懂</h1>
-        <div class="article-meta">
-          <span>2026-08-21</span>
-          <span class="separator">·</span>
-          <span>20 分鐘閱讀</span>
-        </div>
-        <div class="article-tags">
-          <span class="tag">Node.js</span>
-          <span class="tag">npm</span>
-          <span class="tag">npx</span>
-          <span class="tag">CLI</span>
-        </div>
-        <img loading="lazy" src="https://picsum.photos/seed/nodejs/1200/400" alt="Node.js npm npx">
-      </section>
-
-      <!-- =============== Article Body =============== -->
-      <article class="article-body">
-        <p>Node.js 除了能在伺服器端執行 JavaScript，更帶來了 <strong>npm</strong>（Node Package Manager）生態系，讓開發者能以數十萬個開源套件加速開發。而 <strong>npx</strong> 則讓我們能在不全局安裝的前提下執行 npm 套件中的命令。三者組合起來，構成現代 JavaScript 開發的基石。</p>
-
-        <p>本文整理 Node.js、npm、npx 的核心概念與 60 個常用指令，從環境安裝到套件管理、專案初始化到布署，一次學會。</p>
-
-        <h2>Node.js 基礎概念</h2>
-        <p>Node.js 是一個基於 V8 引擎的 JavaScript 伺服器執行環境。它使用事件驅動、非阻塞 I/O 模型，輕量且高效，非常適合 I/O 密集型應用。</p>
-
-        <h3>版本管理</h3>
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>node -v</code></td>
-              <td>顯示目前 Node.js 版本</td>
-            </tr>
-            <tr>
-              <td><code>npm -v</code></td>
-              <td>顯示目前 npm 版本</td>
-            </tr>
-            <tr>
-              <td><code>node -p "process.version"</code></td>
-              <td>透過 process 物件顯示版本</td>
-            </tr>
-            <tr>
-              <td><code>nvm ls</code></td>
-              <td>列出 nvm 管理的所有 Node.js 版本</td>
-            </tr>
-            <tr>
-              <td><code>nvm use &lt;version&gt;</code></td>
-              <td>切換到指定 Node.js 版本</td>
-            </tr>
-            <tr>
-              <td><code>nvm install &lt;version&gt;</code></td>
-              <td>下載並安裝指定 Node.js 版本</td>
-            </tr>
-            <tr>
-              <td><code>nvm alias default &lt;version&gt;</code></td>
-              <td>設定預設 Node.js 版本</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <blockquote>
+<!-- =============== Header =============== -->
+<header class="site-header" id="top">
+<div aria-hidden="true" class="waves">
+<canvas id="wave-canvas"></canvas>
+</div>
+<div class="container header-inner">
+<div class="logo">
+<div>"AI" 硬核工程師</div>
+<div class="tagline">Talk is cheap. Show me the code</div>
+</div>
+<button aria-expanded="false" aria-label="選單" class="menu-toggle"><span></span><span></span><span></span></button>
+<nav class="nav">
+<a href="./index.html">首頁</a>
+<a href="./tech-news.html">科技新知</a>
+<a href="./articles.html">文章</a>
+<a href="./about.html">關於</a>
+<a aria-label="搜尋" class="nav-search-toggle" href="#">🔍</a>
+<a aria-label="切換深淺色模式" class="theme-toggle" href="#" id="theme-toggle">🌙</a>
+</nav>
+</div>
+</header>
+<!-- =============== Search Overlay =============== -->
+<div class="search-overlay">
+<div class="search-container">
+<input autocomplete="off" placeholder="搜尋文章..." type="text"/>
+<div class="search-results"></div>
+<div class="search-close">按 Esc 關閉</div>
+</div>
+</div>
+<main>
+<div class="container">
+<!-- =============== Article Header =============== -->
+<section class="article-hero">
+<h1>Node.js、npm、npx 完整指令入門 — 60 個指令一次搞懂</h1>
+<div class="article-meta">
+<span>2026-08-21</span>
+<span class="separator">·</span>
+<span>20 分鐘閱讀</span>
+</div>
+<div class="article-tags">
+<span class="tag">Node.js</span>
+<span class="tag">npm</span>
+<span class="tag">npx</span>
+<span class="tag">CLI</span>
+</div>
+<img alt="Node.js npm npx" loading="lazy" src="./images/nodejs-javascript-guide.jpg"/>
+</section>
+<!-- =============== Article Body =============== -->
+<article class="article-body">
+<p>Node.js 除了能在伺服器端執行 JavaScript，更帶來了 <strong>npm</strong>（Node Package Manager）生態系，讓開發者能以數十萬個開源套件加速開發。而 <strong>npx</strong> 則讓我們能在不全局安裝的前提下執行 npm 套件中的命令。三者組合起來，構成現代 JavaScript 開發的基石。</p>
+<p>本文整理 Node.js、npm、npx 的核心概念與 60 個常用指令，從環境安裝到套件管理、專案初始化到布署，一次學會。</p>
+<h2>Node.js 基礎概念</h2>
+<p>Node.js 是一個基於 V8 引擎的 JavaScript 伺服器執行環境。它使用事件驅動、非阻塞 I/O 模型，輕量且高效，非常適合 I/O 密集型應用。</p>
+<h3>版本管理</h3>
+<table class="cmd-table">
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>node -v</code></td>
+<td>顯示目前 Node.js 版本</td>
+</tr>
+<tr>
+<td><code>npm -v</code></td>
+<td>顯示目前 npm 版本</td>
+</tr>
+<tr>
+<td><code>node -p "process.version"</code></td>
+<td>透過 process 物件顯示版本</td>
+</tr>
+<tr>
+<td><code>nvm ls</code></td>
+<td>列出 nvm 管理的所有 Node.js 版本</td>
+</tr>
+<tr>
+<td><code>nvm use &lt;version&gt;</code></td>
+<td>切換到指定 Node.js 版本</td>
+</tr>
+<tr>
+<td><code>nvm install &lt;version&gt;</code></td>
+<td>下載並安裝指定 Node.js 版本</td>
+</tr>
+<tr>
+<td><code>nvm alias default &lt;version&gt;</code></td>
+<td>設定預設 Node.js 版本</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
           💡 <strong>nvm（Node Version Manager）</strong> 讓你在同一台電腦上管理多個 Node.js 版本，避免不同專案對版本的依賴衝突。
         </blockquote>
-
-        <h3>執行 JavaScript 檔案</h3>
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>node app.js</code></td>
-              <td>執行指定 JS 檔案</td>
-            </tr>
-            <tr>
-              <td><code>node -e "console.log('hello')"</code></td>
-              <td>直接執行一行 JavaScript</td>
-            </tr>
-            <tr>
-              <td><code>node --inspect app.js</code></td>
-              <td>啟用偵錯模式啟動</td>
-            </tr>
-            <tr>
-              <td><code>node --inspect-brk app.js</code></td>
-              <td>啟用偵錯並暫停在第一行</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>Node.js 模組系統</h3>
-        <p>Node.js 支援 CommonJS（require）與 ES Modules（import）兩種模組語法。</p>
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>語法</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>require('fs')</code></td>
-              <td>CommonJS 匯入核心模組</td>
-            </tr>
-            <tr>
-              <td><code>module.exports</code></td>
-              <td>CommonJS 匯出</td>
-            </tr>
-            <tr>
-              <td><code>import fs from 'fs'</code></td>
-              <td>ESM 匯入（需 package.json 設定 type: "module"）</td>
-            </tr>
-            <tr>
-              <td><code>export default</code></td>
-              <td>ESM 匯出</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2>npm 核心概念</h2>
-        <p>npm 由三部分組成：CLI（命令列界面）、Registry（全球最大的 JavaScript 套件倉庫）、Website（套件資訊查詢）。npm 會在專案中建立 <code>node_modules</code> 資料夾存放所有依賴。</p>
-
-        <h3>npm init — 初始化專案</h3>
-        <p>在專案根目錄執行 <code>npm init</code> 會引導式建立 <code>package.json</code> 檔案。</p>
-
-        <pre><code># 互動式建立 package.json（問答題）
+<h3>執行 JavaScript 檔案</h3>
+<table class="cmd-table">
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>node app.js</code></td>
+<td>執行指定 JS 檔案</td>
+</tr>
+<tr>
+<td><code>node -e "console.log('hello')"</code></td>
+<td>直接執行一行 JavaScript</td>
+</tr>
+<tr>
+<td><code>node --inspect app.js</code></td>
+<td>啟用偵錯模式啟動</td>
+</tr>
+<tr>
+<td><code>node --inspect-brk app.js</code></td>
+<td>啟用偵錯並暫停在第一行</td>
+</tr>
+</tbody>
+</table>
+<h3>Node.js 模組系統</h3>
+<p>Node.js 支援 CommonJS（require）與 ES Modules（import）兩種模組語法。</p>
+<table class="cmd-table">
+<thead>
+<tr>
+<th>語法</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>require('fs')</code></td>
+<td>CommonJS 匯入核心模組</td>
+</tr>
+<tr>
+<td><code>module.exports</code></td>
+<td>CommonJS 匯出</td>
+</tr>
+<tr>
+<td><code>import fs from 'fs'</code></td>
+<td>ESM 匯入（需 package.json 設定 type: "module"）</td>
+</tr>
+<tr>
+<td><code>export default</code></td>
+<td>ESM 匯出</td>
+</tr>
+</tbody>
+</table>
+<h2>npm 核心概念</h2>
+<p>npm 由三部分組成：CLI（命令列界面）、Registry（全球最大的 JavaScript 套件倉庫）、Website（套件資訊查詢）。npm 會在專案中建立 <code>node_modules</code> 資料夾存放所有依賴。</p>
+<h3>npm init — 初始化專案</h3>
+<p>在專案根目錄執行 <code>npm init</code> 會引導式建立 <code>package.json</code> 檔案。</p>
+<pre><code># 互動式建立 package.json（問答題）
 npm init
 
 # 跳過問答，使用預設值
@@ -344,38 +333,35 @@ npm init -y
 
 # 使用指定初始化器（等同 npm exec create-foo）
 npm init vue@latest</code></pre>
-
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>npm init</code></td>
-              <td>互動式建立 package.json</td>
-            </tr>
-            <tr>
-              <td><code>npm init -y</code></td>
-              <td>使用預設值快速建立 package.json</td>
-            </tr>
-            <tr>
-              <td><code>npm init &lt;initializer&gt;</code></td>
-              <td>使用指定初始化器建立專案（如 vue、next）</td>
-            </tr>
-            <tr>
-              <td><code>npm pkg set &lt;key&gt;=&lt;value&gt;</code></td>
-              <td>直接設定 package.json 的欄位值</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>npm install — 安裝套件</h3>
-        <p>npm install 是最常用的指令，用於安裝專案依賴。</p>
-
-        <pre><code># 安裝 package.json 中的所有依賴
+<table class="cmd-table">
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm init</code></td>
+<td>互動式建立 package.json</td>
+</tr>
+<tr>
+<td><code>npm init -y</code></td>
+<td>使用預設值快速建立 package.json</td>
+</tr>
+<tr>
+<td><code>npm init &lt;initializer&gt;</code></td>
+<td>使用指定初始化器建立專案（如 vue、next）</td>
+</tr>
+<tr>
+<td><code>npm pkg set &lt;key&gt;=&lt;value&gt;</code></td>
+<td>直接設定 package.json 的欄位值</td>
+</tr>
+</tbody>
+</table>
+<h3>npm install — 安裝套件</h3>
+<p>npm install 是最常用的指令，用於安裝專案依賴。</p>
+<pre><code># 安裝 package.json 中的所有依賴
 npm install
 
 # 安裝指定套件到 dependencies
@@ -400,120 +386,112 @@ npm install ./package.tgz
 # 從 GitHub 安裝
 npm install username/repo
 npm install github:user/repo#v1.0.0</code></pre>
-
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>npm install</code></td>
-              <td>安裝 package.json 中所有依賴</td>
-            </tr>
-            <tr>
-              <td><code>npm install &lt;pkg&gt;</code></td>
-              <td>安裝指定套件到 dependencies</td>
-            </tr>
-            <tr>
-              <td><code>npm i &lt;pkg&gt;</code></td>
-              <td>install 的縮寫</td>
-            </tr>
-            <tr>
-              <td><code>npm i -D &lt;pkg&gt;</code></td>
-              <td>安裝到 devDependencies</td>
-            </tr>
-            <tr>
-              <td><code>npm i -g &lt;pkg&gt;</code></td>
-              <td>全域安裝</td>
-            </tr>
-            <tr>
-              <td><code>npm ci</code></td>
-              <td>基於 package-lock.json 的乾淨安裝（CI 用）</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <blockquote>
+<table class="cmd-table">
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm install</code></td>
+<td>安裝 package.json 中所有依賴</td>
+</tr>
+<tr>
+<td><code>npm install &lt;pkg&gt;</code></td>
+<td>安裝指定套件到 dependencies</td>
+</tr>
+<tr>
+<td><code>npm i &lt;pkg&gt;</code></td>
+<td>install 的縮寫</td>
+</tr>
+<tr>
+<td><code>npm i -D &lt;pkg&gt;</code></td>
+<td>安裝到 devDependencies</td>
+</tr>
+<tr>
+<td><code>npm i -g &lt;pkg&gt;</code></td>
+<td>全域安裝</td>
+</tr>
+<tr>
+<td><code>npm ci</code></td>
+<td>基於 package-lock.json 的乾淨安裝（CI 用）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
           ⚠️ <strong>npm ci 與 npm install 的差別：</strong> <code>npm ci</code> 會刪除原有的 <code>node_modules</code> 並根據 <code>package-lock.json</code> 進行完整安裝，速度快且確保環境一致性，非常適合 CI/CD 流程。
         </blockquote>
-
-        <h3>npm uninstall / update / outdated — 管理套件版本</h3>
-
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>npm uninstall &lt;pkg&gt;</code></td>
-              <td>移除指定套件</td>
-            </tr>
-            <tr>
-              <td><code>npm uninstall &lt;pkg&gt; -g</code></td>
-              <td>移除全域套件</td>
-            </tr>
-            <tr>
-              <td><code>npm update &lt;pkg&gt;</code></td>
-              <td>更新套件到符合 package.json 的版本</td>
-            </tr>
-            <tr>
-              <td><code>npm update -g &lt;pkg&gt;</code></td>
-              <td>更新全域套件</td>
-            </tr>
-            <tr>
-              <td><code>npm outdated</code></td>
-              <td>檢查本地套件是否有新版本</td>
-            </tr>
-            <tr>
-              <td><code>npm outdated -g --depth=0</code></td>
-              <td>檢查全域已過時的套件</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>npm ls — 查看依賴樹</h3>
-
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>npm ls</code></td>
-              <td>列出目前專案的所有依賴</td>
-            </tr>
-            <tr>
-              <td><code>npm ls --depth=0</code></td>
-              <td>只顯示頂層依賴（不遞入）</td>
-            </tr>
-            <tr>
-              <td><code>npm ls -g</code></td>
-              <td>列出全局安裝的套件</td>
-            </tr>
-            <tr>
-              <td><code>npm ls -g --depth=0</code></td>
-              <td>顯示全局頂層套件</td>
-            </tr>
-            <tr>
-              <td><code>npm ls &lt;pkg&gt;</code></td>
-              <td>檢查特定套件是否安裝</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>npm run — 執行腳本</h3>
-        <p>npm 可以在 <code>package.json</code> 的 <code>scripts</code> 區塊定義指令腳本，並透過 <code>npm run</code> 執行。</p>
-
-        <pre><code>// package.json
+<h3>npm uninstall / update / outdated — 管理套件版本</h3>
+<table class="cmd-table">
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm uninstall &lt;pkg&gt;</code></td>
+<td>移除指定套件</td>
+</tr>
+<tr>
+<td><code>npm uninstall &lt;pkg&gt; -g</code></td>
+<td>移除全域套件</td>
+</tr>
+<tr>
+<td><code>npm update &lt;pkg&gt;</code></td>
+<td>更新套件到符合 package.json 的版本</td>
+</tr>
+<tr>
+<td><code>npm update -g &lt;pkg&gt;</code></td>
+<td>更新全域套件</td>
+</tr>
+<tr>
+<td><code>npm outdated</code></td>
+<td>檢查本地套件是否有新版本</td>
+</tr>
+<tr>
+<td><code>npm outdated -g --depth=0</code></td>
+<td>檢查全域已過時的套件</td>
+</tr>
+</tbody>
+</table>
+<h3>npm ls — 查看依賴樹</h3>
+<table class="cmd-table">
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm ls</code></td>
+<td>列出目前專案的所有依賴</td>
+</tr>
+<tr>
+<td><code>npm ls --depth=0</code></td>
+<td>只顯示頂層依賴（不遞入）</td>
+</tr>
+<tr>
+<td><code>npm ls -g</code></td>
+<td>列出全局安裝的套件</td>
+</tr>
+<tr>
+<td><code>npm ls -g --depth=0</code></td>
+<td>顯示全局頂層套件</td>
+</tr>
+<tr>
+<td><code>npm ls &lt;pkg&gt;</code></td>
+<td>檢查特定套件是否安裝</td>
+</tr>
+</tbody>
+</table>
+<h3>npm run — 執行腳本</h3>
+<p>npm 可以在 <code>package.json</code> 的 <code>scripts</code> 區塊定義指令腳本，並透過 <code>npm run</code> 執行。</p>
+<pre><code>// package.json
 {
   "scripts": {
     "dev": "vite",
@@ -522,8 +500,7 @@ npm install github:user/repo#v1.0.0</code></pre>
     "lint": "eslint ."
   }
 }</code></pre>
-
-        <pre><code># 執行腳本
+<pre><code># 執行腳本
 npm run dev
 npm run build
 npm test      # 等同 npm run test
@@ -533,129 +510,118 @@ npm run
 
 # 執行前顯示指令（不執行）
 npm run dev --dry-run</code></pre>
-
-        <h3>npm test — 執行測試</h3>
-
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>npm test</code></td>
-              <td>執行 package.json 中定義的 test 腳本</td>
-            </tr>
-            <tr>
-              <td><code>npm test -- &lt;args&gt;</code></td>
-              <td>傳遞參數給 test 腳本</td>
-            </tr>
-            <tr>
-              <td><code>npm run test:unit</code></td>
-              <td>執行命名為 test:unit 的腳本</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>npm publish — 發布套件</h3>
-        <blockquote>
+<h3>npm test — 執行測試</h3>
+<table class="cmd-table">
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm test</code></td>
+<td>執行 package.json 中定義的 test 腳本</td>
+</tr>
+<tr>
+<td><code>npm test -- &lt;args&gt;</code></td>
+<td>傳遞參數給 test 腳本</td>
+</tr>
+<tr>
+<td><code>npm run test:unit</code></td>
+<td>執行命名為 test:unit 的腳本</td>
+</tr>
+</tbody>
+</table>
+<h3>npm publish — 發布套件</h3>
+<blockquote>
           ⚠️ <strong>發布前請三思：</strong> npm publish 一旦完成就無法撤回，發布前記得檢查版本號和是否已發布過。
         </blockquote>
-
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>npm publish</code></td>
-              <td>發布套件到 npm registry</td>
-            </tr>
-            <tr>
-              <td><code>npm publish --access public</code></td>
-              <td>發布 scoped 套件為公開</td>
-            </tr>
-            <tr>
-              <td><code>npm publish --tag beta</code></td>
-              <td>發布到指定 tag</td>
-            </tr>
-            <tr>
-              <td><code>npm version &lt;update&gt;</code></td>
-              <td>更新版本號（patch/minor/major）</td>
-            </tr>
-            <tr>
-              <td><code>npm whoami</code></td>
-              <td>查看目前登入的 npm 用戶</td>
-            </tr>
-            <tr>
-              <td><code>npm login</code></td>
-              <td>登入 npm 帳號</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <pre><code># 發布流程範例
+<table class="cmd-table">
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm publish</code></td>
+<td>發布套件到 npm registry</td>
+</tr>
+<tr>
+<td><code>npm publish --access public</code></td>
+<td>發布 scoped 套件為公開</td>
+</tr>
+<tr>
+<td><code>npm publish --tag beta</code></td>
+<td>發布到指定 tag</td>
+</tr>
+<tr>
+<td><code>npm version &lt;update&gt;</code></td>
+<td>更新版本號（patch/minor/major）</td>
+</tr>
+<tr>
+<td><code>npm whoami</code></td>
+<td>查看目前登入的 npm 用戶</td>
+</tr>
+<tr>
+<td><code>npm login</code></td>
+<td>登入 npm 帳號</td>
+</tr>
+</tbody>
+</table>
+<pre><code># 發布流程範例
 npm login
 npm version patch
 npm publish</code></pre>
-
-        <h3>npm cache / npm config / npm doctor</h3>
-
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>npm cache clean --force</code></td>
-              <td>清除 npm 快取</td>
-            </tr>
-            <tr>
-              <td><code>npm cache verify</code></td>
-              <td>驗證快取完整性</td>
-            </tr>
-            <tr>
-              <td><code>npm config list</code></td>
-              <td>顯示所有 npm 設定</td>
-            </tr>
-            <tr>
-              <td><code>npm config set &lt;key&gt; &lt;value&gt;</code></td>
-              <td>設定 npm 配置</td>
-            </tr>
-            <tr>
-              <td><code>npm config get &lt;key&gt;</code></td>
-              <td>讀取 npm 配置值</td>
-            </tr>
-            <tr>
-              <td><code>npm doctor</code></td>
-              <td>檢查 npm 環境是否正常</td>
-            </tr>
-            <tr>
-              <td><code>npm info &lt;pkg&gt;</code></td>
-              <td>查詢套件的詳細資訊</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2>npx 完整攻略</h2>
-        <p><strong>npx</strong> 是 npm 5.2.0 版本 bundled 的一個工具。它的存在解決了一個問題：在執行 npm 套件中的命令時不需要全局安裝，只需透過 npx 下載到快取並執行。</p>
-
-        <h3>npx 的三種主要用途</h3>
-
-        <h3>1. 執行已發布的 npm 套件命令</h3>
-        <blockquote>
+<h3>npm cache / npm config / npm doctor</h3>
+<table class="cmd-table">
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm cache clean --force</code></td>
+<td>清除 npm 快取</td>
+</tr>
+<tr>
+<td><code>npm cache verify</code></td>
+<td>驗證快取完整性</td>
+</tr>
+<tr>
+<td><code>npm config list</code></td>
+<td>顯示所有 npm 設定</td>
+</tr>
+<tr>
+<td><code>npm config set &lt;key&gt; &lt;value&gt;</code></td>
+<td>設定 npm 配置</td>
+</tr>
+<tr>
+<td><code>npm config get &lt;key&gt;</code></td>
+<td>讀取 npm 配置值</td>
+</tr>
+<tr>
+<td><code>npm doctor</code></td>
+<td>檢查 npm 環境是否正常</td>
+</tr>
+<tr>
+<td><code>npm info &lt;pkg&gt;</code></td>
+<td>查詢套件的詳細資訊</td>
+</tr>
+</tbody>
+</table>
+<h2>npx 完整攻略</h2>
+<p><strong>npx</strong> 是 npm 5.2.0 版本 bundled 的一個工具。它的存在解決了一個問題：在執行 npm 套件中的命令時不需要全局安裝，只需透過 npx 下載到快取並執行。</p>
+<h3>npx 的三種主要用途</h3>
+<h3>1. 執行已發布的 npm 套件命令</h3>
+<blockquote>
           💡 <strong>最佳實踐：</strong> 當你不確定專案會不會長期使用某個工具時，盡量用 npx 執行，而非全局安裝。
         </blockquote>
-
-        <pre><code># 執行 create-react-app，不需全局安裝
+<pre><code># 執行 create-react-app，不需全局安裝
 npx create-react-app my-app
 
 # 指定版本
@@ -666,66 +632,58 @@ npx create-react-app my-app --yes
 
 # 使用 --package 指定套件來源
 npx --package=vue-cli vue --version</code></pre>
-
-        <h3>2. 執行本地已安裝的套件命令</h3>
-        <p>如果套件已在本地 <code>node_modules/.bin</code> 中，npx 會直接執行，無需重新下載。</p>
-
-        <pre><code># 在本地安裝 jest 後執行
+<h3>2. 執行本地已安裝的套件命令</h3>
+<p>如果套件已在本地 <code>node_modules/.bin</code> 中，npx 會直接執行，無需重新下載。</p>
+<pre><code># 在本地安裝 jest 後執行
 npx jest
 
 # 執行本地 vite（不需全局安裝）
 npx vite build</code></pre>
-
-        <h3>3. 執行 GitHub 上或本地的包</h3>
-
-        <pre><code># 從 GitHub 執行
+<h3>3. 執行 GitHub 上或本地的包</h3>
+<pre><code># 從 GitHub 執行
 npx github:owner/repo
 
 # 從本地檔案執行
 npx ./package.tgz</code></pre>
-
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>指令</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>npx &lt;cmd&gt;</code></td>
-              <td>執行 npm 套件中的命令</td>
-            </tr>
-            <tr>
-              <td><code>npx -p &lt;pkg&gt; &lt;cmd&gt;</code></td>
-              <td>指定套件來源後執行命令</td>
-            </tr>
-            <tr>
-              <td><code>npx --yes &lt;cmd&gt;</code></td>
-              <td>自動確認安裝提示</td>
-            </tr>
-            <tr>
-              <td><code>npx --no &lt;cmd&gt;</code></td>
-              <td>自動拒絕安裝提示</td>
-            </tr>
-            <tr>
-              <td><code>npx -c 'cmd1 && cmd2'</code></td>
-              <td>執行串連命令</td>
-            </tr>
-            <tr>
-              <td><code>npm exec &lt;cmd&gt;</code></td>
-              <td>npm exec 為 npx 的官方別名</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <blockquote>
+<table class="cmd-table">
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npx &lt;cmd&gt;</code></td>
+<td>執行 npm 套件中的命令</td>
+</tr>
+<tr>
+<td><code>npx -p &lt;pkg&gt; &lt;cmd&gt;</code></td>
+<td>指定套件來源後執行命令</td>
+</tr>
+<tr>
+<td><code>npx --yes &lt;cmd&gt;</code></td>
+<td>自動確認安裝提示</td>
+</tr>
+<tr>
+<td><code>npx --no &lt;cmd&gt;</code></td>
+<td>自動拒絕安裝提示</td>
+</tr>
+<tr>
+<td><code>npx -c 'cmd1 &amp;&amp; cmd2'</code></td>
+<td>執行串連命令</td>
+</tr>
+<tr>
+<td><code>npm exec &lt;cmd&gt;</code></td>
+<td>npm exec 為 npx 的官方別名</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
           🎯 <strong>npx vs npm exec：</strong> npx 和 npm exec 在本質上是相同的，npm exec 只是將 npx 整合到 npm 工作流程中。兩者可以互換使用，npx 保留是為了向後兼容。
         </blockquote>
-
-        <h3>npx 常見使用場景</h3>
-
-        <pre><code># 初始化專案（React）
+<h3>npx 常見使用場景</h3>
+<pre><code># 初始化專案（React）
 npx create-react-app my-app
 
 # 初始化專案（Vue）
@@ -745,10 +703,8 @@ npx prisma migrate dev
 
 # 初始化 Vite
 npx vite</code></pre>
-
-        <h2>package.json 結構</h2>
-
-        <pre><code>{
+<h2>package.json 結構</h2>
+<pre><code>{
   "name": "my-app",
   "version": "1.0.0",
   "description": "我的專案描述",
@@ -768,49 +724,45 @@ npx vite</code></pre>
     "jest": "^29.0.0"
   }
 }</code></pre>
-
-        <h3>版本號語義</h3>
-        <p>npm 使用 語義化版本 (SemVer)：<code>major.minor.patch</code>，例如 <code>1.2.3</code>。</p>
-
-        <table class="cmd-table">
-          <thead>
-            <tr>
-              <th>語法</th>
-              <th>說明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>1.2.3</code></td>
-              <td>固定版本</td>
-            </tr>
-            <tr>
-              <td><code>^1.2.3</code></td>
-              <td>相容更新（預設）：>=1.2.3 &lt; 2.0.0</td>
-            </tr>
-            <tr>
-              <td><code>~1.2.3</code></td>
-              <td>近似更新：>=1.2.3 &lt; 1.3.0</td>
-            </tr>
-            <tr>
-              <td><code>>=1.2.3</code></td>
-              <td>大於或等於指定版本</td>
-            </tr>
-            <tr>
-              <td><code>&lt;2.0.0</code></td>
-              <td>小於指定版本</td>
-            </tr>
-            <tr>
-              <td><code>*</code></td>
-              <td>任意版本</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2>開發工作流程總結</h2>
-        <p>一個典型的 Node.js 專案開發流程如下：</p>
-
-        <pre><code># 1. 初始化專案
+<h3>版本號語義</h3>
+<p>npm 使用 語義化版本 (SemVer)：<code>major.minor.patch</code>，例如 <code>1.2.3</code>。</p>
+<table class="cmd-table">
+<thead>
+<tr>
+<th>語法</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1.2.3</code></td>
+<td>固定版本</td>
+</tr>
+<tr>
+<td><code>^1.2.3</code></td>
+<td>相容更新（預設）：&gt;=1.2.3 &lt; 2.0.0</td>
+</tr>
+<tr>
+<td><code>~1.2.3</code></td>
+<td>近似更新：&gt;=1.2.3 &lt; 1.3.0</td>
+</tr>
+<tr>
+<td><code>&gt;=1.2.3</code></td>
+<td>大於或等於指定版本</td>
+</tr>
+<tr>
+<td><code>&lt;2.0.0</code></td>
+<td>小於指定版本</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>任意版本</td>
+</tr>
+</tbody>
+</table>
+<h2>開發工作流程總結</h2>
+<p>一個典型的 Node.js 專案開發流程如下：</p>
+<pre><code># 1. 初始化專案
 npm init -y
 
 # 2. 安裝依賴
@@ -821,7 +773,7 @@ npm i -D nodemon jest
 npm pkg set scripts.dev="nodemon app.js"
 npm pkg set scripts.test="jest"
 
-# 4. 開發 & 測試
+# 4. 開發 &amp; 測試
 npm run dev
 npm test
 
@@ -832,21 +784,17 @@ npm update
 # 6. 發布 (若為函式庫)
 npm version patch
 npm publish</code></pre>
-
-        <h2>常見問題與技巧</h2>
-
-        <h3>npm 報錯：ERESOLVE 依賴衝突</h3>
-        <p>當遇到依賴衝突（兩個套件需要不同版本的同一套件）：</p>
-        <pre><code># 嘗試使用 --legacy-peer-deps 繞過
+<h2>常見問題與技巧</h2>
+<h3>npm 報錯：ERESOLVE 依賴衝突</h3>
+<p>當遇到依賴衝突（兩個套件需要不同版本的同一套件）：</p>
+<pre><code># 嘗試使用 --legacy-peer-deps 繞過
 npm install --legacy-peer-deps</code></pre>
-
-        <h3>npm 報錯：npm ERR! 無法移除 node_modules</h3>
-        <pre><code># 手動刪除 node_modules 和 lock 檔案
+<h3>npm 報錯：npm ERR! 無法移除 node_modules</h3>
+<pre><code># 手動刪除 node_modules 和 lock 檔案
 rm -rf node_modules package-lock.json
 npm install</code></pre>
-
-        <h3>npm 速度慢？切換 registry</h3>
-        <pre><code># 使用 npmmirror (npm 中國鏡像)
+<h3>npm 速度慢？切換 registry</h3>
+<pre><code># 使用 npmmirror (npm 中國鏡像)
 npm config set registry https://registry.npmmirror.com
 
 # 恢復官方 registry
@@ -855,51 +803,47 @@ npm config set registry https://registry.npmjs.org
 # 或使用 nrm 管理 registry
 npm i -g nrm
 nrm use npmmirror</code></pre>
-
-        <blockquote>
+<blockquote>
           🎯 <strong>快速回顧：<strong> npm 用於管理依賴（packages），npx/npx exec 用於臨時執行套件命令；npm ci 適合部署時使用；npm run 管理專案腳本；npm publish 發布函式庫。養成使用 nvm 管理版本的習慣，能大幅減少環境問題。
-        </blockquote>
-      </article>
-
-      <!-- =============== Article Footer =============== -->
-      <div class="article-footer">
-        <a href="#top" class="back-home">← 返回頁首</a>
-      </div>
-    </div>
-  </main>
-
-  <!-- =============== Footer =============== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-column">
-          <h4>"AI" 硬核工程師</h4>
-          <div class="footer-links">
-            <a href="./about.html">關於我</a>
-            <a href="./articles.html">所有文章</a>          </div>
-        </div>
-        <div class="footer-column">
-          <h4>聯絡方式</h4>
-          <div class="footer-links">
-            <a href="mailto:cai100.cyc@gmail.com">信件</a>
-            <a href="https://github.com/Robert-cYc">GitHub</a>
-            <a href="https://x.com/">Twitter</a>
-          </div>
-        </div>
-      </div>
-      <div class="marquee-container">
-        <div class="marquee-content"></div>
-      </div>
-      <div class="footer-bottom">
-        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
-  <script src="./js/wave.js"></script>
-  <script src="./js/bg-effects.js?v=10"></script>
-  <script src="./js/script.js"></script>
-  <script src="./js/enhancements.js"></script>
+        </strong></strong></blockquote>
+</article>
+<!-- =============== Article Footer =============== -->
+<div class="article-footer">
+<a class="back-home" href="#top">← 返回頁首</a>
+</div>
+</div>
+</main>
+<!-- =============== Footer =============== -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-top">
+<div class="footer-column">
+<h4>"AI" 硬核工程師</h4>
+<div class="footer-links">
+<a href="./about.html">關於我</a>
+<a href="./articles.html">所有文章</a> </div>
+</div>
+<div class="footer-column">
+<h4>聯絡方式</h4>
+<div class="footer-links">
+<a href="mailto:cai100.cyc@gmail.com">信件</a>
+<a href="https://github.com/Robert-cYc">GitHub</a>
+<a href="https://x.com/">Twitter</a>
+</div>
+</div>
+</div>
+<div class="marquee-container">
+<div class="marquee-content"></div>
+</div>
+<div class="footer-bottom">
+<p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+<script src="./js/wave.js"></script>
+<script src="./js/bg-effects.js?v=10"></script>
+<script src="./js/script.js"></script>
+<script src="./js/enhancements.js"></script>
 </body>
 </html>
