@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19 07:01",
+  "updated": "2026-10-19 07:20",
   "sources": [
     {
       "name": "自由 3C 科技",
@@ -84,6 +84,18 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
+          "title": "突破量子運算關鍵瓶頸，Google Willow 晶片讓「魔法狀態」錯誤率狂降 40 倍",
+          "link": "https://technews.tw/2026/10/19/google-quantum-computing-bottleneck-breakthrough/",
+          "date": "2026-10-19 07:20",
+          "summary": "Google 旗下的 Google Quantum AI 近期宣布，已成功在自家的 Willow 量子處理器上 [&#8230;]"
+        },
+        {
+          "title": "緩解 AI 衝擊就業  Anthropic 擬撥 5% 股份入公益基金",
+          "link": "https://technews.tw/2026/10/19/anthropic-plans-to-allocate-5percent-stake-to-public-benefit-fund/",
+          "date": "2026-10-19 07:10",
+          "summary": "人工智慧（AI）新創公司 Anthropic 計劃提撥 5% 股權，成立公共利益基金（Public Benef [&#8230;]"
+        },
+        {
           "title": "精密智慧製造台廠，搶攻 AIDC 零組件及設備供應",
           "link": "https://finance.technews.tw/2026/10/19/taiwanese-precision-smart-manufacturing-firms-target-aidc-component-equipment-supply/",
           "date": "2026-10-19 06:30",
@@ -142,18 +154,6 @@
           "link": "https://technews.tw/2026/10/19/ai-empowers-everyone-make-games-who-decides-your-work-gets-played/",
           "date": "2026-10-19 00:00",
           "summary": "10 月 7 日 Google 推出實驗性遊戲平台 Playground，讓沒有程式經驗的人也能用文字指令製作 [&#8230;]"
-        },
-        {
-          "title": "「人人有代理」時代來臨！虛擬幕僚代勞日常，人類仍是不可取代的「最終當責者」",
-          "link": "https://technews.tw/2026/10/19/ai-agents-cut-costs-and-drive-revenue-growth/",
-          "date": "2026-10-18 23:50",
-          "summary": "「人人有 Agent 的時代即將來臨」，談起今年 AI 代理人（AI Agent）發展，台大電機工程學系教授、 [&#8230;]"
-        },
-        {
-          "title": "拒絕無止盡擴建資料中心，新創 Ricursive 讓 AI 設計整顆晶片、盼一週完成一款新設計",
-          "link": "https://technews.tw/2026/10/19/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/",
-          "date": "2026-10-18 23:40",
-          "summary": "新創 Ricursive Intelligence 共同創辦人 Anna Goldie 與 Azalia Mi [&#8230;]"
         }
       ]
     },
