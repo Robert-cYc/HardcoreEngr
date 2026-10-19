@@ -1,17 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>&quot;AI&quot; 硬核工程師</title>
+    <title>"AI" 硬核工程師</title>
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
     <lastBuildDate>Mon, 19 Oct 2026 08:07:43 +0000</lastBuildDate>
-    <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <ns0:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
-      <title>&quot;AI&quot; 硬核工程師</title>
+      <title>"AI" 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>Claude Code 終極深度指南：MCP (Model Context Protocol) 核心架構、.mcp.json 配置與自定義 Skill 實戰全攻略</title>
+    <link>https://ai-hardcore-engineer.com/claude-code-mcp-skill-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/claude-code-mcp-skill-guide.html</guid>
+    <description>全維度深度剖析 Claude Code 終端自主代理生態：從 Agentic Loop 運作原理、MCP 協議標準（Tools、Resources、Prompts 與 stdio/SSE 傳輸架構）、.mcp.json 專案與全域配置、8 大生產力 MCP Server 推薦，到手寫 Python FastMCP 與 TypeScript 自定義 Server、Skill 自定義 Slash Commands 工作流、Hooks 生命週期防禦攔截，內建互動式配置產生器。</description>
+    <pubDate>Mon, 19 Oct 2026 09:00:00 +0000</pubDate>
+    <category>Claude Code</category>
+    <category>MCP</category>
+    <category>Skill</category>
+    <category>AI 開發工具</category>
+    <category>教學</category>
+  </item>
   <item>
     <title>RTX Spark vs DGX Spark 完全對決：Windows Laptop vs Linux 桌面級 AI 超級電腦架構評測與選型指南</title>
     <link>https://ai-hardcore-engineer.com/rtx-spark-vs-dgx-spark-guide.html</link>
@@ -107,10 +119,10 @@
     <category>教學</category>
   </item>
   <item>
-    <title>儲存裝置極速指南：HDD、2.5&quot; SATA SSD、M.2 NVMe 與 USB 規格與效能終極比較表</title>
+    <title>儲存裝置極速指南：HDD、2.5" SATA SSD、M.2 NVMe 與 USB 規格與效能終極比較表</title>
     <link>https://ai-hardcore-engineer.com/storage-spec-performance-comparison.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/storage-spec-performance-comparison.html</guid>
-    <description>全維度橫向評測 3.5&quot;/2.5&quot; HDD、2.5 吋 SATA SSD、M.2 (2230/2242/2280 尺寸、PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟/PSSD。含規格效能大表、M.2 尺寸規格詳解、PS5 與掌機擴充改裝、4K IOPS 與延遲比較、SLC 快取機制及互動式傳輸耗時模擬器。</description>
+    <description>全維度橫向評測 3.5"/2.5" HDD、2.5 吋 SATA SSD、M.2 (2230/2242/2280 尺寸、PCIe 3.0/4.0/5.0 NVMe) 與各世代 USB 隨身碟/PSSD。含規格效能大表、M.2 尺寸規格詳解、PS5 與掌機擴充改裝、4K IOPS 與延遲比較、SLC 快取機制及互動式傳輸耗時模擬器。</description>
     <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
     <category>儲存裝置</category>
     <category>HDD</category>
@@ -897,18 +909,6 @@
     <category>資料庫</category>
     <category>Claude AI</category>
     <category>自動化</category>
-  </item>
-  <item>
-    <title>Claude Code MCP &amp; Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門</title>
-    <link>https://ai-hardcore-engineer.com/claude-code-mcp-skill-guide.html</link>
-    <guid isPermaLink="true">https://ai-hardcore-engineer.com/claude-code-mcp-skill-guide.html</guid>
-    <description>深入解析 Claude Code 的 MCP（Model Context Protocol）與 Skill 功能。教你如何安裝 MCP Server、撰寫 .mcp.json 配置、建立自定義 Skill、撰寫 Hooks 自動化，以及 MCP、Skill、Plugin 的關係。</description>
-    <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
-    <category>Claude Code</category>
-    <category>MCP</category>
-    <category>Skill</category>
-    <category>AI 開發工具</category>
-    <category>教學</category>
   </item>
   <item>
     <title>AI 人工智慧演算法列表 — 從搜尋到深度學習的完整地圖</title>

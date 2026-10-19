@@ -1,5 +1,25 @@
 [
   {
+    "url": "claude-code-mcp-skill-guide.html",
+    "title": "Claude Code 終極深度指南：MCP (Model Context Protocol) 核心架構、.mcp.json 配置與自定義 Skill 實戰全攻略",
+    "excerpt": "全維度深度剖析 Claude Code 終端自主代理生態：從 Agentic Loop 運作原理、MCP 協議標準（Tools、Resources、Prompts 與 stdio/SSE 傳輸架構）、.mcp.json 專案與全域配置、8 大生產力 MCP Server 推薦，到手寫 Python FastMCP 與 TypeScript 自定義 Server、Skill 自定義 Slash Commands 工作流、Hooks 生命週期防禦攔截，內建互動式配置產生器。",
+    "tags": [
+      "Claude Code",
+      "MCP",
+      "Model Context Protocol",
+      "Skill",
+      "Hooks",
+      "Agentic AI",
+      "Anthropic",
+      "FastMCP",
+      "Slash Commands",
+      "CLI",
+      "自動化",
+      "代碼審查"
+    ],
+    "image": "./images/claude-code-guide.jpg"
+  },
+  {
     "url": "rtx-spark-vs-dgx-spark-guide.html",
     "title": "RTX Spark vs DGX Spark 完全對決：Windows Laptop vs Linux 桌面級 AI 超級電腦架構評測與選型指南",
     "excerpt": "深度橫向評測 NVIDIA GB10 Grace Blackwell 超級晶片兩大化身：RTX Spark (Windows on Arm 旗艦筆電) vs DGX Spark (Linux 個人 AI 超級電腦)。全面拆解 128GB 統一記憶體、1 Petaflop 算力、WSL2 與原生核心損耗、TDP 散熱牆，以及 ConnectX-7 雙機 256GB 跑 405B 模型，附顯存與推論速度精算器。",
@@ -944,19 +964,6 @@
       "自動化"
     ],
     "image": "./images/notion-workspace-guide.jpg"
-  },
-  {
-    "url": "claude-code-mcp-skill-guide.html",
-    "title": "Claude Code MCP & Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門",
-    "excerpt": "深入解析 Claude Code 的 MCP（Model Context Protocol）與 Skill 功能。教你如何安裝 MCP Server、撰寫 .mcp.json 配置、建立自定義 Skill、撰寫 Hooks 自動化，以及 MCP、Skill、Plugin 的關係。",
-    "tags": [
-      "Claude Code",
-      "MCP",
-      "Skill",
-      "AI 開發工具",
-      "教學"
-    ],
-    "image": "./images/claude-code-guide.jpg"
   },
   {
     "url": "ai-algorithms.html",
