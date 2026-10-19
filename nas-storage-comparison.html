@@ -67,8 +67,8 @@
       display: block;
     }
     .article-body {
-      max-width: 62em;
-      margin: 0 auto;
+      max-width: 100%;
+      margin: 0;
     }
     .article-body h2 {
       font-size: 2.05rem;
@@ -303,14 +303,25 @@
       background: #0f172a;
       color: #f8fafc;
       border-radius: 10px;
-      padding: 1.5rem;
+      padding: 1.5rem 1.8rem;
       margin: 1.8rem 0;
-      font-family: "Fira Code", monospace;
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
       font-size: 0.88rem;
       line-height: 1.55;
       overflow-x: auto;
+      white-space: pre;
+      tab-size: 2;
       border: 1px solid #334155;
       box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .katex-display {
+      margin: 1.25rem 0 !important;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.4rem 0;
+    }
+    .table-container table {
+      min-width: 660px;
     }
     .diagram-card .hl-cyan { color: #38bdf8; font-weight: bold; }
     .diagram-card .hl-green { color: #4ade80; font-weight: bold; }
@@ -572,7 +583,7 @@
           <li><strong>HDMI 4K 60Hz 直出播放</strong>：具備獨立 HDMI 輸出端子，可直連電視透過 Kodi / Plex 輸出影音，免去 Apple TV 等播放盒中轉。</li>
         </ul>
 
-        <h3>新興消費級品牌：綠聯 (UGREEN) UGOS Pro & 極空間 (ZIDOO)</h3>
+        <h3>⚡ 新興消費級品牌：綠聯 (UGREEN) UGOS Pro & 極空間 (ZIDOO)</h3>
         <p>近年以 Intel 12/13 代 Core 處理器搭配全金屬機身橫空出世，硬體性價比極高。早期系統軟體功能較單薄，但正在透過高頻更新迅速追趕，適合重視家庭影音、下載與相簿備份的一般消費族群。</p>
 
         <!-- =============== Chapter 5 =============== -->
@@ -836,14 +847,7 @@ aio write size = 1</code></pre>
         <a href="#top" class="back-home">← 返回頁首</a>
       </div>
 
-      <!-- =============== Share Bar =============== -->
-      <div class="share-bar">
-        <span class="share-title">分享這篇文章：</span>
-        <button class="share-btn twitter" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(window.location.href),'_blank')">Twitter</button>
-        <button class="share-btn facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'_blank')">Facebook</button>
-        <button class="share-btn linkedin" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank')">LinkedIn</button>
-        <button class="share-btn copy-link" onclick="navigator.clipboard.writeText(window.location.href); alert('連結已複製到剪貼簿！');">🔗 複製連結</button>
-      </div>
+
     </div>
   </main>
 
