@@ -15,7 +15,14 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 FEEDS = [
+    {"name": "Hacker News 熱門", "url": "https://news.ycombinator.com/rss",
+     "site": "https://news.ycombinator.com/", "type": "rss"},
     {"name": "自由 3C 科技", "url": "https://3c.ltn.com.tw/",
      "site": "https://3c.ltn.com.tw/", "type": "html"},
     {"name": "AI 人工智慧", "url": "https://technews.tw/category/ai/feed/",
@@ -58,11 +65,17 @@ def parse_rss(xml_bytes):
     items = []
     for item in root.iter("item"):
         get = lambda tag: (item.findtext(tag) or "").strip()
+        comments = get("comments")
+        raw_desc = get("description")
+        desc = clean_html(raw_desc)
+        if desc == "Comments" and comments:
+            desc = "Hacker News 全球技術社群熱門熱議"
         items.append({
             "title": get("title"),
-            "link": get("link"),
+            "link": get("link") or comments,
             "date": parse_date(get("pubDate")),
-            "summary": clean_html(get("description"))[:160],
+            "summary": desc[:160],
+            "comments": comments,
         })
     return items
 

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>科技新知 — AI、半導體、零組件新聞匯整 — "AI" 硬核工程師</title>
+  <title>科技新知 — Hacker News、AI、半導體、科技新聞匯整 — "AI" 硬核工程師</title>
   <link rel="icon" href="data:,🎯">
-  <meta name="description" content="匯整 TechNews 科技新報的 AI、半導體、零組件分類與 CCC 追新聞的最新報導，點擊直達原文。">
+  <meta name="description" content="匯整 Hacker News 熱門、TechNews 科技新報的 AI、半導體、零組件分類與 CCC 追新聞的最新報導，點擊直達原文。">
   <meta name="canonical" href="https://ai-hardcore-engineer.com/tech-news.html">
   <meta property="og:title" content="科技新知 — AI、半導體、零組件新聞匯整 — &quot;AI&quot; 硬核工程師">
-  <meta property="og:description" content="匯整 TechNews 科技新報的 AI、半導體、零組件分類與 CCC 追新聞的最新報導，點擊直達原文。">
+  <meta property="og:description" content="匯整 Hacker News 熱門、TechNews 科技新報的 AI、半導體、零組件分類與 CCC 追新聞的最新報導，點擊直達原文。">
   <meta property="og:url" content="https://ai-hardcore-engineer.com/tech-news.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ai-hardcore-engineer.com/og-image.png">
@@ -16,7 +16,7 @@
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="科技新知 — AI、半導體、零組件新聞匯整 — &quot;AI&quot; 硬核工程師">
-  <meta name="twitter:description" content="匯整 TechNews 科技新報的 AI、半導體、零組件分類與 CCC 追新聞的最新報導，點擊直達原文。">
+  <meta name="twitter:description" content="匯整 Hacker News 熱門、TechNews 科技新報的 AI、半導體、零組件分類與 CCC 追新聞的最新報導，點擊直達原文。">
   <meta name="twitter:image" content="https://ai-hardcore-engineer.com/og-image.png">
   <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>    <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -179,7 +179,7 @@
       <!-- =============== Page Header =============== -->
       <section class="news-hero">
         <h1>科技新知</h1>
-        <p>匯整 <strong>TechNews 科技新報</strong>的 AI、半導體、零組件分類與 <strong>CCC 追新聞</strong>的最新報導，點擊直達原文。</p>
+        <p>匯整 <strong>Hacker News</strong>、<strong>TechNews 科技新報</strong>（AI、半導體、零組件）與 <strong>CCC 追新聞</strong>的最新報導，點擊直達原文。</p>
         <span class="news-updated" id="news-updated" hidden>資料更新時間：載入中…</span>
       </section>
 
@@ -249,9 +249,12 @@
           } else {
             html += '<ul class="news-list">';
             src.items.forEach(function (item) {
+              var commentsLink = item.comments
+                ? ' <a href="' + escapeHtml(item.comments) + '" target="_blank" rel="noopener" class="news-item-comments" style="display:inline-block;font-size:0.82rem;color:var(--accent);font-weight:600;margin-left:0.5rem;text-decoration:none;" title="查看 Hacker News 討論串">💬 討論串</a>'
+                : '';
               html += '<li class="news-item">'
                 + '<div class="news-item-title"><a href="' + escapeHtml(item.link) + '" target="_blank" rel="noopener">'
-                + escapeHtml(item.title) + '</a></div>'
+                + escapeHtml(item.title) + '</a>' + commentsLink + '</div>'
                 + (item.summary ? '<p class="news-item-summary">' + escapeHtml(item.summary) + '…</p>' : '')
                 + '<span class="news-item-date">' + escapeHtml(item.date) + '</span>'
                 + '</li>';
