@@ -647,6 +647,7 @@
     overlay.appendChild(stage);
     overlay.appendChild(nextBtn);
     overlay.appendChild(hint);
+    overlay.style.display = 'none';
     document.body.appendChild(overlay);
 
     function updateImage() {
@@ -671,13 +672,21 @@
     function openLightbox(index) {
       currentIndex = index;
       updateImage();
-      overlay.classList.add('active');
+      overlay.style.display = 'flex';
+      window.requestAnimationFrame(function () {
+        overlay.classList.add('active');
+      });
       document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
       overlay.classList.remove('active');
       document.body.style.overflow = '';
+      setTimeout(function () {
+        if (!overlay.classList.contains('active')) {
+          overlay.style.display = 'none';
+        }
+      }, 260);
     }
 
     function showPrev() {
