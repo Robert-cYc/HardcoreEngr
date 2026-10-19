@@ -1,10 +1,28 @@
 {
-  "updated": "2026-10-19 03:52",
+  "updated": "2026-10-19 07:01",
   "sources": [
     {
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "iPhone這類配件恐影響拍照！蘋果警告：導致對焦、防手震失效",
+          "link": "https://3c.ltn.com.tw/news/67978",
+          "date": "2026/10/19 13:30",
+          "summary": "蘋果 iPhone 擁有龐大的配件市場，尤其近年來推出的手機殼背蓋都會加入 MagSafe 磁圈，不僅可無線充電，還 ..."
+        },
+        {
+          "title": "法國暴徒闖入電競中心！《絕對武力 2》冠軍獎盃遭搶 電競設備洗劫一空",
+          "link": "https://3c.ltn.com.tw/news/67980",
+          "date": "2026/10/19 13:05",
+          "summary": "法國 17 日爆發大規模示威，官方估計約 55 萬人走上街頭，工會及青年組織則稱有 80 萬人參與。暴徒甚至洗劫商店 ..."
+        },
+        {
+          "title": "iPhone Duo 電池容量曝光！超越 iPhone 18 Pro 純 eSIM 成關鍵",
+          "link": "https://3c.ltn.com.tw/news/67979",
+          "date": "2026/10/19 11:50",
+          "summary": "Apple 近日公布 iPhone Duo 的歐盟能源標籤，揭露這款新機的電池總容量達 4,883mAh，也印證先前 ..."
+        },
         {
           "title": "iPhone Duo原廠殼竟用背膠固定！轉軸處無防護 網友：工程災難",
           "link": "https://3c.ltn.com.tw/news/67975",
@@ -12,7 +30,7 @@
           "summary": "蘋果首款摺疊手機 iPhone Duo 於 16 日在全球超過 70 個國家同步開放預購，幾乎各地都上演秒殺盛況，但 ..."
         },
         {
-          "title": "經典賽車遊戲撐不到 3 年就收攤！《極速快感：集結》年底停運 周杰倫曾代言",
+          "title": "經典賽車遊戲不到 3 年收攤！《極速快感：集結》年底停運 周杰倫曾代言",
           "link": "https://3c.ltn.com.tw/news/67976",
           "date": "2026/10/19 09:53",
           "summary": "由 Garena 代理營運的開放世界競速手機遊戲《極速快感：集結》，正式宣布將於 2026 年 12 月 28 日中 ..."
@@ -58,24 +76,6 @@
           "link": "https://3c.ltn.com.tw/news/67972",
           "date": "2026/10/18 09:00",
           "summary": "LINE又有功能要收費了！目前在「LINE Labs」開放所有用戶免費試用的「編輯訊息」功能，將從10月20日起結束 ..."
-        },
-        {
-          "title": "三星S27 Ultra傳換心臟！高通旗艦晶片爆過熱 官方急澄清",
-          "link": "https://3c.ltn.com.tw/news/67966",
-          "date": "2026/10/17 17:00",
-          "summary": "三星明年旗艦手機S27 Ultra還沒登場，核心處理器就先爆出大麻煩！外媒傳出，三星原本計畫採用的高通最新旗艦晶片S ..."
-        },
-        {
-          "title": "全台手機降價榜出爐！這款三星旗艦成新跳水王 2個月便宜1.3萬",
-          "link": "https://3c.ltn.com.tw/news/67969",
-          "date": "2026/10/17 16:10",
-          "summary": "記憶體成本飆漲，讓今年手機市場掀起一波漲價潮，不過手機漲得兇，通路價格仍「掉得快」，根據傑昇通信最新公布的9月手機降 ..."
-        },
-        {
-          "title": "Pixel用戶傻眼！買手機送的Google AI Pro竟是縮水版",
-          "link": "https://3c.ltn.com.tw/news/67964",
-          "date": "2026/10/17 15:20",
-          "summary": "Google Pixel手機近年都會透過搭贈Google AI方案來增加買氣，像是Pixel 11 Pro系列就贈送 ..."
         }
       ]
     },
@@ -83,6 +83,36 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "精密智慧製造台廠，搶攻 AIDC 零組件及設備供應",
+          "link": "https://finance.technews.tw/2026/10/19/taiwanese-precision-smart-manufacturing-firms-target-aidc-component-equipment-supply/",
+          "date": "2026-10-19 06:30",
+          "summary": "人工智慧 AI 伺服器和資料中心（AIDC）等基礎建設需求強勁，帶動關鍵零組件和高階精密製程設備需求，包括電機 [&#8230;]"
+        },
+        {
+          "title": "Anthropic 遊說推動 AI 安全法案，擬設政府干預門檻",
+          "link": "https://infosecu.technews.tw/2026/10/19/anthropic-lobbies-ai-safety-legislation-proposing-government-intervention-thresholds/",
+          "date": "2026-10-19 06:10",
+          "summary": "政治新聞網站 Politico 今天引述三名消息人士報導，人工智慧（AI）新創公司 Anthropic 代表近 [&#8230;]"
+        },
+        {
+          "title": "Meta 刪除商業條款可用網站內容訓練 AI 文字，稱爬蟲條款只適用廣告與商業產品",
+          "link": "https://technews.tw/2026/10/19/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites/",
+          "date": "2026-10-19 03:30",
+          "summary": "Meta 遭外界反彈後再次更新商業條款，刪除解讀為允許爬取網站（包括新聞網站）內容訓練 AI 等文字，並表示整 [&#8230;]"
+        },
+        {
+          "title": "瑞薩成立逾百人實體 AI 團隊搶攻人型機器人晶片，營收已達 8% 且還在增長",
+          "link": "https://finance.technews.tw/2026/10/19/renesas-launches-physical-ai-team-to-expand-humanoid-chip-business/",
+          "date": "2026-10-19 03:20",
+          "summary": "日本半導體廠瑞薩電子（Renesas）16 日在首爾 COEX 舉行的「Semiconductors Powe [&#8230;]"
+        },
+        {
+          "title": "CoreWeave 執行長大舉賣股  套現近 10 億美元",
+          "link": "https://finance.technews.tw/2026/10/19/coreweave-ceo-sells-nearly-1-billion-in-stock/",
+          "date": "2026-10-19 03:10",
+          "summary": "輝達（NVIDIA）投資的 AI 雲端運算業者 CoreWeave 近期股價低迷，主因市場擔憂公司大量舉債擴充 [&#8230;]"
+        },
         {
           "title": "iOS 27「電話」App 重大更新，三大實用功能與 AI 新亮點一次掌握",
           "link": "https://technews.tw/2026/10/19/practical-new-features-iphone-phone-app/",
@@ -124,36 +154,6 @@
           "link": "https://technews.tw/2026/10/19/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/",
           "date": "2026-10-18 23:40",
           "summary": "新創 Ricursive Intelligence 共同創辦人 Anna Goldie 與 Azalia Mi [&#8230;]"
-        },
-        {
-          "title": "Meta AI 代理 Muse 會與用戶露骨性對話，OpenAI、xAI 代理都拒絕",
-          "link": "https://technews.tw/2026/10/19/meta-muse-allows-sexting-with-adult-users/",
-          "date": "2026-10-18 23:30",
-          "summary": "Meta 上月推出的 AI 代理 Muse 可替用戶回覆電郵及管理日曆，美國科技媒體 WIRED 近日實測更發 [&#8230;]"
-        },
-        {
-          "title": "AI 破解理論科學問題比例兩年從 2% 升至 35%，MIT 研究指多領域將迎巨變",
-          "link": "https://technews.tw/2026/10/19/ai-came-for-math-now-its-chasing-the-rest-of-science/",
-          "date": "2026-10-18 23:20",
-          "summary": "麻省理工學院（MIT）運算與 AI 進展學者尼爾·湯普森（Neil Thompson）最近演講發表一項研究結果 [&#8230;]"
-        },
-        {
-          "title": "從 24 天縮短到 3 天！AI 模型「除護欄」速度狂飆，原廠安全設定恐淪為裝飾",
-          "link": "https://infosecu.technews.tw/2026/10/19/abliterated-versions-of-open-weight-models-emerge-in-under-three-days/",
-          "date": "2026-10-18 23:10",
-          "summary": "反恐組織 Tech Against Terrorism 日前發表 Counter-Terrorism AI B [&#8230;]"
-        },
-        {
-          "title": "AI 面試不會取代面試官，關鍵在「人機分工」而非全權交給 AI",
-          "link": "https://technews.tw/2026/10/18/ai-interviews-not-replacing-interviewers-company-success-human-ai-collaboration-not-full-ai-delegation/",
-          "date": "2026-10-18 09:30",
-          "summary": "企業導入 AI 面試持續加速，但能否真正提升招募效率與選才品質，關鍵不在是否使用 AI，而是如何分配 AI 與 [&#8230;]"
-        },
-        {
-          "title": "德國放棄直接採購 MQ-28，無人僚機競爭重新洗牌",
-          "link": "https://technews.tw/2026/10/18/germany-canceled-mq-28-purchase-and-reconsider-other-options/",
-          "date": "2026-10-18 08:56",
-          "summary": "德國國防部已正式通知波音，將不再直接採購 MQ-28「幽靈蝙蝠」（Ghost Bat）無人僚機，並重新調整「協 [&#8230;]"
         }
       ]
     },
@@ -161,6 +161,48 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "研調估 2030 年資料中心 IT 運算力年增 70GW，液冷扮要角",
+          "link": "https://technews.tw/2026/10/19/liquid-cooling-to-play-key-role-in-ai-infrastructure-by-2030/",
+          "date": "2026-10-19 06:00",
+          "summary": "研調機構 Omdia 報告預測，2030 年全球新增資料中心資訊電子（IT）運算能力將達到每年約 70 GW， [&#8230;]"
+        },
+        {
+          "title": "高通深化台灣 PC 生態系合作！首度在台辦運算大會，三天完成逾百項測試",
+          "link": "https://technews.tw/2026/10/19/qualcomm-snapdragon-compute-connect-2026/",
+          "date": "2026-10-19 03:44",
+          "summary": "高通宣布首度於台灣舉辦 Snapdragon Compute Connect 2026，邀集十餘家 PC 生態 [&#8230;]"
+        },
+        {
+          "title": "瑞薩成立逾百人實體 AI 團隊搶攻人型機器人晶片，營收已達 8% 且還在增長",
+          "link": "https://finance.technews.tw/2026/10/19/renesas-launches-physical-ai-team-to-expand-humanoid-chip-business/",
+          "date": "2026-10-19 03:20",
+          "summary": "日本半導體廠瑞薩電子（Renesas）16 日在首爾 COEX 舉行的「Semiconductors Powe [&#8230;]"
+        },
+        {
+          "title": "AI 算力引爆架構革命，光互連、800VDC 與硬體安全三大關鍵台系供應鏈受惠",
+          "link": "https://finance.technews.tw/2026/10/19/taiwanese-supply-chains-will-benefit-from-three-key-areas-optical-interconnect-800vdc-and-hardware-security/",
+          "date": "2026-10-19 03:00",
+          "summary": "隨著人工智慧（AI）算力需求呈現爆炸式成長，日前開放運算計畫（OCP）全球峰會正式登場。對此，外資摩根士丹利（ [&#8230;]"
+        },
+        {
+          "title": "小摩估台積電拚 2028 年上半年量產 1.4 奈米，蘋果 A22 Pro 有望率先採用",
+          "link": "https://technews.tw/2026/10/19/apple-1-4nm-chips-and-tsmc/",
+          "date": "2026-10-19 02:59",
+          "summary": "美系外資摩根大通（J.P. Morgan）在最新報告指出，台積電目標 2028 年上半年量產次世代 A14 製 [&#8230;]"
+        },
+        {
+          "title": "英特爾 Nova Lake 命名規則傳大改，桌機與筆電統一改用 Core Ultra 4000 系列",
+          "link": "https://technews.tw/2026/10/19/intel-nova-lake-core-ultra-4000-naming-leak/",
+          "date": "2026-10-19 02:50",
+          "summary": "多方消息顯示，英特爾下代 Nova Lake 處理器命名方式可能出現重大調整。原先外界預估部分筆電型號會沿用 [&#8230;]"
+        },
+        {
+          "title": "AI 加持  晶圓切割機廠 DISCO 傳業績優、營益創新",
+          "link": "https://technews.tw/2026/10/19/disco-reportedly-posts-strong-results-record-operating-profit/",
+          "date": "2026-10-19 02:40",
+          "summary": "AI 需求加持，日本晶圓切割機大廠 DISCO 上半年度（2026 年 4-9 月）業績傳有望優於預期，營益將 [&#8230;]"
+        },
         {
           "title": "陳立武：英特爾重整已完成約 80%，追上台積電仍需多年投資",
           "link": "https://technews.tw/2026/10/19/the-home-stretch-intel-ceo-says-restructuring-is-80-complete/",
@@ -190,48 +232,6 @@
           "link": "https://finance.technews.tw/2026/10/19/cxmt-fr-26q1q3/",
           "date": "2026-10-19 01:30",
           "summary": "中媒報導，中國動態隨機存取記憶體龍頭長鑫科技發表業績預告，今年前三季營業總收入 2,650 億至 2,700 [&#8230;]"
-        },
-        {
-          "title": "英特爾押注矽光子！宣稱是全球 300 毫米 InP 光子量產唯一廠商",
-          "link": "https://technews.tw/2026/10/19/intel-ocp-2026-silicon-photonics/",
-          "date": "2026-10-19 01:28",
-          "summary": "英特爾在 OCP 2026 期間分享未來技術的發展方向，表示矽光子是次世代系統架構，將加速高效能運算（HPC） [&#8230;]"
-        },
-        {
-          "title": "價值 47 萬美元！多張 RTX 5090 在巴西機場離奇失蹤，經銷商發文求助",
-          "link": "https://technews.tw/2026/10/19/nvidia-rtx-5090-missing-in-brazilian-airport/",
-          "date": "2026-10-19 01:12",
-          "summary": "巴西電子產品與 IT 經銷商 Oderço 在 Instagram 發文求助，因其價值約 47 萬美元（約 2 [&#8230;]"
-        },
-        {
-          "title": "消息稱 ASML 可能進軍混合鍵合領域  貝思嚇跌",
-          "link": "https://finance.technews.tw/2026/10/19/asml-besi-hybrid-bonding/",
-          "date": "2026-10-19 01:00",
-          "summary": "消息指出，荷蘭半導體設備巨頭 ASML 正在研發混合鍵合 (Hybrid Bonding) 設備，可能與先進封 [&#8230;]"
-        },
-        {
-          "title": "韓媒：三星應輝達要求，下代 HBM 基礎晶粒採台積電 3 奈米",
-          "link": "https://technews.tw/2026/10/19/samsung-nvidia-request-tsmc-3nm-next-gen-hbm-base-die/",
-          "date": "2026-10-19 00:10",
-          "summary": "韓國《首爾經濟日報》18 日報導，三星電子將採用台積電 3 奈米製程，為輝達（Nvidia）下代客製化高頻寬記 [&#8230;]"
-        },
-        {
-          "title": "拒絕無止盡擴建資料中心，新創 Ricursive 讓 AI 設計整顆晶片、盼一週完成一款新設計",
-          "link": "https://technews.tw/2026/10/19/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/",
-          "date": "2026-10-18 23:40",
-          "summary": "新創 Ricursive Intelligence 共同創辦人 Anna Goldie 與 Azalia Mi [&#8230;]"
-        },
-        {
-          "title": "CSP 自研晶片對傳統網通 IC 廠的衝擊",
-          "link": "https://technews.tw/2026/10/19/csp-self-developed-chips-impact-traditional-netcom-ic-firms/",
-          "date": "2026-10-18 23:00",
-          "summary": "CSP 優先投入高毛利、高規模效應且具備高度客製化潛力之晶片領域，已成為產業明確且不可逆之趨勢；然而，受制於研 [&#8230;]"
-        },
-        {
-          "title": "台灣人在柏林做 AI 資料中心想吃的「漢堡肉」，NextGO Epi 押注下代省電材料氧化鎵",
-          "link": "https://technews.tw/2026/10/18/nextgo-epi/",
-          "date": "2026-10-18 03:10",
-          "summary": "處理客戶委託生產磊晶片，對博士生周大順來說，只是個例行工作，他在實驗室裡照平常的做法把磊晶片做出來、交出去。休 [&#8230;]"
         }
       ]
     },
@@ -239,6 +239,36 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "精密智慧製造台廠，搶攻 AIDC 零組件及設備供應",
+          "link": "https://finance.technews.tw/2026/10/19/taiwanese-precision-smart-manufacturing-firms-target-aidc-component-equipment-supply/",
+          "date": "2026-10-19 06:30",
+          "summary": "人工智慧 AI 伺服器和資料中心（AIDC）等基礎建設需求強勁，帶動關鍵零組件和高階精密製程設備需求，包括電機 [&#8230;]"
+        },
+        {
+          "title": "研調估 2030 年資料中心 IT 運算力年增 70GW，液冷扮要角",
+          "link": "https://technews.tw/2026/10/19/liquid-cooling-to-play-key-role-in-ai-infrastructure-by-2030/",
+          "date": "2026-10-19 06:00",
+          "summary": "研調機構 Omdia 報告預測，2030 年全球新增資料中心資訊電子（IT）運算能力將達到每年約 70 GW， [&#8230;]"
+        },
+        {
+          "title": "TPCA 展明登場  PCB 產值今年破兆／材料吃緊延續",
+          "link": "https://technews.tw/2026/10/19/pcb-output-to-top-1-trillion-this-year/",
+          "date": "2026-10-19 05:30",
+          "summary": "受惠 AI 伺服器、高速網通及記憶體等需求持續擴張，台灣 PCB 產業今年呈現價量齊揚態勢，全年海內外總產值有 [&#8230;]"
+        },
+        {
+          "title": "AI 算力引爆架構革命，光互連、800VDC 與硬體安全三大關鍵台系供應鏈受惠",
+          "link": "https://finance.technews.tw/2026/10/19/taiwanese-supply-chains-will-benefit-from-three-key-areas-optical-interconnect-800vdc-and-hardware-security/",
+          "date": "2026-10-19 03:00",
+          "summary": "隨著人工智慧（AI）算力需求呈現爆炸式成長，日前開放運算計畫（OCP）全球峰會正式登場。對此，外資摩根士丹利（ [&#8230;]"
+        },
+        {
+          "title": "AI 加持  晶圓切割機廠 DISCO 傳業績優、營益創新",
+          "link": "https://technews.tw/2026/10/19/disco-reportedly-posts-strong-results-record-operating-profit/",
+          "date": "2026-10-19 02:40",
+          "summary": "AI 需求加持，日本晶圓切割機大廠 DISCO 上半年度（2026 年 4-9 月）業績傳有望優於預期，營益將 [&#8230;]"
+        },
         {
           "title": "高盛調升奇鋐目標價至 4,736 元，卻下修今年獲利預估",
           "link": "https://finance.technews.tw/2026/10/19/avc-target-price/",
@@ -280,36 +310,6 @@
           "link": "https://finance.technews.tw/2026/10/18/which-taiwan-ai-stocks-are-worth-buying/",
           "date": "2026-10-18 00:00",
           "summary": "台股挑戰五萬點該買什麼股票？哪些 AI 股拉回值得安心布局？投資名家們在此分享他們的口袋名單與操作策略。 台股 [&#8230;]"
-        },
-        {
-          "title": "台積電亮眼財報背後，市場關注隱憂關鍵浮現",
-          "link": "https://finance.technews.tw/2026/10/17/behind-tsmcs-impressive-financial-report-key-concerns-have-emerged-that-have-drawn-market-attention/",
-          "date": "2026-10-17 06:00",
-          "summary": "晶圓代工龍頭台積電公佈最新第三季財報，數據顯示由人工智慧（AI）浪潮推升的強勁需求遠超預期。第三季單季營收達4 [&#8230;]"
-        },
-        {
-          "title": "林恩平潑 Micro LED 光通訊冷水？友達彭双浪提另一種解讀",
-          "link": "https://finance.technews.tw/2026/10/17/auo-micro-led-3/",
-          "date": "2026-10-17 03:54",
-          "summary": "大立光董事長林恩平日前於法說會上，對 Micro LED 應用於共同封裝光學（CPO）的技術路線表達保留態度。 [&#8230;]"
-        },
-        {
-          "title": "大摩記憶體與 AI 供應鏈展望，HBM 與 SSD 合約價飆升推動算力與網路列投資首選",
-          "link": "https://finance.technews.tw/2026/10/17/morgan-stanley-memory-and-ai-supply-chain-outlook/",
-          "date": "2026-10-17 03:00",
-          "summary": "外資摩根士丹利（Morgan Stanley；大摩）最新研究報告指出，受惠於AI需求推動與產能排擠效應，記憶體 [&#8230;]"
-        },
-        {
-          "title": "中國新創企業開發出 EUV 光源，距正式商用最快三年",
-          "link": "https://finance.technews.tw/2026/10/17/chinese-startup-develops-euv-light-source/",
-          "date": "2026-10-17 02:00",
-          "summary": "在美國與荷蘭深化半導體出口管制的背景下，中國半導體設備國產化迎來重大技術突破。中國新創企業朗道矽斯（Langd [&#8230;]"
-        },
-        {
-          "title": "布局面板級先進封裝！海德漢推出新平台，運動控制精度瞄準 5 奈米",
-          "link": "https://technews.tw/2026/10/16/heidenhain-semicon-west-david-doyle/",
-          "date": "2026-10-16 09:45",
-          "summary": "海德漢（HEIDENHAIN）美國分公司總裁兼執行長 David Doyle 在 SEMICON West 接 [&#8230;]"
         }
       ]
     },
