@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-19 15:53",
+  "updated": "2026-10-19 16:04",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
+        {
+          "title": "Linux 7.3 Released",
+          "link": "https://lwn.net/Articles/1101143/",
+          "date": "2026-10-19 15:23",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50149392"
+        },
         {
           "title": "Rabbits were a medieval royal luxury in England until the Black Death",
           "link": "https://phys.org/news/2026-10-rabbits-medieval-royal-luxury-england.html",
@@ -81,13 +88,84 @@
           "date": "2026-10-18 21:48",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50141076"
+        }
+      ]
+    },
+    {
+      "name": "CNN 科技",
+      "site": "https://edition.cnn.com/business/tech",
+      "items": [
+        {
+          "title": "China economy grows thanks to AI export boom but domestic slump remains a drag",
+          "link": "https://edition.cnn.com/2026/10/18/economy/china-q3-gdp-intl-hnk",
+          "date": "2026-10-18",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "How Quickly Can the DoD Rebuild and Recast the Munitions Industrial Base?",
-          "link": "https://www.csis.org/analysis/how-quickly-can-dod-rebuild-and-recast-munitions-industrial-base",
-          "date": "2026-10-19 07:37",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50146624"
+          "title": "‘You Can See Everything’ becomes one of the biggest documentary releases in decades",
+          "link": "https://edition.cnn.com/2026/10/18/business/you-can-see-everything-fielder-box-office",
+          "date": "2026-10-18",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Even LinkedIn is getting tired of your AI-written posts",
+          "link": "https://edition.cnn.com/2026/10/18/tech/linkedin-fighting-ai-posts",
+          "date": "2026-10-18",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "What happens if AI agents start speaking their own language?",
+          "link": "https://edition.cnn.com/2026/10/16/tech/ai-speaking-own-language",
+          "date": "2026-10-16",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Will Flying Taxis Ever Replace Your Car?",
+          "link": "https://edition.cnn.com/2026/10/15/business/video/flying-taxis-horizon-aircraft-spc-digvid",
+          "date": "2026-10-15",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "These tiny chips could help data centers waste less power",
+          "link": "https://edition.cnn.com/2026/10/15/business/video/chips-onsemi-factory-data-center-power-eadicicco",
+          "date": "2026-10-15",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "OpenAI accuses former employee of leaking intel on AI device to Apple",
+          "link": "https://edition.cnn.com/2026/10/14/tech/openai-accuses-former-employee-of-leaking-intel-on-ai-device-to-apple",
+          "date": "2026-10-14",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Grab announces new Thailand initiative with OpenAI",
+          "link": "https://edition.cnn.com/2026/10/14/tech/grab-openai-thailand-intl-hnk",
+          "date": "2026-10-14",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Character.ai files for bankruptcy following lawsuits alleging ties to teen suicides",
+          "link": "https://edition.cnn.com/2026/10/13/tech/character-ai-bankruptcy-filing",
+          "date": "2026-10-13",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Apple just announced a new gadget that could be key to its AI push",
+          "link": "https://edition.cnn.com/2026/10/13/tech/apple-homeview-siri-ai",
+          "date": "2026-10-13",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Why Meta is betting its future on computers you wear on your face",
+          "link": "https://edition.cnn.com/2026/10/13/tech/why-meta-vr-glasses-muse-ai",
+          "date": "2026-10-13",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Do you have questions about AI safety risks? We want to hear from you",
+          "link": "https://edition.cnn.com/2026/10/12/tech/ai-existential-risk-questions-callout",
+          "date": "2026-10-12",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         }
       ]
     },

@@ -23,6 +23,8 @@ if hasattr(sys.stderr, "reconfigure"):
 FEEDS = [
     {"name": "Hacker News 熱門", "url": "https://news.ycombinator.com/rss",
      "site": "https://news.ycombinator.com/", "type": "rss"},
+    {"name": "CNN 科技", "url": "https://edition.cnn.com/business/tech",
+     "site": "https://edition.cnn.com/business/tech", "type": "html_cnn"},
     {"name": "自由 3C 科技", "url": "https://3c.ltn.com.tw/",
      "site": "https://3c.ltn.com.tw/", "type": "html"},
     {"name": "AI 人工智慧", "url": "https://technews.tw/category/ai/feed/",
@@ -79,6 +81,28 @@ def parse_rss(xml_bytes):
         })
     return items
 
+def parse_html_cnn(html_bytes):
+    html = html_bytes.decode('utf-8', errors='ignore')
+    pattern = r'<a[^>]+href="(/[0-9]{4}/[0-9]{2}/[0-9]{2}/[^"]+)"[^>]*>[\s\S]*?<span[^>]+data-editable="headline"[^>]*>([\s\S]*?)</span>'
+    matches = re.findall(pattern, html)
+    items = []
+    seen = set()
+    for link, headline in matches:
+        title = clean_html(headline)
+        full_link = "https://edition.cnn.com" + link
+        if full_link in seen or not title or len(title) < 5:
+            continue
+        seen.add(full_link)
+        date_match = re.search(r'/([0-9]{4})/([0-9]{2})/([0-9]{2})/', link)
+        date_str = f"{date_match.group(1)}-{date_match.group(2)}-{date_match.group(3)}" if date_match else ""
+        items.append({
+            "title": title,
+            "link": full_link,
+            "date": date_str,
+            "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        })
+    return items
+
 def parse_html_ltn_3c(html_bytes):
     html = html_bytes.decode('utf-8', errors='ignore')
     items = []
@@ -107,11 +131,25 @@ def main():
             raw_bytes = fetch_feed(feed["url"])
             if feed.get("type") == "html":
                 entry["items"] = parse_html_ltn_3c(raw_bytes)[:MAX_PER_FEED]
+            elif feed.get("type") == "html_cnn":
+                entry["items"] = parse_html_cnn(raw_bytes)[:MAX_PER_FEED]
+                if not entry["items"]:
+                    # Fallback to Google News CNN feed if HTML format shifted
+                    fb_bytes = fetch_feed("https://news.google.com/rss/search?q=CNN+technology+when:3d")
+                    entry["items"] = parse_rss(fb_bytes)[:MAX_PER_FEED]
             else:
                 entry["items"] = parse_rss(raw_bytes)[:MAX_PER_FEED]
         except Exception as e:
-            entry["error"] = str(e)
-            print(f"[warn] {feed['name']} 抓取失敗: {e}", file=sys.stderr)
+            if feed.get("type") == "html_cnn":
+                try:
+                    fb_bytes = fetch_feed("https://news.google.com/rss/search?q=CNN+technology+when:3d")
+                    entry["items"] = parse_rss(fb_bytes)[:MAX_PER_FEED]
+                except Exception as fb_e:
+                    entry["error"] = f"{e} (fallback: {fb_e})"
+                    print(f"[warn] {feed['name']} 抓取失敗: {e}", file=sys.stderr)
+            else:
+                entry["error"] = str(e)
+                print(f"[warn] {feed['name']} 抓取失敗: {e}", file=sys.stderr)
         sources.append(entry)
 
     data = {
