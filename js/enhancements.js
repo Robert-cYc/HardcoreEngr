@@ -542,41 +542,193 @@
     document.head.appendChild(s);
   }
 
-  /* ---------- 12. 圖片點擊放大 (Lightbox) ---------- */
+  /* ---------- 12. 圖片點擊放大與全螢幕畫廊 (Enhanced Lightbox) ---------- */
   function initLightbox() {
-    var images = document.querySelectorAll('.article-body img');
+    // Select all readable images: hero banner, article body images, figures
+    var images = Array.prototype.slice.call(
+      document.querySelectorAll('.article-hero img, .hero-image-wrap img, .article-body img')
+    ).filter(function (img) {
+      return img.naturalWidth !== 0 || img.getAttribute('src');
+    });
+
     if (!images.length) return;
 
+    var currentIndex = 0;
+
+    // Create modal elements
     var overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', '圖片放大檢視器');
+
+    // Top bar
+    var topbar = document.createElement('div');
+    topbar.className = 'lightbox-topbar';
+
+    var info = document.createElement('div');
+    info.className = 'lightbox-info';
+
+    var counter = document.createElement('span');
+    counter.className = 'lightbox-counter';
+
+    var caption = document.createElement('span');
+    caption.className = 'lightbox-caption';
+
+    info.appendChild(counter);
+    info.appendChild(caption);
+
+    var actions = document.createElement('div');
+    actions.className = 'lightbox-actions';
+
+    var openBtn = document.createElement('button');
+    openBtn.className = 'lightbox-btn';
+    openBtn.title = '在新分頁開啟原始圖片';
+    openBtn.setAttribute('aria-label', '在新分頁開啟原始圖片');
+    openBtn.innerHTML = '↗';
+    openBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (images[currentIndex]) {
+        window.open(images[currentIndex].src, '_blank');
+      }
+    });
+
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'lightbox-btn';
+    closeBtn.title = '關閉 (Esc)';
+    closeBtn.setAttribute('aria-label', '關閉燈箱');
+    closeBtn.innerHTML = '✕';
+    closeBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeLightbox();
+    });
+
+    actions.appendChild(openBtn);
+    actions.appendChild(closeBtn);
+
+    topbar.appendChild(info);
+    topbar.appendChild(actions);
+
+    // Stage & Img
+    var stage = document.createElement('div');
+    stage.className = 'lightbox-stage';
+
     var imgEl = document.createElement('img');
-    overlay.appendChild(imgEl);
+    imgEl.className = 'lightbox-img';
+    imgEl.alt = '放大圖片檢視';
+    stage.appendChild(imgEl);
+
+    // Prev / Next Buttons
+    var prevBtn = document.createElement('button');
+    prevBtn.className = 'lightbox-nav lightbox-nav-prev';
+    prevBtn.setAttribute('aria-label', '上一張 (←)');
+    prevBtn.innerHTML = '‹';
+    prevBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      showPrev();
+    });
+
+    var nextBtn = document.createElement('button');
+    nextBtn.className = 'lightbox-nav lightbox-nav-next';
+    nextBtn.setAttribute('aria-label', '下一張 (→)');
+    nextBtn.innerHTML = '›';
+    nextBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      showNext();
+    });
+
+    // Keyboard Hint
+    var hint = document.createElement('div');
+    hint.className = 'lightbox-hint';
+    hint.textContent = '支援快捷鍵：← 上一張 ｜ → 下一張 ｜ Esc 關閉 ｜ 點擊背景退出';
+
+    overlay.appendChild(topbar);
+    overlay.appendChild(prevBtn);
+    overlay.appendChild(stage);
+    overlay.appendChild(nextBtn);
+    overlay.appendChild(hint);
     document.body.appendChild(overlay);
 
-    var style = document.createElement('style');
-    style.textContent = [
-      '.article-body img { cursor: zoom-in; transition: transform 0.3s; }',
-      '.lightbox-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(4px); }',
-      '.lightbox-overlay.active { opacity: 1; pointer-events: auto; cursor: zoom-out; }',
-      '.lightbox-overlay img { max-width: 90vw; max-height: 90vh; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s; }',
-      '.lightbox-overlay.active img { transform: scale(1); }'
-    ].join('');
-    document.head.appendChild(style);
+    function updateImage() {
+      var currentImg = images[currentIndex];
+      if (!currentImg) return;
 
-    images.forEach(function (img) {
-      img.addEventListener('click', function () {
-        imgEl.src = img.src;
-        overlay.classList.add('active');
+      imgEl.src = currentImg.src;
+      var altText = currentImg.alt || currentImg.title || '文章圖片說明';
+      caption.textContent = altText;
+      counter.textContent = (currentIndex + 1) + ' / ' + images.length;
+
+      // Show/Hide prev/next if only 1 image
+      if (images.length <= 1) {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+      } else {
+        prevBtn.style.display = 'inline-flex';
+        nextBtn.style.display = 'inline-flex';
+      }
+    }
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateImage();
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function showPrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = images.length - 1;
+      }
+      updateImage();
+    }
+
+    function showNext() {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+      updateImage();
+    }
+
+    // Attach click listeners to all eligible images
+    images.forEach(function (img, idx) {
+      img.addEventListener('click', function (e) {
+        e.preventDefault();
+        openLightbox(idx);
       });
     });
 
-    overlay.addEventListener('click', function () {
-      overlay.classList.remove('active');
+    // Backdrop click closes lightbox
+    stage.addEventListener('click', function (e) {
+      if (e.target === stage) {
+        closeLightbox();
+      }
     });
-    
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && overlay.classList.contains('active')) {
-        overlay.classList.remove('active');
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard accessibility
+    document.addEventListener('keydown', function (e) {
+      if (!overlay.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        showPrev();
+      } else if (e.key === 'ArrowRight') {
+        showNext();
       }
     });
   }

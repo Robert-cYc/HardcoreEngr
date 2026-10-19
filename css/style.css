@@ -7,6 +7,10 @@
 html {
   scroll-behavior: smooth;
 }
+/* Header Offset for Anchor Navigation & TOC Scrollspy */
+h1[id], h2[id], h3[id], h4[id], h5[id], h6[id], [id^="toc-"], section[id], article[id] {
+  scroll-margin-top: 6.5rem;
+}
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
@@ -592,65 +596,421 @@ body.dark-mode .theme-toggle {
   color: var(--accent);
 }
 
-/* =============== Table of Contents =============== */
-.toc {
-  position: sticky;
-  top: 6rem;
-  align-self: start;
-}
-.toc h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.toc-list {
-  list-style: none;
-  font-size: 0.95rem;
-}
-.toc-list li {
-  margin-bottom: 0.35rem;
-}
-.toc-list a {
-  color: var(--text-muted);
-  transition: color 0.2s;
-  display: block;
-  padding: 0.15rem 0;
-}
-.toc-list a:hover {
-  color: var(--accent);
-}
-.toc-list a.active {
-  color: var(--accent);
-  font-weight: 600;
-}
-.toc-list .toc-sub {
-  margin-left: 1.25rem;
-  margin-top: 0.25rem;
-}
-
 /* =============== Article Layout with TOC =============== */
 .article-layout {
   display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 3rem;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 3.5rem;
+  align-items: start;
+  position: relative;
 }
+
 .article-main {
+  min-width: 0;
+  order: 1;
+}
+
+/* =============== Table of Contents (TOC) =============== */
+.toc {
+  order: 2;
+  position: sticky;
+  top: 6.5rem;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem 1.15rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.toc::-webkit-scrollbar {
+  width: 4px;
+}
+.toc::-webkit-scrollbar-track {
+  background: transparent;
+}
+.toc::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+.toc::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.toc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+}
+
+.toc-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
   min-width: 0;
 }
 
-/* =============== Responsive =============== */
-@media (max-width: 1024px) {
+.toc-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.toc-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.toc-count-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(37, 99, 235, 0.1);
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+.dark-mode .toc-count-badge {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+.toc-toggle-btn {
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.toc-toggle-btn:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+.toc-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 0.75rem;
+}
+.toc.is-expanded .toc-arrow {
+  transform: rotate(180deg);
+}
+
+.toc .toc-list {
+  display: flex !important;
+  flex-direction: column !important;
+  list-style: none !important;
+  margin: 0.75rem 0 0 0 !important;
+  padding: 0 !important;
+  position: relative;
+  border-left: 2px solid var(--border);
+}
+
+.toc .toc-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+}
+
+.toc .toc-list a {
+  display: block !important;
+  padding: 0.35rem 0.6rem 0.35rem 0.9rem !important;
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+  color: var(--text-muted) !important;
+  border-left: 2px solid transparent !important;
+  margin-left: -2px !important;
+  border-radius: 0 6px 6px 0;
+  text-decoration: none !important;
+  transition: all 0.18s ease;
+  word-break: break-word;
+}
+
+.toc .toc-list a:hover {
+  color: var(--accent) !important;
+  background: rgba(37, 99, 235, 0.05);
+  transform: translateX(2px);
+}
+.dark-mode .toc .toc-list a:hover {
+  color: #38bdf8 !important;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.toc .toc-list a.active {
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+  border-left-color: var(--accent) !important;
+  background: rgba(37, 99, 235, 0.09) !important;
+  transform: translateX(3px);
+}
+.dark-mode .toc .toc-list a.active {
+  color: #38bdf8 !important;
+  border-left-color: #38bdf8 !important;
+  background: rgba(56, 189, 248, 0.14) !important;
+}
+
+.toc .toc-list .toc-sub a {
+  padding-left: 1.6rem !important;
+  font-size: 0.8rem !important;
+  opacity: 0.88;
+}
+.toc .toc-list .toc-sub a.active {
+  opacity: 1;
+}
+
+/* Mobile / Tablet Responsive TOC */
+@media (max-width: 1099px) {
   .article-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .article-main {
+    order: 2;
   }
   .toc {
-    position: relative;
-    top: 0;
-    margin-bottom: 2rem;
+    order: 1;
+    position: static;
+    top: auto;
+    max-height: none;
+    overflow: visible;
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 1.1rem;
   }
+  .toc-toggle-btn {
+    display: inline-flex;
+  }
+  .toc.is-collapsed .toc-list {
+    display: none !important;
+  }
+  .toc.is-collapsed {
+    padding-bottom: 0.9rem;
+  }
+  .toc.is-collapsed .toc-header {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 1100px) {
+  .toc-toggle-btn {
+    display: none !important;
+  }
+  .toc .toc-list {
+    display: flex !important;
+  }
+}
+
+/* =============== Image Lightbox Zoom =============== */
+.article-body img,
+.hero-image-wrap img,
+.article-hero img {
+  cursor: zoom-in;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.article-body img:hover,
+.hero-image-wrap img:hover {
+  transform: scale(1.008);
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 7, 18, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Lightbox Top Bar */
+.lightbox-topbar {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.lightbox-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 70%;
+}
+
+.lightbox-counter {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.lightbox-caption {
+  color: #f1f5f9;
+  font-size: 0.88rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lightbox-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+.lightbox-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.08);
+}
+
+/* Lightbox Main Image Stage */
+.lightbox-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4.5rem 5rem 3.5rem;
+  box-sizing: border-box;
+  cursor: zoom-out;
+}
+
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: scale(0.94);
+  opacity: 0;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
+  cursor: default;
+}
+
+.lightbox-overlay.active .lightbox-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Prev / Next Nav Buttons */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 15;
+  user-select: none;
+}
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.1);
+}
+.lightbox-nav-prev {
+  left: 1.25rem;
+}
+.lightbox-nav-next {
+  right: 1.25rem;
+}
+
+/* Bottom hint bar */
+.lightbox-hint {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.03em;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .lightbox-stage {
+    padding: 4rem 1rem 3rem;
+  }
+  .lightbox-img {
+    max-width: 96vw;
+    max-height: 76vh;
+  }
+  .lightbox-nav {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.4rem;
+  }
+  .lightbox-nav-prev { left: 0.5rem; }
+  .lightbox-nav-next { right: 0.5rem; }
+  .lightbox-caption { display: none; }
+  .lightbox-hint { display: none; }
 }
 
 @media (max-width: 768px) {

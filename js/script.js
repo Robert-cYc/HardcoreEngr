@@ -208,34 +208,74 @@ if (searchResultsEl) {
   });
 }
 
-// ===== Table of Contents (article pages) =====
+// ===== Table of Contents & Scrollspy (article pages) =====
 function initTOC() {
   const articleBody = document.querySelector('.article-body');
   if (!articleBody) return;
 
   const headings = articleBody.querySelectorAll('h2, h3');
-  if (headings.length < 3) return; // Skip TOC for short articles
+  if (headings.length < 2) return; // Skip TOC for short articles without enough structure
 
-  // Ensure each heading has an ID for anchor links
+  // Ensure each heading has a distinct ID for anchor navigation
   headings.forEach((heading, index) => {
     if (!heading.id) {
-      heading.id = `toc-${index}`;
+      heading.id = `toc-${index + 1}`;
     }
   });
 
-  // Build TOC
+  // Build TOC Nav Container
   const tocContainer = document.createElement('nav');
   tocContainer.className = 'toc';
-  tocContainer.setAttribute('aria-label', '文章目錄');
+  tocContainer.setAttribute('aria-label', '文章目錄導航');
 
-  const tocTitle = document.createElement('h4');
-  tocTitle.textContent = '文章目錄';
-  tocContainer.appendChild(tocTitle);
+  // TOC Header (Icon + Title + Chapter Count + Mobile Accordion Button)
+  const tocHeader = document.createElement('div');
+  tocHeader.className = 'toc-header';
 
+  const titleWrap = document.createElement('div');
+  titleWrap.className = 'toc-title-wrap';
+
+  const iconSpan = document.createElement('span');
+  iconSpan.className = 'toc-icon';
+  iconSpan.textContent = '📑';
+
+  const titleEl = document.createElement('span');
+  titleEl.className = 'toc-title';
+  titleEl.textContent = '文章目錄';
+
+  const countBadge = document.createElement('span');
+  countBadge.className = 'toc-count-badge';
+  countBadge.textContent = `${headings.length} 個章節`;
+
+  titleWrap.appendChild(iconSpan);
+  titleWrap.appendChild(titleEl);
+  titleWrap.appendChild(countBadge);
+
+  const toggleBtn = document.createElement('button');
+  toggleBtn.className = 'toc-toggle-btn';
+  toggleBtn.setAttribute('aria-label', '切換目錄展開');
+  toggleBtn.setAttribute('aria-expanded', 'false');
+
+  const toggleText = document.createElement('span');
+  toggleText.className = 'toc-toggle-text';
+  toggleText.textContent = '展開';
+
+  const toggleArrow = document.createElement('span');
+  toggleArrow.className = 'toc-arrow';
+  toggleArrow.textContent = '▾';
+
+  toggleBtn.appendChild(toggleText);
+  toggleBtn.appendChild(toggleArrow);
+
+  tocHeader.appendChild(titleWrap);
+  tocHeader.appendChild(toggleBtn);
+  tocContainer.appendChild(tocHeader);
+
+  // TOC List
   const tocList = document.createElement('ul');
   tocList.className = 'toc-list';
 
-  headings.forEach((heading, index) => {
+  headings.forEach((heading) => {
     const listItem = document.createElement('li');
     if (heading.tagName === 'H3') {
       listItem.classList.add('toc-sub');
@@ -243,7 +283,7 @@ function initTOC() {
 
     const link = document.createElement('a');
     link.href = `#${heading.id}`;
-    link.textContent = heading.textContent;
+    link.textContent = heading.textContent.trim();
     link.dataset.target = heading.id;
 
     listItem.appendChild(link);
@@ -252,49 +292,169 @@ function initTOC() {
 
   tocContainer.appendChild(tocList);
 
-  // Wrap article body in a grid layout with TOC sidebar
+  // Wrap article body in modern two-column layout
   const articleParent = articleBody.parentNode;
   const nextSibling = articleBody.nextSibling;
 
   const wrapper = document.createElement('div');
   wrapper.className = 'article-layout';
-  wrapper.appendChild(tocContainer);
 
   const mainContent = document.createElement('div');
   mainContent.className = 'article-main';
 
-  // Move articleBody into mainContent (detaches from original parent)
+  // Move articleBody into mainContent
   mainContent.appendChild(articleBody);
-  wrapper.appendChild(mainContent);
 
-  // Insert the layout wrapper at the original position
+  // Main content on left, TOC on right
+  wrapper.appendChild(mainContent);
+  wrapper.appendChild(tocContainer);
+
   if (nextSibling) {
     articleParent.insertBefore(wrapper, nextSibling);
   } else {
     articleParent.appendChild(wrapper);
   }
 
-  // Re-select headings in the new structure for scroll highlight
-  const newHeadings = wrapper.querySelectorAll('.article-main h2, .article-main h3');
-  const tocLinks = wrapper.querySelectorAll('.toc-list a');
+  // Mobile Collapsible State Management (< 1100px)
+  function syncMobileState() {
+    if (window.innerWidth < 1100) {
+      if (!tocContainer.classList.contains('is-expanded')) {
+        tocContainer.classList.add('is-collapsed');
+        toggleText.textContent = '展開';
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    } else {
+      tocContainer.classList.remove('is-collapsed');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    }
+  }
+  syncMobileState();
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.id;
-        const link = wrapper.querySelector(`a[href="#${id}"]`);
-        if (entry.isIntersecting && link) {
-          tocLinks.forEach((l) => l.classList.remove('active'));
-          link.classList.add('active');
-        }
-      });
-    },
-    { rootMargin: '-20% 0px -70% 0px' }
-  );
-
-  newHeadings.forEach((h) => {
-    if (h.id) observer.observe(h);
+  toggleBtn.addEventListener('click', () => {
+    const isCollapsed = tocContainer.classList.contains('is-collapsed');
+    if (isCollapsed) {
+      tocContainer.classList.remove('is-collapsed');
+      tocContainer.classList.add('is-expanded');
+      toggleText.textContent = '收合';
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    } else {
+      tocContainer.classList.add('is-collapsed');
+      tocContainer.classList.remove('is-expanded');
+      toggleText.textContent = '展開';
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
   });
+
+  // Smooth click interaction
+  const tocLinks = tocList.querySelectorAll('a');
+  tocLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.dataset.target;
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', `#${targetId}`);
+        setActiveHeading(targetId);
+
+        // Auto collapse on mobile after selecting section
+        if (window.innerWidth < 1100) {
+          tocContainer.classList.add('is-collapsed');
+          tocContainer.classList.remove('is-expanded');
+          toggleText.textContent = '展開';
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  });
+
+  // 60fps RequestAnimationFrame Scrollspy
+  const headingList = Array.from(headings);
+  function setActiveHeading(activeId) {
+    let matchedLink = null;
+    tocLinks.forEach((link) => {
+      if (link.dataset.target === activeId) {
+        link.classList.add('active');
+        matchedLink = link;
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    // Auto-scroll TOC container if link is out of view on desktop
+    if (matchedLink && window.innerWidth >= 1100 && tocContainer.scrollHeight > tocContainer.clientHeight) {
+      const linkTop = matchedLink.offsetTop;
+      const linkHeight = matchedLink.offsetHeight;
+      const tocScroll = tocContainer.scrollTop;
+      const tocHeight = tocContainer.clientHeight;
+
+      if (linkTop < tocScroll + 40 || linkTop + linkHeight > tocScroll + tocHeight - 40) {
+        tocContainer.scrollTo({
+          top: linkTop - (tocHeight / 2) + (linkHeight / 2),
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+
+  let ticking = false;
+  function updateScrollspy() {
+    const scrollY = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+
+    // Bottom of the page: activate the last heading
+    if (scrollY + viewportHeight >= docHeight - 80) {
+      if (headingList.length > 0) {
+        setActiveHeading(headingList[headingList.length - 1].id);
+      }
+      ticking = false;
+      return;
+    }
+
+    // Offset line: 140px below top of viewport
+    const offsetLine = 140;
+    let currentActiveId = null;
+
+    for (let i = 0; i < headingList.length; i++) {
+      const h = headingList[i];
+      const rect = h.getBoundingClientRect();
+      if (rect.top <= offsetLine) {
+        currentActiveId = h.id;
+      } else {
+        break;
+      }
+    }
+
+    if (!currentActiveId && headingList.length > 0) {
+      const firstRect = headingList[0].getBoundingClientRect();
+      if (firstRect.top < viewportHeight * 0.5) {
+        currentActiveId = headingList[0].id;
+      }
+    }
+
+    if (currentActiveId) {
+      setActiveHeading(currentActiveId);
+    }
+
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollspy);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    syncMobileState();
+    onScroll();
+  }, { passive: true });
+
+  // Initial calculation
+  updateScrollspy();
 }
 
 // ===== Marquee: Fetch Random Motivational Quotes =====
