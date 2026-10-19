@@ -3,32 +3,325 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>主流 NAS 終極解析：Synology, QNAP, Asustor 與 DIY TrueNAS 比較 — "AI" 硬核工程師</title>
-  <link rel="icon" href="data:,💻">
-  <meta name="description" content="深入剖析現代 NAS 的核心架構與功能。從備份3-2-1原則、Docker 容器託管到 Btrfs/ZFS 檔案系統。全面比較 Synology、QNAP 與 DIY 方案 (TrueNAS/Unraid)。">
-  <meta name="canonical" href="https://ai-hardcore-engineer.com/nas-storage-comparison.html">
-  <meta property="og:title" content="主流 NAS 終極解析：Synology, QNAP, Asustor 與 DIY TrueNAS 比較">
-  <meta property="og:description" content="深入剖析現代 NAS 的核心架構與功能。從備份3-2-1原則、Docker 容器託管到 Btrfs/ZFS 檔案系統。全面比較 Synology、QNAP 與 DIY 方案。">
+  <title>主流 NAS 終極解析：Synology, QNAP, Asustor 商業旗艦 vs TrueNAS, Unraid, PVE 開源 DIY 全方位架構實戰評測指南 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,💾">
+  <meta name="description" content="全維度深入剖析現代 NAS 儲存架構：從 3-2-1-1-0 備份準則、Btrfs CoW 快照與 ZFS Merkle Tree 自我修復、SHR 動態切片與 RAID-Z 擴容機制，到四大商業品牌（群暉 DSM、威聯通 QuTS hero、華芸 ADM、綠聯/極空間）及開源 DIY 方案（TrueNAS SCALE、Unraid、Proxmox VE + SAS HBA 直通）。內建互動式 NAS 儲存容量、RAID 容錯與重建時間試算器。">
+  <link rel="canonical" href="https://ai-hardcore-engineer.com/nas-storage-comparison.html">
+  <meta property="og:title" content="主流 NAS 終極解析：Synology, QNAP, Asustor 商業旗艦 vs TrueNAS, Unraid, PVE 開源 DIY 全方位架構實戰評測指南 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="全維度深入剖析現代 NAS 儲存架構：從 3-2-1-1-0 備份準則、Btrfs CoW 快照與 ZFS Merkle Tree 自我修復、SHR 動態切片與 RAID-Z 擴容機制，到四大商業品牌及開源 DIY 方案。附互動式容量與重建時間試算器。">
   <meta property="og:url" content="https://ai-hardcore-engineer.com/nas-storage-comparison.html">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://picsum.photos/seed/nas-final/1200/400">
+  <meta property="og:image" content="./images/nas-storage-guide.jpg">
   <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="主流 NAS 終極解析：Synology, QNAP, Asustor 與 DIY TrueNAS 比較">
-  <meta name="twitter:description" content="深入剖析現代 NAS 的核心架構與功能。從備份3-2-1原則、Docker 容器託管到 Btrfs/ZFS 檔案系統。全面比較 Synology、QNAP 與 DIY 方案。">
-  <meta name="twitter:image" content="https://picsum.photos/seed/nas-final/1200/400">
+  <meta name="twitter:title" content="主流 NAS 終極解析：Synology, QNAP, Asustor 商業旗艦 vs TrueNAS, Unraid, PVE 開源 DIY 全方位架構實戰評測指南 — &quot;AI&quot; 硬核工程師">
+  <meta name="twitter:description" content="全維度深入剖析現代 NAS 儲存架構：從 3-2-1-1-0 備份準則、Btrfs CoW 快照與 ZFS Merkle Tree 自我修復、SHR 動態切片與 RAID-Z 擴容機制，到四大商業品牌及開源 DIY 方案。附互動式容量與重建時間試算器。">
+  <meta name="twitter:image" content="./images/nas-storage-guide.jpg">
   <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
   <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
   <style>
-    .article-hero img { border-radius: 10px; max-height: 400px; object-fit: cover; width: 100%; }
+    .article-hero { text-align: center; padding: 3.5rem 0 2rem; }
+    .article-hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+    }
+    .article-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border);
+      margin-bottom: 2.2rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-height: 540px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-body {
+      max-width: 62em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.05rem;
+      font-weight: 700;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.75rem;
+      color: var(--text);
+    }
+    .article-body h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 1.4rem 0 0.5rem;
+      color: var(--accent);
+    }
+    .article-body p {
+      margin-bottom: 1.2rem;
+      line-height: 1.85;
+      font-size: 1.05rem;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 1.4rem;
+      padding-left: 1.6rem;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      background: var(--bg-alt);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.95em;
+      color: #0284c7;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .article-body code {
+      color: #38bdf8;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .article-body pre code {
+      background: transparent;
+      padding: 0;
+      border: none;
+      color: inherit;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .article-body blockquote {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-alt);
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0;
+      border-radius: 0 8px 8px 0;
+      color: var(--text);
+    }
+    .callout {
+      border-left: 4px solid;
+      background: var(--bg-alt);
+      padding: 1.2rem 1.6rem;
+      margin: 1.6rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .callout-info { border-color: #0284c7; }
+    .callout-tip { border-color: #10b981; }
+    .callout-warning { border-color: #f59e0b; }
+    .callout-danger { border-color: #ef4444; }
+    .callout-title {
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Comparison Table Styling */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.8rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+      text-align: left;
+    }
+    th, td {
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    th {
+      background: var(--bg-alt);
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(0,0,0,0.02); }
+    .dark-mode tr:hover td { background: rgba(255,255,255,0.03); }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-teal { background: #ccfbf1; color: #0f766e; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .badge-gray { background: #f3f4f6; color: #374151; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-teal { background: #134e4a; color: #99f6e4; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+    .dark-mode .badge-gray { background: #374151; color: #e5e7eb; }
+
+    /* Interactive Box Components */
+    .interactive-explorer-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 2.2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    /* Simulator styles */
+    .sim-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sim-control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .sim-control-group label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .sim-select, .sim-input {
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .sim-select:focus, .sim-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+    }
+    .sim-result-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .sim-stat-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .sim-stat-val {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-top: 0.3rem;
+    }
+    .sim-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .risk-meter {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Diagram Block */
+    .diagram-card {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.8rem 0;
+      font-family: "Fira Code", monospace;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      overflow-x: auto;
+      border: 1px solid #334155;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .diagram-card .hl-cyan { color: #38bdf8; font-weight: bold; }
+    .diagram-card .hl-green { color: #4ade80; font-weight: bold; }
+    .diagram-card .hl-yellow { color: #facc15; font-weight: bold; }
+    .diagram-card .hl-pink { color: #f43f5e; font-weight: bold; }
+    .diagram-card .hl-dim { color: #64748b; }
   </style>
 </head>
-<body>
+<body id="top">
   <!-- =============== Header =============== -->
-  <header class="site-header" id="top">
+  <header class="site-header">
     <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
     <div class="container header-inner">
       <a href="./index.html" class="logo">"AI" 硬核工程師</a>
@@ -60,183 +353,473 @@
   <main class="article-page">
     <div class="container">
       <section class="article-hero">
-        <h1>主流 NAS (網路儲存設備) 終極解析：從商業品牌到 DIY 的 Home Lab 建構指南</h1>
+        <h1>主流 NAS 終極解析：商業品牌 vs 開源 DIY 全方位架構與實戰指南</h1>
         <div class="article-meta">
-          <span>📅 2026-10-04</span>
+          <span>📅 2026-10-19 (全面升級版)</span>
           <span class="separator">·</span>
-          <span>⏳ 22 分鐘閱讀</span>
+          <span>⏳ 38 分鐘深度長文</span>
           <span class="separator">·</span>
           <span>✍️ Robert</span>
         </div>
         <div class="article-tags">
           <span class="tag">NAS</span>
-          <span class="tag">Storage</span>
-          <span class="tag">HomeLab</span>
-          <span class="tag">Docker</span>
+          <span class="tag">儲存架構</span>
+          <span class="tag">ZFS</span>
+          <span class="tag">Btrfs</span>
+          <span class="tag">Synology</span>
+          <span class="tag">QNAP</span>
           <span class="tag">TrueNAS</span>
+          <span class="tag">Unraid</span>
+          <span class="tag">Proxmox VE</span>
+          <span class="tag">Docker</span>
+          <span class="tag">HomeLab</span>
         </div>
-        <img loading="lazy" src="https://picsum.photos/seed/nas-final/1200/400" alt="NAS Storage Network">
+        <div class="hero-image-wrap">
+          <img loading="lazy" src="./images/nas-storage-guide.jpg" alt="主流 NAS 終極解析 Banner：多槽伺服器陣列、高科技數據中心與光纖網路拓撲">
+        </div>
       </section>
 
       <article class="article-body">
-        <p>對於一位硬核工程師來說，<strong>NAS (Network Attached Storage) 早就已經不是單純的「網路硬碟」了</strong>。在 Docker 與虛擬化技術普及的今天，一台現代化的 NAS 本質上就是一台低功耗的 All-in-One Home Lab 伺服器。</p>
-        
-        <p>無論你是要實踐備份的 3-2-1 原則、架設 Plex/Jellyfin 媒體中心、運行 CI/CD Runner，還是託管幾十個 Docker 容器，選擇一台對的 NAS 都是基礎。本文將深入解析 NAS 的核心底層技術，並全面比較 Synology、QNAP、Asustor 等商業品牌，以及 TrueNAS、Unraid 等 DIY 方案。</p>
+        <div class="callout callout-info">
+          <div class="callout-title">💡 閱讀前言：現代工程師的儲存思維</div>
+          <p>對於軟體架構師與硬核工程師而言，<strong>NAS (Network Attached Storage) 早就已經脫離了單純「外接網路硬碟」的舊時代定義</strong>。在分散式儲存、容器化 (Docker/K8s) 與 AI 模型端側部署普及的今天，一台經過精心規劃的現代化 NAS，本質上就是一台具備高容錯、低功耗、全天候運行的<strong>個人邊緣運算中心 (Edge Compute & HomeLab Server)</strong>。本文將拆解檔案系統核心底層、RAID 陣列極限、商業系統軟體護城河與開源 DIY 方案，並附帶互動式容量與 URE 重建風險計算器。</p>
+        </div>
 
-        <hr>
+        <!-- =============== Chapter 1 =============== -->
+        <h2>1. 現代 NAS 的本質躍遷：從網路儲存池到邊緣微運算核心</h2>
+        <p>在過去，NAS 的功能被嚴格限定於區域網路內的檔案共享（透過 SMB/CIFS、NFS、AFP 協議）。然而隨著 x86_64 低功耗多核心處理器（如 Intel Alder Lake-N / Core 系列、AMD Ryzen Embedded）的普及，現代 NAS 已完成從「單純存儲設備」到「私有運算樞紐」的轉型。</p>
 
-        <h2>1. 現代 NAS 的核心功能與底層技術</h2>
-        <p>在進入品牌比較之前，我們必須先看懂現代 NAS 背後的關鍵技術：</p>
+        <h3>1.1 現代備份黃金準則：3-2-1-1-0 演繹</h3>
+        <p>資料無價，硬碟有價。任何不考慮「災難還原 (Disaster Recovery)」與「防禦勒索軟體 (Ransomware Protection)」的儲存規劃都是紙上談兵。業界最新公認的 <strong>3-2-1-1-0 備份準則</strong> 運作結構如下：</p>
 
-        <h3>1.1 檔案系統：Btrfs 與 ZFS 的崛起</h3>
-        <p>傳統的 ext4 檔案系統已經無法滿足現代 NAS 對於資料完整性的要求。現在的高階 NAS 幾乎全面轉向了支援 <strong>CoW (Copy-on-Write)</strong> 的次世代檔案系統：</p>
+        <div class="diagram-card">
+<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
+<span class="hl-cyan">│                      現代 3-2-1-1-0 備份防禦拓撲架構                     │</span>
+<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
+  [ Production Data (工作站/手機/伺服器) ]
+         │
+         ├───► <span class="hl-green">3</span> : 保持至少 3 份資料副本（1 份原始 + 2 份備份）
+         │
+         ├───► <span class="hl-green">2</span> : 存放於 2 種不同物理媒介（本地 NAS RAID + 外部磁帶/LTO 或 異質固態碟）
+         │
+         ├───► <span class="hl-green">1</span> : 至少 1 份保存於異地（Off-site：異地實體 NAS / AWS S3 / Cloudflare R2）
+         │
+         ├───► <span class="hl-yellow">1</span> : 至少 1 份不可變 / 氣隙隔離（Immutable WORM / Air-Gapped，防勒索軟體全刪）
+         │
+         └───► <span class="hl-pink">0</span> : 達到「0 還原錯誤」（定期自動沙盒化開機驗證校驗碼，非備份成功就完事）
+        </div>
+
+        <h3>1.2 混合分層儲存架構 (Hierarchical Storage Tiering)</h3>
+        <p>現代高效能 NAS 通常不會將所有任務堆疊在單一機械硬碟池中，而是採用多級階梯式儲存：</p>
         <ul>
-          <li><strong>Btrfs (B-tree file system)</strong>：Synology 的主力。支援瞬間建立快照 (Snapshot)，能在遭遇勒索軟體時秒級還原。其儲存效率高，對記憶體要求相對較低。</li>
-          <li><strong>ZFS (Zettabyte File System)</strong>：被譽為終極檔案系統，QNAP QuTS hero 與 TrueNAS 的核心。原生具備 RAID 功能 (RAID-Z)、強大的 Inline Deduplication (即時重複數據刪除) 與自我修復 (Self-healing) 能力。缺點是<strong>極度消耗 RAM</strong> (通常建議 1TB 儲存配置 1GB ECC RAM)。</li>
+          <li><strong>Tier 0 (Memory Cache)</strong>：由作業系統 RAM 維護的檔案系統快取（Linux PageCache 或 ZFS ARC），延遲在納秒級。</li>
+          <li><strong>Tier 1 (All-Flash Pool)</strong>：雙槽或四槽 M.2 NVMe SSD 組成鏡像陣列，專門運行 Docker 容器、PostgreSQL/MySQL 資料庫、虛擬機 (VM) 磁碟映像與 Git 倉庫，提供數十萬 IOPS。</li>
+          <li><strong>Tier 2 (HDD Array Pool)</strong>：多顆企業級 SATA/SAS 機械硬碟組成雙容錯 RAID（如 RAID 6、RAID-Z2 或 SHR-2），負責儲存冷資料、4K/8K 影音素材、大模型權重與歷史版本快照。</li>
+          <li><strong>Tier 3 (Cloud Cold Archive)</strong>：透過加密通道自動非同步同步至低成本雲端物件儲存（如 AWS Glacier Deep Archive），做終極災備。</li>
         </ul>
 
-        <h3>1.2 RAID 架構的演進</h3>
-        <p>除了標準的 RAID 0/1/5/6/10，各家廠商也推出了靈活的專有 RAID：</p>
+        <!-- =============== Chapter 2 =============== -->
+        <h2>2. 檔案系統架構深度剖析：Btrfs vs ZFS vs ext4/XFS</h2>
+        <p>NAS 的靈魂並非機殼或風扇，而是<strong>檔案系統 (File System)</strong>。傳統 ext4/XFS 等日誌型檔案系統，在面對現代數十 TB 的巨量硬碟時，完全無力抵抗「靜態資料腐蝕 (Silent Data Corruption / Bitrot)」。為此，具備 <strong>CoW (Copy-on-Write)</strong> 機制的新一代檔案系統成為高階 NAS 的標準配置。</p>
+
+        <h3>2.1 Btrfs (B-Tree File System) 核心機制</h3>
+        <p>Btrfs 是群暉 (Synology DSM) 與華芸 (Asustor ADM) 的主打檔案系統，其架構特點包含：</p>
         <ul>
-          <li><strong>SHR (Synology Hybrid RAID)</strong>：允許混合不同容量的硬碟，極大化空間利用率，是家用擴充最無痛的方案。</li>
-          <li><strong>Unraid Array</strong>：嚴格來說不是 RAID，資料獨立存放在各別硬碟，僅利用一顆 Parity Drive 做容錯。優點是可以任意混搭硬碟，缺點是讀寫速度受限於單顆硬碟的物理極限。</li>
+          <li><strong>寫入時複製 (Copy-on-Write)</strong>：修改現有檔案時，Btrfs 不會原地覆蓋舊區塊，而是將新資料寫入全新磁區，待寫入完成並通過校驗後，才原子性地變更 B-Tree 指標指向新區塊。這保證了在突發斷電時，檔案系統絕不出現指標撕裂。</li>
+          <li><strong>瞬間唯讀快照 (Subvolume Snapshots)</strong>：快照本質上只是複製一份 B-Tree 根結點指標，耗時不到 1 毫秒且不佔用額外儲存空間。只有當後續資料被修改時，增量變更才會開始佔據容量。</li>
+          <li><strong>靜默損壞檢測 (Data Scrubbing)</strong>：Btrfs 對每個資料區塊與元資料計算 CRC32c 校驗碼。然而原生 Btrfs 在 RAID 5/6 模式下存在嚴重的「寫入漏洞 (Write Hole)」歷史 Bug，因此 Synology 聰明地<strong>以 Linux 原生 <code>mdadm</code> 負責底層硬碟 RAID 冗餘，上方再格式化為 Btrfs</strong>，以此避開原生 Bug，兼得快照與自動修復能力。</li>
         </ul>
 
-        <h3>1.3 容器化與虛擬化 (Docker & VMs)</h3>
-        <p>幾乎所有搭載 x86 (Intel/AMD) 處理器的 NAS 都支援 Docker 引擎。這讓 NAS 成為跑 Home Assistant、Bitwarden、Pi-hole 等微服務的最佳載體。如果 CPU 支援 VT-x/AMD-V，甚至能透過 KVM 直通硬體跑 Windows 或 Linux 虛擬機。</p>
-
-        <hr>
-
-        <h2>2. 主流 NAS 品牌與方案比較</h2>
-
-        <h3>🥇 Synology (群暉) —— NAS 界的 Apple</h3>
-        <p>Synology 是全球 NAS 市佔率的霸主。它的核心競爭力不在硬體，而在於其作業系統 <strong>DSM (DiskStation Manager)</strong>。</p>
+        <h3>2.2 ZFS (OpenZFS)：儲存界的工程巔峰</h3>
+        <p>ZFS 被譽為檔案系統設計的終極形態，它是威聯通 (QNAP QuTS hero) 與開源巨擘 (TrueNAS) 的核心支柱。ZFS 徹底摒棄了傳統「先切分分割區、再組 RAID、再格式化」的階層，將磁碟管理、RAID 陣列與檔案系統融為一體：</p>
         <ul>
-          <li><strong>優勢：</strong>
-            <ul>
-              <li><strong>無可匹敵的軟體體驗：</strong> DSM 的 UI/UX 極其流暢，即使是小白也能輕鬆上手。</li>
-              <li><strong>套件生態系：</strong> 內建的 Active Backup for Business 是企業級的免授權備份神器；Synology Photos 被公認為 Google Photos 的最佳替代品。</li>
-              <li><strong>穩定度：</strong> 軟硬體高度整合，系統極其穩定。</li>
-            </ul>
-          </li>
-          <li><strong>劣勢：</strong>
-            <ul>
-              <li><strong>硬體規格保守：</strong> 同價位下，CPU 經常落後對手一兩個世代，且直到近期才開始緩慢普及 2.5GbE 網路埠。</li>
-              <li><strong>硬體鎖定 (Vendor Lock-in)：</strong> 高階機種強制綁定原廠硬碟與 RAM，否則會瘋狂報錯甚至不給建 RAID。</li>
-            </ul>
-          </li>
-          <li><strong>目標客群：</strong> 追求「設定一次就忘記」、重視資料安全與軟體體驗，不喜歡折騰的用戶。</li>
+          <li><strong>Merkle Tree（雜湊樹）架構</strong>：ZFS 樹狀結構中的每個父節點指標，都包含其所有子節點的密碼學 Checksum（預設 Fletcher4 或 SHA-256）。當客戶端發起讀取時，ZFS 沿著雜湊樹從頂層向下逐級驗證，即使硬碟韌體回報成功但實際讀取到損毀資料（Phantom Write / Bitrot），ZFS 也能百分之百偵測並秒級報警。</li>
+          <li><strong>端對端自我修復 (End-to-End Self-Healing)</strong>：若讀取的資料塊校驗碼不符，ZFS 會立即從鏡像盤或 RAID-Z 同位元計算出正確數據返回給應用程式，並在背景自動將正確區塊寫回故障硬碟，整個過程對應用層完全透明。</li>
+          <li><strong>ARC 與 L2ARC 三級快取</strong>：ZFS 不使用傳統的 LRU 快取，而是研發了專利級的 <strong>ARC (Adaptive Replacement Cache)</strong>，即時平衡「最近訪問 (MRU)」與「最常訪問 (MFU)」。可將 NVMe SSD 掛載為 L2ARC，大幅延伸讀取快取命中率。</li>
+          <li><strong>ZIL (ZFS Intent Log) 與 SLOG</strong>：針對資料庫、NFS 與虛擬機等同步寫入 (Sync Writes) 場景，ZFS 會先將寫入請求存入記憶體並同時快速刷入 ZIL。透過額外配置具備 <strong>PLP (Power Loss Protection 斷電保護)</strong> 的超高耐寫 SSD 作為 <strong>SLOG (Separate Log Device)</strong>，能將同步寫入延遲壓制至微秒級。</li>
         </ul>
 
-        <h3>🥈 QNAP (威聯通) —— NAS 界的 Android</h3>
-        <p>QNAP 是技術流玩家的最愛，以給料大方、硬體強悍著稱。</p>
-        <ul>
-          <li><strong>優勢：</strong>
-            <ul>
-              <li><strong>硬體規格怪獸：</strong> 即使是入門機種也常標配 2.5GbE 甚至 10GbE 網卡、PCIe 擴充槽、Thunderbolt 介面，CPU 性能強勁。</li>
-              <li><strong>QuTS hero (ZFS)：</strong> QNAP 將企業級的 ZFS 檔案系統下放到家用機型，資料完整性無可挑剔。</li>
-              <li><strong>自由度極高：</strong> 虛擬化平台 (Virtualization Station) 功能強大，硬體直通支援度佳。</li>
-            </ul>
-          </li>
-          <li><strong>劣勢：</strong>
-            <ul>
-              <li><strong>軟體體驗較破碎：</strong> QTS 作業系統功能繁雜，學習曲線陡峭，且偶爾會有小 Bug。</li>
-              <li><strong>資安紀錄：</strong> 過去曾發生過幾次較大規模的 DeadBolt 勒索軟體事件 (雖然近年已大幅改善)。</li>
-            </ul>
-          </li>
-          <li><strong>目標客群：</strong> 喜歡榨乾硬體效能、需要極高網路頻寬 (如影音創作者)、喜愛折騰各種進階設定的玩家。</li>
-        </ul>
+        <div class="callout callout-warning">
+          <div class="callout-title">⚠️ ZFS 記憶體「1TB : 1GB」規則與 Deduplication 陷阱</div>
+          <p>ZFS 極度渴望記憶體。一般建議每 1TB 儲存空間配置至少 1GB RAM，且<strong>強烈建議使用 ECC (Error-Correcting Code) 記憶體</strong>，因為 ZFS 的校驗比對全在 RAM 中進行，若記憶體發生翻轉 (Bit-flip)，錯誤的雜湊值可能導致寫入被污染。此外，<strong>嚴禁在家用/小型實驗室環境開啟 Inline Deduplication（內聯去重）</strong>！DDT 去重雜湊表若無法完全裝進記憶體，將導致儲存池寫入效能崩塌暴跌 90% 以上。開啟 <code>compression=zstd</code> 即可獲得最佳空間回報。</p>
+        </div>
 
-        <h3>🥉 Asustor (華芸) —— 高性價比的黑馬</h3>
-        <p>華碩集團旗下的 NAS 品牌，主打極高性價比。</p>
-        <ul>
-          <li><strong>優勢：</strong>
-            <ul>
-              <li><strong>極致性價比：</strong> 花一樣的錢，在 Asustor 可以買到比雙 S/Q 更強的處理器與全固態 (All-Flash) 的機種 (例如 Flashstor 系列)。</li>
-              <li><strong>影音支援佳：</strong> 很多機型具備 HDMI 輸出，可直接當作客廳的 HTPC 播放器。</li>
-            </ul>
-          </li>
-          <li><strong>劣勢：</strong>
-            <ul>
-              <li><strong>生態系較弱：</strong> ADM 系統的 App 豐富度與套件成熟度仍不及 Synology 與 QNAP。</li>
-            </ul>
-          </li>
-          <li><strong>目標客群：</strong> 預算有限但想要強大硬體，主要只用來跑 Docker 或當影音伺服器的用戶。</li>
-        </ul>
-
-        <h3>🛠️ DIY NAS：TrueNAS & Unraid —— 硬核工程師的最終歸宿</h3>
-        <p>如果您對市售品牌的「買軟體送硬體」感到不滿，自己組裝伺服器並刷入開源/商業 NAS 系統是最佳解。</p>
-        <ul>
-          <li><strong>TrueNAS Scale (基於 Debian Linux)：</strong>
-            <ul>
-              <li><strong>特點：</strong> 使用原汁原味的 ZFS，支援 Kubernetes 原生應用部署。完全免費開源，極度穩定。</li>
-              <li><strong>適合：</strong> 追求極致效能與資料完整性，且具備 Linux 系統管理能力的工程師。</li>
-            </ul>
-          </li>
-          <li><strong>Unraid：</strong>
-            <ul>
-              <li><strong>特點：</strong> 付費系統(買斷制)，最大的賣點是硬碟可以「任意容量混搭」且隨時擴充。內建絕佳的 Docker 管理介面與社群 App Store。</li>
-              <li><strong>適合：</strong> 經常撿二手硬碟、看重 Docker 應用勝過極致傳輸速度的 Home Lab 玩家。</li>
-            </ul>
-          </li>
-        </ul>
-
-        <hr>
-
-        <h2>3. 終極比較表</h2>
-        <div style="overflow-x:auto;">
+        <h3>2.3 四大主流檔案系統技術特性矩陣</h3>
+        <div class="table-container">
           <table>
             <thead>
               <tr>
-                <th>特色 / 品牌</th>
-                <th>Synology (群暉)</th>
-                <th>QNAP (威聯通)</th>
-                <th>Asustor (華芸)</th>
-                <th>TrueNAS / Unraid (DIY)</th>
+                <th>技術維度</th>
+                <th>ZFS (OpenZFS)</th>
+                <th>Btrfs</th>
+                <th>ext4</th>
+                <th>XFS</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>主打賣點</strong></td>
-                <td>軟體體驗、生態系無敵</td>
-                <td>硬體性價比、ZFS 檔案系統</td>
-                <td>極致硬體性價比、多媒體輸出</td>
-                <td>完全自由、硬體無限擴充</td>
+                <td><strong>核心設計原理</strong></td>
+                <td><span class="badge badge-purple">Pooled Storage + CoW</span></td>
+                <td><span class="badge badge-blue">B-Tree + CoW</span></td>
+                <td><span class="badge badge-gray">Journaling 日誌型</span></td>
+                <td><span class="badge badge-gray">Allocation Groups 日誌</span></td>
               </tr>
               <tr>
-                <td><strong>底層檔案系統</strong></td>
-                <td>Btrfs / ext4</td>
-                <td>ZFS (QuTS hero) / ext4</td>
-                <td>Btrfs / ext4</td>
-                <td>ZFS (TrueNAS) / XFS (Unraid)</td>
+                <td><strong>端對端 Checksum</strong></td>
+                <td>全資料 + 全元資料 (SHA256/Fletcher4)</td>
+                <td>全資料 + 全元資料 (CRC32c / xxHash)</td>
+                <td>僅元資料 (無資料區塊校驗)</td>
+                <td>僅元資料 (CRC32c)</td>
               </tr>
               <tr>
-                <td><strong>硬體性價比</strong></td>
-                <td>低 (買軟體送硬體)</td>
-                <td>高 (規格給料大方)</td>
-                <td>極高 (硬體輾壓對手)</td>
-                <td>無上限 (取決於你的口袋)</td>
+                <td><strong>靜態資料自我修復</strong></td>
+                <td><span class="badge badge-green">原生自動修復 (搭配 vdev)</span></td>
+                <td><span class="badge badge-amber">有限 (需底層配合或 DUP)</span></td>
+                <td><span class="badge badge-rose">無 (無法檢測 Bitrot)</span></td>
+                <td><span class="badge badge-rose">無 (無法檢測 Bitrot)</span></td>
               </tr>
               <tr>
-                <td><strong>學習曲線</strong></td>
-                <td>極低 (阿嬤都會用)</td>
-                <td>中高 (需要一點基礎)</td>
-                <td>低</td>
-                <td>極高 (需 Linux/ZFS 知識)</td>
+                <td><strong>快照開銷與速度</strong></td>
+                <td>秒級完成、開銷極小</td>
+                <td>秒級完成、子卷原子快照</td>
+                <td>無原生快照 (需仰賴 LVM)</td>
+                <td>無原生快照 (需仰賴 LVM)</td>
               </tr>
               <tr>
-                <td><strong>Docker 支援</strong></td>
-                <td>⭐⭐⭐⭐ (介面稍簡陋)</td>
-                <td>⭐⭐⭐⭐⭐ (Container Station)</td>
-                <td>⭐⭐⭐⭐</td>
-                <td>⭐⭐⭐⭐⭐ (原生 K8s / 豐富社群)</td>
+                <td><strong>記憶體消耗指數</strong></td>
+                <td><span class="badge badge-rose">極高 (建議 8GB ~ 64GB+ ECC)</span></td>
+                <td><span class="badge badge-green">低至中等 (2GB ~ 8GB 充足)</span></td>
+                <td><span class="badge badge-teal">極低 (&lt; 1GB)</span></td>
+                <td><span class="badge badge-teal">極低 (&lt; 1GB)</span></td>
               </tr>
               <tr>
-                <td><strong>最適合對象</strong></td>
-                <td>企業、小白、備份需求者</td>
-                <td>影音創作者、硬核玩家</td>
-                <td>預算有限、HTPC 玩家</td>
-                <td>Linux 老司機、垃圾佬</td>
+                <td><strong>即時透明壓縮</strong></td>
+                <td>支援 (LZ4, ZSTD, GZIP)</td>
+                <td>支援 (ZSTD, LZO, ZLIB)</td>
+                <td>不支援</td>
+                <td>不支援</td>
+              </tr>
+              <tr>
+                <td><strong>代表系統</strong></td>
+                <td>TrueNAS, QNAP QuTS hero</td>
+                <td>Synology DSM, Asustor ADM</td>
+                <td>QNAP QTS, 傳統 Linux</td>
+                <td>Unraid (Array 專用), RHEL</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- =============== Chapter 3 =============== -->
+        <h2>3. RAID 陣列演進與現代容錯拓撲</h2>
+        
+        <h3>3.1 為什麼 16TB+ 大硬碟時代「嚴禁使用 RAID 5」？</h3>
+        <p>在 500GB 或 1TB 硬碟時代，單碟容錯的 RAID 5 是兼具容量與保護的首選。然而進入 16TB、20TB、24TB 機械硬碟時代後，<strong>RAID 5 已經成為定時炸彈</strong>。原因在於硬碟物理規格中的 <strong>URE (Unrecoverable Read Error，不可恢復讀取錯誤率)</strong>：</p>
+        
+        <p>一般企業級 SATA/SAS 硬碟的 URE 規格通常為：</p>
+        $$\text{URE Rate} = 10^{-15} \text{ bits}$$
+        <p>這意味著每讀取 $10^{15}$ 位元（約等於 125 TB 數據），統計上必然會遭遇一次無法糾正的磁區壞死。假設由 4 顆 16TB 硬碟組成 RAID 5，當其中一顆硬碟損壞掉線時，陣列必須對剩餘的 3 顆硬碟進行<strong>全盤完整讀取（需讀取 $3 \times 16\text{TB} = 48\text{TB} = 3.84 \times 10^{14} \text{ bits}$）</strong>以重新計算 Parity 還原數據：</p>
+
+        $$\text{重建失敗機率 } P_{\text{fail}} = 1 - (1 - \text{URE})^{\text{總讀取位元數}}$$
+        <p>在進行長達 30 到 50 個小時的重度滿載重建過程中，只要任何一顆硬碟出現單一磁區讀取錯誤，整個 RAID 5 重建程序將立即中斷並宣告失敗，導致整座儲存池<strong>永久毀滅、資料全數蒸發</strong>！</p>
+        
+        <div class="callout callout-danger">
+          <div class="callout-title">🚨 架構師核心誡律</div>
+          <p>單碟容量 $\ge 8\text{TB}$ 時，生產環境與家庭儲存<strong>絕對不可使用單碟容錯陣列（RAID 5 / RAID-Z1）</strong>！必須採用<strong>雙碟容錯（RAID 6 / RAID-Z2 / SHR-2）</strong>或<strong>條帶化鏡像（RAID 10 / Striped Mirror vdevs）</strong>。</p>
+        </div>
+
+        <h3>3.2 SHR (Synology Hybrid RAID) 底層切片演算法</h3>
+        <p>群暉之所以能在家用市場取得壓倒性市佔，其自研的 SHR 是最大功臣。傳統硬碟陣列要求所有硬碟容量一致，若混插 4TB、4TB、8TB、8TB，傳統 RAID 5 只能將所有硬碟按最小的 4TB 計算，浪費掉 8TB 寶貴空間。</p>
+        <p>SHR 的運作機制是在底層透過 Linux LVM 動態將硬碟橫切為多個區塊：</p>
+        <ul>
+          <li><strong>Slice 1</strong>：4 顆硬碟的前 4TB 被打包成一組 4 碟的 <code>mdadm RAID 5</code>（可用容量 $3 \times 4\text{TB} = 12\text{TB}$）。</li>
+          <li><strong>Slice 2</strong>：剩餘兩顆 8TB 硬碟的後 4TB 被單獨打包成一組 2 碟的 <code>mdadm RAID 1</code>（可用容量 $1 \times 4\text{TB} = 4\text{TB}$）。</li>
+          <li>最後透過 LVM 將兩個陣列拼接成單一邏輯卷，總可用空間達 $12 + 4 = 16\text{TB}$，空間利用率高達 66.7%，且具備單碟容錯能力！</li>
+        </ul>
+
+        <h3>3.3 ZFS RAID-Z 家族 vs Striped Mirrors</h3>
+        <p>在 ZFS 架構中，陣列由 vdev 組成：</p>
+        <ul>
+          <li><strong>RAID-Z1 / Z2 / Z3</strong>：等同於改良版 RAID 5/6/7。消除了傳統 Write Hole。但所有資料區塊由 vdev 內硬碟共同承擔，其<strong>隨機寫入 IOPS 僅等同於單顆硬碟</strong>！不適合虛擬機與高頻資料庫。</li>
+          <li><strong>Striped Mirrors (RAID 10 等效)</strong>：由多對 2-Way Mirror 組成條帶。隨機 IOPS 與 Mirror 對數成正比翻倍，重建時只需自鏡像硬碟單向拷貝有效資料，重建速度最快（數小時內完成），對陣列壓力最低，是高效能 HomeLab 的唯一推薦。</li>
+        </ul>
+
+        <!-- =============== Chapter 4 =============== -->
+        <h2>4. 四大商業 NAS 系統全方位深度剖析</h2>
+
+        <h3>🥇 Synology (群暉) DSM 7.2+ —— 軟體生態的絕對霸主</h3>
+        <p>Synology 的核心資產是其作業系統 <strong>DSM (DiskStation Manager)</strong>。它的設計哲學是將複雜的 Linux 儲存管理封裝為直覺平滑的 Web 桌面。</p>
+        <ul>
+          <li><strong>Active Backup for Business (ABB)</strong>：免授權費用的企業級備份套件。支援整台 Windows PC/Mac、Windows/Linux Server、VMware ESXi、Hyper-V 虛擬機全域去重備份，支援 P2V（實體機直接轉為 NAS 上的虛擬機開機）。</li>
+          <li><strong>Synology Drive</strong>：功能與 Google Drive、Dropbox 完全看齊的私有雲同步套件，支援歷史版本增量儲存、檔案按需同步 (On-demand Sync)。</li>
+          <li><strong>Synology Photos</strong>：公認最佳的 Google Photos 替代品，人臉聚類識別精確、支援 iOS/Android 背景自動照片備份。</li>
+          <li><strong>缺點與爭議</strong>：近年硬體給料偏保守。部分中高階企業機種（XS/SA 系列）嚴格執行硬碟白名單機制（非原廠認證硬碟會標示為「未驗證」並不支援建立儲存池），引發資深用戶反彈。</li>
+        </ul>
+
+        <h3>🥈 QNAP (威聯通) QuTS hero & QTS —— 硬體堆料怪獸與 ZFS 先鋒</h3>
+        <p>如果群暉是儲存界的 Apple，威聯通就是追求極致規格的 Android 旗艦。QNAP 在同價位機型上往往給出倍數級別的硬體規格：</p>
+        <ul>
+          <li><strong>QuTS hero 作業系統</strong>：將 OpenZFS 真正落地於商業 NAS，原生具備端對端資料校驗、即時去重與三級快取。</li>
+          <li><strong>硬體規格輾壓</strong>：全線標配 2.5GbE 網路埠，中階機型普及 10GbE SFP+/RJ45，並配備 PCIe Gen4 擴充槽，支援安裝獨立 GPU 做 AI 轉碼與運算。</li>
+          <li><strong>Thunderbolt 4 / 25G 直連工作流</strong>：專為影音工作室打造的 TVS 系列，支援 Mac/PC 透過 Thunderbolt 線直接直連 NAS 傳輸，突破 1.5 GB/s 極速剪輯。</li>
+          <li><strong>缺點</strong>：QTS 介面選項繁瑣，功能入口較為分散，學習曲線陡峭；歷史上有數次資安漏洞修補不及的記錄。</li>
+        </ul>
+
+        <h3>🥉 Asustor (華芸) ADM 4.x —— 影音直出與全閃存戰略黑馬</h3>
+        <p>華碩旗下的 Asustor 近年憑藉差異化策略精準切入極客市場：</p>
+        <ul>
+          <li><strong>Flashstor 全閃存系列 (FS6706T / FS6712X)</strong>：主打 6 ~ 12 槽 M.2 NVMe SSD 專用 NAS。機身小巧如路由器、運行零噪音、功耗低於 25W，搭載雙 2.5GbE 或 10GbE 網孔，是桌面工作站最佳隨行儲存庫。</li>
+          <li><strong>HDMI 4K 60Hz 直出播放</strong>：具備獨立 HDMI 輸出端子，可直連電視透過 Kodi / Plex 輸出影音，免去 Apple TV 等播放盒中轉。</li>
+        </ul>
+
+        <h3>新興消費級品牌：綠聯 (UGREEN) UGOS Pro & 極空間 (ZIDOO)</h3>
+        <p>近年以 Intel 12/13 代 Core 處理器搭配全金屬機身橫空出世，硬體性價比極高。早期系統軟體功能較單薄，但正在透過高頻更新迅速追趕，適合重視家庭影音、下載與相簿備份的一般消費族群。</p>
+
+        <!-- =============== Chapter 5 =============== -->
+        <h2>5. 開源與 DIY 方案深度實戰：TrueNAS SCALE vs Unraid vs Proxmox VE</h2>
+        <p>當商業品牌的「買軟體送硬體」無法滿足你的效能要求時，利用自組 x86 硬體或舊伺服器搭建開源 NAS 是工程師的最佳解法。</p>
+
+        <h3>5.1 TrueNAS SCALE (Debian + OpenZFS)</h3>
+        <p>TrueNAS SCALE 是目前開源儲存系統的絕對王者。基於 Debian Linux，核心採用純正的 OpenZFS：</p>
+        <ul>
+          <li><strong>原生支援 K8s & Docker Compose</strong>：內建豐富的社群應用商店（TrueCharts / iX-Apps），可一鍵部屬各類微服務。</li>
+          <li><strong>企業級叢集能力</strong>：支援 Scale-Out 分散式儲存、高可用性 (HA) 容錯移轉與專業級 ACL 權限架構。</li>
+          <li><strong>硬體需求</strong>：建議配置 Intel 12代以上或 AMD EPYC/Ryzen 處理器，搭配 <strong>32GB+ ECC DDR4/DDR5 記憶體</strong> 與 SAS 3.0 / NVMe 儲存控制器。</li>
+        </ul>
+
+        <h3>5.2 Unraid OS：混碟擴充與低功耗之王</h3>
+        <p>Unraid 是採用買斷授權的專有 Linux 系統，在 HomeLab 領域擁有極高人氣：</p>
+        <ul>
+          <li><strong>任意硬碟容量混搭</strong>：只要 Parity 硬碟容量大於或等於陣列內任何一顆資料碟，其餘資料碟可任意購買不同容量、不同品牌的硬碟隨時插入擴充。</li>
+          <li><strong>硬碟休眠省電</strong>：讀取某個檔案時，只有該檔案所在的單顆硬碟會起旋運轉，其餘硬碟維持休眠，整機待機功耗可壓低至 15W ~ 25W。</li>
+          <li><strong>快取機制</strong>：由 NVMe SSD 組成 Cache Pool 吸收所有高速寫入，深夜再由後台排程（Mover）將靜態冷資料寫回機械硬碟陣列。</li>
+        </ul>
+
+        <h3>5.3 終極架構：Proxmox VE + SAS HBA 直通虛擬化 NAS</h3>
+        <p>資深 DevOps 工程師最推崇的 All-in-One 伺服器拓撲是<strong>透過 Proxmox VE (PVE) 進行硬體直通</strong>：</p>
+
+        <div class="diagram-card">
+<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
+<span class="hl-cyan">│            Proxmox VE (PVE 8.x) 裸機虛擬化硬核架構拓撲                  │</span>
+<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
+  [ 實體伺服器硬體：Intel Core i7 / Xeon + 64GB ECC RAM + 10GbE 網卡 ]
+        │
+  ┌─────┴──────────────────────────────────────────────────────────────┐
+  │ <b>PVE 虛擬化底座 (Debian Kernel)</b>                                      │
+  │                                                                    │
+  │  ├──► <span class="hl-green">VM 100: TrueNAS SCALE</span>                                        │
+  │  │    ├─► <b>PCIe Passthrough (IOMMU 直通)</b>:                           │
+  │  │    │   LSI SAS 3008 (9300-8i IT Mode) 直通卡 ──► [ 8x 企業級 HDD ]│
+  │  │    │   (TrueNAS 直接掌控實體硬碟 SMART 與 ZFS zpool，零虛擬損耗)   │
+  │  │    └─► 導出 NFS / SMB 儲存池給 PVE 宿主機與其他容器             │
+  │  │                                                                 │
+  │  ├──► <span class="hl-yellow">LXC / Docker VM</span>: 專門運行 Plex, Home Assistant, Vaultwarden  │
+  │  │    └─► 透過內部 VirtIO-net 虛擬 10G/40G 網卡讀取 TrueNAS 存儲池  │
+  │  │                                                                 │
+  │  └──► <span class="hl-pink">VM 102: pfSense / OPNsense</span> (軟路由主幹，控管全家流量)        │
+  └────────────────────────────────────────────────────────────────────┘
+        </div>
+
+        <!-- =============== Chapter 6 =============== -->
+        <h2>6. 網路傳輸協議與頻寬調校極速指南</h2>
+        
+        <h3>6.1 傳輸速率物理瓶頸一覽</h3>
+        <p>很多使用者升級了 NAS 卻發現檔案複製依舊只有 110 MB/s，瓶頸往往卡在網路介面：</p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>網路介面</th>
+                <th>理論頻寬 (Gbps)</th>
+                <th>實測極速 (MB/s)</th>
+                <th>硬碟匹配建議</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1 GbE (Gigabit)</strong></td>
+                <td>1.0 Gbps</td>
+                <td>~112 MB/s</td>
+                <td>單顆 3.5" HDD 即可輕鬆跑滿，為現代 NAS 主要瓶頸</td>
+              </tr>
+              <tr>
+                <td><strong>2.5 GbE (2.5G)</strong></td>
+                <td>2.5 Gbps</td>
+                <td>~280 MB/s</td>
+                <td>跑滿多碟 HDD 陣列順序讀寫或 SATA SSD，家用性價比甜點</td>
+              </tr>
+              <tr>
+                <td><strong>10 GbE (10G)</strong></td>
+                <td>10.0 Gbps</td>
+                <td>~1,150 MB/s</td>
+                <td>需多碟 RAID 0/10 或 NVMe SSD，支援 4K/8K 剪輯直剪</td>
+              </tr>
+              <tr>
+                <td><strong>25 GbE / 40 GbE</strong></td>
+                <td>25 / 40 Gbps</td>
+                <td>2,800 ~ 4,500 MB/s</td>
+                <td>全閃存 NVMe-oF 儲存叢集，企業級數據中心專用</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>6.2 SMB 3.1.1 Multichannel 多通道頻寬翻倍</h3>
+        <p>如果你的 NAS 與電腦都有兩個 2.5GbE 網路埠，你<strong>不需要購買昂貴的網管交換機做 LACP 鏈路聚合</strong>。只要在 Samba 設定檔中啟用 SMB Multichannel：</p>
+        <pre><code># /etc/samba/smb.conf
+[global]
+server multi channel support = yes
+interfaces = "eth0;capability=speed,10000000000" "eth1;capability=speed,10000000000"
+aio read size = 1
+aio write size = 1</code></pre>
+        <p>Windows 11 與 macOS Sonoma 客戶端會自動建立多條 TCP 連線，同時從兩組網孔並行傳輸，傳輸速率立即由 280 MB/s 翻倍躍升至 <strong>550+ MB/s</strong>！</p>
+
+        <!-- =============== Chapter 7 =============== -->
+        <h2>7. NAS 容器化與 Home Lab 必備開源微服務清單</h2>
+        <p>現代 NAS 上最核心的價值在於運行 24 小時不間斷的容器微服務。以下為工程師推薦的 Docker Compose 標準配置：</p>
+
+        <h3>7.1 影音串流中心：Jellyfin + Intel QSV 硬解直通</h3>
+        <pre><code>services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    user: 1000:1000
+    network_mode: host
+    volumes:
+      - /pool/appdata/jellyfin/config:/config
+      - /pool/appdata/jellyfin/cache:/cache
+      - /pool/media:/media:ro
+    devices:
+      - /dev/dri:/dev/dri # 直通 Intel 內顯做 4K AV1/HEVC 實時硬體轉碼
+    restart: unless-stopped</code></pre>
+
+        <h3>7.2 關鍵 HomeLab 微服務矩陣</h3>
+        <ul>
+          <li><strong>安全密碼庫</strong>：<code>Vaultwarden</code>（輕量化 Bitwarden Rust 實作，單容器內存僅需 30MB）。</li>
+          <li><strong>內網穿透與異地互聯</strong>：<code>Tailscale</code> 或 <code>WireGuard</code>，無需公網 IP 即可建立端對端 WireGuard 加密網狀網。</li>
+          <li><strong>反向代理與自動 SSL</strong>：<code>Nginx Proxy Manager</code>，可視化介面，自動申請並續簽 Let's Encrypt 萬用字元憑證。</li>
+          <li><strong>雲端原生相簿</strong>：<code>Immich</code>，UI/UX 媲美 Google Photos，具備本地機器學習人臉搜尋與 CLIP 向量圖片以文搜圖。</li>
+        </ul>
+
+        <!-- =============== Chapter 8 =============== -->
+        <h2>8. 硬核互動工具：NAS 儲存容量、RAID 容錯與重建時間試算器</h2>
+        <p>利用下方互動試算器，動態模擬不同硬碟顆數、單碟規格與陣列拓撲下的真實儲存池可用空間、儲存效率與 URE 重建風險指數：</p>
+
+        <div class="interactive-explorer-box">
+          <div class="exp-title">🧮 互動式 NAS 陣列容錯與儲存空間精算器</div>
+          
+          <div class="sim-controls">
+            <div class="sim-control-group">
+              <label for="nas-drive-count">硬碟數量 (Disks):</label>
+              <select id="nas-drive-count" class="sim-select" onchange="calculateNASStorage()">
+                <option value="2">2 槽 (2-Bay)</option>
+                <option value="4" selected>4 槽 (4-Bay 經典主流)</option>
+                <option value="5">5 槽 (5-Bay)</option>
+                <option value="6">6 槽 (6-Bay 高階玩家)</option>
+                <option value="8">8 槽 (8-Bay 終極工作站)</option>
+                <option value="12">12 槽 (12-Bay 機架式)</option>
+              </select>
+            </div>
+
+            <div class="sim-control-group">
+              <label for="nas-drive-size">單碟容量 (TB):</label>
+              <select id="nas-drive-size" class="sim-select" onchange="calculateNASStorage()">
+                <option value="4">4 TB (經典入門)</option>
+                <option value="8">8 TB (經濟實惠)</option>
+                <option value="12">12 TB</option>
+                <option value="16" selected>16 TB (主流企業級甜蜜點)</option>
+                <option value="20">20 TB (超大容量)</option>
+                <option value="24">24 TB (最新氦氣旗艦)</option>
+              </select>
+            </div>
+
+            <div class="sim-control-group">
+              <label for="nas-raid-type">RAID 陣列拓撲 (Topology):</label>
+              <select id="nas-raid-type" class="sim-select" onchange="calculateNASStorage()">
+                <option value="raid0">RAID 0 (無容錯 / 速度極限)</option>
+                <option value="raid1">RAID 1 / Mirror (雙盤鏡像 / 容錯 1 碟)</option>
+                <option value="raid5" selected>RAID 5 / RAID-Z1 / SHR-1 (單同位元 / 容錯 1 碟)</option>
+                <option value="raid6">RAID 6 / RAID-Z2 / SHR-2 (雙同位元 / 容錯 2 碟)</option>
+                <option value="raid10">RAID 10 / Striped Mirrors (條帶化鏡像 / 高效能)</option>
+                <option value="raidz3">RAID-Z3 (三重同位元 / 容錯 3 碟)</option>
+              </select>
+            </div>
+
+            <div class="sim-control-group">
+              <label for="nas-rebuild-speed">預估重建讀取速度 (MB/s):</label>
+              <input type="number" id="nas-rebuild-speed" class="sim-input" value="160" min="50" max="280" step="10" oninput="calculateNASStorage()">
+            </div>
+          </div>
+
+          <div class="sim-result-grid">
+            <div class="sim-stat-card">
+              <div class="sim-stat-label">原始裸總容量 (Raw)</div>
+              <div class="sim-stat-val" id="res-raw-cap">64.0 TB</div>
+            </div>
+            <div class="sim-stat-card">
+              <div class="sim-stat-label">實際可用容量 (Decimal TB)</div>
+              <div class="sim-stat-val" id="res-usable-tb" style="color: #10b981;">48.0 TB</div>
+            </div>
+            <div class="sim-stat-card">
+              <div class="sim-stat-label">系統辨識容量 (Binary TiB)</div>
+              <div class="sim-stat-val" id="res-usable-tib">43.7 TiB</div>
+            </div>
+            <div class="sim-stat-card">
+              <div class="sim-stat-label">容錯硬碟上限</div>
+              <div class="sim-stat-val" id="res-fault-tol">1 顆碟</div>
+            </div>
+            <div class="sim-stat-card">
+              <div class="sim-stat-label">有效空間利用率</div>
+              <div class="sim-stat-val" id="res-storage-eff">75.0 %</div>
+            </div>
+            <div class="sim-stat-card">
+              <div class="sim-stat-label">預估重建耗時 (Rebuild)</div>
+              <div class="sim-stat-val" id="res-rebuild-time" style="color: #f59e0b;">27.8 小時</div>
+            </div>
+          </div>
+
+          <div class="risk-meter" id="res-risk-box">
+            <strong>⚠️ 陣列健康與 URE 重建風險分析：</strong>
+            <span id="res-risk-desc">當前單碟容錯陣列在 16TB 硬碟重建期間，全盤讀取量高達 48 TB，數學 URE 觸發機率達 30% 以上。強烈建議重要生產環境改用雙碟容錯 (RAID 6 / RAID-Z2)。</span>
+          </div>
+        </div>
+
+        <!-- =============== Chapter 9 =============== -->
+        <h2>9. 選型決策樹與架構師推薦藍圖</h2>
+        <p>最後，根據不同的預算、技術熟練度與核心需求，為您歸納出三大標準架構配置：</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>用戶場景</th>
+                <th>推薦方案</th>
+                <th>硬體規格建議</th>
+                <th>儲存與快取拓撲</th>
+                <th>核心價值點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>中小企業 / 照片無痛備份</strong></td>
+                <td><span class="badge badge-blue">Synology DS923+ / DS1522+</span></td>
+                <td>AMD Ryzen R1600 + 16GB ECC + 10GbE 網卡模組</td>
+                <td>4x 16TB HDD (SHR-1 或 SHR-2) + 2x NVMe 唯讀快取</td>
+                <td>Active Backup for Business 企業全量免授權備份、Synology Photos</td>
+              </tr>
+              <tr>
+                <td><strong>4K 影音工作室 / 剪輯直連</strong></td>
+                <td><span class="badge badge-purple">QNAP TVS-h674 / TS-464</span></td>
+                <td>Intel Core i5-12400 / N5095 + 32GB RAM + 雙 10G/Thunderbolt</td>
+                <td>4x 20TB Enterprise (QuTS hero RAID-Z2) + 2x NVMe SSD Storage Pool</td>
+                <td>ZFS Merkle Tree 自我修復、10GbE 雙口直通 4K 實時剪輯不卡頓</td>
+              </tr>
+              <tr>
+                <td><strong>資深工程師 / HomeLab 玩家</strong></td>
+                <td><span class="badge badge-green">DIY 伺服器 (PVE + TrueNAS SCALE)</span></td>
+                <td>Intel Core i7-13700T + 64GB DDR5 ECC + LSI 3008 HBA + 10G 光纖</td>
+                <td>8x 16TB (Striped Mirrors / RAID-Z2) + 2x 2TB Optane/Solidigm NVMe</td>
+                <td>完整掌握 Linux 核心、PCIe 直通、極限讀寫 IOPS、完全避免原廠綁定</td>
               </tr>
             </tbody>
           </table>
@@ -244,31 +827,30 @@
 
         <hr>
 
-        <h2>結語：你該怎麼選？</h2>
-        <p>NAS 沒有絕對的王者，只有最適合你的場景：</p>
-        <ol>
-          <li>如果你是<strong>工作室或中小企業</strong>，或者你只想要把資料丟進去就不管了，<strong>閉著眼睛買 Synology</strong>，它的 Active Backup 與 Synology Drive 會幫你省下無數的時間。</li>
-          <li>如果你是<strong>影音工作者</strong>，需要內建 10G 網卡在伺服器上直接剪輯 4K 影片，或者你是個喜歡壓榨硬體效能的 <strong>Geek</strong>，選擇 <strong>QNAP</strong>。</li>
-          <li>如果你是 <strong>Senior Backend / DevOps 工程師</strong>，家裡有一堆舊電腦零件，並且熱愛自己撰寫 <code>docker-compose.yml</code> 與配置 Reverse Proxy，那麼自己組裝並安裝 <strong>TrueNAS Scale 或 Unraid</strong> 絕對能給你最大的成就感！</li>
-        </ol>
-
+        <h2>結語：資料的主權回歸個人</h2>
+        <p>在公有雲訂閱費用年年水漲船高、隱私條款日益緊縮的時代，擁有一座架構嚴謹、資料完整的 NAS，是工程師掌握個人資料主權與技術自由的終極象徵。無論你選擇了開箱即用的群暉生態，還是充滿客製樂趣的 TrueNAS / PVE 虛擬化平台，理解底層檔案系統與網路協定的運作邏輯，才能在資料與數位資產的世界中高枕無憂。</p>
       </article>
 
-      <!-- 社群分享區塊 -->
-      <div class="share-bar">
-        <span class="share-title">分享這篇文章：</span>
-        <button class="share-btn twitter">Twitter</button>
-        <button class="share-btn facebook">Facebook</button>
-        <button class="share-btn linkedin">LinkedIn</button>
-        <button class="share-btn copy-link">🔗 複製連結</button>
+      <!-- =============== Article Footer =============== -->
+      <div class="article-footer">
+        <a href="#top" class="back-home">← 返回頁首</a>
       </div>
 
+      <!-- =============== Share Bar =============== -->
+      <div class="share-bar">
+        <span class="share-title">分享這篇文章：</span>
+        <button class="share-btn twitter" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(window.location.href),'_blank')">Twitter</button>
+        <button class="share-btn facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'_blank')">Facebook</button>
+        <button class="share-btn linkedin" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank')">LinkedIn</button>
+        <button class="share-btn copy-link" onclick="navigator.clipboard.writeText(window.location.href); alert('連結已複製到剪貼簿！');">🔗 複製連結</button>
+      </div>
     </div>
   </main>
 
+  <!-- =============== Footer =============== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-column">
           <h4>"AI" 硬核工程師</h4>
           <div class="footer-links">
@@ -279,21 +861,17 @@
         <div class="footer-column">
           <h4>聯絡方式</h4>
           <div class="footer-links">
-            <a href="https://github.com/Robert-cYc" target="_blank" rel="noopener">GitHub</a>
-            <a href="mailto:robertcyc@gmail.com">robertcyc@gmail.com</a>
+            <a href="mailto:cai100.cyc@gmail.com">信件</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
           </div>
         </div>
-        <div class="footer-column">
-          <h4>訂閱電子報</h4>
-          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.5rem;">獲取最新的硬核技術文章</p>
-          <form class="subscribe-form" onsubmit="event.preventDefault(); alert('感謝訂閱！');">
-            <input type="email" placeholder="your@email.com" required>
-            <button type="submit">訂閱</button>
-          </form>
-        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-content"></div>
       </div>
       <div class="footer-bottom">
-        &copy; 2026 "AI" 硬核工程師. All rights reserved.
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
       </div>
     </div>
   </footer>
@@ -303,5 +881,149 @@
   <script src="./js/bg-effects.js?v=10"></script>
   <script src="./js/script.js"></script>
   <script src="./js/enhancements.js"></script>
+
+  <!-- Interactive NAS Calculator Script -->
+  <script>
+    function calculateNASStorage() {
+      const diskCount = parseInt(document.getElementById('nas-drive-count').value, 10);
+      const diskSizeTB = parseFloat(document.getElementById('nas-drive-size').value);
+      const raidType = document.getElementById('nas-raid-type').value;
+      const speedMBs = parseFloat(document.getElementById('nas-rebuild-speed').value) || 160;
+
+      const rawTotalTB = diskCount * diskSizeTB;
+      let usableTB = 0;
+      let faultToleranceDisks = 0;
+      let faultDesc = "";
+      let riskLevel = "low";
+      let riskMessage = "";
+
+      switch (raidType) {
+        case 'raid0':
+          usableTB = rawTotalTB;
+          faultToleranceDisks = 0;
+          faultDesc = "0 顆 (無任何容錯)";
+          riskLevel = "critical";
+          riskMessage = "❌ 極度危險！RAID 0 沒有任何資料冗餘，只要其中任意 1 顆硬碟損壞，整個儲存池所有資料立即全毀！嚴禁存放任何未備份的重要數據。";
+          break;
+
+        case 'raid1':
+          // 雙盤或多盤鏡像
+          usableTB = diskSizeTB;
+          faultToleranceDisks = diskCount - 1;
+          faultDesc = `${diskCount - 1} 顆碟`;
+          riskLevel = "safe";
+          riskMessage = "🛡️ 極高安全性！所有硬碟互為鏡像，只要剩下最後 1 顆硬碟存活，資料即可完整讀取。重建速度快，僅需單純鏡像拷貝。";
+          break;
+
+        case 'raid5':
+          if (diskCount < 3) {
+            usableTB = diskSizeTB;
+            faultToleranceDisks = 1;
+            faultDesc = "1 顆碟 (退化為鏡像)";
+          } else {
+            usableTB = (diskCount - 1) * diskSizeTB;
+            faultToleranceDisks = 1;
+            faultDesc = "1 顆碟 (單同位元)";
+          }
+          if (diskSizeTB >= 12) {
+            riskLevel = "high";
+            riskMessage = "⚠️ 高風險警告！在 " + diskSizeTB + "TB 大容量硬碟上使用單碟容錯陣列，當重建時需全盤讀取剩餘硬碟所有位元，數學上遭遇 URE (不可恢復讀取錯誤) 的機率超過 35%！強烈建議升級為雙碟容錯 (RAID 6 / RAID-Z2)。";
+          } else {
+            riskLevel = "medium";
+            riskMessage = "⚡ 中等風險。單碟容錯陣列需注意硬碟健康度，請務必定期進行 S.M.A.R.T. 檢測與 Data Scrubbing 資料清理。";
+          }
+          break;
+
+        case 'raid6':
+          if (diskCount < 4) {
+            usableTB = diskSizeTB;
+            faultToleranceDisks = 1;
+            faultDesc = "硬碟數不足 4 顆";
+            riskLevel = "high";
+            riskMessage = "⚠️ RAID 6 / RAID-Z2 至少需要 4 顆硬碟。請增加硬碟數量以啟用真正的雙同位元防護。";
+          } else {
+            usableTB = (diskCount - 2) * diskSizeTB;
+            faultToleranceDisks = 2;
+            faultDesc = "2 顆碟 (雙同位元)";
+            riskLevel = "safe";
+            riskMessage = "✅ 最佳實踐！支援任意同時損壞 2 顆硬碟，即使在第一顆硬碟重建期間第二顆硬碟發生 URE 或突發壞死，陣列仍能正常運作並順利修復。推薦大容量硬碟採用。";
+          }
+          break;
+
+        case 'raid10':
+          if (diskCount % 2 !== 0) {
+            usableTB = Math.floor(diskCount / 2) * diskSizeTB;
+            faultToleranceDisks = 1;
+            faultDesc = "1 ~ 2 顆碟 (偶數槽為佳)";
+          } else {
+            usableTB = (diskCount / 2) * diskSizeTB;
+            faultToleranceDisks = 1;
+            faultDesc = "每組鏡像各 1 顆碟 (最多 " + (diskCount / 2) + " 顆)";
+          }
+          riskLevel = "safe";
+          riskMessage = "🚀 效能與安全性雙冠王！隨機讀寫 IOPS 隨鏡像組數成倍提升，重建時只需自鏡像盤單向拷貝，不需像 RAID 5/6 進行極耗 CPU 的同位元運算，重建時間最短（比 RAID 5 快 3~5 倍）。";
+          break;
+
+        case 'raidz3':
+          if (diskCount < 5) {
+            usableTB = diskSizeTB;
+            faultToleranceDisks = 1;
+            faultDesc = "硬碟數不足 5 顆";
+            riskLevel = "high";
+            riskMessage = "⚠️ RAID-Z3 至少需要 5 顆硬碟。請增加硬碟數量。";
+          } else {
+            usableTB = (diskCount - 3) * diskSizeTB;
+            faultToleranceDisks = 3;
+            faultDesc = "3 顆碟 (三重同位元)";
+            riskLevel = "safe";
+            riskMessage = "🛡️ 航太級防禦！可容許同時損壞 3 顆硬碟，適用於超大型冷儲存庫（12~24 槽機架式 NAS），安全性固若金湯。";
+          }
+          break;
+      }
+
+      // Convert Decimal TB to Binary TiB (1 TB = 10^12 bytes, 1 TiB = 2^40 bytes, ratio ~ 0.9094947)
+      const usableTiB = usableTB * 0.9094947;
+      const efficiency = (usableTB / rawTotalTB) * 100;
+
+      // Rebuild time calculation:
+      // Rebuild data amount = single disk capacity (approx in MB)
+      // Single disk in MB = diskSizeTB * 1,000,000 MB
+      // Seconds = (diskSizeTB * 1,000,000) / speedMBs
+      // Hours = Seconds / 3600
+      let rebuildHours = 0;
+      if (raidType === 'raid10') {
+        // RAID 10 only copies data directly from peer mirror at higher sustained rate
+        rebuildHours = (diskSizeTB * 1000000) / (speedMBs * 1.25 * 3600);
+      } else {
+        rebuildHours = (diskSizeTB * 1000000) / (speedMBs * 3600);
+      }
+
+      // DOM Updates
+      document.getElementById('res-raw-cap').textContent = rawTotalTB.toFixed(1) + ' TB';
+      document.getElementById('res-usable-tb').textContent = usableTB.toFixed(1) + ' TB';
+      document.getElementById('res-usable-tib').textContent = usableTiB.toFixed(1) + ' TiB';
+      document.getElementById('res-fault-tol').textContent = faultDesc;
+      document.getElementById('res-storage-eff').textContent = efficiency.toFixed(1) + ' %';
+      document.getElementById('res-rebuild-time').textContent = rebuildHours.toFixed(1) + ' 小時';
+
+      const riskBox = document.getElementById('res-risk-box');
+      const riskDesc = document.getElementById('res-risk-desc');
+      riskDesc.textContent = riskMessage;
+
+      if (riskLevel === 'critical') {
+        riskBox.style.borderColor = '#ef4444';
+        riskBox.style.backgroundColor = 'rgba(239, 68, 68, 0.08)';
+      } else if (riskLevel === 'high') {
+        riskBox.style.borderColor = '#f59e0b';
+        riskBox.style.backgroundColor = 'rgba(245, 158, 11, 0.08)';
+      } else {
+        riskBox.style.borderColor = '#10b981';
+        riskBox.style.backgroundColor = 'rgba(16, 185, 129, 0.08)';
+      }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', calculateNASStorage);
+  </script>
 </body>
 </html>

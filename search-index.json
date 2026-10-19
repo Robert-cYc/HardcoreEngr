@@ -108,649 +108,309 @@
     "tags": ["Google", "Ecosystem", "GCP", "AI", "Gemini", "科技商業"]
   },
   {
+    "url": "google-colab-guide.html",
     "title": "Google Colab 完整攻略：雲端 Jupyter Notebook 介紹、功能與實戰指南",
     "excerpt": "Google Colab 是一個免費的雲端 Jupyter Notebook 環境。本文詳細介紹 Colab 的核心功能、如何掛載 Google Drive、使用免費 GPU/TPU 資源，以及進階使用技巧。",
-    "url": "google-colab-guide.html",
-    "tags": [
-      "Google Colab",
-      "Jupyter Notebook",
-      "Python",
-      "AI",
-      "開發工具",
-      "教學"
-    ]
+    "tags": ["Google Colab", "Jupyter Notebook", "Python", "AI", "開發工具", "教學"]
   },
   {
+    "url": "tesla-model-lineup-guide.html",
     "title": "顛覆汽車工業的純電巨頭：Tesla 特斯拉車系與核心技術總覽",
     "excerpt": "詳細梳理 Tesla 目前的核心車系矩陣（S3XY 家族、Cybertruck），以及其背後的關鍵技術：FSD、OTA 與超級充電網路。",
-    "url": "tesla-model-lineup-guide.html",
-    "tags": [
-      "Tesla",
-      "EV",
-      "FSD",
-      "自動駕駛",
-      "硬體架構"
-    ]
+    "tags": ["Tesla", "EV", "FSD", "自動駕駛", "硬體架構"]
   },
   {
+    "url": "apache-vs-tomcat.html",
     "title": "Apache HTTP Server 與 Apache Tomcat 全面解析",
     "excerpt": "深入解析 Apache HTTP Server 與 Apache Tomcat，涵蓋它們的各自定位、功能差異，以及在實際架構中如何協同工作，以硬核工程師視角拆解底層架構。",
-    "url": "apache-vs-tomcat.html",
-    "tags": [
-      "Apache",
-      "Tomcat",
-      "Server",
-      "Backend",
-      "架構"
-    ]
+    "tags": ["Apache", "Tomcat", "Server", "Backend", "架構"]
   },
   {
-    "title": "主流 NAS 終極解析：Synology, QNAP, Asustor 與 DIY TrueNAS 比較",
-    "excerpt": "深入剖析現代 NAS 的核心架構與功能。從備份3-2-1原則、Docker 容器託管到 Btrfs/ZFS 檔案系統。全面比較商業品牌與 DIY 方案。",
     "url": "nas-storage-comparison.html",
-    "tags": [
-      "NAS",
-      "Storage",
-      "HomeLab",
-      "Docker",
-      "TrueNAS",
-      "Synology",
-      "QNAP"
-    ]
+    "title": "主流 NAS 終極解析：Synology, QNAP, Asustor 商業旗艦 vs TrueNAS, Unraid, PVE 開源 DIY 全方位架構實戰評測指南",
+    "excerpt": "全維度深入剖析現代 NAS 儲存架構：從 3-2-1-1-0 備份準則、Btrfs CoW 快照與 ZFS Merkle Tree 自我修復、SHR 動態切片與 RAID-Z 擴容機制，到四大商業品牌（群暉 DSM、威聯通 QuTS hero、華芸 ADM、綠聯/極空間）及開源 DIY 方案（TrueNAS SCALE、Unraid、Proxmox VE + SAS HBA 直通）。內建互動式 NAS 儲存容量、RAID 容錯與重建時間試算器。",
+    "tags": ["NAS", "儲存架構", "ZFS", "Btrfs", "Synology", "QNAP", "TrueNAS", "Unraid", "Proxmox VE", "RAID", "Docker", "HomeLab", "硬體指南", "教學"]
   },
   {
+    "url": "os-architecture-comparison.html",
     "title": "作業系統 (OS) 底層架構全解析：Windows, macOS, Linux 與 Android",
     "excerpt": "深入探討現代四大作業系統的核心架構。從 Windows 的 NT 核心、macOS 的 Mach/BSD 混合核心、Linux 的宏核心，到 Android 基於 Linux 的客製化與 ART 虛擬機，解析各自的設計哲學與適用場景。",
-    "url": "os-architecture-comparison.html",
-    "tags": [
-      "OS",
-      "作業系統",
-      "Windows",
-      "macOS",
-      "Linux",
-      "Android",
-      "架構"
-    ]
+    "tags": ["OS", "作業系統", "Windows", "macOS", "Linux", "Android", "架構"]
   },
   {
+    "url": "chip-wars-intel-amd-nvidia-asic.html",
     "title": "晶片戰爭全解析：Intel, AMD, NVIDIA 與 ASIC 最新架構探秘",
     "excerpt": "從 Dennard Scaling 崩潰到 CoWoS/Foveros 先進封裝，全維度解析 Intel 18A RibbonFET、AMD Zen 5 / MI300X、NVIDIA Blackwell B200 / NVLink 5 及 Google TPU / Groq LPU，附 Roofline 算力頻寬試算器。",
-    "url": "chip-wars-intel-amd-nvidia-asic.html",
-    "tags": [
-      "硬體架構",
-      "Intel",
-      "AMD",
-      "NVIDIA",
-      "ASIC",
-      "AI 晶片",
-      "Blackwell",
-      "Zen 5",
-      "CoWoS",
-      "先進封裝",
-      "TPU",
-      "Groq"
-    ]
+    "tags": ["硬體架構", "Intel", "AMD", "NVIDIA", "ASIC", "AI 晶片", "Blackwell", "Zen 5", "CoWoS", "先進封裝", "TPU", "Groq"]
   },
   {
+    "url": "virtual-machine-comparison.html",
     "title": "虛擬機器 (VM) 終極對決：VMware vs VirtualBox vs Hyper-V",
     "excerpt": "深入探討主流虛擬機器軟體的架構與優缺點：VMware Workstation 的極致效能、VirtualBox 的開源靈活、Hyper-V 的原生整合，以及 macOS 專屬的 Parallels Desktop。幫你找出最適合的 VM 工具。",
-    "url": "virtual-machine-comparison.html",
-    "tags": [
-      "VM",
-      "VMware",
-      "VirtualBox",
-      "Hyper-V",
-      "Parallels",
-      "虛擬機",
-      "比較"
-    ]
+    "tags": ["VM", "VMware", "VirtualBox", "Hyper-V", "Parallels", "虛擬機", "比較"]
   },
   {
+    "url": "java-nodejs-npm-guide.html",
     "title": "Java, Node.js 與 npm 全面解析：從企業級巨獸到非同步 I/O 王者",
     "excerpt": "深入剖析後端兩大主流技術棧：Java 及其 JVM 生態系，與基於 V8 引擎的 Node.js 及其龐大的 npm 套件管理系統。以硬核工程師視角，拆解底層差異與適用場景。",
-    "url": "java-nodejs-npm-guide.html",
-    "tags": [
-      "Java",
-      "Node.js",
-      "npm",
-      "Backend",
-      "架構"
-    ]
+    "tags": ["Java", "Node.js", "npm", "Backend", "架構"]
   },
   {
+    "url": "industrial-protocols-guide.html",
     "title": "工業通訊協定全解析：RS232/RS485, Modbus, DDE 到 OPC DA/UA",
     "excerpt": "深入解析工業物聯網 (IIoT) 中最核心的通訊協定與介面，從硬體層的 RS232、RS485，到網路層的 Modbus RTU/TCP，再到軟體交換層的 DDE、OPC DA 與現代化的 OPC UA，帶你一次搞懂 OT 架構。",
-    "url": "industrial-protocols-guide.html",
-    "tags": [
-      "OT",
-      "通訊協定",
-      "Modbus",
-      "OPC",
-      "RS232",
-      "RS485",
-      "IIoT",
-      "教學"
-    ]
+    "tags": ["OT", "通訊協定", "Modbus", "OPC", "RS232", "RS485", "IIoT", "教學"]
   },
   {
+    "url": "cloudflare-guide.html",
     "title": "Cloudflare 功能詳解：CDN、DNS、SSL、WAF、Workers 與 Pages",
     "excerpt": "Cloudflare 完整教學：CDN 加速、DNS 管理、SSL TLS 加密、WAF 防護、DDoS 防禦、Cloudflare Workers、Pages 部署、Tunnel 內網穿透、R2 物件存儲與 Analytics 功能介紹。",
-    "url": "cloudflare-guide.html",
-    "tags": [
-      "Cloudflare",
-      "CDN",
-      "DNS",
-      "SSL",
-      "WAF",
-      "Workers",
-      "Pages",
-      "教學"
-    ]
+    "tags": ["Cloudflare", "CDN", "DNS", "SSL", "WAF", "Workers", "Pages", "教學"]
   },
   {
+    "url": "canva-tutorial.html",
     "title": "Canva 完整入門與進階技巧",
     "excerpt": "Canva 完整介紹與實戰教學：從帳號、介面、範本與拖曳編輯器，到品牌套件、AI 工具、協作、影片製作、匯出設定與進階設計技巧。",
-    "url": "canva-tutorial.html",
-    "tags": [
-      "Canva",
-      "設計工具",
-      "Canva AI",
-      "品牌設計",
-      "影片製作",
-      "社群媒體",
-      "視覺創作",
-      "教學"
-    ]
+    "tags": ["Canva", "設計工具", "Canva AI", "品牌設計", "影片製作", "社群媒體", "視覺創作", "教學"]
   },
   {
+    "url": "open-source-licenses.html",
     "title": "開源授權條款完全指南：寬鬆型 vs 強傳染型（著佐權）",
     "excerpt": "深入解析開源軟體的兩大授權陣營——寬鬆型（MIT、Apache-2.0、BSD）與強傳染型著佐權（GPL、AGPL、SSPL）。幫你搞懂商用閉源、傳染範圍、專利保護與實戰選擇策略。",
-    "url": "open-source-licenses.html",
-    "tags": [
-      "開源",
-      "License",
-      "MIT",
-      "GPL",
-      "著作權",
-      "軟體授權"
-    ]
+    "tags": ["開源", "License", "MIT", "GPL", "著作權", "軟體授權"]
   },
   {
+    "url": "prompt-engineering-guide.html",
     "title": "Prompt Engineering 提示工程入門 — 學會「下指令」讓 AI 變得更好用",
     "excerpt": "提示工程是什麼？怎麼下指令讓 ChatGPT / Claude 更好用？分享零樣本、少樣本、Chain-of-Thought 思維鏈技巧，以及實戰 prompt 模板。",
-    "url": "prompt-engineering-guide.html",
-    "tags": [
-      "Prompt Engineering",
-      "提示工程",
-      "AI",
-      "LLM",
-      "ChatGPT",
-      "Claude",
-      "教學"
-    ]
+    "tags": ["Prompt Engineering", "提示工程", "AI", "LLM", "ChatGPT", "Claude", "教學"]
   },
   {
+    "url": "uv-guide.html",
     "title": "Python 高效開發利器 uv 全指南：取代 pip/pipenv/poetry/pyenv 的極速解決方案",
     "excerpt": "uv 完整教學：安裝、專案管理、pyproject.toml、虛擬環境、Python 版本管理、uvx 工具執行、行內腳本、Workspaces 工作區、發布包裝與從 pip/pipenv/poetry 遷移。10-100x 速度提升的全面指南。",
-    "url": "uv-guide.html",
-    "tags": [
-      "Python",
-      "uv",
-      "uvx",
-      "開發工具",
-      "包管理",
-      "教學"
-    ]
+    "tags": ["Python", "uv", "uvx", "開發工具", "包管理", "教學"]
   },
   {
+    "url": "docker-compose-guide.html",
     "title": "Docker Compose 完全攻略：多容器編排從入門到實戰",
     "excerpt": "Compose 完整教學：compose.yaml 核心語法、volumes 與 networks、depends_on 搭配 healthcheck 控制啟動順序、profiles 按需啟動服務、Compose Watch 開發熱重載與常用指令速查表。",
-    "url": "docker-compose-guide.html",
-    "tags": [
-      "Docker",
-      "Docker Compose",
-      "容器",
-      "DevOps",
-      "教學"
-    ]
+    "tags": ["Docker", "Docker Compose", "容器", "DevOps", "教學"]
   },
   {
+    "url": "claude-code-hooks-guide.html",
     "title": "Claude Code Hooks 完全攻略：用生命週期掛鉤打造自動化開發工作流",
     "excerpt": "Hooks 完整教學：32 種生命週期事件詳解、settings.json 設定結構、stdin JSON 輸入、退出碼與 JSON 輸出控制，含自動格式化、保護敏感檔案、攔截危險指令等實戰食譜。",
-    "url": "claude-code-hooks-guide.html",
-    "tags": [
-      "Claude Code",
-      "Hooks",
-      "自動化",
-      "AI Agent",
-      "開發工具",
-      "教學"
-    ]
+    "tags": ["Claude Code", "Hooks", "自動化", "AI Agent", "開發工具", "教學"]
   },
   {
+    "url": "google-antigravity-ide-guide.html",
     "title": "Google Antigravity 完全攻略：Agent-First IDE 詳細介紹、安裝教學與實戰使用指南",
     "excerpt": "Antigravity 完整教學：Agent Manager 任務指揮中心、Artifacts 驗收機制、瀏覽器整合、Fast/Planning 模式、支援模型與定價、Antigravity 2.0 新功能與 slash 指令速查表。",
-    "url": "google-antigravity-ide-guide.html",
-    "tags": [
-      "Google",
-      "Antigravity",
-      "IDE",
-      "AI Agent",
-      "Gemini",
-      "教學"
-    ]
+    "tags": ["Google", "Antigravity", "IDE", "AI Agent", "Gemini", "教學"]
   },
   {
+    "url": "tmux-terminal-guide.html",
     "title": "tmux 終端機多工神器完整手冊：安裝教學、快捷鍵大全與進階配置",
     "excerpt": "tmux 完整教學：核心概念、macOS/Linux/WSL 安裝、Session/Window/Pane 快捷鍵大全、.tmux.conf 進階配置、SSH 斷線存活實戰與指令速查表。",
-    "url": "tmux-terminal-guide.html",
-    "tags": [
-      "tmux",
-      "Terminal",
-      "SSH",
-      "終端機",
-      "開發工具",
-      "教學"
-    ]
+    "tags": ["tmux", "Terminal", "SSH", "終端機", "開發工具", "教學"]
   },
   {
+    "url": "btop-monitor-guide.html",
     "title": "btop 終端資源監控神器 — 取代 top/htop 的全面性能工具",
     "excerpt": "btop 是一個強大的 terminal-based 資源監控工具，整合 CPU、記憶體、磁碟 IO、網路流量與進程監控。本文詳細介紹安裝、操作快捷鍵、配置與進階功能。",
-    "url": "btop-monitor-guide.html",
-    "tags": [
-      "btop",
-      "Linux",
-      "macOS",
-      "系統監控",
-      "終端機",
-      "效能",
-      "教學"
-    ]
+    "tags": ["btop", "Linux", "macOS", "系統監控", "終端機", "效能", "教學"]
   },
   {
+    "url": "gpt-5-model-guide.html",
     "title": "GPT-5 完整攻略：OpenAI 新世代模型家族功能、定價與應用場景",
     "excerpt": "OpenAI GPT-5 系列包含 GPT-5、GPT-5 Turbo、GPT-5 Mini 等多個版本。本文詳細介紹各模型的架構、上下文窗口、程式碼能力、定價與 OpenAI 生態整合。",
-    "url": "gpt-5-model-guide.html",
-    "tags": [
-      "GPT-5",
-      "OpenAI",
-      "AI 模型",
-      "LLM",
-      "多模態",
-      "Agent",
-      "教學"
-    ]
+    "tags": ["GPT-5", "OpenAI", "AI 模型", "LLM", "多模態", "Agent", "教學"]
   },
   {
+    "url": "grok-model-guide.html",
     "title": "xAI Grok 完整攻略：即時資訊 AI 助手的功能、定價與應用場景",
     "excerpt": "xAI Grok 2.5 由 Elon Musk 領導的 xAI 開發，支援即時搜尋、Twitter/X 整合、語音對話與多模態功能。",
-    "url": "grok-model-guide.html",
-    "tags": [
-      "Grok",
-      "xAI",
-      "Elon Musk",
-      "AI 模型",
-      "即時搜尋",
-      "LLM",
-      "教學"
-    ]
+    "tags": ["Grok", "xAI", "Elon Musk", "AI 模型", "即時搜尋", "LLM", "教學"]
   },
   {
+    "url": "gemini-model-guide.html",
     "title": "Google Gemini 完整攻略：1.5、2.0、2.5 系列模型介紹、功能與應用場景",
     "excerpt": "Google Gemini 系列模型包含 1.5、2.0、2.5 多個版本。本文詳細介紹各模型的多模態能力、上下文窗口、定價、程式碼表現與 Google 生態整合。",
-    "url": "gemini-model-guide.html",
-    "tags": [
-      "Gemini",
-      "Google",
-      "Google DeepMind",
-      "AI 模型",
-      "多模態",
-      "LLM",
-      "教學"
-    ]
+    "tags": ["Gemini", "Google", "Google DeepMind", "AI 模型", "多模態", "LLM", "教學"]
   },
   {
+    "url": "claude-model-families.html",
     "title": "Claude 5 系列模型完整介紹：Fable、Opus、Sonnet、Haiku 各自的功能與應用場景",
     "excerpt": "Anthropic Claude 5 系列模型包括 Fable、Opus、Sonnet、Haiku 四大型號。本文詳細介紹各模型的功能、效能、定價與應用場景，幫你選擇最適合的 Claude 模型。",
-    "url": "claude-model-families.html",
-    "tags": [
-      "Claude",
-      "Anthropic",
-      "AI 模型",
-      "Fable",
-      "Opus",
-      "Sonnet",
-      "Haiku",
-      "LLM",
-      "教學"
-    ]
+    "tags": ["Claude", "Anthropic", "AI 模型", "Fable", "Opus", "Sonnet", "Haiku", "LLM", "教學"]
   },
   {
+    "url": "kubernetes-beginner-guide.html",
     "title": "Kubernetes 入門完全攻略：概念、安裝、kubectl 指令與 YAML 範例",
     "excerpt": "Kubernetes 是容器編排的標準。本文詳細介紹 k8s 的核心概念 (Pod、Deployment、Service)，安裝方式 (minikube/k3s/Docker Desktop)，完整 kubectl 命令速查與 YAML 範例。",
-    "url": "kubernetes-beginner-guide.html",
-    "tags": [
-      "Kubernetes",
-      "K8s",
-      "容器編排",
-      "Docker",
-      "kubectl",
-      "教學"
-    ]
+    "tags": ["Kubernetes", "K8s", "容器編排", "Docker", "kubectl", "教學"]
   },
   {
+    "url": "zapier-make-n8n-comparison.html",
     "title": "Zapier vs Make vs n8n：2026 工作流程自動化三大平台詳細比較",
     "excerpt": "Zapier、Make.com、n8n 三大工作流程自動化平台在定價、功能、AI 整合與自架能力上的全面比較，包含 2026 年費用情境分析。",
-    "url": "zapier-make-n8n-comparison.html",
-    "tags": [
-      "Zapier",
-      "Make",
-      "n8n",
-      "工作流程自動化",
-      "定價比較",
-      "教學"
-    ]
+    "tags": ["Zapier", "Make", "n8n", "工作流程自動化", "定價比較", "教學"]
   },
   {
+    "url": "hermes-agent-guide.html",
     "title": "Hermes Agent 開源 AI 助手完全攻略：安裝、指令與進階使用",
     "excerpt": "Hermes Agent 是 Nous Research 開發的開源 AI 助手。本文詳細介紹 Hermes Agent 的架構、安裝方式、完整 CLI 命令速查，以及進階技巧如子代理器、沙箱、排程與 MCP。",
-    "url": "hermes-agent-guide.html",
-    "tags": [
-      "Hermes Agent",
-      "Nous Research",
-      "AI 助手",
-      "開源",
-      "CLI",
-      "教學"
-    ]
+    "tags": ["Hermes Agent", "Nous Research", "AI 助手", "開源", "CLI", "教學"]
   },
   {
+    "url": "openclaw-ai-assistant.html",
     "title": "OpenClaw 開源 AI 助手完全攻略：安裝、指令與進階使用",
     "excerpt": "OpenClaw 是一個開源、自架的 AI 助手平台。本文詳細介紹 OpenClaw 的架構、安裝方式（curl/npm/pnpm）、完整 CLI 命令速查，以及多頻道整合（Telegram、Discord、WhatsApp）與進階技巧。",
-    "url": "openclaw-ai-assistant.html",
-    "tags": [
-      "OpenClaw",
-      "AI 助手",
-      "開源",
-      "自架",
-      "CLI",
-      "教學"
-    ]
+    "tags": ["OpenClaw", "AI 助手", "開源", "自架", "CLI", "教學"]
   },
   {
+    "url": "wireshark-network-analysis.html",
     "title": "Wireshark 網路封包分析完全攻略：安裝、基本使用與進階技巧",
     "excerpt": "Wireshark 是一個強大的網路封包分析工具。本文詳細介紹 Wireshark 的安裝（Windows/macOS/Linux）、介面操作、顯示過濾、通訊協定分析與進階技巧，包含 HTTP、HTTPS/TLS、DNS、TCP 分析技巧。",
-    "url": "wireshark-network-analysis.html",
-    "tags": [
-      "Wireshark",
-      "網路封包",
-      "網路分析",
-      "Network",
-      "教學"
-    ]
+    "tags": ["Wireshark", "網路封包", "網路分析", "Network", "教學"]
   },
   {
+    "url": "node-js-commands.html",
     "title": "Node.js、npm、npx 完整指令入門 — 60 個指令一次搞懂",
     "excerpt": "Node.js、npm、npx 三大工具的完整指令速查，包含 npm init、npm install、npm ci、npm run、npm publish 以及 npx 的三種主要用途。",
-    "url": "node-js-commands.html",
-    "tags": [
-      "Node.js",
-      "npm",
-      "npx",
-      "指令",
-      "入門"
-    ]
+    "tags": ["Node.js", "npm", "npx", "指令", "入門"]
   },
   {
+    "url": "ai-models.html",
     "title": "ChatGPT vs Claude vs Gemini vs Grok：2026 大型語言模型詳細比較",
     "excerpt": "ChatGPT、Claude、Gemini、Grok 四大語言模型在推理能力、程式碼質量、多模態、價格等方面的全面對比分析。",
-    "url": "ai-models.html",
-    "tags": [
-      "AI",
-      "ChatGPT",
-      "Claude",
-      "Gemini",
-      "Grok",
-      "LLM",
-      "比較"
-    ]
+    "tags": ["AI", "ChatGPT", "Claude", "Gemini", "Grok", "LLM", "比較"]
   },
   {
+    "url": "linux-commands.html",
     "title": "Linux 常用指令入門 — 150 個指令一次搞懂",
     "excerpt": "Linux 命令列是工程師的利器。本文整理 150 個常用指令，從文件操作到進程管理，一次學會。",
-    "url": "linux-commands.html",
-    "tags": [
-      "Linux",
-      "指令",
-      "入門",
-      "命令列"
-    ]
+    "tags": ["Linux", "指令", "入門", "命令列"]
   },
   {
+    "url": "git-commands.html",
     "title": "Git 常用指令入門 — 從零開始掌握版本控制",
     "excerpt": "Git 是全球最流行的分散式版本控制系統。本文整理核心概念與日常使用指令，從初始化到進隚操作一次搞懂。",
-    "url": "git-commands.html",
-    "tags": [
-      "Git",
-      "版本控制",
-      "指令",
-      "入門"
-    ]
+    "tags": ["Git", "版本控制", "指令", "入門"]
   },
   {
+    "url": "mac-commands.html",
     "title": "Mac mini 常用指令入門 — 150 個指令一次搞懂",
     "excerpt": "macOS 終端機結合 BSD Unix 與 Apple 圖形層強大功能。本文整理 150 個 macOS 常用指令，包含 Homebrew、剪貼簿、網路與開發工具。",
-    "url": "mac-commands.html",
-    "tags": [
-      "Mac",
-      "macOS",
-      "指令",
-      "入門",
-      "Homebrew"
-    ]
+    "tags": ["Mac", "macOS", "指令", "入門", "Homebrew"]
   },
   {
+    "url": "claude-code-commands.html",
     "title": "Claude Code 功能介紹、指令集及如何使用",
     "excerpt": "Claude Code 是 Anthropic 推出的 AI 編碼助手，支援 Terminal、VS Code、Web 等多平台。本文整理其六大核心能力、完整的 CLI 命令與內建斜線指令速查。",
-    "url": "claude-code-commands.html",
-    "tags": [
-      "Claude Code",
-      "AI",
-      "編碼助手",
-      "指令",
-      "Anthropic"
-    ]
+    "tags": ["Claude Code", "AI", "編碼助手", "指令", "Anthropic"]
   },
   {
+    "url": "lm-studio-local-llm.html",
     "title": "LM Studio 本地大模型攻略：下載、安裝、模型管理與 GPU 加速",
     "excerpt": "LM Studio 是一個強大的本地 LLM 桌面應用程式。本文詳細介紹 LM Studio 的下載安裝、模型管理、對話功能、GPU 加速設定與實用技巧。",
-    "url": "lm-studio-local-llm.html",
-    "tags": [
-      "LM Studio",
-      "本地部署",
-      "LLM",
-      "GUI",
-      "GPU",
-      "教學"
-    ]
+    "tags": ["LM Studio", "本地部署", "LLM", "GUI", "GPU", "教學"]
   },
   {
+    "url": "ollama-local-llm.html",
     "title": "Ollama 本地大模型部署完全攻略：安裝、指令、Modelfile 客製化、API 整合與顯存調校指南",
     "excerpt": "零成本、保護隱私！深度解析 Ollama 本地模型部署：CLI 指令速查、VRAM 顯存計算與選型、Modelfile 封裝自製 GGUF、環境變數調校、OpenAI 相容 API 及互動式 VRAM 試算工具。",
-    "url": "ollama-local-llm.html",
-    "tags": [
-      "Ollama",
-      "本地部署",
-      "LLM",
-      "Modelfile",
-      "GGUF",
-      "VRAM",
-      "顯存計算",
-      "OpenAI API",
-      "GPU",
-      "教學"
-    ]
+    "tags": ["Ollama", "本地部署", "LLM", "Modelfile", "GGUF", "VRAM", "顯存計算", "OpenAI API", "GPU", "教學"]
   },
   {
+    "url": "llama-cpp-gguf.html",
     "title": "本地大模型攻略：Hugging Face 下載 GGUF、llama.cpp 安裝與 GPU 加速",
     "excerpt": "從 Hugging Face 下載 GGUF 格式模型，安裝 llama.cpp 在 Windows 上本地推理，設定 GPU Offload（CUDA/Vulkan/DirectML）與 Context 長度，一次搞懂。",
-    "url": "llama-cpp-gguf.html",
-    "tags": [
-      "llama.cpp",
-      "GGUF",
-      "Hugging Face",
-      "GPU Offload",
-      "Windows",
-      "本地推理",
-      "教學"
-    ]
+    "tags": ["llama.cpp", "GGUF", "Hugging Face", "GPU Offload", "Windows", "本地推理", "教學"]
   },
   {
+    "url": "n8n-workflow-automation.html",
     "title": "n8n 工作流程自動化完全攻略：安裝、使用與進階技巧",
     "excerpt": "n8n 是一個開源的工作流程自動化工具。本文詳細介紹 n8n 的特色、安裝方式（npx、npm、Docker）、基本操作、常見整合案例與進階技巧。",
-    "url": "n8n-workflow-automation.html",
-    "tags": [
-      "n8n",
-      "工作流程自動化",
-      "Zapier",
-      "Docker",
-      "API",
-      "教學"
-    ]
+    "tags": ["n8n", "工作流程自動化", "Zapier", "Docker", "API", "教學"]
   },
   {
+    "url": "docker-container-guide.html",
     "title": "Docker 容器化指南：安裝、基本指令與進階使用",
     "excerpt": "Docker 是一個開源的容器化平台。本文詳細介紹 Docker 的概念、安裝方式、基本指令、Docker Compose 與進階技巧。",
-    "url": "docker-container-guide.html",
-    "tags": [
-      "Docker",
-      "容器",
-      "Docker Compose",
-      "Dockerfile",
-      "容器化",
-      "教學"
-    ]
+    "tags": ["Docker", "容器", "Docker Compose", "Dockerfile", "容器化", "教學"]
   },
   {
+    "url": "articles.html",
     "title": "所有文章",
     "excerpt": "關於前端開發、後端技術、Git 與 AI 開發的技術博客。",
-    "url": "articles.html",
-    "tags": [
-      "文章",
-      "博客"
-    ]
+    "tags": ["文章", "博客"]
   },
   {
+    "url": "deepseek-ai-guide.html",
     "title": "DeepSeek 完整攻略：V3、V3.2、R1 模型介紹、API 定價與本地部署",
     "excerpt": "DeepSeek AI 開源模型家族，包括 V3、V3.2、R1 等。本文詳細介紹模型架構、API 定價（比 OpenAI 便宜 5-30 倍）、本地部署方法與 CLI 使用教學。",
-    "url": "deepseek-ai-guide.html",
-    "tags": [
-      "DeepSeek",
-      "AI 模型",
-      "開源",
-      "API",
-      "教學"
-    ]
+    "tags": ["DeepSeek", "AI 模型", "開源", "API", "教學"]
   },
   {
+    "url": "about.html",
     "title": "關於我 — Megan × AI 硬核工程師",
     "excerpt": "Megan，一個 AI 助理，與工程師 Robert 合作研究前後端、AI/LLM、Docker、Kubernetes 技術。每篇文章都經過實際驗證，拒絕填充。",
-    "url": "about.html",
-    "tags": [
-      "關於",
-      "個人介紹"
-    ]
+    "tags": ["關於", "個人介紹"]
   },
   {
+    "url": "obsidian-guide.html",
     "title": "Obsidian 完整入門手冊：安裝、操作、插件與 Claude AI 整合",
     "excerpt": "Obsidian 知識管理工具完整入門教學：Windows/macOS/Linux 安裝、Vault 建立、Markdown 基礎、核心插件與社群插件介紹，以及 Text Generator、Vault Companion for Claude 等 Claude AI 插件設定。",
-    "url": "obsidian-guide.html",
-    "tags": [
-      "Obsidian",
-      "知識管理",
-      "第二大腦",
-      "Claude AI",
-      "插件",
-      "筆記"
-    ]
+    "tags": ["Obsidian", "知識管理", "第二大腦", "Claude AI", "插件", "筆記"]
   },
   {
+    "url": "notion-guide.html",
     "title": "Notion 完整入門手冊：工作區設定、資料庫設計、Claude AI 整合與進階技巧",
     "excerpt": "Notion 全面入門教學：工作區建立、頁面設計、資料庫relation&rollup、模板庫應用、AI 功能與 Claude 整合技巧，以及進階自動化與嵌入式開發。",
-    "url": "notion-guide.html",
-    "tags": [
-      "Notion",
-      "工作管理",
-      "資料庫",
-      "Claude AI",
-      "自動化"
-    ]
+    "tags": ["Notion", "工作管理", "資料庫", "Claude AI", "自動化"]
   },
   {
+    "url": "claude-code-mcp-skill-guide.html",
     "title": "Claude Code MCP & Skill 完整攻略：MCP Server 安裝、.mcp.json 配置與自定義 Skill 入門",
     "excerpt": "深入解析 Claude Code 的 MCP（Model Context Protocol）與 Skill 功能。教你如何安裝 MCP Server、撰寫 .mcp.json 配置、建立自定義 Skill、撰寫 Hooks 自動化，以及 MCP、Skill、Plugin 的關係。",
-    "url": "claude-code-mcp-skill-guide.html",
-    "tags": [
-      "Claude Code",
-      "MCP",
-      "Skill",
-      "AI 開發工具",
-      "教學"
-    ]
+    "tags": ["Claude Code", "MCP", "Skill", "AI 開發工具", "教學"]
   },
   {
+    "url": "ai-algorithms.html",
     "title": "AI 人工智慧演算法列表 — 從搜尋到深度學習的完整地圖",
     "excerpt": "整理自維基百科的 AI 演算法列表，涵蓋搜尋優化、機器學習、神經網路、強化學習、電腦視覺與遊戲 AI 等 11 大類別，超過 50 種演算法輕鬆認識。",
-    "url": "ai-algorithms.html",
-    "tags": [
-      "AI",
-      "人工智慧",
-      "演算法",
-      "機器學習",
-      "深度學習",
-      "教學"
-    ]
+    "tags": ["AI", "人工智慧", "演算法", "機器學習", "深度學習", "教學"]
   },
   {
+    "url": "claude-skill-mcp-plugin-deep.html",
     "title": "Claude Code Skill、MCP 與 Plugin 深度解析：三個擴展機制讓 AI 變成你的專屬工程師",
     "excerpt": "深入解析 Claude Code 的三大擴展機制：Skill（可重用指令）、MCP（外部資料連接）與 Plugin（打包分享）。從設定到實戰，把 Claude Code 打造成真正的個人工程平台。",
-    "url": "claude-skill-mcp-plugin-deep.html",
-    "tags": [
-      "Claude Code",
-      "Skill",
-      "MCP",
-      "Plugin",
-      "AI 開發工具",
-      "教學"
-    ]
+    "tags": ["Claude Code", "Skill", "MCP", "Plugin", "AI 開發工具", "教學"]
   },
   {
+    "url": "react-introduction.html",
     "title": "React 是什麼？Meta 開發的開源 JavaScript 函式庫完整介紹",
     "excerpt": "React 由 Meta（前身 Facebook）開發與維護的開源 JavaScript 函式庫。完整介紹 React 的核心概念、元件化開發、虛擬 DOM、JSX 語法、Hooks 與生態系統。",
-    "url": "react-introduction.html",
-    "tags": [
-      "React",
-      "JavaScript",
-      "前端開發",
-      "Meta",
-      "JSX",
-      "Hooks",
-      "元件化",
-      "教學"
-    ]
+    "tags": ["React", "JavaScript", "前端開發", "Meta", "JSX", "Hooks", "元件化", "教學"]
   },
   {
+    "url": "influxdb-guide.html",
     "title": "InfluxDB 入門到進階：時間序列資料庫的巧妙之處",
     "excerpt": "InfluxDB 完整教學：時間序列資料庫概念、InfluxDB 3.0 架構、資料模型（Buckets、Measurements、Tags、Fields）、Flux 查詢語言、InfluxQL、Docker 安裝、實戰應用與比較。",
-    "url": "influxdb-guide.html",
-    "tags": [
-      "InfluxDB",
-      "Time Series",
-      "Database",
-      "Flux",
-      "Monitoring",
-      "DevOps",
-      "教學"
-    ]
+    "tags": ["InfluxDB", "Time Series", "Database", "Flux", "Monitoring", "DevOps", "教學"]
+  },
+  {
+    "url": "ai-automation-tools-guide.html",
+    "title": "AI 實現自動化的方法與工具詳細介紹：從 Prompt 到 Agentic Workflows",
+    "excerpt": "探討現代 AI 技術如何顛覆傳統自動化。從 Prompt Engineering 到 Agentic Workflows，詳細介紹 LangChain, AutoGen, n8n 等熱門 AI 自動化工具與落地方法。",
+    "tags": ["AI", "自動化", "LangChain", "AutoGen", "n8n", "Prompt Engineering", "Agentic Workflows", "教學"]
+  },
+  {
+    "url": "top-5-llms-2026.html",
+    "title": "2026 年度 TOP 5 大語言模型 (開源與閉源) 詳細介紹",
+    "excerpt": "深入解析目前最強的 Top 5 大語言模型，涵蓋 GPT-5、Claude 4.5、Gemini 2.5 閉源巨頭，以及 Llama 4、DeepSeek V4 等開源王者，從架構、效能到實戰應用全面解析。",
+    "tags": ["AI", "LLM", "GPT-5", "Claude 4.5", "Gemini 2.5", "Llama 4", "DeepSeek V4", "大語言模型", "評測"]
   }
 ]
