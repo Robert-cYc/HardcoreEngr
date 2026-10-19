@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19 08:24",
+  "updated": "2026-10-19 09:23",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -34,6 +34,13 @@
           "comments": "https://news.ycombinator.com/item?id=50146625"
         },
         {
+          "title": "How to Train Your Robot",
+          "link": "https://www.construction-physics.com/p/how-to-train-your-robot",
+          "date": "2026-10-15 15:13",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50104874"
+        },
+        {
           "title": "There's never been a better time to go into math (by: 3blue1brown) [video]",
           "link": "https://www.youtube.com/watch?v=LKrwhjOI8Nc",
           "date": "2026-10-17 23:26",
@@ -48,25 +55,18 @@
           "comments": "https://news.ycombinator.com/item?id=50145507"
         },
         {
+          "title": "Tmux and Claude Code: Sessions, Send-Keys, and the Ceiling",
+          "link": "https://crystl.dev/guides/tmux-for-ai-agents/",
+          "date": "2026-10-19 05:55",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50148855"
+        },
+        {
           "title": "Someone behind the software",
           "link": "https://karrisaarinen.com/posts/someone-behind-the-software/",
           "date": "2026-10-18 16:32",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50142573"
-        },
-        {
-          "title": "How to Train Your Robot",
-          "link": "https://www.construction-physics.com/p/how-to-train-your-robot",
-          "date": "2026-10-15 15:13",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50104874"
-        },
-        {
-          "title": "Laptop Based on 6502 CPU",
-          "link": "https://www.maddox.pro/?p=448",
-          "date": "2026-10-15 22:56",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50111537"
         },
         {
           "title": "Superlite: A Faster Alternatie to Superpowers",
@@ -76,18 +76,18 @@
           "comments": "https://news.ycombinator.com/item?id=50147492"
         },
         {
-          "title": "Verisign .com Domain Name Registry Consumer Class Action",
-          "link": "https://www.hbsslaw.com/cases/verisign-com-domain-name-registry-consumer-class-action",
-          "date": "2026-10-19 04:40",
+          "title": "Flatpak – An Insecurity Nightmare",
+          "link": "https://oro.gay/posts/flatpak-an-insecurity-nightmare/",
+          "date": "2026-10-19 05:11",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50148441"
+          "comments": "https://news.ycombinator.com/item?id=50148601"
         },
         {
-          "title": "Dogs seem to agree with humans that 'bouba' is round and 'kiki' is spiky",
-          "link": "https://www.sciencealert.com/dogs-seem-to-agree-with-humans-that-bouba-is-round-and-kiki-is-spiky",
-          "date": "2026-10-18 01:38",
+          "title": "Laptop Based on 6502 CPU",
+          "link": "https://www.maddox.pro/?p=448",
+          "date": "2026-10-15 22:56",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50136979"
+          "comments": "https://news.ycombinator.com/item?id=50111537"
         }
       ]
     },
