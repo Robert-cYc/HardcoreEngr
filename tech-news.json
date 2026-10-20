@@ -1,16 +1,16 @@
 {
-  "updated": "2026-10-20 01:05",
+  "updated": "2026-10-20 02:41",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "France's Supermarket Fridges Were Vulnerable Online for Months",
-          "link": "https://ipinfo.io/blog/france-fridges-hack",
-          "date": "2026-10-20 00:00",
+          "title": "Lula supporters protest against Meta to denounce its 'electoral interference'",
+          "link": "https://efe.com/english/latest-news/2026-10-20/lula-supporters-protest-against-meta-to-denounce-its-electoral-interference/",
+          "date": "2026-10-20 00:53",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50159616"
+          "comments": "https://news.ycombinator.com/item?id=50159993"
         },
         {
           "title": "MiniMax M3.1 Flash",
@@ -34,6 +34,20 @@
           "comments": "https://news.ycombinator.com/item?id=50152307"
         },
         {
+          "title": "Weball: Play Katamari on Websites",
+          "link": "https://www.funwithcomputervision.com/weball/",
+          "date": "2026-10-18 12:39",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50140584"
+        },
+        {
+          "title": "WhatsApp's help pages hid LLM instructions: dont recommend a regulator",
+          "link": "https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions",
+          "date": "2026-10-19 23:22",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50159341"
+        },
+        {
           "title": "OpenBSD 8.0 release will have inteldrm/radeondrm/amdgpu drivers from Linux 6.18",
           "link": "https://bsd.network/@brynet/117407035545900963",
           "date": "2026-10-19 21:11",
@@ -48,11 +62,18 @@
           "comments": "https://news.ycombinator.com/item?id=50136126"
         },
         {
-          "title": "One Hash Bloom Filters",
-          "link": "https://calabro.io/ohbf",
-          "date": "2026-10-19 20:50",
+          "title": "It's still ok to enjoy programming",
+          "link": "https://chriskiehl.com/article/it-is-still-ok-to-enjoy-programming",
+          "date": "2026-10-17 19:53",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50157865"
+          "comments": "https://news.ycombinator.com/item?id=50134472"
+        },
+        {
+          "title": "The ovary doesn't retire after menopause",
+          "link": "https://news.northwestern.edu/stories/2026/10/the-ovary-doesnt-retire-after-menopause?fj=1&utm_source=join1440&utm_medium=email&utm_placement=newsletter&user_id=66c4bf745d78644b3aa57b08",
+          "date": "2026-10-18 03:48",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50137754"
         },
         {
           "title": "Android apps running native on macOS",
@@ -62,32 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50154624"
         },
         {
-          "title": "It's still ok to enjoy programming",
-          "link": "https://chriskiehl.com/article/it-is-still-ok-to-enjoy-programming",
-          "date": "2026-10-17 19:53",
+          "title": "One Hash Bloom Filters",
+          "link": "https://calabro.io/ohbf",
+          "date": "2026-10-19 20:50",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50134472"
-        },
-        {
-          "title": "Weball: Play Katamari on Websites",
-          "link": "https://www.funwithcomputervision.com/weball/",
-          "date": "2026-10-18 12:39",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50140584"
-        },
-        {
-          "title": "Putting Linux on my RTX Spark laptop because I don't have a Microsoft account",
-          "link": "https://josie.lol/blog/linux-rtx-spark",
-          "date": "2026-10-19 21:08",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50158100"
-        },
-        {
-          "title": "Token-maxxing is dead, OpenRouter's token usage plateaus",
-          "link": "https://openrouter.ai/rankings",
-          "date": "2026-10-19 23:40",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50159464"
+          "comments": "https://news.ycombinator.com/item?id=50157865"
         }
       ]
     },
@@ -174,6 +174,24 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "LINE下月起有大變動！舊版將停用 這些手機不升級無法傳訊息",
+          "link": "https://3c.ltn.com.tw/news/67986",
+          "date": "2026/10/20 10:25",
+          "summary": "還在使用舊手機的LINE用戶注意！根據LINE官方公告，2026年11月上旬將停止支援舊版LINE應用程式，屆時，若 ..."
+        },
+        {
+          "title": "傳三星打造 Galaxy OS 新系統？One UI 10 爆出重大改版",
+          "link": "https://3c.ltn.com.tw/news/67981",
+          "date": "2026/10/20 10:20",
+          "summary": "三星 Galaxy 手機目前採用 One UI 介面，近年持續加入個人化設定與 Galaxy AI 人工智慧功能。 ..."
+        },
+        {
+          "title": "Spotify嚴抓假家人！QR Code驗證防共享 網友找到破解法",
+          "link": "https://3c.ltn.com.tw/news/67982",
+          "date": "2026/10/20 09:45",
+          "summary": "不少人為了省下音樂串流訂閱費，會找親友一起分攤Spotify家庭方案，不過現在可得注意了！Spotify開始加強取締 ..."
+        },
+        {
           "title": "蘋果確認10／29再發新品！觸控MacBook、iPad mini 8有望登場",
           "link": "https://3c.ltn.com.tw/news/67985",
           "date": "2026/10/20 09:00",
@@ -226,24 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/67962",
           "date": "2026/10/18 16:31",
           "summary": "想換頂級旗艦手機，不一定非買蘋果iPhone 18 Pro Max不可！雖然iPhone向來擁有不少忠實果粉，但An ..."
-        },
-        {
-          "title": "手機年年出新款卻差不多！外媒勸：買舊旗艦更划算",
-          "link": "https://3c.ltn.com.tw/news/67970",
-          "date": "2026/10/18 15:04",
-          "summary": "想換手機，真的有必要花大錢買最新款旗艦嗎？現在手機年年推新機，但升級幅度卻越來越小，有時候只是換顆處理器、稍微調整外 ..."
-        },
-        {
-          "title": "衣服明明洗乾淨卻有臭味！專家揭「黃金5小時」晾衣關鍵",
-          "link": "https://3c.ltn.com.tw/news/67971",
-          "date": "2026/10/18 14:01",
-          "summary": "衣服明明洗乾淨了，晾乾後卻還是飄出一股悶臭味，甚至重新洗過也沒改善，相信是不少人的共同困擾。其實，問題可能不是衣服沒 ..."
-        },
-        {
-          "title": "新機漲價舊機也變值錢了！三星6年前老旗艦二手回收價暴增",
-          "link": "https://3c.ltn.com.tw/news/67974",
-          "date": "2026/10/18 12:30",
-          "summary": "手機越來越貴，連舊手機也跟著身價翻漲！台灣三星10月正式調漲S26系列售價，最高一口氣漲了8,000元，然而，二手機 ..."
         }
       ]
     },
