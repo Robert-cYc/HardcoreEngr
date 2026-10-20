@@ -1,5 +1,29 @@
 [
   {
+    "url": "bluetooth-technology-guide.html",
+    "title": "藍牙技術終極硬核指南：核心跳頻運作原理、音訊編碼 (LDAC/aptX/LC3)、藍牙接收器電路架構與高傳真喇叭聲學工程全解",
+    "excerpt": "全維度深度剖析藍牙 (Bluetooth) 技術：從 2.4GHz ISM 頻段劃分、AFH 自適應跳頻機制 (1600 hops/s)、時隙分配與調變技術，到 BR/EDR 與 BLE 雙模架構、A2DP/AVRCP 協定堆疊；橫向對比 SBC、AAC、aptX HD/Adaptive、LDAC (990kbps) 與新世代 LE Audio LC3 / Auracast 廣播；詳細拆解 USB 藍牙接收器 RF 前端與 DAC 電路設計，以及藍牙喇叭 (Bluetooth Speaker) DSP 調音、Class-D 數位功放、被動輻射板與 TWS 雙聲道無線立體聲串聯原理。內建互動式音訊編碼頻寬與延遲試算模擬器。",
+    "tags": [
+      "藍牙",
+      "Bluetooth",
+      "AFH",
+      "跳頻技術",
+      "A2DP",
+      "LE Audio",
+      "Auracast",
+      "LDAC",
+      "aptX",
+      "LC3",
+      "藍牙接收器",
+      "藍牙喇叭",
+      "DSP",
+      "Class-D",
+      "TWS",
+      "無線音訊"
+    ],
+    "image": "./images/bluetooth-technology-guide.jpg"
+  },
+  {
     "url": "anythingllm-guide.html",
     "title": "AnythingLLM 終極教學與實戰操作手冊：從本地桌面到企業級 Docker 部署、全能 RAG 知識庫架構、向量資料庫調校與 AI Agent 代理深度指南",
     "excerpt": "最完整的 AnythingLLM 全能私有化 RAG 知識庫實戰指南：深度解析 Workspace 工作區多租戶隔離機制、本地桌面端 (Windows/macOS/Linux) 安裝、Ollama 與 LM Studio 無縫對接、企業級 Docker Compose 與 NVIDIA GPU 容器化生產部署、多元文件攝取 (PDF OCR/網站爬蟲/GitHub/YouTube)、LanceDB 嵌入式向量庫、Query vs Chat 模式調校、AI Agent 工具擴展 (SQL/Web Search)、多用戶 RBAC 權限管控與 REST API/Web Widget 嵌入。內建互動式配置產生器與硬體規格試算器。",

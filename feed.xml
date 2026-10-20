@@ -5,13 +5,36 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 20 Oct 2026 03:02:16 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 07:02:54 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>藍牙技術終極硬核指南：核心跳頻運作原理、音訊編碼 (LDAC/aptX/LC3)、藍牙接收器電路架構與高傳真喇叭聲學工程全解</title>
+    <link>https://ai-hardcore-engineer.com/bluetooth-technology-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/bluetooth-technology-guide.html</guid>
+    <description>全維度深度剖析藍牙 (Bluetooth) 技術：從 2.4GHz ISM 頻段劃分、AFH 自適應跳頻機制 (1600 hops/s)、時隙分配與調變技術，到 BR/EDR 與 BLE 雙模架構、A2DP/AVRCP 協定堆疊；橫向對比 SBC、AAC、aptX HD/Adaptive、LDAC (990kbps) 與新世代 LE Audio LC3 / Auracast 廣播；詳細拆解 USB 藍牙接收器 RF 前端與 DAC 電路設計，以及藍牙喇叭 (Bluetooth Speaker) DSP 調音、Class-D 數位功放、被動輻射板與 TWS 雙聲道無線立體聲串聯原理。內建互動式音訊編碼頻寬與延遲試算模擬器。</description>
+    <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
+    <category>藍牙</category>
+    <category>Bluetooth</category>
+    <category>AFH</category>
+    <category>跳頻技術</category>
+    <category>A2DP</category>
+    <category>LE Audio</category>
+    <category>Auracast</category>
+    <category>LDAC</category>
+    <category>aptX</category>
+    <category>LC3</category>
+    <category>藍牙接收器</category>
+    <category>藍牙喇叭</category>
+    <category>DSP</category>
+    <category>Class-D</category>
+    <category>TWS</category>
+    <category>無線音訊</category>
+  </item>
   <item>
     <title>AnythingLLM 終極教學與實戰操作手冊：從本地桌面到企業級 Docker 部署、全能 RAG 知識庫架構、向量資料庫調校與 AI Agent 代理深度指南</title>
     <link>https://ai-hardcore-engineer.com/anythingllm-guide.html</link>
