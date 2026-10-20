@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20 02:41",
+  "updated": "2026-10-20 03:03",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -18,6 +18,13 @@
           "date": "2026-10-19 16:39",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50154540"
+        },
+        {
+          "title": "Novo Nordisk, Eli Lilly Report GLP-1 Signals of Slowed Biological Aging at ARDD",
+          "link": "https://trial.medpath.com/news/novo-nordisk-and-eli-lilly-report-glp-1-signals-of-slowed-biological-aging-at-ardd",
+          "date": "2026-10-20 01:34",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50160289"
         },
         {
           "title": "I built a drone with only one motor [video]",
@@ -55,18 +62,18 @@
           "comments": "https://news.ycombinator.com/item?id=50158138"
         },
         {
-          "title": "RuneScape Bench: MMOs for Agents [video]",
-          "link": "https://www.youtube.com/watch?v=cNm4zyUtWj0",
-          "date": "2026-10-17 23:24",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50136126"
-        },
-        {
           "title": "It's still ok to enjoy programming",
           "link": "https://chriskiehl.com/article/it-is-still-ok-to-enjoy-programming",
           "date": "2026-10-17 19:53",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50134472"
+        },
+        {
+          "title": "RuneScape Bench: MMOs for Agents [video]",
+          "link": "https://www.youtube.com/watch?v=cNm4zyUtWj0",
+          "date": "2026-10-17 23:24",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50136126"
         },
         {
           "title": "The ovary doesn't retire after menopause",
@@ -81,13 +88,6 @@
           "date": "2026-10-19 16:45",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50154624"
-        },
-        {
-          "title": "One Hash Bloom Filters",
-          "link": "https://calabro.io/ohbf",
-          "date": "2026-10-19 20:50",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50157865"
         }
       ]
     },
