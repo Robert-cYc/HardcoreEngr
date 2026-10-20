@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnythingLLM 終極教學與實戰操作手冊：從本地桌面到企業級 Docker 部署、全能 RAG 知識庫架構、向量資料庫調校與 AI Agent 代理深度指南 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🧠">
+  <meta name="description" content="最完整的 AnythingLLM 全能私有化 RAG 知識庫實戰指南：深度解析 Workspace 工作區多租戶隔離機制、本地桌面端 (Windows/macOS/Linux) 安裝、Ollama 與 LM Studio 無縫對接、企業級 Docker Compose 與 NVIDIA GPU 容器化生產部署、多元文件攝取 (PDF OCR/網站爬蟲/GitHub/YouTube)、LanceDB 嵌入式向量庫、Query vs Chat 模式調校、AI Agent 工具擴展 (SQL/Web Search)、多用戶 RBAC 權限管控與 REST API/Web Widget 嵌入。內建互動式配置產生器與硬體規格試算器。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/anythingllm-guide.html">
+  <meta property="og:title" content="AnythingLLM 終極教學與實戰操作手冊：從本地桌面到企業級 Docker 部署、全能 RAG 知識庫架構、向量資料庫調校與 AI Agent 代理深度指南 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="零資料外洩！一站式搞定企業私有知識庫：深度解析 AnythingLLM 核心架構、桌面與 Docker 生產部署、LanceDB 向量檢索調優、AI Agent 工具呼叫、RBAC 權限管理與互動式配置產生器。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/anythingllm-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/anythingllm-guide.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AnythingLLM 終極教學與實戰操作手冊：私有化 RAG、向量資料庫與 Agent 全攻略">
+  <meta name="twitter:description" content="零資料外洩！一站式搞定企業私有知識庫：深度解析 AnythingLLM 核心架構、桌面與 Docker 生產部署、LanceDB 向量檢索調優、AI Agent 工具呼叫、RBAC 權限管理與互動式配置產生器。">
+  <meta name="twitter:image" content="./images/anythingllm-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 3.5rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border);
+      margin-bottom: 2.2rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-body {
+      max-width: 62em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.05rem;
+      font-weight: 700;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.75rem;
+      color: var(--text);
+    }
+    .article-body h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 1.4rem 0 0.5rem;
+      color: var(--text);
+    }
+    .article-body p {
+      margin-bottom: 1.2rem;
+      line-height: 1.85;
+      font-size: 1.05rem;
+    }
+    .article-body code {
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      background: var(--bg-alt);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.95em;
+      color: #e11d48;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .article-body code {
+      color: #f43f5e;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      border: none;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem;
+      padding-left: 2rem;
+    }
+    .article-body li {
+      margin-bottom: 0.6rem;
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+
+    /* Callout Boxes */
+    .callout {
+      border-left: 4px solid;
+      background: var(--bg-alt);
+      padding: 1.2rem 1.6rem;
+      margin: 1.6rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .callout-info { border-color: #0284c7; }
+    .callout-tip { border-color: #10b981; }
+    .callout-warning { border-color: #f59e0b; }
+    .callout-danger { border-color: #ef4444; }
+    .callout-title {
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Comparison Table Styling */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.8rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+      text-align: left;
+    }
+    th, td {
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    th {
+      background: var(--bg-alt);
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(0,0,0,0.02); }
+    .dark-mode tr:hover td { background: rgba(255,255,255,0.03); }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-teal { background: #ccfbf1; color: #0f766e; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .badge-gray { background: #f3f4f6; color: #374151; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-teal { background: #134e4a; color: #99f6e4; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+    .dark-mode .badge-gray { background: #374151; color: #e5e7eb; }
+
+    /* Quick Navigation Box */
+    .quick-nav-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .quick-nav-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+    }
+    .quick-nav-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+      margin: 0 !important;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem 1.2rem;
+    }
+    .quick-nav-list li a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.98rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .quick-nav-list li a:hover {
+      color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    /* Diagram Block */
+    .diagram-card {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 10px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.8rem 0;
+      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      overflow-x: auto;
+      white-space: pre;
+      tab-size: 2;
+      border: 1px solid #334155;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .diagram-card .hl-cyan { color: #38bdf8; font-weight: bold; }
+    .diagram-card .hl-green { color: #4ade80; font-weight: bold; }
+    .diagram-card .hl-yellow { color: #facc15; font-weight: bold; }
+    .diagram-card .hl-pink { color: #f43f5e; font-weight: bold; }
+    .diagram-card .hl-dim { color: #64748b; }
+
+    /* Interactive Box Components */
+    .interactive-explorer-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+    .tab-nav {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-group label {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .form-control {
+      padding: 0.65rem 0.9rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .form-control:focus {
+      border-color: var(--accent);
+    }
+    .stat-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card-mini {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem;
+      text-align: center;
+    }
+    .stat-val {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+    .stat-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .code-preview-wrap {
+      position: relative;
+      margin-top: 1rem;
+    }
+    .copy-output-btn {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .copy-output-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .article-footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .back-home {
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "AnythingLLM 終極教學與實戰操作手冊：從本地桌面到企業級 Docker 部署、全能 RAG 知識庫架構、向量資料庫調校與 AI Agent 代理深度指南",
+    "description": "最完整的 AnythingLLM 全能私有化 RAG 知識庫實戰指南：深度解析 Workspace 工作區多租戶隔離機制、本地桌面端安裝、Ollama/LM Studio 無縫對接、企業級 Docker 生產部署、多元文件攝取、LanceDB 向量檢索調優、AI Agent 工具擴展與 REST API 整合。",
+    "url": "https://ai-hardcore-engineer.com/anythingllm-guide.html",
+    "publisher": { "@type": "Organization", "name": "\"AI\" 硬核工程師", "url": "https://ai-hardcore-engineer.com" },
+    "image": "https://ai-hardcore-engineer.com/images/anythingllm-guide.jpg",
+    "mainEntityOfPage": { "@type": "WebPage", "url": "https://ai-hardcore-engineer.com/anythingllm-guide.html" }
+  }
+  </script>
+</head>
+<body id="top">
+  <!-- =============== Header =============== -->
+  <header class="site-header">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">"AI" 硬核工程師</a>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html" class="active">所有文章</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍 搜尋</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切換深淺色模式">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- =============== Article Header =============== -->
+      <section class="article-hero">
+        <h1>AnythingLLM 終極教學與實戰操作手冊：從本地桌面到企業級 Docker 部署、全能 RAG 知識庫架構、向量資料庫調校與 AI Agent 代理深度指南</h1>
+        <div class="article-meta">
+          <span>📅 2026-10-20</span>
+          <span class="separator">·</span>
+          <span>⏳ 38 分鐘深度閱讀</span>
+          <span class="separator">·</span>
+          <span>✍️ Robert</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">AnythingLLM</span>
+          <span class="tag">RAG 知識庫</span>
+          <span class="tag">LanceDB</span>
+          <span class="tag">Ollama</span>
+          <span class="tag">LM Studio</span>
+          <span class="tag">Docker 部署</span>
+          <span class="tag">Agentic AI</span>
+          <span class="tag">私有化本地</span>
+          <span class="tag">企業資安</span>
+        </div>
+        <div class="hero-image-wrap">
+          <img loading="lazy" src="./images/anythingllm-guide.jpg" alt="AnythingLLM 實戰操作全攻略：全功能私有化 RAG 知識庫、嵌入式向量資料庫、多模型代理與企業級權限調優">
+        </div>
+      </section>
+
+      <!-- =============== Article Body =============== -->
+      <article class="article-body">
+        <div class="callout callout-info">
+          <div class="callout-title">💡 閱讀前言：打破「資料外洩」與「高昂雲端費用」的終極私有 AI 解方</div>
+          <p>在生成式 AI 全面落地的今天，企業與技術團隊普遍面臨兩大核心困境：<strong>「如何將龐大的內部非結構化文件（PDF/Word/技術規範/財務財報/代碼庫）餵給大模型進行精準檢索回答？」</strong>以及<strong>「如何確保這些極度機密的內部資料 100% 不外流至公共雲端 OpenAI 或第三方 API？」</strong></p>
+          <p>許多團隊嘗試過自己用 LangChain / LlamaIndex 拼裝 Vector DB 與 FastAPI，或者架設陽春的聊天網頁，但往往在<strong>「複雜檔案解析 (PDF/OCR)」、「多用戶工作區權限隔離」、「網頁即時爬蟲」、「自定義 Agent 工具調用 (SQL/Web Search)」</strong>與<strong>「零幻覺嚴格查證模式」</strong>等工程細節上耗費數月時間。</p>
+          <p>由 <strong>Mintplex Labs</strong> 開源的 <strong>AnythingLLM</strong>，正是為了解決這一切痛點而生的<strong>「全功能一體化私有 RAG 與 AI Agent 平台」</strong>。本文將從底層架構原理、桌面端與 Docker 生產部署、文件管線精準調優、Agent 外掛工具，一路深挖到企業 RBAC 與開發者 API，並提供互動式配置產生器！</p>
+        </div>
+
+        <!-- Quick Navigation Box -->
+        <div class="quick-nav-box">
+          <div class="quick-nav-title">📑 目錄導覽：硬核全章節索引</div>
+          <ul class="quick-nav-list">
+            <li><a href="#sec-1">01. AnythingLLM 核心生態與架構全景</a></li>
+            <li><a href="#sec-2">02. 核心架構基石：Workspace (工作區) 多租戶與向量隔離</a></li>
+            <li><a href="#sec-3">03. 本地桌面端快速上手 (Windows / macOS / Linux)</a></li>
+            <li><a href="#sec-4">04. 企業級 Docker 與 Docker Compose 生產部署全攻略</a></li>
+            <li><a href="#sec-5">05. 文件攝取與全能知識庫管線 (Document Ingestion & RAG)</a></li>
+            <li><a href="#sec-6">06. 對話雙模式 (Query vs Chat) 與向量檢索精準調校</a></li>
+            <li><a href="#sec-7">07. AI Agent 代理模式與擴展工具鏈 (Tools & Skills)</a></li>
+            <li><a href="#sec-8">08. 企業級多用戶 RBAC 權限體系與安全審計</a></li>
+            <li><a href="#sec-9">09. 開發者 REST API 與 Web Widget 網站無縫嵌入</a></li>
+            <li><a href="#sec-10">10. 互動式工具：AnythingLLM 架構配置產生器 & 部署試算器</a></li>
+            <li><a href="#sec-11">11. 常見踩坑排查 (Troubleshooting) 與工程最佳實踐</a></li>
+          </ul>
+        </div>
+
+        <!-- ==================== Chapter 1 ==================== -->
+        <h2 id="sec-1">01. AnythingLLM 核心生態與架構全景</h2>
+        <p>在深入操作之前，必須先釐清 AnythingLLM 在整個開源 AI 生態系中的生態定位。很多人常常混淆：<em>「我已經裝了 Ollama，為什麼還需要 AnythingLLM？」</em>或<em>「AnythingLLM 跟 Open-WebUI、Dify、FastGPT 有何本質差異？」</em></p>
+
+        <p>簡而言之：<strong>Ollama / LM Studio 是「推論引擎 (Inference Engine)」，而 AnythingLLM 是「應用層全能私有知識庫與代理平台 (Full-Stack RAG & Agent Platform)」</strong>。</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>比較維度</th>
+                <th>AnythingLLM</th>
+                <th>Ollama 原生</th>
+                <th>Open-WebUI</th>
+                <th>Dify / FastGPT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>核心定位</strong></td>
+                <td><span class="badge badge-purple">私有 RAG 知識庫與工作區</span></td>
+                <td><span class="badge badge-blue">底層模型運行與 API 服務</span></td>
+                <td><span class="badge badge-teal">ChatGPT 風格對話前端</span></td>
+                <td><span class="badge badge-amber">視覺化工作流 LLMOps 平台</span></td>
+              </tr>
+              <tr>
+                <td><strong>安裝複雜度</strong></td>
+                <td><span class="badge badge-green">極低 (內建 LanceDB + 向量庫)</span></td>
+                <td><span class="badge badge-green">極低 (單一執行檔)</span></td>
+                <td><span class="badge badge-blue">中等 (需 Docker 或 Python)</span></td>
+                <td><span class="badge badge-rose">高 (需多個容器 Postgres/Redis)</span></td>
+              </tr>
+              <tr>
+                <td><strong>開箱即用 RAG</strong></td>
+                <td><span class="badge badge-green">完整內建 (自動切塊/向量化/多源爬蟲)</span></td>
+                <td><span class="badge badge-gray">無 (需手寫代碼或外掛)</span></td>
+                <td><span class="badge badge-blue">基礎 (需手動設定 Embedding/Milvus)</span></td>
+                <td><span class="badge badge-green">極強 (支援重排與複雜知識庫)</span></td>
+              </tr>
+              <tr>
+                <td><strong>向量資料庫</strong></td>
+                <td><span class="badge badge-purple">內建 LanceDB (免額外安裝 DB)</span></td>
+                <td><span class="badge badge-gray">無</span></td>
+                <td><span class="badge badge-blue">Chroma / Qdrant / Milvus</span></td>
+                <td><span class="badge badge-amber">PGVector / Weaviate / Qdrant</span></td>
+              </tr>
+              <tr>
+                <td><strong>對話模式</strong></td>
+                <td><span class="badge badge-green">Query 嚴格查證 (拒答幻覺) + Chat</span></td>
+                <td><span class="badge badge-gray">僅聊天模式</span></td>
+                <td><span class="badge badge-blue">聊天模式為主</span></td>
+                <td><span class="badge badge-green">工作流自定義</span></td>
+              </tr>
+              <tr>
+                <td><strong>多用戶與 RBAC</strong></td>
+                <td><span class="badge badge-green">完整支援 (Admin/Manager/Default)</span></td>
+                <td><span class="badge badge-gray">單用戶</span></td>
+                <td><span class="badge badge-green">支援多用戶</span></td>
+                <td><span class="badge badge-green">企業級團隊協同</span></td>
+              </tr>
+              <tr>
+                <td><strong>外掛 Agent 工具</strong></td>
+                <td><span class="badge badge-green">內建 Web Search / SQL / 圖表</span></td>
+                <td><span class="badge badge-gray">需模型支援 Tool Calling</span></td>
+                <td><span class="badge badge-blue">支援 Tools / Functions</span></td>
+                <td><span class="badge badge-green">極豐富 Tool 集市</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>AnythingLLM 內部架構與通訊拓撲</h3>
+        <p>AnythingLLM 的架構設計極為巧妙，它將「文件萃取處理」、「向量數據存儲」與「模型推論交互」三者解耦為高度可插拔的模組：</p>
+
+        <div class="diagram-card">
+<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="hl-cyan">│                      AnythingLLM 一體化私有 RAG 內部架構拓撲                              │</span>
+<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────────────────────┘</span>
+  [ 使用者介面 (Web / Desktop App / Embed Widget) ] ──(WebSocket / REST)──► [ Express API Gateway ]
+                                                                                   │
+     ┌─────────────────────────────────────────────────────────────────────────────┴──────────┐
+     ▼                                                                                        ▼
+┌──────────────────────────────┐                                           ┌──────────────────────────────────┐
+│ 1. Document Collector (管線) │                                           │ 2. Query & Agent Engine (執行核心)│
+│  - PDF/Word/Excel/TXT/EPUB   │                                           │  - Workspace Prompt Context 組裝 │
+│  - Web Scraper & URL Crawler │                                           │  - Query Mode (嚴格無幻覺過濾)    │
+│  - YouTube Audio & Whisper   │                                           │  - Agent Loop (ReAct 代理迴圈)   │
+│  - GitHub 程式碼庫全量拉取    │                                           │  - Built-in Skills (SQL/Search)  │
+└──────────────┬───────────────┘                                           └────────────────┬─────────────────┘
+               │                                                                            │
+               ▼                                                                            ▼
+┌──────────────────────────────┐                                           ┌──────────────────────────────────┐
+│ Text Chunking (文本切片)      │                                           │ Hybrid Search & Top-K Retrieval  │
+│ - Chunk Size & Overlap       │                                           │ - Cosine Similarity 相似度計算   │
+└──────────────┬───────────────┘                                           └────────────────┬─────────────────┘
+               │                                                                            ▲
+               ▼                                                                            │
+┌──────────────────────────────┐                                                            │
+│ Embedding Model (向量化)     │                                                            │
+│ - Ollama (nomic-embed-text)  │ ──(嵌入向量)──► ┌──────────────────────────────────────┐  │
+│ - OpenAI (text-embedding-3)  │                 │ 3. Vector Storage (向量資料庫抽象層)   ├──┘
+│ - AnythingLLM Native Embed   │                 │  - Built-in LanceDB (零依賴嵌入式)    │
+└──────────────────────────────┘                 │  - Chroma / Qdrant / Milvus / Weaviate │
+                                                 └──────────────────────────────────────┘
+                                                                    │
+                                                                    ▼
+                                                 ┌──────────────────────────────────────┐
+                                                 │ 4. LLM Providers (推論引擎路由)      │
+                                                 │  - Local: Ollama / LM Studio / vLLM  │
+                                                 │  - Cloud: OpenAI / Claude / DeepSeek │
+                                                 └──────────────────────────────────────┘
+        </div>
+
+        <p>這套架構最大的好處在於：<strong>你可以自由組合「隱私性」與「算力成本」</strong>。例如：使用本機 Ollama 跑 `nomic-embed-text` 做向量嵌入，資料儲存在內建的 LanceDB，推論時呼叫本地 RTX 顯卡跑 `DeepSeek-R1-Distill-Qwen-14B`，整個過程<strong>完全不經過任何外部網際網路，達成 100% 機密實體隔離 (Air-gapped)</strong>！</p>
+
+        <!-- ==================== Chapter 2 ==================== -->
+        <h2 id="sec-2">02. 核心架構基石：Workspace (工作區) 多租戶與向量隔離</h2>
+        <p>許多初學者在使用 AnythingLLM 時，最常問的問題是：<em>「為什麼我不能直接上傳檔案就開始聊天？為什麼一定要建立 Workspace？」</em></p>
+        <p>在 AnythingLLM 的哲學中，<strong>Workspace (工作區) 是最核心的安全與資料邊界</strong>。一個 Workspace 就是一個獨立的「數位大腦」或「業務虛擬顧問」，它具備以下四重嚴格隔離特性：</p>
+
+        <div class="callout callout-tip">
+          <div class="callout-title">🎯 Workspace 的四大獨立隔離維度</div>
+          <ol>
+            <li><strong>向量空間隔離 (Vector Space Isolation)</strong>：上傳至 Workspace A 的文件，絕對不會被 Workspace B 的檢索檢索到。避免了財務部門財報與研發部門源代碼的交叉污染。</li>
+            <li><strong>系統提示詞與人設隔離 (System Prompt & Persona)</strong>：Workspace A 可以被設定為「資深專利審查律師，僅輸出法條引用」；Workspace B 可以被設定為「TypeScript 架構專家，輸出 Clean Code 與單元測試」。</li>
+            <li><strong>模型路由隔離 (LLM Provider Override)</strong>：針對高機密度的 HR 薪資工作區，可以指派本機 Ollama 離線模型；針對需要極高推論能力的演算法架構工作區，可以指派 Claude 3.7 Sonnet。</li>
+            <li><strong>超參數獨立調校 (Hyperparameters Tuning)</strong>：可為不同工作區分別設定 `Temperature` (溫度 0.0 ~ 1.0)、`Context Window` (上下文長度) 以及 `Chat History Limit` (記憶對話輪數)。</li>
+          </ol>
+        </div>
+
+        <h3>實戰架構設計：企業內部 Workspace 規劃矩陣</h3>
+        <p>在實際企業或團隊落地時，建議按照「業務領域」與「機密等級」來規劃 Workspace：</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>工作區名稱</th>
+                <th>資料來源</th>
+                <th>推薦 LLM 路由</th>
+                <th>對話模式</th>
+                <th>溫度 (Temperature)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>財務與稅務法規</strong></td>
+                <td>內部報銷制度 PDF、國稅局法規、審計規範</td>
+                <td><span class="badge badge-purple">本地 DeepSeek-R1 / Qwen 2.5 32B</span></td>
+                <td><span class="badge badge-rose">Query Mode (嚴格查證)</span></td>
+                <td><code>0.1</code> (極致嚴謹)</td>
+              </tr>
+              <tr>
+                <td><strong>產品工程架構庫</strong></td>
+                <td>GitHub 倉庫源碼、API 文件、技術規格書</td>
+                <td><span class="badge badge-amber">Claude 3.7 Sonnet / DeepSeek-V3</span></td>
+                <td><span class="badge badge-teal">Chat Mode (混合增強)</span></td>
+                <td><code>0.3</code> (結構精準)</td>
+              </tr>
+              <tr>
+                <td><strong>售後客服與常見 FAQ</strong></td>
+                <td>官方產品手冊、官網 FAQ、維修 SOP</td>
+                <td><span class="badge badge-blue">GPT-4o-mini / 本地 Llama 3.3 8B</span></td>
+                <td><span class="badge badge-rose">Query Mode (避免答非所問)</span></td>
+                <td><code>0.2</code> (標準穩定)</td>
+              </tr>
+              <tr>
+                <td><strong>行銷文案與創意思維</strong></td>
+                <td>競品分析報告、歷年行銷案例、品牌規範</td>
+                <td><span class="badge badge-green">Gemini 2.5 Flash / Claude 3.7</span></td>
+                <td><span class="badge badge-teal">Chat Mode (激發創意)</span></td>
+                <td><code>0.7</code> (發散思考)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ==================== Chapter 3 ==================== -->
+        <h2 id="sec-3">03. 本地桌面端快速上手 (Windows / macOS / Linux)</h2>
+        <p>如果你是個人開發者、研究員，或希望在自己的工作站（Laptop / Workstation）上快速體驗零外洩的私有知識庫，<strong>AnythingLLM Desktop</strong> 是最快上手的途徑。</p>
+
+        <h3>1. 下載與安裝</h3>
+        <ul>
+          <li><strong>Windows</strong>：前往官方 GitHub Releases 或官網下載 `.exe` 安裝檔。建議安裝在高速 NVMe SSD 目錄中。</li>
+          <li><strong>macOS</strong>：支援 Apple Silicon (M1/M2/M3/M4) 原生架構與 Intel x86。下載 `.dmg` 拖曳至 Applications 即可。</li>
+          <li><strong>Linux</strong>：提供 `.AppImage` 格式。賦予執行權限即可運行：
+            <pre><code>chmod +x AnythingLLM-Desktop.AppImage
+./AnythingLLM-Desktop.AppImage</code></pre>
+          </li>
+        </ul>
+
+        <h3>2. 初始設定精靈 (Onboarding Wizard) 避坑指引</h3>
+        <p>啟動應用程式後，會看到初始配置精靈。這裡有三個核心決策點：</p>
+        <ol>
+          <li><strong>選擇 LLM Provider</strong>：
+            <ul>
+              <li><strong>方案 A（純本地離線首選）</strong>：選擇 <code>Ollama</code>。Base URL 預設填入 <code>http://127.0.0.1:11434</code>。AnythingLLM 會自動抓取你在終端機已下載的模型清單（如 <code>llama3.3:8b</code>、<code>deepseek-r1:14b</code> 等）。</li>
+              <li><strong>方案 B（LM Studio 對接）</strong>：選擇 <code>LM Studio</code>。預設 URL 為 <code>http://localhost:1234/v1</code>，確保 LM Studio 已開啟 Local Inference Server。</li>
+              <li><strong>方案 C（雲端 API）</strong>：選擇 <code>OpenAI</code>、<code>Anthropic</code> 或 <code>DeepSeek</code>，輸入你的 API Key 即可。</li>
+            </ul>
+          </li>
+          <li><strong>選擇 Embedding Provider (向量嵌入模型)</strong>：
+            <p>向量模型決定了「文字搜尋的語意理解精準度」。強烈建議：</p>
+            <ul>
+              <li>若使用 Ollama，請在終端機先執行 <code>ollama pull nomic-embed-text</code> 或 <code>ollama pull bge-m3</code>，並在此處選擇 Ollama 的相應模型。</li>
+              <li>若不想安裝額外模型，可直接選擇 <strong>AnythingLLM Built-in Embedder</strong>，系統會自動使用內建的開源輕量級嵌入引擎。</li>
+            </ul>
+          </li>
+          <li><strong>選擇 Vector Database (向量資料庫)</strong>：
+            <p>直接保持預設的 <strong>LanceDB</strong>！LanceDB 是一個用 Rust 開發的無伺服器 (Serverless) 嵌入式向量資料庫，直接以二進位檔案形式儲存於本地磁碟，<strong>零記憶體常駐開銷、免配置連線帳密</strong>，百萬量級向量檢索延遲低於 10ms。</p>
+          </li>
+        </ol>
+
+        <!-- ==================== Chapter 4 ==================== -->
+        <h2 id="sec-4">04. 企業級 Docker 與 Docker Compose 生產部署全攻略</h2>
+        <p>對於企業團隊或 Homelab 伺服器，單機桌面版無法支援多同仁連線與權限管理。此時<strong>Docker 容器化部署</strong>是標準生產解法。</p>
+
+        <h3>1. 單容器快速運行指令 (`docker run`)</h3>
+        <pre><code># 建立具名卷以持久化所有儲存資料 (向量庫、SQLite、上傳檔案)
+docker volume create anythingllm_storage
+
+# 啟動 AnythingLLM 容器
+docker run -d \
+  --name anythingllm \
+  -p 3001:3001 \
+  -v anythingllm_storage:/app/server/storage \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  --restart unless-stopped \
+  mintplexlabs/anythingllm:latest</code></pre>
+
+        <div class="callout callout-warning">
+          <div class="callout-title">⚠️ 重點避坑：宿主機目錄掛載權限問題</div>
+          <p>如果你不使用具名卷，而是使用本機目錄掛載（如 <code>-v /opt/anythingllm/storage:/app/server/storage</code>），在 Linux 系統上常會遇到 <code>EACCES: permission denied</code> 報錯。這是因為容器內部以非 root 用戶運行。請務必在宿主機賦予權限：</p>
+          <pre><code>sudo mkdir -p /opt/anythingllm/storage
+sudo chown -R 1000:1000 /opt/anythingllm/storage
+sudo chmod -R 775 /opt/anythingllm/storage</code></pre>
+        </div>
+
+        <h3>2. 生產級 Docker Compose 完整架構 (AnythingLLM + Ollama + NVIDIA GPU 直通)</h3>
+        <p>以下是一套標準的企業級私有化部署設定檔，將 AnythingLLM 與 Ollama 打包在同一個私有網路內，並啟用 GPU 硬體加速：</p>
+
+        <pre><code>services:
+  # ==========================================
+  # 1. AnythingLLM 核心應用服務
+  # ==========================================
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: anythingllm-app
+    restart: always
+    ports:
+      - "3001:3001"
+    environment:
+      - SERVER_PORT=3001
+      - STORAGE_DIR=/app/server/storage
+      - JWT_SECRET=super-secret-jwt-key-change-this-in-production
+      - DISABLE_TELEMETRY=true
+    volumes:
+      - anythingllm_data:/app/server/storage
+    depends_on:
+      - ollama
+    networks:
+      - ai-network
+
+  # ==========================================
+  # 2. Ollama 本地大模型推論引擎 (含 NVIDIA GPU 直通)
+  # ==========================================
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama-engine
+    restart: always
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    networks:
+      - ai-network
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+volumes:
+  anythingllm_data:
+    driver: local
+  ollama_models:
+    driver: local
+
+networks:
+  ai-network:
+    driver: bridge</code></pre>
+
+        <div class="callout callout-info">
+          <div class="callout-title">🔍 Docker 內部通訊重要認知：位址該填什麼？</div>
+          <p>在 Docker Compose 環境中，AnythingLLM 容器要連接 Ollama，<strong>LLM Base URL 必須填入 <code>http://ollama:11434</code></strong>（使用 service 名稱），而不是 <code>http://127.0.0.1:11434</code> 或 <code>localhost</code>！因為容器各自有獨立的 Network Namespace。</p>
+          <p>如果是桌面版連外部 Docker，或 Docker 連本機跑的 Ollama，請使用 <code>http://host.docker.internal:11434</code>，並確保 Linux 宿主機在 Compose 中配置了 <code>extra_hosts: ["host.docker.internal:host-gateway"]</code>。</p>
+        </div>
+
+        <h3>3. 企業級 Nginx 反向代理與 SSL 配置 (支援 SSE 串流打字機)</h3>
+        <p>在大模型對話中，<strong>SSE (Server-Sent Events) 串流傳輸</strong>是實現流式打字機效果的關鍵。如果 Nginx 未關閉 Buffer，前端對話會卡住直到整個回答結束才一次性跳出。以下是標準 Nginx 設定：</p>
+
+        <pre><code>server {
+    listen 80;
+    server_name ai.yourcompany.internal;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name ai.yourcompany.internal;
+
+    ssl_certificate /etc/nginx/certs/fullchain.pem;
+    ssl_certificate_key /etc/nginx/certs/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    # 上傳大檔案限制 (如 100MB 企業技術手冊)
+    client_max_body_size 128M;
+
+    location / {
+        proxy_pass http://127.0.0.1:3001;
+        proxy_http_version 1.1;
+
+        # WebSocket 支援
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+
+        # 基礎 Header 轉發
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # 重要：關閉代理緩衝以支援 SSE 串流逐字輸出！
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_read_timeout 600s;
+        proxy_send_timeout 600s;
+    }
+}</code></pre>
+
+        <!-- ==================== Chapter 5 ==================== -->
+        <h2 id="sec-5">05. 文件攝取與全能知識庫管線 (Document Ingestion & RAG)</h2>
+        <p>AnythingLLM 最強悍的競爭力之一，在於其<strong>原生內建的多格式解析與深度爬蟲管線</strong>。在過去，工程師必須自己調試 PyPDF2、pdfplumber、BeautifulSoup、python-docx，而 AnythingLLM 直接把這些處理全自動化。</p>
+
+        <h3>1. 支援的多元數據源與解析機制</h3>
+        <ul>
+          <li><strong>結構化與非結構化文件</strong>：`.pdf`、`.docx`、`.txt`、`.md`、`.csv`、`.xlsx`、`.json`、`.epub`。特別是在處理 PDF 時，內建 OCR 引擎可識別掃描件中的圖像文字。</li>
+          <li><strong>深層網站爬蟲 (Web Scraper & Deep Crawler)</strong>：在文件上傳區點擊網址圖示，輸入網址（例如公司 Confluence 或內部 Wiki）。支援設定「爬取深度 (Depth)」與「最大頁數 (Max Pages)」，自動解析 DOM 去除雜訊與導航欄，轉化為純淨 Markdown 存入向量庫。</li>
+          <li><strong>GitHub 倉庫全量解析 (GitHub Repo Sync)</strong>：輸入 GitHub 公開或私有倉庫網址與 Access Token，AnythingLLM 會自動遞迴拉取所有代碼文件（.py、.js、.ts、.go 等），並建立代碼語義索引。</li>
+          <li><strong>YouTube 影片與音訊 (YouTube & Whisper)</strong>：輸入 YouTube 連結，系統自動解析字幕或透過內建 Whisper 進行音訊轉文字，直接將數小時的演講轉化為可隨時檢索的知識庫。</li>
+        </ul>
+
+        <h3>2. 文本切塊 (Chunking) 的黃金參數法則</h3>
+        <p>文件上傳後，系統會將長文切分成多個小型片段（Chunks）。切塊策略直接決定了檢索召回率與理解精準度：</p>
+
+        <div class="diagram-card">
+<span class="hl-cyan">原始長文件 (10,000 字)</span>
+   │
+   ├──► <span class="hl-green">[ Chunk 1: 1000 Tokens ]</span> ──────────┐
+   │            ▲                          │ Overlap (重疊區 200 Tokens)
+   ├──►         └─────────► <span class="hl-yellow">[ Chunk 2: 1000 Tokens ]</span> ──────────┐
+   │                                   ▲                          │ Overlap (200 Tokens)
+   └──►                                └─────────► <span class="hl-pink">[ Chunk 3: 1000 Tokens ]</span>
+        </div>
+
+        <ul>
+          <li><strong>Chunk Size (切塊大小，建議 500 ~ 1000 Tokens)</strong>：
+            <ul>
+              <li><strong>太小 (&lt; 200 Tokens)</strong>：上下文割裂，檢索出來的片段只是一兩句話，模型無法理解段落的真正含意。</li>
+              <li><strong>太大 (&gt; 2000 Tokens)</strong>：語意過度發散，向量相似度被稀釋，且多個片段會迅速塞滿 LLM 的上下文視窗。</li>
+            </ul>
+          </li>
+          <li><strong>Chunk Overlap (重疊率，建議 10% ~ 20%，約 100 ~ 200 Tokens)</strong>：
+            <ul>
+              <li>確保跨邊界的關鍵句（例如一句話剛好被切成兩半）不會遺失前後因果關係。</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>3. Embedding 模型深度評測與選型建議</h3>
+        <p>Embedding 模型將文字轉化為高維度向量（如 768 維、1024 維、1536 維）。以下是目前在 AnythingLLM 中表現最優異的三大模型：</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>模型名稱</th>
+                <th>來源</th>
+                <th>維度 (Dimensions)</th>
+                <th>最大上下文長度</th>
+                <th>多語言/繁體中文支援</th>
+                <th>適用情境</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>bge-m3</code></td>
+                <td>BAAI (開源 / Ollama)</td>
+                <td>1024</td>
+                <td>8192 Tokens</td>
+                <td><span class="badge badge-green">極佳 (原生多語言)</span></td>
+                <td>企業內部私有化首選，支援長文檔與代碼</td>
+              </tr>
+              <tr>
+                <td><code>nomic-embed-text</code></td>
+                <td>Nomic AI (開源 / Ollama)</td>
+                <td>768</td>
+                <td>8192 Tokens</td>
+                <td><span class="badge badge-blue">良好</span></td>
+                <td>輕量高效、資源消耗低，個人工作站首選</td>
+              </tr>
+              <tr>
+                <td><code>text-embedding-3-small</code></td>
+                <td>OpenAI (雲端 API)</td>
+                <td>1536</td>
+                <td>8191 Tokens</td>
+                <td><span class="badge badge-green">優秀</span></td>
+                <td>允許聯網環境下性價比最高的雲端方案</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ==================== Chapter 6 ==================== -->
+        <h2 id="sec-6">06. 對話雙模式 (Query vs Chat) 與向量檢索精準調校</h2>
+        <p>AnythingLLM 與普通聊天軟體最大的分水嶺，就是其工作區內的<strong>兩種對話模式開關</strong>：</p>
+
+        <div class="callout callout-danger">
+          <div class="callout-title">🚨 Query Mode (嚴格查證模式)：零幻覺的企業剛需</div>
+          <p>在 <strong>Query 模式</strong> 下，AnythingLLM 在組裝 System Prompt 時會向底層模型注入極度嚴格的約束：</p>
+          <pre><code>"You are a helpful assistant. Only answer the user query based SOLELY on the provided context excerpts below. 
+If the answer cannot be found directly in the text, you MUST explicitly respond with: 
+'依據現有文件庫，無法找到相關資訊。' Do NOT use your own external knowledge or hallucinate."</code></pre>
+          <p><strong>適用場景</strong>：法規規章、藥物使用說明、公司報銷標準、金融審計。只要文件沒寫，AI 就絕對不胡說八道，徹底根除大模型胡言亂語的資安風險。</p>
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💬 Chat Mode (常規增強模式)：融合全球知識的創意顧問</div>
+          <p>在 <strong>Chat 模式</strong> 下，檢索出的文件片段僅作為「優先參考背景」。如果文件中沒有提及，模型會動用自身的通用訓練知識來補充回答，並嘗試發散推論。</p>
+          <p><strong>適用場景</strong>：頭腦風暴、軟體架構重構構想、競品分析比較、文案潤飾。</p>
+        </div>
+
+        <h3>向量檢索的核心調校參數 (Workspace Settings)</h3>
+        <p>在 Workspace 的「Vector Database Settings」設定頁中，有兩組關鍵參數直接影響回答品質：</p>
+        <ol>
+          <li><strong>Similarity Threshold (相似度門檻，建議 0.20 ~ 0.35)</strong>：
+            <ul>
+              <li>這代表向量餘弦相似度 (Cosine Distance) 的截斷標準。</li>
+              <li><strong>調得太高 (如 &gt; 0.6)</strong>：過度嚴格，稍微不同詞彙（如「報銷」與「費用核銷」）就無法召回片段，導致模型一直說找不到資訊。</li>
+              <li><strong>調得太低 (如 &lt; 0.1)</strong>：不管問什麼都會拉出一堆不相關的廢話片段，浪費 Context Token 甚至干擾模型推理。</li>
+            </ul>
+          </li>
+          <li><strong>Max Context / Top-K (最大片段召回數，建議 4 ~ 8 個片段)</strong>：
+            <ul>
+              <li>代表每次查詢時，從向量庫挑選出最相關的幾段文字送給 LLM。</li>
+              <li>若模型上下文較大（如 Claude 或 Qwen 32k/128k），可設為 6~10，提供更完整的背景事實。</li>
+            </ul>
+          </li>
+        </ol>
+
+        <!-- ==================== Chapter 7 ==================== -->
+        <h2 id="sec-7">07. AI Agent 代理模式與擴展工具鏈 (Tools & Skills)</h2>
+        <p>自 AnythingLLM v1.5 起，平台正式進化為<strong>自主智能代理 (Agentic Platform)</strong>。當你在輸入框鍵入 <code>@agent</code> 時，它不再只是單純做 RAG 查文件，而是開啟 <strong>ReAct (Reason + Act) 循環</strong>，自主調用外部工具！</p>
+
+        <div class="diagram-card">
+<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
+<span class="hl-cyan">│                  AnythingLLM Agentic Tool Execution Loop               │</span>
+<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
+  [ 使用者指令 ] ──► <span class="hl-green">"@agent 查詢客戶資料庫中上個月訂單總額最高的 5 位客戶，並繪製圓餅圖"</span>
+           │
+           ▼
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ 1. <span class="hl-yellow">Thought (規劃)</span>: 需調用 SQL Connector 查詢 orders 與 customers 表 │
+  └────────────────────────────────┬─────────────────────────────────┘
+                                   │
+                                   ▼
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ 2. <span class="hl-yellow">Action (工具調用)</span>: 執行 SQL 語法                                │
+  │    SELECT c.name, SUM(o.amount) FROM orders o JOIN customers c...│
+  └────────────────────────────────┬─────────────────────────────────┘
+                                   │
+                                   ▼
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ 3. <span class="hl-yellow">Observation (解析結果)</span>: 獲取前五名資料 JSON 陣列                 │
+  └────────────────────────────────┬─────────────────────────────────┘
+                                   │
+                                   ▼
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ 4. <span class="hl-yellow">Next Action (圖表生成)</span>: 調用 Chart Skill 產生視覺化圖表         │
+  └────────────────────────────────┬─────────────────────────────────┘
+                                   │
+                                   ▼
+  [ 最終回應 ] ──► 輸出清晰分析報告 + 互動式圓餅圖
+        </div>
+
+        <h3>核心內建 Agent 工具與配置實務</h3>
+        <ul>
+          <li><strong>Web Search (即時聯網搜尋)</strong>：支援 Brave Search API、Google Custom Search、DuckDuckGo、Tavily 與 SearXNG。當內部知識庫缺少最新資訊時，Agent 會自動上網搜尋最新資料並標註引用出處。</li>
+          <li><strong>SQL Database Connector (資料庫直連分析)</strong>：可填入 PostgreSQL、MySQL 或 SQLite 連線字串。Agent 能讀取資料庫 Schema、自動撰寫 SQL 查詢（預設唯讀安全防護），並以表格或摘要回答問題。</li>
+          <li><strong>Python Code Interpreter & Chart Generator</strong>：能夠動態執行計算代碼，並使用 Chart.js 自動渲染折線圖、長條圖與圓餅圖。</li>
+          <li><strong>Scrape Webpage Skill</strong>：即時抓取使用者在對話中臨時拋出的任一 URL，萃取正文加入當前對話記憶。</li>
+        </ul>
+
+        <!-- ==================== Chapter 8 ==================== -->
+        <h2 id="sec-8">08. 企業級多用戶 RBAC 權限體系與安全審計</h2>
+        <p>在 Docker 生產環境中，開啟多用戶模式（Multi-User Mode）後，AnythingLLM 提供了三層嚴謹的角色型存取控制 (Role-Based Access Control, RBAC)：</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>角色 (Role)</th>
+                <th>系統全域設定</th>
+                <th>工作區管理</th>
+                <th>文件上傳與切塊</th>
+                <th>使用者與密碼管理</th>
+                <th>對話存取範圍</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Admin (超級管理員)</strong></td>
+                <td><span class="badge badge-green">完整權限</span> (LLM、向量庫、API Key)</td>
+                <td><span class="badge badge-green">新增 / 編輯 / 刪除任何工作區</span></td>
+                <td><span class="badge badge-green">完全控制</span></td>
+                <td><span class="badge badge-green">邀請 / 凍結 / 重設</span></td>
+                <td>全系統所有工作區</td>
+              </tr>
+              <tr>
+                <td><strong>Manager (專案經理)</strong></td>
+                <td><span class="badge badge-rose">禁止</span></td>
+                <td><span class="badge badge-blue">管理獲指派之工作區</span></td>
+                <td><span class="badge badge-green">可在獲授權工作區上傳/刪除文件</span></td>
+                <td><span class="badge badge-rose">禁止</span></td>
+                <td>獲指派之特定工作區</td>
+              </tr>
+              <tr>
+                <td><strong>Default User (一般成員)</strong></td>
+                <td><span class="badge badge-rose">禁止</span></td>
+                <td><span class="badge badge-rose">禁止</span> (無法看到設定面板)</td>
+                <td><span class="badge badge-rose">僅唯讀</span> (無法刪除或改動知識庫)</td>
+                <td><span class="badge badge-rose">禁止</span></td>
+                <td>僅能在被分配的工作區內發起對話</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>工作區存取控制清單 (Workspace Access Control)</h3>
+        <p>管理員可以在各個 Workspace 的「User Access」標籤中，針對特定用戶或群組開啟或關閉權限。未獲授權的用戶登入系統後，<strong>在側邊欄連該 Workspace 的名稱與存在都無法感知</strong>，徹底做到安全防護與資安合規。</p>
+
+        <!-- ==================== Chapter 9 ==================== -->
+        <h2 id="sec-9">09. 開發者 REST API 與 Web Widget 網站無縫嵌入</h2>
+        <p>除了給員工內部使用 Web UI，AnythingLLM 還是一套成熟的<strong>私有 RAG 後端 API 服務</strong>。你可以透過 API 將其整合進自家的 ERP、Slack 機器人、CRM 系統，或是透過掛件嵌入官網。</p>
+
+        <h3>1. API 金鑰產生與鑑權</h3>
+        <p>以 Admin 身分進入 <code>Settings ➔ Tools ➔ Developer API</code>，點擊 <code>Generate New API Key</code>。所有的 HTTP 請求均需附帶此 Token：</p>
+        <pre><code>Authorization: Bearer YOUR_DEVELOPER_API_KEY</code></pre>
+
+        <h3>2. 常用 API 端點與 Python 呼叫實戰</h3>
+        <p>以下是使用 Python 呼叫特定 Workspace 發送對話並獲取串流文字的範例代碼：</p>
+
+        <pre><code>import requests
+import json
+
+BASE_URL = "http://localhost:3001/api/v1"
+API_KEY = "YOUR_DEVELOPER_API_KEY"
+WORKSPACE_SLUG = "financial-regulations"
+
+headers = {
+    "Authorization": f"Bearer {API_KEY}",
+    "Content-Type": "application/json"
+}
+
+payload = {
+    "message": "請列出 2026 年最新員工差旅報銷的機票補助上限與憑證要求？",
+    "mode": "query"  # 可選 "query" (嚴格查證) 或 "chat" (一般對話)
+}
+
+response = requests.post(
+    f"{BASE_URL}/workspace/{WORKSPACE_SLUG}/chat",
+    headers=headers,
+    json=payload,
+    stream=True
+)
+
+print(f"[*] 連線狀態: {response.status_code}")
+for line in response.iter_lines():
+    if line:
+        data = line.decode('utf-8')
+        # 解析串流事件資料
+        print(data)</code></pre>
+
+        <h3>3. 一鍵嵌入式網站掛件 (Embeddable Web Chat Widget)</h3>
+        <p>AnythingLLM 支援將任何 Workspace 轉換為對外客服聊天浮窗。進入工作區設定的 <code>Chat Widget</code>，複製生成的 HTML 代碼，貼入任何網頁的 <code>&lt;body&gt;</code> 標籤前即可完成嵌入：</p>
+
+        <pre><code>&lt;!-- 貼入企業內部網站或官網首頁 --&gt;
+&lt;script 
+  src="https://ai.yourcompany.com/embed/anythingllm-chat-widget.min.js"
+  data-embed-id="f89b12a3-4567-89ab-cdef-0123456789ab"
+  data-base-api-url="https://ai.yourcompany.com/api/embed"
+  data-chat-icon="🎯"
+  data-button-color="#2563eb"
+  data-user-bg-color="#2563eb"
+  data-assistant-bg-color="#f3f4f6"&gt;
+&lt;/script&gt;</code></pre>
+
+        <!-- ==================== Chapter 10 ==================== -->
+        <h2 id="sec-10">10. 互動式工具：AnythingLLM 架構配置產生器 & 部署試算器</h2>
+        <p>為了解決不同硬體環境與業務情境下的部署難題，我們設計了這套互動式產生器。你可以自由切換部署方案與硬體參數，即時估算所需記憶體/顯存，並一鍵複製可直接運行的設定檔：</p>
+
+        <div class="interactive-explorer-box">
+          <div class="exp-title">⚡ AnythingLLM 架構配置產生器 & 部署試算器</div>
+          
+          <div class="tab-nav">
+            <button class="tab-btn active" onclick="switchGenTab('calc')">📊 知識庫容量與硬體試算</button>
+            <button class="tab-btn" onclick="switchGenTab('compose')">🐳 Docker Compose 一鍵產生器</button>
+          </div>
+
+          <!-- Tab 1: Hardware & Sizing Calculator -->
+          <div id="tab-calc">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="doc-count">知識庫文件總量 (篇數)</label>
+                <input type="number" id="doc-count" class="form-control" value="1000" min="50" max="100000" step="50" oninput="calculateSizing()">
+              </div>
+              <div class="form-group">
+                <label for="doc-pages">平均每篇文件頁數 (頁)</label>
+                <input type="number" id="doc-pages" class="form-control" value="15" min="1" max="500" oninput="calculateSizing()">
+              </div>
+              <div class="form-group">
+                <label for="llm-model">推論模型規格</label>
+                <select id="llm-model" class="form-control" onchange="calculateSizing()">
+                  <option value="cloud">雲端 API (OpenAI / Claude / DeepSeek) [0 顯存需求]</option>
+                  <option value="7b">本地 7B / 8B 模型 (Q4_K_M，如 Llama 3.3 8B)</option>
+                  <option value="14b" selected>本地 14B 模型 (Q4_K_M，如 DeepSeek-R1 14B)</option>
+                  <option value="32b">本地 32B 模型 (Q4_K_M，如 Qwen 2.5 32B)</option>
+                  <option value="70b">本地 70B 模型 (Q4_K_M，如 Llama 3.3 70B)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="embed-model">Embedding 模型選擇</label>
+                <select id="embed-model" class="form-control" onchange="calculateSizing()">
+                  <option value="bge" selected>bge-m3 (1024 維，最高精準度)</option>
+                  <option value="nomic">nomic-embed-text (768 維，輕量極速)</option>
+                  <option value="openai">OpenAI text-embedding-3 (1536 維)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="concurrency">同時間活躍對話人數</label>
+                <input type="number" id="concurrency" class="form-control" value="10" min="1" max="200" oninput="calculateSizing()">
+              </div>
+            </div>
+
+            <div class="stat-cards-grid">
+              <div class="stat-card-mini">
+                <div class="stat-val" id="res-chunks">45,000</div>
+                <div class="stat-desc">總切片數量 (Chunks)</div>
+              </div>
+              <div class="stat-card-mini">
+                <div class="stat-val" id="res-vector-storage">176 MB</div>
+                <div class="stat-desc">預估 LanceDB 向量體積</div>
+              </div>
+              <div class="stat-card-mini">
+                <div class="stat-val" id="res-vram">10.5 GB</div>
+                <div class="stat-desc">建議最低 GPU 顯存 (VRAM)</div>
+              </div>
+              <div class="stat-card-mini">
+                <div class="stat-val" id="res-ram">16 GB</div>
+                <div class="stat-desc">建議最低系統記憶體 (RAM)</div>
+              </div>
+            </div>
+
+            <div class="callout callout-tip" style="margin-bottom: 0;">
+              <div class="callout-title" id="res-recommendation-title">💡 硬體選型建議結論</div>
+              <p id="res-recommendation-text" style="margin-bottom: 0;">載入中...</p>
+            </div>
+          </div>
+
+          <!-- Tab 2: Docker Compose Generator -->
+          <div id="tab-compose" style="display: none;">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="compose-env">部署環境型態</label>
+                <select id="compose-env" class="form-control" onchange="generateCompose()">
+                  <option value="gpu">Docker Compose + 本地 Ollama (啟用 NVIDIA GPU)</option>
+                  <option value="cpu">Docker Compose + 本地 Ollama (純 CPU 推論)</option>
+                  <option value="standalone">單獨 AnythingLLM 容器 (對接雲端 API 或外部 Ollama)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="compose-port">對外 HTTP 連接埠</label>
+                <input type="number" id="compose-port" class="form-control" value="3001" oninput="generateCompose()">
+              </div>
+              <div class="form-group">
+                <label for="compose-multiuser">多用戶權限模式</label>
+                <select id="compose-multiuser" class="form-control" onchange="generateCompose()">
+                  <option value="true" selected>啟用多用戶 (Multi-User RBAC)</option>
+                  <option value="false">單用戶模式 (Single User)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="code-preview-wrap">
+              <button class="copy-output-btn" onclick="copyConfigOutput('compose-output-code')">📋 複製 YAML 代碼</button>
+              <pre><code id="compose-output-code"># 自動生成中...</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== Chapter 11 ==================== -->
+        <h2 id="sec-11">11. 常見踩坑排查 (Troubleshooting) 與工程最佳實踐</h2>
+        <p>在生產部署與實際運行 AnythingLLM 時，工程師經常會遇到幾類棘手的邊界問題。以下是經由實戰提煉的避坑清單：</p>
+
+        <h3>常見故障排查 (Troubleshooting)</h3>
+        
+        <div class="callout callout-warning">
+          <div class="callout-title">⚠️ 故障 1：Docker 內的 AnythingLLM 無法連線至宿主機 Ollama (報錯 <code>Connection Refused: 11434</code>)</div>
+          <p><strong>根本原因</strong>：Ollama 預設只監聽 <code>127.0.0.1:11434</code>，不接受非本機 IP 請求；且容器內的 <code>localhost</code> 指向容器自己而非宿主機。</p>
+          <p><strong>解決方案</strong>：</p>
+          <ol>
+            <li>在宿主機修改 Ollama 環境變數，使其監聽全介面：
+              <pre><code># Linux systemd (/etc/systemd/system/ollama.service)
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+
+# 或 Windows / macOS 在環境變數中新增 OLLAMA_HOST=0.0.0.0:11434 並重啟 Ollama</code></pre>
+            </li>
+            <li>在 AnythingLLM 的 Ollama Base URL 填入 <code>http://host.docker.internal:11434</code>（若兩者在同一個 Compose 網路則填 <code>http://ollama:11434</code>）。</li>
+          </ol>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-title">⚠️ 故障 2：檔案已上傳且向量化成功，但 Query 模式永遠回答「找不到資訊」</div>
+          <p><strong>根本原因</strong>：Workspace 內的 <code>Similarity Threshold</code> (相似度門檻) 設定過高，或者文字切片 (Chunk Size) 切分不合理。</p>
+          <p><strong>解決方案</strong>：進入 Workspace 設定 ➔ Vector Database ➔ 將 <code>Similarity Threshold</code> 從原本的 0.7 降至 <code>0.20 ~ 0.30</code>。另外檢查上傳的 PDF 是否為純掃描圖片檔（若未啟用 OCR，萃取出來的純文字會是一片空白）。</p>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-title">⚠️ 故障 3：LanceDB 向量資料庫損毀或鎖定 (<code>Lock file active</code>)</div>
+          <p><strong>根本原因</strong>：伺服器異常斷電或 Docker 容器被強行 <code>kill -9</code> 終止，導致 LanceDB 的 lock 文件未正常釋放。</p>
+          <p><strong>解決方案</strong>：停止容器，進入儲存目錄下清理殘留 lock 檔案：
+            <pre><code>docker stop anythingllm
+cd /app/server/storage/vector-cache/lancedb  # 或具名卷目錄
+find . -name "*.lock" -delete
+docker start anythingllm</code></pre>
+          </p>
+        </div>
+
+        <h3>十條生產環境工程最佳實踐 (Best Practices)</h3>
+        <ol>
+          <li><strong>定期備份 Storage 卷</strong>：AnythingLLM 的所有核心數據（SQLite 資料庫、工作區定義、LanceDB 向量資料）全都集中在 <code>/app/server/storage</code> 目錄下。只需對該目錄執行定時 <code>tar.gz</code> 備份，即可達成完整的災難復原。</li>
+          <li><strong>嚴格控制 Context Window 上限</strong>：不要無腦把 Context 開到 128k。過大的 Context 會顯著拉長推論前綴處理 (Prefill Time) 延遲，導致首字反應時間 (TTFT) 飆升至 10 秒以上。建議設在 8k ~ 16k。</li>
+          <li><strong>混合 Embedding 策略</strong>：中文內部文件優先使用 <code>bge-m3</code>；純英文或代碼庫優先使用 <code>nomic-embed-text</code>。</li>
+          <li><strong>PDF 上傳前進行預處理</strong>：對於包含大量複雜雙欄排版、跨頁長表格的技術手冊，先用外部工具（如 MinerU 或 Marker）轉化為結構清晰的 Markdown 再上傳，檢索召回率能提升 40% 以上。</li>
+          <li><strong>分權管理與密碼安全</strong>：生產環境切勿使用預設密碼，並儘早透過環境變數配置強隨機 <code>JWT_SECRET</code>。</li>
+          <li><strong>善用 Document Pinning (文件鎖定)</strong>：被 Pin 住的文件會強制將全文或重要段落保留在系統背景 Prompt 中，適用於公司簡介、統一術語表等每個對話都需要參照的通用規範。</li>
+          <li><strong>關閉反向代理緩衝 (Proxy Buffering)</strong>：務必在 Nginx 中設定 <code>proxy_buffering off;</code>，否則對話無法實現流式打字機效果，用戶體驗極差。</li>
+          <li><strong>為 Ollama 設定並發上限</strong>：多用戶同時提問時，Ollama 預設排隊可能超時。可透過 <code>OLLAMA_NUM_PARALLEL=4</code> 允許同時處理多個用戶請求（需預留足夠顯存）。</li>
+          <li><strong>定期審計日誌</strong>：在 Admin 面板的 Logs 中檢視系統日誌，監控是否有惡意提示詞注入 (Prompt Injection) 或異常高頻率的 API 調用。</li>
+          <li><strong>善用 Agent Slash Commands</strong>：在對話中教導同仁使用 <code>/reset</code> 清空上下文重啟思路，保持每輪業務諮詢的精確聚焦。</li>
+        </ol>
+
+        <div class="article-footer">
+          <p><a href="./articles.html" class="back-home">← 返回所有文章列表</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- =============== Footer =============== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>"AI" 硬核工程師</h3>
+          <p>專注於前端開發、後端架構、本地 LLM 與 Agentic AI 落地實踐的技術工程手冊。</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速連結</h4>
+          <div class="footer-links">
+            <a href="./index.html">首頁</a>
+            <a href="./articles.html">所有文章</a>
+            <a href="./tech-news.html">科技新知</a>
+            <a href="./about.html">關於本站</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>主題文章</h4>
+          <div class="footer-links">
+            <a href="./ollama-local-llm.html">Ollama 本地大模型攻略</a>
+            <a href="./claude-code-mcp-skill-guide.html">Claude Code & MCP 全攻略</a>
+            <a href="./rag-technology-guide.html">RAG 技術原理手冊</a>
+            <a href="./nas-storage-comparison.html">NAS 儲存架構指南</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>聯絡方式</h4>
+          <div class="footer-links">
+            <a href="mailto:cai100.cyc@gmail.com">信箱</a>
+            <a href="https://github.com/Robert-cYc">GitHub</a>
+            <a href="https://x.com/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2026 "AI" 硬核工程師 · Talk is cheap. Show me the code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="./js/wave.js"></script>
+  <script src="./js/bg-effects.js?v=10"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+
+  <script>
+    // Tab switching for Explorer Box
+    function switchGenTab(tab) {
+      const calcPane = document.getElementById('tab-calc');
+      const composePane = document.getElementById('tab-compose');
+      const btns = document.querySelectorAll('.tab-btn');
+
+      if (tab === 'calc') {
+        calcPane.style.display = 'block';
+        composePane.style.display = 'none';
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+        calculateSizing();
+      } else {
+        calcPane.style.display = 'none';
+        composePane.style.display = 'block';
+        btns[0].classList.remove('active');
+        btns[1].classList.add('active');
+        generateCompose();
+      }
+    }
+
+    // Interactive Sizing Calculator
+    function calculateSizing() {
+      const docs = parseInt(document.getElementById('doc-count').value) || 1000;
+      const pages = parseInt(document.getElementById('doc-pages').value) || 15;
+      const model = document.getElementById('llm-model').value;
+      const embed = document.getElementById('embed-model').value;
+      const concurrency = parseInt(document.getElementById('concurrency').value) || 10;
+
+      // 1 page ≈ 600 words ≈ 1.5 chunks (approx 400 words per chunk with 20% overlap)
+      const totalChunks = Math.round(docs * pages * 1.5);
+      
+      // Vector dimension
+      let dim = 1024;
+      if (embed === 'nomic') dim = 768;
+      if (embed === 'openai') dim = 1536;
+
+      // LanceDB storage: vector (dim * 4 bytes float32) + metadata (approx 500 bytes per chunk)
+      const bytesPerChunk = (dim * 4) + 500;
+      const totalStorageBytes = totalChunks * bytesPerChunk;
+      const storageMB = (totalStorageBytes / (1024 * 1024)).toFixed(1);
+
+      // Model VRAM
+      let baseVram = 0;
+      let modelDesc = '';
+      if (model === 'cloud') {
+        baseVram = 0;
+        modelDesc = '雲端 API 推論（本地僅需輕量 CPU 與 RAM 運行 AnythingLLM）';
+      } else if (model === '7b') {
+        baseVram = 6.0;
+        modelDesc = '7B/8B Q4 量化模型：單張 RTX 3060 12GB 或 RTX 4060Ti 16GB 即可流暢滿血運作';
+      } else if (model === '14b') {
+        baseVram = 10.5;
+        modelDesc = '14B Q4 量化模型：建議單張 12GB ~ 16GB 顯卡 (如 RTX 4070 12G / RTX 4080 16G)';
+      } else if (model === '32b') {
+        baseVram = 22.0;
+        modelDesc = '32B Q4 量化模型：建議單張 RTX 3090 / 4090 24GB，或 Mac Studio (M2/M3/M4 Max 36G+)';
+      } else if (model === '70b') {
+        baseVram = 44.0;
+        modelDesc = '70B Q4 量化模型：需雙卡 RTX 3090/4090 48GB，或 Mac Studio 64GB/128GB 統一記憶體';
+      }
+
+      // Embedding VRAM if local
+      let embedVram = 0;
+      if (embed !== 'openai' && model !== 'cloud') {
+        embedVram = 1.8; // bge-m3 or nomic
+      }
+
+      const totalVram = (baseVram + embedVram).toFixed(1);
+
+      // RAM sizing
+      let minRam = 8;
+      if (docs > 5000 || concurrency > 20) minRam = 16;
+      if (docs > 20000 || concurrency > 50) minRam = 32;
+      if (model === '32b' && baseVram === 0) minRam = 32;
+
+      // Update DOM
+      document.getElementById('res-chunks').textContent = totalChunks.toLocaleString();
+      document.getElementById('res-vector-storage').textContent = storageMB > 1024 ? (storageMB / 1024).toFixed(2) + ' GB' : storageMB + ' MB';
+      document.getElementById('res-vram').textContent = totalVram > 0 ? totalVram + ' GB' : '0 GB (雲端)';
+      document.getElementById('res-ram').textContent = minRam + ' GB';
+
+      document.getElementById('res-recommendation-title').textContent = `💡 硬體選型總結：預估支撐 ${docs.toLocaleString()} 篇文件與 ${concurrency} 人併發`;
+      document.getElementById('res-recommendation-text').textContent = 
+        `在此規模下，預估產生約 ${totalChunks.toLocaleString()} 個向量切片，內建 LanceDB 空間僅需 ${storageMB > 1024 ? (storageMB/1024).toFixed(2)+' GB':storageMB+' MB'}。${modelDesc}。系統建議配置至少 ${minRam}GB 系統記憶體與高速 NVMe SSD 儲存，以確保毫秒級向量搜尋體驗。`;
+    }
+
+    // Dynamic Docker Compose Generator
+    function generateCompose() {
+      const env = document.getElementById('compose-env').value;
+      const port = document.getElementById('compose-port').value || 3001;
+      const isMulti = document.getElementById('compose-multiuser').value === 'true';
+
+      let yaml = '';
+
+      if (env === 'gpu') {
+        yaml = `services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: anythingllm-app
+    restart: always
+    ports:
+      - "${port}:3001"
+    environment:
+      - SERVER_PORT=3001
+      - STORAGE_DIR=/app/server/storage
+      - JWT_SECRET=prod-secret-token-replace-me-random-string
+      - DISABLE_TELEMETRY=true
+${isMulti ? '      # 預設為多用戶模式 (在管理員面板邀請成員並設置 RBAC 權限)\n' : ''}    volumes:
+      - anythingllm_storage:/app/server/storage
+    depends_on:
+      - ollama
+    networks:
+      - ai-network
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama-engine
+    restart: always
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    networks:
+      - ai-network
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+volumes:
+  anythingllm_storage:
+    driver: local
+  ollama_models:
+    driver: local
+
+networks:
+  ai-network:
+    driver: bridge`;
+      } else if (env === 'cpu') {
+        yaml = `services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: anythingllm-app
+    restart: always
+    ports:
+      - "${port}:3001"
+    environment:
+      - SERVER_PORT=3001
+      - STORAGE_DIR=/app/server/storage
+      - JWT_SECRET=prod-secret-token-replace-me-random-string
+      - DISABLE_TELEMETRY=true
+    volumes:
+      - anythingllm_storage:/app/server/storage
+    depends_on:
+      - ollama
+    networks:
+      - ai-network
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama-engine
+    restart: always
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    networks:
+      - ai-network
+
+volumes:
+  anythingllm_storage:
+    driver: local
+  ollama_models:
+    driver: local
+
+networks:
+  ai-network:
+    driver: bridge`;
+      } else {
+        yaml = `services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: anythingllm-app
+    restart: always
+    ports:
+      - "${port}:3001"
+    environment:
+      - SERVER_PORT=3001
+      - STORAGE_DIR=/app/server/storage
+      - JWT_SECRET=prod-secret-token-replace-me-random-string
+      - DISABLE_TELEMETRY=true
+    volumes:
+      - anythingllm_storage:/app/server/storage
+
+volumes:
+  anythingllm_storage:
+    driver: local`;
+      }
+
+      document.getElementById('compose-output-code').textContent = yaml;
+    }
+
+    // Copy Output Function
+    function copyConfigOutput(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('✓ 配置代碼已成功複製至剪貼簿！');
+      }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        alert('✓ 配置代碼已成功複製至剪貼簿！');
+      });
+    }
+
+    // Init on load
+    document.addEventListener('DOMContentLoaded', () => {
+      calculateSizing();
+      generateCompose();
+    });
+  </script>
+</body>
+</html>

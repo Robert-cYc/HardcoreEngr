@@ -1,5 +1,26 @@
 [
   {
+    "url": "anythingllm-guide.html",
+    "title": "AnythingLLM 終極教學與實戰操作手冊：從本地桌面到企業級 Docker 部署、全能 RAG 知識庫架構、向量資料庫調校與 AI Agent 代理深度指南",
+    "excerpt": "最完整的 AnythingLLM 全能私有化 RAG 知識庫實戰指南：深度解析 Workspace 工作區多租戶隔離機制、本地桌面端 (Windows/macOS/Linux) 安裝、Ollama 與 LM Studio 無縫對接、企業級 Docker Compose 與 NVIDIA GPU 容器化生產部署、多元文件攝取 (PDF OCR/網站爬蟲/GitHub/YouTube)、LanceDB 嵌入式向量庫、Query vs Chat 模式調校、AI Agent 工具擴展 (SQL/Web Search)、多用戶 RBAC 權限管控與 REST API/Web Widget 嵌入。內建互動式配置產生器與硬體規格試算器。",
+    "tags": [
+      "AnythingLLM",
+      "RAG",
+      "向量資料庫",
+      "LanceDB",
+      "Ollama",
+      "LM Studio",
+      "Docker",
+      "Agentic AI",
+      "私有化部署",
+      "企業知識庫",
+      "RBAC",
+      "Web Scraper",
+      "REST API"
+    ],
+    "image": "./images/anythingllm-guide.jpg"
+  },
+  {
     "url": "claude-code-mcp-skill-guide.html",
     "title": "Claude Code 終極深度指南：MCP (Model Context Protocol) 核心架構、.mcp.json 配置與自定義 Skill 實戰全攻略",
     "excerpt": "全維度深度剖析 Claude Code 終端自主代理生態：從 Agentic Loop 運作原理、MCP 協議標準（Tools、Resources、Prompts 與 stdio/SSE 傳輸架構）、.mcp.json 專案與全域配置、8 大生產力 MCP Server 推薦，到手寫 Python FastMCP 與 TypeScript 自定義 Server、Skill 自定義 Slash Commands 工作流、Hooks 生命週期防禦攔截，內建互動式配置產生器。",
