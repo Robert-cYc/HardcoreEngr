@@ -279,6 +279,231 @@
       box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
     }
 
+    /* Modern RAG Architecture Diagram */
+    .rag-diagram {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 2.2rem 2rem;
+      margin: 2rem 0;
+      width: 100%;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+    }
+
+    .diagram-title-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.4rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 9999px;
+      color: #38bdf8;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+      text-align: center;
+    }
+
+    .rag-top-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 580px;
+    }
+
+    .rag-node {
+      width: 100%;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 0.85rem 1.4rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.96rem;
+      color: #f1f5f9;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+    }
+    .rag-node:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+    .rag-client {
+      border-color: #6366f1;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(56, 189, 248, 0.1));
+      color: #c7d2fe;
+      font-size: 1rem;
+    }
+    .rag-protocol-tag {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px dashed #f59e0b;
+      color: #fbbf24;
+      padding: 0.2rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      font-family: "SF Mono", Consolas, monospace;
+      margin: 0.4rem 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .rag-gateway {
+      border-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+      color: #38bdf8;
+    }
+
+    .vert-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .vert-arrow .line {
+      width: 2px;
+      height: 14px;
+      background: #475569;
+    }
+    .vert-arrow .arrow {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #475569;
+    }
+
+    .rag-dual-tracks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    .rag-track {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .track-header-badge {
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .ingestion-badge {
+      background: rgba(244, 63, 94, 0.12);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      color: #fda4af;
+    }
+    .retrieval-badge {
+      background: rgba(74, 222, 128, 0.12);
+      border: 1px solid rgba(74, 222, 128, 0.4);
+      color: #86efac;
+    }
+    .rag-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .rag-card .card-title {
+      font-weight: 700;
+      font-size: 0.94rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .ingestion-card {
+      border-color: rgba(244, 63, 94, 0.3);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(244, 63, 94, 0.04));
+    }
+    .ingestion-card .card-title { color: #fb7185; }
+    .retrieval-card {
+      border-color: rgba(74, 222, 128, 0.3);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(74, 222, 128, 0.04));
+    }
+    .retrieval-card .card-title { color: #4ade80; }
+    .vector-card {
+      border-color: rgba(168, 85, 247, 0.35);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(168, 85, 247, 0.05));
+    }
+    .vector-card .card-title { color: #c084fc; }
+    .llm-card {
+      border-color: rgba(56, 189, 248, 0.35);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(56, 189, 248, 0.05));
+    }
+    .llm-card .card-title { color: #38bdf8; }
+
+    .rag-card-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      line-height: 1.45;
+    }
+    .rag-card-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: 0 !important;
+      display: block;
+      word-break: break-word;
+    }
+    .rag-card-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0.2rem;
+      top: 0;
+      color: #64748b;
+      font-weight: bold;
+    }
+    .rag-card-list li strong {
+      color: #f8fafc;
+    }
+    .vector-write-flow {
+      background: rgba(168, 85, 247, 0.1);
+      border: 1px dashed rgba(168, 85, 247, 0.4);
+      border-radius: 6px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.82rem;
+      color: #d8b4fe;
+      text-align: center;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    @media (max-width: 720px) {
+      .rag-dual-tracks {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Interactive Box Components */
     .interactive-explorer-box {
       background: var(--bg-alt);
@@ -579,30 +804,137 @@
         <h3>AnythingLLM 內部架構與通訊拓撲</h3>
         <p>AnythingLLM 的架構設計極為巧妙，它將「文件萃取處理」、「向量數據存儲」與「模型推論交互」三者解耦為高度可插拔的模組：</p>
 
-        <div class="diagram-card">
-          <div class="diagram-banner">AnythingLLM 一體化私有 RAG 內部架構拓撲</div>
-  [ 使用者介面 (Web / Desktop App / Embed Widget) ] ──(WebSocket / REST)──► [ Express API Gateway ]
-                                                                                   │
-     ┌─────────────────────────────────────────────────────────────────────────────┴──────────┐
-     ▼                                                                                        ▼
-  <b>【1. Ingestion 知識入庫管線】</b>                                           <b>【2. Retrieval & Agent 檢索推論】</b>
-  ├── <b>Document Collector (多源萃取)</b>                                       ├── <b>Query/Agent Engine (執行核心)</b>
-  │   PDF / Word / Excel / TXT / EPUB / Web Crawler                       │   Workspace Prompt Context 組裝
-  │   YouTube Audio (Whisper) / GitHub 程式碼庫全量拉取                   │   Query Mode (嚴格無幻覺過濾)
-  │                                                                       │   Agent Loop (ReAct 自主代理迴圈)
-  ▼                                                                       ▼
-  ├── <b>Text Chunking (文本切片)</b>                                            ├── <b>Hybrid Search (混合檢索)</b>
-  │   切塊大小 (Chunk Size) + 重疊滑窗 (Overlap)                          │   Top-K 語意相似度檢索 (Cosine Similarity)
-  │                                                                       │
-  ▼                                                                       ▼
-  ├── <b>Embedding Model (向量化)</b>                                            ├── <b>Vector Storage (向量資料庫)</b>
-  │   Ollama (nomic-embed-text) / OpenAI / Native                         │   內建 LanceDB (零依賴嵌入式) / Chroma / Qdrant
-  │   └──► [ 輸出向量寫入 Vector Storage 向量資料庫 ]
-                                                                          │
-                                                                          ▼
-                                                                          └── <b>LLM Providers (推論引擎路由)</b>
-                                                                              Local: Ollama / LM Studio / vLLM
-                                                                              Cloud: OpenAI / Claude / DeepSeek
+        <div class="rag-diagram">
+          <div class="diagram-title-pill">
+            <span>AnythingLLM 一體化私有 RAG 內部架構拓撲</span>
+          </div>
+
+          <div class="rag-top-stack">
+            <div class="rag-node rag-client">
+              🖥️ 使用者介面 (Web / Desktop App / Embed Widget)
+            </div>
+
+            <div class="rag-protocol-tag">
+              <span>⇄</span> WebSocket / REST API 通訊
+            </div>
+
+            <div class="rag-node rag-gateway">
+              ⚡ Express API Gateway (路由分發與權限控管)
+            </div>
+          </div>
+
+          <!-- SVG Fork Down -->
+          <svg style="width: 100%; max-width: 620px; height: 42px; overflow: visible; margin: 0.4rem 0;" viewBox="0 0 620 42" fill="none">
+            <path d="M310 0 V16 M155 16 H465 M155 16 V36 M465 16 V36" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+            <polygon points="150,34 160,34 155,40" fill="#475569"/>
+            <polygon points="460,34 470,34 465,40" fill="#475569"/>
+          </svg>
+
+          <div class="rag-dual-tracks">
+            <!-- Left Track: Ingestion -->
+            <div class="rag-track">
+              <div class="track-header-badge ingestion-badge">
+                📥 1. Ingestion 知識入庫管線
+              </div>
+
+              <div class="rag-card ingestion-card">
+                <div class="card-title">Document Collector (多源文檔解析)</div>
+                <ul class="rag-card-list">
+                  <li><strong>格式支援</strong>：PDF, Word, Excel, TXT, EPUB</li>
+                  <li><strong>網路爬蟲</strong>：Web Scraper & URL Crawler</li>
+                  <li><strong>多媒體</strong>：YouTube Audio (Whisper 本地轉寫)</li>
+                  <li><strong>代碼倉庫</strong>：GitHub Repo 全量拉取</li>
+                </ul>
+              </div>
+
+              <div class="vert-arrow">
+                <div class="line"></div>
+                <div class="arrow"></div>
+              </div>
+
+              <div class="rag-card ingestion-card">
+                <div class="card-title">Text Chunking (智慧文本切片)</div>
+                <ul class="rag-card-list">
+                  <li><strong>切片大小</strong>：Chunk Size (例如 1000 Tokens)</li>
+                  <li><strong>滑窗重疊</strong>：Overlap (例如 200 Tokens)</li>
+                  <li>維持語意連續性，防止上下文語意撕裂</li>
+                </ul>
+              </div>
+
+              <div class="vert-arrow">
+                <div class="line"></div>
+                <div class="arrow"></div>
+              </div>
+
+              <div class="rag-card ingestion-card">
+                <div class="card-title">Embedding Model (向量化嵌入)</div>
+                <ul class="rag-card-list">
+                  <li><strong>本地私有</strong>：Ollama (nomic-embed-text)</li>
+                  <li><strong>內建引擎</strong>：AnythingLLM Native Embed</li>
+                  <li><strong>商業雲端</strong>：OpenAI text-embedding-3</li>
+                </ul>
+              </div>
+
+              <div class="vector-write-flow">
+                <span>💾</span> 輸出高維向量 ──► 自動持久化至向量資料庫
+              </div>
+            </div>
+
+            <!-- Right Track: Retrieval & Inference -->
+            <div class="rag-track">
+              <div class="track-header-badge retrieval-badge">
+                🔍 2. Retrieval & Agent 檢索推論
+              </div>
+
+              <div class="rag-card retrieval-card">
+                <div class="card-title">Query/Agent Engine (執行核心)</div>
+                <ul class="rag-card-list">
+                  <li><strong>Context 組裝</strong>：Workspace Prompt System Context</li>
+                  <li><strong>Query Mode</strong>：嚴格依據知識庫，零幻覺過濾</li>
+                  <li><strong>Agent Loop</strong>：ReAct 自主代理 (SQL / Web / Code)</li>
+                </ul>
+              </div>
+
+              <div class="vert-arrow">
+                <div class="line"></div>
+                <div class="arrow"></div>
+              </div>
+
+              <div class="rag-card retrieval-card">
+                <div class="card-title">Hybrid Search (混合檢索)</div>
+                <ul class="rag-card-list">
+                  <li><strong>向量搜尋</strong>：Top-K 餘弦相似度 (Cosine Similarity)</li>
+                  <li><strong>關鍵字匹配</strong>：BM25 全文重排序精確召回</li>
+                </ul>
+              </div>
+
+              <div class="vert-arrow">
+                <div class="line"></div>
+                <div class="arrow"></div>
+              </div>
+
+              <div class="rag-card vector-card">
+                <div class="card-title">3. Vector Storage (向量資料庫)</div>
+                <ul class="rag-card-list">
+                  <li><strong>內建預設</strong>：LanceDB (零依賴 Serverless 嵌入式)</li>
+                  <li><strong>企業外接</strong>：Chroma, Qdrant, Milvus, Weaviate</li>
+                </ul>
+              </div>
+
+              <div class="vert-arrow">
+                <div class="line"></div>
+                <div class="arrow"></div>
+              </div>
+
+              <div class="rag-card llm-card">
+                <div class="card-title">4. LLM Providers (推論引擎路由)</div>
+                <ul class="rag-card-list">
+                  <li><strong>本地晶片</strong>：Ollama, LM Studio, vLLM (RTX 加速)</li>
+                  <li><strong>雲端巨頭</strong>：Claude 3.7, DeepSeek-R1, GPT-4o</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
         <p>這套架構最大的好處在於：<strong>你可以自由組合「隱私性」與「算力成本」</strong>。例如：使用本機 Ollama 跑 `nomic-embed-text` 做向量嵌入，資料儲存在內建的 LanceDB，推論時呼叫本地 RTX 顯卡跑 `DeepSeek-R1-Distill-Qwen-14B`，整個過程<strong>完全不經過任何外部網際網路，達成 100% 機密實體隔離 (Air-gapped)</strong>！</p>
@@ -850,13 +1182,14 @@ server {
         <p>文件上傳後，系統會將長文切分成多個小型片段（Chunks）。切塊策略直接決定了檢索召回率與理解精準度：</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">原始長文件 (10,000 字)</span>
-   │
-   ├──► <span class="hl-green">[ Chunk 1: 1000 Tokens ]</span> ──────────┐
-   │            ▲                          │ Overlap (重疊區 200 Tokens)
-   ├──►         └─────────► <span class="hl-yellow">[ Chunk 2: 1000 Tokens ]</span> ──────────┐
-   │                                   ▲                          │ Overlap (200 Tokens)
-   └──►                                └─────────► <span class="hl-pink">[ Chunk 3: 1000 Tokens ]</span>
+          <div class="diagram-banner">文本切塊 (Chunking) 與滑窗重疊 (Overlap) 機制</div>
+<span class="hl-cyan">原始長文件 (10,000 Tokens 全文)</span>
+  │
+  ├──► <span class="hl-green">[ Chunk 1: Tokens 0 ~ 1000 ]</span> ──────┐
+  │                                       │ Overlap: 200 Tokens
+  ├──► <span class="hl-yellow">[ Chunk 2: Tokens 800 ~ 1800 ]</span> ────┴──┐
+  │                                          │ Overlap: 200 Tokens
+  └──► <span class="hl-pink">[ Chunk 3: Tokens 1600 ~ 2600 ]</span> ───────┘
         </div>
 
         <ul>
