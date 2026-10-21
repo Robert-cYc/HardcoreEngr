@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Google Antigravity 三大產品型態終極橫評：Desktop v.s IDE v.s agy (CLI) 架構解析、工作流差異與最佳選型指南 — "AI" 硬核工程師</title>
+  <link href="data:,🎯" rel="icon"/>
+  <meta content="Google Antigravity 終極對比：深入剖析 Antigravity Desktop 2.0 獨立多代理指揮中心、Antigravity IDE 沉浸式 AI 原生編輯器，以及 agy 終端命令列極速引擎。涵蓋架構底層、AI Modalities (Tab/Cmd+I/Agent)、排程調度、Unix Pipeline 串接與多維度選型矩陣。" name="description"/>
+  <meta href="https://ai-hardcore-engineer.com/antigravity-desktop-vs-ide-vs-agy.html" name="canonical"/>
+  <meta content="Google Antigravity 三大產品型態終極橫評：Desktop v.s IDE v.s agy (CLI) 架構解析、工作流差異與最佳選型指南 — &quot;AI&quot; 硬核工程師" property="og:title"/>
+  <meta content="Google Antigravity 終極對比：深入剖析 Antigravity Desktop 2.0 獨立多代理指揮中心、Antigravity IDE 沉浸式 AI 原生編輯器，以及 agy 終端命令列極速引擎。涵蓋架構底層、AI Modalities (Tab/Cmd+I/Agent)、排程調度、Unix Pipeline 串接與多維度選型矩陣。" property="og:description"/>
+  <meta content="https://ai-hardcore-engineer.com/antigravity-desktop-vs-ide-vs-agy.html" property="og:url"/>
+  <meta content="article" property="og:type"/>
+  <meta content="./images/antigravity-desktop-vs-ide-vs-agy-guide.jpg" property="og:image"/>
+  <meta content="&quot;AI&quot; 硬核工程師" property="og:site_name"/>
+  <meta content="zh_TW" property="og:locale"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Google Antigravity 三大產品型態終極橫評：Desktop v.s IDE v.s agy (CLI) 架構解析、工作流差異與最佳選型指南 — &quot;AI&quot; 硬核工程師" name="twitter:title"/>
+  <meta content="Google Antigravity 終極對比：深入剖析 Antigravity Desktop 2.0 獨立多代理指揮中心、Antigravity IDE 沉浸式 AI 原生編輯器，以及 agy 終端命令列極速引擎。涵蓋架構底層、AI Modalities (Tab/Cmd+I/Agent)、排程調度、Unix Pipeline 串接與多維度選型矩陣。" name="twitter:description"/>
+  <meta content="./images/antigravity-desktop-vs-ide-vs-agy-guide.jpg" name="twitter:image"/>
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link href="https://ai-hardcore-engineer.com/feed.xml" rel="alternate" title="AI 硬核工程師 RSS" type="application/rss+xml"/>
+  <link href="https://cdn.jsdelivr.net" rel="preconnect"/>
+  <link href="./css/style.css" rel="stylesheet"/>
+  <style>
+    .article-hero { text-align: center; padding: 4rem 0 2rem; }
+    .article-hero h1 { font-size: 2.85rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.25; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 1.15rem; margin-bottom: 1.5rem; }
+    .article-hero img { border-radius: 12px; max-height: 460px; object-fit: cover; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin-top: 1rem; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-body { max-width: 62em; margin: 0 auto; line-height: 1.85; font-size: 1.05rem; }
+    .article-body h2 { font-size: 2.1rem; font-weight: 700; margin: 3rem 0 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 0.6rem; }
+    .article-body h3 { font-size: 1.55rem; font-weight: 600; margin: 2rem 0 0.9rem; color: var(--text); }
+    .article-body h4 { font-size: 1.25rem; font-weight: 600; margin: 1.4rem 0 0.6rem; color: var(--text); }
+    .article-body p { margin-bottom: 1.25rem; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.2rem 0.45rem; border-radius: 4px; font-size: 0.95em; color: #e11d48; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; overflow-x: auto; margin: 1.6rem 0; position: relative; }
+    .article-body pre code { background: none; padding: 0; color: var(--text); font-size: 0.92rem; }
+    .article-body blockquote { border-left: 4px solid var(--accent); background: var(--bg-alt); padding: 1.1rem 1.6rem; margin: 1.8rem 0; border-radius: 0 10px 10px 0; }
+    .article-body ul, .article-body ol { margin: 1.2rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.6rem; }
+    .table-container { width: 100%; overflow-x: auto; margin: 2rem 0; border: 1px solid var(--border); border-radius: 10px; }
+    .article-body table { width: 100%; border-collapse: collapse; font-size: 0.96rem; min-width: 720px; }
+    .article-body th, .article-body td { padding: 0.85rem 1.1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 700; color: var(--text); background: var(--bg-alt); white-space: nowrap; }
+    .article-body tr:hover td { background: rgba(59, 130, 246, 0.04); }
+
+    /* Badges */
+    .badge-pill { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+
+    /* Comparison Cards */
+    .surface-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .surface-card { background: var(--bg-alt); border: 1.5px solid var(--border); border-radius: 12px; padding: 1.6rem; box-shadow: 0 4px 16px rgba(0,0,0,0.03); transition: transform 0.2s ease, border-color 0.2s ease; display: flex; flex-direction: column; justify-content: space-between; }
+    .surface-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .surface-card-header { margin-bottom: 1rem; }
+    .surface-card-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem; display: flex; align-items: center; justify-content: space-between; }
+    .surface-card-subtitle { font-size: 0.88rem; color: var(--text-muted); font-weight: 500; }
+    .surface-card-body { font-size: 0.95rem; line-height: 1.7; flex-grow: 1; }
+    .surface-card-body ul { padding-left: 1.2rem; margin: 0.8rem 0; }
+    .surface-card-body li { margin-bottom: 0.4rem; }
+
+    /* Quick TOC */
+    .quick-nav-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.8rem; margin: 2.2rem 0; }
+    .quick-nav-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text); }
+    .quick-nav-list { list-style: none; padding-left: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem 1.5rem; }
+    .quick-nav-list li a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s ease, transform 0.2s ease; }
+    .quick-nav-list li a:hover { color: var(--accent); transform: translateX(3px); }
+
+    /* Interactive Decision Engine */
+    .decision-engine-box { background: var(--bg-alt); border: 1.5px solid var(--border); border-radius: 14px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 6px 24px rgba(0,0,0,0.06); }
+    .decision-header { font-size: 1.35rem; font-weight: 800; margin-bottom: 1.4rem; display: flex; align-items: center; gap: 0.6rem; color: var(--text); }
+    .decision-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-bottom: 1.5rem; }
+    .control-group { display: flex; flex-direction: column; gap: 0.45rem; }
+    .control-group label { font-size: 0.92rem; font-weight: 600; color: var(--text); }
+    .control-group select { background: var(--bg); border: 1px solid var(--border); padding: 0.7rem 0.9rem; border-radius: 8px; color: var(--text); font-size: 0.95rem; outline: none; cursor: pointer; transition: border-color 0.2s; }
+    .control-group select:focus { border-color: var(--accent); }
+    .decision-result { background: var(--bg); border: 1.5px solid var(--accent); border-radius: 10px; padding: 1.4rem; margin-top: 1.2rem; }
+    .result-badge { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 0.4rem; }
+    .result-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.6rem; color: var(--text); }
+    .result-desc { font-size: 0.98rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 0.8rem; }
+    .result-tips { font-size: 0.88rem; background: var(--bg-alt); padding: 0.8rem 1rem; border-radius: 6px; border-left: 3px solid var(--accent); }
+
+    /* ASCII / Topology Canvas */
+    .arch-diagram { background: #0f172a; color: #38bdf8; padding: 1.4rem; border-radius: 10px; font-family: "Fira Code", monospace; font-size: 0.86rem; line-height: 1.5; overflow-x: auto; margin: 1.8rem 0; border: 1px solid #1e293b; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5); }
+
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3.5rem; }
+    .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Google Antigravity 三大產品型態終極橫評：Desktop v.s IDE v.s agy (CLI) 架構解析、工作流差異與最佳選型指南",
+    "description": "Google Antigravity 終極對比：深入剖析 Antigravity Desktop 2.0 獨立多代理指揮中心、Antigravity IDE 沉浸式 AI 原生編輯器，以及 agy 終端命令列極速引擎。",
+    "url": "https://ai-hardcore-engineer.com/antigravity-desktop-vs-ide-vs-agy.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "\"AI\" 硬核工程師",
+      "url": "https://ai-hardcore-engineer.com"
+    },
+    "image": "https://ai-hardcore-engineer.com/images/antigravity-desktop-vs-ide-vs-agy-guide.jpg",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "url": "https://ai-hardcore-engineer.com/antigravity-desktop-vs-ide-vs-agy.html"
+    }
+  }
+  </script>
+</head>
+<body>
+<!-- =============== Header =============== -->
+<header class="site-header" id="top">
+  <div aria-hidden="true" class="waves">
+    <canvas id="wave-canvas"></canvas>
+  </div>
+  <div class="container header-inner">
+    <div class="logo">
+      <div>"AI" 硬核工程師</div>
+      <div class="tagline">Talk is cheap. Show me the code</div>
+    </div>
+    <button aria-expanded="false" aria-label="選單" class="menu-toggle"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="./index.html">首頁</a>
+      <a href="./tech-news.html">科技新知</a>
+      <a class="active" href="./articles.html">文章</a>
+      <a href="./about.html">關於</a>
+      <a aria-label="搜尋" class="nav-search-toggle" href="#">🔍</a>
+      <a aria-label="切換深淺色模式" class="theme-toggle" href="#" id="theme-toggle">🌙</a>
+    </nav>
+  </div>
+</header>
+<!-- =============== Search Overlay =============== -->
+<div class="search-overlay">
+  <div class="search-container">
+    <input autocomplete="off" placeholder="搜尋文章..." type="text"/>
+    <div class="search-results"></div>
+    <div class="search-close">按 Esc 關閉</div>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+    <!-- =============== Article Header =============== -->
+    <section class="article-hero">
+      <h1>Google Antigravity 三大產品型態終極橫評：Desktop v.s IDE v.s agy (CLI)</h1>
+      <div class="article-meta">
+        <span>2026-10-21</span>
+        <span class="separator">·</span>
+        <span>28 分鐘深度閱讀</span>
+      </div>
+      <div class="article-tags">
+        <span class="tag">Google Antigravity</span>
+        <span class="tag">Antigravity Desktop</span>
+        <span class="tag">Antigravity IDE</span>
+        <span class="tag">agy CLI</span>
+        <span class="tag">AI Agent</span>
+        <span class="tag">軟體架構</span>
+      </div>
+      <img alt="Google Antigravity Desktop vs IDE vs agy CLI 三大介面架構橫評" loading="lazy" src="./images/antigravity-desktop-vs-ide-vs-agy-guide.jpg"/>
+    </section>
+
+    <!-- =============== Article Body =============== -->
+    <article class="article-body">
+      <blockquote>
+        🎯 <strong>核心結論先睹為快：</strong><br/>
+        Google Antigravity 並不是單一的寫扣工具，而是一個擁有統一 Agentic Engine 的三態生態系：<br/>
+        • <strong>Antigravity Desktop (2.0)</strong>：<strong>獨立多代理指揮中心 (Mission Control)</strong>。脫離編輯器，主打跨專案並行編排、Scheduled Tasks 定時排程、Subagents 派生樹、細粒度沙箱與 Artifacts 驗收面板。適合架構師、Tech Lead 與離線非同步任務。<br/>
+        • <strong>Antigravity IDE</strong>：<strong>AI 原生沉浸式代碼編輯器 (In-Editor Pair Programmer)</strong>。基於 VS Code 深度定製，具備 Antigravity Tab（意圖預測補全/跳轉）、Inline Command (<code>Ctrl+I</code> 局部行級重構) 與編輯器級視覺 Diff/Code Lens。適合每日主力寫代碼的全端工程師。<br/>
+        • <strong>Antigravity CLI (<code>agy</code>)</strong>：<strong>終端極速與自動化管線引擎 (Headless & TUI)</strong>。零 Electron 負載、毫秒級喚醒，支援 Unix Pipeline (<code>git diff | agy</code>)、SSH 遠端連線、tmux 背景守護與 CI/CD 腳本。適合 SRE、DevOps 與 Vim/Neovim 極客。
+      </blockquote>
+
+      <!-- Quick Navigation TOC -->
+      <div class="quick-nav-box">
+        <div class="quick-nav-title">📑 內容目錄快速導覽</div>
+        <ul class="quick-nav-list">
+          <li><a href="#trinity-architecture">1. 三位一體架構：背後的統一 Agentic Engine</a></li>
+          <li><a href="#deep-desktop">2. Antigravity Desktop 深度拆解：任務指揮中心</a></li>
+          <li><a href="#deep-ide">3. Antigravity IDE 深度拆解：沉浸式 AI 編輯器</a></li>
+          <li><a href="#deep-cli">4. Antigravity CLI (agy) 深度拆解：極速終端管道</a></li>
+          <li><a href="#matrix-comparison">5. 全維度規格比較矩陣 (32 項指標)</a></li>
+          <li><a href="#decision-tool">6. 互動決策引擎：我到底該用哪一個？</a></li>
+          <li><a href="#trinity-workflow">7. 硬核工程師三位一體實戰流 (The Trinity Workflow)</a></li>
+        </ul>
+      </div>
+
+      <h2 id="trinity-architecture">1. 三位一體架構：背後的統一 Agentic Engine</h2>
+      <p>自 2025 年末 Google 攜手前 Windsurf 創始團隊推出 Antigravity，再到 2026 年全面進化為 Antigravity 2.0，許多開發者最常產生的困惑就是：<strong>「為什麼我既能在官網下載一個獨立的 Antigravity App，又能在 VS Code / 獨立 IDE 裡寫代碼，終端機裡還有個 <code>agy</code> 指令？它們到底有什麼差別？」</strong></p>
+
+      <p>答案在於：<strong>Google 將「AI Agent 思考與執行引擎」從「人機互動介面」徹底解耦了。</strong></p>
+
+      <div class="arch-diagram">
++-----------------------------------------------------------------------------------+
+|                           Google Agentic Engine Core                              |
+|   Gemini 3 Pro (High/Low Reasoning) | Claude Sonnet 4.6 | GPT-OSS 120B            |
+|   Artifacts Pipeline | Permissions / Sandboxing | Subagent Dynamic Leasing        |
+|   Workspace Customizations (.agents/rules, skills, hooks, plugins, MCP servers)   |
++-----------------------------------------+-----------------------------------------+
+                                          |
+               +--------------------------+--------------------------+
+               |                                                     |
+               v                                                     v
++-------------------------------+  +-----------------------------+  +-------------------------------+
+|    Antigravity Desktop 2.0    |  |       Antigravity IDE       |  |      Antigravity CLI (agy)    |
+|  (Parallel Electron App)      |  |  (AI-First VS Code Fork)    |  |  (Go / Rust Native Binary)    |
++-------------------------------+  +-----------------------------+  +-------------------------------+
+| • Multi-Project Hub           |  | • Antigravity Tab (Predict) |  | • TUI Terminal Interface      |
+| • Scheduled Tasks (Cron/Timer)|  | • Supercomplete (Multi-line)|  | • Headless One-Shot (-p)      |
+| • Subagent Visual Tree        |  | • Inline Command (Ctrl+I)   |  | • Stdin/Stdout Unix Pipeline  |
+| • Browser Automation Capture  |  | • Visual Diff Overlays      |  | • Remote SSH & Tmux Daemon    |
+| • Strict Sandboxing Policies  |  | • Diagnostic Auto-Fix       |  | • CI/CD & Shell Automation    |
++-------------------------------+  +-----------------------------+  +-------------------------------+
+      </div>
+
+      <p>無論你開啟哪一個介面，背後共享完全同一套底層設施：</p>
+      <ul>
+        <li><strong>工作區上下文與自訂規則</strong>：均讀取專案根目錄下的 <code>.agents/rules/</code>、<code>.agents/skills/</code>、<code>plugins/</code> 與 <code>mcp_config.json</code>。</li>
+        <li><strong>工件驗收體系 (Artifacts Engine)</strong>：結構化的 Implementation Plan、Task List、檔案變更集與瀏覽器錄影。</li>
+        <li><strong>多模型調度與計費</strong>：統一走 Google 帳號授權，自由熱切換 Gemini 3 Pro/Flash、Claude 3.7/Sonnet 或開源權重模型。</li>
+      </ul>
+      <p>但因為工程師在不同情境下的專注焦點不同（是想專注敲代碼、還是想在背景指揮多個 Agent 同步重構、抑或是在遠端伺服器快速排錯），Google 針對這三種截然不同的物理環境打造了三種量身定做的形態。</p>
+
+      <!-- Three Surface Cards -->
+      <div class="surface-grid">
+        <div class="surface-card">
+          <div class="surface-card-header">
+            <div class="surface-card-title">
+              <span>Desktop (2.0)</span>
+              <span class="badge-pill badge-purple">指揮中心</span>
+            </div>
+            <div class="surface-card-subtitle">獨立 Electron 桌面應用</div>
+          </div>
+          <div class="surface-card-body">
+            <p><strong>核心哲學：</strong>從「碼農」升級為「Agent 主管」。專注於任務拆解、排程調度與結果驗收。</p>
+            <ul>
+              <li><strong>多專案看板：</strong>同時列出多個 repo 與多個背景運行對話。</li>
+              <li><strong>定時排程：</strong>原生 Cron 與 Timer，自動化夜間重構。</li>
+              <li><strong>多代理可視化：</strong>清楚看見主 Agent 派生出的 Subagents 樹狀工作圖。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="surface-card">
+          <div class="surface-card-header">
+            <div class="surface-card-title">
+              <span>Antigravity IDE</span>
+              <span class="badge-pill badge-blue">代碼工坊</span>
+            </div>
+            <div class="surface-card-subtitle">VS Code 原生 Fork / 插件</div>
+          </div>
+          <div class="surface-card-body">
+            <p><strong>核心哲學：</strong>人機一體即時寫作。代碼游標移到哪，AI 上下文跟到哪。</p>
+            <ul>
+              <li><strong>Antigravity Tab：</strong>單鍵預測補全、跨多行 Supercomplete、自動跳轉與 Import。</li>
+              <li><strong>Inline Command：</strong><code>Ctrl+I</code> 局部行級指令改寫。</li>
+              <li><strong>Linter 自動修復：</strong>終端報錯或紅波浪線一鍵 Auto-fix。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="surface-card">
+          <div class="surface-card-header">
+            <div class="surface-card-title">
+              <span>agy (CLI)</span>
+              <span class="badge-pill badge-green">極速終端</span>
+            </div>
+            <div class="surface-card-subtitle">輕量命令列 TUI / Headless</div>
+          </div>
+          <div class="surface-card-body">
+            <p><strong>核心哲學：</strong>極限性能與管線自動化。符合 Unix 哲學，無 UI 開銷。</p>
+            <ul>
+              <li><strong>Pipeline 串接：</strong><code>git diff | agy</code> 瞬間生成 Commit。</li>
+              <li><strong>無頭伺服器：</strong>SSH 到 Linux 機器配合 tmux 常駐。</li>
+              <li><strong>CI/CD 整合：</strong>在 GitHub Actions 跑靜態審查與自動修復。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="deep-desktop">2. Antigravity Desktop (2.0) 深度拆解：獨立多代理任務指揮中心</h2>
+      <p><strong>Antigravity Desktop</strong> 是隨著 2026 年 Antigravity 2.0 更新推出的平行桌面應用程式。它的設計目標非常明確：<strong>讓開發者從「盯著編輯器逐行看代碼」的微觀視角中解脫，轉為高維度的「多專案任務指揮官」</strong>。</p>
+
+      <h3>A. 介面維度：全景任務視圖</h3>
+      <p>打開 Antigravity Desktop，你不會看到傳統的檔案目錄樹或文字編輯畫布，取而代之的是三大模組化空間：</p>
+      <ul>
+        <li><strong>Left-hand Sidebar (控制台導覽)</strong>：
+          <ul>
+            <li><code>New Conversation</code>：快速開闢新的獨立代理任務線。</li>
+            <li><code>Projects</code>：跨越不同 Repository 與工作區，隨意切換當前專案上下文。</li>
+            <li><code>Scheduled Tasks</code>：<strong>原生 Cron 排程器</strong>。例如配置 <code>0 2 * * *</code> 每晚兩點自動檢測依賴庫安全漏洞並提交 PR，或設定計時器在 30 分鐘後回測效能。</li>
+            <li><code>Skills & Customizations</code>：即時檢視目前載入的 MCP 伺服器、全域自訂 Skills 與自訂 Rules。</li>
+            <li><code>Settings</code>：集中管控模型參數、權限策略與沙箱邊界。</li>
+          </ul>
+        </li>
+        <li><strong>Chat Canvas (協作畫布)</strong>：
+          <p>支援強大的 Slash 指令（例如 <code>/goal</code> 長任務執行、<code>/plan</code> 制定架構、<code>/schedule</code> 排程設定）、<code>@</code> 上下文引用（可直接引用歷史對話、終端歷史、檔案或 MCP 外部工具），並支援直接拖曳圖片與架構圖進行多模態推理。</p>
+        </li>
+        <li><strong>HTML Auxiliary Pane (輔助資訊驗收面板)</strong>：
+          <p>當 Agent 執行複雜任務時，右側輔助面板會同步顯示五大維度：</p>
+          <ol>
+            <li><strong>Subagents</strong>：檢視主 Agent 自主派生出的子代理工作樹（如子代理 A 爬文檔、子代理 B 跑測試），互不污染對話 Context。</li>
+            <li><strong>Background Tasks</strong>：背景執行中的終端程序（編譯器、Dev Server、Docker）狀態與 Log。</li>
+            <li><strong>Artifacts</strong>：所有的設計草案、Markdown 驗收計畫、測試涵蓋率圖表。</li>
+            <li><strong>Files Changed</strong>：整體任務牽涉的所有檔案異動清單與 Diff 統計。</li>
+            <li><strong>Terminals</strong>：隨時調出底層獨立終端進行監控。</li>
+          </ol>
+        </li>
+      </ul>
+
+      <h3>B. 治理與安全沙箱 (Security & Sandboxing)</h3>
+      <p>在 Desktop 版中，Google 內建了最嚴格的企業級防護機制：</p>
+      <ul>
+        <li><strong>Tool Execution Policy</strong>：可選 <code>always-proceed</code>（全自動）、<code>request-review</code>（指令前詢問）、<code>strict</code>（高危命令強制阻斷）與 <code>proceed-in-sandbox</code>（沙箱隔離執行）。</li>
+        <li><strong>Terminal Sandbox</strong>：所有終端指令在獨立的容器/命名空間內執行，防止誤下 <code>rm -rf</code> 或污染本地環境。</li>
+        <li><strong>細粒度權限控制</strong>：可單獨限制「跨工作區檔案讀寫 (Non-Workspace File Access)」以及「外網連線策略 (Internet Access Policy)」，並可指定命令黑白名單。</li>
+      </ul>
+
+      <h2 id="deep-ide">3. Antigravity IDE 深度拆解：沉浸式 AI 原生編輯器</h2>
+      <p>對於絕大多數每日高強度敲鍵盤的軟體工程師而言，<strong>Antigravity IDE</strong> 才是真正的戰鬥主場。它是 Google 收購 Windsurf 核心團隊後，以 VS Code 為底座打造的深度客製化 AI 編輯器（同時為 JetBrains 與 Visual Studio 提供 Companion Extension）。</p>
+
+      <h3>A. 三大 AI 互動層級 (The Three Modalities)</h3>
+      <p>Antigravity IDE 最大的優勢在於將 AI 融入編程敲鍵的肌肉記憶中：</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>協作層級</th>
+              <th>觸發方式</th>
+              <th>核心能力</th>
+              <th>硬核使用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Passive (被動式)</strong><br/><span class="badge-pill badge-blue">Antigravity Tab</span></td>
+              <td>按 <kbd>Tab</kbd> 鍵採納<br/>或單詞採納</td>
+              <td>• <strong>Next-intent Prediction</strong>：意圖預測補全<br/>• <strong>Supercomplete</strong>：浮動視窗顯示跨多行的大規模代碼變更與刪除<br/>• <strong>Tab to Jump</strong>：自動預測下一個該修改的游標跳轉位置<br/>• <strong>Tab to Import</strong>：引用新模組時自動在頂端補齊 import</td>
+              <td>編寫業務邏輯、宣告重複性介面、實作 API 規格轉換時，鍵盤敲幾下一路按 Tab 完成。</td>
+            </tr>
+            <tr>
+              <td><strong>Instructive (指令式)</strong><br/><span class="badge-pill badge-green">Inline Command</span></td>
+              <td>選取代碼後按下<br/><kbd>Ctrl+I</kbd> (Mac: <kbd>Cmd+I</kbd>)</td>
+              <td>• <strong>局部就地重構</strong>：僅針對選取的程式碼區塊精確修改<br/>• <strong>上下文注入代碼生成</strong>：在空白游標處直接生成特定實作<br/>• <strong>快速行內註解</strong>：一鍵生成符合規範的 JSDoc / Docstring</td>
+              <td>「將這段巢狀 if-else 改為 Early Return」、「幫這個函式加上嚴格的 TypeScript 型別防護」。</td>
+            </tr>
+            <tr>
+              <td><strong>Collaborative (協同式)</strong><br/><span class="badge-pill badge-purple">Sidebar Chat & Agent</span></td>
+              <td>側邊面板對話<br/>或 <code>Ctrl+L</code></td>
+              <td>• <strong>多步驟自主代理 (Autonomous Agent)</strong>：自由讀寫代碼庫、調試測試案例、查閱 Web 最新官方手冊<br/>• <strong>Planning Mode</strong>：先輸出 Implementation Plan 供審查確認後才動工</td>
+              <td>跨多檔案新增微服務端點、全套端到端測試編寫、排查涉及多個模組的棘手 Memory Leak。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>B. 深度編輯器視覺整合 (Editor UI Integrations)</h3>
+      <p>不同於純對話框，Antigravity IDE 具備多項編輯器專屬視覺強化：</p>
+      <ul>
+        <li><strong>Inline Code Lenses</strong>：在類別或函式宣告上方，會自動出現輕量操作按鈕（<code>Refactor</code>、<code>Write Unit Tests</code>、<code>Explain</code>），點擊即可一鍵對該範圍發起局部代理。</li>
+        <li><strong>Visual Diff Overlays</strong>：當 Agent 修改代碼時，直接在編輯器畫布內顯示綠色（新增）與紅色（刪除）的行內 Diff，工程師可以逐行審核或一鍵 Accept / Reject。</li>
+        <li><strong>Diagnostic Auto-Fix</strong>：當編譯器或 Linter 出現紅波浪線或警告時，滑鼠懸停即可點擊「Ask Antigravity to Fix」，Agent 會結合當前檔案與前後呼叫鏈自動修復語法或型別錯誤。</li>
+      </ul>
+
+      <h2 id="deep-cli">4. Antigravity CLI (<code>agy</code>) 深度拆解：極速終端管道</h2>
+      <p><strong>Antigravity CLI (<code>agy</code>)</strong> 是專為終端死忠用戶、Linux SRE 以及自動化 CI/CD 流水線量身打造的輕量化原生成型工具。如果你熱愛 Neovim、Tmux，或者經常 SSH 到沒有圖形介面的雲端虛擬機，<code>agy</code> 就是你的終極利器。</p>
+
+      <h3>A. 核心特色：零 GUI 開銷與極速響應</h3>
+      <p>Electron 應用（Desktop 和 IDE）雖然介面絢麗，但啟動速度通常需要 2~4 秒，且常態佔用數百 MB 到數 GB 記憶體。而 <code>agy</code> 採用原生語言編譯：</p>
+      <ul>
+        <li><strong>毫秒級啟動</strong>：在終端輸入 <code>agy</code> 瞬間完成驗證並進入互動介面。</li>
+        <li><strong>極小記憶體佔用</strong>：運行時記憶體消耗僅數十 MB，即便在 1GB RAM 的迷你 VPS 上也能健步如飛。</li>
+        <li><strong>統一設定檔</strong>：所有行為與偏好儲存於 <code>~/.gemini/antigravity-cli/settings.json</code>，極易透過 Dotfiles 進行多伺服器同步。</li>
+      </ul>
+
+      <h3>B. 三大運行模式與 Unix 管線哲學 (Pipeline Workflow)</h3>
+      <p><code>agy</code> 完美繼承了 Unix「一切皆為文字流」的 philosophy：</p>
+
+      <h4>1. 互動式 TUI 模式 (Interactive TUI)</h4>
+      <pre><code># 啟動終端全螢幕互動會話
+$ agy
+
+# 進入 TUI 後即可像聊天一樣下達指令，支援 /help, /model, /exit
+# 按 Ctrl+D 快速退出</code></pre>
+
+      <h4>2. 單次執行無頭模式 (Headless / One-Shot Mode)</h4>
+      <pre><code># 快速詢問技術問題或執行單一命令，無需維持 session
+$ agy -p "檢查目前目錄下的 package.json，列出過期且具高危漏洞的依賴"
+
+# 指定輸出格式或直接產出結果
+$ agy -p "寫一個可備份 PostgreSQL 的 bash 腳本並輸出到 backup.sh"</code></pre>
+
+      <h4>3. Unix Pipeline 標準串接 (極度硬核的使用方式)</h4>
+      <p>這是 <code>agy</code> 最令工程師愛不釋手的特點——它可以與 <code>git</code>、<code>cat</code>、<code>grep</code>、<code>curl</code> 等標準命令自由組合：</p>
+      <pre><code># 1. 自動審查 git 變更並依照 Conventional Commits 生成 Commit Message
+$ git diff --staged | agy "根據此 diff 產生一行符合 conventional commits 規範的 commit message，只需輸出文字" | git commit -F -
+
+# 2. 自動診斷生產環境崩潰日誌
+$ tail -n 100 /var/log/nginx/error.log | agy "分析這段 502 錯誤的原因，並給出修復指令"
+
+# 3. 快速代碼重構並重導向
+$ cat legacy_auth.py | agy "將其重構為 async/await 現代 Python 語法" > modern_auth.py</code></pre>
+
+      <h4>4. 遠端伺服器與 Tmux 背景守護 (Remote Daemon)</h4>
+      <p>在沒有 X11 轉發或圖形桌面的遠端雲端伺服器上，你可以直接在 <code>tmux</code> 會話中啟動 <code>agy</code>，讓 Agent 在背景跑長達數小時的壓力測試或資料清洗腳本，隨時 <code>detach</code> 與 <code>attach</code>，完全不受網路連線中斷影響。</p>
+
+      <h2 id="matrix-comparison">5. 全維度規格比較矩陣 (32 項指標)</h2>
+      <p>以下是針對 Antigravity Desktop、Antigravity IDE 與 agy CLI 在軟體架構、資源消耗、代碼上下文感知與實戰特性上的深度橫向對比：</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>比較維度</th>
+              <th>Antigravity Desktop (2.0)</th>
+              <th>Antigravity IDE</th>
+              <th>Antigravity CLI (agy)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>底層架構型態</strong></td>
+              <td>獨立 Electron 應用程式</td>
+              <td>VS Code Fork 獨立整合開發環境</td>
+              <td>跨平台原生命令列二進制 (CLI/TUI)</td>
+            </tr>
+            <tr>
+              <td><strong>主要目標角色</strong></td>
+              <td>架構師、Tech Lead、離線排程調度</td>
+              <td>全端開發者、日常主力代碼編程者</td>
+              <td>DevOps、SRE、Linux 管理員、Vim 用戶</td>
+            </tr>
+            <tr>
+              <td><strong>冷啟動時間</strong></td>
+              <td>中等 (~2-3 秒)</td>
+              <td>一般 (~3-5 秒)</td>
+              <td><strong>極速 (&lt; 200 毫秒)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>記憶體佔用</strong></td>
+              <td>約 300MB ~ 800MB</td>
+              <td>約 600MB ~ 1.8GB (含語言伺服器)</td>
+              <td><strong>極低 (約 30MB ~ 80MB)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>無頭 / 伺服器支援</strong></td>
+              <td>需桌面環境 (不可 Headless)</td>
+              <td>需桌面環境 (除非 SSH Remote Host)</td>
+              <td><strong>原生完美支援 (純 SSH / Docker)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>代碼游標與即時感知</strong></td>
+              <td>無即時游標上下文 (以專案檔案為準)</td>
+              <td><strong>深層感知 (當前分頁、游標、選取行)</strong></td>
+              <td>無游標上下文 (以傳入參數/管道為準)</td>
+            </tr>
+            <tr>
+              <td><strong>Antigravity Tab 補全</strong></td>
+              <td>不支援</td>
+              <td><strong>完整支援 (單鍵預測、Supercomplete)</strong></td>
+              <td>不支援</td>
+            </tr>
+            <tr>
+              <td><strong>Inline Command (Ctrl+I)</strong></td>
+              <td>不支援</td>
+              <td><strong>完整支援 (行內就地即時重構)</strong></td>
+              <td>不支援</td>
+            </tr>
+            <tr>
+              <td><strong>視覺化 Code Lens</strong></td>
+              <td>不支援</td>
+              <td><strong>支援 (函式頂端一鍵操作按鈕)</strong></td>
+              <td>不支援</td>
+            </tr>
+            <tr>
+              <td><strong>Visual Diff Overlay</strong></td>
+              <td>Auxiliary Pane 查看變更</td>
+              <td><strong>編輯器畫布內直接紅綠對比審核</strong></td>
+              <td>終端 ANSI 色彩 Diff 輸出</td>
+            </tr>
+            <tr>
+              <td><strong>編譯/Lint 報錯 Auto-Fix</strong></td>
+              <td>需手動貼入 Log</td>
+              <td><strong>Problems 面板與行內紅波浪一鍵修復</strong></td>
+              <td>需透過管道或參數注入 Log</td>
+            </tr>
+            <tr>
+              <td><strong>多專案 / 多 Repo 切換</strong></td>
+              <td><strong>原生專案中心 (Projects Hub)</strong></td>
+              <td>需重開視窗或切換 Workspace</td>
+              <td>依照當前終端機工作目錄 (<code>cd</code>)</td>
+            </tr>
+            <tr>
+              <td><strong>定時排程 (Scheduled Cron)</strong></td>
+              <td><strong>原生排程中心 (Cron & Timers)</strong></td>
+              <td>需透過對話指令或背景任務</td>
+              <td>可搭配系統 <code>crontab</code> / <code>systemd</code></td>
+            </tr>
+            <tr>
+              <td><strong>Subagents 子代理視圖</strong></td>
+              <td><strong>專屬階層樹狀可視化面板</strong></td>
+              <td>側邊欄對話摺疊區塊顯示</td>
+              <td>終端文字樹狀結構輸出</td>
+            </tr>
+            <tr>
+              <td><strong>瀏覽器自動化驗收錄影</strong></td>
+              <td><strong>內建播放器與錄影 Artifacts 預覽</strong></td>
+              <td>整合瀏覽器預覽分頁</td>
+              <td>文字輸出測試報告與截圖檔案路徑</td>
+            </tr>
+            <tr>
+              <td><strong>Unix Pipeline 串接能力</strong></td>
+              <td>不支援</td>
+              <td>不支援</td>
+              <td><strong>完整支援 (<code>| agy</code>, 重導向 <code>&gt;</code>)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>沙箱與權限防護策略</strong></td>
+              <td><strong>最嚴格 (內建沙箱/外網黑白名單)</strong></td>
+              <td>編輯器級終端確認提示</td>
+              <td>繼承執行用戶 Shell 權限與配置</td>
+            </tr>
+            <tr>
+              <td><strong>CI/CD 腳本自動化</strong></td>
+              <td>不適合</td>
+              <td>不適合</td>
+              <td><strong>原生絕配 (GitHub Actions/GitLab)</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Interactive Decision Engine Tool -->
+      <h2 id="decision-tool">6. 互動決策引擎：我到底該用哪一個？</h2>
+      <p>猶豫不決該以哪一套作為主力嗎？請在下方勾選你的工作習慣與場景，系統將為你演算最合適的配置：</p>
+
+      <div class="decision-engine-box">
+        <div class="decision-header">
+          <span>⚡ Antigravity 最佳選型決策器</span>
+        </div>
+        <div class="decision-controls">
+          <div class="control-group">
+            <label for="persona-role">你的主要工程角色：</label>
+            <select id="persona-role">
+              <option value="frontend_fullstack">前端 / 全端業務工程師 (每日高頻 Coding)</option>
+              <option value="architect_lead">架構師 / Tech Lead (專案拆解、審核、排程)</option>
+              <option value="devops_sre">DevOps / SRE / 雲端維運 (管線自動化、遠端伺服器)</option>
+              <option value="terminal_minimalist">極客 / 終端愛好者 (Neovim/Tmux、追求零負擔)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="persona-task">當前最核心的任務型態：</label>
+            <select id="persona-task">
+              <option value="active_coding">即時撰寫代碼、修改 Bug、補寫型別</option>
+              <option value="cross_repo">跨多個 Repository 進行系統級大型重構</option>
+              <option value="night_task">設定非同步/夜間自動化排程任務 (長時運算)</option>
+              <option value="pipeline_ci">Git 提交流程、CI/CD 測試、遠端伺服器排錯</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="persona-env">主要運行的硬體與系統環境：</label>
+            <select id="persona-env">
+              <option value="workstation">高效能本機工作站 (MacBook Pro / 高階 PC 32GB+)</option>
+              <option value="remote_vps">遠端無 GUI 雲端主機 / 輕量 VPS / Docker 容器</option>
+              <option value="laptop_low">輕薄筆電 (重視續航與發熱量控制)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="decision-result" id="decision-output">
+          <div class="result-badge" id="res-badge">推薦首選方案</div>
+          <div class="result-title" id="res-title">Antigravity IDE (AI-First 編輯器)</div>
+          <div class="result-desc" id="res-desc">
+            作為主力全端業務開發者，你最需要的是鍵盤游標與 AI 的即時同步！Antigravity IDE 提供的 Antigravity Tab 意圖預測補全、選取代碼後的 <code>Ctrl+I</code> 行內就地重構，以及編輯器內的視覺紅綠 Diff 對比，能為你節省超過 50% 的重複打字時間。
+          </div>
+          <div class="result-tips" id="res-tips">
+            💡 <strong>硬核配搭建議：</strong>日常寫代碼開 IDE；若遇到大功能需要規劃先切到 Planning 模式；Git 提交時呼叫 <code>git diff | agy</code> 一秒產生乾淨 Commit！
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function updateDecision() {
+          const role = document.getElementById('persona-role').value;
+          const task = document.getElementById('persona-task').value;
+          const env = document.getElementById('persona-env').value;
+
+          const badge = document.getElementById('res-badge');
+          const title = document.getElementById('res-title');
+          const desc = document.getElementById('res-desc');
+          const tips = document.getElementById('res-tips');
+
+          if (env === 'remote_vps' || role === 'devops_sre' || task === 'pipeline_ci') {
+            badge.innerText = '推薦首選方案：命令列與自動化核心';
+            badge.className = 'result-badge';
+            title.innerText = 'Antigravity CLI (agy)';
+            desc.innerText = '在遠端無圖形伺服器、Docker 容器或 CI/CD 自動化管線中，`agy` 是唯一且最強大的選擇。毫秒級啟動、極低記憶體佔用，搭配 Unix 管道輸出，能讓你的維運與腳本自動化效率翻倍。';
+            tips.innerHTML = '💡 <strong>硬核配搭建議：</strong>在遠端伺服器配合 <code>tmux new -s agent_session</code> 執行常駐任務；本機設定 Git Alias <code>alias gcm="git diff --staged | agy 'write commit message' | git commit -F -"</code>。';
+          } else if (role === 'architect_lead' || task === 'cross_repo' || task === 'night_task') {
+            badge.innerText = '推薦首選方案：多代理調度與指揮';
+            badge.className = 'result-badge';
+            title.innerText = 'Antigravity Desktop (2.0)';
+            desc.innerText = '你扮演的是「任務分配與驗收主管」角色。Desktop 版提供獨立的 Projects 看板、Subagents 樹狀結構追蹤、原生 Scheduled Tasks (Cron) 以及最完整的沙箱安全治理，非常適合非同步丟派大型任務後回來驗貨。';
+            tips.innerHTML = '💡 <strong>硬核配搭建議：</strong>善用 <code>/schedule</code> 設定每天清晨自動同步 Upstream 並跑測試；在 Auxiliary Pane 中直接檢驗 Agent 產生的 Architecture Plan 與瀏覽器錄影。';
+          } else if (role === 'terminal_minimalist') {
+            badge.innerText = '推薦首選方案：終端極客極致流';
+            badge.className = 'result-badge';
+            title.innerText = 'agy (CLI) + 終端編輯器 (Neovim/Vim)';
+            desc.innerText = '熱愛終端極簡主義的你無需妥協於龐大的 Electron 視窗！`agy` 讓你在同一個 tmux 視窗內自由切換，左邊寫代碼，右邊呼叫 `agy` 進行快速諮詢或管線重構。';
+            tips.innerHTML = '💡 <strong>硬核配搭建議：</strong>可透過鍵盤快捷鍵綁定呼叫 <code>agy -p</code> 針對選取的緩衝區區塊進行處理，打造完全鍵盤流的 AI 驅動環境。';
+          } else {
+            badge.innerText = '推薦首選方案：全天候沉浸編程';
+            badge.className = 'result-badge';
+            title.innerText = 'Antigravity IDE';
+            desc.innerText = '作為主力開發者，你最需要的是鍵盤游標與 AI 的即時同步！Antigravity IDE 提供的 Antigravity Tab 意圖預測補全、選取代碼後的 Ctrl+I 行內就地重構，以及編輯器內的視覺紅綠 Diff 對比，能為你節省超過 50% 的重複打字時間。';
+            tips.innerHTML = '💡 <strong>硬核配搭建議：</strong>日常小修用 Tab 與 Fast Mode；大型跨模組功能開啟 Planning Mode；程式碼報錯直接在 Problems 點擊 Auto-fix。';
+          }
+        }
+
+        document.getElementById('persona-role').addEventListener('change', updateDecision);
+        document.getElementById('persona-task').addEventListener('change', updateDecision);
+        document.getElementById('persona-env').addEventListener('change', updateDecision);
+      </script>
+
+      <h2 id="trinity-workflow">7. 硬核工程師三位一體實戰流 (The Trinity Workflow)</h2>
+      <p>在真正的企業級高階開發中，優秀的工程師並不會「三選一」，而是<strong>讓三個形態各司其職，組裝成高產出的開發流水線</strong>：</p>
+
+      <h3>Phase 1：晨會前 — Desktop 負責背景自動巡檢</h3>
+      <p>利用 <strong>Antigravity Desktop 2.0</strong> 的 Scheduled Tasks，在每日清晨 6:00 自動觸發背景 Agent：</p>
+      <ul>
+        <li>自動拉取 upstream 最新代碼與安全公告。</li>
+        <li>執行靜態代碼分析，自動標記 deprecated 函數。</li>
+        <li>產生晨間巡檢報告 (Walkthrough Artifact)，工程師 9:00 上班開電腦直接驗收。</li>
+      </ul>
+
+      <h3>Phase 2：工作時間 — IDE 負責沉浸式人機結對編程</h3>
+      <p>打開 <strong>Antigravity IDE</strong>，進入心流狀態：</p>
+      <ul>
+        <li>寫 Controller 或 Service 邏輯時，依靠 <strong>Antigravity Tab</strong> 狂飆單元測試與 DTO 映射。</li>
+        <li>遇到看不順眼的陳年爛代碼，選取後按 <code>Ctrl+I</code>：「改用 Pattern Matching 並處理例外情況」。</li>
+        <li>遇到測試報錯，點擊紅波浪線旁邊的 <strong>Auto-Fix</strong>，Agent 秒修語法偏差。</li>
+      </ul>
+
+      <h3>Phase 3：提交與部署 — agy 負責極速 Git 管線與 CI 運作</h3>
+      <p>準備發布變更時，直接在終端發揮 <strong>agy CLI</strong> 的極速威力：</p>
+      <pre><code># 1. 一鍵生成合規 Commit Message
+$ git diff --staged | agy "依 Conventional Commits 撰寫 commit message" | git commit -F -
+
+# 2. 推送 PR 並透過 agy 做最後一輪自我審查
+$ agy -p "檢查 git status 中的未追蹤檔案，確認是否有忘記加入 .gitignore 的 .env 或臨時憑證"
+
+# 3. SSH 到 Staging 測試機排查部署問題
+$ ssh dev-server "docker logs api --tail 50 | agy '檢查資料庫連線超時原因'"</code></pre>
+
+      <h2>總結：從「寫代碼的工人」到「駕馭代理的總指揮」</h2>
+      <p>回顧這三種產品形態：</p>
+      <ul>
+        <li><strong>Antigravity Desktop</strong> 給了我們<strong>視野與調度權</strong>，讓我們能跨出單一文字游標，掌控多個 Agent 的非同步編排。</li>
+        <li><strong>Antigravity IDE</strong> 給了我們<strong>速度與手感</strong>，將 AI 融入每一個按鍵、每一次補全與每一處 Diff 審核。</li>
+        <li><strong>Antigravity CLI (<code>agy</code>)</strong> 給了我們<strong>靈活性與自動化</strong>，讓強大的推理能力能夠深入伺服器、管線與腳本的最深處。</li>
+      </ul>
+      <p>選對工具，你的生產力將不再受限於打字速度；善用三位一體，讓 Antigravity 真正替你扛起軟體工程中的千斤重擔！</p>
+
+      <!-- Article Footer -->
+      <div class="article-footer">
+        <a class="back-home" href="./index.html">← 返回首頁查看更多技術文章</a>
+      </div>
+    </article>
+  </div>
+</main>
+
+<!-- =============== Footer =============== -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-links">
+      <a href="./index.html">首頁</a>
+      <a href="./tech-news.html">科技新知</a>
+      <a href="./articles.html">文章列表</a>
+      <a href="./about.html">關於本站</a>
+    </div>
+    <div class="footer-copy">© 2026 "AI" 硬核工程師. Talk is cheap. Show me the code.</div>
+  </div>
+</footer>
+<script src="./js/wave.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
