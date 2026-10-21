@@ -92,26 +92,166 @@
     .result-tips { font-size: 0.88rem; background: var(--bg-alt); padding: 0.8rem 1rem; border-radius: 6px; border-left: 3px solid var(--accent); }
 
     /* Trinity Visual Architecture */
-    .trinity-arch-container { background: var(--bg-alt); border: 1.5px solid var(--border); border-radius: 14px; padding: 2rem 1.6rem; margin: 2.2rem 0; box-shadow: 0 6px 24px rgba(0,0,0,0.06); }
-    .trinity-core-box { background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%); border: 1.5px solid var(--accent); border-radius: 12px; padding: 1.6rem; text-align: center; }
-    .core-tag { display: inline-block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent); color: #fff; padding: 0.2rem 0.6rem; border-radius: 9999px; margin-bottom: 0.5rem; }
-    .core-title { margin: 0.2rem 0 0.4rem; font-size: 1.45rem; font-weight: 800; color: var(--text); }
-    .core-models { font-size: 0.92rem; color: var(--text-muted); font-family: "Fira Code", monospace; margin-bottom: 1rem; }
-    .core-features { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
-    .core-pill { background: var(--bg); border: 1px solid var(--border); padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; color: var(--text); font-weight: 500; }
-    .trinity-branch-divider { text-align: center; margin: 1.5rem 0 1.2rem; position: relative; }
-    .branch-label { display: inline-block; background: var(--bg); padding: 0.35rem 1.1rem; font-size: 0.88rem; font-weight: 700; color: var(--accent); border-radius: 9999px; border: 1.5px dashed var(--accent); margin-bottom: 0.5rem; }
-    .branch-arrows { font-size: 1.3rem; color: var(--accent); font-weight: bold; letter-spacing: 3rem; padding-left: 3rem; }
-    .trinity-nodes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
-    .node-card { background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 1.3rem; display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s; }
-    .node-card:hover { transform: translateY(-2px); border-color: var(--accent); }
-    .node-head h4 { margin: 0.5rem 0 0.2rem; font-size: 1.15rem; font-weight: 700; color: var(--text); }
-    .node-type { font-size: 0.82rem; color: var(--text-muted); font-family: "Fira Code", monospace; display: block; margin-bottom: 0.8rem; }
-    .node-list { padding-left: 1.2rem; margin: 0; font-size: 0.88rem; line-height: 1.65; }
-    .node-list li { margin-bottom: 0.4rem; }
-
-    /* ASCII / Topology Canvas */
-    .arch-diagram { background: #0f172a; color: #38bdf8; padding: 1.4rem; border-radius: 10px; font-family: "Fira Code", monospace; font-size: 0.86rem; line-height: 1.5; white-space: pre; overflow-x: auto; margin: 1.5rem 0; border: 1px solid #1e293b; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5); }
+    .trinity-arch-container {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.2rem 1.8rem;
+      margin: 2.4rem 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .dark-mode .trinity-arch-container {
+      background: #0b1120;
+      border-color: #1e293b;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+    .trinity-core-box {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(147, 51, 234, 0.08) 100%);
+      border: 1.5px solid rgba(59, 130, 246, 0.35);
+      border-radius: 12px;
+      padding: 1.8rem 1.4rem;
+      text-align: center;
+      position: relative;
+    }
+    .dark-mode .trinity-core-box {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.25) 0%, rgba(88, 28, 135, 0.25) 100%);
+      border-color: rgba(96, 165, 250, 0.35);
+    }
+    .core-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: #fff;
+      padding: 0.25rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 0.6rem;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    }
+    .core-title {
+      margin: 0.2rem 0 0.4rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .core-models {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-family: "Fira Code", monospace;
+      margin-bottom: 1.1rem;
+    }
+    .core-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+    .core-pill {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      color: var(--text);
+      font-weight: 500;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .dark-mode .core-pill {
+      background: #111827;
+      border-color: #374151;
+      color: #e5e7eb;
+    }
+    .trinity-branch-divider {
+      text-align: center;
+      margin: 1.6rem 0 1.4rem;
+      position: relative;
+      color: var(--accent);
+    }
+    .branch-connector-line {
+      width: 2px;
+      height: 18px;
+      background: linear-gradient(to bottom, rgba(59, 130, 246, 0.5), var(--accent));
+      margin: 0 auto 0.6rem;
+    }
+    .branch-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg);
+      padding: 0.45rem 1.3rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--accent);
+      border-radius: 9999px;
+      border: 1.5px solid var(--accent);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .dark-mode .branch-label {
+      background: #0f172a;
+    }
+    .branch-svg-flow {
+      max-width: 580px;
+      margin: 0.8rem auto 0;
+      display: block;
+      width: 100%;
+      height: 32px;
+    }
+    .trinity-nodes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+    .node-card {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .node-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .dark-mode .node-card {
+      background: #111827;
+      border-color: #1f2937;
+    }
+    .dark-mode .node-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .node-card.desktop-node { border-top: 4px solid #a855f7; }
+    .node-card.ide-node { border-top: 4px solid #3b82f6; }
+    .node-card.cli-node { border-top: 4px solid #10b981; }
+    .node-head h4 {
+      margin: 0.6rem 0 0.2rem;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .node-type {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: "Fira Code", monospace;
+      display: block;
+      margin-bottom: 0.9rem;
+    }
+    .node-list {
+      padding-left: 1.1rem;
+      margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+    .node-list li {
+      margin-bottom: 0.45rem;
+    }
 
     .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3.5rem; }
     .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
@@ -220,7 +360,7 @@
       <!-- Trinity Visual Architecture Map -->
       <div class="trinity-arch-container">
         <div class="trinity-core-box">
-          <span class="core-tag">Unified Agentic Brain</span>
+          <span class="core-tag">⚡ Unified Agentic Brain</span>
           <h3 class="core-title">Google Agentic Engine Core (統一代理推理核心)</h3>
           <p class="core-models">Gemini 3 Pro (High/Low Reasoning) · Claude Sonnet 4.6 · GPT-OSS 120B</p>
           <div class="core-features">
@@ -232,15 +372,21 @@
         </div>
 
         <div class="trinity-branch-divider">
-          <span class="branch-label">解耦至三大獨立人機互動形態 (Decoupled Surface Modalities)</span>
-          <div class="branch-arrows">↙ ↓ ↘</div>
+          <div class="branch-connector-line"></div>
+          <span class="branch-label">⚡ 解耦至三大獨立人機互動形態 (Decoupled Surface Modalities)</span>
+          <svg class="branch-svg-flow" viewBox="0 0 580 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M290 0 V12 M290 12 H95 V24 M290 12 H485 V24 M290 12 V24" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" opacity="0.45"/>
+            <polygon points="95,30 90,22 100,22" fill="currentColor" opacity="0.75"/>
+            <polygon points="290,30 285,22 295,22" fill="currentColor" opacity="0.75"/>
+            <polygon points="485,30 480,22 490,22" fill="currentColor" opacity="0.75"/>
+          </svg>
         </div>
 
         <div class="trinity-nodes-grid">
           <div class="node-card desktop-node">
             <div class="node-head">
               <span class="badge-pill badge-purple">Desktop (2.0)</span>
-              <h4>多代理任務指揮中心</h4>
+              <h4>🖥️ 多代理任務指揮中心</h4>
               <span class="node-type">Parallel Electron App</span>
             </div>
             <ul class="node-list">
@@ -255,7 +401,7 @@
           <div class="node-card ide-node">
             <div class="node-head">
               <span class="badge-pill badge-blue">Antigravity IDE</span>
-              <h4>AI 原生沉浸式編輯器</h4>
+              <h4>💻 AI 原生沉浸式編輯器</h4>
               <span class="node-type">AI-First VS Code Fork</span>
             </div>
             <ul class="node-list">
@@ -270,7 +416,7 @@
           <div class="node-card cli-node">
             <div class="node-head">
               <span class="badge-pill badge-green">agy (CLI)</span>
-              <h4>極速終端與管線自動化</h4>
+              <h4>⚡ 極速終端與管線自動化</h4>
               <span class="node-type">Native Binary / Headless TUI</span>
             </div>
             <ul class="node-list">
@@ -283,27 +429,6 @@
           </div>
         </div>
       </div>
-
-      <pre class="arch-diagram"><code>+-----------------------------------------------------------------------------------+
-|                           Google Agentic Engine Core                              |
-|   Gemini 3 Pro (High/Low Reasoning) | Claude Sonnet 4.6 | GPT-OSS 120B            |
-|   Artifacts Pipeline | Permissions / Sandboxing | Subagent Dynamic Leasing        |
-|   Workspace Customizations (.agents/rules, skills, hooks, plugins, MCP servers)   |
-+-----------------------------------------+-----------------------------------------+
-                                          |
-               +--------------------------+--------------------------+
-               |                                                     |
-               v                                                     v
-+-------------------------------+  +-----------------------------+  +-------------------------------+
-|    Antigravity Desktop 2.0    |  |       Antigravity IDE       |  |      Antigravity CLI (agy)    |
-|  (Parallel Electron App)      |  |  (AI-First VS Code Fork)    |  |  (Go / Rust Native Binary)    |
-+-------------------------------+  +-----------------------------+  +-------------------------------+
-| • Multi-Project Hub           |  | • Antigravity Tab (Predict) |  | • TUI Terminal Interface      |
-| • Scheduled Tasks (Cron/Timer)|  | • Supercomplete (Multi-line)|  | • Headless One-Shot (-p)      |
-| • Subagent Visual Tree        |  | • Inline Command (Ctrl+I)   |  | • Stdin/Stdout Unix Pipeline  |
-| • Browser Automation Capture  |  | • Visual Diff Overlays      |  | • Remote SSH & Tmux Daemon    |
-| • Strict Sandboxing Policies  |  | • Diagnostic Auto-Fix       |  | • CI/CD & Shell Automation    |
-+-------------------------------+  +-----------------------------+  +-------------------------------+</code></pre>
 
       <p>無論你開啟哪一個介面，背後共享完全同一套底層設施：</p>
       <ul>
