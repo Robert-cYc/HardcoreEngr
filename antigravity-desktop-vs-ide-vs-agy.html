@@ -91,8 +91,27 @@
     .result-desc { font-size: 0.98rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 0.8rem; }
     .result-tips { font-size: 0.88rem; background: var(--bg-alt); padding: 0.8rem 1rem; border-radius: 6px; border-left: 3px solid var(--accent); }
 
+    /* Trinity Visual Architecture */
+    .trinity-arch-container { background: var(--bg-alt); border: 1.5px solid var(--border); border-radius: 14px; padding: 2rem 1.6rem; margin: 2.2rem 0; box-shadow: 0 6px 24px rgba(0,0,0,0.06); }
+    .trinity-core-box { background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%); border: 1.5px solid var(--accent); border-radius: 12px; padding: 1.6rem; text-align: center; }
+    .core-tag { display: inline-block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent); color: #fff; padding: 0.2rem 0.6rem; border-radius: 9999px; margin-bottom: 0.5rem; }
+    .core-title { margin: 0.2rem 0 0.4rem; font-size: 1.45rem; font-weight: 800; color: var(--text); }
+    .core-models { font-size: 0.92rem; color: var(--text-muted); font-family: "Fira Code", monospace; margin-bottom: 1rem; }
+    .core-features { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+    .core-pill { background: var(--bg); border: 1px solid var(--border); padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; color: var(--text); font-weight: 500; }
+    .trinity-branch-divider { text-align: center; margin: 1.5rem 0 1.2rem; position: relative; }
+    .branch-label { display: inline-block; background: var(--bg); padding: 0.35rem 1.1rem; font-size: 0.88rem; font-weight: 700; color: var(--accent); border-radius: 9999px; border: 1.5px dashed var(--accent); margin-bottom: 0.5rem; }
+    .branch-arrows { font-size: 1.3rem; color: var(--accent); font-weight: bold; letter-spacing: 3rem; padding-left: 3rem; }
+    .trinity-nodes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+    .node-card { background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 1.3rem; display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s; }
+    .node-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .node-head h4 { margin: 0.5rem 0 0.2rem; font-size: 1.15rem; font-weight: 700; color: var(--text); }
+    .node-type { font-size: 0.82rem; color: var(--text-muted); font-family: "Fira Code", monospace; display: block; margin-bottom: 0.8rem; }
+    .node-list { padding-left: 1.2rem; margin: 0; font-size: 0.88rem; line-height: 1.65; }
+    .node-list li { margin-bottom: 0.4rem; }
+
     /* ASCII / Topology Canvas */
-    .arch-diagram { background: #0f172a; color: #38bdf8; padding: 1.4rem; border-radius: 10px; font-family: "Fira Code", monospace; font-size: 0.86rem; line-height: 1.5; overflow-x: auto; margin: 1.8rem 0; border: 1px solid #1e293b; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5); }
+    .arch-diagram { background: #0f172a; color: #38bdf8; padding: 1.4rem; border-radius: 10px; font-family: "Fira Code", monospace; font-size: 0.86rem; line-height: 1.5; white-space: pre; overflow-x: auto; margin: 1.5rem 0; border: 1px solid #1e293b; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5); }
 
     .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3.5rem; }
     .back-home { color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
@@ -198,8 +217,74 @@
 
       <p>答案在於：<strong>Google 將「AI Agent 思考與執行引擎」從「人機互動介面」徹底解耦了。</strong></p>
 
-      <div class="arch-diagram">
-+-----------------------------------------------------------------------------------+
+      <!-- Trinity Visual Architecture Map -->
+      <div class="trinity-arch-container">
+        <div class="trinity-core-box">
+          <span class="core-tag">Unified Agentic Brain</span>
+          <h3 class="core-title">Google Agentic Engine Core (統一代理推理核心)</h3>
+          <p class="core-models">Gemini 3 Pro (High/Low Reasoning) · Claude Sonnet 4.6 · GPT-OSS 120B</p>
+          <div class="core-features">
+            <span class="core-pill">🛡️ 執行政策與終端沙箱 (Sandboxing)</span>
+            <span class="core-pill">📦 Artifacts 驗收交付管線</span>
+            <span class="core-pill">⚡ Subagents 動態派生與排程</span>
+            <span class="core-pill">🔧 .agents/ 規則、技能與 MCP</span>
+          </div>
+        </div>
+
+        <div class="trinity-branch-divider">
+          <span class="branch-label">解耦至三大獨立人機互動形態 (Decoupled Surface Modalities)</span>
+          <div class="branch-arrows">↙ ↓ ↘</div>
+        </div>
+
+        <div class="trinity-nodes-grid">
+          <div class="node-card desktop-node">
+            <div class="node-head">
+              <span class="badge-pill badge-purple">Desktop (2.0)</span>
+              <h4>多代理任務指揮中心</h4>
+              <span class="node-type">Parallel Electron App</span>
+            </div>
+            <ul class="node-list">
+              <li><strong>Multi-Project Hub：</strong>跨 Repository 集中管控</li>
+              <li><strong>Scheduled Tasks：</strong>原生 Cron 定時排程與計時器</li>
+              <li><strong>Subagent 可視化：</strong>即時階層樹狀調度面板</li>
+              <li><strong>瀏覽器自動化：</strong>UI 驗收錄影與截圖工件</li>
+              <li><strong>沙箱與權限：</strong>指令阻斷與外網黑白名單防護</li>
+            </ul>
+          </div>
+
+          <div class="node-card ide-node">
+            <div class="node-head">
+              <span class="badge-pill badge-blue">Antigravity IDE</span>
+              <h4>AI 原生沉浸式編輯器</h4>
+              <span class="node-type">AI-First VS Code Fork</span>
+            </div>
+            <ul class="node-list">
+              <li><strong>Antigravity Tab：</strong>意圖預測、Tab to Jump / Import</li>
+              <li><strong>Supercomplete：</strong>跨多行大規模 Diff 與刪除建議</li>
+              <li><strong>Inline Command：</strong><code>Ctrl+I</code> 局部行級代碼重構</li>
+              <li><strong>Visual Diff Overlays：</strong>編輯器內直接對比紅綠代碼</li>
+              <li><strong>Diagnostic Auto-Fix：</strong>Linter 紅波浪一鍵修復</li>
+            </ul>
+          </div>
+
+          <div class="node-card cli-node">
+            <div class="node-head">
+              <span class="badge-pill badge-green">agy (CLI)</span>
+              <h4>極速終端與管線自動化</h4>
+              <span class="node-type">Native Binary / Headless TUI</span>
+            </div>
+            <ul class="node-list">
+              <li><strong>極速喚醒：</strong>冷啟動 &lt; 200ms，記憶體 &lt; 80MB</li>
+              <li><strong>Unix Pipeline：</strong><code>git diff | agy</code> 無縫串接</li>
+              <li><strong>Headless Mode：</strong><code>agy -p "..."</code> 批次腳本執行</li>
+              <li><strong>遠端無圖形主機：</strong>SSH + Tmux 常駐守護進程</li>
+              <li><strong>CI/CD 整合：</strong>GitHub Actions 自動化測試與審查</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <pre class="arch-diagram"><code>+-----------------------------------------------------------------------------------+
 |                           Google Agentic Engine Core                              |
 |   Gemini 3 Pro (High/Low Reasoning) | Claude Sonnet 4.6 | GPT-OSS 120B            |
 |   Artifacts Pipeline | Permissions / Sandboxing | Subagent Dynamic Leasing        |
@@ -218,8 +303,7 @@
 | • Subagent Visual Tree        |  | • Inline Command (Ctrl+I)   |  | • Stdin/Stdout Unix Pipeline  |
 | • Browser Automation Capture  |  | • Visual Diff Overlays      |  | • Remote SSH & Tmux Daemon    |
 | • Strict Sandboxing Policies  |  | • Diagnostic Auto-Fix       |  | • CI/CD & Shell Automation    |
-+-------------------------------+  +-----------------------------+  +-------------------------------+
-      </div>
++-------------------------------+  +-----------------------------+  +-------------------------------+</code></pre>
 
       <p>無論你開啟哪一個介面，背後共享完全同一套底層設施：</p>
       <ul>
