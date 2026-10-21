@@ -5,7 +5,7 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 21 Oct 2026 01:54:02 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 02:10:13 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
@@ -17,16 +17,25 @@
     <link>https://ai-hardcore-engineer.com/spacex-aerospace-engineering-guide.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/spacex-aerospace-engineering-guide.html</guid>
     <description>全維度深度剖析 SpaceX 航太工程奇蹟：從第一性原理與五步工作法、獵鷹九號 (Falcon 9) Merlin 1D 推進與 VTVL 垂直回收動力學、超音速鈦合金格狀翼與凸優化著陸演算法；到猛禽發動機 (Raptor 1/2/3) 全流量分級燃燒循環 (FFSC) 350 bar 室壓熱力學突破、304L 不鏽鋼材料革命；再到 Starship 星艦與超重型助推器 Mechazilla 筷子發射塔空中懸停捕獲技術、星鏈 (Starlink V2 Mini) 相控陣與真空雷射星間鏈路 (OISL)、三模冗餘 (TMR) 航電與即時 Linux 系統架構。內建互動式齊奧爾科夫斯基火箭方程與多級入軌 Delta-v 模擬精算器。</description>
-    <pubDate>Wed, 21 Oct 2026 02:00:00 +0000</pubDate>
+    <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
     <category>SpaceX</category>
     <category>Starship</category>
     <category>星艦</category>
     <category>Falcon 9</category>
+    <category>獵鷹九號</category>
     <category>Raptor</category>
     <category>猛禽發動機</category>
     <category>Starlink</category>
+    <category>星鏈</category>
+    <category>Mechazilla</category>
+    <category>筷子夾火箭</category>
+    <category>全流量分級燃燒</category>
+    <category>FFSC</category>
+    <category>VTVL</category>
+    <category>垂直回收</category>
     <category>航太工程</category>
     <category>火箭方程</category>
+    <category>Delta-v</category>
   </item>
   <item>
     <title>藍牙技術終極硬核指南：核心跳頻運作原理、音訊編碼 (LDAC/aptX/LC3)、藍牙接收器電路架構與高傳真喇叭聲學工程全解</title>
@@ -926,7 +935,7 @@
     <link>https://ai-hardcore-engineer.com/articles.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/articles.html</guid>
     <description>關於前端開發、後端技術、Git 與 AI 開發的技術博客。</description>
-    <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
+    <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
     <category>文章</category>
     <category>博客</category>
   </item>

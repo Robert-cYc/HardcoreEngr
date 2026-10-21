@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21 01:54",
+  "updated": "2026-10-21 02:10",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -27,11 +27,11 @@
           "comments": "https://news.ycombinator.com/item?id=50168396"
         },
         {
-          "title": "Google open-sources TorchTPU, a native PyTorch back end for TPUs",
-          "link": "https://github.com/google-pytorch/torch_tpu",
-          "date": "2026-10-20 16:40",
+          "title": "Good type against all odds",
+          "link": "https://unsung.aresluna.org/good-type-against-all-odds/",
+          "date": "2026-10-21 01:45",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50169053"
+          "comments": "https://news.ycombinator.com/item?id=50175059"
         },
         {
           "title": "The Other Epidemic: Trying to get off benzodiazepines",
@@ -39,6 +39,13 @@
           "date": "2026-10-20 23:04",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50173891"
+        },
+        {
+          "title": "Google open-sources TorchTPU, a native PyTorch back end for TPUs",
+          "link": "https://github.com/google-pytorch/torch_tpu",
+          "date": "2026-10-20 16:40",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50169053"
         },
         {
           "title": "Academics have a duty to defend open knowledge systems like Wikipedia",
@@ -55,18 +62,18 @@
           "comments": "https://news.ycombinator.com/item?id=50169707"
         },
         {
+          "title": "Learning to live with Waymos",
+          "link": "https://www.newyorker.com/magazine/2026/10/19/were-learning-to-live-with-waymos-its-going-weird",
+          "date": "2026-10-21 01:44",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50175057"
+        },
+        {
           "title": "SlopCodeBench 10/2026 – Opus 5.5, Astra wins overall, xhigh considered harmful",
           "link": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/benchmarking-new-models-on-slop-code-bench.md",
           "date": "2026-10-15 19:09",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50108717"
-        },
-        {
-          "title": "Good type against all odds",
-          "link": "https://unsung.aresluna.org/good-type-against-all-odds/",
-          "date": "2026-10-21 01:45",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50175059"
         },
         {
           "title": "Apple broke an essential presentation feature of iPads",
@@ -81,13 +88,6 @@
           "date": "2026-10-20 15:59",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50168357"
-        },
-        {
-          "title": "EMudhra Intermediate CA Compromise",
-          "link": "https://emudhra.we-have-a-problem.com/",
-          "date": "2026-10-20 13:58",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50166579"
         }
       ]
     },
@@ -174,6 +174,12 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "91APP 遭駭引發資安疑慮！品牌遭冒名發詐騙訊息 數發部展開行政調查",
+          "link": "https://3c.ltn.com.tw/news/67995",
+          "date": "2026/10/21 10:00",
+          "summary": "整合官網、品牌 APP、LINE、POS 系統、金流等於一身，台灣 SaaS 軟體服務商 91APP，上週爆發資料庫 ..."
+        },
+        {
           "title": "ChatGPT聊天紀錄不怕被偷看了！對話一鍵上鎖 搜尋也找不到",
           "link": "https://3c.ltn.com.tw/news/68004",
           "date": "2026/10/21 09:35",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/67981",
           "date": "2026/10/20 10:20",
           "summary": "三星 Galaxy 手機目前採用 One UI 介面，近年持續加入個人化設定與 Galaxy AI 人工智慧功能。 ..."
-        },
-        {
-          "title": "Spotify嚴抓假家人！QR Code驗證防共享 網友找到破解法",
-          "link": "https://3c.ltn.com.tw/news/67982",
-          "date": "2026/10/20 09:45",
-          "summary": "不少人為了省下音樂串流訂閱費，會找親友一起分攤Spotify家庭方案，不過現在可得注意了！Spotify開始加強取締 ..."
         }
       ]
     },
@@ -252,87 +252,87 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "受惠 AI 伺服器與光通訊！外資預估臻鼎 HDI 助攻毛利率大躍進",
-          "link": "https://finance.technews.tw/2026/10/21/hdi/",
-          "date": "2026-10-21 01:52",
-          "summary": "臻鼎「One ZDT」策略正式開花結果，外資出具最新研究報告指出，受惠於光收發模組及 AI 伺服器需求強勁成長 [&#8230;]",
+          "title": "美醫院以 4 千萬張臉部照片訓練 AI，單張照片可估生理年齡並預測癌症病患存活率",
+          "link": "https://technews.tw/2026/10/20/new-ai-tool-can-predict-cancer-survival-by-a-single-patient-selfie-study-suggests/",
+          "date": "2026-10-20 07:00",
+          "summary": "美國麻州總醫院布萊根（Mass General Brigham）於《刺胳針數位健康》（Lancet Digit [&#8230;]",
           "comments": ""
         },
         {
-          "title": "Anthropic 上半年狂虧 807 億美元  IPO 蒙陰影",
-          "link": "https://finance.technews.tw/2026/10/21/anthropic-s-1-shows-red-hot-growth-risks-and-massive-computing-costs/",
-          "date": "2026-10-21 01:30",
-          "summary": "AI 新創公司 Anthropic 正積極籌備掛牌上市，IPO 公開說明書草稿顯示，儘管營收高速成長，2026 [&#8230;]",
+          "title": "紅牛採納 AI「讓位」建議避開判罰，助維斯塔潘奪 2025 年 F1 義大利大獎賽冠軍",
+          "link": "https://technews.tw/2026/10/20/red-bull-reveals-ai-role-in-verstappens-2025-italian-gp-strategy/",
+          "date": "2026-10-20 06:50",
+          "summary": "紅牛車隊（Red Bull Racing）技術合作主管受訪表示，與甲骨文（Oracle）共同開發的 AI 策略 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "把握 AI 發展先機，中國國家數據集團成立",
-          "link": "https://technews.tw/2026/10/21/china-national-data-group-corporation-limited/",
-          "date": "2026-10-21 01:20",
-          "summary": "中國國家數據集團 20 日在河北雄安新區成立。中國國務院副總理丁薛祥說，組建這一集團對於充分把握人工智慧（AI [&#8230;]",
+          "title": "大摩揭 OCP 峰會重點：微軟 Maia 300 明年部署，輝達 MGX 零組件升級成焦點",
+          "link": "https://technews.tw/2026/10/20/maia-300-ai-datacenter-in-ocp-2026/",
+          "date": "2026-10-20 06:36",
+          "summary": "美系外資摩根士丹利（大摩）出具最新報告指出，微軟 Maia 300 是本次展會最重要的新進展；相較之下，NVI [&#8230;]",
           "comments": ""
         },
         {
-          "title": "安全測試恐失靈？中國智譜 AI GLM-5.3 學會考試時「裝乖」以保護後代模型",
-          "link": "https://infosecu.technews.tw/2026/10/21/z-ais-glm-5-3-raises-researcher-fears-the-chinese-model-can-fake-ai-safety-tests/",
-          "date": "2026-10-21 00:45",
-          "summary": "中國人工智慧實驗室智譜（Z.ai）8 月推出旗艦模型 GLM-5.3，AI 安全研究機構 Apollo Res [&#8230;]",
+          "title": "亞馬遜狂掃輝達 GB300 導致現金流轉負，AI 豪賭今年資本支出上看 2 千億美元",
+          "link": "https://finance.technews.tw/2026/10/20/amazons-ai-infrastructure-spending-soars-resulting-in-negative-cash-flow/",
+          "date": "2026-10-20 06:30",
+          "summary": "亞馬遜為搶進人工智慧基礎設施，以前所未見的速度投入資料中心與伺服器設備，卻也讓現金流承受明顯壓力。外媒引述會議 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "不看措辭看想法，IdeaLens 改從核心論點判斷文章出自人類還是 AI",
-          "link": "https://technews.tw/2026/10/21/a-new-ai-detector-looks-beyond-words-to-check-whether-the-ideas-came-from-ai/",
-          "date": "2026-10-21 00:30",
-          "summary": "馬里蘭大學、Google DeepMind 與西門菲莎大學研究人員開發 IdeaLens，先把文件剝除原始措辭 [&#8230;]",
+          "title": "玉山證券全新 APP 首創客製化！一頁解決台美日股與零股交易",
+          "link": "https://finance.technews.tw/2026/10/20/taiwan-us-and-japanese-stock/",
+          "date": "2026-10-20 06:14",
+          "summary": "台股 5 萬點大關前高檔震盪，玉山證券近日宣布推出全新 APP，整合看盤、交易、庫存管理與自助服務，透過單一平 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "路透：字節阿里騰訊訂購總值逾 350 億美元輝達晶片",
-          "link": "https://technews.tw/2026/10/21/bytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders/",
-          "date": "2026-10-21 00:15",
-          "summary": "路透社 20 日報導，字節跳動、阿里巴巴和騰訊 3 家中國科技巨頭已訂購超過 300 萬個、總值逾 350 億 [&#8230;]",
+          "title": "不讓任何國家被 AI 拋下，韓國推動「全球 AI 基本社會」",
+          "link": "https://technews.tw/2026/10/20/finance-minister-pledges-support-for-global-ai-basic-society/",
+          "date": "2026-10-20 06:10",
+          "summary": "韓國財政部長李炯日（Lee Hyoung-il）於 10 月 20 日在首爾表示，韓國將致力於推動建立一個讓各 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "韓國研發 100 吋「發聲顯示器」，聲音隨畫面移動準確率達 99.9%",
-          "link": "https://technews.tw/2026/10/21/your-next-tv-could-play-sound-from-the-exact-spot-where-the-action-happens/",
-          "date": "2026-10-21 00:10",
-          "summary": "韓國機械研究院（KIMM）把螢幕本身變成喇叭，聲音會跟著畫面中的人物或物體移動，100 吋原型定位準確率達 9 [&#8230;]",
+          "title": "Anthropic 準備 IPO，Google 前執行長施密特未來獲利可觀",
+          "link": "https://technews.tw/2026/10/20/eric-schmidts-1-percent-anthropic-stake-set-to-pay-huge-windfall/",
+          "date": "2026-10-20 05:50",
+          "summary": "人工智慧新創公司 Anthropic 正在籌備首次公開發行（IPO）。Google 前執行長施密特（Eric [&#8230;]",
           "comments": ""
         },
         {
-          "title": "免費 Adobe 對標軟體大放送，AI 會摧毀軟體業嗎？",
-          "link": "https://technews.tw/2026/10/21/ai-destroy-software-industry/",
-          "date": "2026-10-21 00:00",
-          "summary": "如果幾年前有人說，只靠一名開發者加上幾個 AI 就能在短時間內做出類似 Photoshop、Premiere、 [&#8230;]",
+          "title": "臻鼎 2030 年擴建 29 座新廠產能！董座沈慶芳：後年 HDI 會超過軟板",
+          "link": "https://finance.technews.tw/2026/10/20/tpca-show-2026/",
+          "date": "2026-10-20 05:13",
+          "summary": "臻鼎科技今日參展台灣電路板產業國際展覽會（TPCA Show 2026），董事長沈慶芳表示，受惠 AI 與光模 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "Claude 半小時解開 26 年密碼學謎題，揭 NIST 曲線種子來自系統時間",
-          "link": "https://technews.tw/2026/10/21/claude-solves-mystery-behind-nist-curve-seeds/",
-          "date": "2026-10-20 23:50",
-          "summary": "Anthropic 10 月 16 日公布，旗下 Claude 內部研究模型花費不到半小時，成功找出困擾密碼學 [&#8230;]",
+          "title": "是方砸 33 億元建虎尾 AI 資料中心，預計 2028 下半年營運",
+          "link": "https://finance.technews.tw/2026/10/20/chief-aidc/",
+          "date": "2026-10-20 05:10",
+          "summary": "是方電訊持續擴大 AI 資料中心布局，今日宣布位於中科虎尾園區的 AI 資料中心正式動土，總投資金額約 33 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "Vibe Coding 改造家中智慧電視，移除廣告與臃腫軟體",
-          "link": "https://technews.tw/2026/10/21/dumbing-down-smart-tvs-to-eliminate-unnecessary-features/",
-          "date": "2026-10-20 23:44",
-          "summary": "原本設計用於提供推薦內容、廣告及各種附加服務的智慧電視，現在卻有多名開發者以及 Vibe Coding 愛好者 [&#8230;]",
+          "title": "新漢旗下綠基美系雲端 AI 業務成長！安恩嘉 AI 防震視覺攻歐洲智慧碼頭",
+          "link": "https://finance.technews.tw/2026/10/20/ai-shakedry/",
+          "date": "2026-10-20 04:42",
+          "summary": "新漢旗下綠基今日宣布受惠美系雲端 AI 客戶應用需求成長，帶動相關業績攀升，而全資子公司安恩嘉攜手歐洲智慧碼頭 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "自駕車上路前的魔鬼考官，Laplace Intelligence 用 AI 代理打造極端情境模擬",
-          "link": "https://technews.tw/2026/10/21/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-they-hit-the-real-world/",
-          "date": "2026-10-20 23:40",
-          "summary": "來自美國密西根州安娜堡的 Laplace Intelligence，正把「先找出失敗，再上路部署」變成一門生意 [&#8230;]",
+          "title": "東南旅遊導入奧義賽博 AI 資安平台，合規與維運成本降七成",
+          "link": "https://infosecu.technews.tw/2026/10/20/settour-cycraft-ai/",
+          "date": "2026-10-20 04:31",
+          "summary": "隨著旅遊產業加速數位轉型，旅客個資保護與供應鏈資安風險逐漸受到重視。奧義賽博宣布，東南旅遊今年導入旗下 AI [&#8230;]",
           "comments": ""
         },
         {
-          "title": "OpenCode 遭大規模 AI 蒸餾攻擊，用戶 API Key 恐外洩",
-          "link": "https://infosecu.technews.tw/2026/10/21/opencode-hit-by-distillation-attack-api-keys-at-risk/",
-          "date": "2026-10-20 23:10",
-          "summary": "開源 AI 編程工具 OpenCode 於 10 月 17 日證實發生安全事故，事件與大規模 AI 模型蒸餾攻 [&#8230;]",
+          "title": "3M 擴大與亞馬遜資料中心合作，採購規模上看 60 億美元",
+          "link": "https://technews.tw/2026/10/20/3m-expands-amazon-data-center-partnership/",
+          "date": "2026-10-20 04:08",
+          "summary": "美國工業與材料大廠 3M 宣布擴大與亞馬遜的商業合作關係，進一步切入 AI 資料中心基礎設施市場。3M 同時向 [&#8230;]",
           "comments": ""
         }
       ]
@@ -341,62 +341,6 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
-        {
-          "title": "路透：字節阿里騰訊訂購總值逾 350 億美元輝達晶片",
-          "link": "https://technews.tw/2026/10/21/bytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders/",
-          "date": "2026-10-21 00:15",
-          "summary": "路透社 20 日報導，字節跳動、阿里巴巴和騰訊 3 家中國科技巨頭已訂購超過 300 萬個、總值逾 350 億 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "高雄台積電 F22 廠區工安意外，螺栓斷裂致 4 人墜落送醫後續勒令停工",
-          "link": "https://technews.tw/2026/10/20/industrial-accident-at-tsmc-f22-plant-in-kaohsiung/",
-          "date": "2026-10-20 11:30",
-          "summary": "高雄市楠梓園區台積電 F22 P4 新建工程工地 20 日傍晚發生重大工安意外。事故起因於吊車執行鋼構吊掛安裝 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 變現將成考驗！星展估 Fed 將再升息 2 碼、金價上看 5,300 美元",
-          "link": "https://finance.technews.tw/2026/10/20/us-tariffs/",
-          "date": "2026-10-20 09:05",
-          "summary": "星展銀行今日召開第四季經濟暨投資展望，財富管理投資顧問部資深副總裁陳昱嘉表示，AI 企業的獲利模式能否支撐過去 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "輝達在台首開政府事務總監職缺，深化政策溝通拚新總部布局",
-          "link": "https://technews.tw/2026/10/20/nvidia-director-government-affairs-taiwan/",
-          "date": "2026-10-20 08:50",
-          "summary": "人工智慧（AI）晶片大廠輝達（NVIDIA）積極擴大在台布局，近期首度在台灣開出負責與政府部門溝通的「政府事務 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Googlebook 捨平價策略、挑戰 999 美元高階市場，外媒憂淪下個 Steam Machine",
-          "link": "https://ccc.technews.tw/2026/10/20/googlebook-ill-timed-launch-risks-crisis/",
-          "date": "2026-10-20 08:40",
-          "summary": "科技媒體《Tom&#8217;s Hardware》近期刊出評論指出，Google 試圖將 Chromeboo [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "2027 年全球資料中心新增產能將翻倍，瓶頸再度轉回半導體晶片與記憶體",
-          "link": "https://finance.technews.tw/2026/10/20/global-data-center-capacity-will-double-by-2027/",
-          "date": "2026-10-20 08:10",
-          "summary": "研調機構 SemiAnalysis 最新發布的報告指出，全球人工智慧（AI）基礎設施建設將在 2027 年邁入 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "基富通 10 週年推好好安養信託！多頭總司令張錫喊台積電 5,000 元",
-          "link": "https://finance.technews.tw/2026/10/20/take-good-care-of-yourself/",
-          "date": "2026-10-20 07:36",
-          "summary": "基富通今日慶祝營運屆滿 10 週年，攜手華南銀行推出「好好安養信託」，藉由基金投資不中斷、信託專款專用、資產保 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "輝達發表矽中介層光學封裝原型晶片，布局 2028 年 Feynman 平台",
-          "link": "https://finance.technews.tw/2026/10/20/nvidia-unveils-prototype-silicon-interposer-optical-packaging-chip/",
-          "date": "2026-10-20 07:30",
-          "summary": "在 SEMICON West 2026 大會上，輝達(NVIDIA) 以「下一代 AI 之光學整合」（Opti [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "馬斯克晶圓夢跨大步，Terafab 傳 2027 年進駐首台 ASML EUV 曝光機",
           "link": "https://technews.tw/2026/10/20/elon-musk-terafab-first-asml-euv-2027/",
@@ -424,6 +368,62 @@
           "date": "2026-10-20 03:40",
           "summary": "輝達（NVIDIA）19 日在柏林 GTC 大會宣布，利用德國尤利希超級電腦中心（Jülich Superco [&#8230;]",
           "comments": ""
+        },
+        {
+          "title": "台北國際電子科技展登場！貿協王熙蒙：AI 關鍵在解決工廠現實問題",
+          "link": "https://finance.technews.tw/2026/10/20/taitronics-ai/",
+          "date": "2026-10-20 03:28",
+          "summary": "2026 台北國際電子產業科技展（TAITRONICS）與台灣國際人工智慧暨物聯網展（AIoT Taiwan） [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "看好 AI 基建動能  美銀唱多特諾本、Soitec",
+          "link": "https://finance.technews.tw/2026/10/20/bofa-bullish-on-technoprobe-and-soitec/",
+          "date": "2026-10-20 02:50",
+          "summary": "美銀將義大利探針卡巨頭特諾本（Technoprobe）和法國矽晶圓基板大廠 Soitec 列為「歐洲中小型半導 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "亞馬遜推出 TorchNeuron，PyTorch 程式免改寫就能搬上 Trainium 晶片",
+          "link": "https://technews.tw/2026/10/20/amazon-unveils-tool-to-run-ai-code-on-custom-chips/",
+          "date": "2026-10-20 02:45",
+          "summary": "亞馬遜（Amazon）19 日推出名為 TorchNeuron 的新工具，主打讓開發者幾乎無需重寫程式，即可將 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "日政府擬對晶圓代工廠 Rapidus 追加出資 4,000 億",
+          "link": "https://technews.tw/2026/10/20/japanese-government-plans-additional-400-billion-yen-investment-rapidus-wafer-foundry/",
+          "date": "2026-10-20 02:35",
+          "summary": "日本官民合作設立的晶圓代工廠 Rapidus 目標在 2027 年度下半年量產 2 奈米（nm）晶片。而日本政 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "蘋果、特斯拉以中國記憶體為籌碼要韓商降價，韓媒：目前難撼動",
+          "link": "https://finance.technews.tw/2026/10/20/apple-and-tesla-are-using-chinese-memory-chips-as-leverage-to-pressure-south-korean-companies-to-lower-prices/",
+          "date": "2026-10-19 23:15",
+          "summary": "根據朝鮮日報的報導，為了應對記憶體價格飛漲，蘋果（Apple）與特斯拉（Tesla）等美國科技大廠近日頻頻將長 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "陳立武：中國晶片製造落後不大，英特爾正積極建構與台積電平起平坐業務",
+          "link": "https://finance.technews.tw/2026/10/20/chinas-chip-manufacturing-technology-is-not-far-behind/",
+          "date": "2026-10-19 23:00",
+          "summary": "英特爾（Intel）執行長陳立武（Lip-Bu Tan）在接受日經亞洲（Nikkei Asia）專訪時指出，針 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 算力浪潮與地緣雙軌演進！2027 年半導體設備競格全解析",
+          "link": "https://technews.tw/2026/10/20/ai-computing-power-wave-geopolitical-dual-track-evolution-2027-semiconductor-equipment-competitive-landscape-analysis/",
+          "date": "2026-10-19 23:00",
+          "summary": "摩爾定律單晶片微縮效益遞減，使 CoWoS、Hybrid Bonding 等先進封裝成為延續算力的關鍵，測試複 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "科普環島列車啟程，半導體、太空與智慧醫療導入體驗",
+          "link": "https://technews.tw/2026/10/19/science-popularization-round-the-island-train-departs-introducing-semiconductor-space-smart-healthcare-experiences/",
+          "date": "2026-10-19 09:40",
+          "summary": "2026 台灣科普環島列車今天從台北車站出發，展開為期 6 天的全台科學之旅。國科會主委吳誠文表示，前瞻科研與 [&#8230;]",
+          "comments": ""
         }
       ]
     },
@@ -431,55 +431,6 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
-        {
-          "title": "受惠 AI 伺服器與光通訊！外資預估臻鼎 HDI 助攻毛利率大躍進",
-          "link": "https://finance.technews.tw/2026/10/21/hdi/",
-          "date": "2026-10-21 01:52",
-          "summary": "臻鼎「One ZDT」策略正式開花結果，外資出具最新研究報告指出，受惠於光收發模組及 AI 伺服器需求強勁成長 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "提前一年 Panasonic 鈣鈦礦太陽能電池 2029 年量產",
-          "link": "https://technews.tw/2026/10/21/panasonic-perovskite-2029-april/",
-          "date": "2026-10-21 01:10",
-          "summary": "日本 Panasonic 將在 2029 年 4 月開始量產次世代太陽能電池「鈣鈦礦」（Perovskite） [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "韓國研發 100 吋「發聲顯示器」，聲音隨畫面移動準確率達 99.9%",
-          "link": "https://technews.tw/2026/10/21/your-next-tv-could-play-sound-from-the-exact-spot-where-the-action-happens/",
-          "date": "2026-10-21 00:10",
-          "summary": "韓國機械研究院（KIMM）把螢幕本身變成喇叭，聲音會跟著畫面中的人物或物體移動，100 吋原型定位準確率達 9 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "面板廠陷成本與需求雙重壓力，三大面板應用 10 月價格持平",
-          "link": "https://technews.tw/2026/10/20/panel-prices-in-2026-october-h2/",
-          "date": "2026-10-20 10:34",
-          "summary": "面板市場 10 月持續面臨需求疲弱與成本攀升的雙重壓力，市場研究機構 TrendForce 預估，三大面板應用 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "工研院攜手群翊攻高階載板，AI 溫測技術打入低軌衛星供應鏈",
-          "link": "https://technews.tw/2026/10/20/itri-chin-yi-advanced-substrates-ai-temperature-measurement-technology-leo-satellite-supply-chain/",
-          "date": "2026-10-20 09:22",
-          "summary": "隨著 AI 伺服器、高效能運算（HPC）及低軌衛星通訊需求持續成長，高階載板製程對溫度控制與良率的要求日益提高 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 基建需求狂飆！OCP 設備市場 2030 年挑戰 9,000 億美元",
-          "link": "https://technews.tw/2026/10/20/ai-infrastructure-demand-ocp-equipment-market-challenge-900-billion-2030/",
-          "date": "2026-10-20 07:35",
-          "summary": "隨著人工智慧（AI）基礎設施投資持續擴大，開放運算計畫（OCP）相關設備市場規模大幅上修。OCP 基金會公布最 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "鋼鐵巨頭 CLF 財報優、看旺 2027  股價飆 16%",
-          "link": "https://finance.technews.tw/2026/10/20/cleveland-cliffs-posts-strong-earnings-shares-surge-16/",
-          "date": "2026-10-20 07:10",
-          "summary": "美國鋼鐵巨頭 Cleveland-Cliffs 上季核心獲利優於預期，且看好明年在關稅和新客戶合約挹注下，業績 [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "臉部微動就是發電機，全新 GlassTENG 智慧眼鏡精準追蹤心率與表情",
           "link": "https://technews.tw/2026/10/20/us-develops-new-smart-glasses-blink-power-detect-heart-rate-teeth-grinding-facial-movements/",
@@ -509,10 +460,59 @@
           "comments": ""
         },
         {
+          "title": "黃仁勳剖析台灣半導體傳奇，從李國鼎遠見、PC 革命到將工程變酷獨特文化",
+          "link": "https://technews.tw/2026/10/20/jensen-huang-analyzes-the-legendary-taiwanese-semiconductor-industry/",
+          "date": "2026-10-20 03:50",
+          "summary": "知名美國百萬訂閱網紅 Lex Fridman 近期釋出一部短片，為 2026 年 Computex Taipe [&#8230;]",
+          "comments": ""
+        },
+        {
           "title": "台北國際電子科技展登場！貿協王熙蒙：AI 關鍵在解決工廠現實問題",
           "link": "https://finance.technews.tw/2026/10/20/taitronics-ai/",
           "date": "2026-10-20 03:28",
           "summary": "2026 台北國際電子產業科技展（TAITRONICS）與台灣國際人工智慧暨物聯網展（AIoT Taiwan） [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "東元空調啟動戰略轉型攻 AI 散熱！總座蔡尚育：明年商用拚破六成",
+          "link": "https://finance.technews.tw/2026/10/20/commercial-chilled-water-unit/",
+          "date": "2026-10-20 02:48",
+          "summary": "東元今日參與「2026 國際冷凍空調綠能科技展」，空調科技事業群總經理蔡尚育表示，東元空調科技事業群全面啟動戰 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "蘋果 10 月底再推新品，首款觸控 OLED MacBook Pro 有望登場",
+          "link": "https://technews.tw/2026/10/20/oled-macbook-pro-touchable/",
+          "date": "2026-10-19 23:11",
+          "summary": "蘋果 10 月新品攻勢還沒結束！繼日前推出新一代智慧家庭產品後，蘋果全球行銷資深副總裁 Greg Joswia [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "SK 海力士聯手韓政府與四大銀行，推 2 兆韓圜貸款保證支援半導體供應商",
+          "link": "https://finance.technews.tw/2026/10/19/sk-hynix-govt-to-provide-2-tln-won-in-loan-guarantees-to-semiconductor-suppliers/",
+          "date": "2026-10-19 08:50",
+          "summary": "SK 海力士與韓國產業部、韓國貿易保險公社及四大銀行合作，為半導體材料、零組件與設備供應商提供 2 兆韓圜貸款 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "2026 年光纖現貨報價倍數攀升，資料中心推升需求、短缺恐延續至 2028 年",
+          "link": "https://technews.tw/2026/10/19/fiber-optic-spot-prices-multiply-2026-data-center-demand-shortage-extends-2028/",
+          "date": "2026-10-19 08:20",
+          "summary": "根據 TrendForce 最新通訊產業研究，隨著 AI 資料中心、跨資料中心互連及高容量骨幹網路建設推升光纖 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "精密智慧製造台廠，搶攻 AIDC 零組件及設備供應",
+          "link": "https://finance.technews.tw/2026/10/19/taiwanese-precision-smart-manufacturing-firms-target-aidc-component-equipment-supply/",
+          "date": "2026-10-19 06:30",
+          "summary": "人工智慧 AI 伺服器和資料中心（AIDC）等基礎建設需求強勁，帶動關鍵零組件和高階精密製程設備需求，包括電機 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "研調估 2030 年資料中心 IT 運算力年增 70GW，液冷扮要角",
+          "link": "https://technews.tw/2026/10/19/liquid-cooling-to-play-key-role-in-ai-infrastructure-by-2030/",
+          "date": "2026-10-19 06:00",
+          "summary": "研調機構 Omdia 報告預測，2030 年全球新增資料中心資訊電子（IT）運算能力將達到每年約 70 GW， [&#8230;]",
           "comments": ""
         }
       ]
