@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21 01:06",
+  "updated": "2026-10-21 01:27",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -27,18 +27,18 @@
           "comments": "https://news.ycombinator.com/item?id=50163277"
         },
         {
-          "title": "Voxtral 3",
-          "link": "https://mistral.ai/news/voxtral-3/",
-          "date": "2026-10-20 16:02",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50168396"
-        },
-        {
           "title": "The Other Epidemic: Trying to get off benzodiazepines",
           "link": "https://www.thebeliever.net/the-other-epidemic/",
           "date": "2026-10-20 23:04",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50173891"
+        },
+        {
+          "title": "Voxtral 3",
+          "link": "https://mistral.ai/news/voxtral-3/",
+          "date": "2026-10-20 16:02",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50168396"
         },
         {
           "title": "Google open-sources TorchTPU, a native PyTorch back end for TPUs",
@@ -55,18 +55,18 @@
           "comments": "https://news.ycombinator.com/item?id=50169707"
         },
         {
-          "title": "Academics have a duty to defend open knowledge systems like Wikipedia",
-          "link": "https://blogs.lse.ac.uk/impactofsocialsciences/2026/10/19/academics-have-a-duty-to-defend-open-knowledge-systems-like-wikipedia/",
-          "date": "2026-10-20 18:51",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50170917"
-        },
-        {
           "title": "SlopCodeBench 10/2026 – Opus 5.5, Astra wins overall, xhigh considered harmful",
           "link": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/benchmarking-new-models-on-slop-code-bench.md",
           "date": "2026-10-15 19:09",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50108717"
+        },
+        {
+          "title": "Academics have a duty to defend open knowledge systems like Wikipedia",
+          "link": "https://blogs.lse.ac.uk/impactofsocialsciences/2026/10/19/academics-have-a-duty-to-defend-open-knowledge-systems-like-wikipedia/",
+          "date": "2026-10-20 18:51",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50170917"
         },
         {
           "title": "Apple broke an essential presentation feature of iPads",
@@ -76,18 +76,18 @@
           "comments": "https://news.ycombinator.com/item?id=50165208"
         },
         {
-          "title": "Ofcom concedes defeat in 4chan case",
-          "link": "https://prestonbyrne.com/2026/10/20/ofcom-concedes-defeat/",
-          "date": "2026-10-20 14:30",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50167028"
-        },
-        {
           "title": "Sixteen Years After Deepwater Horizon, Deep Sea Life Shows Few Signs of Recovery",
           "link": "https://e360.yale.edu/digest/deepwater-horizon-deep-sea-recovery",
           "date": "2026-10-20 15:59",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50168357"
+        },
+        {
+          "title": "Ofcom concedes defeat in 4chan case",
+          "link": "https://prestonbyrne.com/2026/10/20/ofcom-concedes-defeat/",
+          "date": "2026-10-20 14:30",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50167028"
         }
       ]
     },
