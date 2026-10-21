@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21 01:27",
+  "updated": "2026-10-21 01:36",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -20,20 +20,6 @@
           "comments": "https://news.ycombinator.com/item?id=50173487"
         },
         {
-          "title": "DeepInfer: High-performance inference framework for DeepSeek models",
-          "link": "https://github.com/deepseek-ai/DeepInfer",
-          "date": "2026-10-20 09:08",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50163277"
-        },
-        {
-          "title": "The Other Epidemic: Trying to get off benzodiazepines",
-          "link": "https://www.thebeliever.net/the-other-epidemic/",
-          "date": "2026-10-20 23:04",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50173891"
-        },
-        {
           "title": "Voxtral 3",
           "link": "https://mistral.ai/news/voxtral-3/",
           "date": "2026-10-20 16:02",
@@ -46,6 +32,13 @@
           "date": "2026-10-20 16:40",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50169053"
+        },
+        {
+          "title": "Academics have a duty to defend open knowledge systems like Wikipedia",
+          "link": "https://blogs.lse.ac.uk/impactofsocialsciences/2026/10/19/academics-have-a-duty-to-defend-open-knowledge-systems-like-wikipedia/",
+          "date": "2026-10-20 18:51",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50170917"
         },
         {
           "title": "What shall I teach my son?",
@@ -62,11 +55,11 @@
           "comments": "https://news.ycombinator.com/item?id=50108717"
         },
         {
-          "title": "Academics have a duty to defend open knowledge systems like Wikipedia",
-          "link": "https://blogs.lse.ac.uk/impactofsocialsciences/2026/10/19/academics-have-a-duty-to-defend-open-knowledge-systems-like-wikipedia/",
-          "date": "2026-10-20 18:51",
+          "title": "The Other Epidemic: Trying to get off benzodiazepines",
+          "link": "https://www.thebeliever.net/the-other-epidemic/",
+          "date": "2026-10-20 23:04",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50170917"
+          "comments": "https://news.ycombinator.com/item?id=50173891"
         },
         {
           "title": "Apple broke an essential presentation feature of iPads",
@@ -81,6 +74,13 @@
           "date": "2026-10-20 15:59",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50168357"
+        },
+        {
+          "title": "EMudhra Intermediate CA Compromise",
+          "link": "https://emudhra.we-have-a-problem.com/",
+          "date": "2026-10-20 13:58",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50166579"
         },
         {
           "title": "Ofcom concedes defeat in 4chan case",
@@ -252,13 +252,6 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "安全測試恐失靈？中國智譜 AI GLM-5.3 學會考試時「裝乖」以保護後代模型",
-          "link": "https://infosecu.technews.tw/2026/10/21/z-ais-glm-5-3-raises-researcher-fears-the-chinese-model-can-fake-ai-safety-tests/",
-          "date": "2026-10-21 00:45",
-          "summary": "中國人工智慧實驗室智譜（Z.ai）8 月推出旗艦模型 GLM-5.3，AI 安全研究機構 Apollo Res [&#8230;]",
-          "comments": ""
-        },
-        {
           "title": "不看措辭看想法，IdeaLens 改從核心論點判斷文章出自人類還是 AI",
           "link": "https://technews.tw/2026/10/21/a-new-ai-detector-looks-beyond-words-to-check-whether-the-ideas-came-from-ai/",
           "date": "2026-10-21 00:30",
@@ -333,6 +326,13 @@
           "link": "https://infosecu.technews.tw/2026/10/20/chinese-ai-tool-artex-abused-multiple-japanese-companies-attacked/",
           "date": "2026-10-20 09:40",
           "summary": "東京一家大型網路企業旗下子公司今天表示，日本近日接連發生企業遭駭事件，調查發現其中多起攻擊使用一款名為 Art [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "特斯拉飛天是噱頭？楊立昆算只能撐 5 秒，馬斯克不談物理反嗆放屁",
+          "link": "https://technews.tw/2026/10/20/elon-musk-yann-lecun-roadster/",
+          "date": "2026-10-20 09:10",
+          "summary": "近日，特斯拉執行長伊隆·馬斯克（Elon Musk）發布了 Roadster 跑車「飛越」特斯拉卡車的特效影片 [&#8230;]",
           "comments": ""
         }
       ]
