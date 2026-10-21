@@ -626,20 +626,19 @@
           <div class="diagram-banner">Proxmox VE (PVE 8.x) 裸機虛擬化硬核架構拓撲</div>
   [ 實體伺服器硬體：Intel Core i7 / Xeon + 64GB ECC RAM + 10GbE 網卡 ]
          │
-  ┌──────┴───────────────────────────────────────────────────────────────────┐
-  │ <b>PVE 虛擬化底座 (Debian Kernel)</b>                                           │
-  │                                                                          │
-  │  ├──► <span class="hl-green">VM 100: TrueNAS SCALE</span>                                              │
-  │  │    ├─► <b>PCIe Passthrough (IOMMU 直通)</b>:                                 │
-  │  │    │   LSI SAS 3008 (9300-8i IT Mode) 直通卡 ──► [ 8x 企業級 HDD ]    │
-  │  │    │   (TrueNAS 直接掌控實體硬碟 SMART 與 ZFS zpool，零虛擬損耗)      │
-  │  │    └─► 導出 NFS / SMB 儲存池給 PVE 宿主機與其他容器                   │
-  │  │                                                                       │
-  │  ├──► <span class="hl-yellow">LXC / Docker VM</span>: 專門運行 Plex, Home Assistant, Vaultwarden        │
-  │  │    └─► 透過內部 VirtIO-net 虛擬 10G/40G 網卡讀取 TrueNAS 存儲池       │
-  │  │                                                                       │
-  │  └──► <span class="hl-pink">VM 102: pfSense / OPNsense</span> (軟路由主幹，控管全家流量)              │
-  └──────────────────────────────────────────────────────────────────────────┘
+         ▼
+  [ <b>PVE 虛擬化底座 (Debian Kernel)</b> ]
+         │
+         ├──► <span class="hl-green">VM 100: TrueNAS SCALE</span>
+         │     ├─► <b>PCIe Passthrough (IOMMU 直通)</b>:
+         │     │   LSI SAS 3008 (9300-8i IT Mode) 直通卡 ──► [ 8x 企業級 HDD ]
+         │     │   (TrueNAS 直接掌控實體硬碟 SMART 與 ZFS zpool，零虛擬損耗)
+         │     └─► 導出 NFS / SMB 儲存池給 PVE 宿主機與其他容器
+         │
+         ├──► <span class="hl-yellow">LXC / Docker VM</span>: 專門運行 Plex, Home Assistant, Vaultwarden
+         │     └─► 透過內部 VirtIO-net 虛擬 10G/40G 網卡讀取 TrueNAS 存儲池
+         │
+         └──► <span class="hl-pink">VM 102: pfSense / OPNsense</span> (軟路由主幹，控管全家流量)
         </div>
 
         <!-- =============== Chapter 6 =============== -->

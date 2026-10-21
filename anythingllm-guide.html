@@ -585,35 +585,24 @@
                                                                                    │
      ┌─────────────────────────────────────────────────────────────────────────────┴──────────┐
      ▼                                                                                        ▼
-┌──────────────────────────────┐                                           ┌──────────────────────────────────┐
-│ 1. Document Collector (管線) │                                           │ 2. Query/Agent Engine (執行核心) │
-│  - PDF/Word/Excel/TXT/EPUB   │                                           │  - Workspace Prompt Context 組裝 │
-│  - Web Scraper & URL Crawler │                                           │  - Query Mode (嚴格無幻覺過濾)   │
-│  - YouTube Audio & Whisper   │                                           │  - Agent Loop (ReAct 代理迴圈)   │
-│  - GitHub 程式碼庫全量拉取   │                                           │  - Built-in Skills (SQL/Search)  │
-└──────────────┬───────────────┘                                           └────────────────┬─────────────────┘
-               │                                                                            │
-               ▼                                                                            ▼
-┌──────────────────────────────┐                                           ┌──────────────────────────────────┐
-│ Text Chunking (文本切片)     │                                           │ Hybrid Search & Top-K Retrieval  │
-│ - Chunk Size & Overlap       │                                           │ - Cosine Similarity 相似度計算   │
-└──────────────┬───────────────┘                                           └────────────────┬─────────────────┘
-               │                                                                            ▲
-               ▼                                                                            │
-┌──────────────────────────────┐                                                            │
-│ Embedding Model (向量化)     │                                                            │
-│ - Ollama (nomic-embed-text)  │ ──(嵌入向量)──► ┌──────────────────────────────────────┐   │
-│ - OpenAI (text-embedding-3)  │                 │ 3. Vector Storage (向量資料庫抽象層) ├───┘
-│ - AnythingLLM Native Embed   │                 │  - Built-in LanceDB (零依賴嵌入式)   │
-└──────────────────────────────┘                 │  - Chroma/Qdrant/Milvus/Weaviate     │
-                                                 └──────────────────┬───────────────────┘
-                                                                    │
-                                                                    ▼
-                                                 ┌──────────────────────────────────────┐
-                                                 │ 4. LLM Providers (推論引擎路由)      │
-                                                 │  - Local: Ollama / LM Studio / vLLM  │
-                                                 │  - Cloud: OpenAI / Claude / DeepSeek │
-                                                 └──────────────────────────────────────┘
+  <b>【1. Ingestion 知識入庫管線】</b>                                           <b>【2. Retrieval & Agent 檢索推論】</b>
+  ├── <b>Document Collector (多源萃取)</b>                                       ├── <b>Query/Agent Engine (執行核心)</b>
+  │   PDF / Word / Excel / TXT / EPUB / Web Crawler                       │   Workspace Prompt Context 組裝
+  │   YouTube Audio (Whisper) / GitHub 程式碼庫全量拉取                   │   Query Mode (嚴格無幻覺過濾)
+  │                                                                       │   Agent Loop (ReAct 自主代理迴圈)
+  ▼                                                                       ▼
+  ├── <b>Text Chunking (文本切片)</b>                                            ├── <b>Hybrid Search (混合檢索)</b>
+  │   切塊大小 (Chunk Size) + 重疊滑窗 (Overlap)                          │   Top-K 語意相似度檢索 (Cosine Similarity)
+  │                                                                       │
+  ▼                                                                       ▼
+  ├── <b>Embedding Model (向量化)</b>                                            ├── <b>Vector Storage (向量資料庫)</b>
+  │   Ollama (nomic-embed-text) / OpenAI / Native                         │   內建 LanceDB (零依賴嵌入式) / Chroma / Qdrant
+  │   └──► [ 輸出向量寫入 Vector Storage 向量資料庫 ]
+                                                                          │
+                                                                          ▼
+                                                                          └── <b>LLM Providers (推論引擎路由)</b>
+                                                                              Local: Ollama / LM Studio / vLLM
+                                                                              Cloud: OpenAI / Claude / DeepSeek
         </div>
 
         <p>這套架構最大的好處在於：<strong>你可以自由組合「隱私性」與「算力成本」</strong>。例如：使用本機 Ollama 跑 `nomic-embed-text` 做向量嵌入，資料儲存在內建的 LanceDB，推論時呼叫本地 RTX 顯卡跑 `DeepSeek-R1-Distill-Qwen-14B`，整個過程<strong>完全不經過任何外部網際網路，達成 100% 機密實體隔離 (Air-gapped)</strong>！</p>
@@ -974,30 +963,22 @@ If the answer cannot be found directly in the text, you MUST explicitly respond 
   [ 使用者指令 ] ──► <span class="hl-green">"@agent 查詢資料庫上月訂單最高 5 位客戶，並繪製圓餅圖"</span>
           │
           ▼
-  ┌──────────────────────────────────────────────────────────────────────┐
-  │ 1. <span class="hl-yellow">Thought (規劃)</span>: 需調用 SQL Connector 查詢 orders 與 customers 表  │
-  │    分析欄位關係，建立跨表聚合查詢語法                                │
-  └──────────────────────────────────┬───────────────────────────────────┘
-                                     │
-                                     ▼
-  ┌──────────────────────────────────────────────────────────────────────┐
-  │ 2. <span class="hl-yellow">Action (工具調用)</span>: 執行 SQL 語法                                  │
-  │    SELECT c.name, SUM(o.amount) FROM orders o JOIN customers c...    │
-  └──────────────────────────────────┬───────────────────────────────────┘
-                                     │
-                                     ▼
-  ┌──────────────────────────────────────────────────────────────────────┐
-  │ 3. <span class="hl-yellow">Observation (解析結果)</span>: 獲取前五名資料 JSON 陣列                  │
-  │    驗證回傳數據結構無誤，準備進行可視化轉換                          │
-  └──────────────────────────────────┬───────────────────────────────────┘
-                                     │
-                                     ▼
-  ┌──────────────────────────────────────────────────────────────────────┐
-  │ 4. <span class="hl-yellow">Next Action (圖表生成)</span>: 調用 Chart Skill 產生視覺化圖表           │
-  │    產生 ECharts 配置並生成互動式圓餅圖元件                           │
-  └──────────────────────────────────┬───────────────────────────────────┘
-                                     │
-                                     ▼
+  ┌── <b>1. <span class="hl-yellow">Thought (自主規劃)</span></b>
+  │   需調用 SQL Connector 查詢 orders 與 customers 表，分析關聯並建立聚合語法
+  │
+  ▼
+  ┌── <b>2. <span class="hl-yellow">Action (工具調用)</span></b>
+  │   執行 SQL 查詢：SELECT c.name, SUM(o.amount) FROM orders o JOIN customers c...
+  │
+  ▼
+  ┌── <b>3. <span class="hl-yellow">Observation (解析結果)</span></b>
+  │   獲取前五名資料 JSON 陣列，驗證回傳數據結構無誤，準備進行可視化轉換
+  │
+  ▼
+  ┌── <b>4. <span class="hl-yellow">Next Action (圖表生成)</span></b>
+  │   調用 Chart Skill 產生視覺化圖表，產生 ECharts 配置並生成互動式圓餅圖元件
+  │
+  ▼
   [ 最終回應 ] ──► 輸出清晰分析報告 + 互動式圓餅圖
         </div>
 
