@@ -1,5 +1,31 @@
 [
   {
+    "url": "spacex-aerospace-engineering-guide.html",
+    "title": "SpaceX 終極硬核工程全解：獵鷹九號推進垂直回收、猛禽全流量分級燃燒、星艦 (Starship) 筷子夾火箭與星鏈通訊架構",
+    "excerpt": "全維度深度剖析 SpaceX 航太工程奇蹟：從第一性原理與五步工作法、獵鷹九號 (Falcon 9) Merlin 1D 推進與 VTVL 垂直回收動力學、超音速鈦合金格狀翼與凸優化著陸演算法；到猛禽發動機 (Raptor 1/2/3) 全流量分級燃燒循環 (FFSC) 350 bar 室壓熱力學突破、304L 不鏽鋼材料革命；再到 Starship 星艦與超重型助推器 Mechazilla 筷子發射塔空中懸停捕獲技術、星鏈 (Starlink V2 Mini) 相控陣與真空雷射星間鏈路 (OISL)、三模冗餘 (TMR) 航電與即時 Linux 系統架構。內建互動式齊奧爾科夫斯基火箭方程與多級入軌 Delta-v 模擬精算器。",
+    "tags": [
+      "SpaceX",
+      "Starship",
+      "星艦",
+      "Falcon 9",
+      "獵鷹九號",
+      "Raptor",
+      "猛禽發動機",
+      "Starlink",
+      "星鏈",
+      "Mechazilla",
+      "筷子夾火箭",
+      "全流量分級燃燒",
+      "FFSC",
+      "VTVL",
+      "垂直回收",
+      "航太工程",
+      "火箭方程",
+      "Delta-v"
+    ],
+    "image": "./images/spacex-aerospace-guide.jpg"
+  },
+  {
     "url": "bluetooth-technology-guide.html",
     "title": "藍牙技術終極硬核指南：核心跳頻運作原理、音訊編碼 (LDAC/aptX/LC3)、藍牙接收器電路架構與高傳真喇叭聲學工程全解",
     "excerpt": "全維度深度剖析藍牙 (Bluetooth) 技術：從 2.4GHz ISM 頻段劃分、AFH 自適應跳頻機制 (1600 hops/s)、時隙分配與調變技術，到 BR/EDR 與 BLE 雙模架構、A2DP/AVRCP 協定堆疊；橫向對比 SBC、AAC、aptX HD/Adaptive、LDAC (990kbps) 與新世代 LE Audio LC3 / Auracast 廣播；詳細拆解 USB 藍牙接收器 RF 前端與 DAC 電路設計，以及藍牙喇叭 (Bluetooth Speaker) DSP 調音、Class-D 數位功放、被動輻射板與 TWS 雙聲道無線立體聲串聯原理。內建互動式音訊編碼頻寬與延遲試算模擬器。",

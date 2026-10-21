@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceX 終極硬核工程全解：獵鷹九號推進垂直回收、猛禽全流量分級燃燒、星艦 (Starship) 筷子夾火箭與星鏈通訊架構 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,🚀">
+  <meta name="description" content="全維度深度剖析 SpaceX 航太工程奇蹟：從第一性原理與五步工作法、獵鷹九號 (Falcon 9) Merlin 1D 推進與 VTVL 垂直回收動力學、超音速鈦合金格狀翼與凸優化著陸演算法；到猛禽發動機 (Raptor 1/2/3) 全流量分級燃燒循環 (FFSC) 350 bar 室壓熱力學突破、304L 不鏽鋼材料革命；再到 Starship 星艦與超重型助推器 Mechazilla 筷子發射塔空中懸停捕獲技術、星鏈 (Starlink V2 Mini) 相控陣與真空雷射星間鏈路 (OISL)、三模冗餘 (TMR) 航電與即時 Linux 系統架構。內建互動式齊奧爾科夫斯基火箭方程與多級入軌 Delta-v 模擬精算器。">
+  <meta name="canonical" href="https://ai-hardcore-engineer.com/spacex-aerospace-engineering-guide.html">
+  <meta property="og:title" content="SpaceX 終極硬核工程全解：獵鷹九號推進垂直回收、猛禽全流量分級燃燒、星艦 (Starship) 筷子夾火箭與星鏈通訊架構 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="全維度深度剖析 SpaceX 航太工程：獵鷹九號 VTVL 垂直回收、猛禽 (Raptor) 全流量分級燃燒循環 350 bar 室壓、星艦不銹鋼與筷子塔台空中捕獲、星鏈真空雷射鏈路與三冗餘航電，附火箭方程 Delta-v 互動精算器。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/spacex-aerospace-engineering-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/spacex-aerospace-guide.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SpaceX 終極硬核工程全解：推進回收、猛禽發動機、星艦筷子捕獲與星鏈架構">
+  <meta name="twitter:description" content="全維度深度剖析 SpaceX 航太工程：獵鷹九號 VTVL 垂直回收、猛禽 (Raptor) 全流量分級燃燒循環 350 bar 室壓、星艦不銹鋼與筷子塔台空中捕獲、星鏈真空雷射鏈路與三冗餘航電，附火箭方程 Delta-v 互動精算器。">
+  <meta name="twitter:image" content="./images/spacex-aerospace-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    .article-hero {
+      text-align: center;
+      padding: 3.5rem 0 2rem;
+    }
+    .article-hero h1 {
+      font-size: 2.45rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+    .article-hero .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      margin-bottom: 2.2rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-height: 580px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-body {
+      max-width: 62em;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-size: 2.05rem;
+      font-weight: 700;
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 2rem 0 0.8rem;
+      color: var(--text);
+    }
+    .article-body h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 1.4rem 0 0.5rem;
+      color: var(--text);
+    }
+    .article-body p {
+      margin-bottom: 1.2rem;
+      line-height: 1.85;
+      font-size: 1.05rem;
+    }
+    .article-body code {
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", sans-serif;
+      background: var(--bg-alt);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.95em;
+      color: #0284c7;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .article-body code {
+      color: #38bdf8;
+    }
+    .article-body pre {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      border: none;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    /* Table of contents card */
+    .toc-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 2.2rem 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    }
+    .toc-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.6rem 1.4rem;
+    }
+    .toc-grid a {
+      color: var(--text);
+      font-size: 0.98rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .toc-grid a:hover {
+      color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    /* Callouts */
+    .callout {
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      margin: 1.8rem 0;
+      border-left: 5px solid;
+    }
+    .callout-info {
+      background: rgba(2, 132, 199, 0.08);
+      border-left-color: #0284c7;
+    }
+    .callout-tip {
+      background: rgba(16, 185, 129, 0.08);
+      border-left-color: #10b981;
+    }
+    .callout-warning {
+      background: rgba(245, 158, 11, 0.08);
+      border-left-color: #f59e0b;
+    }
+    .callout-danger {
+      background: rgba(239, 68, 68, 0.08);
+      border-left-color: #ef4444;
+    }
+    .callout-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+      text-align: left;
+    }
+    th, td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: var(--bg-alt);
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Visual High-Tech Diagrams */
+    .tech-diagram {
+      background: #0b1120;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 2.2rem 2rem;
+      margin: 2.4rem 0;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .diagram-pill-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.25rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 9999px;
+      color: #38bdf8;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.6rem;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.15);
+    }
+
+    /* Engine Comparison Multi-Card Grid */
+    .engine-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.4rem;
+      width: 100%;
+    }
+    .engine-card {
+      background: #131d33;
+      border: 1px solid #233554;
+      border-radius: 10px;
+      padding: 1.25rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+    .engine-card.highlight {
+      border-color: #38bdf8;
+      background: linear-gradient(180deg, #131d33, rgba(56, 189, 248, 0.08));
+    }
+    .engine-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 0.6rem;
+    }
+    .engine-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .engine-tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      background: rgba(56, 189, 248, 0.2);
+      color: #38bdf8;
+    }
+    .engine-details {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      font-size: 0.88rem;
+      color: #94a3b8;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      line-height: 1.5;
+    }
+    .engine-details li {
+      display: block;
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0 !important;
+    }
+    .engine-details li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #38bdf8;
+      font-size: 0.85rem;
+    }
+    .engine-details strong {
+      color: #f1f5f9;
+    }
+
+    /* Trajectory Sequence Timeline */
+    .trajectory-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      position: relative;
+    }
+    .traj-step {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.2rem;
+      background: #131d33;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 1rem 1.4rem;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .traj-step:hover {
+      border-color: #38bdf8;
+      transform: translateX(4px);
+    }
+    .traj-time {
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-weight: 700;
+      color: #facc15;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .traj-info h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin: 0 0 0.25rem 0;
+    }
+    .traj-info p {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Laser Mesh Diagram */
+    .laser-mesh-diagram {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      width: 100%;
+    }
+    .laser-sat-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .sat-node {
+      background: #1e293b;
+      border: 1px solid #38bdf8;
+      border-radius: 10px;
+      padding: 0.9rem 1.2rem;
+      text-align: center;
+      color: #e2e8f0;
+      font-size: 0.9rem;
+      flex: 1;
+      min-width: 180px;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+    }
+    .sat-node strong {
+      display: block;
+      color: #38bdf8;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .laser-beam {
+      height: 2px;
+      background: linear-gradient(90deg, #ef4444, #f43f5e, #ef4444);
+      box-shadow: 0 0 10px #f43f5e;
+      flex: 1;
+      min-width: 40px;
+      position: relative;
+    }
+    .laser-beam::after {
+      content: "300,000 km/s (真空雷射)";
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.72rem;
+      color: #fda4af;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    /* Calculator Widget */
+    .calc-box {
+      background: var(--bg-alt);
+      border: 2px solid var(--accent);
+      border-radius: 14px;
+      padding: 2.2rem;
+      margin: 2.8rem 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .calc-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .calc-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+    }
+    .calc-presets {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.6rem;
+    }
+    .preset-btn {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.88rem;
+      cursor: pointer;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .preset-btn:hover, .preset-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .calc-form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+    .calc-field label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+    .calc-field input {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .calc-field input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .calc-results-panel {
+      background: #0f172a;
+      border-radius: 10px;
+      padding: 1.6rem;
+      color: #f8fafc;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.4rem;
+      text-align: center;
+      margin-bottom: 1.4rem;
+    }
+    .result-kpi .val {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #38bdf8;
+      font-family: "Cascadia Code", Consolas, monospace;
+      margin-bottom: 0.2rem;
+    }
+    .result-kpi .label {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .orbit-progress-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.2rem;
+    }
+    .orbit-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.88rem;
+    }
+    .orbit-name {
+      width: 160px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .bar-track {
+      flex: 1;
+      height: 12px;
+      background: var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: #10b981;
+      border-radius: 6px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+    .bar-val {
+      width: 90px;
+      font-family: monospace;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .traj-step {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+      }
+      .laser-sat-row {
+        flex-direction: column;
+      }
+      .laser-beam {
+        width: 2px;
+        height: 30px;
+      }
+      .laser-beam::after {
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div aria-hidden="true" class="waves"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button aria-expanded="false" aria-label="選單" class="menu-toggle"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a class="active" href="./articles.html">文章</a>
+        <a href="./about.html">關於</a>
+        <a aria-label="搜尋" class="nav-search-toggle" href="#">🔍</a>
+        <a aria-label="切換深淺色模式" class="theme-toggle" href="#" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input autocomplete="off" placeholder="搜尋文章..." type="text"/>
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- Article Hero -->
+      <header class="article-hero">
+        <div class="breadcrumb" style="display:flex; justify-content:center; gap:0.5rem; margin-bottom:1rem; font-size:0.95rem; color:var(--text-muted);">
+          <a href="./index.html">首頁</a> <span>/</span> <a href="./articles.html">航太工程與前瞻科技</a> <span>/</span> <span>SpaceX 終極硬核工程全解</span>
+        </div>
+        <h1>SpaceX 終極硬核工程全解：獵鷹九號推進垂直回收、猛禽全流量分級燃燒、星艦 (Starship) 筷子夾火箭與星鏈通訊架構</h1>
+        <div class="article-meta">
+          <span>📅 2026-10-21</span>
+          <span class="separator">·</span>
+          <span>⏱️ 42 分鐘深度閱讀</span>
+          <span class="separator">·</span>
+          <span>🏷️ 航太工程 / 火箭動力學 / SpaceX / Starship / Starlink</span>
+        </div>
+
+        <div class="hero-image-wrap">
+          <img src="./images/spacex-aerospace-guide.jpg" alt="SpaceX Starship and Super Heavy at Starbase orbital launch mount with Mechazilla chopsticks">
+        </div>
+      </header>
+
+      <!-- Article Body -->
+      <article class="article-body">
+        <p class="lead" style="font-size:1.22rem; line-height:1.85; font-weight:500; color:var(--text); margin-bottom:2rem;">
+          在人類航太史上，從未有一家公司能像 <strong>SpaceX（太空探索技術公司）</strong> 一樣，以近乎瘋狂的「第一性原理」顛覆整個航太工業百年架構。從傳統拋棄式火箭的昂貴枷鎖，到獵鷹九號在洶湧大西洋駁船上的毫米級精準直立著陸；從 Merlin 煤油引擎進化到人類史上首款商業實用化的 350 bar <strong>全流量分級燃燒循環（FFSSC）猛禽發動機（Raptor 3）</strong>；再到重達 5,000 噸的巨型星艦（Starship）被發射塔「機械筷子」在半空中生生夾住——SpaceX 不僅是商業火箭公司，更是極致軟硬體工程與製造哲學的集合體。本文將從物理定律、熱力學循環、飛行控制演算法與分散式航電系統出發，硬核拆解 SpaceX 的底層技術帝國。
+        </p>
+
+        <!-- TOC -->
+        <div class="toc-card">
+          <div class="toc-title">📑 目錄導覽：硬核全章節索引</div>
+          <div class="toc-grid">
+            <a href="#sec-1">01. SpaceX 演進與第一性原理五步法</a>
+            <a href="#sec-2">02. 獵鷹九號推進與 VTVL 著陸動力學</a>
+            <a href="#sec-3">03. Merlin vs Raptor 全流量分級燃燒熱力學</a>
+            <a href="#sec-4">04. Starship 星艦與 304L 不鏽鋼材料革命</a>
+            <a href="#sec-5">05. Mechazilla 筷子空中捕獲毫米級控制</a>
+            <a href="#sec-6">06. 星鏈 (Starlink) 相控陣與真空雷射鏈路</a>
+            <a href="#sec-7">07. 航太軟體工程：三冗餘 TMR 與即時 Linux</a>
+            <a href="#sec-8">08. 全球主流重型運載火箭規格橫向大對決</a>
+            <a href="#sec-9">09. 互動式工具：齊奧爾科夫斯基火箭方程精算器</a>
+            <a href="#sec-10">10. 航太工程除錯實務與火星殖民藍圖</a>
+          </div>
+        </div>
+
+        <!-- ==================== Chapter 1 ==================== -->
+        <h2 id="sec-1">01. SpaceX 演進史與「第一性原理」五步工程哲學</h2>
+        <p>在 2002 年 SpaceX 創立之初，航太界普遍認為私人製造軌道級運載火箭是天方夜譚。當時美俄官方火箭發射報價動輒 6,500 萬至數億美元，洛克希德·馬丁與波音合資的聯合發射聯盟（ULA）採用傳統的「成本加成（Cost-Plus）」國防承包模式，承包商越拖延、用料越昂貴，利潤反而越高。</p>
+
+        <p>伊隆·馬斯克（Elon Musk）採取了<strong>第一性原理（First Principles Thinking）</strong>：將火箭拆解為最基礎的原材料——航太級鋁鋰合金、碳纖維、銅、鈦、不銹鋼與液態燃料。他發現，<strong>火箭的原物料成本僅佔總售價的不到 2% 至 3%！</strong>其餘超過 97% 的高昂成本，全浪費在繁複的外包供應鏈、層層轉包的管理冗員、過時的軍規官僚流程，以及「一次性發射即墜海沉沒」的荒謬消耗上。</p>
+
+        <div class="callout callout-info">
+          <div class="callout-title">📐 馬斯克的航太極致工程「五步演算法 (The 5-Step Algorithm)」</div>
+          <p>在星艦生產基地（Starbase, Boca Chica），所有工程師都必須嚴格恪守以下五步法：</p>
+          <ol style="margin-left: 1.2rem; margin-top: 0.5rem; line-height: 1.8;">
+            <li><strong>質疑每一項需求（Make requirements less dumb）</strong>：每個需求都必須由具體的「人」背書，絕不接受「部門規定」或「軍規慣例」。聰明人提出的要求最危險，因為通常沒有人敢去質疑。</li>
+            <li><strong>徹底刪除零件或流程（Delete the part or process）</strong>：如果你最後沒有被迫把 10% 刪除的東西再加回來，代表你當初刪得還不夠狠！</li>
+            <li><strong>簡化或優化設計（Simplify or optimize）</strong>：最常見的工程錯誤是去優化一個根本不應該存在的零件。</li>
+            <li><strong>加速迭代循環（Accelerate cycle time）</strong>：天下武功，唯快不破。快速在實體硬體上測試炸毀，比在 CAD 軟體裡紙上談兵三個月更能暴露致命邊界。</li>
+            <li><strong>最後才進行自動化（Automate）</strong>：只有當設計完全固定且經過前四步嚴格精簡後，才能投入自動化機具；否則只會加速製造廢品。</li>
+          </ol>
+        </div>
+
+        <p>正是在這套哲學下，SpaceX 達成超過 <strong>85% 的全垂直整合率（Vertical Integration）</strong>：從主結構焊接、Merlin/Raptor 發動機鑄造、3D 列印噴注器、閥門電磁閥、機載航電電腦主機板、甚至連太空服與整流罩分離氣囊全由內部自研自造，徹底斬斷傳統航太供應鏈的漫長交期與暴利。</p>
+
+        <!-- ==================== Chapter 2 ==================== -->
+        <h2 id="sec-2">02. 獵鷹九號 (Falcon 9) 推進架構與垂直著陸動力學 (VTVL)</h2>
+        <p><strong>獵鷹九號（Falcon 9 v1.2 Block 5）</strong>是人類航太史上第一款達到商業化大規模重複使用的軌道級火箭。它的核心工程奇蹟，在於將以高達 6 馬赫速度脫離大氣層的第一級助推器，在十幾分鐘內逆向煞車，毫髮無傷地垂直矗立在陸地著陸場（LZ-1/LZ-2）或幾百公里外無人海上駁船（ASDS）甲板的正中心。</p>
+
+        <h3>1. 推進劑與 Octaweb 八角形環狀佈局</h3>
+        <p>Falcon 9 第一級搭載 9 具 <strong>Merlin 1D</strong> 液體火箭發動機，採用 <strong>Octaweb</strong> 佈局：8 具引擎環繞外圈，1 具引擎置於正中心。這種佈局相比早期的 3x3 矩陣，大幅減輕了推力結構傳導樑的質量，提供了優異的推力向量控制（TVC）力矩臂，並具備強大的<strong>「發動機單點故障冗餘（Engine-out Capability）」</strong>——即使外圈任意一具引擎在起飛時爆炸失效，中央電腦可在數毫秒內重新計算推力曲線，由其餘 8 具引擎補償衝量，任務依然能夠成功進入預定軌道。</p>
+
+        <p>推進劑組合採用 <strong>RP-1 高純度煤油</strong> + <strong>過冷低溫液氧（Subcooled LOX）</strong>：</p>
+        <ul>
+          <li><strong>過冷技術突破</strong>：傳統液氧儲存在沸點約 -183°C（90 K），SpaceX 利用液氮熱交換將液氧進一步冷卻至 <strong>-207°C（66 K）</strong>，同時將 RP-1 冷卻至 -7°C。在這種超低溫下，液氧密度提升了約 <strong>8% 至 9%</strong>，使原本相同容積的燃料箱可以多灌注數噸推進劑，直接大幅提升了推力與有效載荷運載能力！</li>
+        </ul>
+
+        <!-- Visual Diagram 1: Falcon 9 VTVL Profile -->
+        <div class="tech-diagram">
+          <div class="diagram-pill-title">
+            <span>🚀 獵鷹九號一級助推器垂直著陸 (VTVL) 全程飛行控制剖面</span>
+          </div>
+
+          <div class="trajectory-timeline">
+            <div class="traj-step">
+              <div class="traj-time">⏱️ T+ 02:30</div>
+              <div class="traj-info">
+                <h4>主引擎關機 (MECO) 與二級分離</h4>
+                <p>高度約 70 km，速度約 Mach 6。氣動推桿分離一級助推器，二級真空發動機 (MVac) 點火繼續奔向軌道。</p>
+              </div>
+            </div>
+
+            <div class="traj-step">
+              <div class="traj-time">⏱️ T+ 02:45</div>
+              <div class="traj-info">
+                <h4>冷氣推進器翻轉姿態 (Flip Maneuver)</h4>
+                <p>高壓氣態氮 (Cold Gas Nitrogen) 噴嘴噴氣，將助推器在真空環境下 180° 調頭，發動機噴嘴朝向飛行前進方向。</p>
+              </div>
+            </div>
+
+            <div class="traj-step">
+              <div class="traj-time">⏱️ T+ 03:00</div>
+              <div class="traj-info">
+                <h4>返場點火 (Boostback Burn - 僅 RTLS 陸地返場模式)</h4>
+                <p>3 具 Merlin 1D 引擎點火約 30 秒，抵消向東的水平速度並給予向西逆向衝量；若為海上 ASDS 降落則省略此步以節省燃油。</p>
+              </div>
+            </div>
+
+            <div class="traj-step">
+              <div class="traj-time">⏱️ T+ 04:30</div>
+              <div class="traj-info">
+                <h4>超音速鈦合金格狀翼展開 (Titanium Grid Fins)</h4>
+                <p>展開 4 具一體鍛造鈦合金格狀翼，在超音速激波中承受數千度氣動摩擦高溫，液壓伺服閥以毫秒級反應調整滾轉、俯仰與偏航氣動力矩。</p>
+              </div>
+            </div>
+
+            <div class="traj-step">
+              <div class="traj-time">⏱️ T+ 06:15</div>
+              <div class="traj-info">
+                <h4>大氣再入點火 (Re-entry Burn)</h4>
+                <p>高度約 50 km，速度 Mach 3.5。3 具引擎點火 20 秒，噴射高壓廢氣形成氣動保護傘，大幅降低箭體再入大氣層時的動壓 (q) 與劇烈氣動加熱。</p>
+              </div>
+            </div>
+
+            <div class="traj-step">
+              <div class="traj-time">⏱️ T+ 08:15</div>
+              <div class="traj-info">
+                <h4>著陸點火 (Landing Burn / Suicide Burn) 與開爪著陸</h4>
+                <p>距地面不到 1,000 公尺，中央引擎以極限推力點火逆推，4 根碳纖維著陸腿氣動解鎖向下展開，觸地瞬間速度降為 0，精準平穩降落！</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>2. 自殺式點火燃燒 (Hoverslam / Suicide Burn) 數學原理</h3>
+        <p>傳統火箭或直升機降落時，通常會預先減速並在離地數十公尺處「懸停（Hover）」，緩慢調整姿態後降落。但獵鷹九號<strong>物理上根本無法懸停！</strong></p>
+        <p>這是因為單具 Merlin 1D 引擎即使深度節流到最低極限（約 40% 推力），產生的推力仍有約 360 kN；而此時燒光燃料的火箭空重僅約 25 公噸，重力 W = m · g ≈ 245 kN。因此，<strong>火箭在著陸時的最低推重比（TWR）大於 1.4！</strong>一旦推力大於重力，火箭只要滯空就會立刻往上加速爬升。</p>
+        <p>SpaceX 解決此問題的唯一途徑就是 <strong>Hoverslam（自殺式精確點火）</strong>：利用機載電腦以數百 Hz 頻率求解<strong>凸優化（Convex Optimization）著陸軌跡</strong>，計算出最極限的點火時機點 t<sub>burn</sub>。在著陸點火過程中，火箭以極高重力加速度持續減速，<strong>在火箭高度 h 恰好歸零的同一瞬間，垂直下落速度 v 與加速度也恰好精確歸零！</strong>這種演算法最大程度減少了「抗衡重力所造成的重力阻力損失（Gravity Drag Loss）」，替火箭節省了寶貴的數百公斤推進劑。</p>
+
+        <!-- ==================== Chapter 3 ==================== -->
+        <h2 id="sec-3">03. 液體火箭推進神作：Merlin vs Raptor 全流量分級燃燒循環</h2>
+        <p>要理解 SpaceX 的星艦為什麼能將人類航太運輸帶入完全不同的量級，就必須深入理解其心臟——<strong>猛禽發動機（Raptor Engine）</strong>背後的熱力學極限。</p>
+
+        <div class="tech-diagram">
+          <div class="diagram-pill-title">
+            <span>🔥 液體火箭發動機三大動力循環演進對比</span>
+          </div>
+
+          <div class="engine-grid">
+            <div class="engine-card">
+              <div class="engine-card-header">
+                <div class="engine-name">開式氣體發生器循環</div>
+                <div class="engine-tag">Gas Generator</div>
+              </div>
+              <ul class="engine-details">
+                <li><strong>典型代表</strong>：Merlin 1D (Falcon 9), F-1 (Saturn V)</li>
+                <li><strong>運作機制</strong>：引出少量燃料與氧氣在副燃燒室點火，驅動渦輪泵後，<strong>將低溫廢氣直接排到箭體外</strong>。</li>
+                <li><strong>室壓極限</strong>：9 ~ 11 MPa (Merlin 1D 為 9.7 MPa)</li>
+                <li><strong>缺陷</strong>：渦輪排氣不產生推力，浪費 2% ~ 3% 推進劑，比衝受限 (I<sub>sp</sub> ≈ 311s)。</li>
+              </ul>
+            </div>
+
+            <div class="engine-card">
+              <div class="engine-card-header">
+                <div class="engine-name">富氧分級燃燒循環</div>
+                <div class="engine-tag">Oxidizer-Rich Staged</div>
+              </div>
+              <ul class="engine-details">
+                <li><strong>典型代表</strong>：RD-180 (Atlas V), RS-25 (太空梭 / SLS)</li>
+                <li><strong>運作機制</strong>：全部氧化劑與少量燃料在預燃室燃燒，驅動渦輪後，<strong>富氧高壓氣體全量注入主燃燒室二次燃燒</strong>。</li>
+                <li><strong>室壓極限</strong>：20 ~ 26 MPa (RD-180 為 25.7 MPa)</li>
+                <li><strong>缺陷</strong>：高溫富氧氣體腐蝕性極強，金屬極易自燃，需極其昂貴的高抗氧化特種合金。</li>
+              </ul>
+            </div>
+
+            <div class="engine-card highlight">
+              <div class="engine-card-header">
+                <div class="engine-name">全流量分級燃燒循環 (FFSC)</div>
+                <div class="engine-tag">Full-Flow Staged (神作)</div>
+              </div>
+              <ul class="engine-details">
+                <li><strong>典型代表</strong>：SpaceX Raptor 1 / 2 / 3</li>
+                <li><strong>運作機制</strong>：<strong>雙預燃室架構</strong>。氧氣渦輪由富氧氣體驅動，燃料渦輪由富燃氣體驅動。所有燃料與氧化劑<strong>100% 氣化後注入主室</strong>！</li>
+                <li><strong>室壓極限</strong>：<strong>35 MPa (350 bar)！人類歷史第一</strong></li>
+                <li><strong>優勢</strong>：氣-氣混合極致均勻、渦輪溫度大幅降低、極限功率密度、零未燃廢氣浪費。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3>全流量分級燃燒（FFSSC）為什麼被稱為「火箭發動機的聖杯」？</h3>
+        <p>在傳統分級燃燒發動機中，單一軸系或預燃室必須承擔極大負載。而猛禽發動機（Raptor）開創性地將其拆解為兩套完全獨立的子系統：</p>
+        <ol>
+          <li><strong>富氧預燃室（Oxygen Preburner）</strong>：通入 100% 的液氧與微量甲烷，在相對低溫下驅動液氧渦輪泵。</li>
+          <li><strong>富燃預燃室（Fuel Preburner）</strong>：通入 100% 的液態甲烷與微量氧氣，在相對低溫下驅動甲烷渦輪泵。</li>
+        </ol>
+        <p>這帶來了三大無可比擬的物理優勢：</p>
+        <ul>
+          <li><strong>渦輪泵工作溫度顯著降低</strong>：因為是「全流量」推進劑流經渦輪，在相同輸出功率下，工質質量流量 ṁ 極大，因此渦輪入口溫度可以大幅下降數百度，材料應力驟減，大幅延長了引擎的可重複使用壽命！</li>
+          <li><strong>完全消除「燃燒室內液滴霧化延遲」</strong>：一般發動機將低溫液體推進劑噴入高溫燃燒室，需要經過「液柱破裂 → 形成液滴 → 吸熱蒸發 → 氣相混合 → 燃燒反應」的物理過程；而猛禽進入燃燒室的已經是<strong>100% 高溫高壓純氣態（Gas-Gas Injection）</strong>，燃燒效率直接逼近 99.5% 理論熱力學極限！</li>
+          <li><strong>燃燒室壓力突破 350 bar（35 MPa）</strong>：高室壓直接縮小了發動機喉部面積，在極小的尺寸下爆發出驚天推力。Raptor 3 單具推力高達 <strong>280 公噸力（2.75 MN）</strong>，推重比（TWR）突破驚人的 <strong>200:1</strong>，徹底打破美國與蘇聯冷戰時期保持了半個世紀的推進紀錄！</li>
+        </ul>
+
+        <!-- ==================== Chapter 4 ==================== -->
+        <h2 id="sec-4">04. 終極星際運輸系統：Starship (星艦) 與材料革命</h2>
+        <p><strong>星艦系統（Starship + Super Heavy）</strong>是人類建造過最高、最重、推力最強大的飛行器：</p>
+        <ul>
+          <li><strong>直徑</strong>：9 公尺（未來規劃擴展至 18 公尺）</li>
+          <li><strong>總高度</strong>：121 公尺（超重型助推器 71 公尺 + 星艦飛船 50 公尺），超過紐約自由女神像與阿波羅登月 Saturn V（110m）</li>
+          <li><strong>起飛推力</strong>：超重型助推器搭載 <strong>33 具 Raptor 發動機</strong>，起飛推力超過 <strong>7,400 公噸力（72.5 MN）</strong>，是土星五號的兩倍以上！</li>
+          <li><strong>軌道運載力</strong>：完全可重複使用狀態下載荷 <strong>150 ~ 200 公噸至 LEO</strong>；一次性消耗模式可達 250 公噸。</li>
+        </ul>
+
+        <h3>為什麼捨棄碳纖維，改用 304L / 30X 不銹鋼？</h3>
+        <p>在 2018 年之前，SpaceX 原本耗資數千萬美元打造了巨型碳纖維曼陀林捲繞模具，計畫用先進碳纖維複合材料（Carbon Fiber Composites）打造星艦。但馬斯克隨後做出了震驚航太界的決策：<strong>全盤銷毀碳纖維機具，全面轉向不鏽鋼！</strong></p>
+
+        <div class="callout callout-tip">
+          <div class="callout-title">🏆 304L 冷軋沃斯田鐵不銹鋼 vs 碳纖維工程對比決策矩陣</div>
+          <table style="margin-top:0.6rem;">
+            <thead>
+              <tr>
+                <th>工程評估指標</th>
+                <th>碳纖維複合材料 (CFRP)</th>
+                <th>304L / 30X 不鏽鋼 (Stainless Steel)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>原物料成本</strong></td>
+                <td>~$130 / kg（極昂貴，需無塵室冷藏）</td>
+                <td><strong>~$3 / kg（便宜 40 倍以上，隨處可得）</strong></td>
+              </tr>
+              <tr>
+                <td><strong>超低溫 (-196°C) 韌性</strong></td>
+                <td>樹脂變脆，微裂紋滲漏低溫液氧</td>
+                <td><strong>晶格相變強化，抗拉強度激增 50%</strong></td>
+              </tr>
+              <tr>
+                <td><strong>高溫耐受度 (熔點)</strong></td>
+                <td>樹脂在 ~180°C 炭化降解失效</td>
+                <td><strong>耐高溫達 850°C，熔點高達 ~1450°C</strong></td>
+              </tr>
+              <tr>
+                <td><strong>大氣再入隔熱瓦需求</strong></td>
+                <td>全箭體需覆蓋厚重隔熱層防燒穿</td>
+                <td><strong>僅迎風面需薄片六角隔熱瓦，背風面裸鋼散熱</strong></td>
+              </tr>
+              <tr>
+                <td><strong>戶外快速製造與維修</strong></td>
+                <td>高壓蒸氣釜（Autoclave）固化，需數週</td>
+                <td><strong>戶外帳篷巨型環捲焊接，數天即可成型</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>不鏽鋼在高溫與超低溫下的獨特物理特性，使得星艦在進入地球或火星大氣層時，背風面完全不需任何隔熱瓦，單靠鋼板本身的高導熱性與抗高溫能力即可承受氣動熱。整體結構加上極少量的隔熱磚後，全箭質量甚至低於覆蓋全包覆隔熱層的碳纖維箭體！</p>
+
+        <!-- ==================== Chapter 5 ==================== -->
+        <h2 id="sec-5">05. 塔台機械臂空中捕獲 (Mechazilla Chopstick Catch) 毫米級控制系統</h2>
+        <p>2024 年 10 月 13 日，SpaceX 在星艦第五次軌道試飛（IFT-5）中，完成了震驚全球的創舉：高達 71 公尺、重達 200 多噸的超重型助推器從天而降，在 Starbase 發射塔上，被一對名為 <strong>Mechazilla「筷子（Chopsticks）」</strong>的巨型機械臂於半空中生生夾住！</p>
+
+        <div class="tech-diagram">
+          <div class="diagram-pill-title">
+            <span>🥢 Mechazilla 筷子發射塔台空中捕獲四部曲</span>
+          </div>
+
+          <div class="trajectory-timeline">
+            <div class="traj-step">
+              <div class="traj-time">階段 1：減速定位</div>
+              <div class="traj-info">
+                <h4>GPS-RTK 與光達 (LiDAR) 多源感知融合</h4>
+                <p>助推器內圈 3 具猛禽發動機點火減速，透過雙星差分 GPS 與塔架上的毫米波雷達、高速光學相機進行即時位置互鎖，將橫向定位誤差限制在 5 公分內。</p>
+              </div>
+            </div>
+
+            <div class="traj-step">
+              <div class="traj-time">階段 2：懸停平移</div>
+              <div class="traj-info">
+                <h4>發動機 TVC 向量擺動平移切入</h4>
+                <p>火箭不直接對準發動機點火台，而是以微小傾角朝塔架旁空域下落，直到著陸點火穩定後，再透過推力向量平移「橫向切入」兩根張開的機械筷子夾角中。</p>
+              </div>
+            </div>
+
+            <div class="traj-step">
+              <div class="traj-time">階段 3：機械接觸</div>
+              <div class="traj-info">
+                <h4>承重承載銷 (Hardpoints) 與液壓滑軌碰鎖</h4>
+                <p>助推器上方兩側精鋼鍛造的承載凸耳（Lift Pins）接觸到機械筷子導軌。機械臂末端配備大行程氣動/液壓減震阻尼器，瞬間吸收下落剩餘動能。</p>
+              </div>
+            </div>
+
+            <div class="traj-step">
+              <div class="traj-time">階段 4：負載轉移</div>
+              <div class="traj-info">
+                <h4>發動機安全關機與放氣</h4>
+                <p>感知器確認承重銷鎖定到位後，機載電腦發送發動機關機指令，高達數百噸的火箭重量完全轉移至塔架，完成捕獲並直接放回發射台，隨時準備重新灌注燃料！</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>為什麼一定要「筷子夾火箭」？取消著陸腿的極致哲學</h3>
+        <p>傳統火箭著陸腿（如 Falcon 9 的 4 根碳纖維腳架）存在三大致命痛點：</p>
+        <ol>
+          <li><strong>巨大的死重懲罰</strong>：要支撐重達數百噸的星艦或助推器，4 根高強度著陸腿與液壓展開機構的質量高達 <strong>5 至 8 公噸</strong>！在火箭方程中，這 5 噸死重直接等量吃掉了入軌有效載荷。</li>
+          <li><strong>極高的再翻新維護時間</strong>：落地後需要大型吊車運回機庫、檢修伸展機構、重新折疊壓緊，無法實現馬斯克設想的「發射後一小時內再次發射」。</li>
+          <li><strong>發射台直降（Direct-to-Mount）</strong>：被筷子捕獲後，機械臂能直接旋轉，將助推器直接精準置放在軌道發射台（Orbital Launch Mount, OLM）的 20 個夾具上，省去了所有地面拖車吊裝環節！</li>
+        </ol>
+
+        <!-- ==================== Chapter 6 ==================== -->
+        <h2 id="sec-6">06. 全球天基巨型星座：星鏈 (Starlink) 相控陣與真空雷射鏈路</h2>
+        <p>SpaceX 之所以能擁有源源不絕的巨額現金流投入星艦研發，核心動能正是 <strong>Starlink（星鏈）</strong>。截至 2026 年，Starlink 已在低地球軌道（LEO）部署超過 7,000 顆活躍衛星，服務全球數百萬個人、航空客機、遠洋貨輪與軍方國防用戶。</p>
+
+        <div class="tech-diagram">
+          <div class="diagram-pill-title">
+            <span>🌐 Starlink V2 Mini 天基真空雷射網狀互聯 (OISL) 通訊拓撲</span>
+          </div>
+
+          <div class="laser-mesh-diagram">
+            <div class="laser-sat-row">
+              <div class="sat-node">
+                <strong>🛰️ Starlink Sat A</strong>
+                <span>軌道高度 550 km</span>
+                <div style="font-size:0.75rem; color:#64748b; margin-top:0.3rem;">跨洋中繼節點</div>
+              </div>
+
+              <div class="laser-beam"></div>
+
+              <div class="sat-node">
+                <strong>🛰️ Starlink Sat B</strong>
+                <span>軌道高度 550 km</span>
+                <div style="font-size:0.75rem; color:#64748b; margin-top:0.3rem;">跨洋中繼節點</div>
+              </div>
+
+              <div class="laser-beam"></div>
+
+              <div class="sat-node">
+                <strong>🛰️ Starlink Sat C</strong>
+                <span>軌道高度 550 km</span>
+                <div style="font-size:0.75rem; color:#64748b; margin-top:0.3rem;">下行網關節點</div>
+              </div>
+            </div>
+
+            <!-- Vertical Links Down to Ground -->
+            <div style="display:flex; justify-content:space-between; margin-top:1rem; padding: 0 1rem; flex-wrap:wrap; gap:1rem;">
+              <div style="background:#1e293b; border:1px solid #475569; border-radius:8px; padding:0.8rem 1.2rem; flex:1; min-width:240px; text-align:center;">
+                <div style="color:#fbbf24; font-weight:700; margin-bottom:0.2rem;">📡 地面用戶端 (Dishy V4 / Mini)</div>
+                <div style="font-size:0.82rem; color:#94a3b8;">Ku/Ka 頻段主動相控陣電子波束成形 (Beamforming)<br>毫秒級無機械轉向波束追蹤</div>
+              </div>
+
+              <div style="background:#1e293b; border:1px solid #475569; border-radius:8px; padding:0.8rem 1.2rem; flex:1; min-width:240px; text-align:center;">
+                <div style="color:#4ade80; font-weight:700; margin-bottom:0.2rem;">🏢 地面站網關 (Gateway PoP)</div>
+                <div style="font-size:0.82rem; color:#94a3b8;">E-Band 超大頻寬超高頻饋線<br>直連全球一級網際網路骨幹 (Tier-1 Fiber)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>1. 真空光速 vs 光纖折射率：為什麼跨洋星鏈比地面光纖更快？</h3>
+        <p>許多傳統網路工程師誤以為衛星通訊的延遲必定高於地面光纖，這在地球同步軌道（GEO，高度 35,786 km，單向延遲 >250ms）確實如此，但<strong>在具備雷射星間鏈路（OISL）的低軌星鏈面前，物理定律反轉了：</strong></p>
+        <ul>
+          <li><strong>光在二氧化矽玻璃光纖中的傳播速度</strong>：光纖的折射率 n ≈ 1.47，因此光在光纖中的速度僅為 v<sub>fiber</sub> = c / n ≈ 300,000 / 1.47 ≈ 204,000 km/s。此外，地面光纖受地形、海纜登陸點、中繼路由器繞道影響，實際物理傳播路徑通常是直線距離的 1.3 至 1.6 倍！</li>
+          <li><strong>光在太空真空中的傳播速度</strong>：真空中沒有介質，光速維持在完全的極限 <strong>c ≈ 299,792 km/s！</strong>速度比玻璃光纖快了整整 <strong>47%！</strong></li>
+          <li><strong>結果</strong>：在紐約與倫敦或新加坡之間，星鏈利用低軌衛星互相照射的雷射網狀路由（Laser Mesh Network），端到端 Ping 延遲比深海光纜<strong>低了 15 至 30 毫秒！</strong>這在高頻量化交易（HFT）與跨洲電競中是決定勝負的巨大優勢。</li>
+        </ul>
+
+        <h3>2. Direct-to-Cell (衛星直連手機) 物理挑戰</h3>
+        <p>Starlink V2 Mini 與未來的 V2 具備直徑數公尺的巨型高靈敏度相控陣天線，利用 1.9 GHz 至 2 GHz 頻段（LTE 規範），讓地面的<strong>一般未經任何硬體改裝的普通智慧型手機（iPhone / Android）</strong>，直接接收來自 500 公里高空的 4G LTE 訊號。其演算法需在動態軌道下，以超高頻都卜勒效應補償演算法，修正衛星以每秒 7.6 公里高速掠過上空所產生的劇烈頻偏。</p>
+
+        <!-- ==================== Chapter 7 ==================== -->
+        <h2 id="sec-7">07. 航太軟體工程：三冗餘架構 (TMR)、即時 Linux 與分散式航電</h2>
+        <p>在嚴酷的太空中，宇宙射線與高能帶電粒子隨時會穿透晶片矽層，導致<strong>單粒子翻轉（Single Event Upset, SEU）</strong>——記憶體裡的某個 0 突然變成 1。傳統航太機構（如 NASA 或 ESA）通常會採購極為昂貴、比同時代消費晶片慢 15 年的特製抗輻照晶片（如 RAD750，單片報價數十萬美元，主頻僅 133 MHz）。</p>
+        <p>SpaceX 再次採用了第一性原理：<strong>使用現代廉價的高性能商業級多核心晶片（Commercial Off-The-Shelf, COTS），透過軟體層級的「容錯與多模冗餘」全面抵禦硬體損壞！</strong></p>
+
+        <div class="callout callout-info">
+          <div class="callout-title">🛡️ 三模冗餘 (Triple Modular Redundancy, TMR) 與 Actor-Voting 架構</div>
+          <p>獵鷹九號與星艦的核心飛行電腦配備 3 套完全獨立的雙核心 x86 / ARM 處理器主機板，各自運行打過 <code>RT-PREEMPT</code> 低延遲補丁的客製化 <strong>Linux 作業系統</strong>：</p>
+          <ul>
+            <li><strong>三重獨立計算</strong>：飛控迴圈（Navigation & Attitude Control Loops）以數百 Hz 頻率在 3 台電腦上同時執行。</li>
+            <li><strong>少數服從多數投票機制（2-out-of-3 Voting）</strong>：每個控制週期結束時，三台電腦會將計算出的推力向量擺角指令進行交叉比對。若其中一台因宇宙射線輻照發生記憶體錯誤算出異常值，其餘兩台會立即否決該輸出，並在數微秒內重啟異常核心。</li>
+            <li><strong>雙核心內部監控</strong>：每片板子上的兩個 CPU 核心彼此執行相同的字串指令，若兩核心內部出現偏差，該節點會主動自我下線，確保錯誤資料絕不進入執行致動器（Actuators）。</li>
+          </ul>
+        </div>
+
+        <p>在前端介面與人機互動上，Crew Dragon（載人天龍號太空船）三個巨大的座艙觸控螢幕，底層採用 Chromium 核心，以 <strong>HTML5、CSS、JavaScript 與 WebGL</strong> 構建飛航數位儀表板。所有的關鍵飛行控制指令在前端送出時，皆需經由強型別狀態機驗證，再透過安全的 C/C++ 即時通訊總線發送至後端控制器。</p>
+
+        <!-- ==================== Chapter 8 ==================== -->
+        <h2 id="sec-8">08. 全球主流重型運載火箭規格、運載能力與發射成本大對決</h2>
+        <p>為了看清 SpaceX 獵鷹九號與星艦在人類航太史上的統治級地位，以下整理全球現役與主力重型運載火箭的硬核規格全景大對比：</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>火箭型號</th>
+                <th>研發機構 / 國家</th>
+                <th>一級動力配置</th>
+                <th>推進劑組合</th>
+                <th>起飛總推力</th>
+                <th>近地軌道運載力 (LEO)</th>
+                <th>重複使用性</th>
+                <th>單次發射公開報價</th>
+                <th>單位公斤入軌成本 ($/kg)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Falcon 9 Block 5</strong></td>
+                <td>SpaceX (美)</td>
+                <td>9x Merlin 1D</td>
+                <td>RP-1 煤油 / 低溫液氧</td>
+                <td>7,607 kN</td>
+                <td>22.8 噸 (消耗) / 17.5 噸 (回收)</td>
+                <td>一級與整流罩 100% 回收</td>
+                <td><strong>~$6,700 萬美元</strong></td>
+                <td><strong>~$2,900 / kg</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Falcon Heavy</strong></td>
+                <td>SpaceX (美)</td>
+                <td>27x Merlin 1D</td>
+                <td>RP-1 煤油 / 低溫液氧</td>
+                <td>22,819 kN</td>
+                <td>63.8 噸 (消耗)</td>
+                <td>三芯一級可回收</td>
+                <td>~$9,700 萬美元</td>
+                <td>~$1,500 / kg</td>
+              </tr>
+              <tr>
+                <td><strong>Starship (星艦系統)</strong></td>
+                <td>SpaceX (美)</td>
+                <td>33x Raptor 2 / 3</td>
+                <td>液態甲烷 / 液氧 (Methalox)</td>
+                <td><strong>~74,000 kN (72 MN)</strong></td>
+                <td><strong>150 ~ 200 噸 (完全回收)</strong></td>
+                <td><strong>一級 + 二級 100% 塔台夾取</strong></td>
+                <td><strong>預期 &lt; $1,000 萬 (成熟期)</strong></td>
+                <td><strong>&lt; $100 / kg (革命級)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Saturn V (土星五號)</strong></td>
+                <td>NASA / 波音 (美)</td>
+                <td>5x F-1</td>
+                <td>RP-1 煤油 / 液氧</td>
+                <td>35,100 kN</td>
+                <td>140 噸</td>
+                <td>0% (完全一次性消耗)</td>
+                <td>~$12.3 億美元 (通膨折現)</td>
+                <td>~$8,800 / kg</td>
+              </tr>
+              <tr>
+                <td><strong>SLS Block 1</strong></td>
+                <td>NASA / 波音 (美)</td>
+                <td>4x RS-25 + 2x 固體助推</td>
+                <td>液氫 / 液氧 + 固體推進</td>
+                <td>39,100 kN</td>
+                <td>95 噸</td>
+                <td>0% (完全一次性消耗)</td>
+                <td><strong>~$22 億 ~ $41 億美元！</strong></td>
+                <td><strong>&gt; $23,000 / kg (極昂貴)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Vulcan Centaur</strong></td>
+                <td>ULA (美)</td>
+                <td>2x BE-4 + 固體助推</td>
+                <td>液態甲烷 / 液氧</td>
+                <td>~8,900 kN</td>
+                <td>27.2 噸</td>
+                <td>0% (研發中引擎回收)</td>
+                <td>~$1.1 億美元</td>
+                <td>~$4,000 / kg</td>
+              </tr>
+              <tr>
+                <td><strong>長征五號 (CZ-5)</strong></td>
+                <td>CALT (中)</td>
+                <td>8x YF-100 + 2x YF-77</td>
+                <td>煤油/液氧 + 液氫/液氧</td>
+                <td>10,620 kN</td>
+                <td>25 噸</td>
+                <td>0% (完全一次性消耗)</td>
+                <td>~$1 億美元</td>
+                <td>~$4,000 / kg</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ==================== Chapter 9 ==================== -->
+        <h2 id="sec-9">09. 互動式工具：齊奧爾科夫斯基火箭方程與多級入軌精算器</h2>
+        <p>所有火箭設計與星際航行的物理起點，都是俄國航太先驅康斯坦丁·齊奧爾科夫斯基於 1903 年推導出的<strong>火箭方程（Tsiolkovsky Rocket Equation）</strong>：</p>
+
+        <div class="callout callout-warning">
+          <div class="callout-title">📐 齊奧爾科夫斯基火箭理想速度增量方程 (Ideal Delta-v Formula)</div>
+          <p style="font-size:1.2rem; font-family:'Cascadia Code', Consolas, monospace; margin: 0.5rem 0;">
+            <div style="font-size:1.35rem; font-family:'Cascadia Code', Consolas, monospace; font-weight:700; color:#38bdf8; text-align:center; padding:0.8rem; background:#0f172a; border-radius:8px; margin:0.8rem 0;">Δv = I<sub>sp</sub> · g<sub>0</sub> · ln(m<sub>0</sub> / m<sub>f</sub>)</div>
+          </p>
+          <ul style="margin-left: 1.2rem; margin-top: 0.5rem; line-height: 1.8;">
+            <li>Δv：火箭推進系統能夠給予太空船的最大速度改變量（增量速度，m/s）。</li>
+            <li>I<sub>sp</sub>：發動機的比衝（Specific Impulse，秒），代表消耗單位質量推進劑所產生的衝量。</li>
+            <li>g<sub>0</sub>：標準重力加速度（常數 $9.80665 \text{ m/s}^2$）。</li>
+            <li>m<sub>0</sub>：火箭點火前的初始總質量（包含箭體結構乾重 + 推進劑 + 有效載荷，kg 或公噸）。</li>
+            <li>m<sub>f</sub>：燃料燒盡後的最終乾重質量（箭體結構 + 有效載荷，kg 或公噸）。</li>
+            <li>m<sub>0</sub> / m<sub>f</sub>：質量比（Mass Ratio）。由於自然對數 $ln$ 的物理限制，為了換取線性的速度增長，燃料需求呈現可怕的指數級爆炸！這也是航太工程師常感嘆的「火箭方程的暴政（Tyranny of the Rocket Equation）」。</li>
+          </ul>
+        </div>
+
+        <!-- Interactive Calculator Widget -->
+        <div class="calc-box">
+          <div class="calc-title">🚀 齊奧爾科夫斯基火箭方程 Δv 與軌道入軌精算模擬器</div>
+          <div class="calc-desc">選擇預設的著名 SpaceX 火箭級段參數，或自行輸入自定義的質量比與比衝，即時評估其能達到的軌道速度增量與任務可行性！</div>
+
+          <div class="calc-presets">
+            <button class="preset-btn active" onclick="loadPreset('f9_s1')">Falcon 9 第一級 (ASDS模式)</button>
+            <button class="preset-btn" onclick="loadPreset('f9_s2')">Falcon 9 第二級 (真空入軌)</button>
+            <button class="preset-btn" onclick="loadPreset('starship_ship')">Starship 星艦飛船 (真空Raptor)</button>
+            <button class="preset-btn" onclick="loadPreset('super_heavy')">Super Heavy 助推器 (33引擎)</button>
+            <button class="preset-btn" onclick="loadPreset('saturn_v_s1')">Saturn V 第一級 (S-IC F-1)</button>
+          </div>
+
+          <div class="calc-form-grid">
+            <div class="calc-field">
+              <label for="input-m0">🚀 發射初始總質量 m<sub>0</sub> (公噸)</label>
+              <input type="number" id="input-m0" value="433.1" step="0.1" min="1" oninput="calculateRocket()">
+            </div>
+            <div class="calc-field">
+              <label for="input-mf">🔩 燒盡最終乾重 m<sub>f</sub> (公噸)</label>
+              <input type="number" id="input-mf" value="48.1" step="0.1" min="0.1" oninput="calculateRocket()">
+            </div>
+            <div class="calc-field">
+              <label for="input-isp">🔥 發動機平均比衝 I<sub>sp</sub> (秒)</label>
+              <input type="number" id="input-isp" value="300" step="1" min="100" max="500" oninput="calculateRocket()">
+            </div>
+            <div class="calc-field">
+              <label for="input-payload">📦 額外有效載荷 (公噸)</label>
+              <input type="number" id="input-payload" value="15.0" step="0.5" min="0" oninput="calculateRocket()">
+            </div>
+          </div>
+
+          <div class="calc-results-panel">
+            <div class="result-kpi">
+              <div class="val" id="res-deltav">6,462 m/s</div>
+              <div class="label">速度增量 (Delta-v)</div>
+            </div>
+            <div class="result-kpi">
+              <div class="val" id="res-massratio">7.02 : 1</div>
+              <div class="label">質量比 (m0 / mf)</div>
+            </div>
+            <div class="result-kpi">
+              <div class="val" id="res-propellant">385.0 噸</div>
+              <div class="label">推進劑燃耗總量</div>
+            </div>
+            <div class="result-kpi">
+              <div class="val" id="res-efficiency">86.4 %</div>
+              <div class="label">推進劑質量佔比</div>
+            </div>
+          </div>
+
+          <div class="orbit-progress-wrap">
+            <div style="font-weight:700; margin-bottom:0.4rem; color:var(--text);">🎯 典型軌道所需累積速度增量門檻對照：</div>
+            
+            <div class="orbit-bar-row">
+              <div class="orbit-name">LEO 低地球軌道 (~9,400 m/s)</div>
+              <div class="bar-track"><div class="bar-fill" id="bar-leo" style="width: 68%;"></div></div>
+              <div class="bar-val" id="pct-leo">68.7%</div>
+            </div>
+
+            <div class="orbit-bar-row">
+              <div class="orbit-name">GTO 地球同步轉移 (~11,800 m/s)</div>
+              <div class="bar-track"><div class="bar-fill" id="bar-gto" style="width: 54%;"></div></div>
+              <div class="bar-val" id="pct-gto">54.7%</div>
+            </div>
+
+            <div class="orbit-bar-row">
+              <div class="orbit-name">TLI 月球轉移軌道 (~12,500 m/s)</div>
+              <div class="bar-track"><div class="bar-fill" id="bar-tli" style="width: 51%;"></div></div>
+              <div class="bar-val" id="pct-tli">51.6%</div>
+            </div>
+
+            <div class="orbit-bar-row">
+              <div class="orbit-name">TMI 火星轉移軌道 (~13,100 m/s)</div>
+              <div class="bar-track"><div class="bar-fill" id="bar-tmi" style="width: 49%;"></div></div>
+              <div class="bar-val" id="pct-tmi">49.3%</div>
+            </div>
+          </div>
+          <div style="font-size:0.82rem; color:var(--text-muted); margin-top:1rem;">
+            * 備註：單級火箭因受到重力阻力（~1,200 m/s）與大氣氣動阻力（~300 m/s）損耗，通常無法單獨入軌（SSTO）。現代火箭（如 Falcon 9、Starship）均透過多級分離（Staging）逐級拋棄死重，累積達到入軌所需的 >9,400 m/s 總 Δv。
+          </div>
+        </div>
+
+        <!-- ==================== Chapter 10 ==================== -->
+        <h2 id="sec-10">10. 航太工程核心故障排除與火星殖民藍圖</h2>
+        <p>SpaceX 之所以能夠取得今日的統治級地位，並不是因為他們從不犯錯，而是因為他們把「炸毀原型機」視為最高效的資料採集過程。以下拆解三個 SpaceX 歷史上最關鍵的工程排障與解決方案：</p>
+
+        <h3>1. Pogo 震盪（縱向共振耦合）的流體聲學消除</h3>
+        <p>在阿波羅時代與 Falcon 1 早期，液體火箭經常遭遇 <strong>Pogo 震盪</strong>：發動機燃燒室推力產生微小脈動，引發火箭結構縱向彈性伸縮；結構伸縮進而擠壓推進劑管路，導致管路內部液壓以相同頻率震盪；劇烈震盪的液體進入燃燒室，進一步放大燃燒不均勻性。這種致命正反饋會在幾秒鐘內將火箭結構直接震碎！</p>
+        <p><strong>SpaceX 的解法</strong>：在 Merlin 1D 與 Raptor 的推進劑入口處，安裝一體化<strong>充氮氣動蓄能器（Pogo Suppressors）</strong>。利用氣體的高壓縮性吸收液體動壓脈衝波，打破流體管路與機械結構之間的共振頻率耦合，徹底根除了 Pogo 現象。</p>
+
+        <h3>2. 猛禽發動機積碳與 Sabatier 原位火星資源利用 (ISRU)</h3>
+        <p>傳統煤油（RP-1）在富燃預燃室中高溫裂解時，會析出大量黑色黏稠碳粉（Coking），幾十秒內就會堵死渦輪葉片與噴注器微孔，因此傳統煤油火箭發動機重啟極為困難且必須徹底拆卸清洗。</p>
+        <p>SpaceX 選擇<strong>液態甲烷（CH4）</strong>作為星艦推進劑，一舉解決了兩大核心難題：</p>
+        <ol>
+          <li><strong>零積碳（Zero Coking）</strong>：甲烷分子結構簡單（1 個碳原子結合 4 個氫原子），高溫燃燒純淨，噴嘴乾淨如新，實現百次無拆卸再點火。</li>
+          <li><strong>火星原地製造燃料（ISRU Sabatier 反應）</strong>：火星大氣中 95% 為二氧化碳（CO2），地表蘊藏大量水冰（H2O）。透過核能或太陽能電解水產生氫氣，再進行 <strong>Sabatier 甲烷化反應</strong>：
+            <div style="font-size:1.15rem; font-family:'Cascadia Code', Consolas, monospace; font-weight:700; color:#4ade80; text-align:center; padding:0.6rem; background:#0f172a; border-radius:8px; margin:0.8rem 0;">CO<sub>2</sub> + 4H<sub>2</sub> ──(Ni 觸媒 / 400°C)──► CH<sub>4</sub> + 2H<sub>2</sub>O</div>
+            太空人到達火星後，不需從地球攜帶回程燃料，利用火星本土資源即可原地生產千噸級液態甲烷與液氧，達成星際折返閉環！</li>
+        </ol>
+
+        <!-- Summary & Callout -->
+        <div class="callout callout-info" style="margin-top:2.5rem;">
+          <div class="callout-title">🏁 結語：航太新紀元的工程啟示</div>
+          <p>SpaceX 的成功證明了一件事：<strong>宇宙的物理定律從未限制人類擴展星際疆界，限制我們的只是傳統體制的官僚、不敢承擔失敗的怯懦，以及對第一性原理的背離。</strong></p>
+          <p>從獵鷹九號的日常發射降落，到星艦在德州星港的巨響騰空，這群硬核工程師用不銹鋼、液態甲烷、C++ 程式碼與無畏的快速迭代，正在將科幻小說中的未來，一行一行編譯為真實世界的運行代碼。</p>
+        </div>
+
+        <!-- Tags & Back -->
+        <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <span style="background:var(--bg-alt); border:1px solid var(--border); padding:0.3rem 0.7rem; border-radius:4px; font-size:0.88rem;">#SpaceX</span>
+            <span style="background:var(--bg-alt); border:1px solid var(--border); padding:0.3rem 0.7rem; border-radius:4px; font-size:0.88rem;">#Starship</span>
+            <span style="background:var(--bg-alt); border:1px solid var(--border); padding:0.3rem 0.7rem; border-radius:4px; font-size:0.88rem;">#Falcon9</span>
+            <span style="background:var(--bg-alt); border:1px solid var(--border); padding:0.3rem 0.7rem; border-radius:4px; font-size:0.88rem;">#Raptor</span>
+            <span style="background:var(--bg-alt); border:1px solid var(--border); padding:0.3rem 0.7rem; border-radius:4px; font-size:0.88rem;">#Starlink</span>
+          </div>
+          <a href="./articles.html" style="color:var(--accent); font-weight:600; text-decoration:none;">← 返回所有技術文章</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>"AI" 硬核工程師</h4>
+        <p>Talk is cheap. Show me the code. 專注於前端、後端、AI 與航太前瞻硬核技術。</p>
+      </div>
+      <div class="footer-col">
+        <h4>快速連結</h4>
+        <ul>
+          <li><a href="./index.html">首頁</a></li>
+          <li><a href="./articles.html">所有文章</a></li>
+          <li><a href="./tech-news.html">科技新知</a></li>
+          <li><a href="./about.html">關於本站</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>熱門指南</h4>
+        <ul>
+          <li><a href="./spacex-aerospace-engineering-guide.html">SpaceX 終極硬核工程全解</a></li>
+          <li><a href="./bluetooth-technology-guide.html">藍牙技術終極硬核指南</a></li>
+          <li><a href="./anythingllm-guide.html">AnythingLLM 終極實戰手冊</a></li>
+          <li><a href="./claude-code-mcp-skill-guide.html">Claude Code 終極深度指南</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 "AI" 硬核工程師. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/main.js"></script>
+  <script>
+    const presets = {
+      f9_s1: { m0: 433.1, mf: 48.1, isp: 300, payload: 15.0 },
+      f9_s2: { m0: 115.0, mf: 4.5, isp: 348, payload: 15.0 },
+      starship_ship: { m0: 1300.0, mf: 120.0, isp: 380, payload: 100.0 },
+      super_heavy: { m0: 3600.0, mf: 200.0, isp: 327, payload: 1300.0 },
+      saturn_v_s1: { m0: 2280.0, mf: 130.0, isp: 263, payload: 650.0 }
+    };
+
+    function loadPreset(key) {
+      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      const p = presets[key];
+      if (!p) return;
+      document.getElementById('input-m0').value = p.m0;
+      document.getElementById('input-mf').value = p.mf;
+      document.getElementById('input-isp').value = p.isp;
+      document.getElementById('input-payload').value = p.payload;
+      calculateRocket();
+    }
+
+    function calculateRocket() {
+      const m0Base = parseFloat(document.getElementById('input-m0').value) || 0;
+      const mfBase = parseFloat(document.getElementById('input-mf').value) || 0;
+      const isp = parseFloat(document.getElementById('input-isp').value) || 0;
+      const payload = parseFloat(document.getElementById('input-payload').value) || 0;
+
+      const totalM0 = m0Base + payload;
+      const totalMf = mfBase + payload;
+
+      if (totalM0 <= 0 || totalMf <= 0 || totalM0 <= totalMf || isp <= 0) {
+        document.getElementById('res-deltav').textContent = "--- m/s";
+        return;
+      }
+
+      const g0 = 9.80665;
+      const massRatio = totalM0 / totalMf;
+      const deltaV = isp * g0 * Math.log(massRatio);
+      const propMass = totalM0 - totalMf;
+      const propFraction = (propMass / totalM0) * 100;
+
+      document.getElementById('res-deltav').textContent = Math.round(deltaV).toLocaleString() + " m/s";
+      document.getElementById('res-massratio').textContent = massRatio.toFixed(2) + " : 1";
+      document.getElementById('res-propellant').textContent = propMass.toFixed(1) + " 噸";
+      document.getElementById('res-efficiency').textContent = propFraction.toFixed(1) + " %";
+
+      // Update Orbit Benchmarks
+      updateOrbitBar('bar-leo', 'pct-leo', deltaV, 9400);
+      updateOrbitBar('bar-gto', 'pct-gto', deltaV, 11800);
+      updateOrbitBar('bar-tli', 'pct-tli', deltaV, 12500);
+      updateOrbitBar('bar-tmi', 'pct-tmi', deltaV, 13100);
+    }
+
+    function updateOrbitBar(barId, pctId, deltaV, target) {
+      const pct = Math.min(100, Math.round((deltaV / target) * 100));
+      const bar = document.getElementById(barId);
+      const txt = document.getElementById(pctId);
+      if (bar) {
+        bar.style.width = pct + "%";
+        if (pct >= 100) {
+          bar.style.backgroundColor = "#38bdf8";
+        } else if (pct >= 60) {
+          bar.style.backgroundColor = "#10b981";
+        } else {
+          bar.style.backgroundColor = "#f59e0b";
+        }
+      }
+      if (txt) {
+        txt.textContent = pct + "%";
+      }
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', calculateRocket);
+  </script>
+</body>
+</html>
