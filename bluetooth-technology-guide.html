@@ -242,14 +242,14 @@
       transform: translateX(4px);
     }
 
-    /* Diagram Block */
+    /* Diagram Block & Banners */
     .diagram-card {
       background: #0f172a;
       color: #f8fafc;
       border-radius: 10px;
       padding: 1.5rem 1.8rem;
       margin: 1.8rem 0;
-      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, monospace;
       font-size: 0.88rem;
       line-height: 1.55;
       overflow-x: auto;
@@ -263,6 +263,418 @@
     .diagram-card .hl-yellow { color: #facc15; font-weight: bold; }
     .diagram-card .hl-pink { color: #f43f5e; font-weight: bold; }
     .diagram-card .hl-dim { color: #64748b; }
+
+    .diagram-banner {
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      margin-bottom: 1.2rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 6px;
+      color: #38bdf8;
+      font-weight: 700;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+    }
+
+    /* Modern Architecture & Protocol Stack Diagram */
+    .stack-diagram, .chain-diagram {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 2rem 1.8rem;
+      margin: 2rem 0;
+      width: 100%;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+    }
+
+    .stack-title-pill, .chain-title-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.4rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 9999px;
+      color: #38bdf8;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+      text-align: center;
+    }
+
+    .stack-node {
+      width: 100%;
+      max-width: 420px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 0.75rem 1.2rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #f1f5f9;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+    }
+    .stack-node:hover, .chain-node:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+    .stack-node.app-layer {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(56, 189, 248, 0.15));
+      border-color: #6366f1;
+      color: #c7d2fe;
+      font-size: 1.02rem;
+    }
+    .stack-node.hci-layer {
+      border-color: #38bdf8;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+    }
+    .stack-node.link-layer {
+      border-color: #a855f7;
+      color: #d8b4fe;
+      background: rgba(168, 85, 247, 0.08);
+    }
+    .stack-node.rf-layer {
+      border-color: #f43f5e;
+      color: #fda4af;
+      background: rgba(244, 63, 94, 0.08);
+    }
+
+    .connector-svg {
+      width: 100%;
+      max-width: 580px;
+      height: 48px;
+      display: block;
+      overflow: visible;
+    }
+    .connector-vert {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 36px;
+      justify-content: center;
+    }
+    .connector-vert .line {
+      width: 2px;
+      height: 24px;
+      background: #475569;
+    }
+    .connector-vert .arrow {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #475569;
+    }
+
+    .stack-branches {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 720px;
+    }
+    .stack-branch {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .branch-card {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid #334155;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .classic-branch .branch-card {
+      border-color: rgba(56, 189, 248, 0.4);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(56, 189, 248, 0.05));
+    }
+    .classic-branch .branch-header {
+      color: #38bdf8;
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+      padding-bottom: 0.5rem;
+    }
+    .ble-branch .branch-card {
+      border-color: rgba(74, 222, 128, 0.4);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(74, 222, 128, 0.05));
+    }
+    .ble-branch .branch-header {
+      color: #4ade80;
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(74, 222, 128, 0.2);
+      padding-bottom: 0.5rem;
+    }
+    .branch-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+    }
+    .branch-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      color: #cbd5e1;
+      line-height: 1.4;
+      margin-bottom: 0 !important;
+    }
+    .branch-list li strong {
+      color: #f8fafc;
+      font-family: "SF Mono", Consolas, monospace;
+      font-size: 0.85rem;
+    }
+    .l2cap-card {
+      background: #1e293b;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .classic-branch .l2cap-card {
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #bae6fd;
+    }
+    .ble-branch .l2cap-card {
+      border: 1px solid rgba(74, 222, 128, 0.3);
+      color: #bbf7d0;
+    }
+    .bus-interface {
+      margin: 0.6rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .bus-tag {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px dashed #f59e0b;
+      color: #fbbf24;
+      padding: 0.25rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      font-family: "SF Mono", Consolas, monospace;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Signal Chain Specific */
+    .chain-node {
+      width: 100%;
+      max-width: 500px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 1rem 1.4rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+    }
+    .chain-node .node-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .chain-node .node-sub {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 0.3rem;
+    }
+    .chain-antenna {
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.08);
+    }
+    .chain-antenna .node-title { color: #fbbf24; }
+    .chain-rf {
+      border-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+    }
+    .chain-rf .node-title { color: #38bdf8; }
+    .chain-soc {
+      border-color: #6366f1;
+      background: linear-gradient(180deg, rgba(99, 102, 241, 0.12), rgba(15, 23, 42, 0.8));
+      text-align: left;
+      max-width: 540px;
+    }
+    .chain-soc .node-title {
+      color: #818cf8;
+      justify-content: flex-start;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .soc-specs {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      font-size: 0.86rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      color: #cbd5e1;
+    }
+    .soc-specs li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 0 !important;
+    }
+    .soc-specs li::before {
+      content: "•";
+      color: #818cf8;
+      font-weight: bold;
+    }
+    .chain-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 32px;
+      justify-content: center;
+    }
+    .chain-arrow .line {
+      width: 2px;
+      height: 20px;
+      background: #475569;
+    }
+    .chain-arrow .point {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #475569;
+    }
+    .chain-bus-tag {
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px dashed #a855f7;
+      color: #d8b4fe;
+      padding: 0.3rem 1rem;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      font-family: "SF Mono", Consolas, monospace;
+      margin: 0.4rem 0;
+    }
+    .chain-split-branches {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 800px;
+    }
+    .chain-branch-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .branch-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.2rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: 0.04em;
+    }
+    .badge-analog {
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      color: #fda4af;
+    }
+    .badge-digital {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #bae6fd;
+    }
+    .chain-card-sub {
+      width: 100%;
+      background: #1e293b;
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      border: 1px solid #334155;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+    }
+    .chain-card-sub .sub-head {
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 0.3rem;
+    }
+    .chain-card-sub .sub-body {
+      font-size: 0.83rem;
+      color: #94a3b8;
+      line-height: 1.45;
+    }
+    .card-dac {
+      border-color: rgba(244, 63, 94, 0.4);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(244, 63, 94, 0.06));
+    }
+    .card-dac .sub-head { color: #fb7185; }
+    .card-opamp {
+      border-color: rgba(251, 146, 60, 0.4);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(251, 146, 60, 0.06));
+    }
+    .card-opamp .sub-head { color: #fdba74; }
+    .card-spdif {
+      border-color: rgba(56, 189, 248, 0.4);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(56, 189, 248, 0.06));
+    }
+    .card-spdif .sub-head { color: #38bdf8; }
+    .chain-final-output {
+      width: 100%;
+      max-width: 800px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(6, 182, 212, 0.12));
+      border: 1px solid #10b981;
+      border-radius: 8px;
+      padding: 0.8rem 1.4rem;
+      text-align: center;
+      color: #a7f3d0;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+    }
+
+    @media (max-width: 640px) {
+      .stack-branches, .chain-split-branches {
+        grid-template-columns: 1fr;
+      }
+      .connector-svg {
+        display: none;
+      }
+    }
 
     /* Interactive Box Components */
     .interactive-explorer-box {
@@ -513,43 +925,103 @@
         <h3>雙模架構：經典藍牙 (BR/EDR) vs 低功耗藍牙 (BLE)</h3>
         <p>很多工程師常常誤以為「低功耗藍牙是經典藍牙的升級版」，但<strong>在架構與協議層面，它們完全是兩種平行且不相容的無線技術</strong>！現代智慧型手機晶片大多為<strong>雙模藍牙 (Dual-Mode Bluetooth / Smart Ready)</strong>，內部同時維護著兩套完全獨立的協議棧：</p>
 
-        <div class="diagram-card">
-<span class="hl-cyan">┌───────────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                        現代雙模藍牙系統協議棧拓撲結構                         │</span>
-<span class="hl-cyan">└───────────────────────────────────────────────────────────────────────────────┘</span>
-                           ┌─────────────────────────┐
-                           │  應用層 (Application)   │
-                           └────────────┬────────────┘
-                                        │
-                ┌───────────────────────┴───────────────────────┐
-                ▼                                               ▼
-┌───────────────────────────────┐               ┌───────────────────────────────┐
-│ 1. 經典藍牙協議棧 (BR/EDR)    │               │ 2. 低功耗藍牙協議棧 (BLE)     │
-│  - A2DP (立體聲音訊串流)      │               │  - GATT (通用屬性配置文件)    │
-│  - AVRCP (播放控制/曲名顯示)  │               │  - ATT (屬性協議)             │
-│  - HFP / HSP (電話通話音訊)   │               │  - SMP (安全管理器)           │
-│  - RFCOMM (虛擬串口序列傳輸)  │               │  - LE Audio (BAP/CSIP/PACS)   │
-└───────────────┬───────────────┘               └───────────────┬───────────────┘
-                │                                               │
-                ▼                                               ▼
-┌───────────────────────────────┐               ┌───────────────────────────────┐
-│ L2CAP (邏輯鏈路控制與適配協議)│               │ L2CAP (LE 特化輕量通道)       │
-└───────────────┬───────────────┘               └───────────────┬───────────────┘
-                │                                               │
-                └───────────────────────┬───────────────────────┘
-                                        ▼
-                        ┌───────────────┴───────────────┐
-                        │ HCI (主機控制器介面 Host)     │
-                        └───────────────┬───────────────┘
-                                        │ (UART / USB / SPI 匯流排)
-                                        ▼
-                        ┌───────────────────────────────┐
-                        │ 鏈路層 (Link Layer / Baseband)│
-                        └───────────────┬───────────────┘
-                                        ▼
-                        ┌───────────────────────────────┐
-                        │ 實體層 RF 晶片 (2.4GHz 頻段)  │
-                        └───────────────────────────────┘
+        <div class="stack-diagram">
+          <div class="stack-title-pill">
+            <span>現代雙模藍牙系統協議棧拓撲結構</span>
+          </div>
+
+          <div class="stack-node app-layer">
+            應用層 (Application)
+          </div>
+
+          <!-- SVG Fork Down -->
+          <svg class="connector-svg" viewBox="0 0 580 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M290 0 V18 M145 18 H435 M145 18 V42 M435 18 V42" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+            <polygon points="140,40 150,40 145,46" fill="#475569"/>
+            <polygon points="430,40 440,40 435,46" fill="#475569"/>
+          </svg>
+
+          <div class="stack-branches">
+            <!-- Classic BT -->
+            <div class="stack-branch classic-branch">
+              <div class="branch-card">
+                <div class="branch-header">1. 經典藍牙協議棧 (BR/EDR)</div>
+                <ul class="branch-list">
+                  <li><strong>A2DP</strong>：立體聲音訊串流</li>
+                  <li><strong>AVRCP</strong>：播放控制 / 曲名顯示</li>
+                  <li><strong>HFP / HSP</strong>：電話通話音訊</li>
+                  <li><strong>RFCOMM</strong>：虛擬串口序列傳輸</li>
+                </ul>
+              </div>
+
+              <div class="connector-vert">
+                <div class="line"></div>
+                <div class="arrow"></div>
+              </div>
+
+              <div class="l2cap-card">
+                L2CAP (邏輯鏈路控制與適配協議)
+              </div>
+            </div>
+
+            <!-- BLE -->
+            <div class="stack-branch ble-branch">
+              <div class="branch-card">
+                <div class="branch-header">2. 低功耗藍牙協議棧 (BLE)</div>
+                <ul class="branch-list">
+                  <li><strong>GATT</strong>：通用屬性配置文件</li>
+                  <li><strong>ATT</strong>：屬性協議</li>
+                  <li><strong>SMP</strong>：安全管理器</li>
+                  <li><strong>LE Audio</strong>：BAP / CSIP / PACS</li>
+                </ul>
+              </div>
+
+              <div class="connector-vert">
+                <div class="line"></div>
+                <div class="arrow"></div>
+              </div>
+
+              <div class="l2cap-card">
+                L2CAP (LE 特化輕量通道)
+              </div>
+            </div>
+          </div>
+
+          <!-- SVG Merge Down -->
+          <svg class="connector-svg" viewBox="0 0 580 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M145 0 V24 M435 0 V24 M145 24 H435 M290 24 V42" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+            <polygon points="285,40 295,40 290,46" fill="#475569"/>
+          </svg>
+
+          <div class="stack-node hci-layer">
+            HCI (主機控制器介面 Host Controller Interface)
+          </div>
+
+          <div class="bus-interface">
+            <div class="connector-vert" style="height: 16px;">
+              <div class="line" style="height: 16px;"></div>
+            </div>
+            <div class="bus-tag">
+              <span>⇄</span> UART / USB / SPI 實體匯流排
+            </div>
+            <div class="connector-vert" style="height: 16px;">
+              <div class="line" style="height: 10px;"></div>
+              <div class="arrow"></div>
+            </div>
+          </div>
+
+          <div class="stack-node link-layer">
+            鏈路層 (Link Layer / Baseband 控制器)
+          </div>
+
+          <div class="connector-vert">
+            <div class="line"></div>
+            <div class="arrow"></div>
+          </div>
+
+          <div class="stack-node rf-layer">
+            實體層 RF 晶片 (2.4GHz 頻段收發器)
+          </div>
         </div>
 
         <!-- ==================== Chapter 2 ==================== -->
@@ -573,9 +1045,7 @@
         <p>如果藍牙固定在某一頻率發送音訊數據，只要旁邊的人打開微波爐或啟動 Wi-Fi 載入大檔案，音訊傳輸就會瞬間中斷。為此，藍牙核心架構引入了極為精密的<strong>自適應跳頻 (AFH)</strong> 機制：</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│        自適應跳頻 (AFH) 頻譜避障機制：與 2.4GHz Wi-Fi 共存策略         │</span>
-<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
+          <div class="diagram-banner">自適應跳頻 (AFH) 頻譜避障機制：與 2.4GHz Wi-Fi 共存策略</div>
  訊號強度 (dBm)
    ▲
    │        [ Wi-Fi 頻道 1 佔用區 ]             [ Wi-Fi 頻道 6 佔用區 ]
@@ -784,9 +1254,7 @@
         <p>在 Bluetooth 5.2 規範中，Bluetooth SIG 推出了被譽為「十年來最重大架構躍進」的 <strong>LE Audio (Low Energy Audio)</strong>。它徹底擺脫了過去 20 多年來依賴經典藍牙 BR/EDR 的歷史包袱，直接構建在<strong>低功耗藍牙 (BLE)</strong> 的同步傳輸通道 (Isochronous Channels) 之上。</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│              LE Audio 核心特性：多串流與 Auracast 廣播架構             │</span>
-<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
+          <div class="diagram-banner">LE Audio 核心特性：多串流與 Auracast 廣播架構</div>
 
   [ 傳統經典藍牙 TWS 耳機做法 (轉發架構) ]
    手機 (Master) ──(A2DP雙聲道串流)──► 左耳 (主耳) ──(私有二次轉發)──► 右耳 (副耳)
@@ -823,42 +1291,90 @@
         <p>在許多現代桌面 PC 或老式家庭劇院音響中，藍牙接收器是不可或缺的橋樑。硬體工程師在設計一個高性能藍牙音訊接收器時，內部到底包含了哪些關鍵電路？</p>
 
         <h3>1. 藍牙接收器 (RX) 核心硬體電路拓撲</h3>
-        <div class="diagram-card">
-<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                          高性能藍牙音訊接收器硬體內部訊號鏈架構                        │</span>
-<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────────────────────┘</span>
-  [ 2.4GHz 外部高增益天線 ] (5dBi SMA)
-              │
-              ▼
-   ┌───────────────────────────┐
-   │ 1. RF 射頻前端濾波匹配    │ (LC 帶通濾波器 Bandpass Filter + 阻抗匹配 50Ω)
-   └──────────┬────────────────┘
-              │
-              ▼
-   ┌───────────────────────────┐
-   │ 2. 藍牙音訊主控 SoC       │ (Qualcomm QCC5125 / Realtek RTL8761B / Nordic nRF5340)
-   │  - 2.4GHz RF 收發器       │
-   │  - 32-bit RISC / DSP      │ (運行 A2DP / LDAC / aptX 硬體解碼演算法)
-   │  - 數位音訊輸出介面       │
-   └──────────┬────────────────┘
-              │ ──► [ I2S 數位音訊匯流排: BCLK, LRCK, SDATA, MCLK ]
-              │
-              ├────────────────────────────────────┐
-              ▼ (高階發燒線路)                     ▼ (純數位輸出)
-   ┌───────────────────────────┐      ┌───────────────────────────┐
-   │ 3. 獨立發燒級 DAC 晶片    │      │ 5. S/PDIF 數位變壓器      │
-   │  (如 ESS Sabre ES9038Q2M) │      │  - 光纖 TOSLINK 輸出      │
-   │  - 32-bit / 384kHz 解碼   │      │  - 同軸 Coaxial 輸出      │
-   │  - 超高 SNR (128dB)       │      └───────────────────────────┘
-   └──────────┬────────────────┘
-              │ (微伏級類比平衡信號)
-              ▼
-   ┌───────────────────────────┐
-   │ 4. 運算放大器 (I/V & LPF) │ (雙低雜訊運放 OPA1612：電流/電壓轉換 + 低通濾波)
-   └──────────┬────────────────┘
-              │
-              ▼
-   [ 3.5mm AUX / RCA / XLR 平衡音訊類比輸出 ──► 接後級擴大機或監聽喇叭 ]
+        <div class="chain-diagram">
+          <div class="chain-title-pill">
+            <span>高性能藍牙音訊接收器硬體內部訊號鏈架構</span>
+          </div>
+
+          <div class="chain-node chain-antenna">
+            <div class="node-title">📡 2.4GHz 外部高增益天線 (5dBi SMA)</div>
+          </div>
+
+          <div class="chain-arrow">
+            <div class="line"></div>
+            <div class="point"></div>
+          </div>
+
+          <div class="chain-node chain-rf">
+            <div class="node-title">1. RF 射頻前端濾波匹配</div>
+            <div class="node-sub">LC 帶通濾波器 (Bandpass Filter) + 阻抗匹配 50Ω</div>
+          </div>
+
+          <div class="chain-arrow">
+            <div class="line"></div>
+            <div class="point"></div>
+          </div>
+
+          <div class="chain-node chain-soc">
+            <div class="node-title">2. 藍牙音訊主控 SoC (Qualcomm QCC5125 / RTL8761B / Nordic nRF5340)</div>
+            <ul class="soc-specs">
+              <li>2.4GHz RF 射頻收發器 (RF Transceiver)</li>
+              <li>32-bit 雙核心 RISC / DSP (運行 LDAC / aptX HD / A2DP 硬體解碼)</li>
+              <li>數位音訊輸出介面 (I2S Controller)</li>
+            </ul>
+          </div>
+
+          <div class="chain-arrow">
+            <div class="line"></div>
+            <div class="point"></div>
+          </div>
+
+          <div class="chain-bus-tag">
+            <span>⇄</span> I2S 數位音訊匯流排：BCLK, LRCK, SDATA, MCLK
+          </div>
+
+          <!-- SVG Branch Fork -->
+          <svg style="width: 100%; max-width: 600px; height: 36px; overflow: visible;" viewBox="0 0 600 36" fill="none">
+            <path d="M300 0 V14 M180 14 H420 M180 14 V30 M420 14 V30" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+            <polygon points="175,28 185,28 180,34" fill="#475569"/>
+            <polygon points="415,28 425,28 420,34" fill="#475569"/>
+          </svg>
+
+          <div class="chain-split-branches">
+            <!-- Analog Path -->
+            <div class="chain-branch-col">
+              <span class="branch-badge badge-analog">高階類比發燒線路</span>
+
+              <div class="chain-card-sub card-dac">
+                <div class="sub-head">3. 獨立發燒級 DAC 晶片</div>
+                <div class="sub-body">ESS Sabre ES9038Q2M / AKM AK4493<br>32-bit / 384kHz 解碼 • 超高 SNR (128dB)</div>
+              </div>
+
+              <div class="chain-arrow" style="height: 24px;">
+                <div class="line" style="height: 14px;"></div>
+                <div class="point"></div>
+              </div>
+
+              <div class="chain-card-sub card-opamp">
+                <div class="sub-head">4. 運算放大器 (I/V 轉換 & LPF)</div>
+                <div class="sub-body">雙低雜訊運放 OPA1612：微伏級平衡信號放大與主動低通濾波</div>
+              </div>
+            </div>
+
+            <!-- Digital Path -->
+            <div class="chain-branch-col">
+              <span class="branch-badge badge-digital">純數位介面輸出</span>
+
+              <div class="chain-card-sub card-spdif">
+                <div class="sub-head">5. S/PDIF 數位發射變壓器</div>
+                <div class="sub-body">光纖 (TOSLINK) 輸出<br>同軸 (Coaxial) 輸出<br>隔離接地迴圈與數位高頻噪聲</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chain-final-output">
+            🔊 3.5mm AUX / RCA / XLR 平衡類比音訊 ──► 接後級擴大機或監聽喇叭
+          </div>
         </div>
 
         <h3>2. 決定接收器音質的硬核關鍵：為什麼「內建 DAC」是廉價接收器的噩夢？</h3>

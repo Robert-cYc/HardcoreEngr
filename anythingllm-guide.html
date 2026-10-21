@@ -91,7 +91,7 @@
       font-size: 1.05rem;
     }
     .article-body code {
-      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, monospace;
       background: var(--bg-alt);
       padding: 0.2rem 0.45rem;
       border-radius: 4px;
@@ -242,14 +242,14 @@
       transform: translateX(4px);
     }
 
-    /* Diagram Block */
+    /* Diagram Block & Banners */
     .diagram-card {
       background: #0f172a;
       color: #f8fafc;
       border-radius: 10px;
       padding: 1.5rem 1.8rem;
       margin: 1.8rem 0;
-      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, monospace;
       font-size: 0.88rem;
       line-height: 1.55;
       overflow-x: auto;
@@ -263,6 +263,21 @@
     .diagram-card .hl-yellow { color: #facc15; font-weight: bold; }
     .diagram-card .hl-pink { color: #f43f5e; font-weight: bold; }
     .diagram-card .hl-dim { color: #64748b; }
+
+    .diagram-banner {
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      margin-bottom: 1.2rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 6px;
+      color: #38bdf8;
+      font-weight: 700;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+    }
 
     /* Interactive Box Components */
     .interactive-explorer-box {
@@ -565,9 +580,7 @@
         <p>AnythingLLM 的架構設計極為巧妙，它將「文件萃取處理」、「向量數據存儲」與「模型推論交互」三者解耦為高度可插拔的模組：</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                        AnythingLLM 一體化私有 RAG 內部架構拓撲                         │</span>
-<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────────────────────┘</span>
+          <div class="diagram-banner">AnythingLLM 一體化私有 RAG 內部架構拓撲</div>
   [ 使用者介面 (Web / Desktop App / Embed Widget) ] ──(WebSocket / REST)──► [ Express API Gateway ]
                                                                                    │
      ┌─────────────────────────────────────────────────────────────────────────────┴──────────┐
@@ -957,9 +970,7 @@ If the answer cannot be found directly in the text, you MUST explicitly respond 
         <p>自 AnythingLLM v1.5 起，平台正式進化為<strong>自主智能代理 (Agentic Platform)</strong>。當你在輸入框鍵入 <code>@agent</code> 時，它不再只是單純做 RAG 查文件，而是開啟 <strong>ReAct (Reason + Act) 循環</strong>，自主調用外部工具！</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                 AnythingLLM Agentic Tool Execution Loop                │</span>
-<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
+          <div class="diagram-banner">AnythingLLM Agentic Tool Execution Loop</div>
   [ 使用者指令 ] ──► <span class="hl-green">"@agent 查詢資料庫上月訂單最高 5 位客戶，並繪製圓餅圖"</span>
           │
           ▼

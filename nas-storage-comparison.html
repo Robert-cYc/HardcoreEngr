@@ -105,7 +105,7 @@
     }
     .article-body li { margin-bottom: 0.5rem; }
     .article-body code {
-      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, monospace;
       background: var(--bg-alt);
       padding: 0.2rem 0.45rem;
       border-radius: 4px;
@@ -298,14 +298,14 @@
       line-height: 1.6;
     }
 
-    /* Diagram Block */
+    /* Diagram Block & Banners */
     .diagram-card {
       background: #0f172a;
       color: #f8fafc;
       border-radius: 10px;
       padding: 1.5rem 1.8rem;
       margin: 1.8rem 0;
-      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, monospace;
       font-size: 0.88rem;
       line-height: 1.55;
       overflow-x: auto;
@@ -328,6 +328,21 @@
     .diagram-card .hl-yellow { color: #facc15; font-weight: bold; }
     .diagram-card .hl-pink { color: #f43f5e; font-weight: bold; }
     .diagram-card .hl-dim { color: #64748b; }
+
+    .diagram-banner {
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      margin-bottom: 1.2rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 6px;
+      color: #38bdf8;
+      font-weight: 700;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+    }
   </style>
 </head>
 <body id="top">
@@ -404,9 +419,7 @@
         <p>資料無價，硬碟有價。任何不考慮「災難還原 (Disaster Recovery)」與「防禦勒索軟體 (Ransomware Protection)」的儲存規劃都是紙上談兵。業界最新公認的 <strong>3-2-1-1-0 備份準則</strong> 運作結構如下：</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                    現代 3-2-1-1-0 備份防禦拓撲架構                     │</span>
-<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
+          <div class="diagram-banner">現代 3-2-1-1-0 備份防禦拓撲架構</div>
   [ Production Data (工作站/手機/伺服器) ]
          │
          ├───► <span class="hl-green">3</span> : 保持至少 3 份資料副本（1 份原始 + 2 份備份）
@@ -610,9 +623,7 @@
         <p>資深 DevOps 工程師最推崇的 All-in-One 伺服器拓撲是<strong>透過 Proxmox VE (PVE) 進行硬體直通</strong>：</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                Proxmox VE (PVE 8.x) 裸機虛擬化硬核架構拓撲                 │</span>
-<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────────┘</span>
+          <div class="diagram-banner">Proxmox VE (PVE 8.x) 裸機虛擬化硬核架構拓撲</div>
   [ 實體伺服器硬體：Intel Core i7 / Xeon + 64GB ECC RAM + 10GbE 網卡 ]
          │
   ┌──────┴───────────────────────────────────────────────────────────────────┐

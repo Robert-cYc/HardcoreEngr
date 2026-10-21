@@ -110,7 +110,7 @@
     }
     .article-body li { margin-bottom: 0.5rem; }
     .article-body code {
-      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, monospace;
       background: var(--bg-alt);
       padding: 0.2rem 0.45rem;
       border-radius: 4px;
@@ -259,14 +259,14 @@
       transform: translateX(4px);
     }
 
-    /* Diagram Block */
+    /* Diagram Block & Banners */
     .diagram-card {
       background: #0f172a;
       color: #f8fafc;
       border-radius: 10px;
       padding: 1.5rem 1.8rem;
       margin: 1.8rem 0;
-      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, monospace;
       font-size: 0.88rem;
       line-height: 1.55;
       overflow-x: auto;
@@ -280,6 +280,21 @@
     .diagram-card .hl-yellow { color: #facc15; font-weight: bold; }
     .diagram-card .hl-pink { color: #f43f5e; font-weight: bold; }
     .diagram-card .hl-dim { color: #64748b; }
+
+    .diagram-banner {
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      margin-bottom: 1.2rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 6px;
+      color: #38bdf8;
+      font-weight: 700;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+    }
 
     /* Interactive Box Components */
     .interactive-explorer-box {
@@ -504,9 +519,7 @@
         <p>在傳統的 LLM 應用程式中，模型處於<strong>「被動請求—回應 (Request-Response)」</strong>模式。但在 <strong>Claude Code</strong> 中，核心機制被重構為一個持續運行的<strong>自主代理狀態機 (Autonomous Agent State Machine)</strong>：</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│            Claude Code 終端自主代理執行迴圈 (Agentic Loop)             │</span>
-<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
+          <div class="diagram-banner">Claude Code 終端自主代理執行迴圈 (Agentic Loop)</div>
   [ 工程師輸入任務 ] ──► "幫我為 auth 模組加入 JWT Refresh Token 機制並跑單元測試"
           │
           ▼
@@ -556,9 +569,7 @@
         <p>MCP 徹底統一了這個生態：只要一個服務符合 MCP 規範（MCP Server），無論是 Claude Code、Claude Desktop、VS Code 外掛或是未來的任何 AI Agent（MCP Client），都能以零代碼修改的方式直接接入。</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">┌─────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                   MCP Client / Server 架構與協議通信拓撲                │</span>
-<span class="hl-cyan">└─────────────────────────────────────────────────────────────────────────┘</span>
+          <div class="diagram-banner">MCP Client / Server 架構與協議通信拓撲</div>
   ┌─────────────────────────┐             JSON-RPC 2.0 (stdio / SSE)
   │      <span class="hl-yellow">Claude Code</span>        │ ◄────────────────────────────────────────►
   │   (Host / MCP Client)   │
@@ -982,9 +993,7 @@ description: 全維度架構與安全代碼審查流水線。自動分析 git di
         <p>在 Claude Code 中，Hooks 定義在 <code>.claude/settings.json</code>。它支援在特定生命週期節點觸發自定義 Shell 指令：</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                        Hooks 攔截與守護生命週期                        │</span>
-<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
+          <div class="diagram-banner">Hooks 攔截與守護生命週期</div>
    Claude 決定調用工具 (例如: Bash: "git push -f origin main")
                                      │
                                      ▼
