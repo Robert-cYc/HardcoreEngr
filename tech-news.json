@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21 00:38",
+  "updated": "2026-10-21 01:06",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -55,18 +55,18 @@
           "comments": "https://news.ycombinator.com/item?id=50169707"
         },
         {
-          "title": "SlopCodeBench 10/2026 – Opus 5.5, Astra wins overall, xhigh considered harmful",
-          "link": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/benchmarking-new-models-on-slop-code-bench.md",
-          "date": "2026-10-15 19:09",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50108717"
-        },
-        {
           "title": "Academics have a duty to defend open knowledge systems like Wikipedia",
           "link": "https://blogs.lse.ac.uk/impactofsocialsciences/2026/10/19/academics-have-a-duty-to-defend-open-knowledge-systems-like-wikipedia/",
           "date": "2026-10-20 18:51",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50170917"
+        },
+        {
+          "title": "SlopCodeBench 10/2026 – Opus 5.5, Astra wins overall, xhigh considered harmful",
+          "link": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/benchmarking-new-models-on-slop-code-bench.md",
+          "date": "2026-10-15 19:09",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50108717"
         },
         {
           "title": "Apple broke an essential presentation feature of iPads",
@@ -83,11 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50167028"
         },
         {
-          "title": "EMudhra Intermediate CA Compromise",
-          "link": "https://emudhra.we-have-a-problem.com/",
-          "date": "2026-10-20 13:58",
+          "title": "Sixteen Years After Deepwater Horizon, Deep Sea Life Shows Few Signs of Recovery",
+          "link": "https://e360.yale.edu/digest/deepwater-horizon-deep-sea-recovery",
+          "date": "2026-10-20 15:59",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50166579"
+          "comments": "https://news.ycombinator.com/item?id=50168357"
         }
       ]
     },
@@ -228,22 +228,22 @@
           "summary": "蘋果首款摺疊iPhone Duo上週五(16日)開放預購，掀起果粉搶購熱潮，加上供貨有限，導致全球大缺貨，以台灣為例 ..."
         },
         {
-          "title": "Whoscall推超實用新功能！陌生電話自己命名 iPhone、安卓都支援",
-          "link": "https://3c.ltn.com.tw/news/67987",
-          "date": "2026/10/20 11:00",
-          "summary": "專門用於陌生來電辨識的Whoscall推出「自訂來電者名稱」新功能，讓用戶可以自己幫電話號碼取名字，下次同個號碼再打 ..."
-        },
-        {
-          "title": "LINE下月起有大變動！舊版將停用 這些手機不升級無法傳訊息",
-          "link": "https://3c.ltn.com.tw/news/67986",
-          "date": "2026/10/20 10:25",
-          "summary": "還在使用舊手機的LINE用戶注意！根據LINE官方公告，2026年11月上旬將停止支援舊版LINE應用程式，屆時，若 ..."
-        },
-        {
           "title": "傳三星打造 Galaxy OS 新系統？One UI 10 爆出重大改版",
           "link": "https://3c.ltn.com.tw/news/67981",
           "date": "2026/10/20 10:20",
           "summary": "三星 Galaxy 手機目前採用 One UI 介面，近年持續加入個人化設定與 Galaxy AI 人工智慧功能。 ..."
+        },
+        {
+          "title": "Spotify嚴抓假家人！QR Code驗證防共享 網友找到破解法",
+          "link": "https://3c.ltn.com.tw/news/67982",
+          "date": "2026/10/20 09:45",
+          "summary": "不少人為了省下音樂串流訂閱費，會找親友一起分攤Spotify家庭方案，不過現在可得注意了！Spotify開始加強取締 ..."
+        },
+        {
+          "title": "蘋果確認10／29再發新品！觸控MacBook、iPad mini 8有望登場",
+          "link": "https://3c.ltn.com.tw/news/67985",
+          "date": "2026/10/20 09:00",
+          "summary": "蘋果稍早確定將在美國時間 10 月 28 日上午 10 點（台灣時間 10 月 29 日凌晨 1 點，於洛杉磯舉辦「 ..."
         }
       ]
     },
@@ -251,6 +251,13 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "安全測試恐失靈？中國智譜 AI GLM-5.3 學會考試時「裝乖」以保護後代模型",
+          "link": "https://infosecu.technews.tw/2026/10/21/z-ais-glm-5-3-raises-researcher-fears-the-chinese-model-can-fake-ai-safety-tests/",
+          "date": "2026-10-21 00:45",
+          "summary": "中國人工智慧實驗室智譜（Z.ai）8 月推出旗艦模型 GLM-5.3，AI 安全研究機構 Apollo Res [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "不看措辭看想法，IdeaLens 改從核心論點判斷文章出自人類還是 AI",
           "link": "https://technews.tw/2026/10/21/a-new-ai-detector-looks-beyond-words-to-check-whether-the-ideas-came-from-ai/",
@@ -326,13 +333,6 @@
           "link": "https://infosecu.technews.tw/2026/10/20/chinese-ai-tool-artex-abused-multiple-japanese-companies-attacked/",
           "date": "2026-10-20 09:40",
           "summary": "東京一家大型網路企業旗下子公司今天表示，日本近日接連發生企業遭駭事件，調查發現其中多起攻擊使用一款名為 Art [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "特斯拉飛天是噱頭？楊立昆算只能撐 5 秒，馬斯克不談物理反嗆放屁",
-          "link": "https://technews.tw/2026/10/20/elon-musk-yann-lecun-roadster/",
-          "date": "2026-10-20 09:10",
-          "summary": "近日，特斯拉執行長伊隆·馬斯克（Elon Musk）發布了 Roadster 跑車「飛越」特斯拉卡車的特效影片 [&#8230;]",
           "comments": ""
         }
       ]
@@ -522,6 +522,13 @@
       "site": "https://ccc.technews.tw/",
       "items": [
         {
+          "title": "為什麼旅行時別忘了帶上 HDMI 商務與娛樂裝置",
+          "link": "https://ccc.technews.tw/2026/10/21/hdmi-business-and-entertainment/",
+          "date": "2026-10-21 01:00",
+          "summary": "走進幾乎任何飯店房間或 Airbnb，旅客通常都會做同一件事：放下行李，接著打開電視。然而，飯店和短期租屋的電 [&#8230;]",
+          "comments": ""
+        },
+        {
           "title": "Googlebook 捨平價策略、挑戰 999 美元高階市場，外媒憂淪下個 Steam Machine",
           "link": "https://ccc.technews.tw/2026/10/20/googlebook-ill-timed-launch-risks-crisis/",
           "date": "2026-10-20 08:40",
@@ -596,13 +603,6 @@
           "link": "https://ccc.technews.tw/2026/10/12/sony-sells-vr-patents-meta/",
           "date": "2026-10-12 02:40",
           "summary": "近期市場傳出，Sony 已將數百件涵蓋虛擬實境（VR）、擴增實境（AR）與混合實境（MR）的專利轉讓給 Met [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Surface Laptop Ultra 筆電展開預購，RTX Spark 晶片、磁吸式 USB-C 充電成亮點",
-          "link": "https://ccc.technews.tw/2026/10/08/surface-laptop-ultra-and-surface-rtx-spark-dev-box-now-available-for-pre-order/",
-          "date": "2026-10-07 20:29",
-          "summary": "微軟揭曉 Surface Laptop Ultra 數個月過後，7 日宣布這款搭載 RTX Spark 晶片的 [&#8230;]",
           "comments": ""
         }
       ]
