@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21 01:36",
+  "updated": "2026-10-21 01:54",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -34,6 +34,13 @@
           "comments": "https://news.ycombinator.com/item?id=50169053"
         },
         {
+          "title": "The Other Epidemic: Trying to get off benzodiazepines",
+          "link": "https://www.thebeliever.net/the-other-epidemic/",
+          "date": "2026-10-20 23:04",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50173891"
+        },
+        {
           "title": "Academics have a duty to defend open knowledge systems like Wikipedia",
           "link": "https://blogs.lse.ac.uk/impactofsocialsciences/2026/10/19/academics-have-a-duty-to-defend-open-knowledge-systems-like-wikipedia/",
           "date": "2026-10-20 18:51",
@@ -55,11 +62,11 @@
           "comments": "https://news.ycombinator.com/item?id=50108717"
         },
         {
-          "title": "The Other Epidemic: Trying to get off benzodiazepines",
-          "link": "https://www.thebeliever.net/the-other-epidemic/",
-          "date": "2026-10-20 23:04",
+          "title": "Good type against all odds",
+          "link": "https://unsung.aresluna.org/good-type-against-all-odds/",
+          "date": "2026-10-21 01:45",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50173891"
+          "comments": "https://news.ycombinator.com/item?id=50175059"
         },
         {
           "title": "Apple broke an essential presentation feature of iPads",
@@ -81,13 +88,6 @@
           "date": "2026-10-20 13:58",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50166579"
-        },
-        {
-          "title": "Ofcom concedes defeat in 4chan case",
-          "link": "https://prestonbyrne.com/2026/10/20/ofcom-concedes-defeat/",
-          "date": "2026-10-20 14:30",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50167028"
         }
       ]
     },
@@ -174,6 +174,12 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "ChatGPT聊天紀錄不怕被偷看了！對話一鍵上鎖 搜尋也找不到",
+          "link": "https://3c.ltn.com.tw/news/68004",
+          "date": "2026/10/21 09:35",
+          "summary": "ChatGPT越用越頻繁，從工作問題、感情煩惱到個人隱私，什麼都可能拿來問AI，但有些聊天內容就是不想被別人看到，O ..."
+        },
+        {
           "title": "iPhone 18 Pro降價別急買！達人實測30天揭4缺點 能接受再入手",
           "link": "https://3c.ltn.com.tw/news/68000",
           "date": "2026/10/21 08:22",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/67982",
           "date": "2026/10/20 09:45",
           "summary": "不少人為了省下音樂串流訂閱費，會找親友一起分攤Spotify家庭方案，不過現在可得注意了！Spotify開始加強取締 ..."
-        },
-        {
-          "title": "蘋果確認10／29再發新品！觸控MacBook、iPad mini 8有望登場",
-          "link": "https://3c.ltn.com.tw/news/67985",
-          "date": "2026/10/20 09:00",
-          "summary": "蘋果稍早確定將在美國時間 10 月 28 日上午 10 點（台灣時間 10 月 29 日凌晨 1 點，於洛杉磯舉辦「 ..."
         }
       ]
     },
@@ -251,6 +251,34 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "受惠 AI 伺服器與光通訊！外資預估臻鼎 HDI 助攻毛利率大躍進",
+          "link": "https://finance.technews.tw/2026/10/21/hdi/",
+          "date": "2026-10-21 01:52",
+          "summary": "臻鼎「One ZDT」策略正式開花結果，外資出具最新研究報告指出，受惠於光收發模組及 AI 伺服器需求強勁成長 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Anthropic 上半年狂虧 807 億美元  IPO 蒙陰影",
+          "link": "https://finance.technews.tw/2026/10/21/anthropic-s-1-shows-red-hot-growth-risks-and-massive-computing-costs/",
+          "date": "2026-10-21 01:30",
+          "summary": "AI 新創公司 Anthropic 正積極籌備掛牌上市，IPO 公開說明書草稿顯示，儘管營收高速成長，2026 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "把握 AI 發展先機，中國國家數據集團成立",
+          "link": "https://technews.tw/2026/10/21/china-national-data-group-corporation-limited/",
+          "date": "2026-10-21 01:20",
+          "summary": "中國國家數據集團 20 日在河北雄安新區成立。中國國務院副總理丁薛祥說，組建這一集團對於充分把握人工智慧（AI [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "安全測試恐失靈？中國智譜 AI GLM-5.3 學會考試時「裝乖」以保護後代模型",
+          "link": "https://infosecu.technews.tw/2026/10/21/z-ais-glm-5-3-raises-researcher-fears-the-chinese-model-can-fake-ai-safety-tests/",
+          "date": "2026-10-21 00:45",
+          "summary": "中國人工智慧實驗室智譜（Z.ai）8 月推出旗艦模型 GLM-5.3，AI 安全研究機構 Apollo Res [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "不看措辭看想法，IdeaLens 改從核心論點判斷文章出自人類還是 AI",
           "link": "https://technews.tw/2026/10/21/a-new-ai-detector-looks-beyond-words-to-check-whether-the-ideas-came-from-ai/",
@@ -305,34 +333,6 @@
           "link": "https://infosecu.technews.tw/2026/10/21/opencode-hit-by-distillation-attack-api-keys-at-risk/",
           "date": "2026-10-20 23:10",
           "summary": "開源 AI 編程工具 OpenCode 於 10 月 17 日證實發生安全事故，事件與大規模 AI 模型蒸餾攻 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "報告：中國 AI 算力，55% 用在製作短劇及影音",
-          "link": "https://technews.tw/2026/10/20/china-ai-compute-55-percent-short-dramas-videos/",
-          "date": "2026-10-20 09:50",
-          "summary": "中國官方大力發展 AI 產業，中國上市公司「中文在線」日前向投資人公布業務報告，指中國 AI 詞元（token [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "政府公開資料 AI 讀得懂，「歐噴資料庫」年底前免費使用",
-          "link": "https://technews.tw/2026/10/20/openfun/",
-          "date": "2026-10-20 09:44",
-          "summary": "歐噴有限公司所開發的「歐噴資料庫」已在月初上線，將超過 3,400 份台灣政府公開資料，從散落在各機關網站、格 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "中國 AI 工具 Artex 遭濫用，日本多家企業受駭",
-          "link": "https://infosecu.technews.tw/2026/10/20/chinese-ai-tool-artex-abused-multiple-japanese-companies-attacked/",
-          "date": "2026-10-20 09:40",
-          "summary": "東京一家大型網路企業旗下子公司今天表示，日本近日接連發生企業遭駭事件，調查發現其中多起攻擊使用一款名為 Art [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "特斯拉飛天是噱頭？楊立昆算只能撐 5 秒，馬斯克不談物理反嗆放屁",
-          "link": "https://technews.tw/2026/10/20/elon-musk-yann-lecun-roadster/",
-          "date": "2026-10-20 09:10",
-          "summary": "近日，特斯拉執行長伊隆·馬斯克（Elon Musk）發布了 Roadster 跑車「飛越」特斯拉卡車的特效影片 [&#8230;]",
           "comments": ""
         }
       ]
@@ -432,6 +432,20 @@
       "site": "https://technews.tw/category/component/",
       "items": [
         {
+          "title": "受惠 AI 伺服器與光通訊！外資預估臻鼎 HDI 助攻毛利率大躍進",
+          "link": "https://finance.technews.tw/2026/10/21/hdi/",
+          "date": "2026-10-21 01:52",
+          "summary": "臻鼎「One ZDT」策略正式開花結果，外資出具最新研究報告指出，受惠於光收發模組及 AI 伺服器需求強勁成長 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "提前一年 Panasonic 鈣鈦礦太陽能電池 2029 年量產",
+          "link": "https://technews.tw/2026/10/21/panasonic-perovskite-2029-april/",
+          "date": "2026-10-21 01:10",
+          "summary": "日本 Panasonic 將在 2029 年 4 月開始量產次世代太陽能電池「鈣鈦礦」（Perovskite） [&#8230;]",
+          "comments": ""
+        },
+        {
           "title": "韓國研發 100 吋「發聲顯示器」，聲音隨畫面移動準確率達 99.9%",
           "link": "https://technews.tw/2026/10/21/your-next-tv-could-play-sound-from-the-exact-spot-where-the-action-happens/",
           "date": "2026-10-21 00:10",
@@ -499,20 +513,6 @@
           "link": "https://finance.technews.tw/2026/10/20/taitronics-ai/",
           "date": "2026-10-20 03:28",
           "summary": "2026 台北國際電子產業科技展（TAITRONICS）與台灣國際人工智慧暨物聯網展（AIoT Taiwan） [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "東元空調啟動戰略轉型攻 AI 散熱！總座蔡尚育：明年商用拚破六成",
-          "link": "https://finance.technews.tw/2026/10/20/commercial-chilled-water-unit/",
-          "date": "2026-10-20 02:48",
-          "summary": "東元今日參與「2026 國際冷凍空調綠能科技展」，空調科技事業群總經理蔡尚育表示，東元空調科技事業群全面啟動戰 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "蘋果 10 月底再推新品，首款觸控 OLED MacBook Pro 有望登場",
-          "link": "https://technews.tw/2026/10/20/oled-macbook-pro-touchable/",
-          "date": "2026-10-19 23:11",
-          "summary": "蘋果 10 月新品攻勢還沒結束！繼日前推出新一代智慧家庭產品後，蘋果全球行銷資深副總裁 Greg Joswia [&#8230;]",
           "comments": ""
         }
       ]
