@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21 08:13",
+  "updated": "2026-10-21 08:22",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -48,13 +48,6 @@
           "comments": "https://news.ycombinator.com/item?id=50173487"
         },
         {
-          "title": "In Hilbert space, all things are quantumly possible",
-          "link": "https://www.quantamagazine.org/in-hilbert-space-all-things-are-quantumly-possible-20260826/",
-          "date": "2026-10-21 02:04",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50175185"
-        },
-        {
           "title": "eMudhra intermediate CA compromise",
           "link": "https://emudhra.we-have-a-problem.com/",
           "date": "2026-10-20 13:58",
@@ -62,11 +55,11 @@
           "comments": "https://news.ycombinator.com/item?id=50166579"
         },
         {
-          "title": "Composite objects and C++26 the std:polymorphic type",
-          "link": "https://mariusbancila.ro/blog/2026/10/18/composite-objects-and-cpp26-the-stdpolymorphic-type/",
-          "date": "2026-10-19 05:54",
+          "title": "In Hilbert space, all things are quantumly possible",
+          "link": "https://www.quantamagazine.org/in-hilbert-space-all-things-are-quantumly-possible-20260826/",
+          "date": "2026-10-21 02:04",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50148845"
+          "comments": "https://news.ycombinator.com/item?id=50175185"
         },
         {
           "title": "Good type against all odds",
@@ -76,11 +69,11 @@
           "comments": "https://news.ycombinator.com/item?id=50175059"
         },
         {
-          "title": "Battlezone Online: BZFlag in the Browser",
-          "link": "https://github.com/timriker/bzo",
-          "date": "2026-10-21 05:05",
+          "title": "Composite objects and C++26 the std:polymorphic type",
+          "link": "https://mariusbancila.ro/blog/2026/10/18/composite-objects-and-cpp26-the-stdpolymorphic-type/",
+          "date": "2026-10-19 05:54",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50176298"
+          "comments": "https://news.ycombinator.com/item?id=50148845"
         },
         {
           "title": "The Other Epidemic: Trying to get off benzodiazepines",
@@ -88,6 +81,13 @@
           "date": "2026-10-20 23:04",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50173891"
+        },
+        {
+          "title": "Battlezone Online: BZFlag in the Browser",
+          "link": "https://github.com/timriker/bzo",
+          "date": "2026-10-21 05:05",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50176298"
         }
       ]
     },
@@ -252,13 +252,6 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "安全測試恐失靈？中國智譜 AI GLM-5.3 學會考試時「裝乖」以保護後代模型",
-          "link": "https://infosecu.technews.tw/2026/10/21/z-ais-glm-5-3-raises-researcher-fears-the-chinese-model-can-fake-ai-safety-tests/",
-          "date": "2026-10-21 00:45",
-          "summary": "中國人工智慧實驗室智譜（Z.ai）8 月推出旗艦模型 GLM-5.3，AI 安全研究機構 Apollo Res [&#8230;]",
-          "comments": ""
-        },
-        {
           "title": "不看措辭看想法，IdeaLens 改從核心論點判斷文章出自人類還是 AI",
           "link": "https://technews.tw/2026/10/21/a-new-ai-detector-looks-beyond-words-to-check-whether-the-ideas-came-from-ai/",
           "date": "2026-10-21 00:30",
@@ -333,6 +326,13 @@
           "link": "https://infosecu.technews.tw/2026/10/20/chinese-ai-tool-artex-abused-multiple-japanese-companies-attacked/",
           "date": "2026-10-20 09:40",
           "summary": "東京一家大型網路企業旗下子公司今天表示，日本近日接連發生企業遭駭事件，調查發現其中多起攻擊使用一款名為 Art [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "特斯拉飛天是噱頭？楊立昆算只能撐 5 秒，馬斯克不談物理反嗆放屁",
+          "link": "https://technews.tw/2026/10/20/elon-musk-yann-lecun-roadster/",
+          "date": "2026-10-20 09:10",
+          "summary": "近日，特斯拉執行長伊隆·馬斯克（Elon Musk）發布了 Roadster 跑車「飛越」特斯拉卡車的特效影片 [&#8230;]",
           "comments": ""
         }
       ]
