@@ -91,7 +91,7 @@
       font-size: 1.05rem;
     }
     .article-body code {
-      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
       background: var(--bg-alt);
       padding: 0.2rem 0.45rem;
       border-radius: 4px;
@@ -249,7 +249,7 @@
       border-radius: 10px;
       padding: 1.5rem 1.8rem;
       margin: 1.8rem 0;
-      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
       font-size: 0.88rem;
       line-height: 1.55;
       overflow-x: auto;
@@ -566,34 +566,34 @@
 
         <div class="diagram-card">
 <span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                      AnythingLLM 一體化私有 RAG 內部架構拓撲                              │</span>
+<span class="hl-cyan">│                        AnythingLLM 一體化私有 RAG 內部架構拓撲                         │</span>
 <span class="hl-cyan">└────────────────────────────────────────────────────────────────────────────────────────┘</span>
   [ 使用者介面 (Web / Desktop App / Embed Widget) ] ──(WebSocket / REST)──► [ Express API Gateway ]
                                                                                    │
      ┌─────────────────────────────────────────────────────────────────────────────┴──────────┐
      ▼                                                                                        ▼
 ┌──────────────────────────────┐                                           ┌──────────────────────────────────┐
-│ 1. Document Collector (管線) │                                           │ 2. Query & Agent Engine (執行核心)│
+│ 1. Document Collector (管線) │                                           │ 2. Query/Agent Engine (執行核心) │
 │  - PDF/Word/Excel/TXT/EPUB   │                                           │  - Workspace Prompt Context 組裝 │
-│  - Web Scraper & URL Crawler │                                           │  - Query Mode (嚴格無幻覺過濾)    │
+│  - Web Scraper & URL Crawler │                                           │  - Query Mode (嚴格無幻覺過濾)   │
 │  - YouTube Audio & Whisper   │                                           │  - Agent Loop (ReAct 代理迴圈)   │
-│  - GitHub 程式碼庫全量拉取    │                                           │  - Built-in Skills (SQL/Search)  │
+│  - GitHub 程式碼庫全量拉取   │                                           │  - Built-in Skills (SQL/Search)  │
 └──────────────┬───────────────┘                                           └────────────────┬─────────────────┘
                │                                                                            │
                ▼                                                                            ▼
 ┌──────────────────────────────┐                                           ┌──────────────────────────────────┐
-│ Text Chunking (文本切片)      │                                           │ Hybrid Search & Top-K Retrieval  │
+│ Text Chunking (文本切片)     │                                           │ Hybrid Search & Top-K Retrieval  │
 │ - Chunk Size & Overlap       │                                           │ - Cosine Similarity 相似度計算   │
 └──────────────┬───────────────┘                                           └────────────────┬─────────────────┘
                │                                                                            ▲
                ▼                                                                            │
 ┌──────────────────────────────┐                                                            │
 │ Embedding Model (向量化)     │                                                            │
-│ - Ollama (nomic-embed-text)  │ ──(嵌入向量)──► ┌──────────────────────────────────────┐  │
-│ - OpenAI (text-embedding-3)  │                 │ 3. Vector Storage (向量資料庫抽象層)   ├──┘
-│ - AnythingLLM Native Embed   │                 │  - Built-in LanceDB (零依賴嵌入式)    │
-└──────────────────────────────┘                 │  - Chroma / Qdrant / Milvus / Weaviate │
-                                                 └──────────────────────────────────────┘
+│ - Ollama (nomic-embed-text)  │ ──(嵌入向量)──► ┌──────────────────────────────────────┐   │
+│ - OpenAI (text-embedding-3)  │                 │ 3. Vector Storage (向量資料庫抽象層) ├───┘
+│ - AnythingLLM Native Embed   │                 │  - Built-in LanceDB (零依賴嵌入式)   │
+└──────────────────────────────┘                 │  - Chroma/Qdrant/Milvus/Weaviate     │
+                                                 └──────────────────┬───────────────────┘
                                                                     │
                                                                     ▼
                                                  ┌──────────────────────────────────────┐
@@ -958,32 +958,35 @@ If the answer cannot be found directly in the text, you MUST explicitly respond 
 
         <div class="diagram-card">
 <span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                  AnythingLLM Agentic Tool Execution Loop               │</span>
+<span class="hl-cyan">│                 AnythingLLM Agentic Tool Execution Loop                │</span>
 <span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
-  [ 使用者指令 ] ──► <span class="hl-green">"@agent 查詢客戶資料庫中上個月訂單總額最高的 5 位客戶，並繪製圓餅圖"</span>
-           │
-           ▼
-  ┌──────────────────────────────────────────────────────────────────┐
-  │ 1. <span class="hl-yellow">Thought (規劃)</span>: 需調用 SQL Connector 查詢 orders 與 customers 表 │
-  └────────────────────────────────┬─────────────────────────────────┘
-                                   │
-                                   ▼
-  ┌──────────────────────────────────────────────────────────────────┐
-  │ 2. <span class="hl-yellow">Action (工具調用)</span>: 執行 SQL 語法                                │
-  │    SELECT c.name, SUM(o.amount) FROM orders o JOIN customers c...│
-  └────────────────────────────────┬─────────────────────────────────┘
-                                   │
-                                   ▼
-  ┌──────────────────────────────────────────────────────────────────┐
-  │ 3. <span class="hl-yellow">Observation (解析結果)</span>: 獲取前五名資料 JSON 陣列                 │
-  └────────────────────────────────┬─────────────────────────────────┘
-                                   │
-                                   ▼
-  ┌──────────────────────────────────────────────────────────────────┐
-  │ 4. <span class="hl-yellow">Next Action (圖表生成)</span>: 調用 Chart Skill 產生視覺化圖表         │
-  └────────────────────────────────┬─────────────────────────────────┘
-                                   │
-                                   ▼
+  [ 使用者指令 ] ──► <span class="hl-green">"@agent 查詢資料庫上月訂單最高 5 位客戶，並繪製圓餅圖"</span>
+          │
+          ▼
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │ 1. <span class="hl-yellow">Thought (規劃)</span>: 需調用 SQL Connector 查詢 orders 與 customers 表  │
+  │    分析欄位關係，建立跨表聚合查詢語法                                │
+  └──────────────────────────────────┬───────────────────────────────────┘
+                                     │
+                                     ▼
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │ 2. <span class="hl-yellow">Action (工具調用)</span>: 執行 SQL 語法                                  │
+  │    SELECT c.name, SUM(o.amount) FROM orders o JOIN customers c...    │
+  └──────────────────────────────────┬───────────────────────────────────┘
+                                     │
+                                     ▼
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │ 3. <span class="hl-yellow">Observation (解析結果)</span>: 獲取前五名資料 JSON 陣列                  │
+  │    驗證回傳數據結構無誤，準備進行可視化轉換                          │
+  └──────────────────────────────────┬───────────────────────────────────┘
+                                     │
+                                     ▼
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │ 4. <span class="hl-yellow">Next Action (圖表生成)</span>: 調用 Chart Skill 產生視覺化圖表           │
+  │    產生 ECharts 配置並生成互動式圓餅圖元件                           │
+  └──────────────────────────────────┬───────────────────────────────────┘
+                                     │
+                                     ▼
   [ 最終回應 ] ──► 輸出清晰分析報告 + 互動式圓餅圖
         </div>
 

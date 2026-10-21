@@ -105,7 +105,7 @@
     }
     .article-body li { margin-bottom: 0.5rem; }
     .article-body code {
-      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
       background: var(--bg-alt);
       padding: 0.2rem 0.45rem;
       border-radius: 4px;
@@ -305,7 +305,7 @@
       border-radius: 10px;
       padding: 1.5rem 1.8rem;
       margin: 1.8rem 0;
-      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
       font-size: 0.88rem;
       line-height: 1.55;
       overflow-x: auto;
@@ -405,7 +405,7 @@
 
         <div class="diagram-card">
 <span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                      現代 3-2-1-1-0 備份防禦拓撲架構                     │</span>
+<span class="hl-cyan">│                    現代 3-2-1-1-0 備份防禦拓撲架構                     │</span>
 <span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
   [ Production Data (工作站/手機/伺服器) ]
          │
@@ -610,25 +610,25 @@
         <p>資深 DevOps 工程師最推崇的 All-in-One 伺服器拓撲是<strong>透過 Proxmox VE (PVE) 進行硬體直通</strong>：</p>
 
         <div class="diagram-card">
-<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│            Proxmox VE (PVE 8.x) 裸機虛擬化硬核架構拓撲                  │</span>
-<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
+<span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="hl-cyan">│                Proxmox VE (PVE 8.x) 裸機虛擬化硬核架構拓撲                 │</span>
+<span class="hl-cyan">└────────────────────────────────────────────────────────────────────────────┘</span>
   [ 實體伺服器硬體：Intel Core i7 / Xeon + 64GB ECC RAM + 10GbE 網卡 ]
-        │
-  ┌─────┴──────────────────────────────────────────────────────────────┐
-  │ <b>PVE 虛擬化底座 (Debian Kernel)</b>                                      │
-  │                                                                    │
-  │  ├──► <span class="hl-green">VM 100: TrueNAS SCALE</span>                                        │
-  │  │    ├─► <b>PCIe Passthrough (IOMMU 直通)</b>:                           │
-  │  │    │   LSI SAS 3008 (9300-8i IT Mode) 直通卡 ──► [ 8x 企業級 HDD ]│
-  │  │    │   (TrueNAS 直接掌控實體硬碟 SMART 與 ZFS zpool，零虛擬損耗)   │
-  │  │    └─► 導出 NFS / SMB 儲存池給 PVE 宿主機與其他容器             │
-  │  │                                                                 │
-  │  ├──► <span class="hl-yellow">LXC / Docker VM</span>: 專門運行 Plex, Home Assistant, Vaultwarden  │
-  │  │    └─► 透過內部 VirtIO-net 虛擬 10G/40G 網卡讀取 TrueNAS 存儲池  │
-  │  │                                                                 │
-  │  └──► <span class="hl-pink">VM 102: pfSense / OPNsense</span> (軟路由主幹，控管全家流量)        │
-  └────────────────────────────────────────────────────────────────────┘
+         │
+  ┌──────┴───────────────────────────────────────────────────────────────────┐
+  │ <b>PVE 虛擬化底座 (Debian Kernel)</b>                                           │
+  │                                                                          │
+  │  ├──► <span class="hl-green">VM 100: TrueNAS SCALE</span>                                              │
+  │  │    ├─► <b>PCIe Passthrough (IOMMU 直通)</b>:                                 │
+  │  │    │   LSI SAS 3008 (9300-8i IT Mode) 直通卡 ──► [ 8x 企業級 HDD ]    │
+  │  │    │   (TrueNAS 直接掌控實體硬碟 SMART 與 ZFS zpool，零虛擬損耗)      │
+  │  │    └─► 導出 NFS / SMB 儲存池給 PVE 宿主機與其他容器                   │
+  │  │                                                                       │
+  │  ├──► <span class="hl-yellow">LXC / Docker VM</span>: 專門運行 Plex, Home Assistant, Vaultwarden        │
+  │  │    └─► 透過內部 VirtIO-net 虛擬 10G/40G 網卡讀取 TrueNAS 存儲池       │
+  │  │                                                                       │
+  │  └──► <span class="hl-pink">VM 102: pfSense / OPNsense</span> (軟路由主幹，控管全家流量)              │
+  └──────────────────────────────────────────────────────────────────────────┘
         </div>
 
         <!-- =============== Chapter 6 =============== -->

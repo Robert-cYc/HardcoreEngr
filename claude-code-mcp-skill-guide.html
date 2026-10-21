@@ -110,7 +110,7 @@
     }
     .article-body li { margin-bottom: 0.5rem; }
     .article-body code {
-      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
       background: var(--bg-alt);
       padding: 0.2rem 0.45rem;
       border-radius: 4px;
@@ -266,7 +266,7 @@
       border-radius: 10px;
       padding: 1.5rem 1.8rem;
       margin: 1.8rem 0;
-      font-family: "Fira Code", "SF Mono", Consolas, monospace;
+      font-family: "Cascadia Code", "Fira Code", "SF Mono", Consolas, "Noto Sans TC", "Microsoft JhengHei", monospace;
       font-size: 0.88rem;
       line-height: 1.55;
       overflow-x: auto;
@@ -505,35 +505,35 @@
 
         <div class="diagram-card">
 <span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                 Claude Code 終端自主代理執行迴圈 (Agentic Loop)           │</span>
+<span class="hl-cyan">│            Claude Code 終端自主代理執行迴圈 (Agentic Loop)             │</span>
 <span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
-  [ 工程師輸入任務 ] ──► <span class="hl-green">"幫我為 auth 模組加入 JWT Refresh Token 機制並跑單元測試"</span>
+  [ 工程師輸入任務 ] ──► "幫我為 auth 模組加入 JWT Refresh Token 機制並跑單元測試"
           │
           ▼
   ┌──────────────────────────────────────────────────────────────┐
-  │ 1. <span class="hl-yellow">Observe (環境感知)</span>                                         │
-  │    讀取專案目錄結構、檢視 package.json、Git 狀態與相關程式碼  │
+  │ 1. <span class="hl-green">Observe (環境感知)</span>                                        │
+  │    讀取專案目錄結構、檢視 package.json、Git 狀態與相關程式碼 │
   └──────────────────────────────┬───────────────────────────────┘
                                  │
                                  ▼
   ┌──────────────────────────────────────────────────────────────┐
-  │ 2. <span class="hl-yellow">Plan & Reason (推理與拆解)</span>                                 │
-  │    決定需要調用的工具鏈（Tool Use Plan）：檔案讀寫、終端命令    │
+  │ 2. <span class="hl-yellow">Plan & Reason (推理與拆解)</span>                                │
+  │    決定需要調用的工具鏈（Tool Use Plan）：檔案讀寫、終端命令 │
   └──────────────────────────────┬───────────────────────────────┘
                                  │
                                  ▼
   ┌──────────────────────────────────────────────────────────────┐
   │ 3. <span class="hl-pink">Tool Execution & Guardrails (工具調用與邊界防護)</span>          │
-  │    • 呼叫 Edit/Write 寫入 JWT 程式碼                         │
-  │    • 觸發 PreToolUse Hook (確認無危險指令)                    │
-  │    • 呼叫 Bash Tool 執行 npm test                            │
+  │    - 呼叫 Edit/Write 寫入 JWT 程式碼                         │
+  │    - 觸發 PreToolUse Hook (確認無危險指令)                   │
+  │    - 呼叫 Bash Tool 執行 npm test                            │
   └──────────────────────────────┬───────────────────────────────┘
                                  │
                                  ▼
   ┌──────────────────────────────────────────────────────────────┐
-  │ 4. <span class="hl-cyan">Observation & Reflection (結果審視與代碼自愈)</span>              │
-  │    • 若測試失敗 ➔ 解析報錯堆疊 ➔ 回到步驟 2 自主修復代碼      │
-  │    • 若測試通過 ➔ 觸發 PostToolUse (Prettier 格式化)         │
+  │ 4. <span class="hl-cyan">Observation & Reflection (結果審視與代碼自愈)</span>             │
+  │    - 若測試失敗 ──► 解析報錯堆疊 ──► 回到步驟 2 自主修復代碼 │
+  │    - 若測試通過 ──► 觸發 PostToolUse (Prettier 格式化)       │
   └──────────────────────────────┬───────────────────────────────┘
                                  │
                                  ▼
@@ -983,30 +983,30 @@ description: 全維度架構與安全代碼審查流水線。自動分析 git di
 
         <div class="diagram-card">
 <span class="hl-cyan">┌────────────────────────────────────────────────────────────────────────┐</span>
-<span class="hl-cyan">│                       Hooks 攔截與守護生命週期                           │</span>
+<span class="hl-cyan">│                        Hooks 攔截與守護生命週期                        │</span>
 <span class="hl-cyan">└────────────────────────────────────────────────────────────────────────┘</span>
    Claude 決定調用工具 (例如: Bash: "git push -f origin main")
-            │
-            ▼
-   ┌─────────────────────────────────────────────────────────┐
-   │ <span class="hl-pink">PreToolUse Hook</span>                                         │
-   │ 攔截指令 ➔ 檢測到包含 "-f" 與 "main" ➔ <span class="hl-pink">Exit 1 (強制中斷阻止)</span>   │
-   └────────────────────────┬────────────────────────────────┘
-                            │ (若校驗通過)
-                            ▼
-                     [ 執行 Tool ]
-                            │
-                            ▼
-   ┌─────────────────────────────────────────────────────────┐
-   │ <span class="hl-green">PostToolUse Hook</span>                                        │
-   │ 檢測到編輯了 *.ts 檔案 ➔ <span class="hl-green">自動執行 prettier --write 自動格式化</span> │
-   └────────────────────────┬────────────────────────────────┘
-                            │
-                            ▼
-   ┌─────────────────────────────────────────────────────────┐
-   │ <span class="hl-yellow">Stop Hook</span> (Claude 回答完畢)                              │
-   │ 觸發系統桌面通知："Claude Code 任務已完成，請驗收！"         │
-   └─────────────────────────────────────────────────────────┘
+                                     │
+                                     ▼
+   ┌──────────────────────────────────────────────────────────────────┐
+   │ <span class="hl-pink">PreToolUse Hook</span>                                                  │
+   │ 攔截指令 ──► 檢測到包含 "-f" 與 "main" ──► <span class="hl-pink">Exit 1 (強制中斷阻止)</span> │
+   └────────────────────────────────┬─────────────────────────────────┘
+                                    │ (若校驗通過)
+                                    ▼
+                             [ 執行 Tool ]
+                                    │
+                                    ▼
+   ┌──────────────────────────────────────────────────────────────────┐
+   │ <span class="hl-green">PostToolUse Hook</span>                                                 │
+   │ 檢測到編輯了 *.ts 檔案 ──► <span class="hl-green">自動執行 prettier --write 自動格式化</span>  │
+   └────────────────────────────────┬─────────────────────────────────┘
+                                    │
+                                    ▼
+   ┌──────────────────────────────────────────────────────────────────┐
+   │ <span class="hl-yellow">Stop Hook</span> (Claude 回答完畢)                                      │
+   │ 觸發系統桌面通知："Claude Code 任務已完成，請驗收！"             │
+   └──────────────────────────────────────────────────────────────────┘
         </div>
 
         <h3>7.1 生產級 settings.json 配置範例</h3>
