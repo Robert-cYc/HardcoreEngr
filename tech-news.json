@@ -1,16 +1,79 @@
 {
-  "updated": "2026-10-22 09:16",
+  "updated": "2026-10-22 16:19",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "CVE-2026-111943: Compromised Intermediate Certificate Authority",
-          "link": "https://nvd.nist.gov/vuln/detail/cve-2026-111943",
-          "date": "2026-10-22 08:51",
+          "title": "eMudhra to Exit Global SSL/TLS Certificate Business",
+          "link": "https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business",
+          "date": "2026-10-22 13:33",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50192900"
+          "comments": "https://news.ycombinator.com/item?id=50195110"
+        },
+        {
+          "title": "Quad9 (DNS Resolver) to Exit France",
+          "link": "https://quad9.net/news/blog/au-revoir-france/",
+          "date": "2026-10-22 14:32",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50195959"
+        },
+        {
+          "title": "Crystal 1.22.0",
+          "link": "https://crystal-lang.org/2026/10/12/1.22.0-released/",
+          "date": "2026-10-22 13:20",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50194938"
+        },
+        {
+          "title": "What Is Gridifcation",
+          "link": "https://musicalform.substack.com/p/what-is-gridifcation",
+          "date": "2026-10-19 09:13",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50150163"
+        },
+        {
+          "title": "What's Getting Pwned",
+          "link": "https://pwn.watch/",
+          "date": "2026-10-22 14:08",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50195543"
+        },
+        {
+          "title": "Jailbreaking the Switch 2",
+          "link": "https://pepsipu.com/blog/2026-10-switch2-jailbreak-ns2jb/",
+          "date": "2026-10-22 08:01",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50192536"
+        },
+        {
+          "title": "Show HN: Run full iOS 16.5 firmware on Android Devices",
+          "link": "https://github.com/oosexgang/hackios-xnu-kernel",
+          "date": "2026-10-22 15:26",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50196718"
+        },
+        {
+          "title": "Faster than earcut: triangulating 3.7M map polygons in 489 ms",
+          "link": "https://globus.software/blog/2026/10/16/cutting-map-polygons/",
+          "date": "2026-10-22 09:31",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50193170"
+        },
+        {
+          "title": "The Last Museum: Semantic search across 5.8M artworks from major museums",
+          "link": "https://lastmuseum.com/",
+          "date": "2026-10-22 12:40",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50194522"
+        },
+        {
+          "title": "Google cleared 300 hectares of Finnish forest",
+          "link": "https://www.techspot.com/news/114100-google-cleared-300-hectares-finnish-forest-data-center.html",
+          "date": "2026-10-22 15:32",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50196837"
         },
         {
           "title": "WorldTUI: I trained a 360M model to pretend to be a terminal",
@@ -20,74 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50190363"
         },
         {
-          "title": "The recently proposed o(n log n) integer multiplication algorithm [pdf]",
-          "link": "https://web.maths.unsw.edu.au/~davidharvey/research/subnlogn.pdf",
-          "date": "2026-10-22 02:30",
+          "title": "SBD: We Have a Filesystem at Home",
+          "link": "https://fly.io/blog/sprites-block-device/",
+          "date": "2026-10-22 13:09",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50190455"
-        },
-        {
-          "title": "Security Disclosure",
-          "link": "https://blog.railway.com/p/security-disclosure-wednesday-october-21st",
-          "date": "2026-10-21 21:58",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50188228"
-        },
-        {
-          "title": "Show HN: The fastest browser for AI agents to run browser automation",
-          "link": "https://ego-lite.apposters.com",
-          "date": "2026-10-22 08:09",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50192585"
-        },
-        {
-          "title": "OpenAI CLI",
-          "link": "https://github.com/openai/openai-cli",
-          "date": "2026-10-22 05:23",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50191507"
-        },
-        {
-          "title": "Claude Duet",
-          "link": "https://claude.com/product/claude-duet",
-          "date": "2026-10-21 19:14",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50186037"
-        },
-        {
-          "title": "Compromised LiteLLM 1.107.0 on PyPI Installs a Credential Stealer and Backdoor",
-          "link": "https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/",
-          "date": "2026-10-21 14:00",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50181114"
-        },
-        {
-          "title": "Rust Style Guide",
-          "link": "https://google.github.io/styleguide/rustguide.html",
-          "date": "2026-10-21 19:11",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50186010"
-        },
-        {
-          "title": "GitLab critical patch release",
-          "link": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/",
-          "date": "2026-10-21 19:01",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50185869"
-        },
-        {
-          "title": "No more icons in every menu by default",
-          "link": "https://blog.jim-nielsen.com/2026/icons-in-every-menu/",
-          "date": "2026-10-20 04:27",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50161346"
-        },
-        {
-          "title": "Using LLM for confidence scoring is a bad idea",
-          "link": "https://rumple.github.io/blog/2026/10/20/asking-llm-for-confidence.html",
-          "date": "2026-10-21 04:27",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50176082"
+          "comments": "https://news.ycombinator.com/item?id=50194824"
         }
       ]
     },
@@ -96,20 +96,20 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
+          "title": "KFC switches to Coke. But Pepsi’s still king at Taco Bell",
+          "link": "https://edition.cnn.com/2026/10/22/food/pepsi-taco-bell-agreement",
+          "date": "2026-10-22",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
           "title": "Taking back the algorithm: Social media platforms are restoring users’ control of their feeds",
           "link": "https://edition.cnn.com/2026/10/22/tech/social-media-user-algorithm-control",
           "date": "2026-10-22",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "Global websites shut down after AI found a critical flaw affecting 70% of the internet",
-          "link": "https://edition.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai",
-          "date": "2026-10-21",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "With Trump polling at new lows, FCC chair issues warning about ‘fake polls’",
-          "link": "https://edition.cnn.com/2026/10/21/media/trump-polls-fcc-brendan-carr-wedgewood",
+          "title": "Websites shut down globally after AI finds cybersecurity flaw affecting 70% of the internet",
+          "link": "https://edition.cnn.com/2026/10/21/tech/php2shell-vulnerability-ai-intl",
           "date": "2026-10-21",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -174,6 +174,24 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "颱風夜手機斷網！中華電信5G爆災情 網哀號新北重災區",
+          "link": "https://3c.ltn.com.tw/news/68030",
+          "date": "2026/10/22 22:55",
+          "summary": "強颱薔琵逐漸逼近台灣，全台20縣市已宣布明（23日）全面停班停課，沒想到颱風還沒正式來襲，中華電信就先傳出斷網災情！ ..."
+        },
+        {
+          "title": "颱風假外送喊停！foodpanda、Uber Eats公布今晚最後接單時間",
+          "link": "https://3c.ltn.com.tw/news/68027",
+          "date": "2026/10/22 21:08",
+          "summary": "薔琵颱風逐漸逼近台灣，全台已有20縣市宣布全面停班停課，原本打算待在家裡叫外送的民眾要注意了！foodpanda和U ..."
+        },
+        {
+          "title": "全球7成網站恐陷PHP資安漏洞！OpenAI推免費網站安全檢查工具",
+          "link": "https://3c.ltn.com.tw/news/68025",
+          "date": "2026/10/22 18:00",
+          "summary": "全球廣泛使用的 PHP 程式語言爆出兩項嚴重安全漏洞，可能對全球網路造成重大衝擊，而 OpenAI 稍早公開免費開源 ..."
+        },
+        {
           "title": "iPhone Duo還有現貨！明早8點線上開搶 果粉不用冒雨出門",
           "link": "https://3c.ltn.com.tw/news/68024",
           "date": "2026/10/22 17:06",
@@ -226,24 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68010",
           "date": "2026/10/22 10:07",
           "summary": "蘋果首款摺疊手機iPhone Duo將於本週五（23日）正式上市，售價74,900元起，雖然價格不便宜，仍吸引不少果 ..."
-        },
-        {
-          "title": "iPhone Duo最大缺點不是相機！外媒評測狂吐槽這功能",
-          "link": "https://3c.ltn.com.tw/news/68017",
-          "date": "2026/10/22 09:30",
-          "summary": "蘋果首款摺疊手機iPhone Duo的首批評測正式解禁，外媒也紛紛分享實測心得。iPhone Duo確實有不少亮點， ..."
-        },
-        {
-          "title": "Joeman開箱iPhone Duo驚呼摺痕太神！但也有這些缺點",
-          "link": "https://3c.ltn.com.tw/news/68015",
-          "date": "2026/10/22 08:15",
-          "summary": "蘋果首款摺疊手機iPhone Duo將於本週五（23日）正式上市，售價74,900元起，儘管價格不親民，仍掀起果粉搶 ..."
-        },
-        {
-          "title": "會放颱風假嗎？手機3招追薔琵 颱風走到哪立刻知道",
-          "link": "https://3c.ltn.com.tw/news/68014",
-          "date": "2026/10/22 08:00",
-          "summary": "強颱薔琵逐漸逼近台灣，民眾最關心的莫過於颱風接下來會怎麼走？哪些縣市可能受到影響？有沒有機會放颱風假？其實不用一直盯 ..."
         }
       ]
     },
@@ -252,87 +252,87 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "PHP 爆兩大高風險漏洞、危險評分達 9.2，趨勢科技籲企業盡速修補",
-          "link": "https://infosecu.technews.tw/2026/10/22/php-loopholes-2/",
-          "date": "2026-10-22 07:56",
-          "summary": "廣泛應用於網站及電子商務平台的程式語言 PHP，近日揭露兩項重大資安漏洞，嚴重度評分均達 9.2 分，且漏洞資 [&#8230;]",
+          "title": "OpenAI 宣布進駐 Google Cloud：最新 GPT-5.1 模型與 Codex 啟動私人預覽",
+          "link": "https://technews.tw/2026/10/22/openai-models-coming-google-cloud/",
+          "date": "2026-10-22 02:20",
+          "summary": "OpenAI 與 Google 於 21 日正式宣布達成合作，將 OpenAI 的最新 AI 模型引進 Goo [&#8230;]",
           "comments": ""
         },
         {
-          "title": "企業瘋 AI 轉型卻拿不出實績？SEC 執法轉向，財報成投資人最後防線",
-          "link": "https://finance.technews.tw/2026/10/22/sec-ai-washing-silence/",
-          "date": "2026-10-22 07:36",
-          "summary": "美國證券交易委員會（SEC）近期對企業過度包裝人工智慧（AI）業務的「AI 洗白」（AI washing）現象 [&#8230;]",
+          "title": "Meta 暫停 AI 助理 Muse 分享功能，DNS 漏洞恐洩露機密對話",
+          "link": "https://infosecu.technews.tw/2026/10/22/meta-muse-closes-dangerous-privacy-loophole-after-researchers-exploit-it/",
+          "date": "2026-10-22 02:10",
+          "summary": "Meta 已暫時停用旗下 AI 助理 Muse 的對話分享功能。研究人員指出，這項原本設計為「只要有連結就能開 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "Muse 使用者破千萬人，祖克柏揭下一步擴張戰略",
-          "link": "https://technews.tw/2026/10/22/muse-agents-reach-over-10-million-users-in-the-us-and-canada/",
-          "date": "2026-10-22 07:29",
-          "summary": "隨著第三季財報公布，Meta 執行長祖克柏（Mark Zuckerberg）表示，短短一個半月內，美國與加拿大 [&#8230;]",
+          "title": "抗議者鬧場、機器鴨罷工，黃仁勳柏林演講靠幽默化解插曲",
+          "link": "https://technews.tw/2026/10/22/jensen-huang-berlin-speech-incident/",
+          "date": "2026-10-22 02:00",
+          "summary": "輝達（Nvidia）執行長黃仁勳 21 日在柏林 GTC 大會發表主題演講。原本預計向歐洲市場描繪 AI 基礎 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "中華電拚每年孵出一家新子公司，中華曜智接棒搶攻 AI 智慧影像商機",
-          "link": "https://finance.technews.tw/2026/10/22/cht-ai-vision/",
-          "date": "2026-10-22 06:33",
-          "summary": "中華電持續擴大集團「小金雞」布局，繼去年成立 AI 子公司中華創智國際後，今年再由智慧影像團隊獨立成立「中華曜 [&#8230;]",
+          "title": "輝達通包 ABF 載板產能！外資喊欣興光復廠獲大單目標價 1,775 元",
+          "link": "https://finance.technews.tw/2026/10/22/stanley-abf/",
+          "date": "2026-10-22 01:32",
+          "summary": "輝達（NVIDIA）計劃在未來三年內將載板產能提升 2.5 倍，摩根士丹利（Morgan Stanley）最新 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "預估 2027 年 Server CPU 出貨年增破 40%，Arm-Based 產品市占持續擴大",
-          "link": "https://technews.tw/2026/10/22/2027-server-cpu-shipments-40-percent-growth-arm-based-market-share-expansion/",
-          "date": "2026-10-22 06:20",
-          "summary": "根據 TrendForce 最新 AI Server 產業研究，隨著各 AI 服務業者積極推出 AI Agen [&#8230;]",
+          "title": "不只要拿到電，AI 資料中心的新戰場是把電、熱與運算整合起來",
+          "link": "https://technews.tw/2026/10/22/ais-compute-hit-a-wall/",
+          "date": "2026-10-22 00:45",
+          "summary": "AI 資料中心的擴張正面臨前所未有的物理限制，單靠增加供電容量已不足以支撐下一代運算需求。隨著超大規模 AI [&#8230;]",
           "comments": ""
         },
         {
-          "title": "Kakao 宣布開源 AI 影像辨識模型：訓練效率提升 4 倍、延遲大幅降低逾 60%",
-          "link": "https://technews.tw/2026/10/22/kakao-open-sources-ai-image-model/",
-          "date": "2026-10-22 06:10",
-          "summary": "Kakao 於 10 月 22 日宣布，已將旗下自研的兩款影像辨識模型 Kanana-2-vision-enc [&#8230;]",
+          "title": "連高市早苗都親自示警！PHP 爆重大漏洞，AI 挖出潛伏 20 年資安危機",
+          "link": "https://infosecu.technews.tw/2026/10/22/php-loopholes/",
+          "date": "2026-10-22 00:43",
+          "summary": "全球網站爆發重大資安危機，廣泛應用於網站開發的 PHP 程式語言遭揭露兩項高風險漏洞，恐讓駭客在未經身分驗證的 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "挑戰 OpenAI 霸主地位，中國 AI 新星 DeepSeek 傳狂吸 150 億美元天價融資",
-          "link": "https://technews.tw/2026/10/22/deepseek-secures-massive-funding/",
-          "date": "2026-10-22 06:00",
-          "summary": "綜合外媒報導，中國 AI 新創公司 DeepSeek 在最新一輪融資中成功籌集約 150 億美元，創下中國近年 [&#8230;]",
+          "title": "Meta 營收創高、Muse 用戶破千萬人  將拆股",
+          "link": "https://finance.technews.tw/2026/10/22/meta-reports-third-quarter-2026-results/",
+          "date": "2026-10-22 00:40",
+          "summary": "社群媒體巨頭 Meta 第三季營收創新高，財測也優於市場預期，新推出的 AI 代理 Muse 推出短短六週用戶 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "微軟：中國駭客入侵 ConnectWise，全球數百機構遭鎖定",
-          "link": "https://infosecu.technews.tw/2026/10/22/microsoft-chinese-hackers-infiltrated-connectwise-hundreds-global-organizations-targeted/",
-          "date": "2026-10-22 05:40",
-          "summary": "微軟（Microsoft）今天表示，一個與中國政府立場一致的駭客組織利用人工智慧（AI）驅動的滲透測試工具，入 [&#8230;]",
+          "title": "OpenAI 前研究長創立 Arda 募資 2.3 億美元，以 AI 加速美國工廠產線改造",
+          "link": "https://finance.technews.tw/2026/10/22/ex-openai-exec-launches-1-5b-ai-manufacturing-startup-arda/",
+          "date": "2026-10-22 00:10",
+          "summary": "OpenAI 前研究長 Bob McGrew 創辦的 AI 製造軟體新創 Arda，20 日首度曝光，宣布完成 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "證交所創新板法規全面對齊一般板！林修銘曝四大亮點免簽風險預告書",
-          "link": "https://finance.technews.tw/2026/10/22/risk-warning/",
-          "date": "2026-10-22 05:13",
-          "summary": "證交所今日舉辦「台灣創新板（tib-創）」品牌發布會，董事長林修銘會中宣布多項重大法規鬆綁，其中最受矚目的是自 [&#8230;]",
+          "title": "AI 讓人人都能做 App，誰負責讓它活下去？",
+          "link": "https://technews.tw/2026/10/22/ai-lets-anyone-build-apps-but-who-maintains-it/",
+          "date": "2026-10-21 23:50",
+          "summary": "Google 13 日宣布，Google Play 開始向美國等特定市場、18 歲以上使用者開放新功能，透過 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "傳奇投資人示警 AI 算力泡沫  稱 GPU 如飛機座位",
-          "link": "https://finance.technews.tw/2026/10/22/ken-griffin-warns-of-ai-compute-bubble/",
-          "date": "2026-10-22 04:20",
-          "summary": "知名投資人、億萬富豪葛里芬（Ken Griffin）示警，當前 AI 投資熱潮「幾乎肯定」存在泡沫，並將 GP [&#8230;]",
+          "title": "防堵 AI 代理管帳暴走，新創 Fragment 獲 1,200 萬美元打造專屬防線",
+          "link": "https://finance.technews.tw/2026/10/22/fragment-raises-12-million-to-combat-ai-financial-abuse/",
+          "date": "2026-10-21 23:20",
+          "summary": "隨著企業陸續導入 AI 代理（AI agents）處理帳務與付款，紐約新創 Fragment 宣布完成 1,2 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "奧特曼共同創辦 World 推出金融業真人驗證方案，Zoom 全面上線深偽偵測",
-          "link": "https://infosecu.technews.tw/2026/10/22/world-launches-world-id-suite-for-banks-makes-zoom-deepfake-check-generally-available/",
-          "date": "2026-10-22 04:00",
-          "summary": "由 OpenAI 執行長奧特曼（Sam Altman）共同創辦的身分驗證計畫 World，18 日宣布視訊會議 [&#8230;]",
+          "title": "台達電入列輝達 DSX POD 合作陣容，AI 工廠部署最快縮短至 14 天",
+          "link": "https://technews.tw/2026/10/22/delta-electronics-nvidia-dsx-pod-ai-factory-deployment-14-days/",
+          "date": "2026-10-21 22:00",
+          "summary": "輝達於德國柏林 GTC 大會宣布推出全新 DSX POD 模組化 AI 工廠參考設計，將 Vera Rubin [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 資料中心擴張恐讓德州空氣品質倒退 20 年，即使走淨零路線氮氧化物排放仍增 35%",
-          "link": "https://technews.tw/2026/10/22/data-centers-could-erase-decades-of-air-quality-gains/",
-          "date": "2026-10-22 03:35",
-          "summary": "休士頓先進研究中心（HARC）報告模擬德州資料中心擴張的空污衝擊，結論高度取決於電從哪裡來：最乾淨的情境排放仍 [&#8230;]",
+          "title": "可布雷也能放飛無人機，澳洲「鬼鯊」無人潛艇任務艙首度曝光",
+          "link": "https://technews.tw/2026/10/21/australia-and-anduril-unveiled-ghost-shark-usvs-new-mission-payloads/",
+          "date": "2026-10-21 09:57",
+          "summary": "澳洲與美國國防新創 Anduril 合作開發的「鬼鯊」（Ghost Shark）超大型自主水下載具，近日首度公 [&#8230;]",
           "comments": ""
         }
       ]
@@ -341,6 +341,20 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "神盾集團攜手法國 SiPearl 策略合作，布局全球高效能運算市場",
+          "link": "https://finance.technews.tw/2026/10/22/aegis-group-and-french-company-sipearl-form-a-strategic-partnership/",
+          "date": "2026-10-22 09:30",
+          "summary": "ic設計廠商神盾科技宣布與法國處理器設計公司 SiPearl 正式簽署策略合作。神盾的 Mobius100（M [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "美光勞資協議內容曝光！季分潤、調薪、勞退 10% 再加碼三天有薪假",
+          "link": "https://finance.technews.tw/2026/10/22/microns-labor-agreement-details-revealed/",
+          "date": "2026-10-22 09:30",
+          "summary": "半導體大廠台灣美光於近期與台中工會達成歷史性勞資協議，台灣美光董事長盧東暉於媒體說明會中宣佈，在獲得董事會授權 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "中國客戶棄華為昇騰搶買 RTX PRO 5500，輝達僅能滿足 5%~10% 市場需求",
           "link": "https://technews.tw/2026/10/22/chinese-customers-are-abandoning-huaweis-ascend-and-rushing-to-buy-rtx-pro-5500/",
@@ -409,20 +423,6 @@
           "link": "https://technews.tw/2026/10/22/intel-hits-construction-milestone-at-ohio-chip-fab-thats-at-least-5-years-behind-schedule/",
           "date": "2026-10-22 01:40",
           "summary": "美國晶片大廠英特爾（Intel）週三（21 日）宣布，俄亥俄州晶圓廠新建工程取得進展，首座廠房已上樑，宣示工程 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "不只要拿到電，AI 資料中心的新戰場是把電、熱與運算整合起來",
-          "link": "https://technews.tw/2026/10/22/ais-compute-hit-a-wall/",
-          "date": "2026-10-22 00:45",
-          "summary": "AI 資料中心的擴張正面臨前所未有的物理限制，單靠增加供電容量已不足以支撐下一代運算需求。隨著超大規模 AI [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "輝達砸大錢布局供應鏈戰略，點名台灣、日本、韓國多家供應鏈廠商受惠",
-          "link": "https://finance.technews.tw/2026/10/21/nvidia-invests-heavily-in-its-supply-chain-strategy/",
-          "date": "2026-10-21 12:50",
-          "summary": "輝達（NVIDIA）於 21 日正式宣布，與全球多家核心供應鏈合作夥伴達成大規模擴產計畫，以擴展全球製造能力， [&#8230;]",
           "comments": ""
         }
       ]
