@@ -5,13 +5,39 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 22 Oct 2026 02:32:53 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 05:45:00 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>Google Antigravity 四大支柱終極全景對決：Antigravity 2.0 v.s IDE v.s CLI (agy) v.s Python SDK 架構剖析、工作流差異與最佳選型指南</title>
+    <link>https://ai-hardcore-engineer.com/antigravity-2-vs-ide-vs-cli-vs-sdk.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/antigravity-2-vs-ide-vs-cli-vs-sdk.html</guid>
+    <description>全維度深度橫評 Google Antigravity 四大核心形態：深入剖析 Antigravity 2.0 獨立多代理指揮中心、Antigravity IDE 沉浸式 AI 原生編輯器、agy 終端極速命令列引擎，以及 google-antigravity Python SDK 程式化代理核心。涵蓋統一 Agentic Runtime 底層架構、三大 AI 模態 (Tab/Cmd+I/Agent)、串流推論與 ToolCall 強型別攔截、背景 Scheduled Tasks (Cron)、Unix Pipeline 串接、36 項橫向對比矩陣與四維互動選型決策器。</description>
+    <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+    <category>Google Antigravity</category>
+    <category>Antigravity 2.0</category>
+    <category>Antigravity IDE</category>
+    <category>agy</category>
+    <category>CLI</category>
+    <category>Antigravity SDK</category>
+    <category>Python SDK</category>
+    <category>google-antigravity</category>
+    <category>AI Agent</category>
+    <category>Agentic Coding</category>
+    <category>Gemini</category>
+    <category>VS Code</category>
+    <category>Terminal</category>
+    <category>DevOps</category>
+    <category>軟體架構</category>
+    <category>CI/CD</category>
+    <category>Unix Pipeline</category>
+    <category>Scheduled Tasks</category>
+    <category>Cron</category>
+  </item>
   <item>
     <title>Google Antigravity 三大產品型態終極橫評：Desktop v.s IDE v.s agy (CLI) 架構解析、工作流差異與最佳選型指南</title>
     <link>https://ai-hardcore-engineer.com/antigravity-desktop-vs-ide-vs-agy.html</link>
