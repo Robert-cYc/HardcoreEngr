@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23 01:57",
+  "updated": "2026-10-23 02:37",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -20,18 +20,18 @@
           "comments": "https://news.ycombinator.com/item?id=50202217"
         },
         {
-          "title": "Quad9 (DNS Resolver) to Exit France",
-          "link": "https://quad9.net/news/blog/au-revoir-france/",
-          "date": "2026-10-22 14:32",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50195959"
-        },
-        {
           "title": "The foolishness of \"natural language programming\" (1978)",
           "link": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html",
           "date": "2026-10-23 00:52",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50203161"
+        },
+        {
+          "title": "Quad9 (DNS Resolver) to Exit France",
+          "link": "https://quad9.net/news/blog/au-revoir-france/",
+          "date": "2026-10-22 14:32",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50195959"
         },
         {
           "title": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
@@ -48,18 +48,18 @@
           "comments": "https://news.ycombinator.com/item?id=50194833"
         },
         {
-          "title": "AI compute is the new oil–and needs a new market",
-          "link": "https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market",
-          "date": "2026-10-22 23:45",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50202671"
-        },
-        {
           "title": "Every AI model has the same \"controversial\" take on humans",
           "link": "https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans",
           "date": "2026-10-22 16:08",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50197313"
+        },
+        {
+          "title": "AI compute is the new oil–and needs a new market",
+          "link": "https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market",
+          "date": "2026-10-22 23:45",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50202671"
         },
         {
           "title": "Getting ready to operate GNU Taler in Germany",
@@ -76,18 +76,18 @@
           "comments": "https://news.ycombinator.com/item?id=50196718"
         },
         {
+          "title": "The Secret Life of Circuits is now in stock everywhere",
+          "link": "https://blog.coredump.cx/p/the-secret-life-of-circuits-is-now",
+          "date": "2026-10-20 07:15",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50162431"
+        },
+        {
           "title": "Jailbreaking the Switch 2",
           "link": "https://pepsipu.com/blog/2026-10-switch2-jailbreak-ns2jb/",
           "date": "2026-10-22 08:01",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50192536"
-        },
-        {
-          "title": "What Is Gridifcation",
-          "link": "https://musicalform.substack.com/p/what-is-gridifcation",
-          "date": "2026-10-19 09:13",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50150163"
         }
       ]
     },
@@ -174,6 +174,12 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "iPhone Duo好市多開賣5分鐘搶光！官網還有現貨 單機便宜4千元",
+          "link": "https://3c.ltn.com.tw/news/68038",
+          "date": "2026/10/23 09:55",
+          "summary": "蘋果摺疊手機iPhone Duo於今(23日)開賣，但卻遇上薔琵颱風攪局，不過，好市多全台賣場維持正常營運，不少人從 ..."
+        },
+        {
           "title": "iPhone 車主等到了！CarPlay 版 Google 地圖加入 Gemini 全球陸續推送",
           "link": "https://3c.ltn.com.tw/news/68029",
           "date": "2026/10/23 09:40",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68021",
           "date": "2026/10/22 14:26",
           "summary": "蘋果首款摺疊手機iPhone Duo售價74,900元起，雖然吸引不少果粉搶購，但這麼貴的手機，每天摺來摺去，轉軸真 ..."
-        },
-        {
-          "title": "Sony攜手世界級戰隊提升遊戲體驗！INZONE系列電競耳機新色登場",
-          "link": "https://3c.ltn.com.tw/news/68009",
-          "date": "2026/10/22 13:35",
-          "summary": "Sony宣布與世界級電競戰隊Fnatic聯名在台推出INZON系列耳機全新配色：INZONE H9 II旗艦級無線降 ..."
         }
       ]
     },
@@ -251,6 +251,55 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "PHP 爆兩大高風險漏洞、危險評分達 9.2，趨勢科技籲企業盡速修補",
+          "link": "https://infosecu.technews.tw/2026/10/22/php-loopholes-2/",
+          "date": "2026-10-22 07:56",
+          "summary": "廣泛應用於網站及電子商務平台的程式語言 PHP，近日揭露兩項重大資安漏洞，嚴重度評分均達 9.2 分，且漏洞資 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "企業瘋 AI 轉型卻拿不出實績？SEC 執法轉向，財報成投資人最後防線",
+          "link": "https://finance.technews.tw/2026/10/22/sec-ai-washing-silence/",
+          "date": "2026-10-22 07:36",
+          "summary": "美國證券交易委員會（SEC）近期對企業過度包裝人工智慧（AI）業務的「AI 洗白」（AI washing）現象 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Muse 使用者破千萬人，祖克柏揭下一步擴張戰略",
+          "link": "https://technews.tw/2026/10/22/muse-agents-reach-over-10-million-users-in-the-us-and-canada/",
+          "date": "2026-10-22 07:29",
+          "summary": "隨著第三季財報公布，Meta 執行長祖克柏（Mark Zuckerberg）表示，短短一個半月內，美國與加拿大 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "中華電拚每年孵出一家新子公司，中華曜智接棒搶攻 AI 智慧影像商機",
+          "link": "https://finance.technews.tw/2026/10/22/cht-ai-vision/",
+          "date": "2026-10-22 06:33",
+          "summary": "中華電持續擴大集團「小金雞」布局，繼去年成立 AI 子公司中華創智國際後，今年再由智慧影像團隊獨立成立「中華曜 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "預估 2027 年 Server CPU 出貨年增破 40%，Arm-Based 產品市占持續擴大",
+          "link": "https://technews.tw/2026/10/22/2027-server-cpu-shipments-40-percent-growth-arm-based-market-share-expansion/",
+          "date": "2026-10-22 06:20",
+          "summary": "根據 TrendForce 最新 AI Server 產業研究，隨著各 AI 服務業者積極推出 AI Agen [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Kakao 宣布開源 AI 影像辨識模型：訓練效率提升 4 倍、延遲大幅降低逾 60%",
+          "link": "https://technews.tw/2026/10/22/kakao-open-sources-ai-image-model/",
+          "date": "2026-10-22 06:10",
+          "summary": "Kakao 於 10 月 22 日宣布，已將旗下自研的兩款影像辨識模型 Kanana-2-vision-enc [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "挑戰 OpenAI 霸主地位，中國 AI 新星 DeepSeek 傳狂吸 150 億美元天價融資",
+          "link": "https://technews.tw/2026/10/22/deepseek-secures-massive-funding/",
+          "date": "2026-10-22 06:00",
+          "summary": "綜合外媒報導，中國 AI 新創公司 DeepSeek 在最新一輪融資中成功籌集約 150 億美元，創下中國近年 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "微軟：中國駭客入侵 ConnectWise，全球數百機構遭鎖定",
           "link": "https://infosecu.technews.tw/2026/10/22/microsoft-chinese-hackers-infiltrated-connectwise-hundreds-global-organizations-targeted/",
@@ -285,55 +334,6 @@
           "date": "2026-10-22 03:35",
           "summary": "休士頓先進研究中心（HARC）報告模擬德州資料中心擴張的空污衝擊，結論高度取決於電從哪裡來：最乾淨的情境排放仍 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "AI 競賽節奏超越「iPhone 對 Android」，施密特示警：企業轉型已刻不容緩",
-          "link": "https://technews.tw/2026/10/22/schmidt-ai-reshape-business-operations/",
-          "date": "2026-10-22 03:10",
-          "summary": "Google 前執行長艾瑞克·施密特（Eric Schmidt）近日表示，人工智慧（AI）代理人正從根本上改變 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Anthropic 推 AI Agent，「Claude Duet」迎戰 Muse、dots",
-          "link": "https://technews.tw/2026/10/22/anthropic-introduces-claude-duet/",
-          "date": "2026-10-22 02:59",
-          "summary": "Anthropic 21 日發表一款 AI agent「Claude Duet」，準備與 Meta Muse、 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "輝達柏林 GTC 發表七大開放權重模型家族，搶攻歐洲主權 AI 需求",
-          "link": "https://technews.tw/2026/10/22/nvidia-woos-wary-europeans-with-more-open-weights-models/",
-          "date": "2026-10-22 02:50",
-          "summary": "輝達（NVIDIA）21 日於柏林 GTC 大會發表一系列開放權重模型，涵蓋語言、檢索、結構化資料、機器人、自 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "不滿 AI 投入軍事用途，Google DeepMind 研究員接連辭職",
-          "link": "https://technews.tw/2026/10/22/google-staff-resign-in-backlash-over-its-ai-contracts-with-military/",
-          "date": "2026-10-22 02:40",
-          "summary": "Google 正面臨來自內部的強烈反彈，原因是公司將人工智慧技術投入軍事用途，引發部分現任與前任員工接連離職。 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "特斯拉人型機器人 Optimus 量產，2027 年底前交貨客戶",
-          "link": "https://finance.technews.tw/2026/10/22/tesla-targets-shipping-optimus-to-customers-by-the-end-of-2027/",
-          "date": "2026-10-22 02:35",
-          "summary": "特斯拉（Tesla）於 10 月 21 日表示，旗下人型機器人 Optimus 已在加州佛利蒙工廠進入早期量產 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "OpenAI 宣布進駐 Google Cloud：最新 GPT-5.1 模型與 Codex 啟動私人預覽",
-          "link": "https://technews.tw/2026/10/22/openai-models-coming-google-cloud/",
-          "date": "2026-10-22 02:20",
-          "summary": "OpenAI 與 Google 於 21 日正式宣布達成合作，將 OpenAI 的最新 AI 模型引進 Goo [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Meta 暫停 AI 助理 Muse 分享功能，DNS 漏洞恐洩露機密對話",
-          "link": "https://infosecu.technews.tw/2026/10/22/meta-muse-closes-dangerous-privacy-loophole-after-researchers-exploit-it/",
-          "date": "2026-10-22 02:10",
-          "summary": "Meta 已暫時停用旗下 AI 助理 Muse 的對話分享功能。研究人員指出，這項原本設計為「只要有連結就能開 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,20 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "中國客戶棄華為昇騰搶買 RTX PRO 5500，輝達僅能滿足 5%~10% 市場需求",
+          "link": "https://technews.tw/2026/10/22/chinese-customers-are-abandoning-huaweis-ascend-and-rushing-to-buy-rtx-pro-5500/",
+          "date": "2026-10-22 07:30",
+          "summary": "在中國人工智慧（AI）晶片出貨量方面，華為雖正逐漸縮小與輝達（NVIDIA）的市場差距，但包括字節跳動、阿里巴 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "預估 2027 年 Server CPU 出貨年增破 40%，Arm-Based 產品市占持續擴大",
+          "link": "https://technews.tw/2026/10/22/2027-server-cpu-shipments-40-percent-growth-arm-based-market-share-expansion/",
+          "date": "2026-10-22 06:20",
+          "summary": "根據 TrendForce 最新 AI Server 產業研究，隨著各 AI 服務業者積極推出 AI Agen [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "半導體設備商科林研發財測無驚喜  盤後挫近 7%",
           "link": "https://finance.technews.tw/2026/10/22/lam-research-forecast-fails-to-impress-shares-drop-nearly-7-after-hours/",
@@ -410,20 +424,6 @@
           "date": "2026-10-21 12:50",
           "summary": "輝達（NVIDIA）於 21 日正式宣布，與全球多家核心供應鏈合作夥伴達成大規模擴產計畫，以擴展全球製造能力， [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "川普揭 15 億美元晶片生產回流計畫，商務部長嫌在台灣製造太遠了",
-          "link": "https://finance.technews.tw/2026/10/21/trump-1-5-billion-chip-reshoring-commerce-secretary-taiwan-manufacturing-too-far/",
-          "date": "2026-10-21 10:40",
-          "summary": "美國總統川普 20 日宣布，戰爭部將投資 15 億美元，在北卡羅來納州擴大半導體生產。商務部長盧特尼克則點名台 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "力抗長江存儲追擊！三星、SK 海力士升級中國廠，擴大生產高階晶片",
-          "link": "https://technews.tw/2026/10/21/samsung-sk-hynix-upgrading-china-plants/",
-          "date": "2026-10-21 09:19",
-          "summary": "三星電子與 SK 海力士正升級在中國的工廠，以生產更先進的記憶體晶片，藉此抵禦中國競爭對手快速崛起帶來的壓力， [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,20 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "感測器廠宇田控制將登錄興櫃，前三季營收 2.74 億元達前一年 86%",
+          "link": "https://finance.technews.tw/2026/10/22/industrial-sensor-manufacturer-uda-control-will-be-listed-on-the-emerging-stock-market/",
+          "date": "2026-10-22 07:45",
+          "summary": "工業用感測器廠商宇田控制科技舉行興櫃前法人說明會。宇田控制深耕工業量測領域逾 30 年，憑藉「自有品牌、國際經 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Vantage 攜手 Heron 簽署逾 1 GW SST 產能協議",
+          "link": "https://technews.tw/2026/10/22/vantage-heron-1gw-sst-capacity-deal/",
+          "date": "2026-10-22 07:31",
+          "summary": "800 VDC 供電架構加速邁向實際部署。全球資料中心業者 Vantage 與電力電子設備商 Heron Po [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "證交所創新板法規全面對齊一般板！林修銘曝四大亮點免簽風險預告書",
           "link": "https://finance.technews.tw/2026/10/22/risk-warning/",
@@ -499,20 +513,6 @@
           "link": "https://finance.technews.tw/2026/10/21/cowos-factory-expansion-benefits/",
           "date": "2026-10-21 07:48",
           "summary": "騏億鑫明日將舉辦上櫃前業績發表會，預計 11 月中掛牌交易，董事長洪國庭表示，目前在手訂單達 44.76 億元 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "元太攜手富士軟片影像系統攻日本鐵路市場，大尺寸電子看板取代紙張海報",
-          "link": "https://technews.tw/2026/10/21/e-ink-and-fujifilm-imaging-systems/",
-          "date": "2026-10-21 07:24",
-          "summary": "電子紙大廠 E Ink 元太科技與日本富士軟片影像系統公司（FUJIFILM Imaging Systems [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "德微當年 1 元接手虧損 24 億晶圓廠！亞昕科技 10/23 以 120 元登錄興櫃",
-          "link": "https://finance.technews.tw/2026/10/21/protective-components/",
-          "date": "2026-10-21 07:21",
-          "summary": "德微旗下亞昕科技今日召開興櫃前法說會，預計 10 月 23 日以每股 120 元登錄興櫃，董事長張恩傑表示，亞 [&#8230;]",
           "comments": ""
         }
       ]
