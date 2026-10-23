@@ -276,7 +276,24 @@
         fetch('./search-index.json')
           .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
           .then(cb)
-          .catch(function () { cb(null); });
+          .catch(function () {
+            try {
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', './search-index.json', true);
+              xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                  if ((xhr.status === 200 || xhr.status === 0) && xhr.responseText) {
+                    try { cb(JSON.parse(xhr.responseText)); } catch (e) { cb(null); }
+                  } else {
+                    cb(null);
+                  }
+                }
+              };
+              xhr.send();
+            } catch (e2) {
+              cb(null);
+            }
+          });
       } catch (e) { cb(null); }
     }
 
@@ -292,7 +309,7 @@
 
       // Score other articles by tag overlap
       var scored = index
-        .filter(function (art) { return art.url !== currentUrl; })
+        .filter(function (art) { return art.url !== currentUrl && art.url !== 'index.html' && art.url !== 'articles.html' && art.url !== 'about.html'; })
         .map(function (art) {
           var score = (art.tags || []).filter(function (t) { return myTags.has(t); }).length;
           return { art: art, score: score };
@@ -304,7 +321,7 @@
       if (!scored.length) return;
 
       // Image map (same as renderSearchResults)
-      var heroImageMap = {"api-architecture-guide.html": "api-architecture-guide.jpg", "apple-services-ecosystem.html": "apple-ecosystem.jpg", "chip-wars-intel-amd-nvidia-asic.html": "chip-wars-guide.jpg", "github-actions-guide.html": "github-actions.jpg", "google-services-ecosystem.html": "google-ecosystem.jpg", "json-architecture-guide.html": "json-architecture-guide.jpg", "libre-hardware-monitor-guide.html": "libre-hardware-monitor-guide.jpg", "llm-naming-quantization-guide.html": "llm-quantization-guide.jpg", "microsoft-services-ecosystem.html": "microsoft-ecosystem.jpg", "nas-storage-comparison.html": "nas-storage-guide.jpg", "ollama-local-llm.html": "ollama-guide.jpg", "os-architecture-comparison.html": "os-diagram.jpg", "pyinstaller-python-packaging-guide.html": "pyinstaller-guide.jpg", "rag-technology-guide.html": "rag-guide.jpg", "rtx-spark-vs-dgx-spark-guide.html": "rtx-spark-vs-dgx-spark-guide.jpg", "slm-small-language-models-guide.html": "slm-guide.jpg", "storage-spec-performance-comparison.html": "storage-spec-performance-guide.jpg", "tesla-model-lineup-guide.html": "tesla_car_hero.jpg", "tesla-roadster-performance-thrust-rocket-guide.html": "tesla-roadster-trinity.jpg", "usb-history-evolution-guide.html": "usb-evolution-guide.jpg", "video-cable-display-interfaces-guide.html": "video-interfaces-guide.jpg", "wsl-guide.html": "wsl-content.jpg", "docker-container-guide.html": "docker-guide.jpg", "docker-compose-guide.html": "docker-guide.jpg", "kubernetes-beginner-guide.html": "kubernetes-guide.jpg", "virtual-machine-comparison.html": "virtual-machine-guide.jpg", "linux-commands.html": "linux-terminal-guide.jpg", "mac-commands.html": "linux-terminal-guide.jpg", "tmux-terminal-guide.html": "tmux-terminal-guide.jpg", "btop-monitor-guide.html": "btop-monitor-guide.jpg", "git-commands.html": "git-commands-guide.jpg", "top-5-llms-2026.html": "frontier-llms-guide.jpg", "ai-models.html": "frontier-llms-guide.jpg", "gpt-5-model-guide.html": "gpt5-model-guide.jpg", "claude-model-families.html": "claude-model-guide.jpg", "gemini-model-guide.html": "gemini-model-guide.jpg", "grok-model-guide.html": "grok-model-guide.jpg", "deepseek-ai-guide.html": "deepseek-ai-guide.jpg", "google-antigravity-ide-guide.html": "google-antigravity-guide.jpg", "claude-code-commands.html": "claude-code-guide.jpg", "claude-code-hooks-guide.html": "claude-code-guide.jpg", "claude-code-mcp-skill-guide.html": "claude-code-guide.jpg", "claude-skill-mcp-plugin-deep.html": "claude-code-guide.jpg", "hermes-agent-guide.html": "hermes-agent-guide.jpg", "hermes-desktop-vs-hermes-one.html": "hermes-agent-guide.jpg", "openclaw-ai-assistant.html": "openclaw-agent-guide.jpg", "llama-cpp-gguf.html": "local-llm-inference-guide.jpg", "lm-studio-local-llm.html": "local-llm-inference-guide.jpg", "n8n-workflow-automation.html": "workflow-automation-guide.jpg", "zapier-make-n8n-comparison.html": "workflow-automation-guide.jpg", "ai-automation-tools-guide.html": "workflow-automation-guide.jpg", "uv-guide.html": "python-uv-guide.jpg", "node-js-commands.html": "nodejs-javascript-guide.jpg", "java-nodejs-npm-guide.html": "nodejs-javascript-guide.jpg", "apache-vs-tomcat.html": "apache-tomcat-guide.jpg", "react-introduction.html": "react-framework-guide.jpg", "cloudflare-guide.html": "cloudflare-network-guide.jpg", "wireshark-network-analysis.html": "wireshark-packet-guide.jpg", "industrial-protocols-guide.html": "industrial-protocols-guide.jpg", "influxdb-guide.html": "influxdb-timeseries-guide.jpg", "notion-guide.html": "notion-workspace-guide.jpg", "obsidian-guide.html": "obsidian-pkm-guide.jpg", "canva-tutorial.html": "canva-design-guide.jpg", "google-colab-guide.html": "google-colab-guide.jpg", "prompt-engineering-guide.html": "prompt-engineering-guide.jpg", "ai-algorithms.html": "ai-algorithms-guide.jpg", "open-source-licenses.html": "open-source-licenses-guide.jpg"};
+      var heroImageMap = {"ai-algorithms.html": "ai-algorithms-guide.jpg", "ai-automation-tools-guide.html": "workflow-automation-guide.jpg", "ai-models.html": "frontier-llms-guide.jpg", "antigravity-2-vs-ide-vs-cli-vs-sdk.html": "antigravity-2-vs-ide-vs-cli-vs-sdk-guide.jpg", "antigravity-desktop-vs-ide-vs-agy.html": "antigravity-desktop-vs-ide-vs-agy-guide.jpg", "anythingllm-guide.html": "anythingllm-guide.jpg", "apache-vs-tomcat.html": "apache-tomcat-guide.jpg", "api-architecture-guide.html": "api-architecture-guide.jpg", "apple-services-ecosystem.html": "apple-ecosystem.jpg", "bluetooth-technology-guide.html": "bluetooth-technology-guide.jpg", "btop-monitor-guide.html": "btop-monitor-guide.jpg", "canva-tutorial.html": "canva-design-guide.jpg", "chip-wars-intel-amd-nvidia-asic.html": "chip-wars-guide.jpg", "claude-code-commands.html": "claude-code-guide.jpg", "claude-code-hooks-guide.html": "claude-code-guide.jpg", "claude-code-mcp-skill-guide.html": "claude-code-guide.jpg", "claude-model-families.html": "claude-model-guide.jpg", "claude-skill-mcp-plugin-deep.html": "claude-code-guide.jpg", "cloudflare-guide.html": "cloudflare-network-guide.jpg", "deepseek-ai-guide.html": "deepseek-ai-guide.jpg", "docker-compose-guide.html": "docker-guide.jpg", "docker-container-guide.html": "docker-guide.jpg", "gemini-model-guide.html": "gemini-model-guide.jpg", "git-commands.html": "git-commands-guide.jpg", "github-actions-guide.html": "github-actions.jpg", "google-antigravity-ide-guide.html": "google-antigravity-guide.jpg", "google-colab-guide.html": "google-colab-guide.jpg", "google-services-ecosystem.html": "google-ecosystem.jpg", "gpt-5-model-guide.html": "gpt5-model-guide.jpg", "grok-model-guide.html": "grok-model-guide.jpg", "hermes-agent-guide.html": "hermes-agent-guide.jpg", "hermes-desktop-vs-hermes-one.html": "hermes-agent-guide.jpg", "industrial-protocols-guide.html": "industrial-protocols-guide.jpg", "influxdb-guide.html": "influxdb-timeseries-guide.jpg", "java-nodejs-npm-guide.html": "nodejs-javascript-guide.jpg", "json-architecture-guide.html": "json-architecture-guide.jpg", "kubernetes-beginner-guide.html": "kubernetes-guide.jpg", "libre-hardware-monitor-guide.html": "libre-hardware-monitor-guide.jpg", "linux-commands.html": "linux-terminal-guide.jpg", "llama-cpp-gguf.html": "local-llm-inference-guide.jpg", "llm-naming-quantization-guide.html": "llm-quantization-guide.jpg", "lm-studio-local-llm.html": "local-llm-inference-guide.jpg", "mac-commands.html": "linux-terminal-guide.jpg", "microsoft-services-ecosystem.html": "microsoft-ecosystem.jpg", "n8n-workflow-automation.html": "workflow-automation-guide.jpg", "nas-storage-comparison.html": "nas-storage-guide.jpg", "node-js-commands.html": "nodejs-javascript-guide.jpg", "notion-guide.html": "notion-workspace-guide.jpg", "obsidian-guide.html": "obsidian-pkm-guide.jpg", "ollama-local-llm.html": "ollama-guide.jpg", "open-source-licenses.html": "open-source-licenses-guide.jpg", "openclaw-ai-assistant.html": "openclaw-agent-guide.jpg", "os-architecture-comparison.html": "os-diagram.jpg", "prompt-engineering-guide.html": "prompt-engineering-guide.jpg", "pyinstaller-python-packaging-guide.html": "pyinstaller-guide.jpg", "rag-technology-guide.html": "rag-guide.jpg", "react-introduction.html": "react-framework-guide.jpg", "rtx-spark-vs-dgx-spark-guide.html": "rtx-spark-vs-dgx-spark-guide.jpg", "slm-small-language-models-guide.html": "slm-guide.jpg", "spacex-aerospace-engineering-guide.html": "spacex-aerospace-guide.jpg", "storage-spec-performance-comparison.html": "storage-spec-performance-guide.jpg", "tesla-model-lineup-guide.html": "tesla_car_hero.jpg", "tesla-roadster-performance-thrust-rocket-guide.html": "tesla-roadster-trinity.jpg", "tmux-terminal-guide.html": "tmux-terminal-guide.jpg", "top-5-llms-2026.html": "frontier-llms-guide.jpg", "usb-history-evolution-guide.html": "usb-evolution-guide.jpg", "uv-guide.html": "python-uv-guide.jpg", "video-cable-display-interfaces-guide.html": "video-interfaces-guide.jpg", "virtual-machine-comparison.html": "virtual-machine-guide.jpg", "wireshark-network-analysis.html": "wireshark-packet-guide.jpg", "wsl-guide.html": "wsl-content.jpg", "zapier-make-n8n-comparison.html": "workflow-automation-guide.jpg"};
 
       var style = document.createElement('style');
       style.textContent = [
@@ -325,12 +342,33 @@
       section.innerHTML = '<h3>📖 延伸閱讀</h3><div class="related-grid">' +
         scored.map(function (x) {
           var art = x.art;
-          var imgSrc = heroImageMap[art.url] ? 'images/' + heroImageMap[art.url] : 'images/og-image.png';
+          var imgSrc = art.image || (heroImageMap[art.url] ? ('./images/' + heroImageMap[art.url]) : './images/og-image.png');
+          if (!imgSrc.startsWith('./') && !imgSrc.startsWith('/') && !imgSrc.startsWith('http')) {
+            imgSrc = './' + imgSrc;
+          }
           return '<a href="./' + art.url + '" class="related-card">' +
             '<img src="' + imgSrc + '" alt="" loading="lazy">' +
             '<div class="related-card-body"><div class="related-card-title">' + (art.title || art.url) + '</div></div>' +
             '</a>';
         }).join('') + '</div>';
+
+      // Clean up any legacy static related section to avoid duplicates
+      var oldRelated = document.querySelector('.article-body .related-articles, article > .related-articles');
+      if (oldRelated) {
+        var backHome = oldRelated.querySelector('.back-home');
+        if (backHome) {
+          var footerArea = document.querySelector('.article-footer');
+          if (!footerArea) {
+            footerArea = document.createElement('div');
+            footerArea.className = 'article-footer';
+            articleBody.appendChild(footerArea);
+          }
+          if (!footerArea.querySelector('.back-home')) {
+            footerArea.appendChild(backHome);
+          }
+        }
+        oldRelated.remove();
+      }
 
       var shareBar = document.querySelector('.share-bar');
       if (shareBar) {
