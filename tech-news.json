@@ -1,16 +1,51 @@
 {
-  "updated": "2026-10-23 16:08",
+  "updated": "2026-10-24 00:43",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "OpenSSL 4.1.0",
-          "link": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
-          "date": "2026-10-23 12:42",
+          "title": "Kimi K3.1 Pro and K3.1 Pro Highspeed",
+          "link": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+          "date": "2026-10-23 16:59",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50208099"
+          "comments": "https://news.ycombinator.com/item?id=50212065"
+        },
+        {
+          "title": "Apple Music 404 Not Found",
+          "link": "https://music.apple.com/this-url-doesnt-exist",
+          "date": "2026-10-23 12:28",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50207910"
+        },
+        {
+          "title": "Evolving Threat: http2shell is an RCE in node, Python, and more",
+          "link": "https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8",
+          "date": "2026-10-23 23:30",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50216791"
+        },
+        {
+          "title": "CVE Tracker",
+          "link": "https://cve.0xosprey.com/",
+          "date": "2026-10-23 21:21",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50215530"
+        },
+        {
+          "title": "Today, we hacked what we'd set out to hack: the iPhone",
+          "link": "https://blog.calif.io/p/iphone",
+          "date": "2026-10-23 16:21",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50211474"
+        },
+        {
+          "title": "Dessa: the most authentic full-duplex speech model ever built",
+          "link": "https://block.xyz/dessa",
+          "date": "2026-10-23 19:09",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50213925"
         },
         {
           "title": "Local Wikipedia: Wikipedia, but only for things a half hour walk from you",
@@ -20,74 +55,39 @@
           "comments": "https://news.ycombinator.com/item?id=50202285"
         },
         {
-          "title": "Disney Raising Prices Days After Confirming Ads Will Now Show Up on Every Tier",
-          "link": "https://www.tvfandomlounge.com/disney-plus-price-hike-ads-premium-tier-nielsen-emmys-2026/",
-          "date": "2026-10-23 08:21",
+          "title": "The Real Kevin Bacon",
+          "link": "https://pudding.cool/2026/10/kevin-bacon/",
+          "date": "2026-10-20 17:10",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50205934"
+          "comments": "https://news.ycombinator.com/item?id=50169499"
         },
         {
-          "title": "Docker is weird",
-          "link": "https://codeandcake.dev/posts/2026-10-22-docker-is-weird",
-          "date": "2026-10-22 23:45",
+          "title": "Canadians are running out of time to oppose Bill C-22",
+          "link": "https://www.eff.org/deeplinks/2026/10/canadians-are-running-out-time-oppose-dangerous-c-22-surveillance-bill",
+          "date": "2026-10-22 22:43",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50202681"
+          "comments": "https://news.ycombinator.com/item?id=50202114"
         },
         {
-          "title": "eMudhra ignored Mozilla Root investigation deadline; blames social media",
-          "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=2083449",
-          "date": "2026-10-23 14:52",
+          "title": "Show HN: Corgi, a helpful {agent, terminal} multiplexer",
+          "link": "https://corgi.computer/",
+          "date": "2026-10-23 19:46",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50210067"
+          "comments": "https://news.ycombinator.com/item?id=50214373"
         },
         {
-          "title": "Show HN: We had AI write a wiki from 45k Enron emails, every fact cited",
-          "link": "https://www.thisandthat.chat/enron/",
-          "date": "2026-10-23 12:02",
+          "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
+          "link": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
+          "date": "2026-10-23 19:34",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50207620"
+          "comments": "https://news.ycombinator.com/item?id=50214218"
         },
         {
-          "title": "Investor-owned utilities charge 23% more for electricity than public providers",
-          "link": "https://www.kadoa.com/energy-prices/insights/investor-owned-utilities",
-          "date": "2026-10-23 13:41",
+          "title": "Rise of collagen-eating microbes may help explain gaps in the fossil record",
+          "link": "https://www.cam.ac.uk/research/news/rise-of-collagen-eating-microbes-may-help-explain-gaps-in-the-fossil-record",
+          "date": "2026-10-20 15:41",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50208837"
-        },
-        {
-          "title": "The foolishness of \"natural language programming\" (1978)",
-          "link": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html",
-          "date": "2026-10-23 00:52",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50203161"
-        },
-        {
-          "title": "The alien space of science: Coherent but cognitively unavailable directions",
-          "link": "https://arxiv.org/abs/2603.01092",
-          "date": "2026-10-22 13:25",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50195002"
-        },
-        {
-          "title": "Job Loss and Cortisone Mania",
-          "link": "https://tilschuenemann.de/job-loss-cortisone-mania",
-          "date": "2026-10-23 10:31",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50206840"
-        },
-        {
-          "title": "Every AI model has the same \"controversial\" take on humans",
-          "link": "https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans",
-          "date": "2026-10-22 16:08",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50197313"
-        },
-        {
-          "title": "Show HN: OnKey – I'm a bad singer, so I built an app to show where I'm off-key",
-          "link": "https://github.com/dsmurrell/onkey",
-          "date": "2026-10-22 14:04",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50195488"
+          "comments": "https://news.ycombinator.com/item?id=50168075"
         }
       ]
     },
@@ -95,6 +95,12 @@
       "name": "CNN 科技",
       "site": "https://edition.cnn.com/business/tech",
       "items": [
+        {
+          "title": "Consumers across party lines are fed up with high gas prices",
+          "link": "https://edition.cnn.com/2026/10/23/economy/us-economy-consumer-sentiment-final-october",
+          "date": "2026-10-23",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
         {
           "title": "So you say you hate ‘surveillance pricing’",
           "link": "https://edition.cnn.com/2026/10/19/business/surveillance-prices-government-bans",
@@ -160,12 +166,6 @@
           "link": "https://edition.cnn.com/2026/10/18/tech/linkedin-fighting-ai-posts",
           "date": "2026-10-18",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "What happens if AI agents start speaking their own language?",
-          "link": "https://edition.cnn.com/2026/10/16/tech/ai-speaking-own-language",
-          "date": "2026-10-16",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         }
       ]
     },
@@ -173,6 +173,24 @@
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "iPhone Duo才用6小時螢幕就自裂！果粉傻眼：摺不到20次",
+          "link": "https://3c.ltn.com.tw/news/68048",
+          "date": "2026/10/24 08:10",
+          "summary": "蘋果首款摺疊手機iPhone Duo於昨（23日）正式開賣，雖然售價不便宜，從74,900元一路到118,900元， ..."
+        },
+        {
+          "title": "連兩天放颱風假！薔琵何時遠離台灣？6大平台即時追動態",
+          "link": "https://3c.ltn.com.tw/news/68054",
+          "date": "2026/10/24 07:51",
+          "summary": "颱風薔琵持續影響台灣，全台連續兩天大範圍停班停課，繼昨(23日)有20個縣市放颱風假後，今(24日)仍有13個縣市停 ..."
+        },
+        {
+          "title": "Epson雙新機升級頂級影音空間 4K雷射投影具備3LCD技術 AI智慧超解像畫質更清晰",
+          "link": "https://3c.ltn.com.tw/news/68046",
+          "date": "2026/10/24 05:44",
+          "summary": "Epson全新4K雷射家庭劇院投影機EH-LS5000、EH-LS6000，主打透過多項AI技術提升畫質，在家就能身 ..."
+        },
         {
           "title": "《影之刃零》粉絲準備掏錢！華碩ROG聯名5款電競周邊 1,990元起",
           "link": "https://3c.ltn.com.tw/news/68044",
@@ -226,24 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68029",
           "date": "2026/10/23 09:40",
           "summary": "Google 持續擴大 Gemini 的車載應用，正式將 Gemini 整合至 Apple CarPlay 版 Go ..."
-        },
-        {
-          "title": "iPhone Duo明年再買更好？二代有望補上最大缺點 蘋果已在測試",
-          "link": "https://3c.ltn.com.tw/news/68032",
-          "date": "2026/10/23 09:00",
-          "summary": "蘋果首款摺疊手機iPhone Duo今(23日)正式上市，售價74,900元起，雖然價格不便宜，仍掀起果粉搶購熱潮。 ..."
-        },
-        {
-          "title": "玩家哭！日本2款經典手遊被迫永久關閉 都是PHP漏洞害的",
-          "link": "https://3c.ltn.com.tw/news/68037",
-          "date": "2026/10/23 08:30",
-          "summary": "廣泛應用於網站及電子商務平台的程式語言PHP，近日被揭露兩項重大資安漏洞，讓全球網路拉警報。儘管PHP開發團隊已緊急 ..."
-        },
-        {
-          "title": "薔琵颱風走到哪了？6大平台即時追動態 數千人守直播",
-          "link": "https://3c.ltn.com.tw/news/68036",
-          "date": "2026/10/23 08:00",
-          "summary": "颱風薔琵來襲，今(23)全台20個縣市全面停班停課，不少民眾也緊盯颱風變化。其中，YouTube頻道「台灣地震監視」 ..."
         }
       ]
     },
