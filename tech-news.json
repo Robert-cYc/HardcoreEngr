@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24 00:43",
+  "updated": "2026-10-24 02:35",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -13,13 +13,6 @@
           "comments": "https://news.ycombinator.com/item?id=50212065"
         },
         {
-          "title": "Apple Music 404 Not Found",
-          "link": "https://music.apple.com/this-url-doesnt-exist",
-          "date": "2026-10-23 12:28",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50207910"
-        },
-        {
           "title": "Evolving Threat: http2shell is an RCE in node, Python, and more",
           "link": "https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8",
           "date": "2026-10-23 23:30",
@@ -27,18 +20,18 @@
           "comments": "https://news.ycombinator.com/item?id=50216791"
         },
         {
+          "title": "Apple Music 404 Not Found",
+          "link": "https://music.apple.com/this-url-doesnt-exist",
+          "date": "2026-10-23 12:28",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50207910"
+        },
+        {
           "title": "CVE Tracker",
           "link": "https://cve.0xosprey.com/",
           "date": "2026-10-23 21:21",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50215530"
-        },
-        {
-          "title": "Today, we hacked what we'd set out to hack: the iPhone",
-          "link": "https://blog.calif.io/p/iphone",
-          "date": "2026-10-23 16:21",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50211474"
         },
         {
           "title": "Dessa: the most authentic full-duplex speech model ever built",
@@ -55,6 +48,13 @@
           "comments": "https://news.ycombinator.com/item?id=50202285"
         },
         {
+          "title": "Today, we hacked what we'd set out to hack: the iPhone",
+          "link": "https://blog.calif.io/p/iphone",
+          "date": "2026-10-23 16:21",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50211474"
+        },
+        {
           "title": "The Real Kevin Bacon",
           "link": "https://pudding.cool/2026/10/kevin-bacon/",
           "date": "2026-10-20 17:10",
@@ -69,25 +69,25 @@
           "comments": "https://news.ycombinator.com/item?id=50202114"
         },
         {
+          "title": "Bringing uv and ty together",
+          "link": "https://astral.sh/blog/uv-ty-integration",
+          "date": "2026-10-20 21:30",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50172962"
+        },
+        {
+          "title": "C vs. C#: racing VLC's Gaussian blur",
+          "link": "https://martinfinkel.com/blog/gaussian-blur-c-vs-csharp/",
+          "date": "2026-10-21 05:48",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50176544"
+        },
+        {
           "title": "Show HN: Corgi, a helpful {agent, terminal} multiplexer",
           "link": "https://corgi.computer/",
           "date": "2026-10-23 19:46",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50214373"
-        },
-        {
-          "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
-          "link": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
-          "date": "2026-10-23 19:34",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50214218"
-        },
-        {
-          "title": "Rise of collagen-eating microbes may help explain gaps in the fossil record",
-          "link": "https://www.cam.ac.uk/research/news/rise-of-collagen-eating-microbes-may-help-explain-gaps-in-the-fossil-record",
-          "date": "2026-10-20 15:41",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50168075"
         }
       ]
     },
@@ -174,6 +174,24 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "誰在買iPhone 18 Pro？通路數據曝：這些蘋果釘子戶都換了",
+          "link": "https://3c.ltn.com.tw/news/68045",
+          "date": "2026/10/24 10:21",
+          "summary": "蘋果iPhone 18 Pro系列上市後掀起一波換機潮，從通路最新公布的二手回收數據來看，這波換機主力族群其實相當明 ..."
+        },
+        {
+          "title": "LINE萬聖節彩蛋來了！輸入3組關鍵字 熊大、莎莉驚喜現身",
+          "link": "https://3c.ltn.com.tw/news/68050",
+          "date": "2026/10/24 09:00",
+          "summary": "萬聖節快到了，LINE也悄悄準備好驚喜！LINE宣布推出2026年萬聖節限定聊天室特效，只要在聊天時輸入指定關鍵字， ..."
+        },
+        {
+          "title": "蘋果首款觸控 MacBook Pro 蓄勢待發！四大技術升級優勢搶先看",
+          "link": "https://3c.ltn.com.tw/news/68053",
+          "date": "2026/10/24 08:40",
+          "summary": "蘋果（Apple）預計在美國時間10月28日舉辦的Pro and Tell新品發表活動上，正式推出備受期待的首款觸控 ..."
+        },
+        {
           "title": "iPhone Duo才用6小時螢幕就自裂！果粉傻眼：摺不到20次",
           "link": "https://3c.ltn.com.tw/news/68048",
           "date": "2026/10/24 08:10",
@@ -226,24 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68041",
           "date": "2026/10/23 12:00",
           "summary": "用了快10年的YouTube操作習慣要改了！YouTube公布新版手機App首頁介面，其中最有感的變化，就是將原本位 ..."
-        },
-        {
-          "title": "30 年經典遊戲工作室畫下句點！《闇龍紀元》、《質量效應》幕後推手 BioWare 宣布關門",
-          "link": "https://3c.ltn.com.tw/news/68039",
-          "date": "2026/10/23 11:07",
-          "summary": "曾打造《質量效應》（Mass Effect）、《闇龍紀元》（Dragon Age）等經典角色扮演遊戲（RPG）知名開 ..."
-        },
-        {
-          "title": "iPhone Duo好市多開賣5分鐘搶光！官網還有現貨 單機便宜4千元",
-          "link": "https://3c.ltn.com.tw/news/68038",
-          "date": "2026/10/23 09:55",
-          "summary": "蘋果摺疊手機iPhone Duo於今(23日)開賣，但卻遇上薔琵颱風攪局，不過，好市多全台賣場維持正常營運，不少人從 ..."
-        },
-        {
-          "title": "iPhone 車主等到了！CarPlay 版 Google 地圖加入 Gemini 全球陸續推送",
-          "link": "https://3c.ltn.com.tw/news/68029",
-          "date": "2026/10/23 09:40",
-          "summary": "Google 持續擴大 Gemini 的車載應用，正式將 Gemini 整合至 Apple CarPlay 版 Go ..."
         }
       ]
     },
@@ -251,6 +251,34 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "台積電明年營收能否破 8 兆？不只看輝達，更要看蘇姿丰",
+          "link": "https://technews.tw/2026/10/24/tsmc-revenue-exceed-8-trillion-next-year-nvidia-lisa-su/",
+          "date": "2026-10-24 02:00",
+          "summary": "未來，牽動台積電業績的指標，將不再只有輝達一枝獨秀。 台積電今年第三季的法說會，再度端出一張亮麗財報：單季淨利 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "輝達 AI 工廠點將！矽品 CPO 產能拚增 30 倍，欣興、京元電迎擴產爆發期",
+          "link": "https://technews.tw/2026/10/24/nvidia-names-4-supply-chain-boost-production-shipments-kyec-unimicron-spil/",
+          "date": "2026-10-24 01:00",
+          "summary": "輝達德國柏林 GTC 於 10 月 21 日登場，根據《財訊》雙週刊報導，輝達超大規模與高效能運算副總裁 Ia [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Wi-Fi 也能當金屬探測器用！瑞典開發 AI 系統辨識隱藏手槍，準確率達 72.5%",
+          "link": "https://technews.tw/2026/10/24/researchers-train-ai-to-detect-concealed-handguns-using-wi-fi-signals/",
+          "date": "2026-10-24 00:45",
+          "summary": "瑞典國防研究局（FOI）開發出名為 WiFireNet 的實驗性人工智慧系統，嘗試用 Wi-Fi 訊號變化辨識 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 成功法則：20% 靠技術、80% 靠轉型，打造對手難以複製的護城河",
+          "link": "https://finance.technews.tw/2026/10/24/rules-for-successful-ai-transformation/",
+          "date": "2026-10-24 00:30",
+          "summary": "企業對人工智慧（AI）的投資熱潮持續升溫。相關報告顯示，94% 的執行長表示即使短期回報不明朗，仍會持續加碼投 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "Space Bunny 身分揭曉！MiniMax 公開 M3.1 Flash 428B 模型權重",
           "link": "https://technews.tw/2026/10/23/minimax-m3-1-flash/",
@@ -306,34 +334,6 @@
           "date": "2026-10-23 06:20",
           "summary": "SpaceX 向全體員工發布內部信件，祭出加薪 20% 的優渥條件，徵求自願者暫時移駐田納西州曼菲斯（Memp [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "DeepSeek 與 MiniMax 獲准出海，傳配合中國 AI 技術出口新規",
-          "link": "https://technews.tw/2026/10/23/deepseek-minimax-win-approval-for-global-use-state-media-says/",
-          "date": "2026-10-23 06:10",
-          "summary": "中國央視旗下新媒體報導，DeepSeek 與 MiniMax 兩家人工智慧企業已獲准全球使用，並已完成相關登記 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 燒錢過猛引爆市場疑慮，美股遇數月來最慘賣壓",
-          "link": "https://finance.technews.tw/2026/10/23/stocks-see-steepest-decline-in-months-amid-a-i-worries/",
-          "date": "2026-10-23 05:50",
-          "summary": "受科技巨頭財報引發資本支出擔憂，加上中東局勢再度升溫，美股 22 日遭遇數月以來最慘烈的一波拋售潮。避險資金湧 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "OpenAI 動用近 2 千個 GPT-Rosalind 代理，32 分鐘完成小鼠全腦基因圖譜分析",
-          "link": "https://technews.tw/2026/10/23/openai-runs-1946-gpt-rosalind-agents-on-a-mouse-brain-atlas/",
-          "date": "2026-10-23 03:50",
-          "summary": "OpenAI 與藥物開發新創 PerturbAI、斯克里普斯研究所（Scripps Research）合作，讓 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "用白話文與 DNA 對話，Hugging Face 發表 Carbon-X 助攻基因療法",
-          "link": "https://technews.tw/2026/10/23/hugging-faces-new-ai-model-lets-you-chat-with-dna/",
-          "date": "2026-10-23 03:40",
-          "summary": "Hugging Face 於 10 月 22 日推出一款名為 Carbon-X 的開源 AI 生物模型，主打讓 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,27 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "Xbox Series X 成功跨界跑 PS5 遊戲，卻受限 5GB 記憶體天花板",
+          "link": "https://ccc.technews.tw/2026/10/24/xbox-series-x-successfully-runs-ps5-games/",
+          "date": "2026-10-24 02:30",
+          "summary": "開發者社群近日展示了一項引發熱烈討論的實驗：Xbox Series X 已經能夠透過移植版模擬器執行部分 Pl [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "台積電明年營收能否破 8 兆？不只看輝達，更要看蘇姿丰",
+          "link": "https://technews.tw/2026/10/24/tsmc-revenue-exceed-8-trillion-next-year-nvidia-lisa-su/",
+          "date": "2026-10-24 02:00",
+          "summary": "未來，牽動台積電業績的指標，將不再只有輝達一枝獨秀。 台積電今年第三季的法說會，再度端出一張亮麗財報：單季淨利 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "輝達 AI 工廠點將！矽品 CPO 產能拚增 30 倍，欣興、京元電迎擴產爆發期",
+          "link": "https://technews.tw/2026/10/24/nvidia-names-4-supply-chain-boost-production-shipments-kyec-unimicron-spil/",
+          "date": "2026-10-24 01:00",
+          "summary": "輝達德國柏林 GTC 於 10 月 21 日登場，根據《財訊》雙週刊報導，輝達超大規模與高效能運算副總裁 Ia [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "576 顆 GPU 合體成一顆巨型 GPU，輝達揭露 Rubin Ultra NVL576 架構",
           "link": "https://technews.tw/2026/10/23/nvidia-to-connect-576-rubin-ultra-gpus-using-cpo-to-create-one-giant-gpu/",
@@ -403,27 +424,6 @@
           "date": "2026-10-23 00:30",
           "summary": "據外媒報導，成立僅一年的 AI 新創公司 Flapping Airplanes 宣布完成 10 億美元的新一輪 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "聯電攜手愛普科技推進 AI 與高效能運算系統電源解決方案",
-          "link": "https://technews.tw/2026/10/23/umc-and-app-technology-advance-power-solutions-for-ai-and-high-performance-computing-systems/",
-          "date": "2026-10-23 00:30",
-          "summary": "晶圓代工大廠聯電與愛普科技共同宣布展開技術與製造合作，推進 AI 與高效能運算（HPC）系統的供電解決方案。此 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "台灣網友自製〈Fab24hr〉晶圓廠模擬器暴紅，高壓日常連外媒都驚呼：恐怖遊戲",
-          "link": "https://ccc.technews.tw/2026/10/23/taiwan-wafer-fab-simulation-game-goes-viral/",
-          "date": "2026-10-23 00:10",
-          "summary": "台灣網友自製的免費網頁遊戲〈fab24hr 半導體晶圓廠打工人的一天〉，將機台故障、半夜接 on-call 電 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "科技廠台中搶地，豪砸 130 億，大立光連買七座廠房最受注目",
-          "link": "https://finance.technews.tw/2026/10/23/tech-firms-rush-to-snap-up-land-in-taichung/",
-          "date": "2026-10-22 23:30",
-          "summary": "台中 AI 半導體聚落加速成形，掀科技廠搶地大戰。今年前三季，八大上市櫃科技廠斥資逾 130 億元，狂掃逾 3 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,20 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "AI 資料中心缺電怎麼辦？輝達從用電端下手，DSX 最高省電 30%",
+          "link": "https://technews.tw/2026/10/24/nvidia-dsx-ai-data-center-power-shortage-30-percent-savings/",
+          "date": "2026-10-24 02:07",
+          "summary": "隨著 AI 資料中心用電需求持續攀升，除了增加電力供應，如何從用電端提高效率也成為重要課題。輝達於德國柏林 G [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "科學家發現「抗凍」金屬，-253°C 極限低溫仍不脆裂",
+          "link": "https://technews.tw/2026/10/24/scientists-discover-extremely-low-temperature-antifreeze-metal/",
+          "date": "2026-10-24 01:30",
+          "summary": "一支國際研究團隊近期取得重大材料學突破，發現兩種以鈮與鈦為基礎的實驗合金，即使身處約 20 開爾文（相當於 - [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "東元小金雞安達康 29 日登錄興櫃，搶攻 AI 資料中心商機",
           "link": "https://technews.tw/2026/10/23/teco-advanpower-list-emerging-stock-board-29th-eyes-ai-data-center-market/",
@@ -500,20 +514,6 @@
           "date": "2026-10-21 23:40",
           "summary": "電動車電池從車上拆下後，並不代表生命就此結束。外媒 Engadget 13 日報導，退役電池依健康狀態不同，可 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "台達電入列輝達 DSX POD 合作陣容，AI 工廠部署最快縮短至 14 天",
-          "link": "https://technews.tw/2026/10/22/delta-electronics-nvidia-dsx-pod-ai-factory-deployment-14-days/",
-          "date": "2026-10-21 22:00",
-          "summary": "輝達於德國柏林 GTC 大會宣布推出全新 DSX POD 模組化 AI 工廠參考設計，將 Vera Rubin [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "輝達砸大錢布局供應鏈戰略，點名台灣、日本、韓國多家供應鏈廠商受惠",
-          "link": "https://finance.technews.tw/2026/10/21/nvidia-invests-heavily-in-its-supply-chain-strategy/",
-          "date": "2026-10-21 12:50",
-          "summary": "輝達（NVIDIA）於 21 日正式宣布，與全球多家核心供應鏈合作夥伴達成大規模擴產計畫，以擴展全球製造能力， [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -521,6 +521,13 @@
       "name": "CCC 追新聞",
       "site": "https://ccc.technews.tw/",
       "items": [
+        {
+          "title": "Xbox Series X 成功跨界跑 PS5 遊戲，卻受限 5GB 記憶體天花板",
+          "link": "https://ccc.technews.tw/2026/10/24/xbox-series-x-successfully-runs-ps5-games/",
+          "date": "2026-10-24 02:30",
+          "summary": "開發者社群近日展示了一項引發熱烈討論的實驗：Xbox Series X 已經能夠透過移植版模擬器執行部分 Pl [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "宏達電推出互動式數位夥伴 VIVEE！但抱歉了，台灣還買不到",
           "link": "https://ccc.technews.tw/2026/10/23/htc-vivee/",
@@ -596,13 +603,6 @@
           "link": "https://ccc.technews.tw/2026/10/17/switch-2-sticks-with-physical-game-cards-for-now-ondo-finance-company-ondo-tokenized-stocks-institutional-grade-finance-delivered-onchain-accessible-to-all-explore-tokeniz/",
           "date": "2026-10-16 16:00",
           "summary": "Sony 已宣布 2028 年起停止為 PlayStation 新遊戲製作實體光碟，但任天堂表明目前沒有取消實 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "比手機還輕巧，微軟 Xbox 史上最小「Nano 控制器」11 月登台",
-          "link": "https://ccc.technews.tw/2026/10/16/xbox-ultra-mini-nano-controller/",
-          "date": "2026-10-16 02:50",
-          "summary": "微軟 Xbox 於 10 月 15 日正式推出全新「Nano 控制器」（Nano Controller），以建 [&#8230;]",
           "comments": ""
         }
       ]
