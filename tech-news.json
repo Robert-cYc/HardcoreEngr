@@ -1,17 +1,10 @@
 {
-  "updated": "2026-10-25 00:20",
+  "updated": "2026-10-25 02:23",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
-        {
-          "title": "America Has Lost 200k of Jobs in Media, Film and the Arts. How Much Is AI?",
-          "link": "https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class",
-          "date": "2026-10-24 23:11",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50226419"
-        },
         {
           "title": "We should be more ambitious with the software we build",
           "link": "https://danluu.com/ambitious/",
@@ -20,11 +13,11 @@
           "comments": "https://news.ycombinator.com/item?id=50225695"
         },
         {
-          "title": "Show HN: Steal My Bitcoin",
-          "link": "https://stealmybitcoin.com/",
-          "date": "2026-10-24 20:30",
+          "title": "Listen and read USA nuclear forces Emergency Action Messages, heard on 11175 kHz",
+          "link": "https://missileer.watch",
+          "date": "2026-10-24 19:43",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50224916"
+          "comments": "https://news.ycombinator.com/item?id=50224422"
         },
         {
           "title": "The Goose Programming Language",
@@ -34,18 +27,11 @@
           "comments": "https://news.ycombinator.com/item?id=50224100"
         },
         {
-          "title": "Roku developer repositories moved from GitHub to GitLab",
-          "link": "https://blog.roku.com/developer/gitlab-move",
-          "date": "2026-10-24 16:06",
+          "title": "America has lost 200k of jobs in media, film and the arts. How much is AI?",
+          "link": "https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class",
+          "date": "2026-10-24 23:11",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50222622"
-        },
-        {
-          "title": "Listen and read USA nuclear forces Emergency Action Messages, heard on 11175 kHz",
-          "link": "https://missileer.watch",
-          "date": "2026-10-24 19:43",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50224422"
+          "comments": "https://news.ycombinator.com/item?id=50226419"
         },
         {
           "title": "Why Gopher in 2026?",
@@ -69,25 +55,39 @@
           "comments": "https://news.ycombinator.com/item?id=50224210"
         },
         {
-          "title": "The St. Helena 5 pence coin shows Jonathan, a roughly 190 year old tortoise",
-          "link": "https://de.numista.com/9866",
-          "date": "2026-10-24 16:41",
+          "title": "FindMyWeb: Apple Find My, reverse enginiered",
+          "link": "https://codeberg.org/Misom/FindMyWeb",
+          "date": "2026-10-24 23:42",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50222927"
+          "comments": "https://news.ycombinator.com/item?id=50226646"
         },
         {
-          "title": "Full Disk Encryption on Fedora with TPM2",
-          "link": "https://www.apalrd.net/posts/2026/ent_luks/",
-          "date": "2026-10-22 12:46",
+          "title": "Reactive Optimizers: rewrite the optimizer's source code during training",
+          "link": "https://xingjianbai.com/reactive-optimizers/",
+          "date": "2026-10-21 22:17",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50194602"
+          "comments": "https://news.ycombinator.com/item?id=50188440"
         },
         {
-          "title": "FreeDNS",
-          "link": "https://freedns.afraid.org/",
-          "date": "2026-10-24 15:20",
+          "title": "I Built a Stereo Vision Board for Hardware Hackers",
+          "link": "https://rootkitlabs.com/2026/10/06/i-built-a-stereo-vision-board-for-hardware-hackers/",
+          "date": "2026-10-20 20:45",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50222133"
+          "comments": "https://news.ycombinator.com/item?id=50172432"
+        },
+        {
+          "title": "Show HN: Steal My Bitcoin",
+          "link": "https://stealmybitcoin.com/",
+          "date": "2026-10-24 20:30",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50224916"
+        },
+        {
+          "title": "Social dynamics of toxic metal industry in medieval Europe",
+          "link": "https://www.cambridge.org/core/journals/antiquity/article/social-dynamics-of-toxic-metal-industry-in-medieval-europe-peak-district-lead-production-ad-6001500/34A2A16AC99B1B12E3EB99CEA1DDB829",
+          "date": "2026-10-20 17:06",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50169450"
         }
       ]
     },
@@ -174,6 +174,12 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "千萬YouTuber暴力實測！iPhone Duo轉軸卡死、螢幕冒綠線",
+          "link": "https://3c.ltn.com.tw/news/68060",
+          "date": "2026/10/25 09:01",
+          "summary": "蘋果首款摺疊手機iPhone Duo已經正式上市，國外卻陸續傳出內螢幕損壞案例，多數為內螢幕轉軸位置出現裂痕或亮線， ..."
+        },
+        {
           "title": "Google宣布免費功能再延長一年！這款Pixel手機用戶有福",
           "link": "https://3c.ltn.com.tw/news/68051",
           "date": "2026/10/24 17:00",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68054",
           "date": "2026/10/24 07:51",
           "summary": "颱風薔琵持續影響台灣，全台連續兩天大範圍停班停課，繼昨(23日)有20個縣市放颱風假後，今(24日)仍有13個縣市停 ..."
-        },
-        {
-          "title": "Epson雙新機升級頂級影音空間 4K雷射投影具備3LCD技術 AI智慧超解像畫質更清晰",
-          "link": "https://3c.ltn.com.tw/news/68046",
-          "date": "2026/10/24 05:44",
-          "summary": "Epson全新4K雷射家庭劇院投影機EH-LS5000、EH-LS6000，主打透過多項AI技術提升畫質，在家就能身 ..."
         }
       ]
     },
@@ -251,6 +251,48 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "AI 新經濟聚焦三領域，簡立峰提醒一風險可能連黃仁勳都沒想到",
+          "link": "https://finance.technews.tw/2026/10/25/ai-new-economy-three-areas-jan-lee-feng-warns-risk-jensen-huang-unanticipated/",
+          "date": "2026-10-25 01:00",
+          "summary": "AI 遞迴自我改進（Recursive Self-Improvement）象徵發展進入新紀元。《財訊》報導，G [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "語音 AI 為何遲未迎爆發期，辨識準度與情緒是最大弱點",
+          "link": "https://technews.tw/2026/10/25/voice-ai-executives-say-context-still-limits-natural-conversations/",
+          "date": "2026-10-25 00:30",
+          "summary": "語音 AI 雖然持續進化，但業界主管普遍認為，它距離迎來類似 ChatGPT 的關鍵時刻仍有明顯差距。Poly [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "沒有指令的 AI 都在做什麼？MIT 虛擬島嶼實驗：它們會玩耍、推理，甚至做實驗",
+          "link": "https://technews.tw/2026/10/24/researchers-stranded-an-ai-agent-on-a-virtual-island/",
+          "date": "2026-10-24 09:00",
+          "summary": "麻省理工學院（MIT）計算機科學與人工智慧實驗室（CSAIL）一項研究顯示，當 AI 代理人被放進封閉的虛擬環 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "非科學家團隊靠 Claude 設計抗蠍毒蛋白質，64 小時完成、實驗驗證成功",
+          "link": "https://technews.tw/2026/10/24/ai-does-the-lab-work/",
+          "date": "2026-10-24 08:00",
+          "summary": "一支幾乎沒有科學背景的五人團隊，在 Anthropic 的協助下完成一項引人注目的蛋白質設計實驗：他們讓 AI [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "神經網路「沒那麼難懂」，OpenAI 前研究員 2.6 萬字長文引爆學界正反論戰",
+          "link": "https://technews.tw/2026/10/24/ai-world-stunned-breakthrough-unravels-neural-network-mystery/",
+          "date": "2026-10-24 05:00",
+          "summary": "AI 新創公司 Goodfire 的研究員 Nick Cammarata 近期發表一篇長達 2.6 萬字的部落 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AWS 產能預訂至 2028 年，亞馬遜示警電力、記憶體短缺難解",
+          "link": "https://technews.tw/2026/10/24/aws-capacity-booked-2028-amazon-warns-power-memory-shortages/",
+          "date": "2026-10-24 03:26",
+          "summary": "隨著 AI 基礎設施需求持續攀升，亞馬遜雲端服務（AWS）運算產能已供不應求。根據外電報導，亞馬遜執行長 An [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "台積電明年營收能否破 8 兆？不只看輝達，更要看蘇姿丰",
           "link": "https://technews.tw/2026/10/24/tsmc-revenue-exceed-8-trillion-next-year-nvidia-lisa-su/",
@@ -292,48 +334,6 @@
           "date": "2026-10-23 08:50",
           "summary": "日本經濟產業省今日表示，將在獨立行政法人資訊處理推進機構（IPA）11 月設置一支專門團隊，用人工智慧（AI） [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "陳立武堅持「有訂單才擴產」，英特爾美國兩座新廠同步加速",
-          "link": "https://technews.tw/2026/10/23/intel-advances-chip-plants-as-ai-demand-surges/",
-          "date": "2026-10-23 07:40",
-          "summary": "英特爾（Intel）延宕多時的美國晶圓廠擴建計畫，近日再度出現明顯進展。公司表示，位於亞利桑那州鳳凰城附近 O [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "20 個月靠 AI 出書 371 本大賺惹議，南非作家為己發聲",
-          "link": "https://technews.tw/2026/10/23/south-african-author-ai-books-371-20-months-profit-controversy-speaks-out/",
-          "date": "2026-10-23 07:30",
-          "summary": "自 2025 年 2 月以來，南非作家「哈特」（Coral Hart）藉助人工智慧（AI）已出版多達 371 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "川普國會危機致台股 AI 多頭變天？法人曝逢低撿便宜靠這三類基金",
-          "link": "https://finance.technews.tw/2026/10/23/congressional-control/",
-          "date": "2026-10-23 07:27",
-          "summary": "美國期中選舉進入倒數，國會控制權可能重新洗牌，市場擔憂民主黨若拿下國會多數席次，恐牽制川普政府施政，甚至衝擊 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Arc 瀏覽器 12/22 終止服務，開發商推薦 Dia 接棒",
-          "link": "https://technews.tw/2026/10/23/the-browser-company-to-sunset-arc-on-december-22/",
-          "date": "2026-10-23 06:44",
-          "summary": "Arc 瀏覽器的開發商 The Browser Company 已決定，今年 12 月 22 日將讓 Arc [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "打造超過 150 個 AI 助理代管日常，美國爸爸化身「人類執行長」找回生活主導權",
-          "link": "https://technews.tw/2026/10/23/father-builds-100-ai-assistants-reclaim-life/",
-          "date": "2026-10-23 06:23",
-          "summary": "美國印第安納州一名 44 歲的資安從業者兼 AI 教育創作者 Tristen O&#8217;Brien，近年 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "算力需求大爆發，SpaceX 發動「突擊」加薪 20% 徵員工趕工擴建超級電腦",
-          "link": "https://technews.tw/2026/10/23/spacex-urgently-hiring-employees-pay-raises-build-supercomputer/",
-          "date": "2026-10-23 06:20",
-          "summary": "SpaceX 向全體員工發布內部信件，祭出加薪 20% 的優渥條件，徵求自願者暫時移駐田納西州曼菲斯（Memp [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,41 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "南亞科 Q3 獲利創紀錄股價卻重挫！長鑫存儲擴產來襲，台灣記憶體廠該怕嗎",
+          "link": "https://technews.tw/2026/10/25/nanya-2028/",
+          "date": "2026-10-25 02:00",
+          "summary": "南亞科 12 日公布創紀錄的 2026 年第三季財報，不僅單季稅後淨利達 876.3 億元，較去年同期暴增 5 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AMD 玩家福音！新模組讓 Radeon 也能跑 NVIDIA DLSS，首度解鎖光線重建",
+          "link": "https://technews.tw/2026/10/24/all-dlss-features-including-ray-reconstruction-have-been-ported-to-rdna-4-and-3/",
+          "date": "2026-10-24 07:00",
+          "summary": "PC 模組社群再度突破 NVIDIA 專有技術的使用邊界。開發者 danielblnc 近日釋出 DLSS-N [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "美國砸 3.89 億美元扶植功率半導體，鎖定 AI 資料中心與核融合應用",
+          "link": "https://technews.tw/2026/10/24/us-invests-389-million-boost-power-semiconductors-ai-data-centers-nuclear-fusion-applications/",
+          "date": "2026-10-24 06:07",
+          "summary": "美國持續擴大本土功率半導體及關鍵材料布局。美國商務部宣布，依據《晶片與科學法案》（CHIPS and Scie [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "超導類神經網路晶片通過核融合測試，每秒即時分析百萬筆電漿資料",
+          "link": "https://technews.tw/2026/10/24/covering-the-fastest-computers-in-the-world-and-the-people-who-run-them-13/",
+          "date": "2026-10-24 06:00",
+          "summary": "美國能源部（DOE）布魯克黑文國家實驗室（Brookhaven National Laboratory）19 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AWS 產能預訂至 2028 年，亞馬遜示警電力、記憶體短缺難解",
+          "link": "https://technews.tw/2026/10/24/aws-capacity-booked-2028-amazon-warns-power-memory-shortages/",
+          "date": "2026-10-24 03:26",
+          "summary": "隨著 AI 基礎設施需求持續攀升，亞馬遜雲端服務（AWS）運算產能已供不應求。根據外電報導，亞馬遜執行長 An [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "Xbox Series X 成功跨界跑 PS5 遊戲，卻受限 5GB 記憶體天花板",
           "link": "https://ccc.technews.tw/2026/10/24/xbox-series-x-successfully-runs-ps5-games/",
@@ -389,41 +424,6 @@
           "date": "2026-10-23 07:27",
           "summary": "美國期中選舉進入倒數，國會控制權可能重新洗牌，市場擔憂民主黨若拿下國會多數席次，恐牽制川普政府施政，甚至衝擊 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "黃仁勳：2029 年前記憶體難過剩，與中國企業合作持開放態度",
-          "link": "https://technews.tw/2026/10/23/memory-oversupply-is-unlikely-before-2029/",
-          "date": "2026-10-23 06:15",
-          "summary": "輝達（NVIDIA）執行長黃仁勳針對近期市場對記憶體半導體供過於求的疑慮發表看法。他指出，隨著人工智慧（AI） [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "含華為臉部辨識晶片，首度依新規封殺兩款裝置",
-          "link": "https://technews.tw/2026/10/23/two-devices-containing-huawei-facial-recognition-chips-banned-first-time-new-regulations/",
-          "date": "2026-10-23 01:20",
-          "summary": "美國聯邦傳播委員會（FCC）今天宣布，禁止 2 款內含中國華為旗下海思半導體製造的監控晶片裝置進入美國市場，這 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "市場投資人難以被滿足，科技大廠資本支出變化引發美股科技股重挫",
-          "link": "https://finance.technews.tw/2026/10/23/changes-in-capital-expenditures-by-major-tech-companies-triggered-a-sharp-drop-in-us-tech-stocks/",
-          "date": "2026-10-23 01:00",
-          "summary": "美股市場對人工智慧（AI）榮景的疑慮加劇，週四清晨盤前半導體與科技股遭遇顯著拋售潮，主因科技大廠在資本支出上釋 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "路透：台積電探尋稀土零組件替代方案，防中國管制衝擊",
-          "link": "https://technews.tw/2026/10/23/tsmc-seeks-factory-equipment-alternatives-to-thwart-chinas-rare-earths-grip/",
-          "date": "2026-10-23 00:50",
-          "summary": "路透社獨家報導，3 名知情人士透露，台積電正尋求工廠設備中稀土零組件的替代方案，目的是降低中國政府出口管制干擾 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 新創 Flapping Airplanes 獲 10 億美元注資，誓言將晶片效能榨到極致",
-          "link": "https://technews.tw/2026/10/23/flapping-airplanes-1-billion-funding/",
-          "date": "2026-10-23 00:30",
-          "summary": "據外媒報導，成立僅一年的 AI 新創公司 Flapping Airplanes 宣布完成 10 億美元的新一輪 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,20 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "Bloom Energy 財報創高卻重挫 11%，現金流引疑慮",
+          "link": "https://technews.tw/2026/10/24/bloom-energy-stock-plunges-over-11-despite-strong-earnings-cash-flow-turns-negative-ai-investment-concerns-emerge/",
+          "date": "2026-10-24 08:38",
+          "summary": "美國燃料電池業者 Bloom Energy 第三季營收及獲利雙雙創高，並第三度上調全年財測，但週五（23 日） [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "「非紅」標籤只是加分，台灣無人機突圍須先擠進大廠供應鏈",
+          "link": "https://technews.tw/2026/10/24/non-red-supply-chain-bonus-czech-taiwan-largest-drone-market-defense-startups-two-hurdles/",
+          "date": "2026-10-24 03:00",
+          "summary": "布拉格舉辦的捷克新創週的「DefenceTech on the Frontier of Europe」對談，烏 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "AI 資料中心缺電怎麼辦？輝達從用電端下手，DSX 最高省電 30%",
           "link": "https://technews.tw/2026/10/24/nvidia-dsx-ai-data-center-power-shortage-30-percent-savings/",
@@ -500,20 +514,6 @@
           "date": "2026-10-22 02:23",
           "summary": "隨著 AI 伺服器及高速網通需求持續成長，高階玻纖布需求增加，排擠一般電子級材料供應，帶動新一波漲價壓力。供應 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "輝達通包 ABF 載板產能！外資喊欣興光復廠獲大單目標價 1,775 元",
-          "link": "https://finance.technews.tw/2026/10/22/stanley-abf/",
-          "date": "2026-10-22 01:32",
-          "summary": "輝達（NVIDIA）計劃在未來三年內將載板產能提升 2.5 倍，摩根士丹利（Morgan Stanley）最新 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "電動車電池退役不等於報廢，維修、儲能與回收決定「第二池生」",
-          "link": "https://technews.tw/2026/10/22/what-happens-to-an-ev-battery-after-its-removed-from-your-car/",
-          "date": "2026-10-21 23:40",
-          "summary": "電動車電池從車上拆下後，並不代表生命就此結束。外媒 Engadget 13 日報導，退役電池依健康狀態不同，可 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -521,6 +521,13 @@
       "name": "CCC 追新聞",
       "site": "https://ccc.technews.tw/",
       "items": [
+        {
+          "title": "iPod 問世 25 週年，蘋果官網藏彩蛋",
+          "link": "https://ccc.technews.tw/2026/10/25/ipod-25th-anniversary/",
+          "date": "2026-10-25 02:05",
+          "summary": "適逢初代 iPod 問世 25 週年，蘋果悄悄在 Apple Music 網站加入一項懷舊彩蛋，將經典的初代 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "Xbox Series X 成功跨界跑 PS5 遊戲，卻受限 5GB 記憶體天花板",
           "link": "https://ccc.technews.tw/2026/10/24/xbox-series-x-successfully-runs-ps5-games/",
@@ -596,13 +603,6 @@
           "link": "https://ccc.technews.tw/2026/10/20/ai-interviewer-meets-ai-job-seeker/",
           "date": "2026-10-19 23:40",
           "summary": "美國喜劇演員兼 YouTuber Graham Dot Zip 最近分享一段引發熱議的影片。他派出專屬 AI [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "任天堂重申保留 Switch 2 實體卡，堅守玩家收藏與分享需求",
-          "link": "https://ccc.technews.tw/2026/10/17/switch-2-sticks-with-physical-game-cards-for-now-ondo-finance-company-ondo-tokenized-stocks-institutional-grade-finance-delivered-onchain-accessible-to-all-explore-tokeniz/",
-          "date": "2026-10-16 16:00",
-          "summary": "Sony 已宣布 2028 年起停止為 PlayStation 新遊戲製作實體光碟，但任天堂表明目前沒有取消實 [&#8230;]",
           "comments": ""
         }
       ]
