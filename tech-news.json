@@ -1,10 +1,31 @@
 {
-  "updated": "2026-10-25 02:23",
+  "updated": "2026-10-25 15:17",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
+        {
+          "title": "Tool book of a Nuremberg knight from 1505",
+          "link": "https://loeffelholz-codex.org/en/",
+          "date": "2026-10-25 12:37",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50230917"
+        },
+        {
+          "title": "fheroes2: A recreation of Heroes of Might and Magic II game engine",
+          "link": "https://github.com/ihhub/fheroes2",
+          "date": "2026-10-25 11:09",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50230384"
+        },
+        {
+          "title": "Show HN: Farol – a risk map of a pull request for the person who approves it",
+          "link": "https://github.com/winnin/farol",
+          "date": "2026-10-25 13:28",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50231349"
+        },
         {
           "title": "We should be more ambitious with the software we build",
           "link": "https://danluu.com/ambitious/",
@@ -13,11 +34,18 @@
           "comments": "https://news.ycombinator.com/item?id=50225695"
         },
         {
-          "title": "Listen and read USA nuclear forces Emergency Action Messages, heard on 11175 kHz",
-          "link": "https://missileer.watch",
-          "date": "2026-10-24 19:43",
+          "title": "Cerebras Deploys Trillion-Parameter AI Models",
+          "link": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
+          "date": "2026-10-25 01:33",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50224422"
+          "comments": "https://news.ycombinator.com/item?id=50227356"
+        },
+        {
+          "title": "How Japanese Dried Bonito Is Made",
+          "link": "https://kottke.org/26/10/how-japanese-dried-bonito-is-made",
+          "date": "2026-10-22 11:31",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50193936"
         },
         {
           "title": "The Goose Programming Language",
@@ -27,25 +55,32 @@
           "comments": "https://news.ycombinator.com/item?id=50224100"
         },
         {
-          "title": "America has lost 200k of jobs in media, film and the arts. How much is AI?",
-          "link": "https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class",
-          "date": "2026-10-24 23:11",
+          "title": "Samsung running a TensorFlow lite model on 960x540 image to track you",
+          "link": "https://twitter.com/mike64_t/status/2114150399406202896",
+          "date": "2026-10-25 10:42",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50226419"
+          "comments": "https://news.ycombinator.com/item?id=50230181"
         },
         {
-          "title": "Why Gopher in 2026?",
-          "link": "https://gopher.muffinlabs.com/sdf.org/users/nervtoji/phlog/001.txt",
-          "date": "2026-10-24 23:33",
+          "title": "Reverse engineer of PC-98 Touhou games retires",
+          "link": "https://rec98.nmlgc.net/blog/2026-10-05",
+          "date": "2026-10-22 16:16",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50226577"
+          "comments": "https://news.ycombinator.com/item?id=50197434"
         },
         {
-          "title": "Small Programs and Languages",
-          "link": "https://ratfactor.com/cards/pl-small",
-          "date": "2026-10-24 21:44",
+          "title": "The Lego group reveals collaboration with Daft Punk",
+          "link": "https://www.lego.com/en-us/categories/adults-welcome/article/daft-punk",
+          "date": "2026-10-25 12:48",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50225674"
+          "comments": "https://news.ycombinator.com/item?id=50231001"
+        },
+        {
+          "title": "Nikon photography contest winner loses title after scientists spot signs of AI",
+          "link": "https://www.techspot.com/news/114171-nikon-photography-contest-winner-loses-title-after-scientists.html",
+          "date": "2026-10-25 09:51",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50229827"
         },
         {
           "title": "SpeedCrunch 1.1",
@@ -53,41 +88,6 @@
           "date": "2026-10-24 19:19",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50224210"
-        },
-        {
-          "title": "FindMyWeb: Apple Find My, reverse enginiered",
-          "link": "https://codeberg.org/Misom/FindMyWeb",
-          "date": "2026-10-24 23:42",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50226646"
-        },
-        {
-          "title": "Reactive Optimizers: rewrite the optimizer's source code during training",
-          "link": "https://xingjianbai.com/reactive-optimizers/",
-          "date": "2026-10-21 22:17",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50188440"
-        },
-        {
-          "title": "I Built a Stereo Vision Board for Hardware Hackers",
-          "link": "https://rootkitlabs.com/2026/10/06/i-built-a-stereo-vision-board-for-hardware-hackers/",
-          "date": "2026-10-20 20:45",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50172432"
-        },
-        {
-          "title": "Show HN: Steal My Bitcoin",
-          "link": "https://stealmybitcoin.com/",
-          "date": "2026-10-24 20:30",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50224916"
-        },
-        {
-          "title": "Social dynamics of toxic metal industry in medieval Europe",
-          "link": "https://www.cambridge.org/core/journals/antiquity/article/social-dynamics-of-toxic-metal-industry-in-medieval-europe-peak-district-lead-production-ad-6001500/34A2A16AC99B1B12E3EB99CEA1DDB829",
-          "date": "2026-10-20 17:06",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50169450"
         }
       ]
     },
@@ -95,6 +95,12 @@
       "name": "CNN 科技",
       "site": "https://edition.cnn.com/business/tech",
       "items": [
+        {
+          "title": "Rent control doomed this mayor’s re-election campaign. He has no regrets",
+          "link": "https://edition.cnn.com/2026/10/25/business/rent-control-providence-mayor",
+          "date": "2026-10-25",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
         {
           "title": "We have more clothing options than ever. Why is shopping so hard?",
           "link": "https://edition.cnn.com/2026/10/24/business/its-not-just-you-theres-nowhere-to-shop-anymore",
@@ -104,12 +110,6 @@
         {
           "title": "Winter is coming. For Maine families, it’s never been more expensive.",
           "link": "https://edition.cnn.com/2026/10/24/economy/heating-costs-struggle-maine-families",
-          "date": "2026-10-24",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Couple weighed down by debt gets a small inheritance. An expert gives advice on how to manage it",
-          "link": "https://edition.cnn.com/2026/10/24/business/savings-challenge-participant-second-update-mariza-and-geffrey-gordon",
           "date": "2026-10-24",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -174,6 +174,36 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "蘋果最強小平板要來了！iPad mini 8傳聞5大升級一次看",
+          "link": "https://3c.ltn.com.tw/news/68049",
+          "date": "2026/10/25 16:30",
+          "summary": "蘋果預計在下週再發布一波新品，除了首款觸控MacBook Pro備受矚目，另一主角可能就是iPad mini 8，預 ..."
+        },
+        {
+          "title": "果粉再準備！蘋果本週傳推4大新品 新Mac打破賈伯斯堅持",
+          "link": "https://3c.ltn.com.tw/news/68061",
+          "date": "2026/10/25 16:00",
+          "summary": "蘋果預計在本週再發布一波新品，傳聞最大主角就是蘋果首款觸控MacBook Pro。如果消息屬實，意味著蘋果終於要打破 ..."
+        },
+        {
+          "title": "衣服晾室內怎麼乾最快？家電大廠實測3方法 電風扇輸慘了",
+          "link": "https://3c.ltn.com.tw/news/68058",
+          "date": "2026/10/25 13:50",
+          "summary": "對租屋族或小坪數家庭來說，可能因為沒有陽台或陽台空間有限，洗好的衣服往往只能晾在室內。不少人會搭配電風扇吹風，希望讓 ..."
+        },
+        {
+          "title": "Android用戶不想換手機了？三星舊機回收量大跌27% 原因曝光",
+          "link": "https://3c.ltn.com.tw/news/68034",
+          "date": "2026/10/25 12:40",
+          "summary": "現在換一支手機愈來愈傷荷包，不少人也開始捨不得淘汰舊手機。傑昇通信公布2026年9月門市二手機回收數據，發現Andr ..."
+        },
+        {
+          "title": "YouTube帳號功能突然被鎖！官方解釋原因 24小時內完成審查",
+          "link": "https://3c.ltn.com.tw/news/68059",
+          "date": "2026/10/25 11:18",
+          "summary": "YouTube帳號遭盜用的事件層出不窮，對知名YouTuber或頻道經營者來說，是一大惡夢。一旦帳號落入駭客手中，不 ..."
+        },
+        {
           "title": "千萬YouTuber暴力實測！iPhone Duo轉軸卡死、螢幕冒綠線",
           "link": "https://3c.ltn.com.tw/news/68060",
           "date": "2026/10/25 09:01",
@@ -214,36 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68056",
           "date": "2026/10/24 12:00",
           "summary": "注重隱私的Google用戶注意了，Google近日悄悄修改隱私權政策，新增一項重要例外條款，允許在特定情況下，將Gm ..."
-        },
-        {
-          "title": "誰在買iPhone 18 Pro？通路數據曝：這些蘋果釘子戶都換了",
-          "link": "https://3c.ltn.com.tw/news/68045",
-          "date": "2026/10/24 10:21",
-          "summary": "蘋果iPhone 18 Pro系列上市後掀起一波換機潮，從通路最新公布的二手回收數據來看，這波換機主力族群其實相當明 ..."
-        },
-        {
-          "title": "LINE萬聖節彩蛋來了！輸入3組關鍵字 熊大、莎莉驚喜現身",
-          "link": "https://3c.ltn.com.tw/news/68050",
-          "date": "2026/10/24 09:00",
-          "summary": "萬聖節快到了，LINE也悄悄準備好驚喜！LINE宣布推出2026年萬聖節限定聊天室特效，只要在聊天時輸入指定關鍵字， ..."
-        },
-        {
-          "title": "蘋果首款觸控 MacBook Pro 蓄勢待發！四大技術升級優勢搶先看",
-          "link": "https://3c.ltn.com.tw/news/68053",
-          "date": "2026/10/24 08:40",
-          "summary": "蘋果（Apple）預計在美國時間10月28日舉辦的Pro and Tell新品發表活動上，正式推出備受期待的首款觸控 ..."
-        },
-        {
-          "title": "iPhone Duo傳災情！用6小時就螢幕自裂 果粉傻眼：摺不到20次",
-          "link": "https://3c.ltn.com.tw/news/68048",
-          "date": "2026/10/24 08:10",
-          "summary": "蘋果首款摺疊手機iPhone Duo於昨（23日）正式開賣，雖然售價不便宜，從74,900元一路到118,900元， ..."
-        },
-        {
-          "title": "連兩天放颱風假！薔琵何時遠離台灣？6大平台即時追動態",
-          "link": "https://3c.ltn.com.tw/news/68054",
-          "date": "2026/10/24 07:51",
-          "summary": "颱風薔琵持續影響台灣，全台連續兩天大範圍停班停課，繼昨(23日)有20個縣市放颱風假後，今(24日)仍有13個縣市停 ..."
         }
       ]
     },
@@ -251,6 +251,34 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "AI 也會「腦腐」？研究警告：吸收過多農場文將導致 AI 推理退化且難以逆轉",
+          "link": "https://technews.tw/2026/10/25/ai-brain-rot/",
+          "date": "2026-10-25 08:00",
+          "summary": "德州農工大學研究團隊最新指出，大型語言模型若長期接觸大量低品質但在社群平台上高度受歡迎的內容，可能會出現類似人 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 駭客攻擊速度快人類 10 倍、日韓接連受害，台灣企業準備好了嗎？",
+          "link": "https://infosecu.technews.tw/2026/10/25/ai-hackers-attack-10x-faster-humans-japan-south-korea-victimized-taiwanese-enterprises-ready/",
+          "date": "2026-10-25 06:00",
+          "summary": "一個存在超過十年的開源程式語言 PHP 底層漏洞，為何迫使日本政府機關與連鎖牛丼品牌 すき 家（Sukiya） [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "越記錯越自信？MIT 揭 AI 植入假記憶真相：連專家判斷都可能扭曲",
+          "link": "https://infosecu.technews.tw/2026/10/25/ai-threatens-false-memory-implantation-crisis/",
+          "date": "2026-10-25 06:00",
+          "summary": "據外媒報導，麻省理工學院（MIT）科學家帕蒂·馬斯（Pattie Maes）向《華盛頓郵報》（Washingt [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "告別看天吃飯、破解植物專屬密碼，AI 與生物科技攜手改寫未來農業",
+          "link": "https://technews.tw/2026/10/25/ai-biotech-unlock-plant-codes-end-weather-farming-reshape-future-agriculture/",
+          "date": "2026-10-25 02:30",
+          "summary": "農業科技正迎來一場「溝通革命」。過去農民多仰賴天氣數據或肉眼觀察植物外觀來決定灌溉與施藥時機，但往往發現異常時 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "AI 新經濟聚焦三領域，簡立峰提醒一風險可能連黃仁勳都沒想到",
           "link": "https://finance.technews.tw/2026/10/25/ai-new-economy-three-areas-jan-lee-feng-warns-risk-jensen-huang-unanticipated/",
@@ -305,34 +333,6 @@
           "link": "https://technews.tw/2026/10/24/nvidia-names-4-supply-chain-boost-production-shipments-kyec-unimicron-spil/",
           "date": "2026-10-24 01:00",
           "summary": "輝達德國柏林 GTC 於 10 月 21 日登場，根據《財訊》雙週刊報導，輝達超大規模與高效能運算副總裁 Ia [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Wi-Fi 也能當金屬探測器用！瑞典開發 AI 系統辨識隱藏手槍，準確率達 72.5%",
-          "link": "https://technews.tw/2026/10/24/researchers-train-ai-to-detect-concealed-handguns-using-wi-fi-signals/",
-          "date": "2026-10-24 00:45",
-          "summary": "瑞典國防研究局（FOI）開發出名為 WiFireNet 的實驗性人工智慧系統，嘗試用 Wi-Fi 訊號變化辨識 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 成功法則：20% 靠技術、80% 靠轉型，打造對手難以複製的護城河",
-          "link": "https://finance.technews.tw/2026/10/24/rules-for-successful-ai-transformation/",
-          "date": "2026-10-24 00:30",
-          "summary": "企業對人工智慧（AI）的投資熱潮持續升溫。相關報告顯示，94% 的執行長表示即使短期回報不明朗，仍會持續加碼投 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Space Bunny 身分揭曉！MiniMax 公開 M3.1 Flash 428B 模型權重",
-          "link": "https://technews.tw/2026/10/23/minimax-m3-1-flash/",
-          "date": "2026-10-23 09:40",
-          "summary": "中國 AI 新創 MiniMax 今日在 Hugging Face 與 ModelScope 公開程式設計用大 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "日本擬設 AI 資安專隊，以模擬攻擊對抗 AI 網攻趨勢",
-          "link": "https://infosecu.technews.tw/2026/10/23/japan-to-reorganize-defense-research-around-ai-cyber/",
-          "date": "2026-10-23 08:50",
-          "summary": "日本經濟產業省今日表示，將在獨立行政法人資訊處理推進機構（IPA）11 月設置一支專門團隊，用人工智慧（AI） [&#8230;]",
           "comments": ""
         }
       ]
@@ -432,6 +432,13 @@
       "site": "https://technews.tw/category/component/",
       "items": [
         {
+          "title": "iPhone Duo 有多難修？拆機揭內螢幕耗時一小時才拆下",
+          "link": "https://technews.tw/2026/10/25/iphone-duo-fix/",
+          "date": "2026-10-25 04:36",
+          "summary": "蘋果首款摺疊手機 iPhone Duo 已正式開賣，隨著首批拆解影片陸續曝光，內部結構與維修難度也成為關注焦點 [&#8230;]",
+          "comments": ""
+        },
+        {
           "title": "Bloom Energy 財報創高卻重挫 11%，現金流引疑慮",
           "link": "https://technews.tw/2026/10/24/bloom-energy-stock-plunges-over-11-despite-strong-earnings-cash-flow-turns-negative-ai-investment-concerns-emerge/",
           "date": "2026-10-24 08:38",
@@ -506,13 +513,6 @@
           "link": "https://finance.technews.tw/2026/10/22/risk-warning/",
           "date": "2026-10-22 05:13",
           "summary": "證交所今日舉辦「台灣創新板（tib-創）」品牌發布會，董事長林修銘會中宣布多項重大法規鬆綁，其中最受矚目的是自 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "玻纖布、CCL 缺貨壓力升溫，11 月醞釀漲價",
-          "link": "https://technews.tw/2026/10/22/fiberglass-cloth-ccl-shortage-pressure-intensifies-price-hikes-november/",
-          "date": "2026-10-22 02:23",
-          "summary": "隨著 AI 伺服器及高速網通需求持續成長，高階玻纖布需求增加，排擠一般電子級材料供應，帶動新一波漲價壓力。供應 [&#8230;]",
           "comments": ""
         }
       ]
