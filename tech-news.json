@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26 00:23",
+  "updated": "2026-10-26 02:23",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -13,13 +13,6 @@
           "comments": "https://news.ycombinator.com/item?id=50234474"
         },
         {
-          "title": "Overgrown, when plants invade your abandoned tabs",
-          "link": "https://charliegerard.dev/blog/overgrown-extension/",
-          "date": "2026-10-22 15:52",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50197108"
-        },
-        {
           "title": "F-Zero X on Nintendo 3DS",
           "link": "https://hypnotize.works/gdx-3ds/postmortem/index.html",
           "date": "2026-10-25 23:27",
@@ -27,11 +20,18 @@
           "comments": "https://news.ycombinator.com/item?id=50237078"
         },
         {
-          "title": "What goes into making an animated film?",
-          "link": "https://www.disneyanimation.com/process/",
-          "date": "2026-10-25 20:27",
+          "title": "Overgrown, when plants invade your abandoned tabs",
+          "link": "https://charliegerard.dev/blog/overgrown-extension/",
+          "date": "2026-10-22 15:52",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50235738"
+          "comments": "https://news.ycombinator.com/item?id=50197108"
+        },
+        {
+          "title": "Attention Is Not What You Need (2025)",
+          "link": "https://arxiv.org/abs/2512.19428",
+          "date": "2026-10-25 23:52",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50237224"
         },
         {
           "title": "Why I Am a Programmer",
@@ -39,6 +39,13 @@
           "date": "2026-10-25 19:11",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50235017"
+        },
+        {
+          "title": "What goes into making an animated film?",
+          "link": "https://www.disneyanimation.com/process/",
+          "date": "2026-10-25 20:27",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50235738"
         },
         {
           "title": "The State of Context Engineering",
@@ -55,13 +62,6 @@
           "comments": "https://news.ycombinator.com/item?id=50233779"
         },
         {
-          "title": "Making the Buddha Head from Merv Whole Again",
-          "link": "https://www.getty.edu/news/buddha-head-of-merv-turkmenistan-conservation/",
-          "date": "2026-10-23 18:46",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50213610"
-        },
-        {
           "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
           "link": "https://minimaxir.com/2026/10/cheap-llms/",
           "date": "2026-10-25 21:11",
@@ -69,25 +69,25 @@
           "comments": "https://news.ycombinator.com/item?id=50236102"
         },
         {
+          "title": "Where the Romans Fought (interactive map)",
+          "link": "https://iosiflazaridis.github.io/battles-of-the-romans/",
+          "date": "2026-10-25 18:58",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50234879"
+        },
+        {
+          "title": "Making the Buddha Head from Merv Whole Again",
+          "link": "https://www.getty.edu/news/buddha-head-of-merv-turkmenistan-conservation/",
+          "date": "2026-10-23 18:46",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50213610"
+        },
+        {
           "title": "I refuse to accept a censored Internet. Join Me at FOSDEM 27",
           "link": "https://talkweb.eu/openweb/4558/",
           "date": "2026-10-25 17:30",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50233929"
-        },
-        {
-          "title": "Serbia's Vucic concedes election defeat in historic win for student movement",
-          "link": "https://www.reuters.com/world/europe/serbia-votes-students-seek-unseat-vucic-snap-election-2026-10-25/",
-          "date": "2026-10-25 21:08",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50236081"
-        },
-        {
-          "title": "Oregon Police Are Charging a Local News Outlet $2.5M for Records About One Cop",
-          "link": "https://theintercept.com/2026/10/01/oregon-police-misconduct-public-records-cost-fee/",
-          "date": "2026-10-25 18:04",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50234232"
         }
       ]
     },
@@ -174,6 +174,18 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "好市多iPhone Duo無法體驗關鍵功能！網笑：怕一支變兩支",
+          "link": "https://3c.ltn.com.tw/news/68065",
+          "date": "2026/10/26 10:00",
+          "summary": "蘋果摺疊手機 iPhone Duo 於 23 日開賣，好市多全台賣場許多人排隊搶機，以內湖店來說，開賣後約 5 分鐘 ..."
+        },
+        {
+          "title": "iPhone Duo 螢幕災情連環爆！分析師僅用一天 鉸鏈異常凸起",
+          "link": "https://3c.ltn.com.tw/news/68062",
+          "date": "2026/10/26 09:00",
+          "summary": "Apple 首款摺疊手機 iPhone Duo 上市後，儘管話題不斷，但隨之而來的，則是陸續傳出的螢幕損壞案例。有硬 ..."
+        },
+        {
           "title": "iPhone Duo轉軸有異音、關不緊？蘋果官方：軟體無法修復",
           "link": "https://3c.ltn.com.tw/news/68040",
           "date": "2026/10/26 08:01",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68057",
           "date": "2026/10/24 16:05",
           "summary": "近日網路瘋傳「Google AI學生神級省錢漏洞」，只要花160元，就能爽用一年左右的Google AI Pro方案 ..."
-        },
-        {
-          "title": "不用買旗艦！三星中階手機也互通AirDrop 與iPhone無縫互傳檔案",
-          "link": "https://3c.ltn.com.tw/news/68052",
-          "date": "2026/10/24 15:40",
-          "summary": "三星Galaxy手機從今年3月開始，陸續讓內建的「快速分享」（Quick Share）功能支援蘋果AirDrop，能 ..."
-        },
-        {
-          "title": "iPhone 18 Pro上市滿月跌價更快！8款機型最新價格一次看",
-          "link": "https://3c.ltn.com.tw/news/68055",
-          "date": "2026/10/24 14:03",
-          "summary": "蘋果iPhone 18 Pro系列上市滿一個月，還在觀望、想等降價的果粉，現在或許可考慮出手了！新機早在10月初就已 ..."
         }
       ]
     },
