@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NVIDIA GPU 硬核微架構與 CUDA 終極指南：從晶圓矽片、SM 串流多處理器、Tensor Core 到 CUDA 編程與記憶體層級全解析 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,⚡">
+  <meta name="description" content="全維度深度剖析 NVIDIA GPU 硬體微架構與 CUDA 運算體系：深入 SM (Streaming Multiprocessor)、Warp Scheduler 雙發排程、Register File 瓶頸、Tensor Core FP4/FP8 矩陣核心、32-Bank Shared Memory 衝突機制、HBM3e/GDDR6X 頻寬壁壘、Warp Divergence、Memory Coalescing、手寫高效能 GEMM Kernel 優化，以及 NVLink 5.0 與 GB200 NVL72 互連拓撲。內建互動式 Roofline 模型與 CUDA Warp Occupancy 精算器。">
+  <link rel="canonical" href="https://ai-hardcore-engineer.com/nvidia-gpu-cuda-architecture-guide.html">
+  <meta property="og:title" content="NVIDIA GPU 硬核微架構與 CUDA 終極指南：從晶圓矽片、SM 串流多處理器、Tensor Core 到 CUDA 編程與記憶體層級全解析 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="全維度深度剖析 NVIDIA GPU 硬體微架構與 CUDA 運算體系：深入 SM、Warp 排程、Tensor Core、HBM3e、手寫 GEMM 優化與互動式 Roofline 算力模擬器。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/nvidia-gpu-cuda-architecture-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/nvidia-gpu-cuda-architecture-guide.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NVIDIA GPU 硬核微架構與 CUDA 終極指南：從晶圓矽片、SM 串流多處理器、Tensor Core 到 CUDA 編程與記憶體層級全解析">
+  <meta name="twitter:description" content="全維度深度剖析 NVIDIA GPU 硬體微架構與 CUDA 運算體系：深入 SM、Warp 排程、Tensor Core、HBM3e、手寫 GEMM 優化與互動式 Roofline 算力模擬器。">
+  <meta name="twitter:image" content="./images/nvidia-gpu-cuda-architecture-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <style>
+    .article-hero { text-align: center; padding: 3.5rem 0 2rem; }
+    .article-hero h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.28; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.6rem; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.8rem; }
+    .hero-image-wrap { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 32px rgba(0,0,0,0.2); border: 1px solid var(--border); margin-bottom: 2.2rem; }
+    .hero-image-wrap img { width: 100%; max-height: 520px; object-fit: cover; display: block; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-body { max-width: 64em; margin: 0 auto; line-height: 1.88; font-size: 1.05rem; }
+    .article-body h2 { font-size: 2.15rem; font-weight: 700; margin: 3.2rem 0 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 0.6rem; }
+    .article-body h3 { font-size: 1.55rem; font-weight: 600; margin: 2.2rem 0 0.9rem; color: var(--text); }
+    .article-body h4 { font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.6rem; color: var(--text); }
+    .article-body p { margin-bottom: 1.25rem; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.2rem 0.45rem; border-radius: 4px; font-size: 0.94em; color: #16a34a; border: 1px solid var(--border); }
+    .dark-mode .article-body code { color: #84cc16; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; overflow-x: auto; margin: 1.6rem 0; position: relative; }
+    .article-body pre code { background: none; padding: 0; border: none; color: var(--text); font-size: 0.92rem; }
+    .article-body blockquote { border-left: 4px solid #76b900; background: var(--bg-alt); padding: 1.1rem 1.6rem; margin: 1.8rem 0; border-radius: 0 10px 10px 0; }
+    .article-body ul, .article-body ol { margin: 1.2rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.75; }
+    
+    .table-container { width: 100%; overflow-x: auto; margin: 2rem 0; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+    .article-body table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 860px; }
+    .article-body th, .article-body td { padding: 0.85rem 1.1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 700; color: var(--text); background: var(--bg-alt); white-space: nowrap; position: sticky; top: 0; z-index: 2; }
+    .article-body tr:hover td { background: rgba(118, 185, 0, 0.05); }
+
+    .badge-pill { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+    .badge-nvidia { background: #dcfce7; color: #15803d; border: 1px solid rgba(118, 185, 0, 0.4); }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-cyan { background: #cffafe; color: #155e75; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .dark-mode .badge-nvidia { background: #14532d; color: #86efac; border-color: #22c55e; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+    .dark-mode .badge-green { background: #14532d; color: #bbf7d0; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; }
+    .dark-mode .badge-cyan { background: #164e63; color: #a5f3fc; }
+    .dark-mode .badge-rose { background: #881337; color: #fecdd3; }
+
+    /* Quick TOC */
+    .quick-nav-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.8rem; margin: 2.2rem 0; }
+    .quick-nav-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text); }
+    .quick-nav-list { list-style: none; padding-left: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem 1.5rem; }
+    .quick-nav-list li a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s ease, transform 0.2s ease; }
+    .quick-nav-list li a:hover { color: #16a34a; transform: translateX(3px); }
+    .dark-mode .quick-nav-list li a:hover { color: #84cc16; }
+
+    /* SM Diagram & Architecture Box */
+    .arch-diagram-box {
+      background: var(--bg-alt);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin: 2.4rem 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .dark-mode .arch-diagram-box {
+      background: #090e0b;
+      border-color: #1e3a24;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+    .arch-diagram-header {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text);
+    }
+    .sm-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+    }
+    .sm-subpartition-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-top: 3.5px solid #76b900;
+      border-radius: 10px;
+      padding: 1.2rem;
+    }
+    .dark-mode .sm-subpartition-card {
+      background: #101912;
+      border-color: #1b3820;
+    }
+    .sm-part-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sm-component-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .sm-component-list li {
+      padding: 0.35rem 0.5rem;
+      margin-bottom: 0.3rem;
+      background: var(--bg-alt);
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .dark-mode .sm-component-list li {
+      background: #172419;
+    }
+
+    /* Interactive Simulator Box */
+    .simulator-container {
+      background: var(--bg-alt);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    }
+    .dark-mode .simulator-container {
+      background: #0d140e;
+      border-color: #1e3a24;
+    }
+    .sim-header {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text);
+    }
+    .sim-controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sim-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .sim-group label {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .sim-group select, .sim-group input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .sim-group select:focus, .sim-group input:focus {
+      border-color: #76b900;
+    }
+    .sim-results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .sim-result-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem;
+      text-align: center;
+    }
+    .dark-mode .sim-result-card {
+      background: #111a13;
+      border-color: #1e3a24;
+    }
+    .sim-result-card.highlight {
+      border-color: #76b900;
+      background: rgba(118, 185, 0, 0.05);
+    }
+    .sim-val-label {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      font-weight: 500;
+    }
+    .sim-val-number {
+      font-size: 1.65rem;
+      font-weight: 800;
+      font-family: "Fira Code", monospace;
+      color: var(--text);
+    }
+    .sim-val-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+    .roofline-chart-svg {
+      width: 100%;
+      height: 240px;
+      margin-top: 1.5rem;
+      background: var(--bg);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .dark-mode .roofline-chart-svg {
+      background: #090e0b;
+      border-color: #1e3a24;
+    }
+
+    .article-footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 3.5rem; }
+    .back-home { color: #16a34a; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .dark-mode .back-home { color: #84cc16; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "NVIDIA GPU 硬核微架構與 CUDA 終極指南：從晶圓矽片、SM 串流多處理器、Tensor Core 到 CUDA 編程與記憶體層級全解析",
+    "description": "全維度深度剖析 NVIDIA GPU 硬體微架構與 CUDA 運算體系：深入 SM、Warp Scheduler 雙發排程、Register File 瓶頸、Tensor Core FP4/FP8 矩陣核心、32-Bank Shared Memory 衝突機制、HBM3e/GDDR6X 頻寬壁壘、Warp Divergence、Memory Coalescing、手寫高效能 GEMM Kernel 優化，以及 NVLink 5.0 與 GB200 NVL72 互連拓撲。",
+    "image": "https://ai-hardcore-engineer.com/images/nvidia-gpu-cuda-architecture-guide.jpg",
+    "datePublished": "2026-10-26T08:00:00+08:00",
+    "dateModified": "2026-10-26T08:00:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "Robert cYc"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "\"AI\" 硬核工程師",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ai-hardcore-engineer.com/og-image.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ai-hardcore-engineer.com/nvidia-gpu-cuda-architecture-guide.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="waves" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button class="menu-toggle" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a href="./articles.html" class="active">文章</a>
+        <a href="./about.html">關於</a>
+        <a href="#" class="nav-search-toggle" aria-label="搜尋">🔍</a>
+        <a href="#" class="theme-toggle" aria-label="切換深淺色模式" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="搜尋文章..." autocomplete="off">
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- Article Hero -->
+      <section class="article-hero">
+        <h1>NVIDIA GPU 硬核微架構與 CUDA 終極指南：從晶圓矽片、SM 串流多處理器、Tensor Core 到 CUDA 編程與記憶體層級全解析</h1>
+        <div class="article-meta">
+          <span>2026-10-26</span>
+          <span class="separator">·</span>
+          <span>45 分鐘硬核深度閱讀</span>
+          <span class="separator">·</span>
+          <span>Robert cYc</span>
+        </div>
+        <div class="article-tags">
+          <span class="tag">NVIDIA GPU</span>
+          <span class="tag">CUDA C++</span>
+          <span class="tag">微架構 (Microarchitecture)</span>
+          <span class="tag">SM 串流多處理器</span>
+          <span class="tag">Tensor Cores</span>
+          <span class="tag">Warp Scheduler</span>
+          <span class="tag">Roofline Model</span>
+          <span class="tag">HBM3e / GDDR6X</span>
+          <span class="tag">NVLink 5.0</span>
+          <span class="tag">GB200 NVL72</span>
+        </div>
+        <div class="hero-image-wrap">
+          <img src="./images/nvidia-gpu-cuda-architecture-guide.jpg" alt="NVIDIA GPU & CUDA Architecture Guide Banner">
+        </div>
+      </section>
+
+      <!-- Quick TOC Navigation -->
+      <nav class="quick-nav-box" aria-label="目錄導覽">
+        <div class="quick-nav-title">⚡ 目錄快速導覽 (Table of Contents)</div>
+        <ul class="quick-nav-list">
+          <li><a href="#sec-1">1. GPU vs. CPU 第一性原理架構分歧</a></li>
+          <li><a href="#sec-2">2. NVIDIA GPU 晶片微架構縱深解剖</a></li>
+          <li><a href="#sec-3">3. GPU 記憶體階層架構全拓撲</a></li>
+          <li><a href="#sec-4">4. Warp 排程機制與 SIMT 執行模型</a></li>
+          <li><a href="#sec-5">5. 歷代微架構全景演進 (Fermi 至 Blackwell)</a></li>
+          <li><a href="#sec-6">6. CUDA 軟體抽象與編程模型</a></li>
+          <li><a href="#sec-7">7. CUDA 記憶體優化與非同步串流</a></li>
+          <li><a href="#sec-8">8. 實戰手寫高效能 GEMM Kernel 優化</a></li>
+          <li><a href="#sec-9">9. 跨晶片與跨節點極限互連 (NVLink 與 NVL72)</a></li>
+          <li><a href="#sec-10">10. 互動工程工具箱：Roofline 與 Occupancy</a></li>
+        </ul>
+      </nav>
+
+      <!-- Article Body -->
+      <article class="article-body">
+        <blockquote>
+          <strong>硬核導讀：</strong>現代人工智慧大模型（LLM）與百億億次級高效能計算（Exascale HPC）的核心引擎正是 NVIDIA GPU。然而，多數開發者僅把 GPU 視為 PyTorch <code>.to('cuda')</code> 背後的黑盒子。本文將撕開晶圓封裝，從矽片物理佈局、SM（Streaming Multiprocessor）微架構、Warp 排程、暫存器動態分配、Tensor Core FP4/FP8 矩陣運算，到 CUDA C++ 記憶體合併訪問與 Bank Conflict 避坑，進行地毯式的深度工程解析。
+        </blockquote>
+
+        <!-- SECTION 1 -->
+        <h2 id="sec-1">1. GPU vs. CPU 的第一性原理架構分歧</h2>
+        <p>
+          要透徹理解 GPU，必須從現代積體電路設計的<strong>「第一性原理」（First Principles）</strong>出發。現代矽片（Silicon Die）的物理面積與電晶體預算（Transistor Budget）是嚴格受限的。在相同的晶片面積與功耗限制（TDP）下，CPU 與 GPU 選擇了兩種截然相反的微架構哲學：
+        </p>
+
+        <div class="sm-grid-layout">
+          <div class="sm-subpartition-card" style="border-top-color: #3b82f6;">
+            <div class="sm-part-title">
+              <span>🖥️ CPU：延遲導向 (Latency-Optimized)</span>
+              <span class="badge-pill badge-blue">單核極致</span>
+            </div>
+            <ul class="sm-component-list">
+              <li><strong>設計目標</strong>：最小化單一執行緒從發射到完成的絕對時間延遲（Latency）。</li>
+              <li><strong>晶片面積分配</strong>：超過 60%~70% 的矽片面積被巨大的一級/二級/三級快取（L1/L2/L3 Cache）以及複雜的控制邏輯（Control Logic）佔據。</li>
+              <li><strong>硬體技術</strong>：深層指令管線（14~20+ 階）、激進的亂序執行（Out-of-Order Execution, OOOE）、分支預測器（Branch Predictors）與推測執行（Speculative Execution）。</li>
+              <li><strong>適用場景</strong>：高度依賴控制流程、具有嚴格先後順序相依性的序列演算法（Sequential Code）。</li>
+            </ul>
+          </div>
+
+          <div class="sm-subpartition-card" style="border-top-color: #76b900;">
+            <div class="sm-part-title">
+              <span>⚡ GPU：吞吐量導向 (Throughput-Optimized)</span>
+              <span class="badge-pill badge-nvidia">海量並行</span>
+            </div>
+            <ul class="sm-component-list">
+              <li><strong>設計目標</strong>：最大化單位時間內完成的總計算任務量（Throughput）。</li>
+              <li><strong>晶片面積分配</strong>：超過 80% 的矽片面積直接劃給算術邏輯單元（ALU Array / CUDA Cores / Tensor Cores），控制邏輯極度簡化。</li>
+              <li><strong>硬體技術</strong>：單指令多執行緒（SIMT）、大量執行緒上下文常駐暫存器、以硬體極速執行緒切換掩蓋長存取延遲（Latency Hiding）。</li>
+              <li><strong>適用場景</strong>：資料並行（Data-Parallel）、計算密集型任務（矩陣乘法、卷積、光線求交、物理模擬）。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>1.1 Flynn 分類法與 SIMT vs. SIMD 的本質突破</h3>
+        <p>
+          在經典的 Flynn 計算機架構分類中，CPU 向量指令集（如 x86 AVX-512、ARM Neon）屬於 <strong>SIMD（Single Instruction, Multiple Data）</strong>：單一指令操作一個寬向量暫存器（如 512-bit 暫存器容納 16 個 32-bit 浮點數）。若程式碼中出現 <code>if-else</code> 分支，程式設計師必須手動撰寫掩碼指令（Blend/Mask）。
+        </p>
+        <p>
+          NVIDIA 發明的 <strong>SIMT（Single Instruction, Multiple Threads）</strong> 則是架構上的巨大飛躍：
+        </p>
+        <ul>
+          <li><strong>編程抽象獨立</strong>：在軟體層面，開發者撰寫純粹的純量程式碼（Scalar Thread），每個執行緒擁有自己獨立的暫存器、程式計數器（PC）與呼叫堆疊。</li>
+          <li><strong>硬體分組鎖步執行</strong>：硬體排程器將 32 個邏輯執行緒組裝為一個 <strong>Warp（執行緒束）</strong>，由一個指令單元同步向 32 個 CUDA Core 廣播同一條指令。</li>
+          <li><strong>分支分歧硬體接管</strong>：當同一個 Warp 內的執行緒走向不同分支時，SIMT 硬體自動透過執行緒活躍遮罩（Active Mask）進行時間分片序列化執行，開發者無需在組譯層級手動拼裝向量暫存器。</li>
+        </ul>
+
+        <h3>1.2 Amdahl's Law 與異構計算邊界</h3>
+        <p>
+          在異構計算（Heterogeneous Computing）體系中，整體系統的加速比受到阿姆達爾定律（Amdahl's Law）的硬性制約：
+        </p>
+        <p>
+          $$S_{\text{latency}} = \frac{1}{(1 - p) + \frac{p}{s}}$$
+        </p>
+        <p>
+          其中 $p$ 為可高度並行化的程式比例，$s$ 為 GPU 的硬體加速倍數。即使 GPU 能將並行部分加速 10,000 倍（$s \to \infty$），若程式中有 5% 的代碼必須在 CPU 上單執行緒序列執行（$p = 0.95$），整體系統的最大理論加速比永遠無法超過 $1 / 0.05 = 20$ 倍。這就是為何現代 AI 架構（如 FlashAttention、CUDA Graph）極度強調<strong>「算子融合（Kernel Fusion）」與「消滅 Host-Device 交互開銷」</strong>。
+        </p>
+
+        <!-- SECTION 2 -->
+        <h2 id="sec-2">2. NVIDIA GPU 晶片微架構縱深解剖</h2>
+        <p>
+          當我們將一顆頂級旗艦 GPU（如 Hopper H100 或 Blackwell B200）置於電子顯微鏡下，會看到階層分明的矽片物理拓撲。從宏觀到微觀，GPU 晶片劃分為以下層次：
+        </p>
+
+        <div class="arch-diagram-box">
+          <div class="arch-diagram-header">
+            <span>🔬 NVIDIA GPU 物理矽片層次結構拓撲 (Silicon Hierarchy)</span>
+          </div>
+          <pre><code>+----------------------------------------------------------------------------------------------------+
+|  NVIDIA GPU Full Die (e.g. Hopper GH100 / Blackwell B200)                                          |
+|                                                                                                    |
+|  +------------------------+  +------------------------+      +----------------------------------+  |
+|  | GPC 0 (Graphics Proc)  |  | GPC 1                  | ...  | GPC 7                            |  |
+|  | +--------------------+ |  | +--------------------+ |      | +------------------------------+ |  |
+|  | | TPC 0 (Texture)    | |  | | TPC 0              | |      | | TPC 0                        | |  |
+|  | | +-------+  +-----+ | |  | | +-------+  +-----+ | |      | | +-------+  +-----+           | |  |
+|  | | | SM 0  |  | SM 1| | |  | | | SM 0  |  | SM 1| | |      | | | SM 0  |  | SM 1|           | |  |
+|  | | +-------+  +-----+ | |  | | +-------+  +-----+ | |      | | +-------+  +-----+           | |  |
+|  | +--------------------+ |  | +--------------------+ |      | +------------------------------+ |  |
+|  +------------------------+  +------------------------+      +----------------------------------+  |
+|                                                                                                    |
+|  +----------------------------------------------------------------------------------------------+  |
+|  | High-Speed Crossbar Interconnect / Partitioned Crossbar Switch                               |  |
+|  +----------------------------------------------------------------------------------------------+  |
+|  | Massive Shared L2 Cache (Hopper: 50MB / Blackwell: 126MB with Cache Residency Control)       |  |
+|  +----------------------------------------------------------------------------------------------+  |
+|  | High-Bandwidth Memory Controllers (HBM3/HBM3e Interfaces, 4096~8192-bit Total Bus)           |  |
++----------------------------------------------------------------------------------------------------+</code></pre>
+        </div>
+
+        <h3>2.1 SM (Streaming Multiprocessor)：GPU 運算的心臟</h3>
+        <p>
+          如果說 GPU 是航空母艦，那麼 <strong>SM（串流多處理器）</strong> 就是艦載戰機機庫與發射甲板。所有 CUDA Kernel 最終都被分派至各個 SM 內部執行。以現代 Hopper/Blackwell 架構為例，單個 SM 內部通常在邏輯上被劃分為 <strong>4 個完全對稱的子分區（SMSP, SM Sub-Partition）</strong>：
+        </p>
+
+        <div class="sm-grid-layout">
+          <div class="sm-subpartition-card">
+            <div class="sm-part-title">
+              <span>🎯 SMSP 核心組件 (4 個/SM)</span>
+              <span class="badge-pill badge-nvidia">硬體排程</span>
+            </div>
+            <ul class="sm-component-list">
+              <li><span>Warp Scheduler</span><strong>1 個 (指令發射/週期)</strong></li>
+              <li><span>Dispatch Unit</span><strong>1~2 個 (雙發指令管線)</strong></li>
+              <li><span>32-bit Register File</span><strong>16,384 個 (單區 64KB)</strong></li>
+              <li><span>FP32 CUDA Cores</span><strong>32 個 (單精確度浮點)</strong></li>
+              <li><span>INT32 Cores</span><strong>16~32 個 (整數定址運算)</strong></li>
+              <li><span>FP64 Cores</span><strong>8~16 個 (雙精確度科學計算)</strong></li>
+              <li><span>Tensor Core</span><strong>1 個 (第 4/5 代矩陣引擎)</strong></li>
+              <li><span>LD/ST Units</span><strong>8 個 (載入/儲存記憶體操作)</strong></li>
+              <li><span>SFU (Special Function)</span><strong>4 個 (倒數、三角、指數)</strong></li>
+            </ul>
+          </div>
+
+          <div class="sm-subpartition-card">
+            <div class="sm-part-title">
+              <span>⚡ SM 全域共享硬體資源</span>
+              <span class="badge-pill badge-blue">全區共用</span>
+            </div>
+            <ul class="sm-component-list">
+              <li><span>Unified L1 / Shared Mem</span><strong>128KB ~ 228KB (可動態切割)</strong></li>
+              <li><span>RT Core (Ray Tracing)</span><strong>1 個 (第 3/4 代 BVH 求交)</strong></li>
+              <li><span>TMA Engine</span><strong>非同步張量資料搬移引擎</strong></li>
+              <li><span>Instruction Cache</span><strong>SM 共用一級指令快取</strong></li>
+              <li><span>Texture Units / Read-Only</span><strong>紋理採樣與濾波快取</strong></li>
+              <li><span>Active Warps 上限</span><strong>最大 32~64 Warps (2048 線程)</strong></li>
+              <li><span>Active Blocks 上限</span><strong>最大 16~32 Thread Blocks</strong></li>
+              <li><span>總 Register File 規模</span><strong>256KB (65,536 個 32-bit 暫存器)</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>2.2 Warp Scheduler 與零開銷上下文切換 (Zero-Overhead Context Switching)</h3>
+        <p>
+          在傳統 CPU 中，執行緒上下文切換（Context Switch）代價極高（需幾百至上千個 CPU Clock Cycles），因為作業系統核心必須將暫存器內容備份至 RAM/L1 Cache，並重新載入另一個執行緒的狀態。
+        </p>
+        <p>
+          GPU 的運作模式完全顛覆了這一點：<strong>「零開銷上下文切換」</strong>。
+        </p>
+        <p>
+          每個 SM 內建 <strong>256KB 的龐大暫存器檔案（SRAM）</strong>。當一個 Thread Block 被分派到 SM 時，硬體會直接為該 Block 內的所有執行緒在實體暫存器檔案中<strong>就地分配（In-Place Allocate）</strong>專屬暫存器。這意味著：所有常駐在 SM 上的 Active Warps，其暫存器狀態<strong>永遠停留在硬體矽片上，不需要任何內存換出（Spill）</strong>。
+        </p>
+        <p>
+          Warp Scheduler 每個時脈週期只需執行一項極其簡單的檢查：<strong>Scoreboarding（記分板機制）</strong>。如果 Warp A 正在等待一條耗時 300 萬個週期的 DRAM 讀取指令返回，記分板將 Warp A 標記為 Not Ready；排程器在下一個週期直接將指令指針切換到已就緒的 Warp B。<strong>切換時間為 0 個 Clock Cycle！</strong>這就是 GPU 能夠透過海量執行緒隱匿超長記憶體延遲的根本原因。
+        </p>
+
+        <h3>2.3 Tensor Core 世代技術進化全譜</h3>
+        <p>
+          Tensor Core 是 NVIDIA 自 Volta 架構（2017）引入的專用矩陣乘加硬體（MMA, Matrix Multiply-Accumulate），執行核心操作：$D = A \times B + C$。從 Volta 到 Blackwell，Tensor Core 經歷了 5 個世代的革命性演進：
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>世代 / 微架構</th>
+                <th>代表晶片</th>
+                <th>支援數值格式</th>
+                <th>核心硬體突破</th>
+                <th>單晶片矩陣算力 (Dense)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1st Gen (Volta)</strong></td>
+                <td>V100 (2017)</td>
+                <td>FP16 乘法, FP32 累加</td>
+                <td>首創 4x4x4 矩陣 MMA 硬體指令，算力相比 Pascal 提升 5x</td>
+                <td>125 TFLOPS (FP16)</td>
+              </tr>
+              <tr>
+                <td><strong>2nd Gen (Turing)</strong></td>
+                <td>T4 / RTX 2080 (2018)</td>
+                <td>FP16, INT8, INT4, Binary</td>
+                <td>引入整數低精度推論，強化邊緣端推理輸送量</td>
+                <td>130 TOPS (INT8)</td>
+              </tr>
+              <tr>
+                <td><strong>3rd Gen (Ampere)</strong></td>
+                <td>A100 (2020)</td>
+                <td>TF32, BF16, FP16, INT8, INT4</td>
+                <td><strong>TF32 (TensorFloat-32)</strong> 無損替代 FP32；<strong>2:4 結構化稀疏性</strong> 翻倍算力</td>
+                <td>312 TFLOPS (FP16/BF16)</td>
+              </tr>
+              <tr>
+                <td><strong>4th Gen (Hopper)</strong></td>
+                <td>H100 (2022)</td>
+                <td>FP8 (E4M3 / E5M2), FP16, BF16, TF32, INT8</td>
+                <td><strong>Transformer Engine</strong> 動態混合精度切換；DPX 動態規劃硬體指令</td>
+                <td>1,979 TFLOPS (FP8)</td>
+              </tr>
+              <tr>
+                <td><strong>5th Gen (Blackwell)</strong></td>
+                <td>B200 (2024~2026)</td>
+                <td><strong>FP4 (E2M1)</strong>, FP6, FP8, BF16, TF32</td>
+                <td><strong>2nd Gen Transformer Engine</strong> 微縮張量縮放（Micro-tensor Scaling），首度實現 FP4 大模型訓練與推論</td>
+                <td><strong>4,500 TFLOPS (FP4)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SECTION 3 -->
+        <h2 id="sec-3">3. GPU 記憶體階層架構全拓撲</h2>
+        <p>
+          在 GPU 高效能計算中，流傳著一句硬核格言：<strong>「Compute is free, Memory is expensive.」（計算是免費的，訪存才是最昂貴的）</strong>。現代 GPU 的浮點計算能力以每年翻倍的速度增長，但記憶體匯流排頻寬的成長受限於物理走線與功耗定律，形成了嚴峻的<strong>「記憶體之牆（Memory Wall）」</strong>。
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>記憶體類型</th>
+                <th>物理所在位置</th>
+                <th>容量範圍 (以 H100 為例)</th>
+                <th>存取延遲 (Clock Cycles)</th>
+                <th>聚合頻寬 (Bandwidth)</th>
+                <th>作用域與生命週期</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>暫存器 (Registers)</strong></td>
+                <td>SM 晶粒內部 SRAM</td>
+                <td>256 KB / SM (~33 MB 全晶片)</td>
+                <td>~1 cycle (零延遲)</td>
+                <td>&gt; 30 TB/s (SM 內部聚合)</td>
+                <td>單一 Thread 私有，隨 Thread 銷毀</td>
+              </tr>
+              <tr>
+                <td><strong>共享記憶體 (Shared Mem)</strong></td>
+                <td>SM 晶粒內部 SRAM</td>
+                <td>最高 228 KB / SM</td>
+                <td>15 ~ 30 cycles</td>
+                <td>&gt; 15 TB/s (SM 內部聚合)</td>
+                <td>單一 Thread Block 內所有 Thread 共享</td>
+              </tr>
+              <tr>
+                <td><strong>一級快取 (L1 Data Cache)</strong></td>
+                <td>SM 晶粒內部 SRAM</td>
+                <td>與 Shared Mem 物理共用</td>
+                <td>15 ~ 30 cycles</td>
+                <td>&gt; 15 TB/s</td>
+                <td>硬體管理，快取 Global/Local 存取</td>
+              </tr>
+              <tr>
+                <td><strong>常數快取 (Constant Cache)</strong></td>
+                <td>SM 內部專屬快取</td>
+                <td>64 KB 全域 (SM 內設專用 Cache)</td>
+                <td>1 cycle (命中廣播) ~ 幾十 cycles</td>
+                <td>極高 (單一週期廣播給全部 32 線程)</td>
+                <td>所有 Grid 唯讀，具備單一週期廣播機制</td>
+              </tr>
+              <tr>
+                <td><strong>二級快取 (L2 Cache)</strong></td>
+                <td>GPU 晶片全域 SRAM</td>
+                <td>50 MB (H100) / 126 MB (B200)</td>
+                <td>150 ~ 250 cycles</td>
+                <td>~ 12 TB/s</td>
+                <td>全晶片所有 SM 共享，跨 GPC 一致性</td>
+              </tr>
+              <tr>
+                <td><strong>全局記憶體 (Global / HBM3e)</strong></td>
+                <td>封裝內 3D 堆疊 DRAM (CoWoS)</td>
+                <td>80 GB ~ 192 GB</td>
+                <td><strong>400 ~ 800 cycles</strong></td>
+                <td>3.35 TB/s (H100) ~ 8.0 TB/s (B200)</td>
+                <td>所有 Thread、Grid、Host CPU 可存取</td>
+              </tr>
+              <tr>
+                <td><strong>局部記憶體 (Local Memory)</strong></td>
+                <td><strong>物理位於 HBM/DRAM (效能殺手)</strong></td>
+                <td>受限於 VRAM 大小</td>
+                <td><strong>400 ~ 800 cycles (若未中 L1/L2)</strong></td>
+                <td>與 Global Memory 相同頻寬</td>
+                <td>單一 Thread 溢出專用 (Register Spill)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>3.1 Shared Memory 的 32-Bank 衝突機制 (Bank Conflicts)</h3>
+        <p>
+          Shared Memory 雖然位於晶片內部 SRAM、具備極高頻寬，但它的實體結構被劃分為 <strong>32 個獨立的儲存區塊（Banks）</strong>，每個 Bank 寬度為 4 Bytes（32-bit）。連續的 32-bit 字依序輪流映射至不同的 Bank：
+        </p>
+        <p>
+          $$\text{Bank Index} = (\frac{\text{Byte Address}}{4}) \pmod{32}$$
+        </p>
+        <p>
+          當一個 Warp（32 個執行緒）同時發起對 Shared Memory 的存取時：
+        </p>
+        <ul>
+          <li><strong>無衝突理想狀況 (Conflict-Free)</strong>：32 個執行緒分別存取 32 個互不相同的 Banks，或者所有執行緒存取<strong>同一個 Bank 內的同一個位址（觸發硬體廣播 Multicast/Broadcast）</strong>，此時只需要 1 個記憶體週期即可完成！</li>
+          <li><strong>Bank 衝突 (Bank Conflict)</strong>：若多個執行緒存取<strong>同一個 Bank 內的不同位址</strong>，硬體無法並行讀取，必須<strong>將請求序列化（Serialized）</strong>。若發生 2-way 衝突，延遲翻倍；若發生最慘烈的 32-way 衝突，該條存取指令需要 32 個週期串列執行，共享記憶體頻寬直接暴跌 97%！</li>
+        </ul>
+
+        <pre><code class="language-cpp">// 典型 32-Bank 衝突範例：跨步存取 (Stride Access)
+__shared__ float s_data[32][32];
+
+// 執行緒 tid 存取 column: s_data[tid][0]
+// 由於每列有 32 個 float (128 bytes)，s_data[0][0], s_data[1][0]... 的 Bank Index 完全相同！
+// 這將導致最嚴重的 32-Way Bank Conflict！
+float val = s_data[threadIdx.x][0]; 
+
+// 【硬核避坑解決法】：Padding (行填充技巧)
+// 將二維陣列宣告為 32 x 33，每行多補 1 個元素，錯開對齊！
+__shared__ float s_data_padded[32][33];
+float safe_val = s_data_padded[threadIdx.x][0]; // 完美消除 Bank Conflict！</code></pre>
+
+        <!-- SECTION 4 -->
+        <h2 id="sec-4">4. Warp 排程機制與 SIMT 執行模型</h2>
+
+        <h3>4.1 32 執行緒的 Warp 物理本質</h3>
+        <p>
+          在硬體層面，SM 從來不會單獨排程或執行「1 個 Thread」。SM 執行的絕對原子單位是 <strong>Warp（固定 32 個 Thread）</strong>。所有硬體資源（暫存器分配、指令發射、分支遮罩）皆以 32 為單位進行量化。
+        </p>
+
+        <h3>4.2 Warp 分歧 (Warp Divergence) 及其代價</h3>
+        <p>
+          當程式碼中出現條件分支（如 <code>if (threadIdx.x % 2 == 0)</code>）時，Warp 內部的一半執行緒走向 <code>true</code> 分支，另一半走向 <code>false</code> 分支：
+        </p>
+        <ul>
+          <li>在傳統 CPU 上，多核心各自獨立執行分支，互不影響。</li>
+          <li>在 GPU SIMT 架構下，同一個 Warp 只有一個指令解碼與發射單元。因此硬體必須<strong>序列化執行兩個分支</strong>：首先將走向 false 的執行緒設為禁能（Mask off），執行 true 分支；接著反轉遮罩，執行 false 分支。</li>
+          <li><strong>結果</strong>：該 Warp 的整體執行時間等於兩條分支時間之和，有效算力減半！</li>
+        </ul>
+
+        <h3>4.3 全域記憶體合併訪問 (Memory Coalescing)</h3>
+        <p>
+          GPU 全域記憶體（HBM3e 或 GDDR6X）不是以 Byte 為單位進行讀取的，而是以 <strong>32-Byte 或 128-Byte 的快取行（Cache Line Transaction）</strong> 為單位進行傳輸。
+        </p>
+        <p>
+          當一個 Warp 內的 32 個執行緒同時存取 Global Memory 時：
+        </p>
+        <ul>
+          <li><strong>合併存取 (Coalesced)</strong>：若 32 個執行緒存取的記憶體位址剛好落在一個連續的 128-Byte 對齊區塊內（例如 <code>float data[threadIdx.x]</code>），硬體只需要發起 <strong>1 次 128-Byte 的記憶體交易（Transaction）</strong>，匯流排利用率達 100%。</li>
+          <li><strong>未合併存取 (Uncoalesced / Strided)</strong>：若每個執行緒存取的位址跨度很大（例如存取矩陣的某一列，跨度為步長 1024），32 個執行緒的位址分散在 32 個不同的 128-Byte Cache Line 中，硬體必須發起 <strong>32 次獨立的 128-Byte 交易</strong>。傳輸了 $32 \times 128 = 4096$ Bytes 的資料，卻只使用了其中的 $32 \times 4 = 128$ Bytes，<strong>有效頻寬利用率慘跌至 3.125%！</strong></li>
+        </ul>
+
+        <!-- SECTION 5 -->
+        <h2 id="sec-5">5. 歷代微架構全景演進史 (Fermi 至 Blackwell)</h2>
+        <p>
+          從 2010 年奠定現代 GPGPU 基礎的 Fermi 架構，到 2026 年主導萬億參數大模型訓練的 Blackwell B200，NVIDIA 微架構的演進譜寫了半導體史上的奇蹟：
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>架構名稱</th>
+                <th>推出年份</th>
+                <th>台積電製程</th>
+                <th>旗艦晶片</th>
+                <th>電晶體數量</th>
+                <th>最大 SM 數</th>
+                <th>記憶體規格與頻寬</th>
+                <th>重大架構技術里程碑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Fermi</strong></td>
+                <td>2010</td>
+                <td>40 nm</td>
+                <td>GF100</td>
+                <td>30 億</td>
+                <td>16</td>
+                <td>GDDR5 (177 GB/s)</td>
+                <td>首創真正 L1/L2 快取階層；完整支援 C++ 與 IEEE 754-2008 雙精確度</td>
+              </tr>
+              <tr>
+                <td><strong>Kepler</strong></td>
+                <td>2012</td>
+                <td>28 nm</td>
+                <td>GK110 (K20X)</td>
+                <td>71 億</td>
+                <td>15 (SMX)</td>
+                <td>GDDR5 (288 GB/s)</td>
+                <td>Dynamic Parallelism (動態並行)；Hyper-Q 技術；每瓦效能大幅優化</td>
+              </tr>
+              <tr>
+                <td><strong>Maxwell</strong></td>
+                <td>2014</td>
+                <td>28 nm</td>
+                <td>GM200 (Titan X)</td>
+                <td>80 億</td>
+                <td>24 (SMM)</td>
+                <td>GDDR5 (336 GB/s)</td>
+                <td>SM 重構為 4 個獨立 SMSP 子分區；能耗比躍升 2 倍</td>
+              </tr>
+              <tr>
+                <td><strong>Pascal</strong></td>
+                <td>2016</td>
+                <td>16 nm FinFET</td>
+                <td>GP100 (P100)</td>
+                <td>153 億</td>
+                <td>56</td>
+                <td>HBM2 (720 GB/s)</td>
+                <td>首創 <strong>NVLink 1.0 (160 GB/s)</strong>；首度採用 HBM2 堆疊記憶體與 16-bit 半精確度</td>
+              </tr>
+              <tr>
+                <td><strong>Volta</strong></td>
+                <td>2017</td>
+                <td>12 nm FFN</td>
+                <td>GV100 (V100)</td>
+                <td>211 億</td>
+                <td>84</td>
+                <td>HBM2 (900 GB/s)</td>
+                <td><strong>第 1 代 Tensor Core (MMA)</strong>；獨立執行緒排程 (Independent Thread Scheduling)</td>
+              </tr>
+              <tr>
+                <td><strong>Turing</strong></td>
+                <td>2018</td>
+                <td>12 nm FFN</td>
+                <td>TU102 (RTX 2080Ti)</td>
+                <td>186 億</td>
+                <td>72</td>
+                <td>GDDR6 (616 GB/s)</td>
+                <td><strong>RT Core 光追核心</strong>；INT32 與 FP32 並行執行管線</td>
+              </tr>
+              <tr>
+                <td><strong>Ampere</strong></td>
+                <td>2020</td>
+                <td>7 nm (TSMC N7)</td>
+                <td>GA100 (A100)</td>
+                <td>542 億</td>
+                <td>108</td>
+                <td>HBM2e (2,039 GB/s)</td>
+                <td><strong>TF32 格式</strong>；2:4 結構化稀疏性；<strong>MIG (Multi-Instance GPU)</strong> 硬體切片</td>
+              </tr>
+              <tr>
+                <td><strong>Ada Lovelace</strong></td>
+                <td>2022</td>
+                <td>4 nm (TSMC 4N)</td>
+                <td>AD102 (RTX 4090)</td>
+                <td>763 億</td>
+                <td>128</td>
+                <td>GDDR6X (1,008 GB/s)</td>
+                <td>第 3 代 RT Core；第 4 代 Tensor Core；<strong>SER (Shader Execution Reordering)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Hopper</strong></td>
+                <td>2022</td>
+                <td>4 nm (TSMC 4N)</td>
+                <td>GH100 (H100)</td>
+                <td>800 億</td>
+                <td>132</td>
+                <td>HBM3 (3,350 GB/s)</td>
+                <td><strong>Transformer Engine (FP8)</strong>；DPX 動態規劃指令；<strong>TMA (非同步傳輸)</strong>；NVLink 4.0</td>
+              </tr>
+              <tr>
+                <td><strong>Blackwell</strong></td>
+                <td>2024~2026</td>
+                <td>4 nm (TSMC 4NP)</td>
+                <td>B200 / GB200</td>
+                <td><strong>2,080 億 (雙晶粒)</strong></td>
+                <td>160</td>
+                <td><strong>HBM3e (8,000 GB/s)</strong></td>
+                <td><strong>雙 Die NV-HBI 10TB/s 極速互連</strong>；<strong>FP4 精度</strong>；NVLink 5.0 (1.8TB/s)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SECTION 6 -->
+        <h2 id="sec-6">6. CUDA 軟體抽象與編程模型</h2>
+        <p>
+          CUDA（Compute Unified Device Architecture）是 NVIDIA 構築其不可撼動商業護城河的核心資產。CUDA 將底層硬體細節映射為優雅的三層軟體階層：
+        </p>
+
+        <div class="sm-grid-layout">
+          <div class="sm-subpartition-card" style="border-top-color: #3b82f6;">
+            <div class="sm-part-title">
+              <span>💻 軟體抽象層 (Software View)</span>
+            </div>
+            <ul class="sm-component-list">
+              <li><strong>Thread</strong>：最基本的邏輯運算執行緒</li>
+              <li><strong>Warp</strong>：32 個 Thread 組成的鎖步群組</li>
+              <li><strong>Thread Block</strong>：一組共同協作的 Threads (1~1024)</li>
+              <li><strong>Grid</strong>：執行整個 Kernel 的 Block 網格</li>
+            </ul>
+          </div>
+
+          <div class="sm-subpartition-card" style="border-top-color: #76b900;">
+            <div class="sm-part-title">
+              <span>⚡ 實體硬體層 (Hardware Mapping)</span>
+            </div>
+            <ul class="sm-component-list">
+              <li><strong>CUDA Core / ALU</strong>：執行單一執行緒純量指令</li>
+              <li><strong>SIMT Unit</strong>：Warp Scheduler 廣播發射單元</li>
+              <li><strong>Streaming Multiprocessor (SM)</strong>：容納並執行 Block</li>
+              <li><strong>Whole Device (GPU Chip)</strong>：排程發射整個 Grid</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>6.1 常用內核關鍵字與記憶體限定詞</h3>
+        <ul>
+          <li><code>__global__</code>：在 Host (CPU) 端呼叫，在 Device (GPU) 端執行。必須回傳 <code>void</code>，非同步發射。</li>
+          <li><code>__device__</code>：在 Device 端呼叫且在 Device 端執行，無法從 Host 直接調用。</li>
+          <li><code>__host__</code>：標準 CPU 函數（若同時修飾 <code>__host__ __device__</code>，編譯器將產生兩份二進位程式碼）。</li>
+          <li><code>__shared__</code>：宣告於 Block 共享記憶體中的變數，所有線程可見，生命週期與 Block 相同。</li>
+          <li><code>__constant__</code>：宣告於 64KB 常數記憶體空間，具備單一週期廣播機制，生命週期伴隨整次執行。</li>
+        </ul>
+
+        <h3>6.2 Warp Shuffle 暫存器免鎖交換指令</h3>
+        <p>
+          在 Kepler 架構之前，Warp 內的執行緒若要交換數據，必須先將數據寫入 Shared Memory，呼叫 <code>__syncthreads()</code> 同步，再從 Shared Memory 讀取。
+        </p>
+        <p>
+          <strong>Warp Shuffle 指令（如 <code>__shfl_down_sync</code>）</strong> 的出現徹底顛覆了這一流程：它允許 Warp 內部的 32 個執行緒<strong>直接跨暫存器相互讀取數據</strong>，無需經過 Shared Memory，零 Bank Conflict，僅需 1 個 Clock Cycle！
+        </p>
+
+        <pre><code class="language-cpp">// 使用 Warp Shuffle 實現極速 32-Thread 規約求和 (Warp Reduction)
+__inline__ __device__ float warpReduceSum(float val) {
+    #pragma unroll
+    for (int offset = 16; offset > 0; offset /= 2) {
+        // 遮罩 0xffffffff 代表 Warp 內全部 32 個執行緒皆參與同步
+        val += __shfl_down_sync(0xffffffff, val, offset);
+    }
+    return val; // Lane 0 最終持有整組 Warp 的總和！
+}</code></pre>
+
+        <!-- SECTION 7 -->
+        <h2 id="sec-7">7. CUDA 記憶體優化與非同步串流</h2>
+
+        <h3>7.1 Pinned Memory 與計算通信重疊 (Overlapping)</h3>
+        <p>
+          標準 <code>malloc()</code> 分配的 CPU 記憶體為分頁記憶體（Pageable Memory），作業系統隨時可能將其置換至硬碟 Swap。當透過 <code>cudaMemcpy()</code> 傳輸時，CUDA 驅動程式必須先將資料複製到暫時的<strong>鎖頁記憶體（Pinned / Page-Locked Memory）</strong>，再經由 DMA 控制器推送至 GPU。
+        </p>
+        <p>
+          直接使用 <code>cudaHostAlloc()</code> 配置 Pinned Memory 可以跳過中介複製，直接啟用 PCIe/NVLink 匯流排的極速 Direct Memory Access（DMA）。
+        </p>
+        <p>
+          透過多個 <strong>CUDA Streams（非同步運算串流）</strong>，可完美實現「傳輸下一個 Batch 的資料」與「計算當前 Batch 的 Kernel」在硬體管線上的並行重疊（Compute-Communication Overlapping）：
+        </p>
+
+        <pre><code class="language-cpp">// 雙緩衝雙串流管線化傳輸與計算
+cudaStream_t stream0, stream1;
+cudaStreamCreate(&stream0);
+cudaStreamCreate(&stream1);
+
+// 串流 0 複製 Batch 0，串流 1 複製 Batch 1
+cudaMemcpyAsync(d_A0, h_A0, size, cudaMemcpyHostToDevice, stream0);
+cudaMemcpyAsync(d_A1, h_A1, size, cudaMemcpyHostToDevice, stream1);
+
+for (int step = 0; step < total_steps; ++step) {
+    // 串流 0 計算 Kernel 0 (同時串流 1 可以非同步拷貝下一個區塊)
+    gemmKernel<<<grid, block, 0, stream0>>>(d_A0, d_B0, d_C0);
+    cudaMemcpyAsync(h_C0, d_C0, size, cudaMemcpyDeviceToHost, stream0);
+    cudaMemcpyAsync(d_A0, h_nextA0, size, cudaMemcpyHostToDevice, stream0);
+
+    // 串流 1 計算 Kernel 1
+    gemmKernel<<<grid, block, 0, stream1>>>(d_A1, d_B1, d_C1);
+    cudaMemcpyAsync(h_C1, d_C1, size, cudaMemcpyDeviceToHost, stream1);
+    cudaMemcpyAsync(d_A1, h_nextA1, size, cudaMemcpyHostToDevice, stream1);
+}</code></pre>
+
+        <h3>7.2 CUDA Graph：終結 CPU 發射開銷</h3>
+        <p>
+          在深層神經網路（如數百層 Transformer）的推論過程中，許多運算子耗時極短（僅數微秒），但 CPU 透過驅動程式發射單一 Kernel 的延遲高達 3~5 微秒。這導致 GPU 在大部分時間處於「等待 CPU 餵指令」的飢餓狀態（CPU-Bound）。
+        </p>
+        <p>
+          <strong>CUDA Graph</strong> 允許開發者將一連串 Kernel Launch、記憶體拷貝、事件等待錄製為一張靜態執行圖（DAG）。錄製完成後，CPU 只需要發起<strong>一次 API 調用（cudaGraphLaunch）</strong>，GPU 內建的硬體排程微碼引擎便能自動接管整張圖的高速重播，發射開銷直接降低 90% 以上！
+        </p>
+
+        <!-- SECTION 8 -->
+        <h2 id="sec-8">8. 實戰手寫高效能 GEMM Kernel 優化</h2>
+        <p>
+          通用矩陣乘法（GEMM: General Matrix Multiply, $C = \alpha A \times B + \beta C$）是整個人工智慧與數值線代的核心基石。本節展示從天真的 Naive 實作，到利用 Shared Memory 進行 2D Tile 切塊優化的完整遞進過程：
+        </p>
+
+        <h3>8.1 Naive GEMM (計算訪存比極低，嚴重 Memory-Bound)</h3>
+        <pre><code class="language-cpp">// 天真實現：每個執行緒負責計算矩陣 C 的一個元素
+__global__ void naiveGemmKernel(const float* __restrict__ A,
+                               const float* __restrict__ B,
+                               float* __restrict__ C,
+                               int M, int N, int K) {
+    int row = blockIdx.y * blockDim.y + threadIdx.y;
+    int col = blockIdx.x * blockDim.x + threadIdx.x;
+
+    if (row < M && col < N) {
+        float sum = 0.0f;
+        for (int k = 0; k < K; ++k) {
+            // 每次迴圈都需要存取全局記憶體 (400+ cycles 延遲)！
+            // 同一行/列的資料被不同線程重複從 Global Memory 讀取 K 次
+            sum += A[row * K + k] * B[k * N + col];
+        }
+        C[row * N + col] = sum;
+    }
+}</code></pre>
+
+        <h3>8.2 2D Shared Memory Block Tiling GEMM (工程標準版)</h3>
+        <p>
+          透過將矩陣 $A$ 與 $B$ 切割為 $32 \times 32$ 的小塊（Tiles），載入 Shared Memory，重複利用快取資料，大幅降低對 Global Memory 的頻寬壓迫：
+        </p>
+
+        <pre><code class="language-cpp">#define TILE_DIM 32
+
+__global__ void tiledGemmKernel(const float* __restrict__ A,
+                               const float* __restrict__ B,
+                               float* __restrict__ C,
+                               int M, int N, int K) {
+    // 分配片上靜態共享記憶體
+    __shared__ float s_A[TILE_DIM][TILE_DIM];
+    __shared__ float s_B[TILE_DIM][TILE_DIM];
+
+    int bx = blockIdx.x, by = blockIdx.y;
+    int tx = threadIdx.x, ty = threadIdx.y;
+
+    int row = by * TILE_DIM + ty;
+    int col = bx * TILE_DIM + tx;
+
+    float acc = 0.0f;
+
+    // 外層迴圈：以 TILE_DIM 步長橫跨 K 維度
+    int numTiles = (K + TILE_DIM - 1) / TILE_DIM;
+    for (int t = 0; t < numTiles; ++t) {
+        // 1. 協同將當前 Tile 載入 Shared Memory (合併訪問 Coalesced)
+        int aCol = t * TILE_DIM + tx;
+        int bRow = t * TILE_DIM + ty;
+
+        s_A[ty][tx] = (row < M && aCol < K) ? A[row * K + aCol] : 0.0f;
+        s_B[ty][tx] = (bRow < K && col < N) ? B[bRow * N + col] : 0.0f;
+
+        // 2. 設置記憶體屏障，確保整個 Block 的 1024 個線程都完成載入
+        __syncthreads();
+
+        // 3. 在片上極速 SRAM 中進行 TILE 級乘加累加
+        #pragma unroll
+        for (int k = 0; k < TILE_DIM; ++k) {
+            acc += s_A[ty][k] * s_B[k][tx];
+        }
+
+        // 4. 再次同步，防止較快的線程提前覆蓋下一輪迭代的 Shared Memory
+        __syncthreads();
+    }
+
+    // 5. 寫回結果至 Global Memory
+    if (row < M && col < N) {
+        C[row * N + col] = acc;
+    }
+}</code></pre>
+
+        <!-- SECTION 9 -->
+        <h2 id="sec-9">9. 跨晶片與跨節點極限互連 (NVLink, NVSwitch 與 GB200 NVL72)</h2>
+        <p>
+          當單一晶片的電晶體數量逼近摩爾定律極限時，算力擴展的戰場便全面轉移至<strong>晶片間互連（Interconnect Fabric）</strong>。
+        </p>
+
+        <h3>9.1 PCIe 瓶頸 vs. NVLink 5.0 霸權</h3>
+        <p>
+          標準伺服器採用的 PCIe Gen 5 x16 雙向頻寬僅有 <strong>128 GB/s</strong>，對於動輒傳輸數十 GB 權重的大模型分散式 All-Reduce 通訊簡直是杯水車薪。
+        </p>
+        <p>
+          NVIDIA 開發的 <strong>NVLink</strong> 是特製的高速點對點序列互聯總線：
+        </p>
+        <ul>
+          <li><strong>Hopper NVLink 4.0</strong>：單卡提供 900 GB/s 雙向頻寬（約為 PCIe 5 的 7 倍）。</li>
+          <li><strong>Blackwell NVLink 5.0</strong>：單卡提供 <strong>1.8 TB/s 雙向頻寬</strong>，每條通道傳輸速率高達 224 Gbps PAM4。</li>
+          <li><strong>NVSwitch 晶片</strong>：允許機櫃內所有 GPU 透過全橫截面無阻塞交叉交換矩陣進行記憶體語意直通存取（SHARP: In-Network Computing 網內硬體規約計算）。</li>
+        </ul>
+
+        <h3>9.2 液冷神機：GB200 NVL72 巨型單一虛擬 GPU</h3>
+        <p>
+          Blackwell 世代最具代表性的架構當屬 <strong>NVIDIA GB200 NVL72</strong>。它不是單純的 72 張加速卡堆疊，而是透過 5,184 條專用高速銅纜背板，將 36 顆 Grace CPU 與 72 顆 Blackwell GPU 徹底融合為<strong>單一巨大計算實體</strong>：
+        </p>
+        <ul>
+          <li><strong>全銅纜無損背板</strong>：機櫃內部放棄光模組，完全採用被動直連銅纜（DAC），節省超過 20,000 瓦功耗。</li>
+          <li><strong>雙向聚合雙向頻寬</strong>：高達 <strong>130 TB/s</strong>（相當於整個互聯網主幹即時流量的數倍）。</li>
+          <li><strong>推論算力</strong>：提供 1,440 PFLOPS（1.44 Exaflops）的 FP4 推論算力，單一機櫃即可直接在顯存內裝載並運行 27 萬億參數的巨型專家混合模型（MoE）！</li>
+        </ul>
+
+        <!-- SECTION 10 -->
+        <h2 id="sec-10">10. 硬核互動工程工具箱：Roofline 與 Occupancy 精算器</h2>
+        <p>
+          本節提供兩款專業級互動工具，助您精準評估硬體極限與 CUDA Kernel 調優瓶頸：
+        </p>
+
+        <!-- TOOL 1: ROOFLINE MODEL CALCULATOR -->
+        <div class="simulator-container" id="tool-roofline">
+          <div class="sim-header">
+            <span>📊 工具 1：NVIDIA GPU Roofline 效能模型精算器</span>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+            根據 Williams 等人提出的 Roofline 模型，演算法的極限效能取決於其<strong>算術強度（Arithmetic Intensity, FLOPs/Byte）</strong>。計算處於記憶體頻寬受限區（Memory-Bound）還是算力極限受限區（Compute-Bound）。
+          </p>
+
+          <div class="sim-controls-grid">
+            <div class="sim-group">
+              <label for="rf-gpu">選擇 GPU 目標晶片：</label>
+              <select id="rf-gpu" onchange="updateRoofline()">
+                <option value="b200" selected>NVIDIA Blackwell B200 SXM (4,500 TFLOPS, 8,000 GB/s)</option>
+                <option value="h100">NVIDIA Hopper H100 SXM (1,979 TFLOPS, 3,350 GB/s)</option>
+                <option value="a100">NVIDIA Ampere A100 SXM (312 TFLOPS, 2,039 GB/s)</option>
+                <option value="rtx4090">NVIDIA GeForce RTX 4090 (82.6 TFLOPS FP32, 1,008 GB/s)</option>
+              </select>
+            </div>
+
+            <div class="sim-group">
+              <label for="rf-precision">精度模式：</label>
+              <select id="rf-precision" onchange="updateRoofline()">
+                <option value="tensor_dense" selected>Tensor Core (低精度矩陣乘加)</option>
+                <option value="fp32_standard">標準 FP32 CUDA Core</option>
+              </select>
+            </div>
+
+            <div class="sim-group">
+              <label for="rf-ai">算術強度 $I$ (FLOPs / Byte)：</label>
+              <input type="number" id="rf-ai" value="150" min="0.1" max="5000" step="1" oninput="updateRoofline()">
+            </div>
+          </div>
+
+          <div class="sim-results-grid">
+            <div class="sim-result-card">
+              <div class="sim-val-label">硬體平衡點 (Turning Point)</div>
+              <div class="sim-val-number" id="rf-turning-point">--</div>
+              <div class="sim-val-desc">FLOPs/Byte 臨界值</div>
+            </div>
+            <div class="sim-result-card highlight">
+              <div class="sim-val-label">目前效能瓶頸分類</div>
+              <div class="sim-val-number" id="rf-bound-type" style="color: #76b900;">--</div>
+              <div class="sim-val-desc">受限物理維度</div>
+            </div>
+            <div class="sim-result-card">
+              <div class="sim-val-label">理論可達成最高算力</div>
+              <div class="sim-val-number" id="rf-achieved-flops">--</div>
+              <div class="sim-val-desc">TFLOPS (實際極限)</div>
+            </div>
+            <div class="sim-result-card">
+              <div class="sim-val-label">硬體算力利用率上限</div>
+              <div class="sim-val-number" id="rf-utilization">--</div>
+              <div class="sim-val-desc">% 達標率</div>
+            </div>
+          </div>
+
+          <!-- Dynamic SVG Chart -->
+          <svg class="roofline-chart-svg" id="roofline-svg" viewBox="0 0 700 240"></svg>
+        </div>
+
+        <!-- TOOL 2: CUDA OCCUPANCY CALCULATOR -->
+        <div class="simulator-container" id="tool-occupancy">
+          <div class="sim-header">
+            <span>⚙️ 工具 2：CUDA Warp Occupancy 與硬體限制分析器</span>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+            Occupancy（佔用率）是 SM 當前活躍的 Warps 數量佔硬體最大支援 Warps 數量的百分比。佔用率過低通常意味著無法隱匿存取延遲。
+          </p>
+
+          <div class="sim-controls-grid">
+            <div class="sim-group">
+              <label for="occ-threads">每 Block 線程數 (Threads/Block)：</label>
+              <select id="occ-threads" onchange="updateOccupancy()">
+                <option value="64">64 (2 Warps)</option>
+                <option value="128">128 (4 Warps)</option>
+                <option value="256" selected>256 (8 Warps - 常見甜蜜點)</option>
+                <option value="512">512 (16 Warps)</option>
+                <option value="1024">1024 (32 Warps - 單 Block 極限)</option>
+              </select>
+            </div>
+
+            <div class="sim-group">
+              <label for="occ-regs">每線程暫存器數量 (Regs/Thread)：</label>
+              <input type="number" id="occ-regs" value="32" min="16" max="255" step="4" oninput="updateOccupancy()">
+            </div>
+
+            <div class="sim-group">
+              <label for="occ-shmem">每 Block 共享記憶體 (Bytes)：</label>
+              <input type="number" id="occ-shmem" value="16384" min="0" max="163840" step="1024" oninput="updateOccupancy()">
+            </div>
+          </div>
+
+          <div class="sim-results-grid">
+            <div class="sim-result-card highlight">
+              <div class="sim-val-label">理論 SM 佔用率 (Occupancy)</div>
+              <div class="sim-val-number" id="occ-rate" style="color: #76b900;">--</div>
+              <div class="sim-val-desc">Active / Max Warps</div>
+            </div>
+            <div class="sim-result-card">
+              <div class="sim-val-label">活躍 Warps 數 (Active Warps)</div>
+              <div class="sim-val-number" id="occ-active-warps">--</div>
+              <div class="sim-val-desc">上限 64 Warps/SM</div>
+            </div>
+            <div class="sim-result-card">
+              <div class="sim-val-label">活躍 Block 數 (Active Blocks)</div>
+              <div class="sim-val-number" id="occ-active-blocks">--</div>
+              <div class="sim-val-desc">受限於資源分配</div>
+            </div>
+            <div class="sim-result-card">
+              <div class="sim-val-label">主要瓶頸限制因數</div>
+              <div class="sim-val-number" id="occ-bottleneck" style="font-size: 1.25rem;">--</div>
+              <div class="sim-val-desc">最先觸頂的資源</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION SUMMARY -->
+        <h2 id="sec-summary">結語：掌握底層矽片，方能在 AI 巨浪中立於不敗</h2>
+        <p>
+          軟體工程師與演算法科學家的分水嶺，往往體現在對硬體物理邊界的敬畏與洞察。當我們理解了 SM 內部 Warp 的排程節奏、看清了 32-Bank 衝突的微觀碰撞、掌握了記憶體層次與 Roofline 模型的極限曲線，原本抽象晦澀的 CUDA Kernel 優化便有了清晰客觀的導航坐標。
+        </p>
+        <p>
+          從 Volta 的初代 Tensor Core 到 Blackwell 的 2080 億雙晶粒巨獸，硬體架構的浪潮奔騰不息。然而，其內在依循的第一性原理——<strong>「以海量並行對抗延遲、以多級快取緩解頻寬壓力、以專業矽片單元加速通用矩陣」</strong>——歷久彌新。願這份指南成為您探索高性能計算世界最堅實的底層地圖。
+        </p>
+
+        <!-- Footer -->
+        <footer class="article-footer">
+          <a href="./index.html" class="back-home">← 返回 "AI" 硬核工程師首頁</a>
+        </footer>
+      </article>
+    </div>
+  </main>
+
+  <script src="./js/script.js"></script>
+  <script src="./js/enhancements.js"></script>
+
+  <!-- Interactive Calculators Logic -->
+  <script>
+    // GPU Specs Database
+    const GPU_DB = {
+      b200: { name: 'Blackwell B200', peakFlopsTensor: 4500, peakFlopsFp32: 90, memBw: 8000, maxWarpsPerSm: 64, maxBlocksPerSm: 32, maxRegsPerSm: 65536, maxShmemPerSm: 233472 },
+      h100: { name: 'Hopper H100 SXM', peakFlopsTensor: 1979, peakFlopsFp32: 67, memBw: 3350, maxWarpsPerSm: 64, maxBlocksPerSm: 32, maxRegsPerSm: 65536, maxShmemPerSm: 233472 },
+      a100: { name: 'Ampere A100 SXM', peakFlopsTensor: 312, peakFlopsFp32: 19.5, memBw: 2039, maxWarpsPerSm: 64, maxBlocksPerSm: 32, maxRegsPerSm: 65536, maxShmemPerSm: 167936 },
+      rtx4090: { name: 'RTX 4090', peakFlopsTensor: 330, peakFlopsFp32: 82.6, memBw: 1008, maxWarpsPerSm: 48, maxBlocksPerSm: 24, maxRegsPerSm: 65536, maxShmemPerSm: 102400 }
+    };
+
+    function updateRoofline() {
+      const gpuKey = document.getElementById('rf-gpu').value;
+      const precision = document.getElementById('rf-precision').value;
+      const ai = parseFloat(document.getElementById('rf-ai').value) || 1;
+      const gpu = GPU_DB[gpuKey];
+
+      const peakTFlops = (precision === 'tensor_dense') ? gpu.peakFlopsTensor : gpu.peakFlopsFp32;
+      const memBwTB = gpu.memBw / 1000; // TB/s
+
+      // Turning point: I* = Peak FLOPS / Bandwidth
+      const turningPoint = peakTFlops / memBwTB; // FLOPs/Byte
+      const attainableFlops = Math.min(peakTFlops, ai * memBwTB);
+      const isMemoryBound = (ai < turningPoint);
+      const utilPercent = (attainableFlops / peakTFlops) * 100;
+
+      document.getElementById('rf-turning-point').innerText = turningPoint.toFixed(1);
+      document.getElementById('rf-bound-type').innerText = isMemoryBound ? 'Memory-Bound (訪存受限)' : 'Compute-Bound (算力受限)';
+      document.getElementById('rf-bound-type').style.color = isMemoryBound ? '#f59e0b' : '#76b900';
+      document.getElementById('rf-achieved-flops').innerText = attainableFlops.toFixed(1);
+      document.getElementById('rf-utilization').innerText = utilPercent.toFixed(1) + '%';
+
+      // Draw SVG Chart
+      renderRooflineSvg(ai, turningPoint, peakTFlops, attainableFlops);
+    }
+
+    function renderRooflineSvg(currentAi, turningPoint, peakFlops, currentFlops) {
+      const svg = document.getElementById('roofline-svg');
+      if (!svg) return;
+      const w = 700, h = 240;
+      const padL = 70, padR = 40, padT = 30, padB = 40;
+
+      // Coordinate mapping
+      const maxAiLog = Math.log10(5000);
+      const minAiLog = Math.log10(0.1);
+      const maxFLog = Math.log10(6000);
+      const minFLog = Math.log10(1);
+
+      function xPos(aiVal) {
+        const val = Math.max(0.1, Math.min(5000, aiVal));
+        const norm = (Math.log10(val) - minAiLog) / (maxAiLog - minAiLog);
+        return padL + norm * (w - padL - padR);
+      }
+      function yPos(fVal) {
+        const val = Math.max(1, Math.min(6000, fVal));
+        const norm = (Math.log10(val) - minFLog) / (maxFLog - minFLog);
+        return (h - padB) - norm * (h - padT - padB);
+      }
+
+      const xTurn = xPos(turningPoint);
+      const yPeak = yPos(peakFlops);
+      const xStart = xPos(0.1);
+      const yStart = yPos(0.1 * (peakFlops / turningPoint));
+      const xEnd = xPos(5000);
+
+      const curX = xPos(currentAi);
+      const curY = yPos(currentFlops);
+
+      svg.innerHTML = `
+        <!-- Axes -->
+        <line x1="${padL}" y1="${h - padB}" x2="${w - padR}" y2="${h - padB}" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${h - padB}" stroke="#64748b" stroke-width="1.5"/>
+        
+        <!-- Axis Labels -->
+        <text x="${w / 2}" y="${h - 10}" fill="#94a3b8" font-size="12" text-anchor="middle" font-family="sans-serif">算術強度 Arithmetic Intensity (FLOPs/Byte, 對數刻度)</text>
+        <text x="18" y="${h / 2}" fill="#94a3b8" font-size="12" text-anchor="middle" font-family="sans-serif" transform="rotate(-90 18 ${h / 2})">算力 (TFLOPS)</text>
+
+        <!-- Roofline Slanted & Flat -->
+        <polyline points="${xStart},${yStart} ${xTurn},${yPeak} ${xEnd},${yPeak}" fill="none" stroke="#76b900" stroke-width="3"/>
+        
+        <!-- Turning point vertical dashed line -->
+        <line x1="${xTurn}" y1="${padT}" x2="${xTurn}" y2="${h - padB}" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <text x="${xTurn + 5}" y="${padT + 15}" fill="#60a5fa" font-size="11" font-family="monospace">I* = ${turningPoint.toFixed(1)}</text>
+
+        <!-- Current operating point -->
+        <circle cx="${curX}" cy="${curY}" r="7" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+        <text x="${curX}" y="${curY - 12}" fill="#ef4444" font-size="12" font-weight="bold" text-anchor="middle" font-family="monospace">
+          ${currentFlops.toFixed(1)} TFLOPS
+        </text>
+      `;
+    }
+
+    function updateOccupancy() {
+      const gpu = GPU_DB['h100']; // Default base
+      const threadsPerBlock = parseInt(document.getElementById('occ-threads').value);
+      const regsPerThread = parseInt(document.getElementById('occ-regs').value) || 32;
+      const shmemPerBlock = parseInt(document.getElementById('occ-shmem').value) || 0;
+
+      const warpsPerBlock = Math.ceil(threadsPerBlock / 32);
+
+      // Hard limits per SM
+      // 1. Thread limit (Max warps per SM = 64)
+      const maxBlocksByThreads = Math.floor(gpu.maxWarpsPerSm / warpsPerBlock);
+
+      // 2. Max Blocks limit (32 blocks/SM)
+      const maxBlocksByBlocks = gpu.maxBlocksPerSm;
+
+      // 3. Register limit:
+      // In NVIDIA GPUs, registers are allocated in granularity of 256 regs per warp or aligned
+      const regsPerWarp = Math.ceil((regsPerThread * 32) / 256) * 256;
+      const regsPerBlock = regsPerWarp * warpsPerBlock;
+      const maxBlocksByRegs = regsPerBlock > 0 ? Math.floor(gpu.maxRegsPerSm / regsPerBlock) : 999;
+
+      // 4. Shared Memory limit:
+      const maxBlocksByShmem = shmemPerBlock > 0 ? Math.floor(gpu.maxShmemPerSm / shmemPerBlock) : 999;
+
+      // Actual active blocks
+      const activeBlocks = Math.max(0, Math.min(maxBlocksByThreads, maxBlocksByBlocks, maxBlocksByRegs, maxBlocksByShmem));
+      const activeWarps = activeBlocks * warpsPerBlock;
+      const occupancyRate = (activeWarps / gpu.maxWarpsPerSm) * 100;
+
+      document.getElementById('occ-rate').innerText = occupancyRate.toFixed(1) + '%';
+      document.getElementById('occ-active-warps').innerText = `${activeWarps} / ${gpu.maxWarpsPerSm}`;
+      document.getElementById('occ-active-blocks').innerText = activeBlocks;
+
+      // Determine bottleneck
+      let bottleneck = '無瓶頸 (達到 100%)';
+      if (activeBlocks === 0) {
+        bottleneck = '資源超出硬體單一SM上限';
+      } else if (maxBlocksByRegs === activeBlocks && maxBlocksByRegs < maxBlocksByThreads) {
+        bottleneck = '暫存器不足 (Register Bound)';
+      } else if (maxBlocksByShmem === activeBlocks && maxBlocksByShmem < maxBlocksByThreads) {
+        bottleneck = '共享記憶體不足 (Shared Mem Bound)';
+      } else if (maxBlocksByBlocks === activeBlocks) {
+        bottleneck = 'Block 數量上限 (Max Blocks)';
+      } else if (maxBlocksByThreads === activeBlocks) {
+        bottleneck = '執行緒/Warp 上限 (Max Warps)';
+      }
+
+      document.getElementById('occ-bottleneck').innerText = bottleneck;
+    }
+
+    // Init on load
+    document.addEventListener('DOMContentLoaded', () => {
+      updateRoofline();
+      updateOccupancy();
+    });
+  </script>
+</body>
+</html>

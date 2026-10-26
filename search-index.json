@@ -1,5 +1,37 @@
 [
   {
+    "url": "nvidia-gpu-cuda-architecture-guide.html",
+    "title": "NVIDIA GPU 硬核微架構與 CUDA 終極指南：從晶圓矽片、SM 串流多處理器、Tensor Core 到 CUDA 編程與記憶體層級全解析",
+    "excerpt": "全維度深度剖析 NVIDIA GPU 硬體微架構與 CUDA 運算體系：深入 SM (Streaming Multiprocessor)、Warp Scheduler 雙發排程、Register File 瓶頸、Tensor Core FP4/FP8 矩陣核心、32-Bank Shared Memory 衝突機制、HBM3e/GDDR6X 頻寬壁壘、Warp Divergence、Memory Coalescing、手寫高效能 GEMM Kernel 優化，以及 NVLink 5.0 與 GB200 NVL72 互連拓撲。內建互動式 Roofline 模型與 CUDA Warp Occupancy 精算器。",
+    "tags": [
+      "NVIDIA GPU",
+      "CUDA",
+      "微架構",
+      "Streaming Multiprocessor",
+      "SM",
+      "Tensor Core",
+      "Warp Scheduler",
+      "SIMT",
+      "HBM3e",
+      "GDDR6X",
+      "Roofline Model",
+      "Warp Divergence",
+      "Memory Coalescing",
+      "Shared Memory",
+      "Bank Conflict",
+      "NVLink",
+      "GB200 NVL72",
+      "Blackwell",
+      "Hopper",
+      "H100",
+      "B200",
+      "A100",
+      "高效能計算",
+      "HPC",
+      "AI 晶片"
+    ]
+  },
+  {
     "url": "antigravity-2-vs-ide-vs-cli-vs-sdk.html",
     "title": "Google Antigravity 四大支柱終極全景對決：Antigravity 2.0 v.s IDE v.s CLI (agy) v.s Python SDK 架構剖析、工作流差異與最佳選型指南",
     "excerpt": "全維度深度橫評 Google Antigravity 四大核心形態：深入剖析 Antigravity 2.0 獨立多代理指揮中心、Antigravity IDE 沉浸式 AI 原生編輯器、agy 終端極速命令列引擎，以及 google-antigravity Python SDK 程式化代理核心。涵蓋統一 Agentic Runtime 底層架構、三大 AI 模態 (Tab/Cmd+I/Agent)、串流推論與 ToolCall 強型別攔截、背景 Scheduled Tasks (Cron)、Unix Pipeline 串接、36 項橫向對比矩陣與四維互動選型決策器。",

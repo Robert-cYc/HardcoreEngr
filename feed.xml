@@ -5,13 +5,45 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 27 Oct 2026 02:58:44 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 07:44:00 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>NVIDIA GPU 硬核微架構與 CUDA 終極指南：從晶圓矽片、SM 串流多處理器、Tensor Core 到 CUDA 編程與記憶體層級全解析</title>
+    <link>https://ai-hardcore-engineer.com/nvidia-gpu-cuda-architecture-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/nvidia-gpu-cuda-architecture-guide.html</guid>
+    <description>全維度深度剖析 NVIDIA GPU 硬體微架構與 CUDA 運算體系：深入 SM (Streaming Multiprocessor)、Warp Scheduler 雙發排程、Register File 瓶頸、Tensor Core FP4/FP8 矩陣核心、32-Bank Shared Memory 衝突機制、HBM3e/GDDR6X 頻寬壁壘、Warp Divergence、Memory Coalescing、手寫高效能 GEMM Kernel 優化，以及 NVLink 5.0 與 GB200 NVL72 互連拓撲。內建互動式 Roofline 模型與 CUDA Warp Occupancy 精算器。</description>
+    <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
+    <category>NVIDIA GPU</category>
+    <category>CUDA</category>
+    <category>微架構</category>
+    <category>Streaming Multiprocessor</category>
+    <category>SM</category>
+    <category>Tensor Core</category>
+    <category>Warp Scheduler</category>
+    <category>SIMT</category>
+    <category>HBM3e</category>
+    <category>GDDR6X</category>
+    <category>Roofline Model</category>
+    <category>Warp Divergence</category>
+    <category>Memory Coalescing</category>
+    <category>Shared Memory</category>
+    <category>Bank Conflict</category>
+    <category>NVLink</category>
+    <category>GB200 NVL72</category>
+    <category>Blackwell</category>
+    <category>Hopper</category>
+    <category>H100</category>
+    <category>B200</category>
+    <category>A100</category>
+    <category>高效能計算</category>
+    <category>HPC</category>
+    <category>AI 晶片</category>
+  </item>
   <item>
     <title>Google Antigravity 四大支柱終極全景對決：Antigravity 2.0 v.s IDE v.s CLI (agy) v.s Python SDK 架構剖析、工作流差異與最佳選型指南</title>
     <link>https://ai-hardcore-engineer.com/antigravity-2-vs-ide-vs-cli-vs-sdk.html</link>
@@ -983,7 +1015,7 @@
     <link>https://ai-hardcore-engineer.com/articles.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/articles.html</guid>
     <description>關於前端開發、後端技術、Git 與 AI 開發的技術博客。</description>
-    <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+    <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
     <category>文章</category>
     <category>博客</category>
   </item>

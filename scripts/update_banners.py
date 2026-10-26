@@ -52,6 +52,7 @@ ARTICLE_BANNER_MAP = {
     "nas-storage-comparison.html": "nas-storage-guide.jpg",
     "node-js-commands.html": "nodejs-javascript-guide.jpg",
     "notion-guide.html": "notion-workspace-guide.jpg",
+    "nvidia-gpu-cuda-architecture-guide.html": "nvidia-gpu-cuda-architecture-guide.jpg",
     "obsidian-guide.html": "obsidian-pkm-guide.jpg",
     "ollama-local-llm.html": "ollama-guide.jpg",
     "open-source-licenses.html": "open-source-licenses-guide.jpg",
