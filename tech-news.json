@@ -1,93 +1,93 @@
 {
-  "updated": "2026-10-25 15:17",
+  "updated": "2026-10-26 00:23",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "Tool book of a Nuremberg knight from 1505",
-          "link": "https://loeffelholz-codex.org/en/",
-          "date": "2026-10-25 12:37",
+          "title": "Dolly Parton's Imagination Library",
+          "link": "https://imaginationlibrary.com/",
+          "date": "2026-10-25 18:23",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50230917"
+          "comments": "https://news.ycombinator.com/item?id=50234474"
         },
         {
-          "title": "fheroes2: A recreation of Heroes of Might and Magic II game engine",
-          "link": "https://github.com/ihhub/fheroes2",
-          "date": "2026-10-25 11:09",
+          "title": "Overgrown, when plants invade your abandoned tabs",
+          "link": "https://charliegerard.dev/blog/overgrown-extension/",
+          "date": "2026-10-22 15:52",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50230384"
+          "comments": "https://news.ycombinator.com/item?id=50197108"
         },
         {
-          "title": "Show HN: Farol – a risk map of a pull request for the person who approves it",
-          "link": "https://github.com/winnin/farol",
-          "date": "2026-10-25 13:28",
+          "title": "F-Zero X on Nintendo 3DS",
+          "link": "https://hypnotize.works/gdx-3ds/postmortem/index.html",
+          "date": "2026-10-25 23:27",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50231349"
+          "comments": "https://news.ycombinator.com/item?id=50237078"
         },
         {
-          "title": "We should be more ambitious with the software we build",
-          "link": "https://danluu.com/ambitious/",
-          "date": "2026-10-24 21:47",
+          "title": "What goes into making an animated film?",
+          "link": "https://www.disneyanimation.com/process/",
+          "date": "2026-10-25 20:27",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50225695"
+          "comments": "https://news.ycombinator.com/item?id=50235738"
         },
         {
-          "title": "Cerebras Deploys Trillion-Parameter AI Models",
-          "link": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
-          "date": "2026-10-25 01:33",
+          "title": "Why I Am a Programmer",
+          "link": "https://www.alfie.wtf/programming/why-i-am-a-programmer.html",
+          "date": "2026-10-25 19:11",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50227356"
+          "comments": "https://news.ycombinator.com/item?id=50235017"
         },
         {
-          "title": "How Japanese Dried Bonito Is Made",
-          "link": "https://kottke.org/26/10/how-japanese-dried-bonito-is-made",
-          "date": "2026-10-22 11:31",
+          "title": "The State of Context Engineering",
+          "link": "https://www.dbreunig.com/2026/10/24/the-state-of-context-engineering.html",
+          "date": "2026-10-25 20:32",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50193936"
+          "comments": "https://news.ycombinator.com/item?id=50235780"
         },
         {
-          "title": "The Goose Programming Language",
-          "link": "https://aardappel.github.io/goose/",
-          "date": "2026-10-24 19:06",
+          "title": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
+          "link": "https://lynchlab.net/llm-skin-cancer",
+          "date": "2026-10-25 17:15",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50224100"
+          "comments": "https://news.ycombinator.com/item?id=50233779"
         },
         {
-          "title": "Samsung running a TensorFlow lite model on 960x540 image to track you",
-          "link": "https://twitter.com/mike64_t/status/2114150399406202896",
-          "date": "2026-10-25 10:42",
+          "title": "Making the Buddha Head from Merv Whole Again",
+          "link": "https://www.getty.edu/news/buddha-head-of-merv-turkmenistan-conservation/",
+          "date": "2026-10-23 18:46",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50230181"
+          "comments": "https://news.ycombinator.com/item?id=50213610"
         },
         {
-          "title": "Reverse engineer of PC-98 Touhou games retires",
-          "link": "https://rec98.nmlgc.net/blog/2026-10-05",
-          "date": "2026-10-22 16:16",
+          "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+          "link": "https://minimaxir.com/2026/10/cheap-llms/",
+          "date": "2026-10-25 21:11",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50197434"
+          "comments": "https://news.ycombinator.com/item?id=50236102"
         },
         {
-          "title": "The Lego group reveals collaboration with Daft Punk",
-          "link": "https://www.lego.com/en-us/categories/adults-welcome/article/daft-punk",
-          "date": "2026-10-25 12:48",
+          "title": "I refuse to accept a censored Internet. Join Me at FOSDEM 27",
+          "link": "https://talkweb.eu/openweb/4558/",
+          "date": "2026-10-25 17:30",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50231001"
+          "comments": "https://news.ycombinator.com/item?id=50233929"
         },
         {
-          "title": "Nikon photography contest winner loses title after scientists spot signs of AI",
-          "link": "https://www.techspot.com/news/114171-nikon-photography-contest-winner-loses-title-after-scientists.html",
-          "date": "2026-10-25 09:51",
+          "title": "Serbia's Vucic concedes election defeat in historic win for student movement",
+          "link": "https://www.reuters.com/world/europe/serbia-votes-students-seek-unseat-vucic-snap-election-2026-10-25/",
+          "date": "2026-10-25 21:08",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50229827"
+          "comments": "https://news.ycombinator.com/item?id=50236081"
         },
         {
-          "title": "SpeedCrunch 1.1",
-          "link": "https://www.speedcrunch.org/",
-          "date": "2026-10-24 19:19",
+          "title": "Oregon Police Are Charging a Local News Outlet $2.5M for Records About One Cop",
+          "link": "https://theintercept.com/2026/10/01/oregon-police-misconduct-public-records-cost-fee/",
+          "date": "2026-10-25 18:04",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50224210"
+          "comments": "https://news.ycombinator.com/item?id=50234232"
         }
       ]
     },
@@ -95,6 +95,12 @@
       "name": "CNN 科技",
       "site": "https://edition.cnn.com/business/tech",
       "items": [
+        {
+          "title": "When will there be a flying car in your garage? Not anytime soon.",
+          "link": "https://edition.cnn.com/2026/10/25/business/flying-cars",
+          "date": "2026-10-25",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
         {
           "title": "Rent control doomed this mayor’s re-election campaign. He has no regrets",
           "link": "https://edition.cnn.com/2026/10/25/business/rent-control-providence-mayor",
@@ -104,12 +110,6 @@
         {
           "title": "We have more clothing options than ever. Why is shopping so hard?",
           "link": "https://edition.cnn.com/2026/10/24/business/its-not-just-you-theres-nowhere-to-shop-anymore",
-          "date": "2026-10-24",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Winter is coming. For Maine families, it’s never been more expensive.",
-          "link": "https://edition.cnn.com/2026/10/24/economy/heating-costs-struggle-maine-families",
           "date": "2026-10-24",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -174,6 +174,18 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "iPhone Duo轉軸有異音、關不緊？蘋果官方：軟體無法修復",
+          "link": "https://3c.ltn.com.tw/news/68040",
+          "date": "2026/10/26 08:01",
+          "summary": "蘋果官方陸續公布首款摺疊手機iPhone Duo的相關支援文件，其中一份特別針對轉軸問題提供故障排除指引，教果粉如何 ..."
+        },
+        {
+          "title": "宏碁全新旗艦電競桌機上市 搭載RTX 5090顯示卡 挑戰極限維持高效穩定",
+          "link": "https://3c.ltn.com.tw/news/68023",
+          "date": "2026/10/26 05:48",
+          "summary": "台灣電腦大廠宏碁（Acer）推出全新Predator Orion 7000電競桌機，主打Intel高階處理器與NVI ..."
+        },
+        {
           "title": "蘋果最強小平板要來了！iPad mini 8傳聞5大升級一次看",
           "link": "https://3c.ltn.com.tw/news/68049",
           "date": "2026/10/25 16:30",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68055",
           "date": "2026/10/24 14:03",
           "summary": "蘋果iPhone 18 Pro系列上市滿一個月，還在觀望、想等降價的果粉，現在或許可考慮出手了！新機早在10月初就已 ..."
-        },
-        {
-          "title": "紅果短劇連中國網友都嫌「看多降智」！官方急祭3招救形象",
-          "link": "https://3c.ltn.com.tw/news/68047",
-          "date": "2026/10/24 13:00",
-          "summary": "中國影音App「紅果短劇」最近在台灣爆紅，不少網友追得欲罷不能，甚至有人說連Netflix都退訂了。不過，當台灣網友 ..."
-        },
-        {
-          "title": "Google悄改隱私政策！Gmail、相簿恐被拿來投廣告 快檢查這設定",
-          "link": "https://3c.ltn.com.tw/news/68056",
-          "date": "2026/10/24 12:00",
-          "summary": "注重隱私的Google用戶注意了，Google近日悄悄修改隱私權政策，新增一項重要例外條款，允許在特定情況下，將Gm ..."
         }
       ]
     },
