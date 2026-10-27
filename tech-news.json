@@ -1,16 +1,58 @@
 {
-  "updated": "2026-10-26 17:57",
+  "updated": "2026-10-27 01:29",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
+          "title": "Announcing three new discoveries in mathematics, computer science, and physics",
+          "link": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+          "date": "2026-10-26 21:35",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50251344"
+        },
+        {
+          "title": "The Exponential Time Hypothesis Is False [pdf]",
+          "link": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+          "date": "2026-10-26 21:59",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50251661"
+        },
+        {
           "title": "Sebastian Raschka's from-scratch video course on building reasoning models",
           "link": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
           "date": "2026-10-26 15:11",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50245138"
+        },
+        {
+          "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
+          "link": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+          "date": "2026-10-26 22:41",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50252159"
+        },
+        {
+          "title": "Oldest GUI application that still runs on Windows 11",
+          "link": "https://blog.enlyth.com/posts/oldest-windows-gui-app-win-11/",
+          "date": "2026-10-26 17:56",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50248055"
+        },
+        {
+          "title": "Type Server Protocol",
+          "link": "https://github.com/microsoft/pylance-release/blob/main/docs/tsp/type-server-protocol.md",
+          "date": "2026-10-26 18:14",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50248371"
+        },
+        {
+          "title": "A Printer Printing onto Paper",
+          "link": "https://twitter.com/macrofying/status/2112904628509528219",
+          "date": "2026-10-23 05:01",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50204697"
         },
         {
           "title": "CSS-Tricks has a new owner",
@@ -20,74 +62,32 @@
           "comments": "https://news.ycombinator.com/item?id=50245831"
         },
         {
-          "title": "Anthropic S-1",
-          "link": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
-          "date": "2026-10-26 13:04",
+          "title": "16-bit Windows (Windows 1.x, 2.x, 3.0, 3.1, etc.) on 64-bit Windows",
+          "link": "https://github.com/otya128/winevdm",
+          "date": "2026-10-27 01:15",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50242939"
+          "comments": "https://news.ycombinator.com/item?id=50253529"
         },
         {
-          "title": "The Git Forge for Agent-Human Collaboration",
-          "link": "https://entire.com/blog/the-git-forge-for-agent-human-collaboration",
-          "date": "2026-10-26 17:23",
+          "title": "LISPy things you can do in 64K bytes of core (2019)",
+          "link": "https://t3x.org/lisp64k/index.html",
+          "date": "2026-10-25 12:53",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50247453"
+          "comments": "https://news.ycombinator.com/item?id=50231041"
         },
         {
-          "title": "SIMD-accelerated computer vision on a $2 microcontroller",
-          "link": "https://shraiwi.com/blog/simd-fast-esp32s3/",
-          "date": "2026-10-25 22:29",
+          "title": "Nietzschian Debugger",
+          "link": "https://github.com/DilawarShafiq/nietzschian-debugger",
+          "date": "2026-10-26 17:25",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50236681"
+          "comments": "https://news.ycombinator.com/item?id=50247493"
         },
         {
-          "title": "Diamond Transistor",
-          "link": "https://www.df.com/diamond-transistor",
-          "date": "2026-10-23 14:20",
+          "title": "GPT-6.1 Terra",
+          "link": "https://openai.com/index/introducing-gpt-6-1-terra/",
+          "date": "2026-10-26 18:01",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50209525"
-        },
-        {
-          "title": "Pharo 14",
-          "link": "https://pharo.org/news/2026-10-26-Pharo14Release.html",
-          "date": "2026-10-26 11:15",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50241925"
-        },
-        {
-          "title": "Blaise Pascal invented fixed route public transport (2024)",
-          "link": "https://humantransit.org/2024/12/one-of-the-greatest-inventions-in-the-history-of-human-transport.html",
-          "date": "2026-10-22 19:52",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50200152"
-        },
-        {
-          "title": "Fixing Tool-Call Accuracy in vLLM",
-          "link": "https://www.ubicloud.com/blog/fixing-tool-call-accuracy-in-vllm",
-          "date": "2026-10-26 12:59",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50242870"
-        },
-        {
-          "title": "Birdwatching rewires the brain and slows cognitive decline",
-          "link": "https://www.bbc.com/future/article/20261019-birdwatching-rewires-the-brain-and-slows-cognitive-decline",
-          "date": "2026-10-23 22:04",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50215997"
-        },
-        {
-          "title": "Switzerland. Block by block. At 1:1 scale",
-          "link": "https://blocks.manifold3d.ch/",
-          "date": "2026-10-26 08:46",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50240922"
-        },
-        {
-          "title": "Colorfigures",
-          "link": "https://april-zhu.com/colorfigures",
-          "date": "2026-10-23 14:22",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50209573"
+          "comments": "https://news.ycombinator.com/item?id=50248124"
         }
       ]
     },
@@ -96,21 +96,21 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
-          "title": "When will there be a flying car in your garage? Not anytime soon.",
-          "link": "https://edition.cnn.com/2026/10/25/business/flying-cars",
-          "date": "2026-10-25",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
           "title": "Anthropic set to make stock market debut as questions swirl about safety of AI",
           "link": "https://edition.cnn.com/2026/10/26/tech/anthropic-files-ipo",
           "date": "2026-10-26",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "The markets are starting to act seriously weird. Blame AI",
-          "link": "https://edition.cnn.com/2026/10/26/business/markets-bonds-stocks-ai",
+          "title": "I asked Claude to explain Anthropic’s IPO",
+          "link": "https://edition.cnn.com/2026/10/26/business/claude-anthropic-ipo-summary",
           "date": "2026-10-26",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "When will there be a flying car in your garage? Not anytime soon.",
+          "link": "https://edition.cnn.com/2026/10/25/business/flying-cars",
+          "date": "2026-10-25",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
@@ -174,6 +174,30 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "iPhone Duo螢幕破裂災情！蘋果證實少數有問題 可申請換機",
+          "link": "https://3c.ltn.com.tw/news/68082",
+          "date": "2026/10/27 08:09",
+          "summary": "蘋果首款摺疊手機iPhone Duo上市才沒幾天，國外就陸續傳出內螢幕破裂災情，而且多起案例的故障位置相當類似，都是 ..."
+        },
+        {
+          "title": "蘋果新iPad mini大升級又擠牙膏！網友吐槽：萬年60Hz還在",
+          "link": "https://3c.ltn.com.tw/news/68075",
+          "date": "2026/10/27 08:01",
+          "summary": "蘋果推出新一代iPad mini（A20 Pro），也就是俗稱的iPad mini 8，預計11月6日在台上市，售價 ..."
+        },
+        {
+          "title": "iPad mini只是開胃菜！傳蘋果連3天發新品 觸控MacBook壓軸",
+          "link": "https://3c.ltn.com.tw/news/68076",
+          "date": "2026/10/27 07:50",
+          "summary": "蘋果昨(26日)晚間突襲發表新一代iPad mini(A20 Pro)，也就是俗稱的iPad mini 8。不過，這 ..."
+        },
+        {
+          "title": "寶可夢卡牌遊戲全新擴充包即將開戰 首度解禁雙屬性機制 戰術靈活度全面提升",
+          "link": "https://3c.ltn.com.tw/news/68072",
+          "date": "2026/10/27 05:36",
+          "summary": "智慧型手機卡牌遊戲《Pokémon Trading Card Game Pocket》（寶可夢卡牌Pocket）將於 ..."
+        },
+        {
           "title": "蘋果新款iPad mini漲價3千差在哪？一張表看懂新舊代規格",
           "link": "https://3c.ltn.com.tw/news/68078",
           "date": "2026/10/27 01:01",
@@ -220,30 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68065",
           "date": "2026/10/26 10:00",
           "summary": "蘋果摺疊手機 iPhone Duo 於 23 日開賣，好市多全台賣場許多人排隊搶機，以內湖店來說，開賣後約 5 分鐘 ..."
-        },
-        {
-          "title": "iPhone Duo 螢幕災情連環爆！分析師僅用一天 鉸鏈異常凸起",
-          "link": "https://3c.ltn.com.tw/news/68062",
-          "date": "2026/10/26 09:00",
-          "summary": "Apple 首款摺疊手機 iPhone Duo 上市後，儘管話題不斷，但隨之而來的，則是陸續傳出的螢幕損壞案例。有硬 ..."
-        },
-        {
-          "title": "iPhone Duo轉軸有異音、關不緊？蘋果官方：軟體無法修復",
-          "link": "https://3c.ltn.com.tw/news/68040",
-          "date": "2026/10/26 08:01",
-          "summary": "蘋果官方陸續公布首款摺疊手機iPhone Duo的相關支援文件，其中一份特別針對轉軸問題提供故障排除指引，教果粉如何 ..."
-        },
-        {
-          "title": "宏碁全新旗艦電競桌機上市 搭載RTX 5090顯示卡 挑戰極限維持高效穩定",
-          "link": "https://3c.ltn.com.tw/news/68023",
-          "date": "2026/10/26 05:48",
-          "summary": "台灣電腦大廠宏碁（Acer）推出全新Predator Orion 7000電競桌機，主打Intel高階處理器與NVI ..."
-        },
-        {
-          "title": "蘋果最強小平板要來了！iPad mini 8傳聞5大升級一次看",
-          "link": "https://3c.ltn.com.tw/news/68049",
-          "date": "2026/10/25 16:30",
-          "summary": "蘋果預計在下週再發布一波新品，除了首款觸控MacBook Pro備受矚目，另一主角可能就是iPad mini 8，預 ..."
         }
       ]
     },
@@ -251,6 +251,76 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "AI 錢潮未止＋潛在政策利多  光通訊強彈",
+          "link": "https://finance.technews.tw/2026/10/27/why-lumentums-stock-led-the-sp-500-higher-on-monday/",
+          "date": "2026-10-27 01:20",
+          "summary": "市場看好 AI 投資熱潮未歇，帶動光通訊供應鏈反彈，光通訊元件製造商 Lumentum 股價 26 日大漲逾 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Block 財務長預言公司組織圖即將納入 AI 代理，科技業重新設計工作模式",
+          "link": "https://finance.technews.tw/2026/10/27/block-amazon-synopsys-and-cloudflare-are-rethinking-how-work-gets-done-with-ai/",
+          "date": "2026-10-27 01:00",
+          "summary": "AI 快速滲透企業營運，Block、亞馬遜、新思科技與 Cloudflare 高層近日在論壇表示，企業導入 A [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "塔塔通訊投資 150 億元，印度各地建設 AI 相關基礎設施",
+          "link": "https://technews.tw/2026/10/27/tata-communications-to-invest-450-million-in-10000-km-ai-fibre-network/",
+          "date": "2026-10-27 00:50",
+          "summary": "因應人工智慧（AI）時代所需，塔塔通訊試圖滿足各資料中心間連結的需要，26 日宣布投入 435 億盧比（約新台 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "克服 22 分鐘通訊延遲，太空 AI 決策將借鏡「商業數據」六大準則",
+          "link": "https://technews.tw/2026/10/27/mars-ai-decision-making-draws-lessons-from-business-data/",
+          "date": "2026-10-27 00:45",
+          "summary": "一篇最新的分析指出，未來火星任務若要高度依賴太空船上的 AI 協助決策，最核心的難題其實不是硬體運算能力，而是 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "單人駭客驅動 AI 代理，只數千美元就攻破逾百家企業網站",
+          "link": "https://infosecu.technews.tw/2026/10/27/the-fear-of-a-one-man-band-weaponizing-ai-agents-is-becoming-reality/",
+          "date": "2026-10-27 00:30",
+          "summary": "AI 代理（AI agent）遭武器化的疑慮已經成真。路透社 19 日獨家報導，某說中文駭客過去數週幾乎將攻擊 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Meta 擬股權融資最高 950 億美元，因應 AI 擴張資本支出",
+          "link": "https://finance.technews.tw/2026/10/27/meta-eyes-record-95-billion-equity-raise-to-fund-ai-expansion/",
+          "date": "2026-10-27 00:25",
+          "summary": "社群媒體公司 Meta Platforms 26 日宣布，計劃透過股權融資籌集最高 950 億美元，以支應擴建 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Anthropic 公開 IPO 遞件，那斯達克上市股票代碼 ANT",
+          "link": "https://finance.technews.tw/2026/10/27/anthropic-files-s-1-with-the-sec-for-proposed-initial-public-offering/",
+          "date": "2026-10-27 00:15",
+          "summary": "美國人工智慧（AI）新創公司 Anthropic 26 日首度對外公開其首次公開募股（IPO）申請文件，外界預 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 資料中心電力告急，800V 高壓直流成新解方，36 家台廠搶食金礦",
+          "link": "https://technews.tw/2026/10/27/liteon-and-delta-lead-push-into-ai-server-power-racks/",
+          "date": "2026-10-26 23:30",
+          "summary": "美國加州矽谷的 10 月中旬，陽光依舊燦爛，但在聖荷西會議中心裡，真正被點亮的，是 AI 資料中心的下一條電力 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "機器人的「ChatGPT 時刻」還沒到，輝達前高層：實體 AI 正處於打基礎的「樂高時代」",
+          "link": "https://technews.tw/2026/10/27/embodied-ai-enters-lego-era/",
+          "date": "2026-10-26 23:20",
+          "summary": "針對外界殷切期盼機器人領域能早日迎來專屬的「ChatGPT 時刻」，輝達（Nvidia）前機器人產品行銷主管、 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "重押 AI 題材！全球資金撤離中國，主權基金半數投資流向北美",
+          "link": "https://technews.tw/2026/10/27/global-investors-flee-china-double-down-on-ai/",
+          "date": "2026-10-26 23:10",
+          "summary": "《日經亞洲》報導，全球主權基金與其他國有投資工具正加速鞏固美國做為首選投資地的地位。根據研究機構 Global [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "外資狂殺台股 3,000 億將補跌千點？法人歷史數據揭「大賣後必有大行情」",
           "link": "https://finance.technews.tw/2026/10/26/a-catch-up-decline/",
@@ -264,76 +334,6 @@
           "date": "2026-10-26 07:30",
           "summary": "現今的天氣預報能提供未來幾天的氣象資訊，但若想提前一個月安排旅行、戶外婚禮或露天活動，預報往往仍不夠準確。因為 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "別再只拿 AI 當代寫工具，微軟前高層親授三大職場 AI 高效用法",
-          "link": "https://technews.tw/2026/10/26/former-microsoft-vp-highly-efficient-ai-usage-workplace/",
-          "date": "2026-10-26 06:00",
-          "summary": "微軟前人資副總裁 Chris Williams 近日分享了他在職場善用人工智慧（AI）的實戰心得。他認為，AI [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "輝達預訂產能至 2028 滿載，欣興簡山傑揭密：AI 高階載板不能再單打獨鬥",
-          "link": "https://finance.technews.tw/2026/10/26/unimicron-jensen-huang-capacity-rush-jan-shan-jie-new-pcb-game/",
-          "date": "2026-10-26 06:00",
-          "summary": "欣興電子 22 日早盤股價一度大漲 3% 多，原因是 NVIDIA 執行長黃仁勳於德國柏林舉行的 GTC Be [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "拔掉 ChatGPT 就不會思考了？實測證實：短暫依賴 AI 就可能破壞大腦解題能力",
-          "link": "https://technews.tw/2026/10/26/ai-weakens-brain-problem-solving-perseverance/",
-          "date": "2026-10-26 05:30",
-          "summary": "AI 聊天機器人雖然能幫我們秒解難題，但可能正在悄悄削弱我們的大腦韌性。一項由加州大學柏克萊分校（UC Ber [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "三星 SDI 狂攬美 1GWh 儲能大單！高鎳方形電池 SBB 1.7 接管電網",
-          "link": "https://technews.tw/2026/10/26/alpha-omega-power/",
-          "date": "2026-10-26 03:32",
-          "summary": "韓國三星 SDI 位於密歇根州的子公司近日簽署一份 1GWh 協議，向美國公用規模儲能電站開發商、獨立電力生產 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "工作量減 50%，鴻海合作 Nvidia 秀智造成果",
-          "link": "https://finance.technews.tw/2026/10/26/foxconn-nvidia-smart-manufacture/",
-          "date": "2026-10-26 02:59",
-          "summary": "鴻海持續深化與 Nvidia 的人工智慧合作，AI 技術導入製造現場的成果逐步浮現。據 Nvidia 最新公布 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "中國大拆解輝達 RTX 5090 顯卡！頂級遊戲卡改裝成 AI 伺服器元件",
-          "link": "https://technews.tw/2026/10/26/geforce-rtx-5090/",
-          "date": "2026-10-26 02:23",
-          "summary": "你知道為什麼 GeForce RTX 5090 頂級顯卡從零售貨架上消失了嗎？答案就在中國的拆解工廠，根據最新 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "馬斯克喊 SpaceX 籌得 400 億美元買輝達晶片！嗆新雲端將被淘汰",
-          "link": "https://finance.technews.tw/2026/10/26/predicts-neocloud-shakeout/",
-          "date": "2026-10-26 01:03",
-          "summary": "全球 AI 晶片搶購潮白熱化，特斯拉執行長馬斯克（Elon Musk）週日正式宣布，旗下 SpaceX 已完成 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "表現完全相同，研究：男性外觀 AI 助理薪資比女性高約 10%",
-          "link": "https://technews.tw/2026/10/26/ai-agents-reproduce-gender-pay-gap/",
-          "date": "2026-10-26 00:30",
-          "summary": "愛爾蘭利默瑞克大學（University of Limerick）的最新研究顯示，人類職場的性別偏見正悄悄延伸 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 也會「腦腐」？研究警告：吸收過多農場文將導致 AI 推理退化且難以逆轉",
-          "link": "https://technews.tw/2026/10/25/ai-brain-rot/",
-          "date": "2026-10-25 08:00",
-          "summary": "德州農工大學研究團隊最新指出，大型語言模型若長期接觸大量低品質但在社群平台上高度受歡迎的內容，可能會出現類似人 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 駭客攻擊速度快人類 10 倍、日韓接連受害，台灣企業準備好了嗎？",
-          "link": "https://infosecu.technews.tw/2026/10/25/ai-hackers-attack-10x-faster-humans-japan-south-korea-victimized-taiwanese-enterprises-ready/",
-          "date": "2026-10-25 06:00",
-          "summary": "一個存在超過十年的開源程式語言 PHP 底層漏洞，為何迫使日本政府機關與連鎖牛丼品牌 すき 家（Sukiya） [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,13 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "路透：越南首座晶片廠難達明年試產目標，未敲定 ASML 設備採購",
+          "link": "https://technews.tw/2026/10/27/vietnams-first-chip-plant-unlikely-to-meet-2027-target/",
+          "date": "2026-10-27 00:35",
+          "summary": "數名知情人士向路透社透露，越南首座半導體廠恐難實現於明年展開試產的目標，且越南尚未與荷蘭艾司摩爾達成晶片製造設 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "外資狂殺台股 3,000 億將補跌千點？法人歷史數據揭「大賣後必有大行情」",
           "link": "https://finance.technews.tw/2026/10/26/a-catch-up-decline/",
@@ -417,13 +424,6 @@
           "date": "2026-10-24 01:00",
           "summary": "輝達德國柏林 GTC 於 10 月 21 日登場，根據《財訊》雙週刊報導，輝達超大規模與高效能運算副總裁 Ia [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "576 顆 GPU 合體成一顆巨型 GPU，輝達揭露 Rubin Ultra NVL576 架構",
-          "link": "https://technews.tw/2026/10/23/nvidia-to-connect-576-rubin-ultra-gpus-using-cpo-to-create-one-giant-gpu/",
-          "date": "2026-10-23 08:00",
-          "summary": "輝達（NVIDIA）於 10 月 22 日的 OCP 2026 大會上進一步揭露了 Rubin Ultra 平 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,27 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "淺談觸控螢幕：蘋果能你不能？",
+          "link": "https://technews.tw/2026/10/27/touchscreen-apple-can-others-cant/",
+          "date": "2026-10-26 23:50",
+          "summary": "如果說有什麼技術能夠讓科技愛好者從「根本沒必要」瞬間轉變成「這才是未來」，那麼即將登場的觸控版 MacBook [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "研究揭露電動車電池「隱藏弱點」，少數老化電芯恐導致近三成電能浪費",
+          "link": "https://technews.tw/2026/10/27/main-causes-short-lifespan-ev-batteries/",
+          "date": "2026-10-26 23:40",
+          "summary": "一項最新研究指出，電動車電池的壽命與可用能量，可能比外界原先理解得更受「少數弱電芯」影響。研究團隊分析真實車輛 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 資料中心電力告急，800V 高壓直流成新解方，36 家台廠搶食金礦",
+          "link": "https://technews.tw/2026/10/27/liteon-and-delta-lead-push-into-ai-server-power-racks/",
+          "date": "2026-10-26 23:30",
+          "summary": "美國加州矽谷的 10 月中旬，陽光依舊燦爛，但在聖荷西會議中心裡，真正被點亮的，是 AI 資料中心的下一條電力 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "搶食大馬百萬廢車商機！銘福攜手 Naza 合攻「城市採礦」商機",
           "link": "https://finance.technews.tw/2026/10/26/naza-enviro/",
@@ -449,7 +470,7 @@
           "title": "三星 SDI 狂攬美 1GWh 儲能大單！高鎳方形電池 SBB 1.7 接管電網",
           "link": "https://technews.tw/2026/10/26/alpha-omega-power/",
           "date": "2026-10-26 03:32",
-          "summary": "韓國三星 SDI 位於密歇根州的子公司近日簽署一份 1GWh 協議，向美國公用規模儲能電站開發商、獨立電力生產 [&#8230;]",
+          "summary": "韓國三星 SDI 位於密西根州的子公司近日簽署一份 1GWh 協議，向美國公用規模儲能電站開發商、獨立電力生產 [&#8230;]",
           "comments": ""
         },
         {
@@ -492,27 +513,6 @@
           "link": "https://technews.tw/2026/10/24/non-red-supply-chain-bonus-czech-taiwan-largest-drone-market-defense-startups-two-hurdles/",
           "date": "2026-10-24 03:00",
           "summary": "布拉格舉辦的捷克新創週的「DefenceTech on the Frontier of Europe」對談，烏 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 資料中心缺電怎麼辦？輝達從用電端下手，DSX 最高省電 30%",
-          "link": "https://technews.tw/2026/10/24/nvidia-dsx-ai-data-center-power-shortage-30-percent-savings/",
-          "date": "2026-10-24 02:07",
-          "summary": "隨著 AI 資料中心用電需求持續攀升，除了增加電力供應，如何從用電端提高效率也成為重要課題。輝達於德國柏林 G [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "科學家發現「抗凍」金屬，-253°C 極限低溫仍不脆裂",
-          "link": "https://technews.tw/2026/10/24/scientists-discover-extremely-low-temperature-antifreeze-metal/",
-          "date": "2026-10-24 01:30",
-          "summary": "一支國際研究團隊近期取得重大材料學突破，發現兩種以鈮與鈦為基礎的實驗合金，即使身處約 20 開爾文（相當於 - [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "東元小金雞安達康 29 日登錄興櫃，搶攻 AI 資料中心商機",
-          "link": "https://technews.tw/2026/10/23/teco-advanpower-list-emerging-stock-board-29th-eyes-ai-data-center-market/",
-          "date": "2026-10-23 06:17",
-          "summary": "東元電機旗下電力傳輸設備廠安達康預計於 10 月 29 日正式登錄興櫃交易，由富邦證券輔導。受惠於 AI 資料 [&#8230;]",
           "comments": ""
         }
       ]
