@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-27 01:29",
+  "updated": "2026-10-27 02:58",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "Announcing three new discoveries in mathematics, computer science, and physics",
+          "title": "Three new discoveries in mathematics, computer science, and physics",
           "link": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
           "date": "2026-10-26 21:35",
           "summary": "Hacker News 全球技術社群熱門熱議",
@@ -27,11 +27,11 @@
           "comments": "https://news.ycombinator.com/item?id=50245138"
         },
         {
-          "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
-          "link": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
-          "date": "2026-10-26 22:41",
+          "title": "16-bit Windows (Windows 1.x, 2.x, 3.0, 3.1, etc.) on 64-bit Windows",
+          "link": "https://github.com/otya128/winevdm",
+          "date": "2026-10-27 01:15",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50252159"
+          "comments": "https://news.ycombinator.com/item?id=50253529"
         },
         {
           "title": "Oldest GUI application that still runs on Windows 11",
@@ -48,6 +48,13 @@
           "comments": "https://news.ycombinator.com/item?id=50248371"
         },
         {
+          "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
+          "link": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+          "date": "2026-10-26 22:41",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50252159"
+        },
+        {
           "title": "A Printer Printing onto Paper",
           "link": "https://twitter.com/macrofying/status/2112904628509528219",
           "date": "2026-10-23 05:01",
@@ -62,13 +69,6 @@
           "comments": "https://news.ycombinator.com/item?id=50245831"
         },
         {
-          "title": "16-bit Windows (Windows 1.x, 2.x, 3.0, 3.1, etc.) on 64-bit Windows",
-          "link": "https://github.com/otya128/winevdm",
-          "date": "2026-10-27 01:15",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50253529"
-        },
-        {
           "title": "LISPy things you can do in 64K bytes of core (2019)",
           "link": "https://t3x.org/lisp64k/index.html",
           "date": "2026-10-25 12:53",
@@ -76,18 +76,18 @@
           "comments": "https://news.ycombinator.com/item?id=50231041"
         },
         {
+          "title": "Solar power is becoming bigger than nuclear",
+          "link": "https://www.bbc.com/future/article/20261023-how-solar-became-bigger-than-nuclear",
+          "date": "2026-10-26 15:26",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50245385"
+        },
+        {
           "title": "Nietzschian Debugger",
           "link": "https://github.com/DilawarShafiq/nietzschian-debugger",
           "date": "2026-10-26 17:25",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50247493"
-        },
-        {
-          "title": "GPT-6.1 Terra",
-          "link": "https://openai.com/index/introducing-gpt-6-1-terra/",
-          "date": "2026-10-26 18:01",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50248124"
         }
       ]
     },
@@ -174,6 +174,36 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "手機退居二線！HTC超萌AI玩伴VIVEE亮相 台灣年底前上市",
+          "link": "https://3c.ltn.com.tw/news/68080",
+          "date": "2026/10/27 10:35",
+          "summary": "HTC先前已經預告手機業務退居二線，將全面轉型搶攻AI市場，HTC今(27日)也正式揭曉全新個人AI產品VIVEE， ..."
+        },
+        {
+          "title": "Wi-Fi 訊號總是不好？路由器擺放位置是關鍵 專家教 5 招改善收訊",
+          "link": "https://3c.ltn.com.tw/news/68085",
+          "date": "2026/10/27 10:15",
+          "summary": "家中明明申辦高速網路，手機、電腦卻經常遇到 Wi-Fi 訊號不穩、影片卡頓等問題，關鍵可能不在網速，而是路由器擺放位 ..."
+        },
+        {
+          "title": "台灣果粉準備！蘋果確認Siri AI今年底前支援繁體中文",
+          "link": "https://3c.ltn.com.tw/news/68083",
+          "date": "2026/10/27 10:00",
+          "summary": "蘋果新版Siri AI終於要支援繁體中文了！隨著iOS 27.2正式推出，蘋果同步宣布，全面升級的Siri AI將在 ..."
+        },
+        {
+          "title": "Android Auto 18.1 測試版上線！全新介面 2027 年登場",
+          "link": "https://3c.ltn.com.tw/news/68071",
+          "date": "2026/10/27 09:56",
+          "summary": "外界推測，這次更新可能著重於底層調整與系統穩定性，備受期待的全新介面、桌面小工具及影音播放功能，則有望隨後續 Cie ..."
+        },
+        {
+          "title": "iOS 27.2來了！新功能一次看 蘋果：剛更新變耗電是正常",
+          "link": "https://3c.ltn.com.tw/news/68084",
+          "date": "2026/10/27 09:31",
+          "summary": "蘋果正式推出iOS 27.2更新，這次帶來多項實用新功能，其中「照片」和「影像樂園」加入SynthID浮水印支援，讓 ..."
+        },
+        {
           "title": "iPhone Duo螢幕破裂災情！蘋果證實少數有問題 可申請換機",
           "link": "https://3c.ltn.com.tw/news/68082",
           "date": "2026/10/27 08:09",
@@ -214,36 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68069",
           "date": "2026/10/26 16:50",
           "summary": "宏碁擴大輕薄筆電產品布局，推出全新 Swift Blade 系列，首款機種 Swift Blade 14（SFB14 ..."
-        },
-        {
-          "title": "壞人不准拿 iPhone！蘋果對影視作品要求超多 加拿大影集乾脆用三星手機",
-          "link": "https://3c.ltn.com.tw/news/68070",
-          "date": "2026/10/26 15:15",
-          "summary": "你在追劇時，有注意到影集中的手機品牌眉角嗎？加拿大電視劇《Antigang》以街頭幫派、警察辦案與黑道勢力為題材，但 ..."
-        },
-        {
-          "title": "iOS 27.2 即將推出 Siri、FaceTime 等 5 大更新曝光",
-          "link": "https://3c.ltn.com.tw/news/68064",
-          "date": "2026/10/26 14:30",
-          "summary": "Apple 即將推出 iOS 27.2 更新，除了擴大 Siri 人工智慧功能的語言支援，也將替訊息、FaceTim ..."
-        },
-        {
-          "title": "追劇神器就是它！Amazon 10 吋平板電腦價格大跳水 2000 元出頭可入手",
-          "link": "https://3c.ltn.com.tw/news/68068",
-          "date": "2026/10/26 12:30",
-          "summary": "想隨時可以在搭飛機、火車或客運時追劇，不想用手機螢幕看，卻又不想花太多錢買新裝置。Amazon 推出只要 2000 ..."
-        },
-        {
-          "title": "iPhone Duo到手一天就想轉賣！果粉點出3大原因",
-          "link": "https://3c.ltn.com.tw/news/68066",
-          "date": "2026/10/26 11:00",
-          "summary": "蘋果首款摺疊手機 iPhone Duo 日前正式開賣，全台各通路掀起搶購潮，但有已經到手的果粉指出，才剛拿到 iPh ..."
-        },
-        {
-          "title": "好市多iPhone Duo無法體驗關鍵功能！網笑：怕一支變兩支",
-          "link": "https://3c.ltn.com.tw/news/68065",
-          "date": "2026/10/26 10:00",
-          "summary": "蘋果摺疊手機 iPhone Duo 於 23 日開賣，好市多全台賣場許多人排隊搶機，以內湖店來說，開賣後約 5 分鐘 ..."
         }
       ]
     },
@@ -522,6 +522,13 @@
       "site": "https://ccc.technews.tw/",
       "items": [
         {
+          "title": "馬斯克 AI 版《奧德賽》首集上線，七分鐘短片遭批是不符史實又缺乏敘事的「天價 AI 垃圾」",
+          "link": "https://ccc.technews.tw/2026/10/27/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
+          "date": "2026-10-27 02:50",
+          "summary": "馬斯克（Elon Musk）旗下 AI 工具 Grok Imagine 日前公開 AI 版《奧德賽》（The [&#8230;]",
+          "comments": ""
+        },
+        {
           "title": "iPod 問世 25 週年，蘋果官網藏彩蛋",
           "link": "https://ccc.technews.tw/2026/10/25/ipod-25th-anniversary/",
           "date": "2026-10-25 02:05",
@@ -596,13 +603,6 @@
           "link": "https://ccc.technews.tw/2026/10/20/apple-already-developing-higher-end-homeview/",
           "date": "2026-10-20 02:05",
           "summary": "彭博（Bloomberg）記者馬克·古爾曼（Mark Gurman）披露，蘋果（Apple）已著手開發一款更高 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 代打面試大翻車！YouTuber 派機器人對決「AI 面試官」，履歷造假、薪水亂談超失控",
-          "link": "https://ccc.technews.tw/2026/10/20/ai-interviewer-meets-ai-job-seeker/",
-          "date": "2026-10-19 23:40",
-          "summary": "美國喜劇演員兼 YouTuber Graham Dot Zip 最近分享一段引發熱議的影片。他派出專屬 AI [&#8230;]",
           "comments": ""
         }
       ]
