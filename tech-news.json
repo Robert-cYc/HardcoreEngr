@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27 09:31",
+  "updated": "2026-10-27 17:03",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -96,6 +96,18 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
+          "title": "Gas under Trump 2.0 is now more expensive than it was under Biden",
+          "link": "https://edition.cnn.com/2026/10/26/economy/gas-oil-trump-iran-election",
+          "date": "2026-10-26",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "From bioweapons to blackmail, here’s what’s in Anthropic’s nearly 100-page list of risks, including ‘risks to humanity’",
+          "link": "https://edition.cnn.com/2026/10/27/tech/anthropic-ipo-risks-bioweapons-blackmail-vis",
+          "date": "2026-10-27",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
           "title": "Workers are getting a shrinking slice of America’s economic pie",
           "link": "https://edition.cnn.com/2026/10/27/economy/us-workers-smaller-share-of-profits",
           "date": "2026-10-27",
@@ -104,12 +116,6 @@
         {
           "title": "Anthropic set to make stock market debut as questions swirl about safety of AI",
           "link": "https://edition.cnn.com/2026/10/26/tech/anthropic-files-ipo",
-          "date": "2026-10-26",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "I asked Claude to explain Anthropic’s IPO",
-          "link": "https://edition.cnn.com/2026/10/26/business/claude-anthropic-ipo-summary",
           "date": "2026-10-26",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -160,12 +166,6 @@
           "link": "https://edition.cnn.com/2026/10/21/tech/ai-detectors-pangram-literary-prizes-cec",
           "date": "2026-10-21",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "This startup wants to give everyone an AI personality",
-          "link": "https://edition.cnn.com/2026/10/20/business/video/genies-artificial-intelligence-candace-parker-creators",
-          "date": "2026-10-20",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         }
       ]
     },
@@ -173,6 +173,18 @@
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "蘋果連兩晚發新品！M6 MacBook Pro、iMac登場 終於沒漲價",
+          "link": "https://3c.ltn.com.tw/news/68092",
+          "date": "2026/10/27 21:50",
+          "summary": "繼新一代iPad mini(A20 Pro)登場後，蘋果今晚(27日)再推出兩款Mac新品，包含搭載M6晶片的14吋 ..."
+        },
+        {
+          "title": "iPhone Duo人手折疊7.5萬次都沒事！5公分摔落螢幕竟壞了",
+          "link": "https://3c.ltn.com.tw/news/68088",
+          "date": "2026/10/27 18:05",
+          "summary": "蘋果首款摺疊手機 iPhone Duo 自 23 日開賣以來，各種災情不斷，而波蘭科技 YouTuber「Kuba ..."
+        },
         {
           "title": "才登上亞運就掰！《寶可夢大集結》突宣布明年停運 玩家錯愕",
           "link": "https://3c.ltn.com.tw/news/68087",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68071",
           "date": "2026/10/27 09:56",
           "summary": "外界推測，這次更新可能著重於底層調整與系統穩定性，備受期待的全新介面、桌面小工具及影音播放功能，則有望隨後續 Cie ..."
-        },
-        {
-          "title": "iOS 27.2來了！新功能一次看 蘋果：剛更新變耗電是正常",
-          "link": "https://3c.ltn.com.tw/news/68084",
-          "date": "2026/10/27 09:31",
-          "summary": "蘋果正式推出iOS 27.2更新，這次帶來多項實用新功能，其中「照片」和「影像樂園」加入SynthID浮水印支援，讓 ..."
-        },
-        {
-          "title": "蘋果新iPad mini大升級又擠牙膏！網友吐槽：萬年60Hz還在",
-          "link": "https://3c.ltn.com.tw/news/68075",
-          "date": "2026/10/27 08:01",
-          "summary": "蘋果推出新一代iPad mini（A20 Pro），也就是俗稱的iPad mini 8，預計11月6日在台上市，售價 ..."
         }
       ]
     },
