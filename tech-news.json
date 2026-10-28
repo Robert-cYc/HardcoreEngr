@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-28 01:24",
+  "updated": "2026-10-28 03:08",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
+        {
+          "title": "Git for US Legislation",
+          "link": "https://lexifina.com/blog/git-for-the-us-code",
+          "date": "2026-10-28 01:47",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50268380"
+        },
         {
           "title": "Genie 4",
           "link": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
@@ -20,11 +27,11 @@
           "comments": "https://news.ycombinator.com/item?id=50261998"
         },
         {
-          "title": "Tailscale SSH: Investigation and remediation update",
-          "link": "https://tailscale.com/ssh-investigation-update",
-          "date": "2026-10-27 19:55",
+          "title": "Ink droplets in motion snag top prize in Nikon Small World contest",
+          "link": "https://arstechnica.com/science/2026/10/meet-the-2026-winner-of-nikons-small-world-photomicrography-contest/",
+          "date": "2026-10-25 18:49",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50264857"
+          "comments": "https://news.ycombinator.com/item?id=50234796"
         },
         {
           "title": "Early progress on accelerating drug development with Claude",
@@ -34,18 +41,18 @@
           "comments": "https://news.ycombinator.com/item?id=50265609"
         },
         {
+          "title": "Tailscale SSH: Investigation and remediation update",
+          "link": "https://tailscale.com/ssh-investigation-update",
+          "date": "2026-10-27 19:55",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50264857"
+        },
+        {
           "title": "Survival LLM: AI assistant and emergency library that runs on your own computer",
           "link": "https://www.brangus.io/survival-llm",
           "date": "2026-10-27 19:55",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50264853"
-        },
-        {
-          "title": "Ink droplets in motion snag top prize in Nikon Small World contest",
-          "link": "https://arstechnica.com/science/2026/10/meet-the-2026-winner-of-nikons-small-world-photomicrography-contest/",
-          "date": "2026-10-25 18:49",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50234796"
         },
         {
           "title": "Raspberry Pi Zero 3W and Pi 4 Model A spotted in device trees",
@@ -55,13 +62,6 @@
           "comments": "https://news.ycombinator.com/item?id=50265594"
         },
         {
-          "title": "Reviewers rarely talk about reliability. Owners bring it up twice as often",
-          "link": "https://www.bettascore.ai/research/reliability-reviewers-vs-owners",
-          "date": "2026-10-27 22:31",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50266780"
-        },
-        {
           "title": "81 Jokes for the ZX81",
           "link": "https://spelk.press/gb/products/81-jokes-for-the-zx81",
           "date": "2026-10-26 12:45",
@@ -69,25 +69,25 @@
           "comments": "https://news.ycombinator.com/item?id=50242688"
         },
         {
+          "title": "Tabletop Whale is an original science illustration blog",
+          "link": "https://tabletopwhale.com",
+          "date": "2026-10-24 02:51",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50217978"
+        },
+        {
+          "title": "Assembly Nights",
+          "link": "https://ratfactor.com/assembly-nights",
+          "date": "2026-10-25 12:35",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50230896"
+        },
+        {
           "title": "New 14‑inch MacBook Pro with M6",
           "link": "https://www.apple.com/in/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
           "date": "2026-10-27 16:08",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50261352"
-        },
-        {
-          "title": "SS United States to be sunk as largest artificial reef",
-          "link": "https://divemagazine.com/scuba-diving-news/ss-united-states-to-be-sunk-as-worlds-largest-artificial-reef-in-november",
-          "date": "2026-10-26 04:41",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50239214"
-        },
-        {
-          "title": "An examination of lost firefly species of the US and Canada",
-          "link": "https://journaloflostspecies.org/index.php/jls/article/view/37/33",
-          "date": "2026-10-24 19:04",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50224079"
         }
       ]
     },
@@ -174,6 +174,18 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "iPhone 18 Pro 上市銷量揭曉！美國日本買氣下滑 消費者嫌沒升級感",
+          "link": "https://3c.ltn.com.tw/news/68093",
+          "date": "2026/10/28 10:35",
+          "summary": "Apple 新一代旗艦手機 iPhone 18 Pro 系列上市，初期銷售表現呈現區域差異。市場研究機構 Count ..."
+        },
+        {
+          "title": "iOS 27.2 更新 CarPlay 跟著受益！2 大功能同步升級",
+          "link": "https://3c.ltn.com.tw/news/68089",
+          "date": "2026/10/28 09:40",
+          "summary": "Apple 推出 iOS 27.2 更新，除了替訊息、Apple TV 等服務加入新功能，也針對車載系統 CarPl ..."
+        },
+        {
           "title": "皮克敏官方宣布巨大蘑菇加碼連續四天登場！十月萬聖節活動開始倒數",
           "link": "https://3c.ltn.com.tw/news/68091",
           "date": "2026/10/28 08:40",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68079",
           "date": "2026/10/27 12:03",
           "summary": "Instagram不只有短影音，Instagram宣布測試全新「Features」功能，讓創作者可以上傳最長90分鐘 ..."
-        },
-        {
-          "title": "手機退居二線！HTC超萌AI玩伴VIVEE亮相 台灣年底前上市",
-          "link": "https://3c.ltn.com.tw/news/68080",
-          "date": "2026/10/27 10:35",
-          "summary": "HTC先前已經預告手機業務退居二線，將全面轉型搶攻AI市場，HTC今(27日)也正式揭曉全新個人AI產品VIVEE， ..."
-        },
-        {
-          "title": "Wi-Fi 訊號總是不好？路由器擺放位置是關鍵 專家教 5 招改善收訊",
-          "link": "https://3c.ltn.com.tw/news/68085",
-          "date": "2026/10/27 10:15",
-          "summary": "家中明明申辦高速網路，手機、電腦卻經常遇到 Wi-Fi 訊號不穩、影片卡頓等問題，關鍵可能不在網速，而是路由器擺放位 ..."
         }
       ]
     },
@@ -251,6 +251,55 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "Google 發表 Genie 4 世界模型，支援即時改寫場景與原生音訊生成",
+          "link": "https://technews.tw/2026/10/28/google-deepmind-announces-genie-4/",
+          "date": "2026-10-28 03:04",
+          "summary": "Google DeepMind 去年推出世界模型 Genie 3，一度導致遊戲產業股價下挫。如今，世界模型已是 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "不存退休金了，Google 前工程師：AI 十年內滅絕人類機率逾五成",
+          "link": "https://technews.tw/2026/10/28/ai-safety-leader-halts-retirement-savings-fearing-technology-could-wipe-out-humanity-within-10-years/",
+          "date": "2026-10-28 03:00",
+          "summary": "Google 前工程師、現任機器智慧研究所（MIRI）總裁內特·蘇雷斯（Nate Soares）近日表示，自己 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "招聘工程師使 OpenAI 採購 GoogleTPU 進入實質階段，OpenAI 與輝達關係恐受影響",
+          "link": "https://technews.tw/2026/10/28/openais-procurement-of-google-tpus-enters-a-substantial-phase/",
+          "date": "2026-10-28 02:40",
+          "summary": "根據外媒 The Information 引述知情人士的報導，AI 大廠 OpenAI 計劃採購Google [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "亞馬遜出手整頓 Tokenmaxxing 亂象，AI 使用量不再是工程師唯一績效指標",
+          "link": "https://technews.tw/2026/10/28/amazon-warned-engineers-that-chasing-ai-usage-metrics-is-deeply-flawed/",
+          "date": "2026-10-28 02:40",
+          "summary": "亞馬遜（Amazon）於 10 月 27 日更新了軟體工程師與主管的角色指引，針對內部日益盛行的「tokenm [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "X 發文介面驚現「神祕怪手」強推付費按鈕，侵入式設計引發網友熱議",
+          "link": "https://technews.tw/2026/10/28/x-tweet-interface-mysterious-claw-hand-animation/",
+          "date": "2026-10-28 02:20",
+          "summary": "近日，社群平台 X 出現了一項奇特的介面變動。多名用戶回報，在撰寫貼文的編輯畫面中，會無預警伸出一隻巨大的手臂 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "中國 AI 與半導體股泡泡吹破市值蒸發 4,800 億美元，小股民被當韭菜割",
+          "link": "https://finance.technews.tw/2026/10/28/the-bubble-in-chinese-ai-and-semiconductor-stocks-burst-wiping-out-480-billion-in-market-value-in-four-months/",
+          "date": "2026-10-28 02:20",
+          "summary": "在美韓等國仍在熱烈討論「AI超級週期」能維持多久之際，由國家主導大力投資 AI 與半導體的中國股市已率先遭遇歷 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Anthropic IPO 文件逾 90 頁談風險，直言 AI 恐對人類構成「生存」威脅",
+          "link": "https://finance.technews.tw/2026/10/28/the-anthropic-s-1-filing-is-also-an-ai-doomsday-primer/",
+          "date": "2026-10-28 02:10",
+          "summary": "Anthropic 在最新向美國證券交易委員會（SEC）提交的 IPO 文件中，花了超過 90 頁詳列風險因素 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "長鑫與韓廠差距大？韓媒：中國 AI 巨頭搶簽 10 年約",
           "link": "https://technews.tw/2026/10/28/chinese-big-tech-in-a-rush-lets-sign-long-term-dram-contracts/",
@@ -285,55 +334,6 @@
           "date": "2026-10-28 00:00",
           "summary": "人工智慧正以驚人的速度跨入極度強調安全與精準的醫療核心。從 X 光與 CT 放射影像的自動判讀、癌症早期篩檢， [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "Google Fitbit Edge 補齊穿戴產品線，AI 健康管理深化裝置差異化競爭",
-          "link": "https://technews.tw/2026/10/28/google-fitbit-edge-wearable-line-ai-health-management-device-differentiation-competition/",
-          "date": "2026-10-27 23:00",
-          "summary": "Google 月中發表新健康穿戴裝置 Fitbit Edge，定位介於無螢幕 Fitbit Air 與智慧手錶 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "蘋果創作坊也導入 OpenAI 技術，AI 助理進駐 Keynote、Pages",
-          "link": "https://technews.tw/2026/10/27/apple-creator-studio-openai/",
-          "date": "2026-10-27 14:19",
-          "summary": "蘋果持續擴大生成式 AI 在旗下應用程式的布局，宣布為訂閱制創作工具組合「Apple 創作坊」（Apple C [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "M6 版 14 吋 MacBook Pro 也現身，售價 64,900 元起",
-          "link": "https://technews.tw/2026/10/27/m6-macbook-pro-2/",
-          "date": "2026-10-27 13:52",
-          "summary": "蘋果昨日晚間才無預警推出了最新的 OLED iPad mini，稍早則是更新 MacBook Pro 產品線， [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "美光揭次世代 DRAM 藍圖：導入晶圓鍵合、High-NA EUV，推進 vHBM、vEIM 布局",
-          "link": "https://technews.tw/2026/10/27/micron-dram-roadmap/",
-          "date": "2026-10-27 10:57",
-          "summary": "記憶體大廠美光先前宣布跳過 4F² DRAM 電路單元架構，但從技術藍圖移除後，公司必須採用不同方法來推進 D [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Anthropic 提交 IPO 重振市場信心，日韓股市領漲亞股",
-          "link": "https://finance.technews.tw/2026/10/27/anthropic-ipo-boosts-market-confidence-japan-korea-stocks-lead-asia/",
-          "date": "2026-10-27 10:10",
-          "summary": "人工智慧（AI）巨擘 Anthropic 提交首次公開募股（IPO）申請，重燃市場對科技業的樂觀情緒，但亞股今 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "美 AI 投資若踩煞車  韓央：晶片出口恐少千億美元",
-          "link": "https://finance.technews.tw/2026/10/27/bank-of-korea-warns-countrys-chip-exports-could-fall-by-up-to-100-billion-if-ai-spending-slows/",
-          "date": "2026-10-27 08:00",
-          "summary": "韓國央行（BOK）警告，若美國科技巨頭明（2027）年放緩對 AI 基礎設施的資本支出，韓國半導體出口恐較原先 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 科技擴廠高規電梯訂單達三年！貨梯王宏偉電機 11 月中掛牌上櫃",
-          "link": "https://finance.technews.tw/2026/10/27/elevator-orders/",
-          "date": "2026-10-27 07:48",
-          "summary": "宏偉電機明日將舉辦上櫃前業績發表會，預計 11 月中掛牌交易，董事長黃埮城表示，受惠 AI 科技擴廠熱潮，目前 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,62 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "SK 海力士否認 HBM 需求放緩，強調到 2029 年 DRAM 與 HBM 產能已全部完售",
+          "link": "https://finance.technews.tw/2026/10/28/sk-hynix-denies-slowdown-in-hbm-demand/",
+          "date": "2026-10-28 03:00",
+          "summary": "SK 海力士（SK Hynix）於 28 日召開第 3 季法說會，宣布單季營收首度突破 100 兆韓圜，營業利 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "招聘工程師使 OpenAI 採購 GoogleTPU 進入實質階段，OpenAI 與輝達關係恐受影響",
+          "link": "https://technews.tw/2026/10/28/openais-procurement-of-google-tpus-enters-a-substantial-phase/",
+          "date": "2026-10-28 02:40",
+          "summary": "根據外媒 The Information 引述知情人士的報導，AI 大廠 OpenAI 計劃採購Google [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "7% 至 8% 員工恐受影響？傳高通 11 月啟動全球裁員",
+          "link": "https://finance.technews.tw/2026/10/28/qualcomm-cut-jobs-worldwide/",
+          "date": "2026-10-28 02:36",
+          "summary": "據路透社報導，高通執行長 Cristiano Amon 近日在一份內部備忘錄中告知員工，公司將在年度員工績效評 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "中國 AI 與半導體股泡泡吹破市值蒸發 4,800 億美元，小股民被當韭菜割",
+          "link": "https://finance.technews.tw/2026/10/28/the-bubble-in-chinese-ai-and-semiconductor-stocks-burst-wiping-out-480-billion-in-market-value-in-four-months/",
+          "date": "2026-10-28 02:20",
+          "summary": "在美韓等國仍在熱烈討論「AI超級週期」能維持多久之際，由國家主導大力投資 AI 與半導體的中國股市已率先遭遇歷 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "甲骨文擴大輝達 Rubin 布局，導入 Vera CPU 支援代理式 AI",
+          "link": "https://technews.tw/2026/10/28/oracle-expands-nvidia-rubin-integration-introduces-vera-cpu-support-for-agentic-ai/",
+          "date": "2026-10-28 02:13",
+          "summary": "隨著 AI 模型訓練、推論及代理式 AI 應用需求持續攀升，輝達與甲骨文宣布擴大 AI 基礎設施合作，計劃將甲 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "供貨能力使三星 HBM 價格高於海力士、美光，最高幅度達到 25%",
+          "link": "https://finance.technews.tw/2026/10/28/supply-capacity-allows-samsung-hbm-to-command-higher-prices-than-sk-hynix-and-micron/",
+          "date": "2026-10-28 02:10",
+          "summary": "隨著人工智慧（AI）應用的快速擴展，全球記憶體產業正邁入龐大的上升超級週期。韓國媒體最新報導指出，高頻寬記憶體 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "中東戰火掀斷鏈危機，美確保半導體命脈將「氦」列關鍵材料",
+          "link": "https://technews.tw/2026/10/28/us-designates-helium-critical-material/",
+          "date": "2026-10-28 02:00",
+          "summary": "美國能源部近日正式宣布，將「氦氣」列為國家關鍵材料（Critical Material）。能源部表示，氦氣在半 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "挑戰輝達 AI 霸主地位？Google TPU 獲甲骨文導入、OpenAI 傳採購",
+          "link": "https://technews.tw/2026/10/28/google-tpu-oracle-openai-procurement-challenges-nvidia-ai-dominance/",
+          "date": "2026-10-28 01:29",
+          "summary": "Google 正加速擴大自家 AI 晶片布局。甲骨文與 Google 宣布，雙方將合作把 Google TPU [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "長鑫與韓廠差距大？韓媒：中國 AI 巨頭搶簽 10 年約",
           "link": "https://technews.tw/2026/10/28/chinese-big-tech-in-a-rush-lets-sign-long-term-dram-contracts/",
@@ -368,62 +424,6 @@
           "date": "2026-10-28 00:10",
           "summary": "喬治亞理工團隊近日公布數位鑑識新工具 ORISA，顯示使用者手機刪除 AI 對話，未必代表內容真的消失。And [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "淺談顯卡換代放緩：遊戲玩家不再是主角？",
-          "link": "https://technews.tw/2026/10/28/gpu-upgrade-slowdown-gamers-not-main-focus/",
-          "date": "2026-10-27 23:50",
-          "summary": "過去十多年，對 PC 玩家而言，每隔兩年左右迎接一次新世代 GeForce 或 Radeon，幾乎是理所當然的 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "SK 海力士第三季營收史上最高破 100 兆韓圜，強調供不應求將持續至 2030 年",
-          "link": "https://finance.technews.tw/2026/10/28/sk-hynixs-third-quarter-revenue-hit-a-record-high-of-over-100-trillion-won/",
-          "date": "2026-10-27 23:50",
-          "summary": "韓國記憶體大廠 SK 海力士（SK hynix）正式發布 2026 年第三季財務報告。受惠人工智慧（AI）記憶 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Chrome 真是「記憶體怪獸」？吃 RAM 背後其實有原因",
-          "link": "https://technews.tw/2026/10/28/why-google-chrome-is-always-using-so-much-ram/",
-          "date": "2026-10-27 23:10",
-          "summary": "Google Chrome 長期被貼上「記憶體怪獸」的標籤，但相關報導指出，這種印象更像是網路迷因，而不完全符 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "蘋果 M6 iMac AI 效能最高提升 5 倍，售價 49,900 元起",
-          "link": "https://technews.tw/2026/10/27/m6-imac/",
-          "date": "2026-10-27 14:02",
-          "summary": "蘋果推出搭載 M6 晶片的 14 吋 MacBook Pro 後，也同步更新桌上型電腦產品線，正式發表新款 2 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "M6 版 14 吋 MacBook Pro 也現身，售價 64,900 元起",
-          "link": "https://technews.tw/2026/10/27/m6-macbook-pro-2/",
-          "date": "2026-10-27 13:52",
-          "summary": "蘋果昨日晚間才無預警推出了最新的 OLED iPad mini，稍早則是更新 MacBook Pro 產品線， [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "美光揭次世代 DRAM 藍圖：導入晶圓鍵合、High-NA EUV，推進 vHBM、vEIM 布局",
-          "link": "https://technews.tw/2026/10/27/micron-dram-roadmap/",
-          "date": "2026-10-27 10:57",
-          "summary": "記憶體大廠美光先前宣布跳過 4F² DRAM 電路單元架構，但從技術藍圖移除後，公司必須採用不同方法來推進 D [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "吳敏求：旺宏章程明定 15% 員工分紅，業務鎖定太空、醫療與資料中心市場",
-          "link": "https://finance.technews.tw/2026/10/27/macronixs-bylaws-stipulate-that-15-of-employee-profits-will-be-distributed/",
-          "date": "2026-10-27 09:15",
-          "summary": "旺宏董事長吳敏求表示，旺宏將不再擴充 NOR Flash 產能，而是把有限產能移轉至 3D NAND 及 3D [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "旺宏第三季獲利創歷史單季新高，毛利率突破七成促 EPS 達 5.52 元",
-          "link": "https://finance.technews.tw/2026/10/27/macronixs-third-quarter-financial-report-hit-a-record-high/",
-          "date": "2026-10-27 09:00",
-          "summary": "記憶體大廠旺宏電子（MXIC）召開 2026 年第 3 季法人說明會，公佈最新財務報告。受益於高密度 NOR [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,13 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "中東戰火掀斷鏈危機，美確保半導體命脈將「氦」列關鍵材料",
+          "link": "https://technews.tw/2026/10/28/us-designates-helium-critical-material/",
+          "date": "2026-10-28 02:00",
+          "summary": "美國能源部近日正式宣布，將「氦氣」列為國家關鍵材料（Critical Material）。能源部表示，氦氣在半 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "希捷資本支出高於預期＋零件採購成本遠高  盤後挫",
           "link": "https://finance.technews.tw/2026/10/28/seagate-technology-reports-fiscal-first-quarter-2027-financial-results/",
@@ -506,13 +513,6 @@
           "link": "https://technews.tw/2026/10/27/apple-confirms-iphone-duo-broken-display-issues/",
           "date": "2026-10-27 02:35",
           "summary": "蘋果（Apple）於 10 月 26 日證實，旗下首款摺疊手機 iPhone Duo 的內螢幕出現少數異常案例 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "淺談觸控螢幕：蘋果能你不能？",
-          "link": "https://technews.tw/2026/10/27/touchscreen-apple-can-others-cant/",
-          "date": "2026-10-26 23:50",
-          "summary": "如果說有什麼技術能夠讓科技愛好者從「根本沒必要」瞬間轉變成「這才是未來」，那麼即將登場的觸控版 MacBook [&#8230;]",
           "comments": ""
         }
       ]
