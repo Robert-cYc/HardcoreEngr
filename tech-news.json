@@ -1,93 +1,93 @@
 {
-  "updated": "2026-10-29 03:34",
+  "updated": "2026-10-29 17:48",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5",
-          "link": "https://divagr.com/blog/qwenputer",
-          "date": "2026-10-29 00:25",
+          "title": "We're releasing the weights of Mistral Large 4",
+          "link": "https://mistral.ai/news/mistral-large-4-oss/",
+          "date": "2026-10-29 14:13",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50282838"
+          "comments": "https://news.ycombinator.com/item?id=50289418"
         },
         {
-          "title": "Why is this fingerprinting script creating bioweapons?",
-          "link": "https://nullpt.rs/fingerprinting-bioweapons",
-          "date": "2026-10-28 17:13",
+          "title": "For the first time ever, Google Search is less than 50% of Alphabet's revenue",
+          "link": "https://www.kadoa.com/companies/insights/google-search-below-half",
+          "date": "2026-10-29 16:42",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50276998"
+          "comments": "https://news.ycombinator.com/item?id=50291945"
         },
         {
-          "title": "GitLab Security Incident: Attempted Exploitation of CVE-2026-97229",
-          "link": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html",
-          "date": "2026-10-28 23:45",
+          "title": "H.264 Is Magic (2016)",
+          "link": "https://sidbala.com/h-264-is-magic/",
+          "date": "2026-10-29 15:53",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50282544"
+          "comments": "https://news.ycombinator.com/item?id=50291054"
         },
         {
-          "title": "A Health Update",
-          "link": "https://furbo.org/2026/10/28/a-health-update/",
-          "date": "2026-10-28 21:13",
+          "title": "Tomáš Mikolov awarded the Medal of Merit by the President of the Czech Republic",
+          "link": "https://www.vut.cz/en/but/news-f19528/two-but-graduates-received-state-honors-from-the-president-of-the-republic-d378468",
+          "date": "2026-10-29 16:56",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50280974"
+          "comments": "https://news.ycombinator.com/item?id=50292233"
         },
         {
-          "title": "CNC Stone Carving",
-          "link": "https://carmelitegothic.com/cnc-stone-carving/",
-          "date": "2026-10-28 14:38",
+          "title": "Zombie stats: Where the numbers AI quotes come from",
+          "link": "https://trakkr.ai/trakkr-research/zombie-stats",
+          "date": "2026-10-29 15:06",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50274409"
+          "comments": "https://news.ycombinator.com/item?id=50290283"
         },
         {
-          "title": "Human-enhanced tsunami hazard in large lakes",
-          "link": "https://www.nature.com/articles/s41467-026-78272-8",
-          "date": "2026-10-26 13:00",
+          "title": "Grace Blackwell needs a new scheduler: 27% more usable GPUs from the same racks",
+          "link": "https://skypilot.ai/blog/grace-blackwell-needs-a-new-scheduler",
+          "date": "2026-10-29 15:45",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50242873"
+          "comments": "https://news.ycombinator.com/item?id=50290912"
         },
         {
-          "title": "Gemini 4 Carbon",
-          "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
-          "date": "2026-10-28 17:01",
+          "title": "LLM Voice",
+          "link": "https://martinfowler.com/bliki/LLM-Voice.html",
+          "date": "2026-10-29 14:57",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50276792"
+          "comments": "https://news.ycombinator.com/item?id=50290177"
         },
         {
-          "title": "Formlabs Studio 1 $699 Resin Printer",
-          "link": "https://formlabs.com/products/form-studio-1-basic-founders-edition/",
-          "date": "2026-10-28 21:19",
+          "title": "DoorDash to acquire Instacart",
+          "link": "https://about.doordash.com/en-us/news/doordash-to-acquire-instacart",
+          "date": "2026-10-29 12:33",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50281044"
+          "comments": "https://news.ycombinator.com/item?id=50287919"
         },
         {
-          "title": "The Grid, a factory-scale robot in Massachusetts that builds PCBs on demand",
-          "link": "https://www.circuithub.com/post/unveiling-the-grid",
-          "date": "2026-10-26 13:13",
+          "title": "Toxic Experts",
+          "link": "https://nedbatchelder.com/blog/201711/toxic_experts",
+          "date": "2026-10-29 16:41",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50243060"
+          "comments": "https://news.ycombinator.com/item?id=50291927"
         },
         {
-          "title": "StackOverflow now gets fewer than 1000 questions a month",
-          "link": "https://data.stackexchange.com/stackoverflow/query/1926661#graph?t=1",
-          "date": "2026-10-28 23:35",
+          "title": "Chained PHP2Shell Exploit Roots 25 Servers, Including US Government Servers",
+          "link": "https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers",
+          "date": "2026-10-29 10:42",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50282454"
+          "comments": "https://news.ycombinator.com/item?id=50286987"
         },
         {
-          "title": "MacBook Pro with PROLED XDR Display and Touch",
-          "link": "https://www.apple.com/macbook-pro/proled-xdr-display/",
-          "date": "2026-10-28 17:10",
+          "title": "noalloc: Tooling and libraries to enforce zero heap allocations in Golang",
+          "link": "https://github.com/theconsensuslabs/noalloc",
+          "date": "2026-10-28 18:29",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50276940"
+          "comments": "https://news.ycombinator.com/item?id=50278645"
         },
         {
-          "title": "Nixpkgs for the Front End Impaired",
-          "link": "https://fzakaria.com/2026/10/12/nixpkgs-for-the-frontend-impaired",
-          "date": "2026-10-26 15:00",
+          "title": "If IPv4 were land",
+          "link": "https://iptrust.co/blog/if-ipv4-were-land",
+          "date": "2026-10-29 12:19",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50244929"
+          "comments": "https://news.ycombinator.com/item?id=50287775"
         }
       ]
     },
@@ -96,21 +96,21 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
-          "title": "Law firm that handled Lehman, Enron bankruptcies plans to wind down",
-          "link": "https://edition.cnn.com/2026/10/28/business/weil-gotshal-and-manges-winds-down-operations",
-          "date": "2026-10-28",
+          "title": "European Central Bank President Lagarde resigns early",
+          "link": "https://edition.cnn.com/2026/10/29/business/christine-lagarde-ecb-president-resigns-intl",
+          "date": "2026-10-29",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "CNN, MS NOW and Politico expand lawsuit against Trump White House, citing continued ‘viewpoint discrimination’",
-          "link": "https://edition.cnn.com/2026/10/28/media/cnn-msnow-politico-amended-lawsuit-trump-white-house-press",
-          "date": "2026-10-28",
+          "title": "Is Fox News pivoting to its post-Trump era? Look at how it’s covering the midterms",
+          "link": "https://edition.cnn.com/2026/10/29/media/fox-news-trump-midterms-ratings-election",
+          "date": "2026-10-29",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "Did the Fed just make a huge mistake?",
-          "link": "https://edition.cnn.com/2026/10/28/economy/fed-inflation-rate-decision",
-          "date": "2026-10-28",
+          "title": "Last snapshot of the US economy before midterms shows stronger growth but higher inflation",
+          "link": "https://edition.cnn.com/2026/10/29/economy/us-economy-pce-inflation-gdp",
+          "date": "2026-10-29",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
@@ -174,6 +174,36 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "OPPO Find X10 系列登台！三顆 2 億畫素哈蘇鏡頭挑戰手機攝影極限",
+          "link": "https://3c.ltn.com.tw/news/68110",
+          "date": "2026/10/29 17:20",
+          "summary": "OPPO 今（29）日在台推出 Find X10 系列，主打與哈蘇合作打造的「超清原真影像」，Find X10 Pr ..."
+        },
+        {
+          "title": "《魔物獵人：旅人》正式上線！手機探索全新篇章 享受熱血狩獵樂趣",
+          "link": "https://3c.ltn.com.tw/news/68094",
+          "date": "2026/10/29 17:02",
+          "summary": "由Capcom進行IP授權與監修、TiMi Studio Group研發，並由Garena發行的全新生存狩獵動作手遊 ..."
+        },
+        {
+          "title": "Anker 全台首間體驗店插旗信義威秀 明星商品最低 56 折",
+          "link": "https://3c.ltn.com.tw/news/68109",
+          "date": "2026/10/29 16:15",
+          "summary": "消費性電子品牌 Anker 宣布在台北信義威秀開設全台首間體驗店，今（29）日正式開幕，以「個人日常」與「居家生活」 ..."
+        },
+        {
+          "title": "Instagram 搶攻長影音市場！最長達 90 分鐘 正面挑戰 YouTube",
+          "link": "https://3c.ltn.com.tw/news/68108",
+          "date": "2026/10/29 15:45",
+          "summary": "社群平台 Instagram 開始測試長影片上傳功能，創作者未來可上傳最長 90 分鐘的影片，打破過去以短影音為主的 ..."
+        },
+        {
+          "title": "可觸控的 MacBook Pro 能做哪些事？蘋果揭露 5 大應用",
+          "link": "https://3c.ltn.com.tw/news/68106",
+          "date": "2026/10/29 13:15",
+          "summary": "蘋果（Apple）首度推出具備觸控功能的 MacBook Pro，M5 Pro 與 M5 Max 晶片及 AI 功能 ..."
+        },
+        {
           "title": "蘋果經典發光 Logo 睽違 10 年回歸！觸控 MacBook Pro 率先搭載",
           "link": "https://3c.ltn.com.tw/news/68105",
           "date": "2026/10/29 10:55",
@@ -214,36 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68104",
           "date": "2026/10/29 02:10",
           "summary": "蘋果終於打破Mac不支援觸控螢幕的傳統，首款觸控筆電MacBook Pro正式登場，蘋果仍以「MacBook Pro ..."
-        },
-        {
-          "title": "蘋果平價筆電MacBook Neo新一代預計明年見！升級A19 Pro晶片與12GB記憶體",
-          "link": "https://3c.ltn.com.tw/news/68096",
-          "date": "2026/10/28 17:50",
-          "summary": "蘋果今年 3 月推出 MacBook Neo 進軍平價筆電市場，並且上市首季度全球出貨量已飆破 110 萬台，先前已 ..."
-        },
-        {
-          "title": "iPhone Duo螢幕災情不斷！YTR拆機揭隱患：蘋果應向消費者道歉",
-          "link": "https://3c.ltn.com.tw/news/68097",
-          "date": "2026/10/28 17:35",
-          "summary": "蘋果首款摺疊手機 iPhone Duo 上市才沒幾天，國外就陸續傳出許多災情，海外一名 YouTuber 發布最新拆 ..."
-        },
-        {
-          "title": "買蘋果 M6 MacBook Pro 不再附充電器！多個國家得加價購",
-          "link": "https://3c.ltn.com.tw/news/68095",
-          "date": "2026/10/28 15:22",
-          "summary": "蘋果（Apple）昨晚正式發表搭載 M6 晶片的的全新 14 吋 MacBook Pro，在效能、AI，以及電池續航 ..."
-        },
-        {
-          "title": "iPhone 18 Pro 上市銷量揭曉！美國日本買氣下滑 消費者嫌沒升級感",
-          "link": "https://3c.ltn.com.tw/news/68093",
-          "date": "2026/10/28 10:35",
-          "summary": "Apple 新一代旗艦手機 iPhone 18 Pro 系列上市，初期銷售表現呈現區域差異。市場研究機構 Count ..."
-        },
-        {
-          "title": "iOS 27.2 更新 CarPlay 跟著受益！2 大功能同步升級",
-          "link": "https://3c.ltn.com.tw/news/68089",
-          "date": "2026/10/28 09:40",
-          "summary": "Apple 推出 iOS 27.2 更新，除了替訊息、Apple TV 等服務加入新功能，也針對車載系統 CarPl ..."
         }
       ]
     },
@@ -522,6 +522,13 @@
       "site": "https://ccc.technews.tw/",
       "items": [
         {
+          "title": "二次元老婆搬上桌！Sony 推 6 吋裸眼 3D 螢幕，免戴眼鏡就能看",
+          "link": "https://ccc.technews.tw/2026/10/29/sony-elf-mn1/",
+          "date": "2026-10-29 05:40",
+          "summary": "想讓喜歡的動漫角色不再只是出現在手機或電腦螢幕裡，而是彷彿真的站在桌上？Sony 近日發表一款相當有趣的產品 [&#8230;]",
+          "comments": ""
+        },
+        {
           "title": "Z 世代追求極致成潮流，Maxxing 入選字典網站年度代表字",
           "link": "https://ccc.technews.tw/2026/10/28/maxxing-selected-as-dictionary-com-word-of-the-year/",
           "date": "2026-10-28 01:50",
@@ -596,13 +603,6 @@
           "link": "https://ccc.technews.tw/2026/10/21/hdmi-business-and-entertainment/",
           "date": "2026-10-21 01:00",
           "summary": "走進幾乎任何飯店房間或 Airbnb，旅客通常都會做同一件事：放下行李，接著打開電視。然而，飯店和短期租屋的電 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Googlebook 捨平價策略、挑戰 999 美元高階市場，外媒憂淪下個 Steam Machine",
-          "link": "https://ccc.technews.tw/2026/10/20/googlebook-ill-timed-launch-risks-crisis/",
-          "date": "2026-10-20 08:40",
-          "summary": "科技媒體《Tom&#8217;s Hardware》近期刊出評論指出，Google 試圖將 Chromeboo [&#8230;]",
           "comments": ""
         }
       ]
