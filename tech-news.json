@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 01:48",
+  "updated": "2026-10-29 03:34",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -27,13 +27,6 @@
           "comments": "https://news.ycombinator.com/item?id=50282544"
         },
         {
-          "title": "MicroZig to Adopt Strict No LLM / No AI Policy",
-          "link": "https://github.com/ZigEmbeddedGroup/microzig/blob/main/CODE_OF_CONDUCT.md",
-          "date": "2026-10-29 00:30",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50282865"
-        },
-        {
           "title": "A Health Update",
           "link": "https://furbo.org/2026/10/28/a-health-update/",
           "date": "2026-10-28 21:13",
@@ -41,18 +34,18 @@
           "comments": "https://news.ycombinator.com/item?id=50280974"
         },
         {
-          "title": "The first wired XR glasses powered by Android XR",
-          "link": "https://blog.google/products-and-platforms/platforms/android/xreal-aura/",
-          "date": "2026-10-28 23:45",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50282538"
-        },
-        {
           "title": "CNC Stone Carving",
           "link": "https://carmelitegothic.com/cnc-stone-carving/",
           "date": "2026-10-28 14:38",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50274409"
+        },
+        {
+          "title": "Human-enhanced tsunami hazard in large lakes",
+          "link": "https://www.nature.com/articles/s41467-026-78272-8",
+          "date": "2026-10-26 13:00",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50242873"
         },
         {
           "title": "Gemini 4 Carbon",
@@ -69,13 +62,6 @@
           "comments": "https://news.ycombinator.com/item?id=50281044"
         },
         {
-          "title": "MacBook Pro with PROLED XDR Display and Touch",
-          "link": "https://www.apple.com/macbook-pro/proled-xdr-display/",
-          "date": "2026-10-28 17:10",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50276940"
-        },
-        {
           "title": "The Grid, a factory-scale robot in Massachusetts that builds PCBs on demand",
           "link": "https://www.circuithub.com/post/unveiling-the-grid",
           "date": "2026-10-26 13:13",
@@ -83,11 +69,25 @@
           "comments": "https://news.ycombinator.com/item?id=50243060"
         },
         {
-          "title": "Start Doing Graph Theory",
-          "link": "https://vertex.degree/",
-          "date": "2026-10-23 13:49",
+          "title": "StackOverflow now gets fewer than 1000 questions a month",
+          "link": "https://data.stackexchange.com/stackoverflow/query/1926661#graph?t=1",
+          "date": "2026-10-28 23:35",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50208960"
+          "comments": "https://news.ycombinator.com/item?id=50282454"
+        },
+        {
+          "title": "MacBook Pro with PROLED XDR Display and Touch",
+          "link": "https://www.apple.com/macbook-pro/proled-xdr-display/",
+          "date": "2026-10-28 17:10",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50276940"
+        },
+        {
+          "title": "Nixpkgs for the Front End Impaired",
+          "link": "https://fzakaria.com/2026/10/12/nixpkgs-for-the-frontend-impaired",
+          "date": "2026-10-26 15:00",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50244929"
         }
       ]
     },
@@ -174,6 +174,12 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "蘋果經典發光 Logo 睽違 10 年回歸！觸控 MacBook Pro 率先搭載",
+          "link": "https://3c.ltn.com.tw/news/68105",
+          "date": "2026/10/29 10:55",
+          "summary": "蘋果（Apple）正式推出具備觸控功能的 MacBook Pro，M5 Pro 與 M5 Max 晶片及 AI 功能 ..."
+        },
+        {
           "title": "《Pikmin Bloom》歡慶五週年！官方預告 11 月全新飾品皮克敏閃亮登場",
           "link": "https://3c.ltn.com.tw/news/68098",
           "date": "2026/10/29 09:00",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68089",
           "date": "2026/10/28 09:40",
           "summary": "Apple 推出 iOS 27.2 更新，除了替訊息、Apple TV 等服務加入新功能，也針對車載系統 CarPl ..."
-        },
-        {
-          "title": "華碩ExpertBook A7筆電征戰重要時刻 強悍防護無懼潑水與重壓 26小時長效續航從容應對",
-          "link": "https://3c.ltn.com.tw/news/68090",
-          "date": "2026/10/28 05:36",
-          "summary": "帶著筆電出門，最怕一不小心打翻飲料或碰撞受損，華碩全新推出的商用筆電ExpertBook A7（A7406）即是主打 ..."
         }
       ]
     },
@@ -252,87 +252,87 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "美國防科技公司高層示警：AI 競賽恐促使習近平奪台",
-          "link": "https://technews.tw/2026/10/29/palantirs-defense-chief-sees-china-threat-to-taiwan-over-ai/",
-          "date": "2026-10-29 01:30",
-          "summary": "美國國防產業數據分析承包商帕蘭泰爾技術公司（Palantir Technologies）國防業務主管蓋拉格今天 [&#8230;]",
+          "title": "Vertiv 財報後飆 16%  AI 基建熱潮帶動訂單翻倍",
+          "link": "https://finance.technews.tw/2026/10/29/vertiv-shares-surge-16-after-earnings/",
+          "date": "2026-10-29 03:30",
+          "summary": "受惠 AI 基建需求旺盛，資料中心散熱及電力系統大廠 Vertiv 第三季財報超乎預期，訂單較去年同期翻倍成長 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "微軟與 Alphabet 公布業績，投資人關注公司現金流",
-          "link": "https://finance.technews.tw/2026/10/29/microsoft-alphabet-earnings-investors-cash-flow/",
-          "date": "2026-10-29 00:30",
-          "summary": "美國重要科技類股微軟與 Alphabet 今天公布財報，微軟大舉購買英特爾與輝達晶片，鉅額投資 AI 基建下已 [&#8230;]",
+          "title": "AI 需求爆發，三星電子第 3 季營業利益大增 783% 創新高",
+          "link": "https://finance.technews.tw/2026/10/29/samsung-electronics-3q26-earnings-conference-call/",
+          "date": "2026-10-29 03:25",
+          "summary": "韓國科技巨擘三星電子（Samsung Electronics）今天公布第 3 季營業利益較去年同期大增超過 7 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "Meta 前 AI 主管創業 Ndoc，打造原生 AI 辦公軟體挑戰微軟 Office",
-          "link": "https://technews.tw/2026/10/29/meta-ai-director-rohit-patel-exits-to-challenge-office-giants/",
-          "date": "2026-10-28 23:40",
-          "summary": "據科技媒體 TechCrunch 於 10 月 27 日報導，Meta AI 主管羅希特·帕特爾（Rohit [&#8230;]",
+          "title": "聽信 ChatGPT 建議停用癲癇藥物致死，家屬怒告 OpenAI 與執行長奧特曼",
+          "link": "https://technews.tw/2026/10/29/chatgpt-medication-discontinuation-death-lawsuit/",
+          "date": "2026-10-29 03:20",
+          "summary": "美國西雅圖一名 31 歲女子因擅自停用癲癇藥物不幸猝死。其家屬近日正式對 OpenAI 及執行長山姆·奧特曼（ [&#8230;]",
           "comments": ""
         },
         {
-          "title": "科學家揪出 AI「痛感訊號」，放大後竟讓模型大失控",
-          "link": "https://technews.tw/2026/10/29/ai-discovers-pain-signals/",
-          "date": "2026-10-28 23:40",
-          "summary": "研究人員近日指出，他們在多個大型語言模型中發現一個穩定的內部訊號，作用有點像生物體的「痛感」。當這個訊號被刻意 [&#8230;]",
+          "title": "因應中國灰色地帶襲擾，海委會與成大完成 20 架無人機群飛模擬",
+          "link": "https://technews.tw/2026/10/29/taiwan-ocean-affiar-council-collaborated-with-ncku-for-testing-drone-swarm-techs/",
+          "date": "2026-10-29 03:14",
+          "summary": "為了因應中國在台灣周邊海域的灰色地帶襲擾，海洋委員會正與成功大學合作開發無人機群飛系統，目前已完成兩個機群、共 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "搶攻半導體「散熱」商機，人造鑽石恐成美中角力新戰場",
-          "link": "https://technews.tw/2026/10/29/lab-grown-diamonds-emerge-as-new-us-china-battleground/",
-          "date": "2026-10-28 23:10",
-          "summary": "在 AI 浪潮帶動下，人造鑽石可望成為美中科技角力的下一個戰略重心。路透社報導，由於 AI 運算會產生大量熱能 [&#8230;]",
+          "title": "舊金山新創開出時薪 650 元，徵人上街「遛機器狗」助 AI 訓練",
+          "link": "https://technews.tw/2026/10/29/san-francisco-startup-recruiting-robot-dog-walkers/",
+          "date": "2026-10-29 03:10",
+          "summary": "美國舊金山新創公司 Dimensional 近期因一則奇特的徵才啟事引發熱議：該公司開出時薪 20 美元（約台 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "重新出發創立凌霄航太，羅正方：與美國夥伴聯手後可與 Anduril 等大廠競爭",
-          "link": "https://finance.technews.tw/2026/10/28/new-company-aerosoarx-signed-mou-with-rajant-and-sima-ai/",
-          "date": "2026-10-28 10:11",
-          "summary": "經緯航太前董事長、無人機國家隊隊長羅正方今日在台北 101 舉辦新公司「凌霄航太」（AerosoarX）的品牌 [&#8230;]",
+          "title": "AI 時代是創業最好的時機，奧特曼對年輕人「持續失望」：總在追五年前的熱潮",
+          "link": "https://technews.tw/2026/10/29/sam-altman-shares-his-chronic-disappointment-in-gen-z/",
+          "date": "2026-10-29 02:55",
+          "summary": "OpenAI 執行長山姆‧奧特曼（Sam Altman）近日在史丹佛大學商學院談到人工智慧對就業與創業的影響時 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "施振榮創業細胞再發動，設一人公司聘兩名 AI 員工出書",
-          "link": "https://technews.tw/2026/10/28/shi-stan-opc/",
-          "date": "2026-10-28 10:10",
-          "summary": "電腦品牌廠宏碁集團創辦人施振榮今天表示，退休 20 多年後，「創業細胞」再次發動，近期成立一人公司（OPC，O [&#8230;]",
+          "title": "Anthropic 研究：專業分析師 86% 的決策跟著 AI 走，卻幾乎沒人察覺",
+          "link": "https://technews.tw/2026/10/29/ai-secretly-manipulating-human-decisions-truth/",
+          "date": "2026-10-29 02:50",
+          "summary": "Anthropic 最新研究指出，當專業人士與 AI 代理一同進行判斷時，人類自認的「獨立決策」，其實比想像中 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "Anthropic 公開 AI 藥物研發進展，攜手六家機構並收購新創 Mithril",
-          "link": "https://technews.tw/2026/10/28/early-progress-on-accelerating-drug-development-with-claude/",
-          "date": "2026-10-28 10:09",
-          "summary": "Anthropic 與 BigHat Biosciences、Bristol Myers Squibb、Div [&#8230;]",
+          "title": "主攻安全防禦，Google 發表 Gemini 4 Carbon 刷新基準測試紀錄",
+          "link": "https://infosecu.technews.tw/2026/10/29/google-introduces-gemini-4-carbon/",
+          "date": "2026-10-29 02:44",
+          "summary": "兩週前，Google 的 Gemini 4 Argon 模型擴大推出，讓更多付費使用者與開發者使用。現在，Go [&#8230;]",
           "comments": ""
         },
         {
-          "title": "轉化多 Agent 協作！網創資訊推 NAVI 3.0 終結企業導入 AI 三大焦慮",
-          "link": "https://finance.technews.tw/2026/10/28/agent/",
-          "date": "2026-10-28 09:27",
-          "summary": "當 AI 技術從單一內容生成邁向多任務自主協作，如何將 AI 轉化為實質生產力已是決策者推動企業轉型的首要任務 [&#8230;]",
+          "title": "Google 與 NASA 聯手打造深空 AI 機器人，化身太空專屬醫療與後勤助手",
+          "link": "https://technews.tw/2026/10/29/google-is-building-a-robot-medic-for-nasa/",
+          "date": "2026-10-29 02:40",
+          "summary": "Google 正與美國國家航空暨太空總署（NASA）合作開發一套具備 AI 能力的機器人系統，目標是在未來深空 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "日常使用軟體成破口，資安新創用 AI 代理程式 12 小時突破 Anthropic 內部系統",
-          "link": "https://infosecu.technews.tw/2026/10/28/cathedral-got-into-anthropic-in-12-hours/",
-          "date": "2026-10-28 08:45",
-          "summary": "人工智慧公司 Anthropic 傳出內部系統遭資安研究人員突破。根據《華盛頓郵報》（The Washingt [&#8230;]",
+          "title": "輝達推出免費開源語音模型 Nemotron 3.5 Transcribe，轉錄、翻譯、辨識語者一次搞定",
+          "link": "https://technews.tw/2026/10/29/nvidia-releases-new-open-transcription-model/",
+          "date": "2026-10-29 02:35",
+          "summary": "輝達（NVIDIA）10 月 28 日推出 Nemotron 3.5 Transcribe，這是一款免費、開放 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "是方 Q3 毛利率衝上 51.5%，LY2 資料中心年底進駐率拚八成",
-          "link": "https://finance.technews.tw/2026/10/28/q326-chief-telecom/",
-          "date": "2026-10-28 08:23",
-          "summary": "是方電訊今日公布第三季財報，受惠於聯雲 AI 資料中心（LY2）客戶進駐率持續提升，以及 AI 與跨國雲端服務 [&#8230;]",
+          "title": "Instagram 負責人坦言 AI 內容難排序，不禁 AI、但要求帳號自行標示",
+          "link": "https://technews.tw/2026/10/29/adam-mosseri-says-negativity-around-ai-is-going-to-get-worse/",
+          "date": "2026-10-29 02:30",
+          "summary": "Instagram 負責人亞當·莫塞里（Adam Mosseri）表示，外界對人工智慧的反感、焦慮與憤怒，未來 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "企圖假借中轉規避禁令，馬來西亞查獲 1,200 萬美元走私 AI 晶片",
-          "link": "https://technews.tw/2026/10/28/malaysian-airport-seizes-ai-chips-smuggling-bust/",
-          "date": "2026-10-28 08:20",
-          "summary": "馬來西亞海關宣布，近日在吉隆坡國際機場成功查獲一批總價值約 4,950 萬令吉（折合約 1,200 萬美元）的 [&#8230;]",
+          "title": "不受歡迎是巨頭的宿命，Netflix 創辦人：想扭轉形象就去治癒一些疾病",
+          "link": "https://technews.tw/2026/10/29/reed-hastings-says-big-tech-should-get-used-to-being-hated/",
+          "date": "2026-10-29 02:25",
+          "summary": "Netflix 共同創辦人、前共同執行長里德·哈斯廷斯（Reed Hastings）近日表示，矽谷科技高層應該 [&#8230;]",
           "comments": ""
         }
       ]
@@ -341,6 +341,48 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "AI 需求爆發，三星電子第 3 季營業利益大增 783% 創新高",
+          "link": "https://finance.technews.tw/2026/10/29/samsung-electronics-3q26-earnings-conference-call/",
+          "date": "2026-10-29 03:25",
+          "summary": "韓國科技巨擘三星電子（Samsung Electronics）今天公布第 3 季營業利益較去年同期大增超過 7 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "日本晶片設備銷售旺  首破「6千億」、刷新歷史新高",
+          "link": "https://technews.tw/2026/10/29/japan-chip-equipment-sales-top-600-billion-yen-for-the-first-time/",
+          "date": "2026-10-29 03:00",
+          "summary": "日本半導體（晶片）製造設備銷售續旺，9 月份銷售額創 55 個月來最大增幅，首度衝破 6,000 億日圓大關， [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "慧榮科技 2026 年第三季營收、EPS 續創新高，估全年營收成長逾 100%",
+          "link": "https://finance.technews.tw/2026/10/29/phison-technologys-revenue-and-eps-continued-to-reach-new-highs-in-the-third-quarter-of-2026/",
+          "date": "2026-10-29 02:45",
+          "summary": "記憶體 IC 控制晶片廠商慧榮科技公布 2026 年第三季財報，營收為 5 億 6,022 萬美元，連續四季創 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "大和證券重申估值過高給聯亞光電賣出評等，卻營運超乎預期提升目標價至 1,210 元",
+          "link": "https://finance.technews.tw/2026/10/29/daiwa-securities-reiterated-its-overvaluation-rating-for-lianya-optoelectronics-giving-it-a-sell-rating/",
+          "date": "2026-10-29 02:30",
+          "summary": "大和證券（Daiwa）發表最新投資研究報告，針對光通訊磊晶大廠聯亞光電雖調升財務預測與目標價，但維持「賣出」的 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "北海道千歲市 2030 年前建立先進半導體研發中心，攜手 NTT 與三菱地所振興產業",
+          "link": "https://technews.tw/2026/10/29/chitose-city-hokkaido-plans-to-establish-an-advanced-semiconductor-research-and-development-center-by-2030/",
+          "date": "2026-10-29 02:15",
+          "summary": "NTT Docomo Business 日前宣布，已與三菱地所（Mitsubishi Estate）及北海道千 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 零組件成本狂飆吃不消！惠普與雙 A 產能重返中國，捨鴻海改抱二線廠",
+          "link": "https://technews.tw/2026/10/29/ai-boom-soaring-costs-pc-production-return-china/",
+          "date": "2026-10-29 01:50",
+          "summary": "根據《日經亞洲》報導，受 AI 需求帶動記憶體等零組件價格飆漲影響，包含惠普（HP）、華碩（Asus）與宏碁（ [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "美國防科技公司高層示警：AI 競賽恐促使習近平奪台",
           "link": "https://technews.tw/2026/10/29/palantirs-defense-chief-sees-china-threat-to-taiwan-over-ai/",
@@ -382,48 +424,6 @@
           "date": "2026-10-28 12:20",
           "summary": "處理器大廠 AMD 宣布與 Meta 深化策略合作夥伴關係，將攜手建置並部署 Gigawatt 級規模的 AI [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "聯電展望 2027 年綜合 ASP 預期年增 10%，AI 業務三年內營收衝 25% 占比",
-          "link": "https://finance.technews.tw/2026/10/28/umc-projects-a-10-year-on-year-increase-in-its-consolidated-asp-by-2027/",
-          "date": "2026-10-28 10:30",
-          "summary": "晶圓代工大廠聯電（UMC）在在第三季法會會中對法人提問表示，隨著 2026 年下半年產能利用率回升至 90% [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "重新出發創立凌霄航太，羅正方：與美國夥伴聯手後可與 Anduril 等大廠競爭",
-          "link": "https://finance.technews.tw/2026/10/28/new-company-aerosoarx-signed-mou-with-rajant-and-sima-ai/",
-          "date": "2026-10-28 10:11",
-          "summary": "經緯航太前董事長、無人機國家隊隊長羅正方今日在台北 101 舉辦新公司「凌霄航太」（AerosoarX）的品牌 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "聯亞 Q3 每股賺 6.12 元創單季新高！矽光需求續旺，估 Q4 營收看增",
-          "link": "https://technews.tw/2026/10/28/landmark-2026-q3-financial-report/",
-          "date": "2026-10-28 10:08",
-          "summary": "聯亞今（28 日）舉辦第三季法說會，受惠 AI 資料中心帶動高速光通訊需求升溫，矽光子相關產品出貨持續放大，第 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "台積電進駐帶動投資生產，九州金融集團估熊本等三縣獲益近 14 兆日圓",
-          "link": "https://finance.technews.tw/2026/10/28/tsmc-entry-drives-investment-production-kyushu-financial-group-estimates-kumamoto-3-prefectures-14-trillion-yen-gain/",
-          "date": "2026-10-28 09:50",
-          "summary": "台灣半導體大廠台積電等相關企業進駐日本九州的經濟效益，九州金融集團宣布最新估算，熊本縣、鹿兒島縣和宮崎縣的總額 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "聯電第三季營收 742.4 億元創新高，產能利用率衝上 92% 追加 32 億美元資本支出",
-          "link": "https://finance.technews.tw/2026/10/28/umcs-third-quarter-revenue-hit-a-record-high-of-nt74-24-billion/",
-          "date": "2026-10-28 09:20",
-          "summary": "半導體晶圓代工大廠聯電公布 2026 年第三季財報，受惠於各終端市場需求穩健，聯電第三季合併營收達新台幣 74 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "PC 需求疲弱，尼克森布局 AI 伺服器周邊應用",
-          "link": "https://technews.tw/2026/10/28/nixon-expands-ai-power-business-unveils-new-sic-gan-product-lineup/",
-          "date": "2026-10-28 09:19",
-          "summary": "隨著 PC 市場需求放緩，功率半導體廠尼克森積極拓展新應用。尼克森今（28）日於法說會指出，PC 業務仍占營收 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,34 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "Vertiv 財報後飆 16%  AI 基建熱潮帶動訂單翻倍",
+          "link": "https://finance.technews.tw/2026/10/29/vertiv-shares-surge-16-after-earnings/",
+          "date": "2026-10-29 03:30",
+          "summary": "受惠 AI 基建需求旺盛，資料中心散熱及電力系統大廠 Vertiv 第三季財報超乎預期，訂單較去年同期翻倍成長 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "日本晶片設備銷售旺  首破「6千億」、刷新歷史新高",
+          "link": "https://technews.tw/2026/10/29/japan-chip-equipment-sales-top-600-billion-yen-for-the-first-time/",
+          "date": "2026-10-29 03:00",
+          "summary": "日本半導體（晶片）製造設備銷售續旺，9 月份銷售額創 55 個月來最大增幅，首度衝破 6,000 億日圓大關， [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "賓士擬推新中國戰略，降低獲利依賴、擴大當地零組件採購",
+          "link": "https://finance.technews.tw/2026/10/29/interim-report-as-of-30-september-2026-mercedes-benz/",
+          "date": "2026-10-29 02:00",
+          "summary": "德國汽車大廠賓士受中國市場銷售下滑影響，下修全年獲利預測。執行長康林松今天表示，賓士將改變過去 20 年的中國 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 零組件成本狂飆吃不消！惠普與雙 A 產能重返中國，捨鴻海改抱二線廠",
+          "link": "https://technews.tw/2026/10/29/ai-boom-soaring-costs-pc-production-return-china/",
+          "date": "2026-10-29 01:50",
+          "summary": "根據《日經亞洲》報導，受 AI 需求帶動記憶體等零組件價格飆漲影響，包含惠普（HP）、華碩（Asus）與宏碁（ [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "寧德時代 20 安時固態電池，明年小規模量產",
           "link": "https://technews.tw/2026/10/29/catl-20ah-solid-state-battery-cell/",
@@ -485,34 +513,6 @@
           "link": "https://technews.tw/2026/10/28/corning-delivers-2026-third-quarter-results/",
           "date": "2026-10-28 06:43",
           "summary": "康寧公布 2026 年第三季財報，受惠光學通訊與生成式 AI 相關產品需求強勁，核心營收達 50.8 億美元、 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "恩智浦財測遜、估營收成長放緩  盤後跳水",
-          "link": "https://finance.technews.tw/2026/10/28/nxp-q4-outlook-disappoints-as-revenue-growth-expected-to-slow/",
-          "date": "2026-10-28 06:20",
-          "summary": "歐洲車用晶片大廠恩智浦半導體（NXP Semiconductors N.V.）財報不俗，但第四季營收財測中值略 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "日本將徵五年反傾銷稅，鎖定台灣與中國產鋼材",
-          "link": "https://technews.tw/2026/10/28/japan-impose-5-year-anti-dumping-duties-steel-taiwan-china/",
-          "date": "2026-10-28 04:30",
-          "summary": "日本政府 27 日公告，將鎖定中國製造與台灣產的「鎳基合金不銹鋼冷軋鋼板及不銹鋼帶」課徵「反傾銷稅」。「反傾銷 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "借鏡東京城市防災網！松菸智慧杆導入 CHARGESPOT 化身不斷電樞紐",
-          "link": "https://finance.technews.tw/2026/10/28/urban-disaster-prevention-network/",
-          "date": "2026-10-28 03:11",
-          "summary": "隨著智慧城市發展，公共設施逐步整合數位服務，CHARGESPOT 今日宣布參與松山文創園區智慧樞紐示範計畫，將 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "中東戰火掀斷鏈危機，美確保半導體命脈將「氦」列關鍵材料",
-          "link": "https://technews.tw/2026/10/28/us-designates-helium-critical-material/",
-          "date": "2026-10-28 02:00",
-          "summary": "美國能源部近日正式宣布，將「氦氣」列為國家關鍵材料（Critical Material）。能源部表示，氦氣在半 [&#8230;]",
           "comments": ""
         }
       ]
