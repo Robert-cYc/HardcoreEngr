@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-29 17:48",
+  "updated": "2026-10-30 01:57",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
+        {
+          "title": "Binance-hacker-1029 – $5.6B stolen from Binance",
+          "link": "https://arkm.com/explorer/entity/21a94755-f604-45e5-9501-6542e23005e8",
+          "date": "2026-10-29 21:38",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50296470"
+        },
         {
           "title": "We're releasing the weights of Mistral Large 4",
           "link": "https://mistral.ai/news/mistral-large-4-oss/",
@@ -13,11 +20,39 @@
           "comments": "https://news.ycombinator.com/item?id=50289418"
         },
         {
-          "title": "For the first time ever, Google Search is less than 50% of Alphabet's revenue",
-          "link": "https://www.kadoa.com/companies/insights/google-search-below-half",
-          "date": "2026-10-29 16:42",
+          "title": "We ran AI agent swarms in Minecraft and Mindustry",
+          "link": "https://labs.ycombinator.com/projects/games/index.html",
+          "date": "2026-10-29 21:40",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50291945"
+          "comments": "https://news.ycombinator.com/item?id=50296486"
+        },
+        {
+          "title": "El Niño Is Flooding California's Coasts with the Highest Tides to Come",
+          "link": "https://gizmodo.com/el-nino-is-already-flooding-californias-coasts-and-the-years-highest-tides-havent-arrived-2000832574",
+          "date": "2026-10-29 21:48",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50296585"
+        },
+        {
+          "title": "A tiny world model running games on a Raspberry Pi Pico 2 W",
+          "link": "https://github.com/SheepSeb/tinyworldformer",
+          "date": "2026-10-29 20:32",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50295450"
+        },
+        {
+          "title": "Show HN: I Turned DOOM into a Transformer",
+          "link": "https://github.com/mottopanikeiku/doomformer",
+          "date": "2026-10-29 23:25",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50297697"
+        },
+        {
+          "title": "A Pig, the State, and War: Porco Rosso (Kurenai No Buta) (2014)",
+          "link": "https://journal.animationstudies.org/article/id/66/",
+          "date": "2026-10-29 22:26",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50297089"
         },
         {
           "title": "H.264 Is Magic (2016)",
@@ -27,25 +62,18 @@
           "comments": "https://news.ycombinator.com/item?id=50291054"
         },
         {
-          "title": "Tomáš Mikolov awarded the Medal of Merit by the President of the Czech Republic",
-          "link": "https://www.vut.cz/en/but/news-f19528/two-but-graduates-received-state-honors-from-the-president-of-the-republic-d378468",
-          "date": "2026-10-29 16:56",
+          "title": "The Great American Rascal: Tom Sawyer at 150",
+          "link": "https://claremontreviewofbooks.com/the-great-american-rascal/",
+          "date": "2026-10-29 22:14",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50292233"
+          "comments": "https://news.ycombinator.com/item?id=50296947"
         },
         {
-          "title": "Zombie stats: Where the numbers AI quotes come from",
-          "link": "https://trakkr.ai/trakkr-research/zombie-stats",
-          "date": "2026-10-29 15:06",
+          "title": "Patrick Stewart has died",
+          "link": "https://www.nytimes.com/2026/10/29/arts/television/patrick-stewart-dead.html",
+          "date": "2026-10-29 19:41",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50290283"
-        },
-        {
-          "title": "Grace Blackwell needs a new scheduler: 27% more usable GPUs from the same racks",
-          "link": "https://skypilot.ai/blog/grace-blackwell-needs-a-new-scheduler",
-          "date": "2026-10-29 15:45",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50290912"
+          "comments": "https://news.ycombinator.com/item?id=50294702"
         },
         {
           "title": "LLM Voice",
@@ -60,34 +88,6 @@
           "date": "2026-10-29 12:33",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50287919"
-        },
-        {
-          "title": "Toxic Experts",
-          "link": "https://nedbatchelder.com/blog/201711/toxic_experts",
-          "date": "2026-10-29 16:41",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50291927"
-        },
-        {
-          "title": "Chained PHP2Shell Exploit Roots 25 Servers, Including US Government Servers",
-          "link": "https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers",
-          "date": "2026-10-29 10:42",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50286987"
-        },
-        {
-          "title": "noalloc: Tooling and libraries to enforce zero heap allocations in Golang",
-          "link": "https://github.com/theconsensuslabs/noalloc",
-          "date": "2026-10-28 18:29",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50278645"
-        },
-        {
-          "title": "If IPv4 were land",
-          "link": "https://iptrust.co/blog/if-ipv4-were-land",
-          "date": "2026-10-29 12:19",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50287775"
         }
       ]
     },
@@ -95,6 +95,12 @@
       "name": "CNN 科技",
       "site": "https://edition.cnn.com/business/tech",
       "items": [
+        {
+          "title": "Shares of Google’s parent company just had their worst day ever. Here’s what it means",
+          "link": "https://edition.cnn.com/2026/10/29/investing/alphabet-google-stock-ai",
+          "date": "2026-10-29",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
         {
           "title": "European Central Bank President Lagarde resigns early",
           "link": "https://edition.cnn.com/2026/10/29/business/christine-lagarde-ecb-president-resigns-intl",
@@ -104,12 +110,6 @@
         {
           "title": "Is Fox News pivoting to its post-Trump era? Look at how it’s covering the midterms",
           "link": "https://edition.cnn.com/2026/10/29/media/fox-news-trump-midterms-ratings-election",
-          "date": "2026-10-29",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Last snapshot of the US economy before midterms shows stronger growth but higher inflation",
-          "link": "https://edition.cnn.com/2026/10/29/economy/us-economy-pce-inflation-gdp",
           "date": "2026-10-29",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -174,6 +174,18 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "最頂蘋果電腦！Mac Studio 大全配價格飆破百萬元 實際用途曝光",
+          "link": "https://3c.ltn.com.tw/news/68111",
+          "date": "2026/10/30 09:20",
+          "summary": "蘋果（Apple）在本週新品連發，陸續推出 iPad mini、M6 晶片 14 吋 MacBook Pro、與觸控 ..."
+        },
+        {
+          "title": "iPhone Duo無畏災情買氣高漲！市調：明年有望拿下摺疊機近三成市占率",
+          "link": "https://3c.ltn.com.tw/news/68113",
+          "date": "2026/10/30 08:40",
+          "summary": "儘管蘋果（Apple）iPhone Duo推出以來陸續傳出螢幕災情，但似乎不影響持續高漲的買氣，根據知名市調機構 T ..."
+        },
+        {
           "title": "OPPO Find X10 系列登台！三顆 2 億畫素哈蘇鏡頭挑戰手機攝影極限",
           "link": "https://3c.ltn.com.tw/news/68110",
           "date": "2026/10/29 17:20",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68102",
           "date": "2026/10/29 05:36",
           "summary": "台灣索尼（Sony）宣布為ULT POWER SOUND系列ULT FIELD 1無線藍牙喇叭推出全新煙藍配色，繼先 ..."
-        },
-        {
-          "title": "果粉哭！蘋果平價筆電MacBook Neo又悄悄漲價 4個月漲兩次",
-          "link": "https://3c.ltn.com.tw/news/68103",
-          "date": "2026/10/29 02:30",
-          "summary": "蘋果主打平價的MacBook Neo又偷偷漲價了，目前最新價格已來到23,900元起，短短4個月內二度調漲，讓果粉不 ..."
-        },
-        {
-          "title": "蘋果首款觸控MacBook Pro來了！導入動態島 近10萬元起跳",
-          "link": "https://3c.ltn.com.tw/news/68104",
-          "date": "2026/10/29 02:10",
-          "summary": "蘋果終於打破Mac不支援觸控螢幕的傳統，首款觸控筆電MacBook Pro正式登場，蘋果仍以「MacBook Pro ..."
         }
       ]
     },
