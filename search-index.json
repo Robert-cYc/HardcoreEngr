@@ -1,5 +1,33 @@
 [
   {
+    "url": "us-political-parties-presidents-guide.html",
+    "title": "美國兩大主要政黨全景深度剖析：民主黨 vs 共和黨百年演進、意識形態大轉向與 47 任歷任總統完整名錄全指南",
+    "excerpt": "全維度深度剖析美國民主黨 (Democratic Party) 與共和黨 (Republican Party) 兩大百年政黨：從制憲先父對黨爭的警示、杜瓦傑定律與選舉人團機制、六大歷史政黨體系重組、20 世紀意識形態大逆轉 (The Great Reversal)，到歷任 47 任美國總統完整編年史、重大政績與互動式總統資料庫。",
+    "tags": [
+      "美國政黨",
+      "民主黨",
+      "共和黨",
+      "Democratic Party",
+      "Republican Party",
+      "GOP",
+      "美國總統",
+      "歷任總統",
+      "華盛頓",
+      "林肯",
+      "羅斯福",
+      "雷根",
+      "歐巴馬",
+      "川普",
+      "拜登",
+      "兩黨制",
+      "選舉人團",
+      "杜瓦傑定律",
+      "新政",
+      "南方策略",
+      "意識形態大逆轉"
+    ]
+  },
+  {
     "url": "nvidia-gpu-cuda-architecture-guide.html",
     "title": "NVIDIA GPU 硬核微架構與 CUDA 終極指南：從晶圓矽片、SM 串流多處理器、Tensor Core 到 CUDA 編程與記憶體層級全解析",
     "excerpt": "全維度深度剖析 NVIDIA GPU 硬體微架構與 CUDA 運算體系：深入 SM (Streaming Multiprocessor)、Warp Scheduler 雙發排程、Register File 瓶頸、Tensor Core FP4/FP8 矩陣核心、32-Bank Shared Memory 衝突機制、HBM3e/GDDR6X 頻寬壁壘、Warp Divergence、Memory Coalescing、手寫高效能 GEMM Kernel 優化，以及 NVLink 5.0 與 GB200 NVL72 互連拓撲。內建互動式 Roofline 模型與 CUDA Warp Occupancy 精算器。",

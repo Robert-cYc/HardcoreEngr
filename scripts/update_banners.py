@@ -71,6 +71,7 @@ ARTICLE_BANNER_MAP = {
     "tmux-terminal-guide.html": "tmux-terminal-guide.jpg",
     "top-5-llms-2026.html": "frontier-llms-guide.jpg",
     "usb-history-evolution-guide.html": "usb-evolution-guide.jpg",
+    "us-political-parties-presidents-guide.html": "us-political-parties-presidents-guide.jpg",
     "uv-guide.html": "python-uv-guide.jpg",
     "video-cable-display-interfaces-guide.html": "video-interfaces-guide.jpg",
     "virtual-machine-comparison.html": "virtual-machine-guide.jpg",

@@ -5,13 +5,41 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 31 Oct 2026 03:22:20 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 11:47:17 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
       <title>&quot;AI&quot; 硬核工程師</title>
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
+  <item>
+    <title>美國兩大主要政黨全景深度剖析：民主黨 vs 共和黨百年演進、意識形態大轉向與 47 任歷任總統完整名錄全指南</title>
+    <link>https://ai-hardcore-engineer.com/us-political-parties-presidents-guide.html</link>
+    <guid isPermaLink="true">https://ai-hardcore-engineer.com/us-political-parties-presidents-guide.html</guid>
+    <description>全維度深度剖析美國民主黨 (Democratic Party) 與共和黨 (Republican Party) 兩大百年政黨：從制憲先父對黨爭的警示、杜瓦傑定律與選舉人團機制、六大歷史政黨體系重組、20 世紀意識形態大逆轉 (The Great Reversal)，到歷任 47 任美國總統完整編年史、重大政績與互動式總統資料庫。</description>
+    <pubDate>Sat, 31 Oct 2026 00:00:00 +0000</pubDate>
+    <category>美國政黨</category>
+    <category>民主黨</category>
+    <category>共和黨</category>
+    <category>Democratic Party</category>
+    <category>Republican Party</category>
+    <category>GOP</category>
+    <category>美國總統</category>
+    <category>歷任總統</category>
+    <category>華盛頓</category>
+    <category>林肯</category>
+    <category>羅斯福</category>
+    <category>雷根</category>
+    <category>歐巴馬</category>
+    <category>川普</category>
+    <category>拜登</category>
+    <category>兩黨制</category>
+    <category>選舉人團</category>
+    <category>杜瓦傑定律</category>
+    <category>新政</category>
+    <category>南方策略</category>
+    <category>意識形態大逆轉</category>
+  </item>
   <item>
     <title>NVIDIA GPU 硬核微架構與 CUDA 終極指南：從晶圓矽片、SM 串流多處理器、Tensor Core 到 CUDA 編程與記憶體層級全解析</title>
     <link>https://ai-hardcore-engineer.com/nvidia-gpu-cuda-architecture-guide.html</link>
@@ -1015,7 +1043,7 @@
     <link>https://ai-hardcore-engineer.com/articles.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/articles.html</guid>
     <description>關於前端開發、後端技術、Git 與 AI 開發的技術博客。</description>
-    <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
+    <pubDate>Sat, 31 Oct 2026 00:00:00 +0000</pubDate>
     <category>文章</category>
     <category>博客</category>
   </item>
