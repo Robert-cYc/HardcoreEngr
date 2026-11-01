@@ -1,16 +1,72 @@
 {
-  "updated": "2026-11-01 03:22",
+  "updated": "2026-11-01 17:25",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
+          "title": "Show HN: HackerBooks – HackerTube, but for books recommended on HN",
+          "link": "https://hackerbooks.org",
+          "date": "2026-11-01 15:58",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50326821"
+        },
+        {
+          "title": "Seoul Biosys Begins Production of Rare Earth-Free White Micro LEDs",
+          "link": "https://www.ajupress.com/view/20261028171670308",
+          "date": "2026-11-01 16:23",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50327058"
+        },
+        {
           "title": "HackerTube: YouTube built from videos recommended by HN",
           "link": "https://karpathy.bearblog.dev/hacker-tube/",
           "date": "2026-10-31 19:56",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50319510"
+        },
+        {
+          "title": "Proving and improving the Platonic Representation Hypothesis with JEPAs",
+          "link": "https://arxiv.org/abs/2610.39302",
+          "date": "2026-11-01 13:24",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50325454"
+        },
+        {
+          "title": "Police chief unplugs Flock cameras after company ignores contract cancellation",
+          "link": "https://www.tomshardware.com/tech-industry/big-tech/police-chief-physically-unplugs-flock-cameras-after-the-company-ignores-contract-cancellation-city-takes-matters-into-its-own-hands-amid-privacy-controversies",
+          "date": "2026-11-01 14:36",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50326118"
+        },
+        {
+          "title": "Bidirectional Charging During Grid Outages",
+          "link": "https://www.jefftk.com/p/bidirectional-charging-during-grid-outages",
+          "date": "2026-10-31 20:21",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50319749"
+        },
+        {
+          "title": "Novellas with Groff",
+          "link": "https://movq.de/blog/postings/2026-10-31/0/POSTING-en.html",
+          "date": "2026-11-01 13:51",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50325694"
+        },
+        {
+          "title": "Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
+          "link": "https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/",
+          "date": "2026-11-01 14:34",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50326099"
+        },
+        {
+          "title": "Copper – A minimal low-level programming language with OOP and generics",
+          "link": "https://tibleiz.net/copper/",
+          "date": "2026-10-30 19:09",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50308754"
         },
         {
           "title": "An Italian farmer found some unknown seeds in his attic and planted them",
@@ -20,74 +76,18 @@
           "comments": "https://news.ycombinator.com/item?id=50320963"
         },
         {
-          "title": "TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8",
-          "link": "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf",
-          "date": "2026-10-31 19:16",
+          "title": "One-minute frequency disturbances from synchronization in power systems",
+          "link": "https://www.nature.com/articles/s41560-026-02144-0",
+          "date": "2026-10-31 10:14",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50319143"
+          "comments": "https://news.ycombinator.com/item?id=50314617"
         },
         {
-          "title": "Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard",
-          "link": "https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve",
-          "date": "2026-10-31 22:46",
+          "title": "Show HN: I rebuilt my old canvas 3D library as a small WebGL 2 library – phoria2",
+          "link": "https://kevs3d.co.uk/phoria2/",
+          "date": "2026-10-31 09:49",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50320995"
-        },
-        {
-          "title": "Altoids Project",
-          "link": "https://uvdn7.github.io/altoids-project/",
-          "date": "2026-10-31 22:54",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50321048"
-        },
-        {
-          "title": "When electric cars were for women",
-          "link": "https://spectrum.ieee.org/early-electric-vehicles",
-          "date": "2026-10-31 23:08",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50321130"
-        },
-        {
-          "title": "It's the memory latency, stupid",
-          "link": "https://pivotlake.io/blog/its-the-memory-latency-stupid/",
-          "date": "2026-10-31 18:38",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50318720"
-        },
-        {
-          "title": "Zinc creep in cable spelter sockets brought down the Arecibo telescope in 2020",
-          "link": "https://maketecheasier.com/arecibo-zinc-creep-collapse/",
-          "date": "2026-10-30 22:41",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50311045"
-        },
-        {
-          "title": "Jepsen: ParticleDB 1.1.4",
-          "link": "https://jepsen.io/analyses/particledb-1.1.4",
-          "date": "2026-10-31 13:39",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50316100"
-        },
-        {
-          "title": "First response from the Project Suncatcher prototype satellite",
-          "link": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/",
-          "date": "2026-10-31 03:54",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50313051"
-        },
-        {
-          "title": "Show HN: NES Contra (1987) port (ASM –> C and then C –> WebAssembly)",
-          "link": "https://epoyraz.github.io/nes-contra-us/",
-          "date": "2026-10-31 19:18",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50319169"
-        },
-        {
-          "title": "Surviving \"The Graduate\"",
-          "link": "https://www.newyorker.com/culture/the-weekend-essay/dustin-hoffman-on-surviving-the-graduate",
-          "date": "2026-10-31 20:02",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50319563"
+          "comments": "https://news.ycombinator.com/item?id=50314508"
         }
       ]
     },
@@ -96,21 +96,21 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
-          "title": "Judge tosses Trump’s lawsuit against Wall Street Journal again, this time for good",
-          "link": "https://edition.cnn.com/2026/10/31/media/trump-wall-street-journal-murdoch-lawsuit-dismissed",
-          "date": "2026-10-31",
+          "title": "Binance withdrawals resume following $6 billion hack",
+          "link": "https://edition.cnn.com/2026/11/01/business/binance-withdrawals-crypto-heist",
+          "date": "2026-11-01",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "Notorious hacker says stolen crypto is like ‘holding a hot potato’",
-          "link": "https://edition.cnn.com/2026/10/31/business/crypto-hacker-money-laundering",
-          "date": "2026-10-31",
+          "title": "Anthropic says you can’t be mean to Claude. It’s not about feelings",
+          "link": "https://edition.cnn.com/2026/11/01/business/anthropic-dont-be-mean-claude-ban",
+          "date": "2026-11-01",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "Math teacher gets a plan to keep his debt from derailing his retirement",
-          "link": "https://edition.cnn.com/2026/10/31/business/savings-challenge-participant-second-update-jeff-kizer",
-          "date": "2026-10-31",
+          "title": "“Nobody’s listening”: 5 things Americans told me about the economy that Washington needs to hear",
+          "link": "https://edition.cnn.com/2026/11/01/economy/americans-midterm-personal-economics",
+          "date": "2026-11-01",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
@@ -174,6 +174,36 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "PS2上超經典《七龍珠 Z 武道會》復活！完整搬上網頁直接玩",
+          "link": "https://3c.ltn.com.tw/news/68128",
+          "date": "2026/11/01 16:57",
+          "summary": "早在 2002 年於 PS2 平台上推出的《七龍珠 Z 武道會》，被許多玩家視為《七龍珠 Z》系列有史以來最具代表性 ..."
+        },
+        {
+          "title": "電影導演與攝影師打造拍照App！一秒拍出電影感 直衝付費排行榜冠軍",
+          "link": "https://3c.ltn.com.tw/news/68127",
+          "date": "2026/11/01 15:48",
+          "summary": "憑藉電影《鋒迴路轉》成名的導演雷恩強森（Rian Johnson），近期與攝影師 Steve Yedlin、程式設計 ..."
+        },
+        {
+          "title": "等不到更新！近45%用戶仍在用Android 13以前系統",
+          "link": "https://3c.ltn.com.tw/news/68126",
+          "date": "2026/11/01 14:30",
+          "summary": "根據 Google 最新公布的 Android 系統全球市佔分布，顯示全球仍有超過 40% 的 Android 裝置 ..."
+        },
+        {
+          "title": "平價手機選購3大指標！少一個都不行 專家：超卡還有資安風險",
+          "link": "https://3c.ltn.com.tw/news/68125",
+          "date": "2026/11/01 13:31",
+          "summary": "如今手機選擇多樣，從便宜入門款到高階旗艦機都有，對於預算有限的消費者而言，也能找到售價相當親民的新機選擇，但部分機種 ..."
+        },
+        {
+          "title": "Android爆出「死亡簡訊」漏洞！待機狀態直接癱瘓手機 這2類手機幾乎無解",
+          "link": "https://3c.ltn.com.tw/news/68124",
+          "date": "2026/11/01 12:57",
+          "summary": "Android用戶要注意了，近期資安研究人員揭露一項重大安全漏洞，引發外界高度關注，只要收到「死亡簡訊」、沒有任何點 ..."
+        },
+        {
           "title": "徠卡Q3 43 Formula 1特別版注入賽車魂 黑色超細絨面包覆質感機身 獨家賽道濾鏡完美捕捉瞬間",
           "link": "https://3c.ltn.com.tw/news/68107",
           "date": "2026/11/01 05:49",
@@ -214,36 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68114",
           "date": "2026/10/30 11:45",
           "summary": "蘋果（Apple）在本週終於推出全新 iPad mini，可說是歷來最大幅更新，導入加大的 8.5 吋 OLED 顯 ..."
-        },
-        {
-          "title": "高鐵 5G 訊號不夠穩！三大電信實測都有通話異常 隧道成收訊罩門",
-          "link": "https://3c.ltn.com.tw/news/68115",
-          "date": "2026/10/30 10:10",
-          "summary": "5G 上線已多年，但高鐵的 5G 訊號究竟表現如何？消基會委託電信技術中心（TTC）進行高鐵全線 5G 網路實測，結 ..."
-        },
-        {
-          "title": "最頂蘋果電腦！Mac Studio 大全配價格飆破百萬元 實際用途曝光",
-          "link": "https://3c.ltn.com.tw/news/68111",
-          "date": "2026/10/30 09:20",
-          "summary": "蘋果（Apple）在本週新品連發，陸續推出 iPad mini、M6 晶片 14 吋 MacBook Pro、與觸控 ..."
-        },
-        {
-          "title": "iPhone Duo無畏災情買氣高漲！市調：明年有望拿下摺疊機近三成市占率",
-          "link": "https://3c.ltn.com.tw/news/68113",
-          "date": "2026/10/30 08:40",
-          "summary": "儘管蘋果（Apple）iPhone Duo推出以來陸續傳出螢幕災情，但似乎不影響持續高漲的買氣，根據知名市調機構 T ..."
-        },
-        {
-          "title": "OPPO Find X10 系列登台！三顆 2 億畫素哈蘇鏡頭挑戰手機攝影極限",
-          "link": "https://3c.ltn.com.tw/news/68110",
-          "date": "2026/10/29 17:20",
-          "summary": "OPPO 今（29）日在台推出 Find X10 系列，主打與哈蘇合作打造的「超清原真影像」，Find X10 Pr ..."
-        },
-        {
-          "title": "《魔物獵人：旅人》正式上線！手機探索全新篇章 享受熱血狩獵樂趣",
-          "link": "https://3c.ltn.com.tw/news/68094",
-          "date": "2026/10/29 17:02",
-          "summary": "由Capcom進行IP授權與監修、TiMi Studio Group研發，並由Garena發行的全新生存狩獵動作手遊 ..."
         }
       ]
     },
@@ -251,6 +251,62 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "學者授四招破解假圖，點名食物照是 AI 最大死穴",
+          "link": "https://infosecu.technews.tw/2026/11/01/identifying-flaws-ai-generated-photos/",
+          "date": "2026-11-01 09:00",
+          "summary": "隨著生成式人工智慧（AI）快速普及，逼真的假照片在網路上流竄，如何分辨 AI 生成影像已成為大眾關注的焦點。美 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "美 AI 私校 Alpha School 號稱學習快兩倍，紐時揭數據僅 42% 學生達標",
+          "link": "https://technews.tw/2026/11/01/alpha-school-claims-to-teach-kids-twice-as-fast-many-dont-make-it/",
+          "date": "2026-11-01 07:00",
+          "summary": "主打以人工智慧（AI）教學的美國私校連鎖體系 Alpha School，對家長承諾學生每天只需 2 小時學科課 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Google 太空資料中心首顆晶片啟動，Gemma 4 模型在軌運作還寫詩",
+          "link": "https://technews.tw/2026/11/01/google-receives-first-response-from-its-project-suncatcher-prototype-satellite/",
+          "date": "2026-11-01 04:39",
+          "summary": "在 30 日的一篇官方部落格文章中， Google 表示已成功啟動實驗衛星上的 TPU 晶片，且讓衛星搭載的 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "不靠 AI 抓 AI 的錯，CiteProof 專門揪出法律文件裡的虛構判例",
+          "link": "https://technews.tw/2026/11/01/new-online-tool-will-check-lawyers-sloppy-ai-written-briefs/",
+          "date": "2026-11-01 03:30",
+          "summary": "一款名為 CiteProof 的新工具近日登場，鎖定近年愈來愈常見的法律文件 AI 錯誤問題，主打在訴狀與法庭 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "讓產品更好用而非技術噱頭，執行長特納斯：蘋果不會為 AI 而做 AI",
+          "link": "https://technews.tw/2026/11/01/apple-ceo-says-the-company-is-focused-on-useful-ai-not-ai-for-its-own-sake/",
+          "date": "2026-11-01 02:49",
+          "summary": "蘋果執行長約翰·特納斯（John Ternus）近日馬不停蹄為新款 MacBook Pro 進行宣傳，強調現在 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 代理幫你比價、下單、付款，品牌與客戶的關係將被重新瓜分",
+          "link": "https://technews.tw/2026/11/01/ai-agents-are-splitting-the-customer-relationship-into-pieces/",
+          "date": "2026-11-01 02:30",
+          "summary": "AI 代理人正把原本由單一品牌掌握的客戶關係，拆解成多個可被不同業者爭取的環節。從搜尋、比價、授權付款，到履約 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "經濟與降險還不夠，牛津研究提倡將「幸福感」列為 AI 政策第三大核心",
+          "link": "https://technews.tw/2026/11/01/happiness-is-the-next-ai-kpi-if-oxford-boffins-have-their-way/",
+          "date": "2026-11-01 01:30",
+          "summary": "牛津大學研究人員呼籲，歐盟在推動人工智慧政策時，不應只看經濟成長與風險降低，還要把民眾的幸福感納入評估標準，讓 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "研究推半對抗式訓練，打造更貼近真實的 AI 心理輔助",
+          "link": "https://technews.tw/2026/11/01/ai-personas-as-therapists-versus-clients-shed-new-light-on-improving-ai-powered-mental-health-guidance/",
+          "date": "2026-11-01 00:30",
+          "summary": "一項聚焦 AI 心理健康應用的研究指出，傳統訓練方式多半讓兩個 AI 人格分別扮演治療師與個案，並在高度合作、 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "蘑菇 AI 陪伴機器人 Mori 亮相，不說話也沒有螢幕、主打找回注意力",
           "link": "https://technews.tw/2026/10/31/mori-might-be-the-cutest-ai-companion-robot-yet-and-it-reacts-to-you-like-a-pet/",
@@ -278,62 +334,6 @@
           "date": "2026-10-31 06:00",
           "summary": "商務 AI 轉型（AX）解決方案開發商 Indent 創辦人暨執行長 Seldon Yoon 10 月 27 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "AI 聊天機器人回應科技虐待提問 86% 有問題，換個說法甚至轉成協助跟蹤者",
-          "link": "https://infosecu.technews.tw/2026/10/31/ai-chatbots-are-falling-prey-to-manipulative-prompts-that-could-help-stalkers-spy-on-victims/",
-          "date": "2026-10-31 03:30",
-          "summary": "遭跟蹤或控制的受害者向 AI 聊天機器人求助，得到的建議可能不但無效，甚至更危險。美國紐約大學坦登工程學院（N [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "「在地雷區跳舞」的世紀交易：SpaceX 合併特斯拉，馬斯克必須跨越的兩大高牆",
-          "link": "https://finance.technews.tw/2026/10/31/spacex-tesla-merger-largest-earth-who-benefits-who-pays/",
-          "date": "2026-10-31 02:00",
-          "summary": "SpaceX 與特斯拉證實已各自成立特別委員會，研議合併。若成真，市值合計約 3.5 兆美元，將是史上最大合併 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "批 PC 配大量 DRAM「相當糟糕」！Sam Altman：應優先配置 AI 資料中心",
-          "link": "https://technews.tw/2026/10/31/openai-ceo-sam-altman-talk-about-dram/",
-          "date": "2026-10-31 01:23",
-          "summary": "OpenAI 執行長 Sam Altman 近日談及 AI 運算資源配置時，直言一般消費者將大量 DRAM 配 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "前三季營收翻倍衝刺轉上市，通寶從高通技術打底跨界布局 ASIC 與無人機晶片",
-          "link": "https://finance.technews.tw/2026/10/31/qbit-semiconductor-ltd/",
-          "date": "2026-10-31 01:00",
-          "summary": "沈軾榮 2016 年承接高通事務機影像處理技術團隊，準備承擔 5 年虧損；如今在核心事業穩定成長下，通寶正把技 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "個案用 AI 打造心理諮商師「分身」，專家提醒恐混淆療程並延誤治療",
-          "link": "https://technews.tw/2026/10/31/using-an-ai-persona-to-impersonate-your-therapist-so-you-can-get-inside-their-head/",
-          "date": "2026-10-31 00:30",
-          "summary": "愈來愈多民眾向生成式 AI 尋求心理健康建議，如今更出現新用法：正在接受心理治療的個案，利用 AI 角色扮演（ [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 提前 15 個月預警「癌王」胰臟癌，敏感度高達 73% 遠勝傳統判讀",
-          "link": "https://technews.tw/2026/10/31/ai-early-detection-pancreatic-cancer/",
-          "date": "2026-10-30 16:00",
-          "summary": "一項最新研究指出，人工智慧（AI）技術可能讓胰臟癌的偵測時間大幅提前。研究團隊開發的系統「REDMOD」，能從 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Google AI 搜尋蠶食流量，Reddit 祭「登入制」防堵爬蟲並強化廣告",
-          "link": "https://technews.tw/2026/10/30/google-s-ai-mode-does-not-drive-traffic/",
-          "date": "2026-10-30 09:39",
-          "summary": "Google 的 AI 模式（AI Mode）與 AI 摘要（AI Overviews）已經改變搜尋生態，對 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Sam Altman 低調訪台，劉揚偉為見他延後媒體聯訪逾 2 小時",
-          "link": "https://finance.technews.tw/2026/10/30/sam-altman-foxconn-liu/",
-          "date": "2026-10-30 09:13",
-          "summary": "OpenAI 執行長 Sam Altman 低調訪台，鴻海董事長劉揚偉今日證實，當天中午已與 Altman 會 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,34 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "Google 太空資料中心首顆晶片啟動，Gemma 4 模型在軌運作還寫詩",
+          "link": "https://technews.tw/2026/11/01/google-receives-first-response-from-its-project-suncatcher-prototype-satellite/",
+          "date": "2026-11-01 04:39",
+          "summary": "在 30 日的一篇官方部落格文章中， Google 表示已成功啟動實驗衛星上的 TPU 晶片，且讓衛星搭載的 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "同公司兩樣情！台中簽密約、桃園拉布條，解析美光勞資角力的三方算計",
+          "link": "https://finance.technews.tw/2026/11/01/taiwan-semiconductor-industry-first-legal-strike-11-protestors-micron-negotiations-stalled/",
+          "date": "2026-11-01 02:00",
+          "summary": "台灣半導體業首場合法罷工，10 月 22 日在美光桃園廠登場。只有 11 名工會幹部上街，背後卻是同一家公司兩 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "「延續黃崇仁上市櫃心願！」力晶 11/25 召開股東臨時會，全面改選董監事",
+          "link": "https://finance.technews.tw/2026/11/01/pihc-stock-3/",
+          "date": "2026-11-01 01:20",
+          "summary": "力晶近日公告將於 11 月 25 日召開股東臨時會，討論公司章程修訂，及全面改選董事、監察人。根據力晶致全體股 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "旺宏前三季大賺逾一個股本，Q3 毛利率飆破 70% 寫歷史新高",
+          "link": "https://finance.technews.tw/2026/11/01/macronix-q3-profit-hits-record-as-gross-margin-tops-70/",
+          "date": "2026-11-01 01:00",
+          "summary": "記憶體價格持續走揚，帶動旺宏營運強勢反彈。根據《財訊》雙週刊報導，旺宏 10 月 27 日舉行線上法說會，第三 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "科林研發、imec 擴大合作！布局 High-NA EUV 乾式光阻，加速量產進程",
           "link": "https://technews.tw/2026/10/31/lam-imec-collaboration/",
@@ -384,7 +412,7 @@
           "comments": ""
         },
         {
-          "title": "聯發科 2026 年 ASIC 營收將達 25 億美元，確認已取得第二家雲端 ASIC 客戶",
+          "title": "聯發科 2026 年 ASIC 營收將達 25 億美元，確認取得第二家雲端 ASIC 客戶",
           "link": "https://finance.technews.tw/2026/10/30/mediateks-asic-revenue-will-reach-2-5-billion-in-2026/",
           "date": "2026-10-30 12:20",
           "summary": "聯發科執行長蔡力行表示，2026 年雲端 ASIC 營收貢獻目標上調至25億美元，其中對第四季佔單季營收比重將 [&#8230;]",
@@ -396,34 +424,6 @@
           "date": "2026-10-30 12:00",
           "summary": "配合台灣薪資發放時程，台灣美光同仁 30 日隨 10 月薪資收到 FY26 各項獎酬，包括 FY26 年度激勵 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "記憶體漲勢延續至明年首季，vivo 台灣 X 系列銷量逆勢成長兩成",
-          "link": "https://technews.tw/2026/10/30/vivo-x500-series-taiwan/",
-          "date": "2026-10-30 11:30",
-          "summary": "vivo 今日在台推出 X500 系列旗艦手機及摺疊旗艦 X Fold6。面對記憶體價格持續上漲、智慧手機市場 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "台積電外氣空調箱洗滌技術升級，再省電 60%",
-          "link": "https://technews.tw/2026/10/30/tsmc-ahu-washing-tech-upgrade-60-percent-power-savings/",
-          "date": "2026-10-30 09:30",
-          "summary": "晶圓代工廠台積電成功升級外氣空調箱洗滌技術，台積電表示，新一代設計運用自然重力取代馬達加壓，確保洗滌效果不變的 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "盛美推升級版高溫 SPM 清洗設備！回收率達 70%，單台年省 400 噸化學品",
-          "link": "https://technews.tw/2026/10/30/acm-research-spm-cleaning-machine/",
-          "date": "2026-10-30 09:14",
-          "summary": "隨著半導體製程日益複雜，晶圓清洗技術對微粒控制、化學品使用效率及設備穩定性的要求持續提高。盛美半導體設備今（3 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "拚晶片部署縮短至半年，Google 高層：台灣是客製化晶片重鎮",
-          "link": "https://technews.tw/2026/10/30/google-executive-says-taiwan-is-a-major-hub-for-custom-chips/",
-          "date": "2026-10-30 08:50",
-          "summary": "Google Cloud AI 基礎建設供應鏈與製造營運副總裁謝赫今天指出，台灣的供應鏈樞紐將持續是 Goog [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,13 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "廢棄塑膠變身吸水海綿，連沙漠水氣也能捕捉？",
+          "link": "https://technews.tw/2026/11/01/waste-plastics-become-molecular-sponges-that-capture-water-from-air/",
+          "date": "2026-11-01 08:00",
+          "summary": "塑膠包裝、廢棄光碟，甚至是樂高積木，最後往往都成為沒用的垃圾。如果能將這些廢棄塑膠製成吸水材料，捕捉空氣水分， [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "科林研發、imec 擴大合作！布局 High-NA EUV 乾式光阻，加速量產進程",
           "link": "https://technews.tw/2026/10/31/lam-imec-collaboration/",
@@ -506,13 +513,6 @@
           "link": "https://technews.tw/2026/10/30/us-fcc-moves-to-ban-china-labs-from-testing-electronics-for-us-market/",
           "date": "2026-10-30 04:05",
           "summary": "綜合港媒報導，據路透社報導，美國聯邦通訊委員會（FCC）投票通過新規，禁止中國及其他未與美國建立互認或互惠協議 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "謝再居：成熟製程與 DRAM 核心技術跨界整合使力積電跟隨 AI 發展賺錢",
-          "link": "https://finance.technews.tw/2026/10/30/the-cross-industry-integration-of-mature-process-technology-and-core-dram-technology-enables-powerchip-semiconductor-to-profit-from-ai-development/",
-          "date": "2026-10-30 03:40",
-          "summary": "隨著高效能運算（HPC）與人工智慧（AI）需求爆發，市場焦點多聚焦於最先進的微縮製程。然成熟製程在系統周邊元件 [&#8230;]",
           "comments": ""
         }
       ]
