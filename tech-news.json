@@ -1,16 +1,72 @@
 {
-  "updated": "2026-10-31 16:33",
+  "updated": "2026-11-01 01:12",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "Malware uses LLMs to rank victims by how much they're worth",
-          "link": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
-          "date": "2026-10-31 14:29",
+          "title": "HackerTube: YouTube built from videos recommended by HN",
+          "link": "https://karpathy.bearblog.dev/hacker-tube/",
+          "date": "2026-10-31 19:56",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50316531"
+          "comments": "https://news.ycombinator.com/item?id=50319510"
+        },
+        {
+          "title": "An Italian farmer found some unknown seeds in his attic and planted them",
+          "link": "https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/",
+          "date": "2026-10-31 22:41",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50320963"
+        },
+        {
+          "title": "TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8",
+          "link": "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf",
+          "date": "2026-10-31 19:16",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50319143"
+        },
+        {
+          "title": "Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard",
+          "link": "https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve",
+          "date": "2026-10-31 22:46",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50320995"
+        },
+        {
+          "title": "Altoids Project",
+          "link": "https://uvdn7.github.io/altoids-project/",
+          "date": "2026-10-31 22:54",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50321048"
+        },
+        {
+          "title": "When electric cars were for women",
+          "link": "https://spectrum.ieee.org/early-electric-vehicles",
+          "date": "2026-10-31 23:08",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50321130"
+        },
+        {
+          "title": "It's the memory latency, stupid",
+          "link": "https://pivotlake.io/blog/its-the-memory-latency-stupid/",
+          "date": "2026-10-31 18:38",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50318720"
+        },
+        {
+          "title": "First response from the Project Suncatcher prototype satellite",
+          "link": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/",
+          "date": "2026-10-31 03:54",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50313051"
+        },
+        {
+          "title": "With 86% of the words, you might understand only 38% of an anime's lines",
+          "link": "https://learnfromx.com/research/anime-word-coverage-vs-lines-understood",
+          "date": "2026-10-31 20:46",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50320028"
         },
         {
           "title": "Molly (Signal fork) has not been updated since 3 months and is vulnerable",
@@ -20,74 +76,18 @@
           "comments": "https://news.ycombinator.com/item?id=50314666"
         },
         {
-          "title": "We Took over ChatGPT Accounts",
-          "link": "https://www.parameter.ai/labs/we-found-a-gap-at-openai",
-          "date": "2026-10-31 10:30",
+          "title": "Jepsen: ParticleDB 1.1.4",
+          "link": "https://jepsen.io/analyses/particledb-1.1.4",
+          "date": "2026-10-31 13:39",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50314699"
+          "comments": "https://news.ycombinator.com/item?id=50316100"
         },
         {
-          "title": "Casio Watches of the 1980s",
-          "link": "https://www.casio.com/us/watches/50th/Heritage/1980s/",
-          "date": "2026-10-31 16:00",
+          "title": "Surviving \"The Graduate\"",
+          "link": "https://www.newyorker.com/culture/the-weekend-essay/dustin-hoffman-on-surviving-the-graduate",
+          "date": "2026-10-31 20:02",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50317363"
-        },
-        {
-          "title": "Serbia just elected the world's brainiest parliament",
-          "link": "https://www.science.org/content/article/serbia-just-elected-world-s-brainiest-parliament",
-          "date": "2026-10-31 10:21",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50314654"
-        },
-        {
-          "title": "Switch Lowering in GCC",
-          "link": "https://xoranth.net/gcc-switch/",
-          "date": "2026-10-31 08:02",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50314085"
-        },
-        {
-          "title": "Simple circuits can create complex behaviors",
-          "link": "https://aatishb.com/myriad/lets-build-a-brain/",
-          "date": "2026-10-27 16:01",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50261253"
-        },
-        {
-          "title": "Ex-Meta Researcher Torrented Pirated Books, Deleted It 'Due to Litigation'",
-          "link": "https://torrentfreak.com/ex-meta-researcher-torrented-pirated-books-dataset-deleted-it-due-to-all-this-litigation/",
-          "date": "2026-10-31 14:57",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50316760"
-        },
-        {
-          "title": "Digital minimalism",
-          "link": "https://vitalik.eth.limo/general/2026/10/31/digital_minimalism.html",
-          "date": "2026-10-31 06:16",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50313661"
-        },
-        {
-          "title": "Reading and writing are less symmetric than you (probably) think",
-          "link": "https://fgiesen.wordpress.com/2015/10/25/reading-and-writing-are-less-symmetric-than-you-probably-think/",
-          "date": "2026-10-28 09:38",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50271052"
-        },
-        {
-          "title": "Prospero: A new coding harness for a more civilized age",
-          "link": "https://nullprogram.com/blog/2026/10/31/",
-          "date": "2026-10-31 11:54",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50315226"
-        },
-        {
-          "title": "AI, Lean, and the Future of Formal Verification, with Lean Creator Leo de Moura",
-          "link": "https://thedataexchange.media/leo-de-moura-lean-aws/",
-          "date": "2026-10-29 15:29",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50290652"
+          "comments": "https://news.ycombinator.com/item?id=50319563"
         }
       ]
     },
@@ -96,20 +96,20 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
+          "title": "Judge tosses Trump’s lawsuit against Wall Street Journal again, this time for good",
+          "link": "https://edition.cnn.com/2026/10/31/media/trump-wall-street-journal-murdoch-lawsuit-dismissed",
+          "date": "2026-10-31",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Notorious hacker says stolen crypto is like ‘holding a hot potato’",
+          "link": "https://edition.cnn.com/2026/10/31/business/crypto-hacker-money-laundering",
+          "date": "2026-10-31",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
           "title": "Math teacher gets a plan to keep his debt from derailing his retirement",
           "link": "https://edition.cnn.com/2026/10/31/business/savings-challenge-participant-second-update-jeff-kizer",
-          "date": "2026-10-31",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "How to grow a nest egg while protecting it from inflation and market drops",
-          "link": "https://edition.cnn.com/2026/10/31/business/savings-challenge-protect-nest-egg-inflation-market-drop",
-          "date": "2026-10-31",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Americans may feel a bit spooked by Halloween prices",
-          "link": "https://edition.cnn.com/2026/10/31/business/halloween-costume-prices",
           "date": "2026-10-31",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -173,6 +173,12 @@
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "徠卡Q3 43 Formula 1特別版注入賽車魂 黑色超細絨面包覆質感機身 獨家賽道濾鏡完美捕捉瞬間",
+          "link": "https://3c.ltn.com.tw/news/68107",
+          "date": "2026/11/01 05:49",
+          "summary": "德國相機大廠徠卡（Leica）宣布與賽車最高殿堂Formula 1一級方程式達成授權合作，攜手推出Q3 43 For ..."
+        },
         {
           "title": "Android Auto 最期待新功能恐將跳票！Google 公布最新開發進度",
           "link": "https://3c.ltn.com.tw/news/68122",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68094",
           "date": "2026/10/29 17:02",
           "summary": "由Capcom進行IP授權與監修、TiMi Studio Group研發，並由Garena發行的全新生存狩獵動作手遊 ..."
-        },
-        {
-          "title": "Anker 全台首間體驗店插旗信義威秀 明星商品最低 56 折",
-          "link": "https://3c.ltn.com.tw/news/68109",
-          "date": "2026/10/29 16:15",
-          "summary": "消費性電子品牌 Anker 宣布在台北信義威秀開設全台首間體驗店，今（29）日正式開幕，以「個人日常」與「居家生活」 ..."
         }
       ]
     },
@@ -251,48 +251,6 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
-        {
-          "title": "蘑菇 AI 陪伴機器人 Mori 亮相，不說話也沒有螢幕、主打找回注意力",
-          "link": "https://technews.tw/2026/10/31/mori-might-be-the-cutest-ai-companion-robot-yet-and-it-reacts-to-you-like-a-pet/",
-          "date": "2026-10-31 09:00",
-          "summary": "新創公司 OKA（One Kind Artifact）10 月 22 日發表首款產品「Mori」。Mori 外 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "印度勞工化身 AI 導師，配戴攝影機記錄日常、親手訓練未來機器人",
-          "link": "https://technews.tw/2026/10/31/indian-workers-transform-into-ai-tutors/",
-          "date": "2026-10-31 07:00",
-          "summary": "印度正興起一項全新的工作型態：基層勞工在工作時戴上頭戴式攝影機，完整記錄下自己的每一個動作，以協助科技公司訓練 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "台達電 AI 訂單能見度高但出貨時點變動大，鄭平稱庫存增加屬階段性現象",
-          "link": "https://finance.technews.tw/2026/10/31/delta-electronics-ai-orders-high-visibility-shipment-timing-highly-variable/",
-          "date": "2026-10-31 06:00",
-          "summary": "台達電上半年股價曾漲破 2,500 元，截至 10 月底卻跌掉四成，不少散戶都在關注背後原因，好奇近期會翻身嗎 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "韓國品牌搶攻海外都靠社群行銷！新創推 AI 代理自動對接 72 國網紅",
-          "link": "https://finance.technews.tw/2026/10/31/social-media-key-to-success-for-k-brands-ai-expert-says/",
-          "date": "2026-10-31 06:00",
-          "summary": "商務 AI 轉型（AX）解決方案開發商 Indent 創辦人暨執行長 Seldon Yoon 10 月 27 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 聊天機器人回應科技虐待提問 86% 有問題，換個說法甚至轉成協助跟蹤者",
-          "link": "https://infosecu.technews.tw/2026/10/31/ai-chatbots-are-falling-prey-to-manipulative-prompts-that-could-help-stalkers-spy-on-victims/",
-          "date": "2026-10-31 03:30",
-          "summary": "遭跟蹤或控制的受害者向 AI 聊天機器人求助，得到的建議可能不但無效，甚至更危險。美國紐約大學坦登工程學院（N [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "「在地雷區跳舞」的世紀交易：SpaceX 合併特斯拉，馬斯克必須跨越的兩大高牆",
-          "link": "https://finance.technews.tw/2026/10/31/spacex-tesla-merger-largest-earth-who-benefits-who-pays/",
-          "date": "2026-10-31 02:00",
-          "summary": "SpaceX 與特斯拉證實已各自成立特別委員會，研議合併。若成真，市值合計約 3.5 兆美元，將是史上最大合併 [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "批 PC 配大量 DRAM「相當糟糕」！Sam Altman：應優先配置 AI 資料中心",
           "link": "https://technews.tw/2026/10/31/openai-ceo-sam-altman-talk-about-dram/",
@@ -334,6 +292,48 @@
           "date": "2026-10-30 09:13",
           "summary": "OpenAI 執行長 Sam Altman 低調訪台，鴻海董事長劉揚偉今日證實，當天中午已與 Altman 會 [&#8230;]",
           "comments": ""
+        },
+        {
+          "title": "拚晶片部署縮短至半年，Google 高層：台灣是客製化晶片重鎮",
+          "link": "https://technews.tw/2026/10/30/google-executive-says-taiwan-is-a-major-hub-for-custom-chips/",
+          "date": "2026-10-30 08:50",
+          "summary": "Google Cloud AI 基礎建設供應鏈與製造營運副總裁謝赫今天指出，台灣的供應鏈樞紐將持續是 Goog [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "強化 AI 代理服務！Oracle 明年秋季將 Arm AGI CPU 導入 OCI 雲端基礎設施",
+          "link": "https://technews.tw/2026/10/30/arm-oracle-arm-agi-cpu/",
+          "date": "2026-10-30 08:44",
+          "summary": "Oracle 在 Oracle AI World 大會上宣布計畫 2027 年秋季將 Arm AGI CPU [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "出口投資超預期，第三季經濟成長率 14.36% 創 48 年同期最高",
+          "link": "https://finance.technews.tw/2026/10/30/q3-economic-growth-rate-surges-14-36-4-consecutive-double-digit-growth/",
+          "date": "2026-10-30 08:40",
+          "summary": "主計總處今天公布第三季經濟成長概估為 14.36%，較 8 月預測數大增 2.94 個百分點，創 48 年同期 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "遠超業界平均 11.3 年，微軟資料中心與辦公大樓預估壽命上調至 25 年",
+          "link": "https://finance.technews.tw/2026/10/30/microsoft-earnings-report-data-center-lifespan-extended/",
+          "date": "2026-10-30 08:30",
+          "summary": "微軟（Microsoft）在 2027 會計年度第一季的法說會上宣布，將旗下辦公大樓與資料中心的預估耐用年限從 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "聯發科第三季 EPS 達 17.5 元毛利率達 46.3%，第四季預估營收季增中位數近三成",
+          "link": "https://finance.technews.tw/2026/10/30/mediateks-third-quarter-eps-reached-nt17-5-with-a-gross-margin-of-46-3/",
+          "date": "2026-10-30 08:00",
+          "summary": "IC 設計龍頭聯發科公布 2026 年第三季合併財務報告並舉行法人說明會，在受惠於客戶需求強勁與新專案陸續放量 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "邁威爾傳併 Lumentum？市場不買單、憂財務衝擊",
+          "link": "https://finance.technews.tw/2026/10/30/marvell-lumentum-acquisition-rumor-market-disapproves-financial-impact-concerns/",
+          "date": "2026-10-30 07:40",
+          "summary": "網通晶片設計商邁威爾（Marvell）傳出洽購光通訊元件供應商 Lumentum，市場擔心收購溢價、發行新股稀 [&#8230;]",
+          "comments": ""
         }
       ]
     },
@@ -341,20 +341,6 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
-        {
-          "title": "科林研發、imec 擴大合作！布局 High-NA EUV 乾式光阻，加速量產進程",
-          "link": "https://technews.tw/2026/10/31/lam-imec-collaboration/",
-          "date": "2026-10-31 08:18",
-          "summary": "人工智慧（AI）運算需求持續攀升，半導體產業的技術競爭已從電晶體微縮，進一步延伸至先進封裝、3D 整合及新世代 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "鎖定 AI 伺服器 MLCC 需求！村田製作所未來五年擬砸 1 兆日圓擴產",
-          "link": "https://technews.tw/2026/10/31/murata-invest-6-3bn-in-capacitor-production/",
-          "date": "2026-10-31 06:27",
-          "summary": "據日經報導，日本村田製作所將在未來 5 年投入 1 兆日圓（約 63 億美元），以因應人工智慧（AI）伺服器及 [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "批 PC 配大量 DRAM「相當糟糕」！Sam Altman：應優先配置 AI 資料中心",
           "link": "https://technews.tw/2026/10/31/openai-ceo-sam-altman-talk-about-dram/",
@@ -424,6 +410,20 @@
           "date": "2026-10-30 08:50",
           "summary": "Google Cloud AI 基礎建設供應鏈與製造營運副總裁謝赫今天指出，台灣的供應鏈樞紐將持續是 Goog [&#8230;]",
           "comments": ""
+        },
+        {
+          "title": "強化 AI 代理服務！Oracle 明年秋季將 Arm AGI CPU 導入 OCI 雲端基礎設施",
+          "link": "https://technews.tw/2026/10/30/arm-oracle-arm-agi-cpu/",
+          "date": "2026-10-30 08:44",
+          "summary": "Oracle 在 Oracle AI World 大會上宣布計畫 2027 年秋季將 Arm AGI CPU [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "SpaceX、AI 光通訊成新引擎！外資看穩懋兩樣情，大摩喊上 700 元、高盛喊賣",
+          "link": "https://technews.tw/2026/10/30/daiwa-ms-goldman-sachs-see-win-semi-2026-q3-financial-report/",
+          "date": "2026-10-30 08:09",
+          "summary": "穩懋近期舉辦第三季法說會，三間外資看法分歧，日系外資大和從買進降評至優於大盤、目標價 620 元；摩根士丹利（ [&#8230;]",
+          "comments": ""
         }
       ]
     },
@@ -431,27 +431,6 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
-        {
-          "title": "科林研發、imec 擴大合作！布局 High-NA EUV 乾式光阻，加速量產進程",
-          "link": "https://technews.tw/2026/10/31/lam-imec-collaboration/",
-          "date": "2026-10-31 08:18",
-          "summary": "人工智慧（AI）運算需求持續攀升，半導體產業的技術競爭已從電晶體微縮，進一步延伸至先進封裝、3D 整合及新世代 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "鎖定 AI 伺服器 MLCC 需求！村田製作所未來五年擬砸 1 兆日圓擴產",
-          "link": "https://technews.tw/2026/10/31/murata-invest-6-3bn-in-capacitor-production/",
-          "date": "2026-10-31 06:27",
-          "summary": "據日經報導，日本村田製作所將在未來 5 年投入 1 兆日圓（約 63 億美元），以因應人工智慧（AI）伺服器及 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "台達電 AI 訂單能見度高但出貨時點變動大，鄭平稱庫存增加屬階段性現象",
-          "link": "https://finance.technews.tw/2026/10/31/delta-electronics-ai-orders-high-visibility-shipment-timing-highly-variable/",
-          "date": "2026-10-31 06:00",
-          "summary": "台達電上半年股價曾漲破 2,500 元，截至 10 月底卻跌掉四成，不少散戶都在關注背後原因，好奇近期會翻身嗎 [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "不沾鍋塗料「鐵氟龍」為何成為輝達機櫃新歡？黃仁勳新賭注或讓兩岸 PCB 廠版圖重新洗牌",
           "link": "https://technews.tw/2026/10/31/nvidia-love-ptfe/",
@@ -513,6 +492,27 @@
           "link": "https://finance.technews.tw/2026/10/30/the-cross-industry-integration-of-mature-process-technology-and-core-dram-technology-enables-powerchip-semiconductor-to-profit-from-ai-development/",
           "date": "2026-10-30 03:40",
           "summary": "隨著高效能運算（HPC）與人工智慧（AI）需求爆發，市場焦點多聚焦於最先進的微縮製程。然成熟製程在系統周邊元件 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 部署關鍵年爆發！聯發科陳冠州解析台灣半導體生態系轉型與四大競爭策略",
+          "link": "https://technews.tw/2026/10/30/mediateks-chen-guanzhou-analyzes-the-transformation-of-taiwans-semiconductor-ecosystem-and-four-major-competitive-strategies/",
+          "date": "2026-10-30 03:30",
+          "summary": "隨著生成式 AI 與大語言模型的飛速發展，全球半導體產業正迎來新一輪的典範轉移。聯發科技總經理陳冠州直言 20 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 算力暴增百倍推升驗證難度，台積電袁立本提七大行動讓台灣全球 AI 樞紐",
+          "link": "https://technews.tw/2026/10/30/seven-major-initiatives-to-make-taiwan-a-global-ai-hub/",
+          "date": "2026-10-30 03:10",
+          "summary": "台積電業務開發副總經理袁立本指出，全球 AI 產業已從實驗室階段的「創新週期」，全面邁入大規模部署的「產業化規 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "開拓重工財測無驚喜、成本壓力上升 股價崩",
+          "link": "https://finance.technews.tw/2026/10/30/caterpillar-shares-plunge-as-earnings-outlook-disappoints/",
+          "date": "2026-10-30 02:50",
+          "summary": "美國工業機械大廠開拓重工（Caterpillar）上季營收遜於預期，且未上修全年營收展望，成本壓力與 AI 投 [&#8230;]",
           "comments": ""
         }
       ]
