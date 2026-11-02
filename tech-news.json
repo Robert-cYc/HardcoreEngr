@@ -1,23 +1,23 @@
 {
-  "updated": "2026-11-01 17:25",
+  "updated": "2026-11-02 01:30",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "Show HN: HackerBooks – HackerTube, but for books recommended on HN",
+          "title": "Show HN: HackerBooks – HackerTube, but for books mentioned on HN",
           "link": "https://hackerbooks.org",
           "date": "2026-11-01 15:58",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50326821"
         },
         {
-          "title": "Seoul Biosys Begins Production of Rare Earth-Free White Micro LEDs",
-          "link": "https://www.ajupress.com/view/20261028171670308",
-          "date": "2026-11-01 16:23",
+          "title": "Postgres 19 is late, and it's AI's fault",
+          "link": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
+          "date": "2026-10-31 01:38",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50327058"
+          "comments": "https://news.ycombinator.com/item?id=50312408"
         },
         {
           "title": "HackerTube: YouTube built from videos recommended by HN",
@@ -27,67 +27,67 @@
           "comments": "https://news.ycombinator.com/item?id=50319510"
         },
         {
-          "title": "Proving and improving the Platonic Representation Hypothesis with JEPAs",
-          "link": "https://arxiv.org/abs/2610.39302",
-          "date": "2026-11-01 13:24",
+          "title": "America on Data Centers: 10k city council comments",
+          "link": "https://www.americansentiment.com/datacenters",
+          "date": "2026-11-02 00:17",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50325454"
+          "comments": "https://news.ycombinator.com/item?id=50331404"
         },
         {
-          "title": "Police chief unplugs Flock cameras after company ignores contract cancellation",
-          "link": "https://www.tomshardware.com/tech-industry/big-tech/police-chief-physically-unplugs-flock-cameras-after-the-company-ignores-contract-cancellation-city-takes-matters-into-its-own-hands-amid-privacy-controversies",
-          "date": "2026-11-01 14:36",
+          "title": "Nibnib: Image compression with extreme decompression speed",
+          "link": "https://github.com/raphlinus/nibnib",
+          "date": "2026-10-30 04:17",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50326118"
+          "comments": "https://news.ycombinator.com/item?id=50299811"
         },
         {
-          "title": "Bidirectional Charging During Grid Outages",
-          "link": "https://www.jefftk.com/p/bidirectional-charging-during-grid-outages",
-          "date": "2026-10-31 20:21",
+          "title": "Ask HN: Which TV do you recommend for privacy?",
+          "link": "https://news.ycombinator.com/item?id=50328896",
+          "date": "2026-11-01 19:35",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50319749"
+          "comments": "https://news.ycombinator.com/item?id=50328896"
         },
         {
-          "title": "Novellas with Groff",
-          "link": "https://movq.de/blog/postings/2026-10-31/0/POSTING-en.html",
-          "date": "2026-11-01 13:51",
+          "title": "Tips for more effective fuzz testing with AFL++",
+          "link": "https://nullprogram.com/blog/2025/02/05/",
+          "date": "2026-10-28 09:46",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50325694"
+          "comments": "https://news.ycombinator.com/item?id=50271106"
         },
         {
-          "title": "Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
-          "link": "https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/",
-          "date": "2026-11-01 14:34",
+          "title": "Keeping Up Appearances – The women taking over the funeral industry",
+          "link": "https://lareviewofbooks.org/article/death-industry-mortuary-programs-women-andie-eisen-quarterly/",
+          "date": "2026-10-30 12:40",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50326099"
+          "comments": "https://news.ycombinator.com/item?id=50303088"
         },
         {
-          "title": "Copper – A minimal low-level programming language with OOP and generics",
-          "link": "https://tibleiz.net/copper/",
-          "date": "2026-10-30 19:09",
+          "title": "New 3D thermal invisibility cloak makes objects disappear from infrared cameras",
+          "link": "https://www.sciencedaily.com/releases/2026/10/261025073051.htm",
+          "date": "2026-10-30 03:06",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50308754"
+          "comments": "https://news.ycombinator.com/item?id=50299427"
         },
         {
-          "title": "An Italian farmer found some unknown seeds in his attic and planted them",
-          "link": "https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/",
-          "date": "2026-10-31 22:41",
+          "title": "AI delivers 'zero financial payoff' to most companies, Apollo economist says",
+          "link": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+          "date": "2026-11-01 22:10",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50320963"
+          "comments": "https://news.ycombinator.com/item?id=50330456"
         },
         {
-          "title": "One-minute frequency disturbances from synchronization in power systems",
-          "link": "https://www.nature.com/articles/s41560-026-02144-0",
-          "date": "2026-10-31 10:14",
+          "title": "Show HN: OmniDiff – Opensource, super fast, content aware Git difftool, in Rust",
+          "link": "https://github.com/ivankovic/omnidiff",
+          "date": "2026-11-01 13:02",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50314617"
+          "comments": "https://news.ycombinator.com/item?id=50325253"
         },
         {
-          "title": "Show HN: I rebuilt my old canvas 3D library as a small WebGL 2 library – phoria2",
-          "link": "https://kevs3d.co.uk/phoria2/",
-          "date": "2026-10-31 09:49",
+          "title": "Mathematics has changed. Let's act like it",
+          "link": "https://terrytao.wordpress.com/2026/11/01/mathematics-has-changed-lets-act-like-it/",
+          "date": "2026-11-01 18:28",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50314508"
+          "comments": "https://news.ycombinator.com/item?id=50328251"
         }
       ]
     },
@@ -174,6 +174,24 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "傳三星正開發摺疊平板！17 吋平板收折變 8 吋 已進入測試階段",
+          "link": "https://3c.ltn.com.tw/news/68129",
+          "date": "2026/11/02 09:00",
+          "summary": "摺疊手機市場討論度與銷量穩定上升，未來可能還有摺疊平板。據爆料人士在社群平台 X 透露，三星已開始開發一款 17 吋 ..."
+        },
+        {
+          "title": "Sony電競耳機擺脫黑白玩新色 電競戰隊Fnatic加入聯名 精準呈現遊戲音效隔絕喧囂",
+          "link": "https://3c.ltn.com.tw/news/68117",
+          "date": "2026/11/02 05:47",
+          "summary": "Sony為旗下INZONE系列耳機推出全新配色，其中INZONE H9 II耳罩式耳機換上與世界級電競戰隊Fnati ..."
+        },
+        {
+          "title": "電商平台雙11購物優惠戰開打 PChome最高32%回饋 蝦皮天天豪抽長榮機票",
+          "link": "https://3c.ltn.com.tw/news/68116",
+          "date": "2026/11/02 05:46",
+          "summary": "搶攻雙11購物節商機，PChome 24h購物與蝦皮購物兩大電商平台紛紛祭出重磅優惠，PChome主打3C生活家電、 ..."
+        },
+        {
           "title": "PS2上超經典《七龍珠 Z 武道會》復活！完整搬上網頁直接玩",
           "link": "https://3c.ltn.com.tw/news/68128",
           "date": "2026/11/01 16:57",
@@ -226,24 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68119",
           "date": "2026/10/31 05:45",
           "summary": "手機品牌vivo昨（30）日正式在台推出X500系列與摺疊旗艦X Fold6，X500系列一口氣釋出X500、X50 ..."
-        },
-        {
-          "title": "宏碁全新Swift Blade 14筆電輕薄上市 14吋960公克羽量級機身 Copilot AI助理工作高效率",
-          "link": "https://3c.ltn.com.tw/news/68120",
-          "date": "2026/10/31 05:40",
-          "summary": "台灣筆電大廠宏碁（Acer）擴大輕薄筆電產品布局，推出全新Swift Blade系列，首款機種Swift Blade ..."
-        },
-        {
-          "title": "LINE Premium新功能開放免費試用！可錄製一對一語音及視訊通話",
-          "link": "https://3c.ltn.com.tw/news/68118",
-          "date": "2026/10/30 17:38",
-          "summary": "LINE今（30）日宣布，LINE Premium新功能「通話錄製」於LINE Labs開放所有LINE用戶免費試用 ..."
-        },
-        {
-          "title": "新款 iPad mini 還在 60Hz 螢幕更新遭批！蘋果高層上火線回應",
-          "link": "https://3c.ltn.com.tw/news/68114",
-          "date": "2026/10/30 11:45",
-          "summary": "蘋果（Apple）在本週終於推出全新 iPad mini，可說是歷來最大幅更新，導入加大的 8.5 吋 OLED 顯 ..."
         }
       ]
     },
