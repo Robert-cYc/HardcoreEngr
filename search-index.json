@@ -1,5 +1,32 @@
 [
   {
+    "url": "ai-and-harness-engineering-guide.html",
+    "title": "AI 與 Harness Engineering 終極硬核全解：從智慧實體線束拓撲優化、48V 區域架構到自主 AI 代理評測與安全控制測試框架",
+    "excerpt": "全維度深度剖析 Harness Engineering（線束與測試約束工程）在物理硬體與 AI 代理軟體雙領域的革命：深入解析生成式 3D 拓撲路徑優化、特斯拉 48V 區域控制器 (Zonal Architecture) 減重革命、電腦視覺端子檢測；以及自主 AI 代理 (Agentic AI) 的沙箱隔離、確定性狀態重播、SWE-bench 評測基準與安全防護 Test Harness 架構。內建互動式線束物理試算器與 Agent 沙箱控制台。",
+    "tags": [
+      "Harness Engineering",
+      "AI 線束工程",
+      "電氣線束",
+      "EWIS",
+      "Wire Harness",
+      "特斯拉 48V",
+      "區域控制器",
+      "Zonal Architecture",
+      "Cybertruck",
+      "Optimus",
+      "AI Agent Test Harness",
+      "測試線束",
+      "SWE-bench",
+      "沙箱隔離",
+      "Docker",
+      "gVisor",
+      "確定性重播",
+      "ToolCall Guardrails",
+      "安全評測",
+      "混沌工程"
+    ]
+  },
+  {
     "url": "us-political-parties-presidents-guide.html",
     "title": "美國兩大主要政黨全景深度剖析：民主黨 vs 共和黨百年演進、意識形態大轉向與 47 任歷任總統完整名錄全指南",
     "excerpt": "全維度深度剖析美國民主黨 (Democratic Party) 與共和黨 (Republican Party) 兩大百年政黨：從制憲先父對黨爭的警示、杜瓦傑定律與選舉人團機制、六大歷史政黨體系重組、20 世紀意識形態大逆轉 (The Great Reversal)，到歷任 47 任美國總統完整編年史、重大政績與互動式總統資料庫。",

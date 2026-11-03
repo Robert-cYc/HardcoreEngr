@@ -5,6 +5,7 @@ import bs4
 
 ARTICLE_BANNER_MAP = {
     "ai-algorithms.html": "ai-algorithms-guide.jpg",
+    "ai-and-harness-engineering-guide.html": "ai-and-harness-engineering-guide.jpg",
     "ai-automation-tools-guide.html": "workflow-automation-guide.jpg",
     "ai-models.html": "frontier-llms-guide.jpg",
     "antigravity-2-vs-ide-vs-cli-vs-sdk.html": "antigravity-2-vs-ide-vs-cli-vs-sdk-guide.jpg",
