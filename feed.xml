@@ -5,7 +5,7 @@
     <link>https://ai-hardcore-engineer.com/</link>
     <description>專注於前端開發、後端技術、Git 與 AI 開發的技術博客。分享實用的指令教學與開發心得。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 03 Nov 2026 04:39:21 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 06:28:18 +0000</lastBuildDate>
     <atom:link href="https://ai-hardcore-engineer.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://ai-hardcore-engineer.com/og-image.png</url>
@@ -13,31 +13,20 @@
       <link>https://ai-hardcore-engineer.com/</link>
     </image>
   <item>
-    <title>AI 與 Harness Engineering 終極硬核全解：從智慧實體線束拓撲優化、48V 區域架構到自主 AI 代理評測與安全控制測試框架</title>
+    <title>Hermes 與 OpenClaw 開源自主 Agent 技術全景剖析：架構解析、執行 Harness、Tool Calling、安全沙箱與多渠道網關實戰</title>
     <link>https://ai-hardcore-engineer.com/ai-and-harness-engineering-guide.html</link>
     <guid isPermaLink="true">https://ai-hardcore-engineer.com/ai-and-harness-engineering-guide.html</guid>
     <description>全維度深度剖析 Harness Engineering（線束與測試約束工程）在物理硬體與 AI 代理軟體雙領域的革命：深入解析生成式 3D 拓撲路徑優化、特斯拉 48V 區域控制器 (Zonal Architecture) 減重革命、電腦視覺端子檢測；以及自主 AI 代理 (Agentic AI) 的沙箱隔離、確定性狀態重播、SWE-bench 評測基準與安全防護 Test Harness 架構。內建互動式線束物理試算器與 Agent 沙箱控制台。</description>
     <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
-    <category>Harness Engineering</category>
-    <category>AI 線束工程</category>
-    <category>電氣線束</category>
-    <category>EWIS</category>
-    <category>Wire Harness</category>
-    <category>特斯拉 48V</category>
-    <category>區域控制器</category>
-    <category>Zonal Architecture</category>
-    <category>Cybertruck</category>
-    <category>Optimus</category>
-    <category>AI Agent Test Harness</category>
-    <category>測試線束</category>
+    <category>Nous Hermes</category>
+    <category>OpenClaw 2.0</category>
+    <category>Agent Harness</category>
+    <category>Tool Calling</category>
+    <category>MCP</category>
+    <category>安全沙箱</category>
+    <category>多渠道網關</category>
     <category>SWE-bench</category>
-    <category>沙箱隔離</category>
-    <category>Docker</category>
-    <category>gVisor</category>
-    <category>確定性重播</category>
-    <category>ToolCall Guardrails</category>
-    <category>安全評測</category>
-    <category>混沌工程</category>
+    <category>AI Agent</category>
   </item>
   <item>
     <title>美國兩大主要政黨全景深度剖析：民主黨 vs 共和黨百年演進、意識形態大轉向與 47 任歷任總統完整名錄全指南</title>

@@ -1,30 +1,20 @@
 [
   {
     "url": "ai-and-harness-engineering-guide.html",
-    "title": "AI 與 Harness Engineering 終極硬核全解：從智慧實體線束拓撲優化、48V 區域架構到自主 AI 代理評測與安全控制測試框架",
+    "title": "Hermes 與 OpenClaw 開源自主 Agent 技術全景剖析：架構解析、執行 Harness、Tool Calling、安全沙箱與多渠道網關實戰",
     "excerpt": "全維度深度剖析 Harness Engineering（線束與測試約束工程）在物理硬體與 AI 代理軟體雙領域的革命：深入解析生成式 3D 拓撲路徑優化、特斯拉 48V 區域控制器 (Zonal Architecture) 減重革命、電腦視覺端子檢測；以及自主 AI 代理 (Agentic AI) 的沙箱隔離、確定性狀態重播、SWE-bench 評測基準與安全防護 Test Harness 架構。內建互動式線束物理試算器與 Agent 沙箱控制台。",
     "tags": [
-      "Harness Engineering",
-      "AI 線束工程",
-      "電氣線束",
-      "EWIS",
-      "Wire Harness",
-      "特斯拉 48V",
-      "區域控制器",
-      "Zonal Architecture",
-      "Cybertruck",
-      "Optimus",
-      "AI Agent Test Harness",
-      "測試線束",
+      "Nous Hermes",
+      "OpenClaw 2.0",
+      "Agent Harness",
+      "Tool Calling",
+      "MCP",
+      "安全沙箱",
+      "多渠道網關",
       "SWE-bench",
-      "沙箱隔離",
-      "Docker",
-      "gVisor",
-      "確定性重播",
-      "ToolCall Guardrails",
-      "安全評測",
-      "混沌工程"
-    ]
+      "AI Agent"
+    ],
+    "description": "全維度深度剖析開源自主 Agent 雙雄：Nous Research Hermes 的模型原生 Tool Calling 與結構化推理協議，以及 OpenClaw 2.0 的 Gateway-First 多渠道網關架構。解密 Agent Harness 工程：上下文記憶 Harness、AST 語法樹安全過濾、沙箱微隔離、SWE-bench 確定性重播評測與多渠道通訊適配。內建選型決策矩陣與沙箱控制台。"
   },
   {
     "url": "us-political-parties-presidents-guide.html",

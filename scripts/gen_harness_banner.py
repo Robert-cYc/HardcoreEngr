@@ -8,96 +8,71 @@ os.makedirs(IMAGES_DIR, exist_ok=True)
 
 spec = {
     "filename": "ai-and-harness-engineering-guide.jpg",
-    "badge": "PHYSICAL & AGENTIC HARNESS SYSTEMS",
-    "badge_color": "#10b981",
-    "title": "AI & Harness Engineering",
-    "subtitle": "Smart Wire Harness Topological Routing · 48V Zonal Architecture · AI Agent Eval & Safety Testbed Harness",
-    "glow_color": "rgba(16, 185, 129, 0.45)",
-    "gradient": "radial-gradient(circle at 80% 30%, rgba(16, 185, 129, 0.25) 0%, transparent 60%), radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.2) 0%, transparent 55%), linear-gradient(135deg, #05100c 0%, #0c1c16 50%, #0d222e 100%)",
-    "tags": ["WIRING HARNESS (EWIS)", "TESLA 48V ZONAL", "AI EVAL HARNESS", "AGENT SANDBOXING", "DETERMINISTIC TESTBED"],
+    "badge": "AUTONOMOUS AGENT HARNESS SYSTEMS",
+    "badge_color": "#a855f7",
+    "title": "Hermes & OpenClaw Agent Harness",
+    "subtitle": "Model-Native Tool Calling · Gateway-First Architecture · AST Sandboxing & Multi-Channel Egress",
+    "glow_color": "rgba(168, 85, 247, 0.45)",
+    "gradient": "radial-gradient(circle at 80% 30%, rgba(168, 85, 247, 0.28) 0%, transparent 60%), radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.25) 0%, transparent 55%), linear-gradient(135deg, #090614 0%, #110d24 50%, #08182b 100%)",
+    "tags": ["NOUS HERMES 3", "OPENCLAW 2.0", "AGENT HARNESS", "AST SECURITY", "MCP PROTOCOL"],
     "icon_svg": """<svg width="340" height="260" viewBox="0 0 340 260" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="wireGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#10b981" />
-          <stop offset="100%" stop-color="#3b82f6" />
-        </linearGradient>
-        <linearGradient id="wireGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#38bdf8" />
+        <linearGradient id="hermesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#c084fc" />
           <stop offset="100%" stop-color="#a855f7" />
         </linearGradient>
+        <linearGradient id="clawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#38bdf8" />
+          <stop offset="100%" stop-color="#3b82f6" />
+        </linearGradient>
         <filter id="glowHarness" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#10b981" flood-opacity="0.4"/>
+          <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#a855f7" flood-opacity="0.5"/>
         </filter>
       </defs>
 
-      <!-- Background Network Grid / Circuit Traces -->
-      <path d="M 20 50 L 100 50 L 140 90 L 220 90 L 260 50 L 320 50" stroke="rgba(255,255,255,0.08)" stroke-width="2" stroke-dasharray="4 6"/>
-      <path d="M 20 210 L 100 210 L 140 170 L 220 170 L 260 210 L 320 210" stroke="rgba(255,255,255,0.08)" stroke-width="2" stroke-dasharray="4 6"/>
+      <!-- Background Network Grid / Bus Lines -->
+      <path d="M 20 45 L 90 45 L 130 85 L 210 85 L 250 45 L 320 45" stroke="rgba(255,255,255,0.08)" stroke-width="2" stroke-dasharray="4 6"/>
+      <path d="M 20 215 L 90 215 L 130 175 L 210 175 L 250 215 L 320 215" stroke="rgba(255,255,255,0.08)" stroke-width="2" stroke-dasharray="4 6"/>
 
-      <!-- Central Multi-core Cable Harness Bundle (Conduit & Splices) -->
-      <g filter="url(#glowHarness)">
-        <!-- Braided Wire Bundle Outer Sleeve -->
-        <path d="M 30 130 C 90 90, 130 170, 200 130 C 250 100, 280 150, 310 130" 
-              stroke="rgba(16, 185, 129, 0.25)" stroke-width="22" stroke-linecap="round" fill="none"/>
+      <!-- Central Hexagonal Harness Shield -->
+      <polygon points="170,35 255,85 255,175 170,225 85,175 85,85" 
+               fill="rgba(15, 23, 42, 0.85)" stroke="url(#hermesGrad)" stroke-width="3" filter="url(#glowHarness)"/>
 
-        <!-- Multi-Core Color Wires Inside Harness -->
-        <!-- Wire 1: Emerald/Cyan Signal Bus -->
-        <path d="M 30 124 C 90 84, 130 164, 200 124 C 250 94, 280 144, 310 124" 
-              stroke="#10b981" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-        <!-- Wire 2: Electric Blue Power Rail -->
-        <path d="M 30 130 C 90 90, 130 170, 200 130 C 250 100, 280 150, 310 130" 
-              stroke="#38bdf8" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <!-- Wire 3: Purple High-Speed CAN/Ethernet -->
-        <path d="M 30 136 C 90 96, 130 176, 200 136 C 250 106, 280 156, 310 136" 
-              stroke="#a855f7" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-        <!-- Wire 4: Amber Ground Rail -->
-        <path d="M 30 142 C 90 102, 130 182, 200 142 C 250 112, 280 162, 310 142" 
-              stroke="#f59e0b" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <!-- Inner Rotating Circuit Loop -->
+      <polygon points="170,55 235,95 235,165 170,205 105,165 105,95" 
+               fill="none" stroke="url(#clawGrad)" stroke-width="1.8" stroke-dasharray="8 6"/>
 
-        <!-- Connectors / Terminal Blocks (Left & Right) -->
-        <rect x="20" y="115" width="22" height="36" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
-        <line x1="26" y1="123" x2="34" y2="123" stroke="#34d399" stroke-width="2"/>
-        <line x1="26" y1="130" x2="34" y2="130" stroke="#38bdf8" stroke-width="2"/>
-        <line x1="26" y1="137" x2="34" y2="137" stroke="#a855f7" stroke-width="2"/>
-        <line x1="26" y1="144" x2="34" y2="144" stroke="#f59e0b" stroke-width="2"/>
-
-        <rect x="298" y="115" width="22" height="36" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
-        <line x1="304" y1="123" x2="312" y2="123" stroke="#34d399" stroke-width="2"/>
-        <line x1="304" y1="130" x2="312" y2="130" stroke="#38bdf8" stroke-width="2"/>
-        <line x1="304" y1="137" x2="312" y2="137" stroke="#a855f7" stroke-width="2"/>
-        <line x1="304" y1="144" x2="312" y2="144" stroke="#f59e0b" stroke-width="2"/>
-
-        <!-- Central Smart Microcontroller / Zonal Compute Node / Testbed Sandbox Shield -->
-        <circle cx="170" cy="130" r="38" fill="rgba(15, 23, 42, 0.9)" stroke="#10b981" stroke-width="2.5"/>
-        <circle cx="170" cy="130" r="28" fill="rgba(16, 185, 129, 0.15)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3 3"/>
-        
-        <!-- AI Core Neural / CPU / Harness Node Glyph -->
-        <rect x="159" y="119" width="22" height="22" rx="4" fill="#10b981" fill-opacity="0.3" stroke="#34d399" stroke-width="1.5"/>
-        <circle cx="170" cy="130" r="4" fill="#ffffff"/>
-        
-        <!-- Pins sticking out of Zonal Node -->
-        <line x1="154" y1="125" x2="159" y2="125" stroke="#38bdf8" stroke-width="1.5"/>
-        <line x1="154" y1="135" x2="159" y2="135" stroke="#38bdf8" stroke-width="1.5"/>
-        <line x1="181" y1="125" x2="186" y2="125" stroke="#38bdf8" stroke-width="1.5"/>
-        <line x1="181" y1="135" x2="186" y2="135" stroke="#38bdf8" stroke-width="1.5"/>
-        <line x1="165" y1="114" x2="165" y2="119" stroke="#38bdf8" stroke-width="1.5"/>
-        <line x1="175" y1="114" x2="175" y2="119" stroke="#38bdf8" stroke-width="1.5"/>
-        <line x1="165" y1="141" x2="165" y2="146" stroke="#38bdf8" stroke-width="1.5"/>
-        <line x1="175" y1="141" x2="175" y2="146" stroke="#38bdf8" stroke-width="1.5"/>
+      <!-- Left Core: Hermes Winged Symbol -->
+      <g transform="translate(132, 95)">
+        <!-- Wing Left -->
+        <path d="M 8 20 C -12 10, -22 35, 4 48 C -6 32, 2 24, 8 20 Z" fill="#c084fc" opacity="0.9"/>
+        <!-- Wing Right -->
+        <path d="M 30 20 C 50 10, 60 35, 34 48 C 44 32, 36 24, 30 20 Z" fill="#c084fc" opacity="0.9"/>
+        <!-- Central Caduceus / Thought Orb -->
+        <circle cx="19" cy="34" r="12" fill="#0f172a" stroke="#a855f7" stroke-width="2"/>
+        <path d="M 19 12 L 19 56" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="19" cy="10" r="4" fill="#38bdf8"/>
       </g>
 
-      <!-- Branching Harness Drops (Sensors & Actuators & Agent Tool Calls) -->
-      <path d="M 100 110 Q 110 65, 140 50" stroke="#10b981" stroke-width="2" stroke-linecap="round" fill="none"/>
-      <circle cx="140" cy="50" r="4" fill="#34d399"/>
+      <!-- Right Core: Robotic Claw Harness Gripper -->
+      <g transform="translate(148, 142)">
+        <path d="M 22 18 Q 42 12, 48 30 Q 38 32, 26 24" fill="#38bdf8" opacity="0.9"/>
+        <path d="M 22 26 Q 42 34, 46 48 Q 36 44, 26 32" fill="#38bdf8" opacity="0.9"/>
+      </g>
+
+      <!-- Connection Bus Nodes -->
+      <circle cx="85" cy="130" r="6" fill="#38bdf8"/>
+      <circle cx="85" cy="130" r="10" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 2"/>
       
-      <path d="M 230 120 Q 240 75, 270 60" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" fill="none"/>
-      <circle cx="270" cy="60" r="4" fill="#38bdf8"/>
+      <circle cx="255" cy="130" r="6" fill="#a855f7"/>
+      <circle cx="255" cy="130" r="10" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="2 2"/>
 
-      <path d="M 120 160 Q 110 200, 80 220" stroke="#a855f7" stroke-width="2" stroke-linecap="round" fill="none"/>
-      <circle cx="80" cy="220" r="4" fill="#c084fc"/>
+      <line x1="30" y1="130" x2="85" y2="130" stroke="#38bdf8" stroke-width="2.5"/>
+      <line x1="255" y1="130" x2="310" y2="130" stroke="#a855f7" stroke-width="2.5"/>
 
-      <path d="M 220 150 Q 230 195, 250 215" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" fill="none"/>
-      <circle cx="250" cy="215" r="4" fill="#fbbf24"/>
+      <!-- Status Indicators -->
+      <rect x="135" y="192" width="70" height="18" rx="4" fill="#030712" stroke="#10b981" stroke-width="1.5"/>
+      <text x="170" y="204" font-family="'Consolas', monospace" font-size="9" fill="#10b981" text-anchor="middle" font-weight="bold">HARNESS PASS</text>
     </svg>"""
 }
 
@@ -176,7 +151,7 @@ def render():
     font-weight: 800;
     line-height: 1.18;
     margin-bottom: 18px;
-    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #6ee7b7 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #c084fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -1px;
@@ -211,7 +186,7 @@ def render():
     width: 360px;
     height: 280px;
     position: relative;
-    filter: drop-shadow(0 0 30px rgba(16, 185, 129, 0.35));
+    filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.35));
   }}
 </style>
 </head>
@@ -233,8 +208,8 @@ def render():
 </body>
 </html>"""
 
-    temp_html = os.path.abspath("temp_harness_banner.html")
-    temp_png = os.path.abspath("temp_harness_banner.png")
+    temp_html = os.path.abspath("temp_hermes_banner.html")
+    temp_png = os.path.abspath("temp_hermes_banner.png")
     dest_path = os.path.join(IMAGES_DIR, spec["filename"])
 
     with open(temp_html, "w", encoding="utf-8") as f:
