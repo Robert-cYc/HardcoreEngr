@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-03 03:28",
+  "updated": "2026-11-03 04:39",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
+        {
+          "title": "Median net worth of U.S. households under 35 fell 23% from 2022 to 2025 (real)",
+          "link": "https://www.keepingup.com/benchmarks/net-worth/age-30-33",
+          "date": "2026-11-03 03:28",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50347683"
+        },
         {
           "title": "Astra can read and write weights to improve Qwen",
           "link": "https://rikiyat.github.io/blog/weight-space-programming/",
@@ -13,7 +20,7 @@
           "comments": "https://news.ycombinator.com/item?id=50341174"
         },
         {
-          "title": "Show HN: Hacker Times, a New York Times-Inspired Version Hacker News",
+          "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
           "link": "https://hackertimes.ca/",
           "date": "2026-11-03 01:53",
           "summary": "Hacker News 全球技術社群熱門熱議",
@@ -34,11 +41,25 @@
           "comments": "https://news.ycombinator.com/item?id=50340088"
         },
         {
+          "title": "Scaling Git at OpenAI",
+          "link": "https://openai.com/index/scaling-git-at-openai/",
+          "date": "2026-11-02 23:47",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50345924"
+        },
+        {
           "title": "US boy names that became girl names and vice versa",
           "link": "https://namedaisy.com/blog/boy-names-that-became-girl-names",
           "date": "2026-11-02 16:34",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50339397"
+        },
+        {
+          "title": "Open-Source 5G Ran Platforms: A Dual Perspective on Performance and Capabilities",
+          "link": "https://arxiv.org/abs/2608.25820",
+          "date": "2026-11-03 02:58",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50347464"
         },
         {
           "title": "If you love a website, back it up",
@@ -48,11 +69,11 @@
           "comments": "https://news.ycombinator.com/item?id=50336518"
         },
         {
-          "title": "Scaling Git at OpenAI",
-          "link": "https://openai.com/index/scaling-git-at-openai/",
-          "date": "2026-11-02 23:47",
+          "title": "Resisting Cognitive Surrender",
+          "link": "https://knlb.dev/essays/surrender",
+          "date": "2026-11-01 06:13",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50345924"
+          "comments": "https://news.ycombinator.com/item?id=50323123"
         },
         {
           "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
@@ -62,32 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50339913"
         },
         {
-          "title": "Resisting Cognitive Surrender",
-          "link": "https://knlb.dev/essays/surrender",
-          "date": "2026-11-01 06:13",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50323123"
-        },
-        {
           "title": "Show HN: Warsaw in voxels – An interactive 3D map of the city centre",
           "link": "https://p.migdal.pl/warsaw-vibe-voxel/",
           "date": "2026-11-02 16:25",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50339221"
-        },
-        {
-          "title": "Self-Employed? Solopreneur? NIST Has a Cybersecurity Guide Just for You",
-          "link": "https://www.nist.gov/news-events/news/2026/11/self-employed-solopreneur-nist-has-cybersecurity-guide-just-you",
-          "date": "2026-11-02 17:47",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50340619"
-        },
-        {
-          "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
-          "link": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
-          "date": "2026-11-02 22:30",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50344919"
         }
       ]
     },
