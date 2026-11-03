@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03 02:17",
+  "updated": "2026-11-03 03:28",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -11,6 +11,13 @@
           "date": "2026-11-02 18:21",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50341174"
+        },
+        {
+          "title": "Show HN: Hacker Times, a New York Times-Inspired Version Hacker News",
+          "link": "https://hackertimes.ca/",
+          "date": "2026-11-03 01:53",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50346981"
         },
         {
           "title": "DiscImageStudio: burn visible artwork onto CDs, DVDs and Blu-ray discs",
@@ -27,13 +34,6 @@
           "comments": "https://news.ycombinator.com/item?id=50340088"
         },
         {
-          "title": "Show HN: Hacker Times, a New York Times-Inspired Version Hacker News",
-          "link": "https://hackertimes.ca/",
-          "date": "2026-11-03 01:53",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50346981"
-        },
-        {
           "title": "US boy names that became girl names and vice versa",
           "link": "https://namedaisy.com/blog/boy-names-that-became-girl-names",
           "date": "2026-11-02 16:34",
@@ -48,11 +48,25 @@
           "comments": "https://news.ycombinator.com/item?id=50336518"
         },
         {
+          "title": "Scaling Git at OpenAI",
+          "link": "https://openai.com/index/scaling-git-at-openai/",
+          "date": "2026-11-02 23:47",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50345924"
+        },
+        {
           "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
           "link": "https://momentic.ai/",
           "date": "2026-11-02 17:05",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50339913"
+        },
+        {
+          "title": "Resisting Cognitive Surrender",
+          "link": "https://knlb.dev/essays/surrender",
+          "date": "2026-11-01 06:13",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50323123"
         },
         {
           "title": "Show HN: Warsaw in voxels – An interactive 3D map of the city centre",
@@ -62,20 +76,6 @@
           "comments": "https://news.ycombinator.com/item?id=50339221"
         },
         {
-          "title": "Intel stock collapse worsens as $3.5T chip rout spreads",
-          "link": "https://finance.yahoo.com/markets/article/the-intel-stock-collapse-is-getting-worse--and-the-37-trillion-chip-rout-is-spreading-212154947.html",
-          "date": "2026-11-03 00:08",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50346153"
-        },
-        {
-          "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
-          "link": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
-          "date": "2026-11-02 22:30",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50344919"
-        },
-        {
           "title": "Self-Employed? Solopreneur? NIST Has a Cybersecurity Guide Just for You",
           "link": "https://www.nist.gov/news-events/news/2026/11/self-employed-solopreneur-nist-has-cybersecurity-guide-just-you",
           "date": "2026-11-02 17:47",
@@ -83,11 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50340619"
         },
         {
-          "title": "Ask HN: Who is hiring? (November 2026)",
-          "link": "https://news.ycombinator.com/item?id=50338728",
-          "date": "2026-11-02 16:01",
+          "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
+          "link": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
+          "date": "2026-11-02 22:30",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50338728"
+          "comments": "https://news.ycombinator.com/item?id=50344919"
         }
       ]
     },
@@ -522,13 +522,6 @@
       "site": "https://ccc.technews.tw/",
       "items": [
         {
-          "title": "硬體早已完成，但蘋果智慧家庭機器人上市可能得延到 2028 年",
-          "link": "https://ccc.technews.tw/2026/11/03/apple-smart-home-robot-lamp/",
-          "date": "2026-11-03 02:13",
-          "summary": "蘋果持續布局智慧家庭市場，但傳聞中的桌上型智慧家庭機器人，上市時程可能再度延後。據《The Informati [&#8230;]",
-          "comments": ""
-        },
-        {
           "title": "明治香菇山餅乾耳機推二代，AI 翻譯支援 144 種語言與口音",
           "link": "https://ccc.technews.tw/2026/11/02/kinoko-no-yama-wireless-earphones-pro/",
           "date": "2026-11-02 05:16",
@@ -603,6 +596,13 @@
           "link": "https://finance.technews.tw/2026/10/22/fragment-raises-12-million-to-combat-ai-financial-abuse/",
           "date": "2026-10-21 23:20",
           "summary": "隨著企業陸續導入 AI 代理（AI agents）處理帳務與付款，紐約新創 Fragment 宣布完成 1,2 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "業界不敢說的祕密？Xbox 員工爆料：AI 早已是遊戲開發的「現在進行式」",
+          "link": "https://ccc.technews.tw/2026/10/21/xbox-employee-reveals-inside-story-ai-game-development/",
+          "date": "2026-10-21 03:10",
+          "summary": "Xbox 一名員工近日直言，人工智慧（AI）早已悄悄成為遊戲工作室日常運作的一部分。然而，為了避免引發玩家反彈 [&#8230;]",
           "comments": ""
         }
       ]
