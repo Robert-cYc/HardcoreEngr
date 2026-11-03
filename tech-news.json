@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 21:06",
+  "updated": "2026-11-03 02:17",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -13,6 +13,13 @@
           "comments": "https://news.ycombinator.com/item?id=50341174"
         },
         {
+          "title": "DiscImageStudio: burn visible artwork onto CDs, DVDs and Blu-ray discs",
+          "link": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
+          "date": "2026-11-03 01:33",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50346849"
+        },
+        {
           "title": "Show HN: Subvocal – Talk to your computer without making noise",
           "link": "https://news.ycombinator.com/item?id=50340088",
           "date": "2026-11-02 17:16",
@@ -20,11 +27,25 @@
           "comments": "https://news.ycombinator.com/item?id=50340088"
         },
         {
+          "title": "Show HN: Hacker Times, a New York Times-Inspired Version Hacker News",
+          "link": "https://hackertimes.ca/",
+          "date": "2026-11-03 01:53",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50346981"
+        },
+        {
           "title": "US boy names that became girl names and vice versa",
           "link": "https://namedaisy.com/blog/boy-names-that-became-girl-names",
           "date": "2026-11-02 16:34",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50339397"
+        },
+        {
+          "title": "If you love a website, back it up",
+          "link": "https://blog.mistys-internet.website/post/2026/10/29/if-you-love-a-website-back-it-up/",
+          "date": "2026-11-02 13:25",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50336518"
         },
         {
           "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
@@ -41,11 +62,25 @@
           "comments": "https://news.ycombinator.com/item?id=50339221"
         },
         {
-          "title": "If you love a website, back it up",
-          "link": "https://blog.mistys-internet.website/post/2026/10/29/if-you-love-a-website-back-it-up/",
-          "date": "2026-11-02 13:25",
+          "title": "Intel stock collapse worsens as $3.5T chip rout spreads",
+          "link": "https://finance.yahoo.com/markets/article/the-intel-stock-collapse-is-getting-worse--and-the-37-trillion-chip-rout-is-spreading-212154947.html",
+          "date": "2026-11-03 00:08",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50336518"
+          "comments": "https://news.ycombinator.com/item?id=50346153"
+        },
+        {
+          "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
+          "link": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
+          "date": "2026-11-02 22:30",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50344919"
+        },
+        {
+          "title": "Self-Employed? Solopreneur? NIST Has a Cybersecurity Guide Just for You",
+          "link": "https://www.nist.gov/news-events/news/2026/11/self-employed-solopreneur-nist-has-cybersecurity-guide-just-you",
+          "date": "2026-11-02 17:47",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50340619"
         },
         {
           "title": "Ask HN: Who is hiring? (November 2026)",
@@ -53,41 +88,6 @@
           "date": "2026-11-02 16:01",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50338728"
-        },
-        {
-          "title": "SOML – A Config Format for Humans",
-          "link": "https://github.com/soml-lang/soml",
-          "date": "2026-11-02 18:42",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50341502"
-        },
-        {
-          "title": "Sneaking into the auditorium for the Windows 2000 launch rehearsal",
-          "link": "https://devblogs.microsoft.com/oldnewthing/20261102-00/?p=112818/",
-          "date": "2026-11-02 18:12",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50341028"
-        },
-        {
-          "title": "Egoless Mathematics in the AI Era",
-          "link": "https://terrytao.wordpress.com/2026/11/02/egoless-mathematics-in-the-ai-era/",
-          "date": "2026-11-02 18:54",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50341736"
-        },
-        {
-          "title": "Let Me Ch...",
-          "link": "https://blog.alxgsv.com/let-me-check/",
-          "date": "2026-11-02 17:33",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50340369"
-        },
-        {
-          "title": "Skill to Create Product Videos",
-          "link": "https://github.com/aaitor/skill-video-studio",
-          "date": "2026-11-02 18:10",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50340992"
         }
       ]
     },
@@ -95,6 +95,18 @@
       "name": "CNN 科技",
       "site": "https://edition.cnn.com/business/tech",
       "items": [
+        {
+          "title": "Binance withdrawals resume following $6 billion hack",
+          "link": "https://edition.cnn.com/2026/11/01/business/binance-withdrawals-crypto-heist",
+          "date": "2026-11-01",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "World’s largest crypto exchange hit by suspected North Korean hack in world’s largest heist",
+          "link": "https://edition.cnn.com/2026/10/30/tech/binance-crypto-heist-hnk-intl",
+          "date": "2026-10-30",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
         {
           "title": "Fox News ratings drop is due to ‘viewer fatigue,’ Murdoch says on eve of midterms",
           "link": "https://edition.cnn.com/2026/11/02/media/fox-news-ratings-drop-murdoch-trump-midterms",
@@ -108,20 +120,8 @@
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "Coffee’s new status symbol is a machine without plastic",
-          "link": "https://edition.cnn.com/2026/11/02/food/coffee-machine-plastic-free",
-          "date": "2026-11-02",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
           "title": "What AI chatbots are saying about the midterms",
           "link": "https://edition.cnn.com/2026/10/30/business/video/ai-chatbot-voter-influence-digvid",
-          "date": "2026-10-30",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "World’s largest crypto exchange hit by suspected North Korean hack in world’s largest heist",
-          "link": "https://edition.cnn.com/2026/10/30/tech/binance-crypto-heist-hnk-intl",
           "date": "2026-10-30",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -173,6 +173,12 @@
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "《Pikmin Bloom》皮克敏預告追加全新玩法！台灣專屬活動也即將登場",
+          "link": "https://3c.ltn.com.tw/news/68137",
+          "date": "2026/11/03 08:40",
+          "summary": "在全台掀起散步種花打蘑菇熱潮的《Pikmin Bloom》皮克敏手遊宣布將於今年冬季追加「神秘洞窟」全新玩法，提供更 ..."
+        },
         {
           "title": "MacBook Pro觸控螢幕體驗！知名科技達人：很酷但不實用",
           "link": "https://3c.ltn.com.tw/news/68136",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68125",
           "date": "2026/11/01 13:31",
           "summary": "如今手機選擇多樣，從便宜入門款到高階旗艦機都有，對於預算有限的消費者而言，也能找到售價相當親民的新機選擇，但部分機種 ..."
-        },
-        {
-          "title": "Android爆出「死亡簡訊」漏洞！待機狀態直接癱瘓手機 這2類手機幾乎無解",
-          "link": "https://3c.ltn.com.tw/news/68124",
-          "date": "2026/11/01 12:57",
-          "summary": "Android用戶要注意了，近期資安研究人員揭露一項重大安全漏洞，引發外界高度關注，只要收到「死亡簡訊」、沒有任何點 ..."
         }
       ]
     },
@@ -522,6 +522,13 @@
       "site": "https://ccc.technews.tw/",
       "items": [
         {
+          "title": "硬體早已完成，但蘋果智慧家庭機器人上市可能得延到 2028 年",
+          "link": "https://ccc.technews.tw/2026/11/03/apple-smart-home-robot-lamp/",
+          "date": "2026-11-03 02:13",
+          "summary": "蘋果持續布局智慧家庭市場，但傳聞中的桌上型智慧家庭機器人，上市時程可能再度延後。據《The Informati [&#8230;]",
+          "comments": ""
+        },
+        {
           "title": "明治香菇山餅乾耳機推二代，AI 翻譯支援 144 種語言與口音",
           "link": "https://ccc.technews.tw/2026/11/02/kinoko-no-yama-wireless-earphones-pro/",
           "date": "2026-11-02 05:16",
@@ -596,13 +603,6 @@
           "link": "https://finance.technews.tw/2026/10/22/fragment-raises-12-million-to-combat-ai-financial-abuse/",
           "date": "2026-10-21 23:20",
           "summary": "隨著企業陸續導入 AI 代理（AI agents）處理帳務與付款，紐約新創 Fragment 宣布完成 1,2 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "業界不敢說的祕密？Xbox 員工爆料：AI 早已是遊戲開發的「現在進行式」",
-          "link": "https://ccc.technews.tw/2026/10/21/xbox-employee-reveals-inside-story-ai-game-development/",
-          "date": "2026-10-21 03:10",
-          "summary": "Xbox 一名員工近日直言，人工智慧（AI）早已悄悄成為遊戲工作室日常運作的一部分。然而，為了避免引發玩家反彈 [&#8230;]",
           "comments": ""
         }
       ]
