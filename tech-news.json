@@ -1,93 +1,93 @@
 {
-  "updated": "2026-11-05 04:20",
+  "updated": "2026-11-05 19:15",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "Residential proxies detected on White House network",
-          "link": "https://layer3intel.com/blog/residential-proxies-white-house-network",
-          "date": "2026-11-04 20:45",
+          "title": "sshole",
+          "link": "https://sshhole.com",
+          "date": "2026-11-05 12:19",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50371246"
+          "comments": "https://news.ycombinator.com/item?id=50378228"
         },
         {
-          "title": "Images 2.6",
-          "link": "https://openai.com/index/introducing-images-2-6/",
-          "date": "2026-11-04 23:35",
+          "title": "Alpine Linux Security Advisory: OpenSSH-server password authentication bypass",
+          "link": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+          "date": "2026-11-05 14:44",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50372945"
+          "comments": "https://news.ycombinator.com/item?id=50379704"
         },
         {
-          "title": "Starfall – Affordable, routine access to microgravity",
-          "link": "https://www.spacex.com/starfall",
-          "date": "2026-11-05 00:18",
+          "title": "Motorola Signature 27 with GrapheneOS support",
+          "link": "https://motorolanews.com/motorola-signature-27-2/",
+          "date": "2026-11-05 16:01",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50373308"
+          "comments": "https://news.ycombinator.com/item?id=50380810"
         },
         {
-          "title": "A thousand fewer paths to root",
-          "link": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
-          "date": "2026-11-04 23:33",
+          "title": "Window Sweaters",
+          "link": "https://github.com/saragordic/window-sweaters",
+          "date": "2026-11-05 16:50",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50372929"
+          "comments": "https://news.ycombinator.com/item?id=50381383"
         },
         {
-          "title": "Ripple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding",
-          "link": "https://www.ricursive.com/ripple",
-          "date": "2026-11-04 18:53",
+          "title": "The Lisp curse, now coming to your ecosystem",
+          "link": "https://javahippie.net/programming/llm/2026/03/05/the-lisp-curse-coming-to-your-ecosystem.html",
+          "date": "2026-11-03 08:59",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50369925"
+          "comments": "https://news.ycombinator.com/item?id=50349667"
         },
         {
-          "title": "Kimi K3.1 Pro model weights are out",
-          "link": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
-          "date": "2026-11-04 15:30",
+          "title": "September in Servo: <progress>, rounded rectangles, and more",
+          "link": "https://servo.org/blog/2026/11/05/september-in-servo/",
+          "date": "2026-11-05 14:34",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50366999"
+          "comments": "https://news.ycombinator.com/item?id=50379576"
         },
         {
-          "title": "Insects don't swarm at LED lights",
-          "link": "https://www.birdsoutsidemywindow.org/2026/11/03/insects-dont-swarm-at-led-lights/",
-          "date": "2026-11-04 19:50",
+          "title": "My psychophysics as a bilateral cochlear implant user",
+          "link": "https://claude.ai/artifact/L8qsMc3SorytGW3LA81nYf",
+          "date": "2026-11-05 16:21",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50370610"
+          "comments": "https://news.ycombinator.com/item?id=50381033"
         },
         {
-          "title": "A new Go API for JSON",
-          "link": "https://go.dev/blog/jsonv2",
-          "date": "2026-11-04 17:52",
+          "title": "Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3",
+          "link": "https://github.com/rivet-dev/rivet",
+          "date": "2026-11-05 17:17",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50369106"
+          "comments": "https://news.ycombinator.com/item?id=50381687"
         },
         {
-          "title": "Hacking the Xbox 360 Hypervisor Part 3: Bad Update Improvements",
-          "link": "https://icode4.coffee/?p=1746",
-          "date": "2026-11-04 22:01",
+          "title": "Download your favourite YouTube videos",
+          "link": "https://criminallyvulgar.dev/you-should-absolutely-download-your-favourite-youtube-videos/",
+          "date": "2026-11-05 13:00",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50372164"
+          "comments": "https://news.ycombinator.com/item?id=50378571"
         },
         {
-          "title": "Conductor is joining Meta",
-          "link": "https://www.conductor.build/announcement",
-          "date": "2026-11-04 18:22",
+          "title": "Bild AI (YC W25) Is Hiring Founding Product Engineers",
+          "link": "https://www.ycombinator.com/companies/bild-ai/jobs",
+          "date": "2026-11-05 17:01",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50369503"
+          "comments": "https://news.ycombinator.com/item?id=50381512"
         },
         {
-          "title": "Qualcomm Cloud AI 100 Ultra – 150W AI Accelerator Card with 128GB at 548GB/s",
-          "link": "https://www.qualcomm.com/data-center/products/cloud-ai-100-ultra",
-          "date": "2026-11-04 19:55",
+          "title": "I wish tech companies knew more about me",
+          "link": "https://rakhim.exotext.com/i-wish-tech-companies-knew-more-about-me",
+          "date": "2026-11-05 13:40",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50370654"
+          "comments": "https://news.ycombinator.com/item?id=50378942"
         },
         {
-          "title": "Launch HN: Kino AI (YC S23) – AI media manager and video editor",
-          "link": "https://news.ycombinator.com/item?id=50368804",
-          "date": "2026-11-04 17:31",
+          "title": "OpenSSH 10.6p2 Critical workaround for alpine without PAM",
+          "link": "https://www.openssh.org/releasenotes.html#10.6p2",
+          "date": "2026-11-05 11:40",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50368804"
+          "comments": "https://news.ycombinator.com/item?id=50377976"
         }
       ]
     },
@@ -96,15 +96,21 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
-          "title": "Dow has best post-midterm elections day in 44 years as Democrats take control of Congress",
-          "link": "https://edition.cnn.com/2026/11/04/investing/us-markets-midterm-elections",
-          "date": "2026-11-04",
+          "title": "Stocks plunge as midterm results send AI trade into a tailspin",
+          "link": "https://edition.cnn.com/2026/11/05/investing/tech-heavy-nasdaq-plunges",
+          "date": "2026-11-05",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "CVS to split into two companies, in major breakup of its $117 billion healthcare empire",
-          "link": "https://edition.cnn.com/2026/11/04/business/cvs-to-split-into-two-companies",
-          "date": "2026-11-04",
+          "title": "Thicker bacon and ditching breakfast. Wendy’s hopes a menu shakeup can revive sales",
+          "link": "https://edition.cnn.com/2026/11/05/business/wendys-third-quarter-earnings-turnaround-plan",
+          "date": "2026-11-05",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "MAGA media is grappling with GOP’s crushing defeat — and tiptoeing around Trump",
+          "link": "https://edition.cnn.com/2026/11/05/media/maga-media-trump-midterms-fox-news-hannity-shapiro",
+          "date": "2026-11-05",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
@@ -160,12 +166,6 @@
           "link": "https://edition.cnn.com/2026/10/28/tech/apple-macbook-pro-touchscreen",
           "date": "2026-10-28",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "From bioweapons to blackmail, here’s what’s in Anthropic’s nearly 100-page list of risks, including ‘risks to humanity’",
-          "link": "https://edition.cnn.com/2026/10/27/tech/anthropic-ipo-risks-bioweapons-blackmail-vis",
-          "date": "2026-10-27",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         }
       ]
     },
@@ -173,6 +173,54 @@
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "怪獸之王進軍樂高！70公分哥吉拉問鼎史上最大模型",
+          "link": "https://3c.ltn.com.tw/news/68174",
+          "date": "2026/11/05 18:17",
+          "summary": "全球怪獸迷期待已久的「怪獸之王」哥吉拉正式踏進 LEGO 世界，樂高官方公開全新 LEGO Ideas Godzil ..."
+        },
+        {
+          "title": "燦坤 3C 家電連 11 天促銷 RTX5060 筆電 4.5 萬元、空調 1.8 萬元有找",
+          "link": "https://3c.ltn.com.tw/news/68171",
+          "date": "2026/11/05 18:15",
+          "summary": "雙 11 購物旺季開打，燦坤 3C 家電宣布自 11 月 6 日至 11 月 16 日推出「什麼都多一點」會員特典， ..."
+        },
+        {
+          "title": "果粉快衝！iPhone Duo全容量降價2千元 通路：門市有現貨",
+          "link": "https://3c.ltn.com.tw/news/68172",
+          "date": "2026/11/05 17:47",
+          "summary": "雖然蘋果首款摺疊手機iPhone Duo上市以來，接連傳出「螢幕破裂門」災情，以及部分App對大螢幕適配不佳等問題， ..."
+        },
+        {
+          "title": "全國電子雙 11 優惠開跑！冷氣、冰箱 5 折起 最高 24% 回饋",
+          "link": "https://3c.ltn.com.tw/news/68170",
+          "date": "2026/11/05 15:25",
+          "summary": "全國電子搶攻年度雙 11 購物商機，推出「破盤雙 11」優惠活動，11 月 6 日至 11 月 16 日限時 11 ..."
+        },
+        {
+          "title": "LINE免費6年功能快沒了！11月隨時喊卡 想用月付165元",
+          "link": "https://3c.ltn.com.tw/news/68169",
+          "date": "2026/11/05 15:10",
+          "summary": "平常習慣使用LINE「無聲訊息」功能的用戶注意了，LINE日前已預告，從11月上旬起，將把無聲訊息改為LINE Pr ..."
+        },
+        {
+          "title": "AI燒錢壓力大！Google擴大員工自願離職 蘋果也砍內部預算",
+          "link": "https://3c.ltn.com.tw/news/68168",
+          "date": "2026/11/05 14:35",
+          "summary": "全球科技巨頭近年砸下重金發展人工智慧（AI），但隨著投資成本不斷攀升，也開始想辦法省錢。Google母公司Alpha ..."
+        },
+        {
+          "title": "三大電信雙11優惠比一比！5G加碼送流量、月租費有機會免單",
+          "link": "https://3c.ltn.com.tw/news/68167",
+          "date": "2026/11/05 13:30",
+          "summary": "雙11購物節不只電商平台殺紅眼，電信三雄也加入優惠戰局，中華電信、遠傳電信及台灣大哥大陸續公布雙11優惠，從申辦5G ..."
+        },
+        {
+          "title": "藍牙耳機迎重大升級！無損音質有望普及 首批裝置最快明年登場",
+          "link": "https://3c.ltn.com.tw/news/68162",
+          "date": "2026/11/05 12:01",
+          "summary": "藍牙耳機音質迎來重大升級，藍牙技術聯盟宣布全新藍牙HDT 高資料傳輸量（Bluetooth High Data Th ..."
+        },
         {
           "title": "時尚智慧眼鏡雙11降價！Even G2最高現折4千元 新鏡框同步登場",
           "link": "https://3c.ltn.com.tw/news/68166",
@@ -196,54 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68165",
           "date": "2026/11/05 10:06",
           "summary": "LINE用戶注意，官方發出新一波「帳號健檢」通知，提醒帳號綁定不完整的用戶盡快完成設定，以免日後遇到手機遺失、帳號遭 ..."
-        },
-        {
-          "title": "ChatGPT變身迷因神器！一句話生成GIF動圖 免費用戶也能玩",
-          "link": "https://3c.ltn.com.tw/news/68161",
-          "date": "2026/11/05 09:40",
-          "summary": "ChatGPT不只會生成圖片，現在連GIF動圖也能一個指令完成！OpenAI正式推出全新Images 2.6模型，最 ..."
-        },
-        {
-          "title": "Siri AI 終於開口說中文！蘋果釋出 iOS 27.3 測試版 升級重點一次看",
-          "link": "https://3c.ltn.com.tw/news/68160",
-          "date": "2026/11/05 08:40",
-          "summary": "蘋果（Apple）近日正式向開發者釋出 iOS 27.3 Beta 1 測試版，本次更新最受矚目的焦點，莫過於是台灣 ..."
-        },
-        {
-          "title": "LINE貼圖控快搶！每組只要9元永久使用 29款錯過這天就沒了",
-          "link": "https://3c.ltn.com.tw/news/68159",
-          "date": "2026/11/05 08:11",
-          "summary": "LINE貼圖控看過來！LINE推出限時「快閃掃貨節」，即日起至11月9日，多達29組官方貼圖、表情貼祭出超殺優惠，全 ..."
-        },
-        {
-          "title": "上市立刻開玩！《GTA 6》於11/10開放預載資料 容量達212GB",
-          "link": "https://3c.ltn.com.tw/news/68155",
-          "date": "2026/11/04 17:35",
-          "summary": "經歷了漫長 13 年等待，玩家期待已久的《俠盜獵車手 6（GTA6）》進入上市倒數，根據官方公告，遊戲將於 11 月 ..."
-        },
-        {
-          "title": "iPhone Duo「螢幕破裂門」惹議！三星Z Fold 8銷量大增20%",
-          "link": "https://3c.ltn.com.tw/news/68151",
-          "date": "2026/11/04 17:30",
-          "summary": "蘋果首款摺疊手機iPhone Duo於10月23日正式開賣，原本備受市場期待，沒想到上市後卻接連傳出螢幕破裂、App ..."
-        },
-        {
-          "title": "130萬台機上盒遭植病毒！Google揭幕後黑手 竟是這家中國業者",
-          "link": "https://3c.ltn.com.tw/news/68148",
-          "date": "2026/11/04 17:00",
-          "summary": "通過Google官方認證的Android TV機上盒，竟也暗藏資安危機！Google近日揭露，中國深圳製造商Vide ..."
-        },
-        {
-          "title": "Pixel Watch爆耗電災情！沒怎麼用也撐不住 Google公布解法",
-          "link": "https://3c.ltn.com.tw/news/68149",
-          "date": "2026/11/04 13:01",
-          "summary": "Google Pixel Watch用戶注意，如果最近發現手錶電量掉得特別快，明明沒怎麼使用，卻一下子就快沒電，可能 ..."
-        },
-        {
-          "title": "8GB電腦有救了！快升級新版Windows 11 多工速度快40%",
-          "link": "https://3c.ltn.com.tw/news/68147",
-          "date": "2026/11/04 12:02",
-          "summary": "隨著記憶體成本持續攀升，部分入門級電腦轉而採用8GB記憶體配置，效能表現也受到關注。微軟再帶來好消息，宣布針對Win ..."
         }
       ]
     },
