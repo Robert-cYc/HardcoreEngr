@@ -1,93 +1,93 @@
 {
-  "updated": "2026-11-06 04:18",
+  "updated": "2026-11-06 18:41",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "Claude Code sends your email address to websites",
-          "link": "https://github.com/anthropics/claude-code/issues/107757",
-          "date": "2026-11-05 22:17",
+          "title": "US FAA says it will phase out floppy disks from air traffic control by 2028",
+          "link": "https://www.reuters.com/world/us/us-faa-says-it-will-phase-out-floppy-disks-air-traffic-control-by-2028-2026-11-05/",
+          "date": "2026-11-06 04:00",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50385272"
+          "comments": "https://news.ycombinator.com/item?id=50388001"
         },
         {
-          "title": "Tesla and SpaceX lose over $420B in combined market cap in the two days",
-          "link": "https://techlaws.pages.dev/tesla-and-spacex-lose-over-420b-in-combined-market-cap-in-the-two-days/",
-          "date": "2026-11-06 02:30",
+          "title": "Tesla to wind down Cybertruck production",
+          "link": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
+          "date": "2026-11-06 12:13",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50387406"
+          "comments": "https://news.ycombinator.com/item?id=50391456"
         },
         {
-          "title": "sshole",
-          "link": "https://sshhole.com",
-          "date": "2026-11-05 12:19",
+          "title": "First steps in bare-metal programming using UEFI",
+          "link": "https://kevinboone.me/efitest_index.html",
+          "date": "2026-11-06 16:50",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50378228"
+          "comments": "https://news.ycombinator.com/item?id=50394855"
         },
         {
-          "title": "MS Paint Remote Code Execution Vulnerability",
-          "link": "https://www.cve.org/CVERecord?id=CVE-2026-83844",
-          "date": "2026-11-05 20:43",
+          "title": "Rune: A native GPU-rendered Rust UI framework for macOS, Windows, Linux and web",
+          "link": "https://github.com/anomalyco/rune",
+          "date": "2026-11-06 16:31",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50384233"
+          "comments": "https://news.ycombinator.com/item?id=50394569"
         },
         {
-          "title": "Nvidia Kubernetes Engine (NVKE)",
-          "link": "https://github.com/dsx-ai-factory/nvke",
-          "date": "2026-11-06 03:16",
+          "title": "Size-It-Up (Game)",
+          "link": "https://magnitudle.com/size-it-up",
+          "date": "2026-11-06 17:59",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50387738"
+          "comments": "https://news.ycombinator.com/item?id=50395869"
         },
         {
-          "title": "Inkling 2 Small",
-          "link": "https://thinkingmachines.ai/news/inkling-2-small/",
-          "date": "2026-11-06 00:00",
+          "title": "Gemini Omni 1.2 Flash",
+          "link": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+          "date": "2026-11-06 13:35",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50386338"
+          "comments": "https://news.ycombinator.com/item?id=50392118"
         },
         {
-          "title": "The Hackintosh Reborn",
-          "link": "https://www.naut.ca/blog/2026/11/05/the-hackintosh-reborn-with-ai/",
-          "date": "2026-11-05 19:08",
+          "title": "Blender's UI and Runtime: Much Faster Than GPUI",
+          "link": "https://github.com/ppmpreetham/BUI",
+          "date": "2026-11-06 07:40",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50383057"
+          "comments": "https://news.ycombinator.com/item?id=50389333"
         },
         {
-          "title": "Closed AI models dominate the price-performance frontier",
-          "link": "https://village.dev/blog/closed-ai-models-now-dominate-the-price-performance-frontier/",
-          "date": "2026-11-06 02:49",
+          "title": "Deus Ex",
+          "link": "https://www.filfre.net/2026/11/deus-ex/",
+          "date": "2026-11-06 15:44",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50387546"
+          "comments": "https://news.ycombinator.com/item?id=50393758"
         },
         {
-          "title": "Pwn.college",
-          "link": "https://pwn.college/",
-          "date": "2026-11-06 03:27",
+          "title": "UpCodes (YC S17) is hiring SDR's to sell AI compliance software",
+          "link": "https://up.codes/careers?utm_source=HN",
+          "date": "2026-11-06 17:03",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50387796"
+          "comments": "https://news.ycombinator.com/item?id=50395043"
         },
         {
-          "title": "Window Sweaters",
-          "link": "https://github.com/saragordic/window-sweaters",
-          "date": "2026-11-05 16:50",
+          "title": "Perplexity launches AI agents for work",
+          "link": "https://www.perplexity.ai/en-GB/hub/blog/teammates-are-agents-for-complex-ongoing-work",
+          "date": "2026-11-06 17:59",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50381383"
+          "comments": "https://news.ycombinator.com/item?id=50395866"
         },
         {
-          "title": "Show HN: Firenook – Firebase emulators in Rust: 40× faster writes, 10× less RAM",
-          "link": "https://firenook.dev/",
-          "date": "2026-11-05 13:07",
+          "title": "Devvm.dev: One VM for every project",
+          "link": "https://devvm.dev/",
+          "date": "2026-11-06 17:30",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50378643"
+          "comments": "https://news.ycombinator.com/item?id=50395450"
         },
         {
-          "title": "Castration extends life span in mice",
-          "link": "https://www.science.org/content/article/castration-extends-life-span-surprising-way-mouse-study-suggests",
-          "date": "2026-11-06 02:38",
+          "title": "Memorilla: Latent Semantic Memory for LLMs",
+          "link": "https://arxiv.org/abs/2610.21375",
+          "date": "2026-11-06 18:03",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50387470"
+          "comments": "https://news.ycombinator.com/item?id=50395919"
         }
       ]
     },
@@ -96,21 +96,21 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
-          "title": "Asian markets follow US rout as AI investment jitters spread",
+          "title": "AI stocks bounce back after $2.5 trillion wipe out",
           "link": "https://edition.cnn.com/2026/11/05/markets/asian-markets-us-rout-ai-investment-intl-hnk",
           "date": "2026-11-05",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "Massive tech sell-off wipes $2.5 trillion from the stock market",
-          "link": "https://edition.cnn.com/2026/11/05/investing/tech-heavy-nasdaq-plunges",
-          "date": "2026-11-05",
+          "title": "Market turmoil saps enthusiasm for the buzziest IPO of the year",
+          "link": "https://edition.cnn.com/2026/11/06/investing/wall-street-mayhem-complicates-anthropics-already-complicated-ipo",
+          "date": "2026-11-06",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "CVS to split into two companies, in major breakup of its $117 billion healthcare empire",
-          "link": "https://edition.cnn.com/2026/11/04/business/cvs-to-split-into-two-companies",
-          "date": "2026-11-04",
+          "title": "Tesla set to wind down production of Cybertruck",
+          "link": "https://edition.cnn.com/2026/11/06/business/tesla-winding-down-production-of-cybertruck",
+          "date": "2026-11-06",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
@@ -174,6 +174,42 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "Netflix、Disney+不用分開訂！5大平台打包優惠 最低399元",
+          "link": "https://3c.ltn.com.tw/news/68190",
+          "date": "2026/11/06 17:00",
+          "summary": "對於追劇族來說，往往不只訂閱一家影音平台，每個月累積下來的訂閱費用，也是一筆不小的開銷。趁著雙11檔期，台灣大哥大推 ..."
+        },
+        {
+          "title": "WhatsApp活動新功能超方便！朋友沒帳號也能用 免下載App",
+          "link": "https://3c.ltn.com.tw/news/68189",
+          "date": "2026/11/06 15:00",
+          "summary": "平常想揪朋友吃飯、辦生日派對，或是安排家庭聚會，最麻煩的往往不是決定時間地點，而是得一個個確認誰能參加。WhatsA ..."
+        },
+        {
+          "title": "LINE半夜不吵人神器要收費了！無聲訊息免費只剩10天",
+          "link": "https://3c.ltn.com.tw/news/68188",
+          "date": "2026/11/06 14:30",
+          "summary": "平常習慣使用LINE「無聲訊息」功能的用戶注意了，LINE已確定結束免費試用，自11月16日起將無聲訊息轉為LINE ..."
+        },
+        {
+          "title": "4G手機還沒死！6千元新機登台 大電池、軍規防摔又防潑水",
+          "link": "https://3c.ltn.com.tw/news/68180",
+          "date": "2026/11/06 13:30",
+          "summary": "4G手機還沒死！realme在台推出全新入門4G手機realme C01，主打大電量與耐用設計，搭載6,500mAh ..."
+        },
+        {
+          "title": "Instagram免費剪片神器登上電腦！4K無浮水印、自動字幕不限次數",
+          "link": "https://3c.ltn.com.tw/news/68187",
+          "date": "2026/11/06 13:00",
+          "summary": "平常喜歡拍短影音、剪Reels的用戶有新工具可以用了！Meta旗下Instagram影音剪輯工具Edits正式推出M ..."
+        },
+        {
+          "title": "蝦皮雙 11 最後下殺 iPad 半價 1111 元 AirPods",
+          "link": "https://3c.ltn.com.tw/news/68186",
+          "date": "2026/11/06 12:40",
+          "summary": "年度雙 11 購物節進入倒數，蝦皮購物宣布加碼推出多項限時優惠，從大牌商品 1 元、半價 iPad 與 1,111 ..."
+        },
+        {
           "title": "高人氣知名手遊驚傳重大資安問題！恐上萬名玩家遭駭 官方祭出補救措施",
           "link": "https://3c.ltn.com.tw/news/68185",
           "date": "2026/11/06 11:36",
@@ -208,42 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68181",
           "date": "2026/11/06 08:40",
           "summary": "蘋果今年 3 月推出 MacBook Neo 進軍平價筆電市場，在上市首季度（Q1）全球出貨量已飆破 110 萬台， ..."
-        },
-        {
-          "title": "蘋果4款新品今開賣！首款觸控MacBook Pro官網下單最慢等3週",
-          "link": "https://3c.ltn.com.tw/news/68179",
-          "date": "2026/11/06 08:10",
-          "summary": "蘋果新一波新品正式登場，4款新品自今(6日)起在台開賣，包含首款配置觸控螢幕的MacBook Pro、大改款的iPa ..."
-        },
-        {
-          "title": "「e 筆 Smart」 App 登 iOS 平台 用 iPad 與 Apple Pencil 體驗毛筆書寫感",
-          "link": "https://3c.ltn.com.tw/news/68175",
-          "date": "2026/11/06 08:05",
-          "summary": "通路商 STUDIO A 晶實科技攜手國寶書法家張炳煌、淡江大學文錙藝術中心打造的數位書法 App「e 筆書法」，全 ..."
-        },
-        {
-          "title": "三大電信雙11祭出優惠好禮 主打5G方案給出大利多 加碼送紐西蘭來回機票",
-          "link": "https://3c.ltn.com.tw/news/68176",
-          "date": "2026/11/06 05:42",
-          "summary": "三大電信加入雙11購物節戰局，中華電信、台灣大哥大及遠傳電信紛紛祭出優惠，不論是申辦5G、換新手機，或想入手人氣3C ..."
-        },
-        {
-          "title": "怪獸之王進軍樂高！70公分哥吉拉問鼎史上最大模型",
-          "link": "https://3c.ltn.com.tw/news/68174",
-          "date": "2026/11/05 18:17",
-          "summary": "全球怪獸迷期待已久的「怪獸之王」哥吉拉正式踏進 LEGO 世界，樂高官方公開全新 LEGO Ideas Godzil ..."
-        },
-        {
-          "title": "燦坤 3C 家電連 11 天促銷 RTX5060 筆電 4.5 萬元、空調 1.8 萬元有找",
-          "link": "https://3c.ltn.com.tw/news/68171",
-          "date": "2026/11/05 18:15",
-          "summary": "雙 11 購物旺季開打，燦坤 3C 家電宣布自 11 月 6 日至 11 月 16 日推出「什麼都多一點」會員特典， ..."
-        },
-        {
-          "title": "果粉快衝！iPhone Duo全容量降價2千元 通路：門市有現貨",
-          "link": "https://3c.ltn.com.tw/news/68172",
-          "date": "2026/11/05 17:47",
-          "summary": "雖然蘋果首款摺疊手機iPhone Duo上市以來，接連傳出「螢幕破裂門」災情，以及部分App對大螢幕適配不佳等問題， ..."
         }
       ]
     },
@@ -522,6 +522,13 @@
       "site": "https://ccc.technews.tw/",
       "items": [
         {
+          "title": "Switch 2 銷量暴減 4 成  任天堂：目前沒考慮追加漲價",
+          "link": "https://finance.technews.tw/2026/11/06/nintendo-consolidated-results-for-the-six-months-ended-september-30-2025-and-2026/",
+          "date": "2026-11-06 04:30",
+          "summary": "今年度上半年（4-9 月）Switch 2 遊戲機全球銷售量暴減近 4 成，日本電玩大廠任天堂（Nintend [&#8230;]",
+          "comments": ""
+        },
+        {
           "title": "微軟 Xbox Nano 迷你手把上架，隱藏 Wi-Fi 直連雲端遊戲功能",
           "link": "https://ccc.technews.tw/2026/11/05/xbox-launches-lightweight-nano-controller-hands-on-impressions/",
           "date": "2026-11-05 04:10",
@@ -596,13 +603,6 @@
           "link": "https://ccc.technews.tw/2026/10/24/xbox-series-x-successfully-runs-ps5-games/",
           "date": "2026-10-24 02:30",
           "summary": "開發者社群近日展示了一項引發熱烈討論的實驗：Xbox Series X 已經能夠透過移植版模擬器執行部分 Pl [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "宏達電推出互動式數位夥伴 VIVEE！但抱歉了，台灣還買不到",
-          "link": "https://ccc.technews.tw/2026/10/23/htc-vivee/",
-          "date": "2026-10-23 02:47",
-          "summary": "宏達電（HTC）過去在智慧手機鼎盛時期，便經常選擇海外市場做為旗艦新品的全球發表舞台，如今推出全新 AI 互動 [&#8230;]",
           "comments": ""
         }
       ]
