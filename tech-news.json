@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 02:28",
+  "updated": "2026-11-06 04:18",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -13,11 +13,11 @@
           "comments": "https://news.ycombinator.com/item?id=50385272"
         },
         {
-          "title": "Search for everyone",
-          "link": "https://kagi.com/changelog#11820",
-          "date": "2026-11-05 20:03",
+          "title": "Tesla and SpaceX lose over $420B in combined market cap in the two days",
+          "link": "https://techlaws.pages.dev/tesla-and-spacex-lose-over-420b-in-combined-market-cap-in-the-two-days/",
+          "date": "2026-11-06 02:30",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50383740"
+          "comments": "https://news.ycombinator.com/item?id=50387406"
         },
         {
           "title": "sshole",
@@ -34,6 +34,13 @@
           "comments": "https://news.ycombinator.com/item?id=50384233"
         },
         {
+          "title": "Nvidia Kubernetes Engine (NVKE)",
+          "link": "https://github.com/dsx-ai-factory/nvke",
+          "date": "2026-11-06 03:16",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50387738"
+        },
+        {
           "title": "Inkling 2 Small",
           "link": "https://thinkingmachines.ai/news/inkling-2-small/",
           "date": "2026-11-06 00:00",
@@ -41,18 +48,25 @@
           "comments": "https://news.ycombinator.com/item?id=50386338"
         },
         {
-          "title": "Alpine Linux Security Advisory: OpenSSH-server password authentication bypass",
-          "link": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
-          "date": "2026-11-05 14:44",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50379704"
-        },
-        {
           "title": "The Hackintosh Reborn",
           "link": "https://www.naut.ca/blog/2026/11/05/the-hackintosh-reborn-with-ai/",
           "date": "2026-11-05 19:08",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50383057"
+        },
+        {
+          "title": "Closed AI models dominate the price-performance frontier",
+          "link": "https://village.dev/blog/closed-ai-models-now-dominate-the-price-performance-frontier/",
+          "date": "2026-11-06 02:49",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50387546"
+        },
+        {
+          "title": "Pwn.college",
+          "link": "https://pwn.college/",
+          "date": "2026-11-06 03:27",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50387796"
         },
         {
           "title": "Window Sweaters",
@@ -69,25 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50378643"
         },
         {
-          "title": "Tencent Launches Hy4, One of the Leading Open-Source AI Models",
-          "link": "https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
-          "date": "2026-11-05 20:21",
+          "title": "Castration extends life span in mice",
+          "link": "https://www.science.org/content/article/castration-extends-life-span-surprising-way-mouse-study-suggests",
+          "date": "2026-11-06 02:38",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50383963"
-        },
-        {
-          "title": "Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3",
-          "link": "https://github.com/rivet-dev/rivet",
-          "date": "2026-11-05 17:17",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50381687"
-        },
-        {
-          "title": "Goodbye from Salon",
-          "link": "https://www.salon.com/2026/11/05/goodbye-from-salon/",
-          "date": "2026-11-05 20:03",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50383739"
+          "comments": "https://news.ycombinator.com/item?id=50387470"
         }
       ]
     },
@@ -174,6 +174,18 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "高人氣知名手遊驚傳重大資安問題！恐上萬名玩家遭駭 官方祭出補救措施",
+          "link": "https://3c.ltn.com.tw/news/68185",
+          "date": "2026/11/06 11:36",
+          "summary": "擁有眾多玩家支持的高人氣知名手遊《勝利女神：妮姬》在慶祝四週年之際，近日卻傳出PC啟動器部分檔案遭第三方竄改，讓玩家 ..."
+        },
+        {
+          "title": "Google雙11優惠來了！Pixel 11系列最高降6千元 完整清單曝光",
+          "link": "https://3c.ltn.com.tw/news/68184",
+          "date": "2026/11/06 11:25",
+          "summary": "Google Store官方商店正式啟動雙11優惠，這波活動涵蓋Pixel 11系列、Pixel 10a，以及智慧手 ..."
+        },
+        {
           "title": "Switch 2台灣才剛漲價！還會再漲嗎？任天堂社長親揭答案",
           "link": "https://3c.ltn.com.tw/news/68178",
           "date": "2026/11/06 10:21",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68172",
           "date": "2026/11/05 17:47",
           "summary": "雖然蘋果首款摺疊手機iPhone Duo上市以來，接連傳出「螢幕破裂門」災情，以及部分App對大螢幕適配不佳等問題， ..."
-        },
-        {
-          "title": "全國電子雙 11 優惠開跑！冷氣、冰箱 5 折起 最高 24% 回饋",
-          "link": "https://3c.ltn.com.tw/news/68170",
-          "date": "2026/11/05 15:25",
-          "summary": "全國電子搶攻年度雙 11 購物商機，推出「破盤雙 11」優惠活動，11 月 6 日至 11 月 16 日限時 11 ..."
-        },
-        {
-          "title": "LINE免費6年功能快沒了！11月隨時喊卡 想用月付165元",
-          "link": "https://3c.ltn.com.tw/news/68169",
-          "date": "2026/11/05 15:10",
-          "summary": "平常習慣使用LINE「無聲訊息」功能的用戶注意了，LINE日前已預告，從11月上旬起，將把無聲訊息改為LINE Pr ..."
         }
       ]
     },
