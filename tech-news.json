@@ -1,23 +1,79 @@
 {
-  "updated": "2026-11-08 03:29",
+  "updated": "2026-11-08 17:25",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
+          "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+          "link": "https://github.com/synchopate/llama-modchip",
+          "date": "2026-11-08 10:22",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50411961"
+        },
+        {
+          "title": "The Reconstruction of Torn Documents",
+          "link": "https://www.bundesarchiv.de/en/stasi-records-archive/the-reconstruction-of-torn-documents/",
+          "date": "2026-11-06 09:05",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50389923"
+        },
+        {
+          "title": "OpenAI raises $11B at a $1.25T valuation",
+          "link": "https://247wallst.com/investing/2026/11/07/openai-just-raised-11-billion-at-a-1-25-trillion-valuation-below-the-1-4-trillion-it-first-sought/",
+          "date": "2026-11-08 14:49",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50413822"
+        },
+        {
+          "title": "Writing as a thinking tool",
+          "link": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
+          "date": "2026-11-08 10:41",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50412067"
+        },
+        {
+          "title": "Porting Android 16 to my blind mother's keypad phone",
+          "link": "https://z1x.us/blog/four-hundred-bucks-of-e-waste",
+          "date": "2026-11-04 15:18",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50366821"
+        },
+        {
+          "title": "I'm not a fan of Deno's security model (2024)",
+          "link": "https://goldstein.lol/posts/deno-security/",
+          "date": "2026-11-08 14:42",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50413769"
+        },
+        {
+          "title": "Goodbye Claude, hello Pi",
+          "link": "https://caleb.software/posts/claude-to-pi.html",
+          "date": "2026-11-08 03:11",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50410107"
+        },
+        {
+          "title": "Show HN: Vegetable Gardening for Engineers",
+          "link": "https://jrcpl.us/contrib/2020/gardening-for-engineers/",
+          "date": "2026-11-04 08:54",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50362963"
+        },
+        {
+          "title": "JIT bitmap text rendering for microcontrollers",
+          "link": "https://linebender.org/blog/jit-bitmap-text/",
+          "date": "2026-11-08 10:42",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50412072"
+        },
+        {
           "title": "What I run on my $10 USD OpenStick homelab",
           "link": "https://blog.bosscher.ch/posts/openstick/",
           "date": "2026-11-07 18:12",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50406670"
-        },
-        {
-          "title": "Making any integer with four 2s (2025)",
-          "link": "https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/",
-          "date": "2026-11-07 22:38",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50408713"
         },
         {
           "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
@@ -27,67 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50407882"
         },
         {
-          "title": "Uranium cubes reveal why the German nuclear project failed",
-          "link": "https://arstechnica.com/science/2026/11/uranium-cubes-reveal-why-the-german-nuclear-project-failed/",
-          "date": "2026-11-05 10:52",
+          "title": "Clj.rs – a Clojure dialect implemented in Rust",
+          "link": "https://clj.rs/",
+          "date": "2026-11-04 15:23",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50377661"
-        },
-        {
-          "title": "Need for Speed Underground 2 online in the browser",
-          "link": "https://nfsu2.xyz/",
-          "date": "2026-11-07 09:36",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50403052"
-        },
-        {
-          "title": "Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller",
-          "link": "https://github.com/hedgerow-dev/coldframe",
-          "date": "2026-11-07 17:27",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50406292"
-        },
-        {
-          "title": "MaxxBench – \"Nice DeepSWE score. But is it true?\"",
-          "link": "https://maxxbench.unlap.ai/research/why-maxxbench/",
-          "date": "2026-11-07 17:19",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50406222"
-        },
-        {
-          "title": "GitHub New pull request overview page in public preview",
-          "link": "https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/",
-          "date": "2026-11-07 23:09",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50408931"
-        },
-        {
-          "title": "Amsterdam School",
-          "link": "https://architecture-history.org/schools/AMSTERDAM%20SCHOOL.html",
-          "date": "2026-11-03 13:50",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50351954"
-        },
-        {
-          "title": "The end of Microsoft Research's AI Frontiers group",
-          "link": "https://hunch.net/?p=13764006",
-          "date": "2026-11-07 18:02",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50406563"
-        },
-        {
-          "title": "Every Mac comes with an (undocumented) family member classifier",
-          "link": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
-          "date": "2026-11-07 09:46",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50403097"
-        },
-        {
-          "title": "Turning every radio into a radar",
-          "link": "https://tiaminetworks.com/turning-every-radio-into-a-radar/",
-          "date": "2026-11-03 21:18",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50358337"
+          "comments": "https://news.ycombinator.com/item?id=50366902"
         }
       ]
     },
@@ -95,6 +95,12 @@
       "name": "CNN 科技",
       "site": "https://edition.cnn.com/business/tech",
       "items": [
+        {
+          "title": "The vanity economy is taking over America’s downtowns",
+          "link": "https://edition.cnn.com/2026/11/08/business/cities-retail-vanity-economy",
+          "date": "2026-11-08",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
         {
           "title": "AI nerves reinforce age-old investing lesson: Get diversified",
           "link": "https://edition.cnn.com/2026/11/07/investing/ai-nerves-diversify-portfolio",
@@ -104,12 +110,6 @@
         {
           "title": "Washington made Moscow a pariah. Now a tanker of Russian diesel is headed for US shores",
           "link": "https://edition.cnn.com/2026/11/07/business/russian-diesel-us-sanctions-trump-intl",
-          "date": "2026-11-07",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "‘I think I was in shock’: 28-year-old’s emotional moment when she sees how much she may have at retirement",
-          "link": "https://edition.cnn.com/2026/11/07/business/savings-challenge-participant-second-update-abbey-graf",
           "date": "2026-11-07",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -174,6 +174,48 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "增距鏡有必要？vivo X500 Pro Max日本實測 光靠手機就夠拍",
+          "link": "https://3c.ltn.com.tw/news/68213",
+          "date": "2026/11/09 00:15",
+          "summary": "旗艦手機除了比拚拍照畫質，錄影表現與操作便利性也越來越受到重視。尤其對喜歡隨手拍照記錄生活、拍攝短影音的用戶來說，若 ..."
+        },
+        {
+          "title": "不是只有iPad！台灣人最愛買安卓平板是它 只要7千元",
+          "link": "https://3c.ltn.com.tw/news/68208",
+          "date": "2026/11/08 17:01",
+          "summary": "台灣人買平板不只愛iPad，Android陣營也很受歡迎！傑昇通信公布2026年第三季門市平板TOP 10銷售排行榜 ..."
+        },
+        {
+          "title": "蘋果、三星不是漲最兇！全球手機均價大漲27% 這品牌最驚人",
+          "link": "https://3c.ltn.com.tw/news/68207",
+          "date": "2026/11/08 16:00",
+          "summary": "手機真的變好貴！研調機構Counterpoint Research最新報告指出，受到記憶體成本上漲及手機高階化趨勢影 ..."
+        },
+        {
+          "title": "安卓陣營哭了！蘋果iPhone太會吸金 獨吞全球一半手機營收",
+          "link": "https://3c.ltn.com.tw/news/68206",
+          "date": "2026/11/08 15:00",
+          "summary": "全球手機市場買氣降溫，蘋果卻成為最大贏家！研調機構Counterpoint Research最新報告指出，2026年 ..."
+        },
+        {
+          "title": "市調機構看好蘋果iPhone Duo！推估首年出貨500萬台市佔直逼25%",
+          "link": "https://3c.ltn.com.tw/news/68210",
+          "date": "2026/11/08 14:30",
+          "summary": "今年蘋果推出首款摺疊手機 iPhone Duo，一經問世就在全球掀起風暴，具備 7.6 吋內螢幕、5.4 吋外螢幕， ..."
+        },
+        {
+          "title": "Windows 12 傳明年登場！架構全面大改 升級門檻恐提升",
+          "link": "https://3c.ltn.com.tw/news/68209",
+          "date": "2026/11/08 13:52",
+          "summary": "目前 Windows 11 系統已經問世超過 5 年時間，但強推新 App 與廣告入侵、Windows 10 終止支 ..."
+        },
+        {
+          "title": "LINE換手機更方便了！免輸密碼刷臉就能登入 快學會這招",
+          "link": "https://3c.ltn.com.tw/news/68195",
+          "date": "2026/11/08 13:00",
+          "summary": "LINE推出全新登入方式，隨著LINE 26.17.0版本上線，正式支援「Passkey通行金鑰」功能，未來更換手機 ..."
+        },
+        {
           "title": "Google 一功能停用倒數！重要檔案恐消失 這天前快備份",
           "link": "https://3c.ltn.com.tw/news/68194",
           "date": "2026/11/08 11:00",
@@ -202,48 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68157",
           "date": "2026/11/07 17:00",
           "summary": "YouTube不只看影片，未來還可能變身社群平台！外媒發現，YouTube疑似正在開發名為「Tamba」的全新服務， ..."
-        },
-        {
-          "title": "全球平板出貨暴跌23%！市調曝：新舊機差不多、沒壞不換新",
-          "link": "https://3c.ltn.com.tw/news/68202",
-          "date": "2026/11/07 16:01",
-          "summary": "全球平板市場買氣急凍！根據市調機構Omdia最新公布的2026年第三季調查，全球平板出貨量僅約3,200萬台，較去年 ..."
-        },
-        {
-          "title": "台灣人最愛買TOP 10平板揭曉！3款萬元有找 想撿便宜更難了",
-          "link": "https://3c.ltn.com.tw/news/68203",
-          "date": "2026/11/07 15:00",
-          "summary": "台灣人最愛買哪些平板？傑昇通信公布2026年第三季門市平板TOP 10銷售排行榜，蘋果iPad依舊穩坐冠軍，不過An ..."
-        },
-        {
-          "title": "蘋果下週再開賣兩大新品！台灣果粉只能入手Apple TV 4K",
-          "link": "https://3c.ltn.com.tw/news/68199",
-          "date": "2026/11/07 13:01",
-          "summary": "蘋果今年的新品發布已告一段落，不過，還有2款新品即將在下週正式開賣，分別是首款智慧家庭中樞HomeView，以及第4 ..."
-        },
-        {
-          "title": "逾10萬款App完成iPhone Duo最佳化 台灣網友急喊：LINE快更新",
-          "link": "https://3c.ltn.com.tw/news/68201",
-          "date": "2026/11/07 12:01",
-          "summary": "蘋果首款摺疊手機iPhone Duo上市以來，App支援性不足成為最受詬病的問題之一，許多App無法完整適配摺疊螢幕 ..."
-        },
-        {
-          "title": "YouTube大改版惹怒用戶！用了10年功能被移走 內行曝解法",
-          "link": "https://3c.ltn.com.tw/news/68177",
-          "date": "2026/11/07 10:00",
-          "summary": "YouTube最近啟動手機版App介面大改版，將原本位於底部的「訂閱內容」分頁移至首頁上方，引發大批網友不滿，直呼「 ..."
-        },
-        {
-          "title": "iPhone一顆按鈕要消失了！蘋果明年大改款再傳新變化",
-          "link": "https://3c.ltn.com.tw/news/68198",
-          "date": "2026/11/07 09:00",
-          "summary": "蘋果從2023年的iPhone 15 Pro系列首度導入「動作按鈕」，隔年更進一步下放至iPhone 16全系列，一 ..."
-        },
-        {
-          "title": "外媒實測iPhone Duo摺疊極限！直播突破30萬次無損 網友：日常使用見真章",
-          "link": "https://3c.ltn.com.tw/news/68200",
-          "date": "2026/11/07 08:40",
-          "summary": "摺疊手機的螢幕耐用度向來是消費者的關注焦點，而蘋果（Apple）iPhone Duo推出以來陸續傳出螢幕災情也引起熱 ..."
         }
       ]
     },
@@ -252,87 +252,87 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "AI 聽力照護進軍中東市場！瑞音生技 SaMD 軟體破解三大驗配痛點",
-          "link": "https://finance.technews.tw/2026/11/07/samd/",
-          "date": "2026-11-07 03:09",
-          "summary": "精技電腦董事長、瑞昱半導體共同創辦人暨瑞音生技董事長葉佳紋近日在成大鳳凰講座發表「從聽見，到聽得清楚-AI 如 [&#8230;]",
+          "title": "AI 讓 App 變得可有可無，消費性軟體入口正轉向訊息對話框",
+          "link": "https://technews.tw/2026/11/08/ai-is-making-the-app-optional/",
+          "date": "2026-11-08 09:00",
+          "summary": "AI 正在將消費性軟體的使用方式，從「下載一個 App」推向「直接在訊息裡完成任務」。根據 11 月 3 日的 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "連 OpenAI 都撤退，它卻拚出 145 億年營收！解密 AI 影片霸主 Runway 的突圍之道",
-          "link": "https://technews.tw/2026/11/07/how-runway-reached-450-million-dollars-in-arr/",
-          "date": "2026-11-07 03:00",
-          "summary": "AI 影片生成新創 Runway 共同創辦人暨共同執行長 Anastasis Germanidis，11 月 [&#8230;]",
+          "title": "AI 自動化攻擊秒速得手！防守不能只拚快，專家點名企業必備的三大資安決策",
+          "link": "https://infosecu.technews.tw/2026/11/08/three-steps-companies-should-take-to-defend-against-ai-attacks/",
+          "date": "2026-11-08 08:30",
+          "summary": "「我看大家的眼神都非常疲倦，」在 11 月 3 日舉行的台灣資安通報應變年會上，奧義智慧科技技術長暨共同創辦人 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 電商新創 Dalet Labs 獲 700 萬美元融資，首推「生成式導購」App Scene",
-          "link": "https://technews.tw/2026/11/07/lightspeed-is-betting-this-startup-can-lure-shoppers-with-a-feed-of-ai-images/",
-          "date": "2026-11-07 02:30",
-          "summary": "AI 電商新創公司 Dalet Labs 近日正式走出隱身模式，對外宣布完成 700 萬美元種子前融資，並同步 [&#8230;]",
+          "title": "AI 演算法解碼兩萬基因發現天然胜肽 BRP，進食量降 50% 且純減脂不甩肌",
+          "link": "https://technews.tw/2026/11/08/stanford-ai-discovers-natural-weight-loss-peptide/",
+          "date": "2026-11-08 08:00",
+          "summary": "史丹佛醫學院研究團隊日前利用人工智慧（AI），從大量候選生物分子中成功篩選出一種名為「BRP」的天然胜肽。最新 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "選舉結果不改擴張計劃！OpenAI 完成 110 億美元融資、估值 1.25 兆美元",
-          "link": "https://finance.technews.tw/2026/11/07/openai-gets-11-billion/",
-          "date": "2026-11-07 02:05",
-          "summary": "OpenAI 的擴張步伐並未因市場波動與政治阻力而放緩，根據知情人士透露，OpenAI 已完成新一輪融資的首批 [&#8230;]",
+          "title": "阿貢實驗室獲百倍 GPU 記憶體加持，結合全新 AI 算力開啟「自主實驗室」研究新紀元",
+          "link": "https://technews.tw/2026/11/08/argonne-national-laboratory-expands-ai-inference-computing/",
+          "date": "2026-11-08 07:00",
+          "summary": "美國能源部阿貢國家實驗室（Argonne National Laboratory）4 日宣布，將擴充其推論服務 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "半年狂虧 800 億卻衝 2 兆市值！Anthropic 挑戰史上最大 IPO，是一場豪賭還是盛世？",
-          "link": "https://finance.technews.tw/2026/11/07/anthropic-2-trillion-market-cap-biggest-ipo-challenge-wall-street-nervous/",
-          "date": "2026-11-07 02:00",
-          "summary": "Claude 開發商 Anthropic 遞交上市文件，市值上看 2 兆美元，可能挑戰史上最大 IPO。微軟、 [&#8230;]",
+          "title": "「AI 開發 AI」時代來臨？解密遞迴式自我改進的無限潛力與作弊隱憂",
+          "link": "https://infosecu.technews.tw/2026/11/08/ai-autonomously-creates-next-gen-ai/",
+          "date": "2026-11-08 05:00",
+          "summary": "人工智慧是否有一天能「自己打造自己」，正成為 AI 圈最受關注的議題之一。根據最新報導，越來越多頂尖 AI 研 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "矽谷 AI 領袖「效率至上」文化與大眾經驗嚴重脫節，難打造貼近消費者的產品",
-          "link": "https://technews.tw/2026/11/07/ai-execs-may-be-too-out-of-touch-to-build-for-the-general-public/",
-          "date": "2026-11-07 01:30",
-          "summary": "雅虎（Yahoo）前執行長梅爾（Marissa Mayer）近日接受《紐約時報》專訪，介紹新 AI 助理 Ap [&#8230;]",
+          "title": "OpenAI 發表逾 700 篇 AI 數學論文，數學家指有突破性但品質差",
+          "link": "https://technews.tw/2026/11/08/mathematician-criticizes-the-quality-of-700-openai-math-papers/",
+          "date": "2026-11-08 04:30",
+          "summary": "數學家弗蘭克·卡萊加里（Frank Calegari）在陶哲軒（Terence Tao）的網誌發表客座文章，指 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "輝達要求台積電進軍先進記憶體市場？傳組建 3D DRAM 產線解 AI 缺貨荒",
-          "link": "https://finance.technews.tw/2026/11/07/3d-dram/",
-          "date": "2026-11-07 01:01",
-          "summary": "隨著 AI 晶片需求持續增加，記憶體已成為影響高效能運算設備供應的重要環節，迫使輝達（NVIDIA）、蘋果開始 [&#8230;]",
+          "title": "AI 時代最好的機會不是追流行，奧特曼喊話年輕人：別做下一個 OpenAI，要做更大的新事業",
+          "link": "https://technews.tw/2026/11/08/openai-ceo-slams-mba-programs-disappointment-students-5-year-old-trends/",
+          "date": "2026-11-08 03:00",
+          "summary": "史丹佛大學商學研究所（Stanford Graduate School of Business）的「頂峰視野」 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "聯發科 AI ASIC 第四季營收上看 25 億美元，蔡力行：AI 投資回收仍有過渡期",
-          "link": "https://technews.tw/2026/11/07/mediatek-rick-tsai-reveals-the-truth-about-ai-investment/",
-          "date": "2026-11-07 01:00",
-          "summary": "AI 熱潮持續推升全球科技業資本支出，然而，近期雲端業者大量開資本支出建資料中心，市場也開始標準拉高，逐一檢視 [&#8230;]",
+          "title": "AI 理財是神隊友還是陷阱，採納建議前必做的交叉驗證四步驟",
+          "link": "https://finance.technews.tw/2026/11/08/how-to-check-ai-financial-advice-before-you-act-on-it/",
+          "date": "2026-11-08 02:30",
+          "summary": "隨著越來越多人將 AI 當作理財與投資研究工具，最新內容也同步提醒，這類建議不能直接照單全收。文章指出，AI [&#8230;]",
           "comments": ""
         },
         {
-          "title": "美國 PNNL 導入代理式 AI，加速開發衛星與核反應爐用抗輻射晶片",
-          "link": "https://technews.tw/2026/11/07/covering-the-fastest-computers-in-the-world-and-the-people-who-run-them-14/",
-          "date": "2026-11-07 00:30",
-          "summary": "太空高能粒子撞擊衛星可能導致資料遺失、系統停擺，甚至偏離軌道。美國能源部太平洋西北國家實驗室（PNNL）近日宣 [&#8230;]",
+          "title": "AI 聊天機器人也能當學者？實測揭露學術出版防線的新危機",
+          "link": "https://technews.tw/2026/11/08/ai-generated-fake-papers-challenge-academic-defenses/",
+          "date": "2026-11-08 00:30",
+          "summary": "一項與《IEEE Access》期刊合作的實驗，大膽將 AI 生成內容直接帶進學術出版流程。結果顯示：即使是看 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "最新民調：八成美國民眾呼籲醫療 AI 需透明化，逾六成盼掌握「醫療話語權」",
-          "link": "https://technews.tw/2026/11/07/medical-ai-use-transparency-poll/",
-          "date": "2026-11-06 16:00",
-          "summary": "根據皮尤研究中心（Pew Research Center）最新發布的調查，多數美國成年人期盼醫療人員在使用人工 [&#8230;]",
+          "title": "鎖定「超乎預期」獲利黑馬！台股年底突圍，聚焦 ABC 三大族群與半導體",
+          "link": "https://finance.technews.tw/2026/11/08/unexpected-profit-dark-horses-taiwan-stocks-year-end-breakout-focus-abc-sectors-semiconductors/",
+          "date": "2026-11-08 00:00",
+          "summary": "台股面臨半年線保衛戰，在線型收復前，短期操作宜保持謹慎，理性過濾市場雜音，逢低布局長線獲利具爆發力的好公司，以 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "ChatGPT 搜尋量逼近 Google 兩成，搜尋龍頭面臨挑戰",
-          "link": "https://technews.tw/2026/11/06/chatgpt-search-reaches-roughly-20-percent-of-google-s-search-volume/",
-          "date": "2026-11-06 08:49",
-          "summary": "OpenAI 的 ChatGPT 消費性產品負責人 Adam Fry 近日表示，ChatGPT 一直以相當快的 [&#8230;]",
+          "title": "被 AI 取代後更難翻身，高盛：年長勞工重返職場比他人多等五週",
+          "link": "https://technews.tw/2026/11/07/goldman-sachs-says-ai-displaced-employees-face-a-harder-path-back-to-work/",
+          "date": "2026-11-07 09:00",
+          "summary": "高盛（Goldman Sachs）最新研究顯示，人工智慧正在重塑勞動市場，而因 AI 影響而失業的勞工，重返職 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "台股為何跌跌不休，一個月內崩跌逾萬點原因一次看",
-          "link": "https://finance.technews.tw/2026/11/06/taiwan-stock-market-falling-10000-point-crash-one-month-reasons/",
-          "date": "2026-11-06 08:40",
-          "summary": "台股今日早盤一度崩跌 3,737 點，創下史上最大盤中跌點，終場仍重挫 1,873 點，寫下史上第 4 大收盤 [&#8230;]",
+          "title": "少子化與 AI 下的高教兩極化：頂大狂開跨域新學程，私校連理工系所也失守",
+          "link": "https://technews.tw/2026/11/07/ai-impacting-ntu-nccu-nthu-new-degree-programs-private-schools-suspend-stem-enrollment/",
+          "date": "2026-11-07 08:30",
+          "summary": "在近年少子化浪潮對大學校院的持續挑戰之下，除大學退場或合併外，大學科系的存廢也是一個重點，尤其面臨 AI 對職 [&#8230;]",
           "comments": ""
         }
       ]
@@ -342,6 +342,69 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
+          "title": "阿貢實驗室獲百倍 GPU 記憶體加持，結合全新 AI 算力開啟「自主實驗室」研究新紀元",
+          "link": "https://technews.tw/2026/11/08/argonne-national-laboratory-expands-ai-inference-computing/",
+          "date": "2026-11-08 07:00",
+          "summary": "美國能源部阿貢國家實驗室（Argonne National Laboratory）4 日宣布，將擴充其推論服務 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "輝達力推 PTFE 無玻纖布方案，材料商搶卡位、PCB 大廠審慎評估",
+          "link": "https://technews.tw/2026/11/08/materials-suppliers-rush-to-develop-glass-free-ptfe-laminates/",
+          "date": "2026-11-08 01:00",
+          "summary": "輝達力推 PTFE 無玻纖布方案，材料商搶先布局，PCB 大廠卻審慎評估。新材料從送樣到量產，誰投入資源、誰承 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "鎖定「超乎預期」獲利黑馬！台股年底突圍，聚焦 ABC 三大族群與半導體",
+          "link": "https://finance.technews.tw/2026/11/08/unexpected-profit-dark-horses-taiwan-stocks-year-end-breakout-focus-abc-sectors-semiconductors/",
+          "date": "2026-11-08 00:00",
+          "summary": "台股面臨半年線保衛戰，在線型收復前，短期操作宜保持謹慎，理性過濾市場雜音，逢低布局長線獲利具爆發力的好公司，以 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "傳跨足先進記憶體生產？焦佑鈞：台積電與三大記憶體原廠均有合作不會加入競爭",
+          "link": "https://finance.technews.tw/2026/11/07/tsmc-collaborates-with-all-three-major-memory-manufacturers-and-will-not-join-the-competition/",
+          "date": "2026-11-07 12:00",
+          "summary": "針對近期市場傳出半導體龍頭台積電為因應輝達需求，擬跨足先進記憶體與 3D DRAM 領域，引發半導體供應鏈高度 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "華邦電 2026 年業績亮眼，員工獎金平均可望達到約 30 個月",
+          "link": "https://finance.technews.tw/2026/11/07/winbond-electronics-employees-are-expected-to-receive-an-average-bonus-of-approximately-30-months-salary/",
+          "date": "2026-11-07 11:40",
+          "summary": "受惠於記憶體市場需求火熱與公司營運亮眼，記憶體大廠華邦電2026年獲利大豐收。董事長焦佑鈞出席公司家庭日活動時 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "焦佑鈞：記憶體漲價已到極限，不希望景氣下行時間太晚來",
+          "link": "https://finance.technews.tw/2026/11/07/memory-price-increases-have-reached-their-limit/",
+          "date": "2026-11-07 07:15",
+          "summary": "針對記憶體製造廠毛利率站上七至八成的高點、市場關切漲價潮與未來景氣循環的發展，華邦電董事長焦佑鈞直言，記憶體價 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "一張圖看美國資料中心建置放緩對台灣 AI 供應鏈影響！法人稱訂單僅遞延",
+          "link": "https://finance.technews.tw/2026/11/07/taiwans-ai-supply-chain/",
+          "date": "2026-11-07 07:01",
+          "summary": "美國資料中心建置疑慮升溫，市場擔憂 AI 投資動能降溫，衝擊台灣 AI 供應鏈投資信心，台股上週五一片慘綠。瀚 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "焦佑鈞：2027~2028 年記憶體需求明確，下一波循環預計 2029 年開始",
+          "link": "https://finance.technews.tw/2026/11/07/winbond-believes-that-memory-demand-will-be-strong-in-2027-2028/",
+          "date": "2026-11-07 07:00",
+          "summary": "面對美國期中選舉過後的政策變化與政治情勢，華邦電董事長焦佑鈞表示，期中選舉結果必然會對AI資料中心的建置趨勢產 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "滿手 AI 慘綠怎麼辦？野村籲緊盯「三大指標」抱緊這幾類護城河股",
+          "link": "https://finance.technews.tw/2026/11/07/resource-center/",
+          "date": "2026-11-07 05:27",
+          "summary": "美國期中選舉後，市場對 AI 資料中心監管、融資成本及投資回收期的疑慮升溫，台股盤面一片慘綠。野村投信表示，市 [&#8230;]",
+          "comments": ""
+        },
+        {
           "title": "選舉結果不改擴張計劃！OpenAI 完成 110 億美元融資、估值 1.25 兆美元",
           "link": "https://finance.technews.tw/2026/11/07/openai-gets-11-billion/",
           "date": "2026-11-07 02:05",
@@ -361,69 +424,6 @@
           "date": "2026-11-07 01:00",
           "summary": "AI 熱潮持續推升全球科技業資本支出，然而，近期雲端業者大量開資本支出建資料中心，市場也開始標準拉高，逐一檢視 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "美國 PNNL 導入代理式 AI，加速開發衛星與核反應爐用抗輻射晶片",
-          "link": "https://technews.tw/2026/11/07/covering-the-fastest-computers-in-the-world-and-the-people-who-run-them-14/",
-          "date": "2026-11-07 00:30",
-          "summary": "太空高能粒子撞擊衛星可能導致資料遺失、系統停擺，甚至偏離軌道。美國能源部太平洋西北國家實驗室（PNNL）近日宣 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "強攻 AI 與企業級市場，潘健成：群聯擺脫依賴低價庫存邁入 AI 營運收割期",
-          "link": "https://finance.technews.tw/2026/11/06/phison-breaks-free-from-reliance-on-low-priced-inventory-and-enters-a-period-of-reaping-the-benefits-of-ai-driven-operations/",
-          "date": "2026-11-06 12:50",
-          "summary": "快閃記憶體控制晶片大廠群聯電子（Phison）舉辦法人說明會，執行長潘健成親自回覆法人提問。面對消費性電子疲軟 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "長江存儲第四晶圓廠本土設備力拚占比逾七成，降低美國箝制",
-          "link": "https://finance.technews.tw/2026/11/06/yangtze-memory-technologies-fourth-wafer-fab-strives-to-achieve-a-domestic-equipment-ratio-of-over-70/",
-          "date": "2026-11-06 12:20",
-          "summary": "根據外媒報導，中國最大快閃記憶體製造商長江存儲（YMTC）計劃將位於武漢的第四座記憶體晶圓廠之本土設備採購比例 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "群聯第三季營收創歷史新高，潘健成宣佈強攻 AI 生態系與自研平台",
-          "link": "https://finance.technews.tw/2026/11/06/phisons-third-quarter-revenue-hit-a-record-high/",
-          "date": "2026-11-06 11:50",
-          "summary": "群聯召開法人說明會，由執行長潘健成親自主持，宣布第三季財報與未來戰略佈局。受惠於強勁的AI相關需求，群聯第三季 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "群聯公布第三季財報與 10 月營收，營收、毛利與 EPS 均創同期歷史新高",
-          "link": "https://finance.technews.tw/2026/11/06/phison-releases-third-quarter-financial-results-and-october-revenue/",
-          "date": "2026-11-06 09:30",
-          "summary": "快閃記憶體控制晶片與AI運算儲存方案大廠群聯電子公布2026年第三季財務報告與10月份營收成果。受惠於AI基礎 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "創見束崇萬大談購入宜蘭阿拉伯宮祕辛，為了寵妻打造台灣當代藝術館",
-          "link": "https://finance.technews.tw/2026/11/06/transcends-shu-chongwan-discusses-the-secrets-of-acquiring-the-yilan-arabian-palace/",
-          "date": "2026-11-06 08:50",
-          "summary": "坐落於宜蘭頭城烏石港旁、以濃濃中東圓頂風格聞名的知名地標「阿拉伯宮」（官方名稱為榮梓博物館，又稱榮華竹苑），在 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "台積電盤中下挫 220 元史上最大，今天市值降 2.72 兆元",
-          "link": "https://finance.technews.tw/2026/11/06/tsmc-2135-stock-price/",
-          "date": "2026-11-06 08:00",
-          "summary": "美國期中選舉後，多州 AI 資料中心政策可能調整，重創全球股市，台股早盤慘跌 3,737.67 點至 37,8 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "上季每股賺 9.99 元！聯詠估 Q4 營運季節性修正，毛利率介於 37% 至 39%",
-          "link": "https://technews.tw/2026/11/06/novatek-2026-q3-financial-report/",
-          "date": "2026-11-06 07:55",
-          "summary": "聯詠今（6 日）舉辦第三季法說會，展望第四季，總經理王守仁表示，目前觀察第四季大尺寸面板需求進入庫存調整階段， [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "創見束崇萬：第三、四季營收相當毛利率回歸正常，DRAM 續緊而 NAND Flash 價格持穩",
-          "link": "https://finance.technews.tw/2026/11/06/transcends-revenue-in-the-third-and-fourth-quarters-was-roughly-equivalent-to-its-gross-margin-returning-to-normal/",
-          "date": "2026-11-06 07:30",
-          "summary": "受低價庫存去化完畢與原料進貨成本墊高影響，記憶體模組大廠創見資訊董事長束崇萬表示，第三季毛利率修正後將成為未來 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,34 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "輝達力推 PTFE 無玻纖布方案，材料商搶卡位、PCB 大廠審慎評估",
+          "link": "https://technews.tw/2026/11/08/materials-suppliers-rush-to-develop-glass-free-ptfe-laminates/",
+          "date": "2026-11-08 01:00",
+          "summary": "輝達力推 PTFE 無玻纖布方案，材料商搶先布局，PCB 大廠卻審慎評估。新材料從送樣到量產，誰投入資源、誰承 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "鎖定「超乎預期」獲利黑馬！台股年底突圍，聚焦 ABC 三大族群與半導體",
+          "link": "https://finance.technews.tw/2026/11/08/unexpected-profit-dark-horses-taiwan-stocks-year-end-breakout-focus-abc-sectors-semiconductors/",
+          "date": "2026-11-08 00:00",
+          "summary": "台股面臨半年線保衛戰，在線型收復前，短期操作宜保持謹慎，理性過濾市場雜音，逢低布局長線獲利具爆發力的好公司，以 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "一張圖看美國資料中心建置放緩對台灣 AI 供應鏈影響！法人稱訂單僅遞延",
+          "link": "https://finance.technews.tw/2026/11/07/taiwans-ai-supply-chain/",
+          "date": "2026-11-07 07:01",
+          "summary": "美國資料中心建置疑慮升溫，市場擔憂 AI 投資動能降溫，衝擊台灣 AI 供應鏈投資信心，台股上週五一片慘綠。瀚 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "滿手 AI 慘綠怎麼辦？野村籲緊盯「三大指標」抱緊這幾類護城河股",
+          "link": "https://finance.technews.tw/2026/11/07/resource-center/",
+          "date": "2026-11-07 05:27",
+          "summary": "美國期中選舉後，市場對 AI 資料中心監管、融資成本及投資回收期的疑慮升溫，台股盤面一片慘綠。野村投信表示，市 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "AI 聽力照護進軍中東市場！瑞音生技 SaMD 軟體破解三大驗配痛點",
           "link": "https://finance.technews.tw/2026/11/07/samd/",
@@ -486,34 +514,6 @@
           "date": "2026-11-06 07:30",
           "summary": "受低價庫存去化完畢與原料進貨成本墊高影響，記憶體模組大廠創見資訊董事長束崇萬表示，第三季毛利率修正後將成為未來 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "AI 交易變色衝擊工業類股  CAT / GEV 拋售潮恐未止",
-          "link": "https://finance.technews.tw/2026/11/06/ai-investment-hits-industrial-stocks-as-cat-and-gev-face-sell-offs/",
-          "date": "2026-11-06 06:10",
-          "summary": "美國期中選舉民主黨大勝，市場擔憂資料中心開發反彈聲浪將拖累 AI 投資，重創提供發電設備的開拓重工（Cater [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 基建疑慮導致 Bloom Energy 崩跌  可能錯殺？",
-          "link": "https://finance.technews.tw/2026/11/06/ai-infrastructure-concerns-send-bloom-energy-shares-tumbling/",
-          "date": "2026-11-06 04:20",
-          "summary": "市場擔憂資料中心發展前景生變，引發燃料電池大廠 Bloom Energy 暴跌，不過，外媒分析，Bloom E [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "CSP 資本支出暴增、MLCC 明年需求續旺？TrendForce 大預測一次看（下）",
-          "link": "https://technews.tw/2026/11/06/trendforce-2027-annual-forecast-ar-mlcc-ai-server-robot/",
-          "date": "2026-11-06 04:18",
-          "summary": "調研機構 TrendForce「AI Next–2027 科技產業大預測」於 5 日正式登場，主題涵蓋晶圓代工 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "MLCC 訂單飆／BB 值破表  太陽誘電升財測、加快擴產",
-          "link": "https://finance.technews.tw/2026/11/06/taiyo-yuden-raises-forecast-and-accelerates-capacity-expansion/",
-          "date": "2026-11-06 04:00",
-          "summary": "AI 伺服器用積層陶瓷電容（MLCC）需求旺，訂單飆增，BB 值（接單出貨比）破紀錄，日本太陽誘電（Taiyo [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -521,6 +521,13 @@
       "name": "CCC 追新聞",
       "site": "https://ccc.technews.tw/",
       "items": [
+        {
+          "title": "羅浮宮劫案掀骨牌效應，歐洲 14 家博物館連環淪陷，退役神偷嗆「我還是進得去」",
+          "link": "https://ccc.technews.tw/2026/11/08/louvre-heist-copycat-effect-european-museums-thefts-retired-thief-returns-claims-still-get-in/",
+          "date": "2026-11-08 08:30",
+          "summary": "去年，幾名竊賊以升降設備靠近羅浮宮外牆，切開窗戶後闖入館內，劫走了價值約新台幣 32.7 億元的珠寶，這場被稱 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "Switch 2 銷量暴減 4 成  任天堂：目前沒考慮追加漲價",
           "link": "https://finance.technews.tw/2026/11/06/nintendo-consolidated-results-for-the-six-months-ended-september-30-2025-and-2026/",
@@ -596,13 +603,6 @@
           "link": "https://ccc.technews.tw/2026/10/25/ipod-25th-anniversary/",
           "date": "2026-10-25 02:05",
           "summary": "適逢初代 iPod 問世 25 週年，蘋果悄悄在 Apple Music 網站加入一項懷舊彩蛋，將經典的初代 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Xbox Series X 成功跨界跑 PS5 遊戲，卻受限 5GB 記憶體天花板",
-          "link": "https://ccc.technews.tw/2026/10/24/xbox-series-x-successfully-runs-ps5-games/",
-          "date": "2026-10-24 02:30",
-          "summary": "開發者社群近日展示了一項引發熱烈討論的實驗：Xbox Series X 已經能夠透過移植版模擬器執行部分 Pl [&#8230;]",
           "comments": ""
         }
       ]
