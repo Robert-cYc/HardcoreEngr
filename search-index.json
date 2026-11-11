@@ -1,5 +1,22 @@
 [
   {
+    "url": "windows-fluent-design-guide.html",
+    "title": "Windows Fluent Design 深度架構解析與實戰指南：五大核心元素、Mica/Acrylic 材質實作、WinUI 3 與跨平台 Web 開發全解",
+    "excerpt": "全維度深度剖析微軟 Windows Fluent Design 系統架構：從 Metro 扁平化到現代空間設計的演進史，深入拆解 Light（光感）、Depth（深度）、Motion（動效）、Material（材質）、Scale（比例）五大核心支柱。詳解 Mica 與 Acrylic 材質的 DWM 合成渲染原理、圓角幾何、Segoe UI Variable 字型系統；提供 WinUI 3 (XAML)、WPF 底層 DWM API (P/Invoke) 以及 Web (Fluent UI 2 / CSS 玻璃擬態) 的生產級代碼實作。內建即時材質光感模擬器與多平台代碼生成器。",
+    "tags": [
+      "Fluent Design",
+      "Mica 材質",
+      "Acrylic 壓克力",
+      "WinUI 3",
+      "Windows App SDK",
+      "WPF-UI",
+      "Fluent UI 2",
+      "DWM API",
+      "跨平台前端"
+    ],
+    "description": "全維度深度剖析微軟 Windows Fluent Design 系統架構：從 Metro 扁平化到現代空間設計的演進史，深入拆解 Light（光感）、Depth（深度）、Motion（動效）、Material（材質）、Scale（比例）五大核心支柱。詳解 Mica 與 Acrylic 材質的 DWM 合成渲染原理、圓角幾何、Segoe UI Variable 字型系統；提供 WinUI 3 (XAML)、WPF 底層 DWM API (P/Invoke) 以及 Web (Fluent UI 2 / CSS 玻璃擬態) 的生產級代碼實作。內建即時材質光感模擬器與多平台代碼生成器。"
+  },
+  {
     "url": "ai-and-harness-engineering-guide.html",
     "title": "Hermes 與 OpenClaw 開源自主 Agent 技術全景剖析：架構解析、執行 Harness、Tool Calling、安全沙箱與多渠道網關實戰",
     "excerpt": "全維度深度剖析 Harness Engineering（線束與測試約束工程）在物理硬體與 AI 代理軟體雙領域的革命：深入解析生成式 3D 拓撲路徑優化、特斯拉 48V 區域控制器 (Zonal Architecture) 減重革命、電腦視覺端子檢測；以及自主 AI 代理 (Agentic AI) 的沙箱隔離、確定性狀態重播、SWE-bench 評測基準與安全防護 Test Harness 架構。內建互動式線束物理試算器與 Agent 沙箱控制台。",

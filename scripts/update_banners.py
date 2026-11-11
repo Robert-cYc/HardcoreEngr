@@ -4,6 +4,7 @@ import json
 import bs4
 
 ARTICLE_BANNER_MAP = {
+    "windows-fluent-design-guide.html": "windows-fluent-design-guide.jpg",
     "ai-algorithms.html": "ai-algorithms-guide.jpg",
     "ai-and-harness-engineering-guide.html": "ai-and-harness-engineering-guide.jpg",
     "ai-automation-tools-guide.html": "workflow-automation-guide.jpg",

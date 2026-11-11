@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows Fluent Design 深度架構解析與實戰指南：五大核心元素、Mica/Acrylic 材質實作、WinUI 3 與跨平台 Web 開發全解 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,⚡">
+  <meta name="description" content="全維度深度剖析微軟 Windows Fluent Design 系統架構：從 Metro 扁平化到現代空間設計的演進史，深入拆解 Light（光感）、Depth（深度）、Motion（動效）、Material（材質）、Scale（比例）五大核心支柱。詳解 Mica 與 Acrylic 材質的 DWM 合成渲染原理、圓角幾何、Segoe UI Variable 字型系統；提供 WinUI 3 (XAML)、WPF 底層 DWM API (P/Invoke) 以及 Web (Fluent UI 2 / CSS 玻璃擬態) 的生產級代碼實作。內建即時材質光感模擬器與多平台代碼生成器。">
+  <link rel="canonical" href="https://ai-hardcore-engineer.com/windows-fluent-design-guide.html">
+  <meta property="og:title" content="Windows Fluent Design 深度架構解析與實戰指南：五大核心元素、Mica/Acrylic 材質實作、WinUI 3 與跨平台 Web 開發全解 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="全面掌握微軟 Fluent Design：Mica vs Acrylic 渲染管線、Reveal Highlight 光感算法、WinUI 3、WPF DwmSetWindowAttribute 底層調用與純 CSS 跨平台實戰。內建雙互動組件。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/windows-fluent-design-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/windows-fluent-design-guide.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Windows Fluent Design 深度架構解析與實戰指南：五大核心元素與材質實作">
+  <meta name="twitter:description" content="深度解析 Windows 11 Fluent Design：Light、Depth、Motion、Material (Mica/Acrylic)、Scale 原理與 WinUI 3 / WPF / Web 代碼實作。">
+  <meta name="twitter:image" content="./images/windows-fluent-design-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    .article-hero { text-align: center; padding: 3.5rem 0 2rem; }
+    .article-hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.28; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.6rem; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.8rem; }
+    .hero-image-wrap { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 32px rgba(0,0,0,0.2); border: 1px solid var(--border); margin-bottom: 2.2rem; }
+    .hero-image-wrap img { width: 100%; max-height: 520px; object-fit: cover; display: block; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-body { max-width: 66em; margin: 0 auto; line-height: 1.88; font-size: 1.05rem; }
+    .article-body h2 { font-size: 2.15rem; font-weight: 700; margin: 3.2rem 0 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 0.6rem; }
+    .article-body h3 { font-size: 1.55rem; font-weight: 600; margin: 2.2rem 0 0.9rem; color: var(--text); }
+    .article-body h4 { font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.6rem; color: var(--text); }
+    .article-body p { margin-bottom: 1.25rem; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.2rem 0.45rem; border-radius: 4px; font-size: 0.94em; color: #0078d4; border: 1px solid var(--border); }
+    .dark-mode .article-body code { color: #60a5fa; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; overflow-x: auto; margin: 1.6rem 0; position: relative; }
+    .article-body pre code { background: none; padding: 0; border: none; color: var(--text); font-size: 0.92rem; }
+    .article-body blockquote { border-left: 4px solid #0078d4; background: var(--bg-alt); padding: 1.1rem 1.6rem; margin: 1.8rem 0; border-radius: 0 10px 10px 0; }
+    .article-body ul, .article-body ol { margin: 1.2rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.75; }
+
+    /* Tables */
+    .table-container { width: 100%; overflow-x: auto; margin: 2rem 0; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+    .article-body table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 900px; }
+    .article-body th, .article-body td { padding: 0.85rem 1.1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 700; color: var(--text); background: var(--bg-alt); white-space: nowrap; position: sticky; top: 0; z-index: 2; }
+    .article-body tr:hover td { background: rgba(0, 120, 212, 0.04); }
+
+    .badge-pill { display: inline-block; padding: 0.25rem 0.65rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+    .badge-blue { background: #dbeafe; color: #1e40af; border: 1px solid rgba(59, 130, 246, 0.4); }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; border: 1px solid rgba(168, 85, 247, 0.4); }
+    .badge-cyan { background: #cffafe; color: #0e7490; border: 1px solid rgba(6, 182, 212, 0.4); }
+    .badge-emerald { background: #dcfce7; color: #15803d; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-amber { background: #fef3c7; color: #92400e; border: 1px solid rgba(245, 158, 11, 0.4); }
+    
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; border-color: #3b82f6; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; border-color: #a855f7; }
+    .dark-mode .badge-cyan { background: #164e63; color: #a5f3fc; border-color: #06b6d4; }
+    .dark-mode .badge-emerald { background: #064e3b; color: #a7f3d0; border-color: #10b981; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; border-color: #f59e0b; }
+
+    /* Quick TOC */
+    .quick-nav-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.8rem; margin: 2.2rem 0; }
+    .quick-nav-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text); }
+    .quick-nav-list { list-style: none; padding-left: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem 1.5rem; }
+    .quick-nav-list li a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s ease, transform 0.2s ease; }
+    .quick-nav-list li a:hover { color: #0078d4; transform: translateX(3px); }
+    .dark-mode .quick-nav-list li a:hover { color: #60a5fa; }
+
+    /* 5 Pillars Grid */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+    .pillar-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 120, 212, 0.15);
+      border-color: #0078d4;
+    }
+    .pillar-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .pillar-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
+    .pillar-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* Interactive Box Styles */
+    .interactive-card {
+      background: var(--bg-alt);
+      border: 2px solid #0078d4;
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 2.8rem 0;
+      box-shadow: 0 8px 30px rgba(0, 120, 212, 0.12);
+    }
+    .interactive-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .interactive-badge {
+      background: #0078d4;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .interactive-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--text);
+    }
+    .interactive-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Simulator Canvas Area */
+    .sim-playground {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
+      user-select: none;
+    }
+    .sim-window-frame {
+      width: 85%;
+      max-width: 580px;
+      border-radius: 10px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.3);
+      overflow: hidden;
+      transition: backdrop-filter 0.3s, background-color 0.3s, border-color 0.3s;
+      position: relative;
+    }
+    .sim-window-titlebar {
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+    .sim-window-content {
+      padding: 1.5rem;
+      color: #fff;
+    }
+    .sim-reveal-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .sim-controls-panel {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+      background: var(--bg);
+      padding: 1.2rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .sim-control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .sim-control-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .sim-control-group input[type="range"] {
+      width: 100%;
+      accent-color: #0078d4;
+    }
+
+    /* Generator Area */
+    .gen-selector-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+    .gen-tab-btn {
+      padding: 0.6rem 1.1rem;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .gen-tab-btn:hover { border-color: #0078d4; color: #0078d4; }
+    .gen-tab-btn.active {
+      background: #0078d4;
+      color: #fff;
+      border-color: #0078d4;
+      box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
+    }
+
+    .code-preview-wrap {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .code-copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 0.35rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: all 0.2s;
+    }
+    .code-copy-btn:hover { background: #0078d4; border-color: #0078d4; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">"AI" 硬核工程師</span>
+      </a>
+      <div class="nav-links">
+        <a href="./index.html">首頁</a>
+        <a href="./articles.html">所有文章</a>
+        <a href="./tags.html">標籤雲</a>
+        <a href="./feed.xml" target="_blank" title="RSS 訂閱">RSS</a>
+        <button id="themeToggle" class="theme-btn" aria-label="切換主題">🌓</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article class="article-container">
+      
+      <!-- Hero Header -->
+      <header class="article-hero">
+        <span class="badge-pill badge-blue" style="font-size: 0.9rem; padding: 0.35rem 1rem; margin-bottom: 1.2rem;">SYSTEM ARCHITECTURE & UI ENGINEERING</span>
+        <h1>Windows Fluent Design 深度架構解析與實戰指南：五大核心元素、Mica/Acrylic 材質實作、WinUI 3 與跨平台 Web 開發全解</h1>
+        <div class="article-meta">
+          <span>📅 2026-11-11</span>
+          <span>•</span>
+          <span>⏱️ 45 分鐘深度閱讀</span>
+          <span>•</span>
+          <span>✍️ 作者："AI" 硬核工程師</span>
+        </div>
+
+        <div class="article-tags">
+          <span class="tag">Fluent Design</span>
+          <span class="tag">Mica 材質</span>
+          <span class="tag">Acrylic 壓克力</span>
+          <span class="tag">WinUI 3</span>
+          <span class="tag">Windows App SDK</span>
+          <span class="tag">WPF-UI</span>
+          <span class="tag">Fluent UI 2</span>
+          <span class="tag">DWM API</span>
+        </div>
+
+        <div class="hero-image-wrap">
+          <img src="./images/windows-fluent-design-guide.jpg" alt="Windows Fluent Design 核心架構與視覺指南" width="1200" height="630">
+        </div>
+      </header>
+
+      <!-- Quick TOC Box -->
+      <section class="quick-nav-box">
+        <div class="quick-nav-title">
+          <span>📑</span> 本文核心目錄導覽 (Quick Navigation)
+        </div>
+        <ul class="quick-nav-list">
+          <li><a href="#sec-1"><span>01.</span> 視覺演進史：從 Metro 到 Fluent 空間革命</a></li>
+          <li><a href="#sec-2"><span>02.</span> 核心五大維度：Light, Depth, Motion, Material, Scale</a></li>
+          <li><a href="#sec-3"><span>03.</span> 深入材質內核：Mica vs Acrylic 渲染管線對決</a></li>
+          <li><a href="#sec-4"><span>04.</span> Windows 11 Fluent 2 現代化規範</a></li>
+          <li><a href="#sec-5"><span>05.</span> 工程實戰：WinUI 3、WPF 底層 API 與 Web</a></li>
+          <li><a href="#sec-6"><span>06.</span> 效能工程、省電降級與無障礙防護牆</a></li>
+          <li><a href="#sec-7"><span>07.</span> 互動硬核工具箱：材質模擬器與代碼生成器</a></li>
+          <li><a href="#sec-8"><span>08.</span> 總結與工程架構檢核表</a></li>
+        </ul>
+      </section>
+
+      <!-- Article Body -->
+      <div class="article-body">
+
+        <!-- SECTION 1 -->
+        <h2 id="sec-1">一、視覺演進史：從 Metro 扁平到 Fluent 空間感知革命</h2>
+        
+        <p>作業系統使用者介面（UI）的設計語言，本質上是<strong>人機互動物理隱喻（Metaphor）與圖形硬體運算能力</strong>相互妥協與演進的歷史。回顧 Windows 三十年的視覺演變：</p>
+
+        <ol>
+          <li><strong>Windows 95 / 98（Classic Bevel 浮雕時代）</strong>：以 1px 黑色、深灰、淺灰與白色的斜角陰影線條，構建出偽 3D 的凸起按鈕與凹陷輸入框，直觀傳達「可點擊性（Affordance）」。</li>
+          <li><strong>Windows XP（Luna 塑料光澤時代）</strong>：隨著 GPU 2D 加速普及，帶來了圓潤藍綠色系、高光反射與水滴質感。</li>
+          <li><strong>Windows 7（Aero Glass 擬物毛玻璃時代）</strong>：借助 Desktop Window Manager（DWM）與 Direct3D 硬體著色器，首次實現視窗邊框的高斯模糊與即時透明折射，奠定了桌面毛玻璃的美學巔峰。</li>
+          <li><strong>Windows 8 / 早期 Windows 10（Metro / Modern UI 極端扁平化危機）</strong>：微軟為了兼顧 Windows Phone 觸控與低功耗晶片，激進抹殺了所有漸層、光影與邊界，走向絕對扁平的色塊磁貼（Live Tiles）。然而，這種設計引發了嚴重的<strong>「Affordance 喪失危機」</strong>——使用者無法直觀區分標籤與按鈕、視窗重疊時邊界模糊、長篇內容缺乏層次。</li>
+          <li><strong>Windows 10 後期至 Windows 11（Fluent Design System & Fluent 2）</strong>：從 2017 年代號「Project NEON」正式發表以來，微軟確立了 Fluent Design 的核心目標——<strong>不是倒退回繁複的擬物化，而是利用現代 GPU 計算光感、深度與物理材質，在數位螢幕中建立具備物理規律的空間座標系</strong>。</li>
+        </ol>
+
+        <blockquote>
+          <strong>工程師思考：</strong>為什麼極端扁平化（Flat Design）終將走向終結？因為人類大腦的神經網路是在充滿光照、深度立體與磨砂觸感的物理三維空間中演化而來的。Fluent Design 的本質是用數學著色器（Shaders）為扁平像素賦予物理世界的空間感知，降低使用者認知負荷（Cognitive Load）。
+        </blockquote>
+
+        <!-- SECTION 2 -->
+        <h2 id="sec-2">二、核心基石：Fluent Design 五大設計維度全解剖</h2>
+
+        <p>Fluent Design System 圍繞著五大基礎物理維度構建：<strong>Light（光感）、Depth（深度）、Motion（動效）、Material（材質）、Scale（比例）</strong>。</p>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">💡</div>
+            <div class="pillar-title">1. Light (光感)</div>
+            <div class="pillar-desc">模擬點光源與環境光。透過 Reveal Highlight 與邊框照明，動態照亮游標周圍元素，主動引導使用者的視線焦點。</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">📐</div>
+            <div class="pillar-title">2. Depth (深度)</div>
+            <div class="pillar-desc">利用 Z 軸座標、雙層動態投影（Ambient + Directional Shadow）與視差滾動，在 2D 平面打破層級混亂。</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🌊</div>
+            <div class="pillar-title">3. Motion (動效)</div>
+            <div class="pillar-desc">拋棄死板線性動畫，引入彈簧阻尼（Spring Physics）與 Connected Animation 共享元素連續形變轉場。</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">💎</div>
+            <div class="pillar-title">4. Material (材質)</div>
+            <div class="pillar-desc">Mica（雲母）、Acrylic（壓克力）與 Smoke（煙幕）。利用半透明毛玻璃與噪點著色器傳達層次與輕盈感。</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">📱</div>
+            <div class="pillar-title">5. Scale (比例)</div>
+            <div class="pillar-desc">跨越螢幕尺寸與輸入模態（滑鼠緊湊 32px vs 觸控 48px），並向 VR/MR 空間計算延伸無縫適應性。</div>
+          </div>
+        </div>
+
+        <h3>1. Light（光感）：Reveal Highlight 演算法幾何原理</h3>
+        <p>在傳統 UI 中，Button 的 Hover 狀態通常是硬生生切換背景顏色。而 Fluent 的 <strong>Reveal Highlight</strong> 引入了虛擬光源：</p>
+        <ul>
+          <li><strong>邊框照明（Border Illumination）</strong>：以滑鼠游標為圓心，半徑約 <code>100px</code> 範圍內的相鄰元素邊框都會被微弱照亮。即使未懸浮在該元素上，使用者也能清晰感知按鈕邊界。</li>
+          <li><strong>表面聚光（Hover Spotlight）</strong>：游標下方的元素表面會呈現徑向漸層聚光燈（Radial Gradient），隨著滑鼠滑動而平滑位移。</li>
+        </ul>
+
+        <h3>2. Depth（深度）：雙層投影模型（Two-Layer Elevation）</h3>
+        <p>Windows 11 的陰影不再是單一模糊值的 CSS <code>box-shadow</code>，而是模擬真實世界光源的<strong>雙重投影</strong>：</p>
+        <ul>
+          <li><strong>環境陰影（Ambient Shadow）</strong>：模擬無方向天頂散射光，具有極大擴散半徑（Spread）、低不透明度（5% - 10%），用於表現元件相對於底層的抬升高度。</li>
+          <li><strong>定向陰影（Directional Shadow）</strong>：模擬頂部主光源，具有 Y 軸正向位移（Offset-Y）、較小擴散與較高銳利度，增強浮起感。</li>
+        </ul>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>層級 Token (Elevation)</th>
+                <th>Z-Index 高度</th>
+                <th>Ambient 陰影參數</th>
+                <th>Directional 陰影參數</th>
+                <th>典型應用情境</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge-pill badge-blue">Card / Rest</span></td>
+                <td>0dp - 2dp</td>
+                <td><code>0 0 2px rgba(0,0,0,0.04)</code></td>
+                <td><code>0 1px 4px rgba(0,0,0,0.06)</code></td>
+                <td>內容卡片、靜態清單項</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pill badge-cyan">Interactive Hover</span></td>
+                <td>4dp</td>
+                <td><code>0 0 4px rgba(0,0,0,0.06)</code></td>
+                <td><code>0 4px 8px rgba(0,0,0,0.12)</code></td>
+                <td>按鈕懸停、可拖曳物件</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pill badge-purple">Flyout / Dropdown</span></td>
+                <td>8dp - 16dp</td>
+                <td><code>0 0 8px rgba(0,0,0,0.08)</code></td>
+                <td><code>0 8px 16px rgba(0,0,0,0.16)</code></td>
+                <td>下拉選單、右鍵 ContextMenu</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pill badge-amber">Modal Dialog</span></td>
+                <td>32dp - 64dp</td>
+                <td><code>0 0 24px rgba(0,0,0,0.18)</code></td>
+                <td><code>0 24px 48px rgba(0,0,0,0.28)</code></td>
+                <td>模態確認對話框、系統攔截警告</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SECTION 3 -->
+        <h2 id="sec-3">三、深入材質內核：Mica vs Acrylic 渲染管線對決</h2>
+
+        <p>在 Windows 11 中，微軟對材質體系進行了重大重構，最關鍵的創新便是<strong>將 Acrylic 與 Mica 分工獨立</strong>。許多開發者常將兩者混淆，但兩者在 DWM 合成器底層的運算管線截然不同：</p>
+
+        <h3>1. Acrylic（壓克力材質）：即時多重濾鏡合成器</h3>
+        <p>Acrylic 是一種<strong>高開銷、全動態的即時採樣材質</strong>。它主要分為兩種型態：</p>
+        <ul>
+          <li><strong>In-App Acrylic（應用內壓克力）</strong>：對目前應用視窗內部的底層元素（如滾動文字、圖片）進行即時高斯模糊。</li>
+          <li><strong>Background Acrylic（背景壓克力）</strong>：對目前視窗背後的所有外部桌面視窗、瀏覽器、資料夾進行採樣模糊。</li>
+        </ul>
+
+        <p><strong>Acrylic 的渲染管線包含五道著色器步驟：</strong></p>
+        <ol>
+          <li><strong>Background Capture</strong>：DWM 從後台緩衝區擷取目前視窗下方的像素矩形。</li>
+          <li><strong>Dual-Pass Blur</strong>：執行橫向與縱向雙通道雙三次高斯模糊（Bicubic Gaussian Blur），模糊半徑通常高達 <code>30px</code>。</li>
+          <li><strong>Luminosity / Exclusion Blend</strong>：執行亮度排除混合，確保暗黑與明亮背景下的文字具備足夠對比度。</li>
+          <li><strong>Tint Overlay</strong>：混合應用程式主題色（Tint Color，透光率約 60% - 80%）。</li>
+          <li><strong>Noise Texture Injection</strong>：注入微細隨機噪點紋理（Noise），<strong>這是工程學上的關鍵細節——用於消除 8-bit 色彩通道在高斯模糊後必然產生的色帶斷層（Banding Artifacts）</strong>。</li>
+        </ol>
+
+        <h3>2. Mica（雲母材質）：Windows 11 的革命性節能傑作</h3>
+        <p>既然 Acrylic 效果如此驚艷，為什麼微軟在 Windows 11 中不全面使用 Acrylic 作為視窗主背景，而是創造了 <strong>Mica</strong>？</p>
+
+        <blockquote>
+          <strong>核心效能痛點：</strong>當使用者拖曳一個採用 Background Acrylic 的視窗時，背後的像素每秒鐘都在變動。這意味著 DWM 必須在每一幀（60Hz、120Hz、甚至 240Hz）重新採樣背後視窗並執行兩次繁重的高斯模糊！在 4K 螢幕多視窗環境下，這會導致 GPU 負載暴增、筆電電池快速耗盡以及明顯的掉幀延遲。
+        </blockquote>
+
+        <p><strong>Mica 的破局點：直接採樣桌面壁紙（Desktop Wallpaper Tinting）！</strong></p>
+        <ul>
+          <li>Mica <strong>完全不關心目前視窗正後方是什麼視窗</strong>！</li>
+          <li>它只在作業系統啟動或壁紙更換時，由 DWM 預先計算整張桌面壁紙的模糊色彩快照。</li>
+          <li>當視窗在螢幕上移動時，Mica 僅需依據視窗的螢幕絕對座標 <code>(X, Y)</code>，從壁紙著色快照中進行簡單的 UV 紋理貼圖映射（Texture Mapping），並疊加一層微弱的主題透光層。</li>
+          <li><strong>效能結論</strong>：Mica 的即時 GPU 運算開銷近乎為零！即便在低功耗超極本上拖曳大視窗，也能保持 120 FPS 絲滑流暢。</li>
+        </ul>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>材質指標</th>
+                <th>Mica (雲母)</th>
+                <th>Acrylic (壓克力)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>採樣來源</strong></td>
+                <td>僅採樣<strong>桌面壁紙</strong>（依視窗螢幕座標投影）</td>
+                <td>採樣<strong>視窗正後方所有即時應用內容</strong></td>
+              </tr>
+              <tr>
+                <td><strong>GPU 運算開銷</strong></td>
+                <td><span class="badge-pill badge-emerald">極低 (~0.1ms Frame Time)</span></td>
+                <td><span class="badge-pill badge-amber">中至高 (依模糊半徑需 2ms - 5ms)</span></td>
+              </tr>
+              <tr>
+                <td><strong>視窗拖曳效能</strong></td>
+                <td>零掉幀，完全無感知延遲</td>
+                <td>視窗快速移動時可能引發微掉幀</td>
+              </tr>
+              <tr>
+                <td><strong>推薦使用場景</strong></td>
+                <td><strong>應用程式長期駐留主視窗、標題列、主框架</strong></td>
+                <td><strong>暫時性浮層：側邊欄、右鍵選單、ToolTip、彈窗</strong></td>
+              </tr>
+              <tr>
+                <td><strong>變體支援</strong></td>
+                <td>Mica（標準）、Mica Alt（更高對比度，用於多 Tab 頁面）</td>
+                <td>In-App Acrylic、Background Acrylic</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SECTION 4 -->
+        <h2 id="sec-4">四、Windows 11 Fluent 2 現代化演進規範</h2>
+
+        <h3>1. 幾何圓角（Geometry & Corner Radius）</h3>
+        <p>Windows 11 徹底告別了 Windows 8/10 的尖銳直角：</p>
+        <ul>
+          <li><strong>大視窗與外層卡片</strong>：<code>CornerRadius = 8px</code>（在極高解析度下亦有 12px 規範）。</li>
+          <li><strong>內層互動控制項（按鈕、文字框、切換鈕）</strong>：<code>CornerRadius = 4px</code>。</li>
+          <li><strong>對話框與藥丸標籤（Pill Badges）</strong>：<code>CornerRadius = 9999px</code>（膠囊完全圓角）。</li>
+          <li><strong>外邊框（Stroke）</strong>：所有浮起卡片均帶有 <code>1px</code> 實體描邊，明亮模式下為 5% 黑色，暗黑模式下為 8%-10% 白色半透明，防止與背景融為一體。</li>
+        </ul>
+
+        <h3>2. 字體排印：Segoe UI Variable 可變字型體系</h3>
+        <p>微軟在 Windows 11 中全面引入了 <strong>Segoe UI Variable</strong> 可變字型，其內建了 <strong>Optical Size（光學尺寸軸：opsz）</strong> 技術：</p>
+        <ul>
+          <li><strong>Caption (opsz &lt; 12pt)</strong>：微縮字號，刻意加粗橫向筆劃並擴大字元間距（Letter-spacing），確保在 9pt 工作列或狀態列上清晰可讀。</li>
+          <li><strong>Text (opsz 12pt - 20pt)</strong>：正文排版，平衡易讀性與灰度。</li>
+          <li><strong>Display (opsz &gt; 36pt)</strong>：大型標題，筆劃纖細精緻，緊湊典雅。</li>
+        </ul>
+
+        <!-- SECTION 5 -->
+        <h2 id="sec-5">五、各技術棧工程實戰：WinUI 3、WPF 底層 API 與 Web/React</h2>
+
+        <h3>1. WinUI 3 (Windows App SDK) 原生啟用 Mica 與 Acrylic</h3>
+        <p>在 WinUI 3 現代桌面開發中，啟用 Mica 或 Acrylic 已經被封裝為 XAML 內建的 <code>SystemBackdrop</code>：</p>
+
+        <pre><code class="language-xml">&lt;!-- MainWindow.xaml --&gt;
+&lt;Window
+    x:Class="HardcoreFluentApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Hardcore Fluent Desktop"&gt;
+
+    &lt;!-- 啟用 Windows 11 原生 Mica 材質 (或改為 DesktopAcrylicBackdrop) --&gt;
+    &lt;Window.SystemBackdrop&gt;
+        &lt;MicaBackdrop Kind="Base" /&gt;
+    &lt;/Window.SystemBackdrop&gt;
+
+    &lt;Grid Padding="24"&gt;
+        &lt;!-- Fluent 風格導航與圓角卡片 --&gt;
+        &lt;Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="20"&gt;
+            &lt;StackPanel Spacing="12"&gt;
+                &lt;TextBlock Text="歡迎體驗 WinUI 3 Fluent 2 架構" 
+                           Style="{StaticResource SubtitleTextBlockStyle}"/&gt;
+                &lt;Button Content="執行硬核編譯" 
+                        Style="{StaticResource AccentButtonStyle}" 
+                        CornerRadius="4"/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/Border&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;</code></pre>
+
+        <h3>2. WPF / WinForms 現代化升級：直連 Windows 11 DWM 底層 API</h3>
+        <p>既有龐大的企業級 WPF 或 WinForms 專案如何不重寫程式碼就能獲得 Windows 11 原生 Mica 與圓角？答案是透過 <strong>P/Invoke 呼叫 DwmSetWindowAttribute</strong>：</p>
+
+        <pre><code class="language-csharp">using System;
+using System.Runtime.InteropServices;
+using System.Windows;
+using System.Windows.Interop;
+
+public partial class MainWindow : Window
+{
+    // DwmSetWindowAttribute 屬性定義 (Windows 11 Build 22000+)
+    private const int DWMWA_WINDOW_CORNER_PREFERENCE = 33;
+    private const int DWMWA_SYSTEMBACKDROP_TYPE = 38;
+
+    // 視窗圓角偏好
+    public enum DWM_WINDOW_CORNER_PREFERENCE
+    {
+        DWMWCP_DEFAULT = 0,
+        DWMWCP_DONOTROUND = 1,
+        DWMWCP_ROUND = 2,           // 8px 圓角
+        DWMWCP_ROUNDSMALL = 3      // 4px 圓角
+    }
+
+    // 系統背景材質類型
+    public enum DWM_SYSTEMBACKDROP_TYPE
+    {
+        DWMSBT_AUTO = 0,
+        DWMSBT_NONE = 1,
+        DWMSBT_MAINWINDOW = 2,      // Mica (雲母)
+        DWMSBT_TRANSIENTWINDOW = 3, // Acrylic (壓克力)
+        DWMSBT_TABBEDWINDOW = 4     // Mica Alt (深層雲母)
+    }
+
+    [DllImport("dwmapi.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+    private static extern int DwmSetWindowAttribute(
+        IntPtr hwnd, 
+        int dwAttribute, 
+        ref int pvAttribute, 
+        int cbAttribute);
+
+    public MainWindow()
+    {
+        InitializeComponent();
+        this.Loaded += OnWindowLoaded;
+    }
+
+    private void OnWindowLoaded(object sender, RoutedEventArgs e)
+    {
+        IntPtr hWnd = new WindowInteropHelper(this).EnsureHandle();
+
+        // 1. 強制視窗啟用 Windows 11 標準 8px 圓角
+        int cornerPreference = (int)DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
+        DwmSetWindowAttribute(hWnd, DWMWA_WINDOW_CORNER_PREFERENCE, ref cornerPreference, sizeof(int));
+
+        // 2. 注入 Mica 材質背景
+        int backdropType = (int)DWM_SYSTEMBACKDROP_TYPE.DWMSBT_MAINWINDOW;
+        DwmSetWindowAttribute(hWnd, DWMWA_SYSTEMBACKDROP_TYPE, ref backdropType, sizeof(int));
+    }
+}</code></pre>
+
+        <h3>3. Web 與跨平台應用（CSS3 + SVG 濾鏡極限模擬 Acrylic）</h3>
+        <p>在瀏覽器、Electron 或 PWA 中，如何用標準 Web 技術復刻 100% 擬真的 Fluent 壓克力效果？</p>
+
+        <pre><code class="language-css">/* Fluent Acrylic 現代 CSS 實作 */
+.fluent-acrylic-card {
+  /* 基礎半透明疊加層 */
+  background: rgba(255, 255, 255, 0.65);
+  /* 雙通道模糊 + 色彩飽和度提升 (重現 Exclusion 鮮明感) */
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  
+  /* Fluent 2 圓角與微妙雙層描邊 */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  
+  /* 雙層物理陰影 (Ambient + Directional) */
+  box-shadow: 
+    0 0 2px rgba(0, 0, 0, 0.05),
+    0 8px 24px -4px rgba(0, 0, 0, 0.12);
+  
+  position: relative;
+  overflow: hidden;
+}
+
+/* 暗黑模式自適應 */
+@media (prefers-color-scheme: dark) {
+  .fluent-acrylic-card {
+    background: rgba(30, 30, 35, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+      0 0 4px rgba(0, 0, 0, 0.2),
+      0 12px 32px -4px rgba(0, 0, 0, 0.5);
+  }
+}</code></pre>
+
+        <!-- SECTION 6 -->
+        <h2 id="sec-6">六、效能工程、省電降級與無障礙防護牆</h2>
+
+        <p>在工程實踐中，優秀的 UI 架構師必須具備<strong>「防禦性設計」</strong>思維。光影與毛玻璃雖美，但若處理不當，會引發嚴重的可用性與電力問題：</p>
+
+        <h3>1. 系統省電模式與 GPU 降級守則</h3>
+        <p>當筆記型電腦處於「省電模式（Battery Saver）」或在虛擬機（RDP 遠端桌面）環境中執行時，作業系統應當自動<strong>優雅降級（Graceful Fallback）</strong>：</p>
+        <ul>
+          <li><strong>關閉即時高斯模糊</strong>：將 Mica 與 Acrylic 材質退化為固態純色不透明背景（Solid Fallback Brush）。</li>
+          <li><strong>降低 Reveal Highlight 採樣頻率</strong>：停止高頻率的滑鼠移動監聽與著色器重繪。</li>
+        </ul>
+
+        <h3>2. 無障礙設計（Accessibility & High Contrast）</h3>
+        <p>Windows 內建「對比佈景主題（Contrast Themes）」。在該模式下：</p>
+        <ul>
+          <li><strong>強制關閉所有透明度</strong>：半透明會嚴重破壞低視力使用者的文字辨識度。</li>
+          <li><strong>嚴格保證 4.5:1 (WCAG AA) / 7:1 (WCAG AAA) 對比度</strong>：所有浮起文字必須採用高對比度的實體色彩（如純白 <code>#FFFFFF</code> 或亮黃 <code>#FFFF00</code>）。</li>
+        </ul>
+
+        <!-- SECTION 7 -->
+        <h2 id="sec-7">七、互動硬核工具箱：材質模擬器與代碼生成器</h2>
+
+        <!-- Interactive 1: Material & Light Simulator -->
+        <div class="interactive-card">
+          <div class="interactive-header">
+            <span class="interactive-badge">INTERACTIVE TOOL 1</span>
+            <h3 class="interactive-title">Fluent 材質與 Reveal 光感即時模擬實驗室</h3>
+          </div>
+          <p class="interactive-desc">
+            在下方畫布內移動滑鼠，親自體驗 <strong>Reveal Highlight 游標跟隨光感</strong>！切換不同材質並調節即時參數，觀測模糊度、飽和度與透光率對介面外觀的影響：
+          </p>
+
+          <div class="gen-selector-row">
+            <button class="gen-tab-btn active" onclick="setMaterialMode('mica', this)">💎 Mica (雲母 - 桌面透色)</button>
+            <button class="gen-tab-btn" onclick="setMaterialMode('acrylic-app', this)">🥛 Acrylic (In-App 壓克力)</button>
+            <button class="gen-tab-btn" onclick="setMaterialMode('acrylic-bg', this)">🌫️ Acrylic (Background 背景)</button>
+            <button class="gen-tab-btn" onclick="setMaterialMode('solid', this)">🛡️ Solid (省電固態降級)</button>
+          </div>
+
+          <!-- Simulator Canvas -->
+          <div class="sim-playground" id="simPlayground">
+            <div class="sim-window-frame" id="simWindow">
+              <div class="sim-window-titlebar" id="simTitlebar">
+                <span>FluentDesignExplorer.exe — Windows 11</span>
+                <span>✕ ▢ —</span>
+              </div>
+              <div class="sim-window-content">
+                <h4 style="margin: 0 0 0.5rem; font-size: 1.25rem;">即時渲染預覽視窗</h4>
+                <p style="margin: 0 0 1rem; font-size: 0.9rem; opacity: 0.85;">
+                  當前材質模式：<strong id="currentMatLabel" style="color: #60a5fa;">Mica (雲母)</strong>。
+                </p>
+
+                <div class="sim-reveal-card" id="simRevealCard">
+                  <div style="font-weight: 600; margin-bottom: 0.3rem;">✨ Reveal Highlight 互動卡片</div>
+                  <div style="font-size: 0.85rem; opacity: 0.85;">
+                    將滑鼠在此區域內移動，觀察邊框高亮與表面聚光燈效果。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="sim-controls-panel">
+            <div class="sim-control-group">
+              <label for="blurSlider">模糊半徑 (Blur Radius): <span id="blurVal">24px</span></label>
+              <input type="range" id="blurSlider" min="0" max="60" value="24" oninput="updateSimParams()">
+            </div>
+            <div class="sim-control-group">
+              <label for="opacitySlider">材質透光度 (Opacity): <span id="opacityVal">70%</span></label>
+              <input type="range" id="opacitySlider" min="10" max="100" value="70" oninput="updateSimParams()">
+            </div>
+            <div class="sim-control-group">
+              <label for="satSlider">色彩飽和度 (Saturation): <span id="satVal">180%</span></label>
+              <input type="range" id="satSlider" min="100" max="250" value="180" oninput="updateSimParams()">
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive 2: Cross-Platform Code Generator -->
+        <div class="interactive-card" style="border-color: #3b82f6;">
+          <div class="interactive-header">
+            <span class="interactive-badge" style="background: #3b82f6;">INTERACTIVE TOOL 2</span>
+            <h3 class="interactive-title">Fluent Design 多平台工程代碼生成器</h3>
+          </div>
+          <p class="interactive-desc">
+            選擇你的目標開發技術棧與材質類型，一鍵生成符合微軟官方設計規範的生產級程式碼：
+          </p>
+
+          <div class="gen-selector-row">
+            <span style="font-weight: 600; display: flex; align-items: center; margin-right: 0.5rem;">目標平台：</span>
+            <button class="gen-tab-btn active" onclick="setGenPlatform('winui', this)">WinUI 3 (XAML/C#)</button>
+            <button class="gen-tab-btn" onclick="setGenPlatform('wpf', this)">WPF (DWM P/Invoke)</button>
+            <button class="gen-tab-btn" onclick="setGenPlatform('web', this)">Web / React (CSS3)</button>
+          </div>
+
+          <div class="gen-selector-row">
+            <span style="font-weight: 600; display: flex; align-items: center; margin-right: 0.5rem;">材質類型：</span>
+            <button class="gen-tab-btn active" onclick="setGenMaterial('mica', this)">Mica 雲母</button>
+            <button class="gen-tab-btn" onclick="setGenMaterial('acrylic', this)">Acrylic 壓克力</button>
+          </div>
+
+          <div class="code-preview-wrap">
+            <button class="code-copy-btn" onclick="copyGenCode()">📋 複製代碼</button>
+            <pre style="margin: 0; border: none; border-radius: 0;"><code class="language-xml" id="genCodeBlock">// 正在生成代碼...</code></pre>
+          </div>
+        </div>
+
+        <!-- SECTION 8 -->
+        <h2 id="sec-8">八、總結與工程架構檢核表（Architectural Checklist）</h2>
+
+        <p>Fluent Design 不僅僅是一套外觀主題，它是微軟為整個 Windows、Office、Azure Portal 以及跨平台應用生態建立的<strong>深度視覺語言工程</strong>。身為專業軟體工程師，在建構 Fluent 風格應用時，請隨時參考以下檢核表：</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>檢核維度</th>
+                <th>核心原則與實踐標準</th>
+                <th>自檢狀態</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>主視窗材質</strong></td>
+                <td>優先使用 <strong>Mica</strong> 或 <strong>Mica Alt</strong> 作為主框架，嚴禁全視窗高頻率更新 Background Acrylic。</td>
+                <td><span class="badge-pill badge-emerald">推薦標準</span></td>
+              </tr>
+              <tr>
+                <td><strong>暫時性介面</strong></td>
+                <td>選單、Flyout、Toast 通知與懸浮氣泡使用 <strong>Acrylic</strong> 輔以 Directional 投影強化層次。</td>
+                <td><span class="badge-pill badge-emerald">推薦標準</span></td>
+              </tr>
+              <tr>
+                <td><strong>圓角幾何一致性</strong></td>
+                <td>大卡片與視窗為 <code>8px</code>，按鈕與輸入框為 <code>4px</code>，外層輔以 1px 微妙描邊。</td>
+                <td><span class="badge-pill badge-blue">規範必備</span></td>
+              </tr>
+              <tr>
+                <td><strong>光感與動效</strong></td>
+                <td>按鈕群組開啟 Reveal Highlight，動畫統一採用物理彈簧或 <code>cubic-bezier(0, 0, 0, 1)</code>。</td>
+                <td><span class="badge-pill badge-blue">規範必備</span></td>
+              </tr>
+              <tr>
+                <td><strong>省電與退化</strong></td>
+                <td>監聽 <code>PowerManager.EnergySaverStatus</code>，在省電模式與高負載下自動關閉毛玻璃降級為純色。</td>
+                <td><span class="badge-pill badge-amber">高可靠性必備</span></td>
+              </tr>
+              <tr>
+                <td><strong>無障礙 (A11y)</strong></td>
+                <td>對比主題下關閉所有透明度，正文文字嚴格保證 4.5:1 對比度，支援 Focus Visual 焦點環。</td>
+                <td><span class="badge-pill badge-purple">法規合規必備</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // --- Tool 1: Material & Light Simulator ---
+    let currentMaterial = 'mica';
+    const simWindow = document.getElementById('simWindow');
+    const simTitlebar = document.getElementById('simTitlebar');
+    const simPlayground = document.getElementById('simPlayground');
+    const simRevealCard = document.getElementById('simRevealCard');
+    const currentMatLabel = document.getElementById('currentMatLabel');
+
+    function setMaterialMode(mode, btn) {
+      currentMaterial = mode;
+      document.querySelectorAll('#simPlayground').forEach(() => {});
+      const buttons = btn.parentElement.querySelectorAll('.gen-tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const labels = {
+        'mica': 'Mica (雲母材質 - 採樣桌面壁紙投影，零渲染開銷)',
+        'acrylic-app': 'Acrylic (In-App 壓克力 - 應用內部高斯模糊)',
+        'acrylic-bg': 'Acrylic (Background - 穿透即時桌面背景模糊)',
+        'solid': 'Solid (省電模式 / 遠端桌面固態純色降級)'
+      };
+      currentMatLabel.innerText = labels[mode];
+      updateSimParams();
+    }
+
+    function updateSimParams() {
+      const blur = document.getElementById('blurSlider').value;
+      const opacity = document.getElementById('opacitySlider').value / 100;
+      const sat = document.getElementById('satSlider').value;
+
+      document.getElementById('blurVal').innerText = blur + 'px';
+      document.getElementById('opacityVal').innerText = Math.round(opacity * 100) + '%';
+      document.getElementById('satVal').innerText = sat + '%';
+
+      if (currentMaterial === 'solid') {
+        simWindow.style.backdropFilter = 'none';
+        simWindow.style.webkitBackdropFilter = 'none';
+        simWindow.style.backgroundColor = '#181b22';
+        simWindow.style.borderColor = 'rgba(255,255,255,0.15)';
+        simTitlebar.style.backgroundColor = '#101317';
+      } else if (currentMaterial === 'mica') {
+        // Mica: subtler blur, tinted wallpaper blend
+        simWindow.style.backdropFilter = `blur(${Math.min(blur, 16)}px) saturate(${sat}%)`;
+        simWindow.style.webkitBackdropFilter = `blur(${Math.min(blur, 16)}px) saturate(${sat}%)`;
+        simWindow.style.backgroundColor = `rgba(20, 24, 34, ${Math.max(opacity, 0.75)})`;
+        simWindow.style.borderColor = 'rgba(255, 255, 255, 0.25)';
+        simTitlebar.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+      } else if (currentMaterial === 'acrylic-app' || currentMaterial === 'acrylic-bg') {
+        // Acrylic: heavy frosted blur
+        simWindow.style.backdropFilter = `blur(${blur}px) saturate(${sat}%)`;
+        simWindow.style.webkitBackdropFilter = `blur(${blur}px) saturate(${sat}%)`;
+        simWindow.style.backgroundColor = `rgba(15, 23, 42, ${opacity})`;
+        simWindow.style.borderColor = 'rgba(255, 255, 255, 0.35)';
+        simTitlebar.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+      }
+    }
+
+    // Reveal Highlight mouse move tracking
+    simRevealCard.addEventListener('mousemove', (e) => {
+      const rect = simRevealCard.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Dynamic radial highlight simulating virtual spotlight
+      simRevealCard.style.background = `radial-gradient(circle 120px at ${x}px ${y}px, rgba(255,255,255,0.22), rgba(255,255,255,0.06))`;
+      simRevealCard.style.borderColor = `rgba(255,255,255,0.5)`;
+    });
+
+    simRevealCard.addEventListener('mouseleave', () => {
+      simRevealCard.style.background = 'rgba(255, 255, 255, 0.08)';
+      simRevealCard.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+    });
+
+    // Initialize simulator
+    updateSimParams();
+
+    // --- Tool 2: Cross-Platform Code Generator ---
+    let genPlatform = 'winui';
+    let genMaterial = 'mica';
+
+    const codeTemplates = {
+      winui: {
+        mica: `<!-- WinUI 3 (Windows App SDK) - MainWindow.xaml -->
+<Window
+    x:Class="FluentApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Fluent Design WinUI 3 Window">
+
+    <!-- 宣告 Windows 11 原生 Mica 材質系統背景 -->
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="Base" />
+    </Window.SystemBackdrop>
+
+    <Grid Padding="24">
+        <!-- 標準 Fluent 2 卡片容器 (帶 8px 圓角與主題描邊) -->
+        <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="24">
+            <StackPanel Spacing="16">
+                <TextBlock Text="Mica Window Active" 
+                           Style="{StaticResource TitleTextBlockStyle}" />
+                <Button Content="Primary Action" 
+                        Style="{StaticResource AccentButtonStyle}" 
+                        CornerRadius="4" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>`,
+        acrylic: `<!-- WinUI 3 (Windows App SDK) - Acrylic.xaml -->
+<Window
+    x:Class="FluentApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Acrylic WinUI 3 Window">
+
+    <!-- 宣告 Windows 11 原生 Desktop Acrylic 壓克力材質 -->
+    <Window.SystemBackdrop>
+        <DesktopAcrylicBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid Padding="20">
+        <!-- 應用內壓克力控制項 -->
+        <Border CornerRadius="8" Padding="20"
+                Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}">
+            <TextBlock Text="Acrylic Surface with Gaussian Blur" />
+        </Border>
+    </Grid>
+</Window>`
+      },
+      wpf: {
+        mica: `// C# WPF (Windows 11 Build 22000+) - MainWindow.xaml.cs
+using System;
+using System.Runtime.InteropServices;
+using System.Windows;
+using System.Windows.Interop;
+
+public partial class MainWindow : Window
+{
+    private const int DWMWA_WINDOW_CORNER_PREFERENCE = 33;
+    private const int DWMWA_SYSTEMBACKDROP_TYPE = 38;
+
+    [DllImport("dwmapi.dll")]
+    private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int val, int size);
+
+    public MainWindow()
+    {
+        InitializeComponent();
+        this.Loaded += (s, e) =>
+        {
+            IntPtr hwnd = new WindowInteropHelper(this).EnsureHandle();
+            
+            // 啟用標準圓角 (8px)
+            int round = 2; // DWMWCP_ROUND
+            DwmSetWindowAttribute(hwnd, DWMWA_WINDOW_CORNER_PREFERENCE, ref round, sizeof(int));
+
+            // 啟用 Mica (雲母) 材質
+            int backdrop = 2; // DWMSBT_MAINWINDOW (Mica)
+            DwmSetWindowAttribute(hwnd, DWMWA_SYSTEMBACKDROP_TYPE, ref backdrop, sizeof(int));
+        };
+    }
+}`,
+        acrylic: `// C# WPF - 啟用 Windows 11 Acrylic 材質
+using System;
+using System.Runtime.InteropServices;
+using System.Windows;
+using System.Windows.Interop;
+
+public partial class MainWindow : Window
+{
+    private const int DWMWA_SYSTEMBACKDROP_TYPE = 38;
+
+    [DllImport("dwmapi.dll")]
+    private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int val, int size);
+
+    public MainWindow()
+    {
+        InitializeComponent();
+        this.Loaded += (s, e) =>
+        {
+            IntPtr hwnd = new WindowInteropHelper(this).EnsureHandle();
+            // 注入 Acrylic (壓克力) 背景材質
+            int backdrop = 3; // DWMSBT_TRANSIENTWINDOW (Acrylic)
+            DwmSetWindowAttribute(hwnd, DWMWA_SYSTEMBACKDROP_TYPE, ref backdrop, sizeof(int));
+        };
+    }
+}`
+      },
+      web: {
+        mica: `/* Web / React - Fluent 2 Mica 模擬 CSS */
+.fluent-mica-container {
+  /* 模擬 Mica 壁紙採樣微透質感 */
+  background: rgba(24, 28, 38, 0.85);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  
+  /* Fluent 2 圓角與 1px 微妙邊框 */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  
+  /* 雙層物理投影 (Ambient + Directional) */
+  box-shadow: 
+    0 0 2px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.24);
+  
+  color: #ffffff;
+  padding: 24px;
+  font-family: "Segoe UI Variable", -apple-system, sans-serif;
+}`,
+        acrylic: `/* Web / React - Fluent 2 Acrylic 壓克力毛玻璃 CSS */
+.fluent-acrylic-card {
+  /* 深度毛玻璃與色彩提升 */
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  
+  box-shadow: 
+    0 0 4px rgba(0, 0, 0, 0.05),
+    0 12px 32px rgba(0, 0, 0, 0.15);
+  
+  padding: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .fluent-acrylic-card {
+    background: rgba(30, 32, 40, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}`
+      }
+    };
+
+    function setGenPlatform(p, btn) {
+      genPlatform = p;
+      btn.parentElement.querySelectorAll('.gen-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGenCode();
+    }
+
+    function setGenMaterial(m, btn) {
+      genMaterial = m;
+      btn.parentElement.querySelectorAll('.gen-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGenCode();
+    }
+
+    function renderGenCode() {
+      const code = codeTemplates[genPlatform][genMaterial];
+      document.getElementById('genCodeBlock').innerText = code;
+    }
+
+    function copyGenCode() {
+      const code = document.getElementById('genCodeBlock').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.querySelector('.code-copy-btn');
+        btn.innerText = '✅ 已複製！';
+        setTimeout(() => { btn.innerText = '📋 複製代碼'; }, 2000);
+      });
+    }
+
+    // Initialize code generator
+    renderGenCode();
+  </script>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 "AI" 硬核工程師. All rights reserved.</p>
+        <p>探索 AI、作業系統架構、Fluent Design 與現代軟體工程實戰。</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
