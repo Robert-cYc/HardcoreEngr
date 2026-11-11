@@ -271,22 +271,36 @@
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <nav class="site-nav">
-    <div class="nav-container">
-      <a href="./index.html" class="nav-logo">
-        <span class="logo-icon">⚡</span>
-        <span class="logo-text">"AI" 硬核工程師</span>
-      </a>
-      <div class="nav-links">
-        <a href="./index.html">首頁</a>
-        <a href="./articles.html">所有文章</a>
-        <a href="./tags.html">標籤雲</a>
-        <a href="./feed.xml" target="_blank" title="RSS 訂閱">RSS</a>
-        <button id="themeToggle" class="theme-btn" aria-label="切換主題">🌓</button>
-      </div>
+    <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div aria-hidden="true" class="waves">
+      <canvas id="wave-canvas"></canvas>
     </div>
-  </nav>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button aria-expanded="false" aria-label="選單" class="menu-toggle"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a class="active" href="./articles.html">文章</a>
+        <a href="./about.html">關於</a>
+        <a aria-label="搜尋" class="nav-search-toggle" href="#">🔍</a>
+        <a aria-label="切換深淺色模式" class="theme-toggle" href="#" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input autocomplete="off" placeholder="搜尋文章..." type="text"/>
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
 
   <main class="container">
     <article class="article-container">
@@ -936,14 +950,20 @@ python -m vllm.entrypoints.openai.api_server \
   </script>
 
   <!-- Global Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-bottom">
-        <p>&copy; 2026 "AI" 硬核工程師. All rights reserved.</p>
-        <p>探索 AI、自主 Agent、Harness 架構與最前沿工程實戰。</p>
+    <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div>"AI" 硬核工程師</div>
+        <div class="footer-tagline">Talk is cheap. Show me the code.</div>
+      </div>
+      <div class="footer-right">
+        <div>© 2026 "AI" 硬核工程師. All rights reserved.</div>
       </div>
     </div>
   </footer>
+
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
 
 </body>
 </html>
