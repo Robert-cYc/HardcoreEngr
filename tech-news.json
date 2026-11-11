@@ -1,23 +1,23 @@
 {
-  "updated": "2026-11-11 03:50",
+  "updated": "2026-11-11 05:28",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "After 7 months, Glasswing overwelms maintainers with underwhelming findings",
-          "link": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update",
-          "date": "2026-11-10 22:17",
+          "title": "Protecting SSH Keys with macOS Secure Enclave",
+          "link": "https://gatezh.com/posts/macos-secure-enclave-ssh-keys/",
+          "date": "2026-11-11 04:28",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50447074"
+          "comments": "https://news.ycombinator.com/item?id=50449748"
         },
         {
-          "title": "A great old-timey game-programming hack (2013)",
-          "link": "https://blog.moertel.com/posts/2013-12-14-great-old-timey-game-programming-hack.html",
-          "date": "2026-11-11 01:56",
+          "title": "Scion is back and is going to sell a kei truck in America",
+          "link": "https://www.theautopian.com/scion-is-back-and-its-going-to-sell-a-freaking-kei-truck-in-america/",
+          "date": "2026-11-10 19:50",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50448921"
+          "comments": "https://news.ycombinator.com/item?id=50445401"
         },
         {
           "title": ".name Grandfathered",
@@ -34,11 +34,18 @@
           "comments": "https://news.ycombinator.com/item?id=50441707"
         },
         {
-          "title": "Scion is back and is going to sell a kei truck in America",
-          "link": "https://www.theautopian.com/scion-is-back-and-its-going-to-sell-a-freaking-kei-truck-in-america/",
-          "date": "2026-11-10 19:50",
+          "title": "A great old-timey game-programming hack (2013)",
+          "link": "https://blog.moertel.com/posts/2013-12-14-great-old-timey-game-programming-hack.html",
+          "date": "2026-11-11 01:56",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50445401"
+          "comments": "https://news.ycombinator.com/item?id=50448921"
+        },
+        {
+          "title": "Six Math Essentials",
+          "link": "https://teorth.github.io/tao-web/six-math-essentials.html",
+          "date": "2026-11-10 20:58",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50446246"
         },
         {
           "title": "To deter bioterrorism, U.S. imposes new rules on ordering synthetic DNA",
@@ -48,13 +55,6 @@
           "comments": "https://news.ycombinator.com/item?id=50449275"
         },
         {
-          "title": "Six Math Essentials by Terence Tao",
-          "link": "https://teorth.github.io/tao-web/six-math-essentials.html",
-          "date": "2026-11-10 20:58",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50446246"
-        },
-        {
           "title": "Starlink Mini 2",
           "link": "https://starlink.com/mini-2",
           "date": "2026-11-10 18:22",
@@ -62,32 +62,32 @@
           "comments": "https://news.ycombinator.com/item?id=50444129"
         },
         {
+          "title": "Announcing .NET 11",
+          "link": "https://devblogs.microsoft.com/dotnet/announcing-dotnet-11/",
+          "date": "2026-11-10 16:01",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50442225"
+        },
+        {
+          "title": "Tracking Anthropic-discovered vulnerabilities",
+          "link": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update",
+          "date": "2026-11-10 22:17",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50447074"
+        },
+        {
+          "title": "Unremarkable things we made in 2026",
+          "link": "https://www.neilchen.co/blog/things2026",
+          "date": "2026-11-09 03:12",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50420579"
+        },
+        {
           "title": "Hacking the Meta Ray-Ban smartglasses",
           "link": "https://p0pcycle.com/2026/11/06/hacking-the-meta-ray-ban-smartglasses/",
           "date": "2026-11-07 17:19",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50406224"
-        },
-        {
-          "title": "Synaptics patent claims stop work on DisplayLink drivers",
-          "link": "https://lwn.net/SubscriberLink/1102549/acbc92e00cee3a3f/",
-          "date": "2026-11-10 18:02",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50443824"
-        },
-        {
-          "title": "Val Town is winding down",
-          "link": "https://blog.val.town/winding-down",
-          "date": "2026-11-10 17:31",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50443427"
-        },
-        {
-          "title": "AlphaProof Code",
-          "link": "https://deepmind.google/blog/introducing-alphaproof-code/",
-          "date": "2026-11-10 12:11",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50439193"
         }
       ]
     },
@@ -174,6 +174,18 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "去中國出差、旅遊不能用Claude！台灣帳號也受限 注意3件事",
+          "link": "https://3c.ltn.com.tw/news/68240",
+          "date": "2026/11/11 12:40",
+          "summary": "Claude用戶注意了，開發商Anthropic宣布新版「支援地區政策」將於11月12日生效，進一步明確規範服務使用 ..."
+        },
+        {
+          "title": "怕旁人偷看手機畫面？iPhone 隱藏功能一鍵調暗螢幕 設定步驟完整公開",
+          "link": "https://3c.ltn.com.tw/news/68225",
+          "date": "2026/11/11 12:00",
+          "summary": "搭乘捷運、坐在咖啡廳或其他公共場所使用 iPhone，難免遇到旁人從側面窺視螢幕內容的情況。雖然市面上有防窺保護貼可 ..."
+        },
+        {
           "title": "玩家注意！任天堂宣布一功能將停用 Google、Apple帳號受影響",
           "link": "https://3c.ltn.com.tw/news/68239",
           "date": "2026/11/11 11:15",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68222",
           "date": "2026/11/10 15:14",
           "summary": "常叫外送的朋友們，荷包又要失血！外送平台 foodpanda 再次調漲平台費，一般用戶將從 11 月 15 日起適用 ..."
-        },
-        {
-          "title": "Android 17 市占率僅 1%！Google 最新數據出爐：第一名是它",
-          "link": "https://3c.ltn.com.tw/news/68221",
-          "date": "2026/11/10 15:05",
-          "summary": "Google 公布最新 Android 作業系統版本分布數據，截至 2026 年 10 月 19 日，推出約 4 個 ..."
-        },
-        {
-          "title": "外接硬碟升級磁吸 還能定位搜尋！十銓 2 產品奪台灣發明專利",
-          "link": "https://3c.ltn.com.tw/news/68220",
-          "date": "2026/11/10 13:30",
-          "summary": "記憶體品牌十銓科技（TEAMGROUP）旗下 PD20M 磁吸外接式固態硬碟與 T-CREATE EXPERT P3 ..."
         }
       ]
     },
