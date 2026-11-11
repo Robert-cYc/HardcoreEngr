@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11 01:56",
+  "updated": "2026-11-11 02:33",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -11,6 +11,13 @@
           "date": "2026-11-10 22:17",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50447074"
+        },
+        {
+          "title": "A great old-timey game-programming hack (2013)",
+          "link": "https://blog.moertel.com/posts/2013-12-14-great-old-timey-game-programming-hack.html",
+          "date": "2026-11-11 01:56",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50448921"
         },
         {
           "title": ".name Grandfathered",
@@ -55,6 +62,13 @@
           "comments": "https://news.ycombinator.com/item?id=50444129"
         },
         {
+          "title": "Hacking the Meta Ray-Ban smartglasses",
+          "link": "https://p0pcycle.com/2026/11/06/hacking-the-meta-ray-ban-smartglasses/",
+          "date": "2026-11-07 17:19",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50406224"
+        },
+        {
           "title": "Val Town is winding down",
           "link": "https://blog.val.town/winding-down",
           "date": "2026-11-10 17:31",
@@ -62,25 +76,11 @@
           "comments": "https://news.ycombinator.com/item?id=50443427"
         },
         {
-          "title": "Hacking the meta ray-ban smartglasses",
-          "link": "https://p0pcycle.com/2026/11/06/hacking-the-meta-ray-ban-smartglasses/",
-          "date": "2026-11-07 17:19",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50406224"
-        },
-        {
           "title": "AlphaProof Code",
           "link": "https://deepmind.google/blog/introducing-alphaproof-code/",
           "date": "2026-11-10 12:11",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50439193"
-        },
-        {
-          "title": "Pinot Noir: inside the criminal gangs making fake wine",
-          "link": "https://www.economist.com/interactive/2026/11/06/pinot-noir-inside-the-criminal-gangs-making-fake-wine",
-          "date": "2026-11-08 05:13",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50410587"
         },
         {
           "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
@@ -174,6 +174,12 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "Google最強AI不再限新旗艦！Pixel 10也能用 支援名單擴大",
+          "link": "https://3c.ltn.com.tw/news/68237",
+          "date": "2026/11/11 10:15",
+          "summary": "Google今年推出Gemini Intelligence，是專為Android裝置打造的主動式AI系統，首波支援機 ..."
+        },
+        {
           "title": "Google淘汰舊手機！Android Auto提高門檻 這些版本不能用了",
           "link": "https://3c.ltn.com.tw/news/68229",
           "date": "2026/11/11 08:40",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68217",
           "date": "2026/11/10 08:40",
           "summary": "在全台掀起散步種花打蘑菇熱潮的《Pikmin Bloom》皮克敏在11月展開五週年慶祝活動，除了可以搜集全新五週年紀 ..."
-        },
-        {
-          "title": "Google 宣布 Gemini 中文版購物功能上線！一秒完成商品比價",
-          "link": "https://3c.ltn.com.tw/news/68216",
-          "date": "2026/11/09 18:12",
-          "summary": "Google 宣布在台灣推出 Gemini 應用程式全新中文版購物功能，讓台灣的消費者能夠把 Gemini 當成購物 ..."
         }
       ]
     },
@@ -252,87 +252,87 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "贏了流量卻輸了變現，中國 AI 六巨頭年收僅美系大廠 1/10",
-          "link": "https://technews.tw/2026/11/11/us-china-ai-revenue-cost-showdown/",
-          "date": "2026-11-11 01:50",
-          "summary": "最新估算數據揭露了全球 AI 市場中「贏了流量，卻輸了營收」的特殊現象。據統計，中國六家主要 AI 企業去年的 [&#8230;]",
+          "title": "強攻 AI 短影音商機！綠界科技今年前三季賺 1.73 元、上半年配息 0.8 元",
+          "link": "https://finance.technews.tw/2026/11/10/ai-short-videos/",
+          "date": "2026-11-10 09:23",
+          "summary": "綠界科技今日公告第三季合併營收 4.82 億元，年增 8.08%；累計前三季合併營收 14.17 億元，年增 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "CoreWeave 財報優、緩解 AI 泡沫疑慮  盤後上揚",
-          "link": "https://finance.technews.tw/2026/11/11/coreweave-reports-strong-third-quarter-2026-results/",
-          "date": "2026-11-11 01:45",
-          "summary": "AI 雲端運算基建供應商 CoreWeave 第三季營收超乎預期，上修全年展望，並提出邁向獲利的藍圖，同時承諾 [&#8230;]",
+          "title": "中國使用輝達 AI 晶片，走私與租用東南亞資料中心算力成兩大途徑",
+          "link": "https://technews.tw/2026/11/10/china-nvidia-ai-chip-access-smuggling-renting-southeast-asia-data-center-compute-power-methods/",
+          "date": "2026-11-10 08:50",
+          "summary": "輝達執行長黃仁勳近日承認有婚外情，據報對象是一家新加坡公司的中國籍高層。美方懷疑，該公司將輝達人工智慧晶片走私 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "別讓 AI 代理「自動化混亂」，企業應先重新檢視流程再導入",
-          "link": "https://finance.technews.tw/2026/11/11/are-your-processes-making-ai-agents-worse/",
-          "date": "2026-11-11 01:30",
-          "summary": "企業競相導入 AI 代理（AI agent），成效卻常不如預期。顧問公司 Centric Consulting [&#8230;]",
+          "title": "黃仁勳婚外情掀國安疑慮，中國學者：美對中 AI 晶片出口恐收緊",
+          "link": "https://technews.tw/2026/11/10/jensen-huang-extramarital-affair-national-security-concerns-china-us-ai-chip-exports-tighten/",
+          "date": "2026-11-10 08:40",
+          "summary": "輝達（Nvidia）執行長黃仁勳坦承與一名疑似中國女間諜有婚外情，引發美國國安疑慮。港媒星島日報引述中國學者分 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "美媒：黃仁勳婚外情關係，助 75 億美元輝達晶片銷往中國",
-          "link": "https://technews.tw/2026/11/11/us-media-jensen-huang-affair-aided-7-5-billion-nvidia-chip-sales-china/",
-          "date": "2026-11-11 01:20",
-          "summary": "美國科技媒體 The Information 10 日報導，輝達執行長黃仁勳與疑似是中國間諜的中國籍女商人黃樂 [&#8230;]",
+          "title": "韓國用 AI 系統偵測數位性犯罪，24 小時監測網路內容",
+          "link": "https://infosecu.technews.tw/2026/11/10/south-korea-ai-detects-digital-sex-crimes-24-7-monitoring/",
+          "date": "2026-11-10 08:40",
+          "summary": "在 AI 發達時代，數位性犯罪也日漸增加，為即時支援被害者、刪除受害內容，韓國設立被害者支援中心，並導入 AI [&#8230;]",
           "comments": ""
         },
         {
-          "title": "黃仁勳摔出富豪前十  輝達本益比崩、木頭姊抄底",
-          "link": "https://finance.technews.tw/2026/11/11/nvidia-ceo-huang-gets-more-bad-news-cathie-wood-keeps-the-faith/",
-          "date": "2026-11-11 01:10",
-          "summary": "輝達（Nvidia）執行長黃仁勳（Jensen Huang）身陷婚外情及疑似中國情報滲透調查風波，不僅讓他身價 [&#8230;]",
+          "title": "AI 僚機開始打團體戰，美軍兩架 FQ-44A 首度完成協同空戰測試",
+          "link": "https://technews.tw/2026/11/10/usaf-successfully-tested-2-yfq-44a-for-combat-flying-tests-in-team/",
+          "date": "2026-11-10 08:39",
+          "summary": "美國空軍協同作戰飛機（Collaborative Combat Aircraft，CCA）計畫再度取得進展，兩 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "需求看增  三井金屬蓋新廠、增產 AI DC 用銅箔",
-          "link": "https://finance.technews.tw/2026/11/11/mitsui-kinzoku-fy2026-q2-results-fy2026-forecast/",
-          "date": "2026-11-11 00:50",
-          "summary": "因預估需求將急速成長，日本三井金屬礦業（Mitsui Mining &#38; Smelting，通稱 Mit [&#8230;]",
+          "title": "傳月之暗面今夏租用 32 台伺服器，搭載輝達 B300 GPU",
+          "link": "https://technews.tw/2026/11/10/rumors-suggest-moonshot-ai-leases-nvidia-b300-gpu-servers/",
+          "date": "2026-11-10 08:30",
+          "summary": "綜合港媒引用彭博社報導，據一份提交給北京監管機構的文件顯示，中國人工智慧公司月之暗面（Moonshot AI） [&#8230;]",
           "comments": ""
         },
         {
-          "title": "獨立團隊的救星還是版權殺手？AI 淪為遊戲開發天平上的「超級變數」",
-          "link": "https://technews.tw/2026/11/11/gen-z-and-ai-are-changing-the-world-of-video-games/",
-          "date": "2026-11-11 00:45",
-          "summary": "生成式 AI 正以前所未有的速度滲入遊戲產業，帶來效率提升的同時，也讓抄襲、侵權與平台管理等問題同步升溫。根據 [&#8230;]",
+          "title": "輝達家族企業色彩矽谷罕見，黃仁勳兒女未來是否接班外界矚目",
+          "link": "https://technews.tw/2026/11/10/nvidia-family-business-culture-rare-silicon-valley-future-succession-jensen-huang-children-draws-attention/",
+          "date": "2026-11-10 08:20",
+          "summary": "輝達（Nvidia）執行長黃仁勳因捲入婚外情與中國間諜疑雲而成為焦點之際，外媒報導，黃家多名成員都在輝達擔任要 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "Anthropic 將在美 IPO，估值上看 1.4 兆美元",
-          "link": "https://finance.technews.tw/2026/11/11/anthropic-targets-1-4-trillion-ipo/",
-          "date": "2026-11-11 00:05",
-          "summary": "人工智慧（AI）新創公司 Anthropic 將進行備受矚目的大型首次公開募股（IPO），預計估值最高可達 1 [&#8230;]",
+          "title": "自製高階植入氣體切入全球一線半導體大廠！兆捷科技 12 月創新板上市",
+          "link": "https://finance.technews.tw/2026/11/10/self-made-high-end-implantation-gas/",
+          "date": "2026-11-10 08:08",
+          "summary": "兆捷科技明日將舉辦上市前業績發表會，預計 12 月初掛牌創新板交易，董事長高啓全表示，自製高階植入氣體已切入全 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 資料中心邁向光電融合時代，日本 NTT 布局光學小晶片搶攻下波半導體商機",
-          "link": "https://technews.tw/2026/11/11/accelerating-development-of-mass-production-technologies-for-photonics-electronics-convergence-devices-to-support-next-generation-ai-computing/",
-          "date": "2026-11-11 00:00",
-          "summary": "人工智慧運算需求急速成長，全球資料中心運算量大幅增加，但也讓傳統以銅線傳遞電子訊號的傳輸方式，限制 AI 伺服 [&#8230;]",
+          "title": "IPO 融資文件發出後急撤，Anthropic 稱定價資訊有誤",
+          "link": "https://finance.technews.tw/2026/11/10/anthropics-nearly-70-billion-ipo-plan-briefly-circulated-to-banks-then-retracted/",
+          "date": "2026-11-10 07:20",
+          "summary": "根據路透社看到的電子郵件內容，人工智慧（AI）公司 Anthropic 今天向銀行披露其規模龐大的首次公開發行 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "淺談 AMD 營收首次超車英特爾：AI 定勝負",
-          "link": "https://technews.tw/2026/11/11/amd-revenue-surpasses-intel-first-time-ai-determines-outcome/",
-          "date": "2026-11-10 23:50",
-          "summary": "如果 20 年前有人說，AMD 營收有一天會超越英特爾，大概會當成笑話。畢竟過去數十年的 PC 市場，英特爾始 [&#8230;]",
+          "title": "華碩跨足醫療碳管理，攜手臺大醫院導入 AI 技術",
+          "link": "https://technews.tw/2026/11/10/asus-ai-ntuh/",
+          "date": "2026-11-10 06:08",
+          "summary": "華碩今日宣布，與臺大醫院北護分院簽署「永續醫療與 ESG 數位轉型合作備忘錄（MOU）」，將結合 AI 技術、 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 速度超越人類掌控，法國哲學家維希留數十年前就已預見",
-          "link": "https://infosecu.technews.tw/2026/11/11/how-a-french-philosophers-warnings-about-speed-and-power-describe-todays-ai-race/",
-          "date": "2026-11-10 23:40",
-          "summary": "微軟共同創辦人比爾蓋茲（Bill Gates）9 月上 NBC 節目《與媒體見面》時警告，AI 威力足以引發可 [&#8230;]",
+          "title": "AI Agent 落地決戰！SIRAYA 聯手國際權威 Arize AI 拆解 AI 觀測",
+          "link": "https://finance.technews.tw/2026/11/10/arize-ai/",
+          "date": "2026-11-10 05:18",
+          "summary": "隨著企業將大型語言模型（LLM）導入客服、知識管理及自動化工作流程，AI 觀測逐漸成為企業 AI 工程的重要課 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 時代人類表達力反成關鍵，英國基礎教育重新納入口語訓練課程",
-          "link": "https://technews.tw/2026/11/11/ai-era-expressive-power-key-uk-integrates-oral-communication-training-national-curriculum/",
-          "date": "2026-11-10 23:20",
-          "summary": "英國教育大臣鮑爾（Lucy Powell）日前宣布，口語能力（oracy）將正式納入英國國家課程，與閱讀、寫作 [&#8230;]",
+          "title": "美新創 AI 機器人潛入 4 千公尺深海，精準夾取多金屬結核成功",
+          "link": "https://technews.tw/2026/11/10/impossible-metals-autonomous-robot-selectively-harvests-deep-sea-nodules-2-5-miles-down/",
+          "date": "2026-11-10 04:50",
+          "summary": "美國深海採礦技術新創 Impossible Metals 9 日宣布，自動水下機器人「Eureka 採集系統」 [&#8230;]",
           "comments": ""
         }
       ]
