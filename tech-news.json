@@ -1,16 +1,16 @@
 {
-  "updated": "2026-11-11 19:01",
+  "updated": "2026-11-12 03:01",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "AWS Finally Built Its Own AWS Emulator",
-          "link": "https://github.com/aws/aws-emulator",
-          "date": "2026-11-11 18:21",
+          "title": "93% of paint splatters are valid Perl programs (2019)",
+          "link": "https://www.mcmillen.dev/sigbovik/",
+          "date": "2026-11-11 22:34",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50456631"
+          "comments": "https://news.ycombinator.com/item?id=50459745"
         },
         {
           "title": "Tim Peters has died",
@@ -20,6 +20,27 @@
           "comments": "https://news.ycombinator.com/item?id=50450488"
         },
         {
+          "title": "AWS emulator",
+          "link": "https://github.com/aws/aws-emulator",
+          "date": "2026-11-11 18:21",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50456631"
+        },
+        {
+          "title": "Lock Your GitHub Actions",
+          "link": "https://hugovk.dev/blog/2026/lock-github-actions/",
+          "date": "2026-11-11 22:16",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50459485"
+        },
+        {
+          "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
+          "link": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+          "date": "2026-11-11 21:24",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50458900"
+        },
+        {
           "title": "A false smoke alarm almost drowned Jane Street's only NYC datacenter",
           "link": "https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/",
           "date": "2026-11-11 16:38",
@@ -27,67 +48,46 @@
           "comments": "https://news.ycombinator.com/item?id=50455394"
         },
         {
-          "title": "Faster Retrieval for Better, More Efficient RAG",
-          "link": "https://machinelearning.apple.com/research/faster-retrieval",
-          "date": "2026-11-11 16:57",
+          "title": "Gemini Decisions API",
+          "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+          "date": "2026-11-11 18:32",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50455633"
+          "comments": "https://news.ycombinator.com/item?id=50456791"
         },
         {
-          "title": "AWS Emulator and the engineer's job when agents write the code",
-          "link": "https://www.allthingsdistributed.com/2026/11/aws-emulator-and-the-engineers-job-when-agents-write-the-code.html",
-          "date": "2026-11-11 18:28",
+          "title": "Did Life Begin in an RNA World?",
+          "link": "https://www.quantamagazine.org/did-life-begin-in-an-rna-world-20261109/",
+          "date": "2026-11-09 17:27",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50456740"
+          "comments": "https://news.ycombinator.com/item?id=50428619"
         },
         {
-          "title": "Google SWE points 48 AI agents at NASA Lidar, finds unmapped Maya pyramid in 72h",
-          "link": "https://pietromiotti.com/latest/maya-site/?maya",
-          "date": "2026-11-11 12:05",
+          "title": "A general purpose Apple Silicon layer for x86-64 PCs",
+          "link": "https://github.com/tylertms/Stela",
+          "date": "2026-11-11 23:02",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50452455"
+          "comments": "https://news.ycombinator.com/item?id=50460154"
         },
         {
-          "title": "Hyper-Realistic Sand with WebGL2",
-          "link": "https://av.github.io/safe-sand/",
-          "date": "2026-11-11 13:39",
+          "title": "Emacs in the Age of Magic",
+          "link": "https://commandlinesystems.com/magic.txt",
+          "date": "2026-11-11 20:26",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50453288"
+          "comments": "https://news.ycombinator.com/item?id=50458208"
         },
         {
-          "title": "Atuin Threads: All your agent sessions on every machine",
-          "link": "https://blog.atuin.sh/threads-agent-sessions/",
-          "date": "2026-11-11 14:10",
+          "title": "The Utah Teapot",
+          "link": "https://graphics.cs.utah.edu/teapot/",
+          "date": "2026-11-11 19:45",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50453637"
+          "comments": "https://news.ycombinator.com/item?id=50457618"
         },
         {
-          "title": "Show HN: Yogurt – Free, private, open-source alternative to Granola",
-          "link": "https://github.com/FrigadeHQ/yogurt",
-          "date": "2026-11-11 15:33",
+          "title": "Show HN: I recreated Papers Please but you're deciding which YC startups to fund",
+          "link": "https://termsheetplease.com/",
+          "date": "2026-11-11 19:12",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50454625"
-        },
-        {
-          "title": "Can a Linear Program Do Weight-Space Programming?",
-          "link": "https://nathan.rs/posts/weight-space-lp/",
-          "date": "2026-11-11 12:30",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50452655"
-        },
-        {
-          "title": "Launch HN: Pomerado (YC F26) – Turn any website into an MCP for agents",
-          "link": "https://pomerado.ai/",
-          "date": "2026-11-11 17:11",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50455811"
-        },
-        {
-          "title": "Pharo in the Browser with WebAssembly",
-          "link": "https://massimo-nocentini.github.io/pharo-vm/world.html",
-          "date": "2026-11-11 14:21",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50453763"
+          "comments": "https://news.ycombinator.com/item?id=50457230"
         }
       ]
     },
@@ -96,7 +96,13 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
-          "title": "Nvidia’s Jensen Huang believes suffering builds character. The spy scandal could test his philosophy",
+          "title": "Nvidia stock drops as board weighs Jensen Huang’s future",
+          "link": "https://edition.cnn.com/2026/11/11/investing/nvidia-stock-jensen-huang",
+          "date": "2026-11-11",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Jensen Huang dreamed up Nvidia at a Denny’s. The spy scandal threatens decades of his life’s work",
           "link": "https://edition.cnn.com/2026/11/11/tech/jensen-huang-nvidia-affair-profile",
           "date": "2026-11-11",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
@@ -104,6 +110,12 @@
         {
           "title": "A new fire-suppression system fights flames with sound waves",
           "link": "https://edition.cnn.com/2026/11/11/business/sound-waves-fire-suppression-sonic-fire-tech-spc",
+          "date": "2026-11-11",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Nvidia board discusses CEO Jensen Huang’s future as scandal roils one of America’s most valuable companies",
+          "link": "https://edition.cnn.com/2026/11/11/business/live-news/nvidia-jensen-huang-investigation-fallout",
           "date": "2026-11-11",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -154,18 +166,6 @@
           "link": "https://edition.cnn.com/2026/11/04/tech/nintendo-link-legend-of-zelda-ocarina-gta",
           "date": "2026-11-04",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Google will let schools turn off AI, but they may also lose Search",
-          "link": "https://edition.cnn.com/2026/11/03/tech/google-ai-search-policy",
-          "date": "2026-11-03",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Anthropic was founded to answer to humanity. Soon, it will also answer to Wall Street",
-          "link": "https://edition.cnn.com/2026/11/03/tech/anthropic-ipo-ai-safety",
-          "date": "2026-11-03",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         }
       ]
     },
@@ -173,6 +173,30 @@
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "Google Pixel手機拍照存不了檔、狂耗電！官方出手修復33項Bug",
+          "link": "https://3c.ltn.com.tw/news/68249",
+          "date": "2026/11/12 10:31",
+          "summary": "Google正式釋出Pixel手機11月軟體更新，這次除了帶來不少新功能，以及例行安全性修補，也一口氣修復及改善33 ..."
+        },
+        {
+          "title": "Google Gemini正式登上Apple CarPlay 手機聊到一半 上車接著聊",
+          "link": "https://3c.ltn.com.tw/news/68250",
+          "date": "2026/11/12 09:45",
+          "summary": "Google宣布，旗下AI聊天機器人Gemini App正式支援Apple CarPlay，即日起在全球陸續開放，讓 ..."
+        },
+        {
+          "title": "ChatGPT兩大功能要沒了！OpenAI宣布停用日期 掀用戶反彈",
+          "link": "https://3c.ltn.com.tw/news/68246",
+          "date": "2026/11/12 09:15",
+          "summary": "OpenAI宣布，ChatGPT將在12月11日迎來一項重大調整，正式停用「進階語音模式」（Advanced Voi ..."
+        },
+        {
+          "title": "32支智慧型手機電池續航大測試！iPhone 18 Pro Max成功拿下第一",
+          "link": "https://3c.ltn.com.tw/news/68245",
+          "date": "2026/11/12 08:40",
+          "summary": "現代人使用智慧型手機都相當注意電池續航力問題，而近日外媒《CNET》便公布針對現行市面上 32 款智慧型手機進行電池 ..."
+        },
         {
           "title": "《GTA 6》爆出預購量逼近1000萬套！11/19上市日恐引爆請假潮",
           "link": "https://3c.ltn.com.tw/news/68244",
@@ -220,30 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68241",
           "date": "2026/11/11 13:30",
           "summary": "一名Threads網友近日分享收到的LINE通知截圖，上面寫著「聊天記錄超過6個月後將不再顯示，購買聊天進階方案則可 ..."
-        },
-        {
-          "title": "去中國出差、旅遊不能用Claude！台灣帳號也受限 注意3件事",
-          "link": "https://3c.ltn.com.tw/news/68240",
-          "date": "2026/11/11 12:40",
-          "summary": "Claude用戶注意了，開發商Anthropic宣布新版「支援地區政策」將於11月12日生效，進一步明確規範服務使用 ..."
-        },
-        {
-          "title": "怕旁人偷看手機畫面？iPhone 隱藏功能一鍵調暗螢幕 設定步驟完整公開",
-          "link": "https://3c.ltn.com.tw/news/68225",
-          "date": "2026/11/11 12:00",
-          "summary": "搭乘捷運、坐在咖啡廳或其他公共場所使用 iPhone，難免遇到旁人從側面窺視螢幕內容的情況。雖然市面上有防窺保護貼可 ..."
-        },
-        {
-          "title": "玩家注意！任天堂宣布一功能將停用 Google、Apple帳號受影響",
-          "link": "https://3c.ltn.com.tw/news/68239",
-          "date": "2026/11/11 11:15",
-          "summary": "平常習慣使用Google或Apple帳號快速登入任天堂帳號的玩家注意了，任天堂宣布，將於2027年1月26日起，正式 ..."
-        },
-        {
-          "title": "年輕人沒看過的 3.5 吋軟碟還在服役！美國 FAA 宣布淘汰 改全新系統",
-          "link": "https://3c.ltn.com.tw/news/68226",
-          "date": "2026/11/11 10:40",
-          "summary": "2026 年已來到尾聲，當多數人早已使用 SSD 固態硬碟、記憶卡、外接硬碟作為電腦儲存資料時，美國機場才正準備條淘 ..."
         }
       ]
     },
