@@ -1,23 +1,30 @@
 {
-  "updated": "2026-11-14 02:27",
+  "updated": "2026-11-14 04:08",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "FAA lifted National Ground Stop at 0119Z",
-          "link": "https://www.fly.faa.gov/adv/adv_otherdis?adv_date=11142026&advn=5",
-          "date": "2026-11-14 01:30",
+          "title": "Ggml v1.0.0",
+          "link": "https://github.com/ggml-org/ggml/releases/tag/v1.0.0",
+          "date": "2026-11-14 02:28",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50492601"
+          "comments": "https://news.ycombinator.com/item?id=50493062"
         },
         {
-          "title": "FAA issues national ground stop",
+          "title": "FAA issues national ground stop – lifted 4.5 hours later",
           "link": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
           "date": "2026-11-13 21:05",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50489641"
+        },
+        {
+          "title": "Terminal borders that don't cost a cell",
+          "link": "https://www.joshka.net/cell-borders/",
+          "date": "2026-11-13 23:06",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50491423"
         },
         {
           "title": "What Happened to 3Com?",
@@ -34,25 +41,11 @@
           "comments": "https://news.ycombinator.com/item?id=50490593"
         },
         {
-          "title": "Terminal borders that don't cost a cell",
-          "link": "https://www.joshka.net/cell-borders/",
-          "date": "2026-11-13 23:06",
+          "title": "Nvidia Allegedly Engineered Scarcity by Funding AI Startups to Buy Its GPUs",
+          "link": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
+          "date": "2026-11-14 02:52",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50491423"
-        },
-        {
-          "title": "Amtrak booking system experiencing major issues amid nationwide FAA ground stop",
-          "link": "https://www.fox5dc.com/news/amtrak-outage-ticket-booking-faa-ground-stop-november-13-2026",
-          "date": "2026-11-14 00:52",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50492315"
-        },
-        {
-          "title": "FM-1 Workbench",
-          "link": "https://open.m-vave.com/fm1-workbench",
-          "date": "2026-11-13 19:14",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50488325"
+          "comments": "https://news.ycombinator.com/item?id=50493251"
         },
         {
           "title": "Reverse engineering my Coway air purifier to ditch the cloud",
@@ -62,6 +55,27 @@
           "comments": "https://news.ycombinator.com/item?id=50474959"
         },
         {
+          "title": "Show HN: Live map of U.S. flights during tonight's FAA nationwide ground stop",
+          "link": "https://grounds.top/",
+          "date": "2026-11-13 23:17",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50491545"
+        },
+        {
+          "title": "Elephants found to be increasingly isolated leading to fractured social networks",
+          "link": "https://today.ucsd.edu/story/elephants-found-to-be-increasingly-isolated-leading-to-fractured-social-networks",
+          "date": "2026-11-14 02:02",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50492860"
+        },
+        {
+          "title": "Amtrak booking system experiencing major issues amid nationwide FAA ground stop",
+          "link": "https://www.fox5dc.com/news/amtrak-outage-ticket-booking-faa-ground-stop-november-13-2026",
+          "date": "2026-11-14 00:52",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50492315"
+        },
+        {
           "title": "Found: A protein that drives ageing without unleashing inflammation",
           "link": "https://www.nature.com/articles/d41586-026-03638-3",
           "date": "2026-11-13 19:25",
@@ -69,25 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50488470"
         },
         {
-          "title": "Anthropic Upgrades Claude Code Projects to Run Parallel AI Workers Hands-Free",
-          "link": "https://alphasignal.ai/news/anthropic-upgrades-claude-code-projects-to-run-parallel-ai-workers-hands-free",
-          "date": "2026-11-14 00:28",
+          "title": "Doomsday: Friday, 13 November, A.D. 2026 (1960)",
+          "link": "https://www.science.org/doi/10.1126/science.132.3436.1291",
+          "date": "2026-11-13 12:10",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50492141"
-        },
-        {
-          "title": "Ukraine knocks out 36% of Russia's oil refining capacity in under two weeks",
-          "link": "https://english.nv.ua/nation/thirteen-day-drone-blitz-paralyzes-36-of-moscow-s-oil-50658616.html",
-          "date": "2026-11-14 01:10",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50492456"
-        },
-        {
-          "title": "After 600 experiments, here's what I discovered about JEPA world models",
-          "link": "https://haddyalchaer.com/jepa",
-          "date": "2026-11-13 17:55",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50487185"
+          "comments": "https://news.ycombinator.com/item?id=50482379"
         }
       ]
     },
@@ -174,6 +174,18 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "安卓高價旗艦大跳水！TOP 15手機降價新榜出爐 通路：沒降難賣",
+          "link": "https://3c.ltn.com.tw/news/68288",
+          "date": "2026/11/14 12:00",
+          "summary": "蘋果摺疊手機iPhone Duo上市後，讓摺疊手機市場再度成為焦點，不過，Android陣營早在第三季就已掀起一波降 ..."
+        },
+        {
+          "title": "微軟大當機24小時才「大致恢復」！美國又爆全國停飛 官方急澄清",
+          "link": "https://3c.ltn.com.tw/news/68285",
+          "date": "2026/11/14 10:51",
+          "summary": "微軟Microsoft 365昨(13日)爆發全球大當機，影響旗下Outlook、Teams、Copilot等多項服 ..."
+        },
+        {
           "title": "蘋果調整iPhone回收價！11款逆勢上漲 7年老機竟奪漲幅王",
           "link": "https://3c.ltn.com.tw/news/68278",
           "date": "2026/11/14 10:00",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68269",
           "date": "2026/11/13 13:10",
           "summary": "輝達(NVIDIA)前執行長黃仁勳接連爆出婚外情，引起全球關注，除了疑似中國共諜黃樂之外，還有其他「親密枕邊人」，隨 ..."
-        },
-        {
-          "title": "三星首款AI智慧眼鏡來了！竟支援iPhone 多數安卓手機卻不能用",
-          "link": "https://3c.ltn.com.tw/news/68264",
-          "date": "2026/11/13 11:10",
-          "summary": "三星和Google合作打造的Intelligent Eyewear終於正式登場，這是首款搭載Android XR平台 ..."
-        },
-        {
-          "title": "Google搜尋更聰明！複雜問題一次問 Gemini新模型全球上線",
-          "link": "https://3c.ltn.com.tw/news/68262",
-          "date": "2026/11/13 10:05",
-          "summary": "Google搜尋服務迎來重大AI升級，正式導入新一代Gemini 4 Hydrogen模型，不只更懂用戶想問什麼，還 ..."
         }
       ]
     },
@@ -251,27 +251,6 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
-        {
-          "title": "美國期中選舉使美台股市劇烈震盪，專家揭三大訊號台股還有機會上 5 萬點",
-          "link": "https://finance.technews.tw/2026/11/14/ai-stocks-plunge-rebound-taiwan-stock-market-50000-points-experts-reveal-3-signals/",
-          "date": "2026-11-14 02:00",
-          "summary": "美國期中選舉讓高速狂飆的 AI 列車急煞，造成美台股宛如坐雲霄飛車。台股 6 日刷新最大跌點紀錄、一度跌破 4 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 代理進駐銀行，美國監理機關要求：能追蹤、能稽核、能關機",
-          "link": "https://finance.technews.tw/2026/11/14/how-ai-might-be-deployed-for-better-bank-supervision/",
-          "date": "2026-11-14 01:30",
-          "summary": "美國的銀行監理機關正把焦點放在如何運用人工智慧強化銀行監理，同時也關切自主式 AI 代理在金融機構中的風險控管 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "黃仁勳風波延燒！黃樂參與創立的 Megaspeed 是中國取得輝達 GPU 的祕密管道？",
-          "link": "https://finance.technews.tw/2026/11/14/what-is-megaspeed/",
-          "date": "2026-11-14 01:00",
-          "summary": "《財訊》報導，輝達執行長黃仁勳 8 日寄信給員工坦承有婚外情，並表達歉意；外媒報導指出，「女主角」是曾在新加坡 [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "黃仁勳傳奇造就身價 8 億研發人才，財務長臨危接棒留才成關鍵課題",
           "link": "https://finance.technews.tw/2026/11/13/jensen-huangs-legendary-success-has-created-a-net-worth-of-800-million-for-nvidias-rd-talent/",
@@ -334,6 +313,27 @@
           "date": "2026-11-13 08:06",
           "summary": "2026 資訊月暨臺灣教育科技展於 11 月 12 日至 15 日在台北世貿一館登場，蘋果今年設立「Mac &#038; [&#8230;]",
           "comments": ""
+        },
+        {
+          "title": "SpaceX 砸 740 億美元，德州亞利桑那州建 AI 超級電腦園區",
+          "link": "https://technews.tw/2026/11/13/spacex-74-billion-ai-supercomputer-campuses-texas-arizona/",
+          "date": "2026-11-13 08:00",
+          "summary": "美國太空探索科技公司（SpaceX）今天表示，計劃斥資逾 740 億美元，在德州星際基地及亞利桑那州科奇斯郡興 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "黃仁勳外遇風波延燒，馬來西亞查緋聞女方前東家子公司",
+          "link": "https://technews.tw/2026/11/13/jensen-huang-affair-scandal-malaysia-investigates-alleged-mistress-former-employer-subsidiary/",
+          "date": "2026-11-13 07:40",
+          "summary": "美國人工智慧（AI）晶片巨擘輝達（NVIDIA）創辦人黃仁勳婚外情風波延燒，馬來西亞今天表示，他們正調查 Me [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Google 研究員稱以 48 個 AI 代理找到未知馬雅遺址，其實 2025 年就發表過",
+          "link": "https://infosecu.technews.tw/2026/11/13/no-ai-agents-did-not-discover-a-previously-unknown-maya-site/",
+          "date": "2026-11-13 07:10",
+          "summary": "Google 研究員 Pietro Miotti 宣稱用 AI 代理分析 NASA 光達資料，在墨西哥找到一處 [&#8230;]",
+          "comments": ""
         }
       ]
     },
@@ -341,20 +341,6 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
-        {
-          "title": "黃仁勳風波延燒！黃樂參與創立的 Megaspeed 是中國取得輝達 GPU 的祕密管道？",
-          "link": "https://finance.technews.tw/2026/11/14/what-is-megaspeed/",
-          "date": "2026-11-14 01:00",
-          "summary": "《財訊》報導，輝達執行長黃仁勳 8 日寄信給員工坦承有婚外情，並表達歉意；外媒報導指出，「女主角」是曾在新加坡 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "輝達助攻矽品登峰！從 CoWoS 代工邁向 CPO 新藍海，研發老將揭密十年技術布局",
-          "link": "https://finance.technews.tw/2026/11/14/ase-tech-holding-growth-accelerates-nvidia-spil-cowos-cpo-strategic-planning-new-segments/",
-          "date": "2026-11-14 00:00",
-          "summary": "今年以來，封測龍頭日月光投控成長顯著，今年前三季營收再創高峰。 旗下矽品研發大將，在成功大學舉辦的成材論壇上， [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "跑起來，別用走的！皮衣黃仁勳再也不上台演講的 AI 時代就這樣跑步來臨",
           "link": "https://finance.technews.tw/2026/11/13/the-ai-%e2%80%8b%e2%80%8bera-is-rapidly-approaching-with-jensen-huang-no-longer-giving-speeches-on-stage/",
@@ -424,6 +410,20 @@
           "date": "2026-11-13 06:32",
           "summary": "優必達（Ubitus）近日以實物捐贈 AI GPU 伺服器給中央大學，設備由資訊工程學系教授蔡宗翰主持的智慧型 [&#8230;]",
           "comments": ""
+        },
+        {
+          "title": "輝達韓國前代表談黃仁勳卸任，CUDA 優勢仍在短期影響有限",
+          "link": "https://technews.tw/2026/11/13/former-nvidia-korea-representative-discusses-jensen-huang-departure-cuda-advantage-remains-short-term-impact-limited/",
+          "date": "2026-11-13 06:30",
+          "summary": "輝達（NVIDIA）執行長黃仁勳投下卸任震撼彈，曾與他共事 7 年的輝達韓國（NVIDIA Korea）前代表 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "黃仁勳震撼卸任 AI 格局恐生變，韓國企業有望受惠",
+          "link": "https://technews.tw/2026/11/13/jensen-huang-resignation-ai-landscape-shift-korean-firms-benefit/",
+          "date": "2026-11-13 06:20",
+          "summary": "輝達（Nvidia）執行長黃仁勳宣布卸任引起軒然大波，韓國半導體業界認為，過去由輝達主導、稱霸 AI 領域的產 [&#8230;]",
+          "comments": ""
         }
       ]
     },
@@ -431,13 +431,6 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
-        {
-          "title": "美國期中選舉使美台股市劇烈震盪，專家揭三大訊號台股還有機會上 5 萬點",
-          "link": "https://finance.technews.tw/2026/11/14/ai-stocks-plunge-rebound-taiwan-stock-market-50000-points-experts-reveal-3-signals/",
-          "date": "2026-11-14 02:00",
-          "summary": "美國期中選舉讓高速狂飆的 AI 列車急煞，造成美台股宛如坐雲霄飛車。台股 6 日刷新最大跌點紀錄、一度跌破 4 [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "跑起來，別用走的！皮衣黃仁勳再也不上台演講的 AI 時代就這樣跑步來臨",
           "link": "https://finance.technews.tw/2026/11/13/the-ai-%e2%80%8b%e2%80%8bera-is-rapidly-approaching-with-jensen-huang-no-longer-giving-speeches-on-stage/",
@@ -513,6 +506,13 @@
           "link": "https://technews.tw/2026/11/13/mercedes-benz-suspends-investment-german-plants-labor-talks-deadlock-threatens-closures/",
           "date": "2026-11-13 02:20",
           "summary": "德國汽車大廠賓士今天宣布，暫停進一步投資德國工廠，同時開始評估關閉部分廠房。近年中國市場獲利大幅下滑，賓士要求 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "黃仁勳事件台灣 AI 供應鏈非訂單消失，是規格升級放緩導致獲利增量縮水與遞延",
+          "link": "https://finance.technews.tw/2026/11/13/the-huang-renxun-incident-taiwans-ai-supply-chain-has-seen-the-disappearance-of-non-orders/",
+          "date": "2026-11-13 02:00",
+          "summary": "輝達（NVIDIA）執行長黃仁勳的離職風波引發市場高度關注，市場焦點專注在離任後對全球 AI 產業鏈的連鎖反應 [&#8230;]",
           "comments": ""
         }
       ]
