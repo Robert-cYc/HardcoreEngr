@@ -1,16 +1,37 @@
 {
-  "updated": "2026-11-16 02:10",
+  "updated": "2026-11-16 03:54",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
+          "title": "Universal XSS in uBlock Origin from website-driven element picker",
+          "link": "https://iter.ca/post/ubo-uxss/",
+          "date": "2026-11-16 02:04",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50513160"
+        },
+        {
+          "title": "Qwen4-Max",
+          "link": "https://qwen.ai/blog?id=qwen4-max",
+          "date": "2026-11-16 02:14",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50513215"
+        },
+        {
           "title": "Old Bitly links are being hijacked",
           "link": "https://ransomnews.com/burger-king-tweet-bitly-link-hijack-2026/",
           "date": "2026-11-15 22:11",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50511395"
+        },
+        {
+          "title": "What's Next for Nvidia?",
+          "link": "https://steveblank.com/2026/11/15/whats-next-for-nvidia/",
+          "date": "2026-11-15 23:55",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50512235"
         },
         {
           "title": "Coles hit by a cybersecurity incident",
@@ -27,11 +48,11 @@
           "comments": "https://news.ycombinator.com/item?id=50511806"
         },
         {
-          "title": "Mini.nvim Is Now on Tangled",
-          "link": "https://tangled.org/nvim-mini.org/mini.nvim",
-          "date": "2026-11-15 23:55",
+          "title": "Tor Project Issues Rapid-Response DoS-Defense Fix Amid Sustained DDoS Attack",
+          "link": "https://forum.torproject.org/t/security-release-0-4-9-17/22454",
+          "date": "2026-11-16 00:21",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50512231"
+          "comments": "https://news.ycombinator.com/item?id=50512441"
         },
         {
           "title": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
@@ -41,13 +62,6 @@
           "comments": "https://news.ycombinator.com/item?id=50509837"
         },
         {
-          "title": "What's Next for Nvidia?",
-          "link": "https://steveblank.com/2026/11/15/whats-next-for-nvidia/",
-          "date": "2026-11-15 23:55",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50512235"
-        },
-        {
           "title": "A short explainer on how El Niño works [video]",
           "link": "https://www.youtube.com/watch?v=7_JF3etiAv8",
           "date": "2026-11-15 18:23",
@@ -55,11 +69,11 @@
           "comments": "https://news.ycombinator.com/item?id=50509308"
         },
         {
-          "title": "Tor Project Issues Rapid-Response DoS-Defense Fix Amid Sustained DDoS Attack",
-          "link": "https://forum.torproject.org/t/security-release-0-4-9-17/22454",
-          "date": "2026-11-16 00:21",
+          "title": "Do we still have to denormalize? Have your schema and search it too",
+          "link": "https://www.paradedb.com/blog/joins",
+          "date": "2026-11-13 15:31",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50512441"
+          "comments": "https://news.ycombinator.com/item?id=50484998"
         },
         {
           "title": "Crows make decisions faster than we can",
@@ -74,20 +88,6 @@
           "date": "2026-11-15 13:15",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50506719"
-        },
-        {
-          "title": "WebGL Flight Simulator with seed generated terrain",
-          "link": "https://baron.by.dai.studio/",
-          "date": "2026-11-15 20:20",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50510296"
-        },
-        {
-          "title": "Handwriting, as a Font",
-          "link": "https://ductus.sorenblank.com",
-          "date": "2026-11-15 19:42",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50509972"
         }
       ]
     },
@@ -174,6 +174,12 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "NVIDIA 黃仁勳簽名顯卡值多少錢？網友看好拍賣價飆破百萬",
+          "link": "https://3c.ltn.com.tw/news/68299",
+          "date": "2026/11/16 10:30",
+          "summary": "NVIDIA 創辦人黃仁勳在 11 月 12 日，辭去執行長一職引起全球震撼，在美國網路討論區裡有人分享一張有著黃仁 ..."
+        },
+        {
           "title": "PS5與Xbox玩《GTA 6》有差異！官方公布兩大主機特點",
           "link": "https://3c.ltn.com.tw/news/68295",
           "date": "2026/11/16 10:05",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68287",
           "date": "2026/11/15 12:00",
           "summary": "復古風潮席捲年輕世代，十幾年前的老手機也重新翻紅，蘋果2013年推出的iPhone 5c，近年成為Z世代關注的熱門產 ..."
-        },
-        {
-          "title": "LINE免費功能又少一個！用了6年改收費 明起正式上路",
-          "link": "https://3c.ltn.com.tw/news/68282",
-          "date": "2026/11/15 09:01",
-          "summary": "LINE用戶注意，自明(11月16日)起，「無聲訊息」功能將正式轉為LINE Premium會員專屬福利，意味著之後 ..."
         }
       ]
     },
@@ -251,6 +251,34 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "訓練資料爭奪戰升溫，Memories.ai 推打工平台付錢請大家拍影片給機器人看",
+          "link": "https://technews.tw/2026/11/15/memories-ai-launches-memories-upload-a-gig-work-platform-for-robot-training-data/",
+          "date": "2026-11-15 09:00",
+          "summary": "機器人要學會煮咖啡、上架商品或修理設備，需要大量人類實際動手做事的畫面。美國舊金山新創公司 Memories. [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "四成主管認 AI 無法取代專業、「AI 回歸」比例達 19%，逾五成勞工喊漲薪資",
+          "link": "https://technews.tw/2026/11/15/ai-re-hiring-trend-companies-acknowledge-ai-limits/",
+          "date": "2026-11-15 08:00",
+          "summary": "隨著人工智慧（AI）技術快速普及，許多企業試圖透過自動化來降低成本並提升效率，但現實情況卻往往事與願違。根據人 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 重整組織打擊員工士氣，科技主管點出導致轉型失敗最常見錯誤",
+          "link": "https://finance.technews.tw/2026/11/15/what-tech-leaders-get-wrong-about-ai-restructuring-and-morale/",
+          "date": "2026-11-15 06:00",
+          "summary": "人工智慧（AI）正迫使科技企業重新調整團隊編制與工作分配。然而，即便 AI 驅動的組織重整商業面很合理，員工未 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "黃仁勳去職後首場輝達財報說明會，法人看 AI 展望牽動台股",
+          "link": "https://finance.technews.tw/2026/11/15/nvidia-earnings-call-post-jensen-huang-departure-ai-outlook-impacts-taiwan-stocks/",
+          "date": "2026-11-15 04:56",
+          "summary": "台股上週強勁彈升 3973.48 點，收在 43675.12點。法人表示，輝達即將於美國時間 11 月 17 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "歐盟領袖將舉行首次 AI 會談，輝達案未列正式議程",
           "link": "https://technews.tw/2026/11/15/eu-leaders-first-ai-talks-nvidia-case-not-official-agenda/",
@@ -306,34 +334,6 @@
           "date": "2026-11-14 06:30",
           "summary": "廣達副董事長梁次震指出，台灣在全球 AI 供應鏈中仍具有競爭優勢，對於 AI 產業未來發展依舊抱持正面態度。尤 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "CAIM1 與 Lutra 推「防偽相機」，以區塊鏈為照片建立數位身分證",
-          "link": "https://infosecu.technews.tw/2026/11/14/caim1-ai-anti-counterfeiting-camera/",
-          "date": "2026-11-14 06:00",
-          "summary": "隨著人工智慧（AI）生成的影像與深偽技術（Deepfake）日益氾濫，我們眼見的「真實」正遭遇前所未有的挑戰。 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "資料駐留不再是法務雜事，已成企業擴張戰略一環",
-          "link": "https://finance.technews.tw/2026/11/14/why-data-residency-is-an-ai-strategy-decision-not-a-compliance-one/",
-          "date": "2026-11-14 02:30",
-          "summary": "API 資安公司 Salt Security 營運長暨共同創辦人邁克爾·妮可西婭（Michael Nicosi [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "美國期中選舉使美台股市劇烈震盪，專家揭三大訊號台股還有機會上 5 萬點",
-          "link": "https://finance.technews.tw/2026/11/14/ai-stocks-plunge-rebound-taiwan-stock-market-50000-points-experts-reveal-3-signals/",
-          "date": "2026-11-14 02:00",
-          "summary": "美國期中選舉讓高速狂飆的 AI 列車急煞，造成美台股宛如坐雲霄飛車。台股 6 日刷新最大跌點紀錄、一度跌破 4 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 代理進駐銀行，美國監理機關要求：能追蹤、能稽核、能關機",
-          "link": "https://finance.technews.tw/2026/11/14/how-ai-might-be-deployed-for-better-bank-supervision/",
-          "date": "2026-11-14 01:30",
-          "summary": "美國的銀行監理機關正把焦點放在如何運用人工智慧強化銀行監理，同時也關切自主式 AI 代理在金融機構中的風險控管 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -342,7 +342,14 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
-          "title": "台灣首顆 GPGPU 獲飛行履歷　捷揚太空代工轉攻研發拓商機",
+          "title": "黃仁勳去職後首場輝達財報說明會，法人看 AI 展望牽動台股",
+          "link": "https://finance.technews.tw/2026/11/15/nvidia-earnings-call-post-jensen-huang-departure-ai-outlook-impacts-taiwan-stocks/",
+          "date": "2026-11-15 04:56",
+          "summary": "台股上週強勁彈升 3973.48 點，收在 43675.12點。法人表示，輝達即將於美國時間 11 月 17 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "台灣首顆 GPGPU 獲飛行履歷，捷揚太空代工轉攻研發拓商機",
           "link": "https://technews.tw/2026/11/15/taiwan-first-gpgpu-flight-heritage-jasc-aerospace-shifts-oem-rd-business-expansion/",
           "date": "2026-11-15 03:22",
           "summary": "歷時3年，國家太空中心（TASA）與捷揚航電合作開發通用圖形處理器（GPGPU），完成在軌驗證，成為台灣首顆取 [&#8230;]",
@@ -416,13 +423,6 @@
           "link": "https://finance.technews.tw/2026/11/13/jensen-huang-resignation-nvidia-turmoil-tsmc-amd-broadcom-benefit/",
           "date": "2026-11-13 09:40",
           "summary": "輝達領導危機正為合作夥伴及最大競爭對手創造機會，台積電、超微與博通等企業有望受惠。投資人認為，黃仁勳辭去輝達執 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 晶片需求旺  應材 Q4 營收飆 53%、本季再戰新高",
-          "link": "https://finance.technews.tw/2026/11/13/applied-materials-q4-revenue-surges-53/",
-          "date": "2026-11-13 07:50",
-          "summary": "全球半導體設備大廠應用材料（Applied Materials）12 日公布最新財報，受惠 AI 晶片與高階記 [&#8230;]",
           "comments": ""
         }
       ]
