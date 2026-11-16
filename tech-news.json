@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-16 03:54",
+  "updated": "2026-11-16 06:52",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
+        {
+          "title": "How to Make Almost Anything",
+          "link": "https://pub.cba.mit.edu/863.26/site/",
+          "date": "2026-11-16 05:50",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50514470"
+        },
         {
           "title": "Universal XSS in uBlock Origin from website-driven element picker",
           "link": "https://iter.ca/post/ubo-uxss/",
@@ -34,11 +41,11 @@
           "comments": "https://news.ycombinator.com/item?id=50512235"
         },
         {
-          "title": "Coles hit by a cybersecurity incident",
-          "link": "https://www.colesgroup.com.au/updates/",
-          "date": "2026-11-16 01:14",
+          "title": "Tor Project Issues Rapid-Response DoS-Defense Fix Amid Sustained DDoS Attack",
+          "link": "https://forum.torproject.org/t/security-release-0-4-9-17/22454",
+          "date": "2026-11-16 00:21",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50512824"
+          "comments": "https://news.ycombinator.com/item?id=50512441"
         },
         {
           "title": "Preserving 30 years of Salon journalism",
@@ -48,18 +55,25 @@
           "comments": "https://news.ycombinator.com/item?id=50511806"
         },
         {
-          "title": "Tor Project Issues Rapid-Response DoS-Defense Fix Amid Sustained DDoS Attack",
-          "link": "https://forum.torproject.org/t/security-release-0-4-9-17/22454",
-          "date": "2026-11-16 00:21",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50512441"
-        },
-        {
           "title": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
           "link": "https://bruceroettgers.eu/blog/protomaps/",
           "date": "2026-11-15 19:26",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50509837"
+        },
+        {
+          "title": "Stop Filming in Log",
+          "link": "https://digitalfilms.wordpress.com/2026/11/15/stop-filming-in-log/",
+          "date": "2026-11-16 04:37",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50514093"
+        },
+        {
+          "title": "The Miracle Cure: In 1977, a drug rejected by doctors became a sensation",
+          "link": "https://slate.com/technology/2026/11/doctor-medicine-cancer-cure-pill-history.html",
+          "date": "2026-11-13 06:58",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50479405"
         },
         {
           "title": "A short explainer on how El Niño works [video]",
@@ -74,20 +88,6 @@
           "date": "2026-11-13 15:31",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50484998"
-        },
-        {
-          "title": "Crows make decisions faster than we can",
-          "link": "https://www.nytimes.com/2026/11/15/science/birdbrain-crows-birds-research-decision.html",
-          "date": "2026-11-15 17:53",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50509023"
-        },
-        {
-          "title": "The MacBook Pro's OLED PWM problem",
-          "link": "https://macanorak.com/the-macbook-pros-oled-pwm-problem-when-a-better-display-becomes-worse-to-use/",
-          "date": "2026-11-15 13:15",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50506719"
         }
       ]
     },
@@ -174,6 +174,12 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "Facebook 小號真的掰了！12 月 14 日起永久刪除 備份方式一次看",
+          "link": "https://3c.ltn.com.tw/news/68300",
+          "date": "2026/11/16 14:40",
+          "summary": "Meta 正式公告，旗下社群平台 Facebook 過去推出的「其他個人檔案」（又稱附加個人檔案或小號）功能即將走入 ..."
+        },
+        {
           "title": "NVIDIA 黃仁勳簽名顯卡值多少錢？網友看好拍賣價飆破百萬",
           "link": "https://3c.ltn.com.tw/news/68299",
           "date": "2026/11/16 10:30",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68280",
           "date": "2026/11/15 13:00",
           "summary": "買手機時，不少人習慣先看電池容量，認為數字愈大，代表手機續航愈好。不過，電池大就一定比較省電嗎？美國科技媒體CNET ..."
-        },
-        {
-          "title": "13年前老iPhone被年輕人挖出來！搜尋量暴增405倍 竟是為了這功能",
-          "link": "https://3c.ltn.com.tw/news/68287",
-          "date": "2026/11/15 12:00",
-          "summary": "復古風潮席捲年輕世代，十幾年前的老手機也重新翻紅，蘋果2013年推出的iPhone 5c，近年成為Z世代關注的熱門產 ..."
         }
       ]
     },
@@ -252,87 +252,87 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "訓練資料爭奪戰升溫，Memories.ai 推打工平台付錢請大家拍影片給機器人看",
-          "link": "https://technews.tw/2026/11/15/memories-ai-launches-memories-upload-a-gig-work-platform-for-robot-training-data/",
-          "date": "2026-11-15 09:00",
-          "summary": "機器人要學會煮咖啡、上架商品或修理設備，需要大量人類實際動手做事的畫面。美國舊金山新創公司 Memories. [&#8230;]",
+          "title": "台股重挫 2,635.04 點史上第二大跌點，台積電跌 135 元",
+          "link": "https://finance.technews.tw/2026/11/16/taiwan-stock-market-plunges-2635-04-points-second-largest-drop-ever-tsmc-shares-fall-nt135/",
+          "date": "2026-11-16 06:35",
+          "summary": "黃仁勳辭輝達（NVIDIA）執行長後，市場對 AI 前景產生疑慮，美股費城半導體指數重挫，台股今天跌勢更深，收 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "四成主管認 AI 無法取代專業、「AI 回歸」比例達 19%，逾五成勞工喊漲薪資",
-          "link": "https://technews.tw/2026/11/15/ai-re-hiring-trend-companies-acknowledge-ai-limits/",
-          "date": "2026-11-15 08:00",
-          "summary": "隨著人工智慧（AI）技術快速普及，許多企業試圖透過自動化來降低成本並提升效率，但現實情況卻往往事與願違。根據人 [&#8230;]",
+          "title": "AI 熱潮動搖，資料中心概念股 6 月來蒸發 4.2 兆美元",
+          "link": "https://finance.technews.tw/2026/11/16/data-centre-construction-stocks-lose-4-2tn-as-boom-in-ai-trade-unravels/",
+          "date": "2026-11-16 06:30",
+          "summary": "當前市場對人工智慧（AI）熱潮信心出現動搖，常被外界與資料中心建設掛鉤的企業在近期拋售潮受創。全球製造業、公共 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 重整組織打擊員工士氣，科技主管點出導致轉型失敗最常見錯誤",
-          "link": "https://finance.technews.tw/2026/11/15/what-tech-leaders-get-wrong-about-ai-restructuring-and-morale/",
-          "date": "2026-11-15 06:00",
-          "summary": "人工智慧（AI）正迫使科技企業重新調整團隊編制與工作分配。然而，即便 AI 驅動的組織重整商業面很合理，員工未 [&#8230;]",
+          "title": "Anthropic 拚史上最大 IPO，自曝價格戰與巨額成本隱憂",
+          "link": "https://finance.technews.tw/2026/11/16/five-things-to-know-about-anthropic/",
+          "date": "2026-11-16 06:00",
+          "summary": "人工智慧（AI）公司 Anthropic 創立 5 年已躋身 AI 巨頭，如今正準備挑戰史上最大首次公開發行（ [&#8230;]",
           "comments": ""
         },
         {
-          "title": "黃仁勳去職後首場輝達財報說明會，法人看 AI 展望牽動台股",
-          "link": "https://finance.technews.tw/2026/11/15/nvidia-earnings-call-post-jensen-huang-departure-ai-outlook-impacts-taiwan-stocks/",
-          "date": "2026-11-15 04:56",
-          "summary": "台股上週強勁彈升 3973.48 點，收在 43675.12點。法人表示，輝達即將於美國時間 11 月 17 [&#8230;]",
+          "title": "AI 用電需求推升核電回歸，鈾價刷新紀錄",
+          "link": "https://technews.tw/2026/11/16/uranium-price-hits-record-as-ai-demand-prompts-nuclear-comeback/",
+          "date": "2026-11-16 04:40",
+          "summary": "人工智慧帶動的用電需求持續升溫，正把全球能源市場推向核電回歸與鈾價走高的新階段。根據 2026 年 11 月 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "歐盟領袖將舉行首次 AI 會談，輝達案未列正式議程",
-          "link": "https://technews.tw/2026/11/15/eu-leaders-first-ai-talks-nvidia-case-not-official-agenda/",
-          "date": "2026-11-15 03:48",
-          "summary": "歐盟領袖 13 日將在都柏林的會談中，首次齊聚一堂討論人工智慧（AI）議題。這場關鍵會談將為歐盟的 AI 政策 [&#8230;]",
+          "title": "楊金龍：黃仁勳事件是短期亂流，台灣 AI 供應鏈角色毋庸置疑",
+          "link": "https://technews.tw/2026/11/16/taiwan-role-in-the-ai-supply-chain-is-undisputed/",
+          "date": "2026-11-16 04:20",
+          "summary": "輝達前執行長黃仁勳請辭，相關爭議仍持續發酵，外界關注是否對台灣 AI 供應鏈產生影響。中央銀行總裁楊金龍今天表 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 加劇記憶體供需失衡！擷發科：短缺是長期結構性問題，AI 只是觸發點",
-          "link": "https://technews.tw/2026/11/15/microip-talk-about-memory/",
-          "date": "2026-11-15 02:25",
-          "summary": "近期 AI 浪潮帶動記憶體需求快速攀升，然而記憶體價格短期內仍未見緩解訊號。擷發科董事長楊健盟認為，記憶體短缺 [&#8230;]",
+          "title": "AI 巨頭爭相招募反情報專家，年薪上看 50 萬美元",
+          "link": "https://infosecu.technews.tw/2026/11/16/the-hottest-job-in-ai-right-now-may-be-counterintelligence-as-companies-pay-former-spooks-500000-to-protect-trade-secrets/",
+          "date": "2026-11-16 04:10",
+          "summary": "在 AI 競賽中，人工智慧公司對反情報與商業機密保護的需求正快速攀升。科技公司不僅要防禦外部滲透，還開始更積極 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "準確率再高也不夠，AI 財務應用的關鍵在「例外處理」",
-          "link": "https://finance.technews.tw/2026/11/15/why-exception-handling-is-the-new-finance-discipline/",
-          "date": "2026-11-15 01:30",
-          "summary": "隨著人工智慧更深入財務與金融作業，風險管理的重心正出現明顯變化。相關觀點指出，系統即使維持很高的整體準確率，仍 [&#8230;]",
+          "title": "150 萬機器人大軍上線，亞馬遜揭密「人機協作」藍圖：不搶飯碗，只扛重擔",
+          "link": "https://technews.tw/2026/11/16/future-human-machine-collaboration-workplace/",
+          "date": "2026-11-16 04:00",
+          "summary": "隨著全球電商巨擘亞馬遜（Amazon）持續擴大倉儲自動化版圖，未來的職場樣貌正迎來巨變。Amazon 全球營運 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "搶攻歐美邊緣 AI 市場！擷發科鎖定無人機、車載等應用，美 IPO 最快估明年 Q1 底上市",
-          "link": "https://technews.tw/2026/11/15/microip-us-and-eu-edge-ai-and-us-ipo/",
-          "date": "2026-11-15 01:08",
-          "summary": "今年可說是邊緣 AI 實質落地的一年，目前已看到許多企業展出多種相關應用，擷發科近年積極布局車載、無人機、機器 [&#8230;]",
+          "title": "Gartner 預測 2030 年 AI 淨增 170 萬個工作機會，逾 4 億人工作內容須改寫",
+          "link": "https://technews.tw/2026/11/16/ai-to-create-more-jobs-than-it-kills-by-2030-net-gain-of-1-7-million-globally/",
+          "date": "2026-11-16 03:50",
+          "summary": "研究機構 Gartner 日前在巴塞隆納舉行的 IT Symposium/Xpo 發表最新預測，人工智慧（AI [&#8230;]",
           "comments": ""
         },
         {
-          "title": "「雨露均霑」時代終結！AI 狂潮首現明確減速訊號，專家示警：未來投資心臟要夠大",
-          "link": "https://finance.technews.tw/2026/11/15/ai-sector-shows-first-signs-of-slowdown-in-three-years/",
-          "date": "2026-11-15 00:00",
-          "summary": "一場美國期中選舉，讓整個金融市場對 AI 前景的審美觀驟然改變。 贏得史詩級勝選的，是主張「嚴控AI資料中心建 [&#8230;]",
+          "title": "中國情報網猛攻西方矽谷，FBI、MI5 齊聲警告：晶片與 AI 已成國安破口",
+          "link": "https://infosecu.technews.tw/2026/11/16/chinese-ai-espionage-heats-up/",
+          "date": "2026-11-16 03:40",
+          "summary": "根據美國媒體 14 日報導，中國針對西方科技與人工智慧（AI）產業的情報行動正引發國際高度警戒。報導指出，相關 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 問診漸成主流但侵蝕大眾信任感，醫病關係仍是最重要核心",
-          "link": "https://technews.tw/2026/11/15/in-the-ai-era-can-we-preserve-humanity-in-healthcare/",
-          "date": "2026-11-14 16:00",
-          "summary": "民眾愈來愈常問 AI 聊天機器人健康資訊，但醫療現場的人性溫度仍難取代。埃默里大學（Emory Univers [&#8230;]",
+          "title": "Anthropic 本週掛牌  估值 1.4 兆美元、考驗 AI 交易",
+          "link": "https://finance.technews.tw/2026/11/16/anthropic-list-this-week-1-4-trillion-valuation-testing-ai-deals/",
+          "date": "2026-11-16 03:35",
+          "summary": "知名 AI 新創、Claude 開發商 Anthropic 將於本週上市，目標估值達 1.4 兆美元，在科技股 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 加速長壽研究，科學家從血液與基因中找出延緩老化的線索",
-          "link": "https://technews.tw/2026/11/14/ai-could-help-us-live-much-longer/",
-          "date": "2026-11-14 07:00",
-          "summary": "人工智慧正將長壽研究推向全新階段。隨著 AI 與生物學的結合日益深入，科學家不僅能更精準地追蹤人體老化過程，也 [&#8230;]",
+          "title": "騰雲今年前三季每股大賺 4.41 元！結盟東南亞 Grab、打入日本零售",
+          "link": "https://finance.technews.tw/2026/11/16/grab/",
+          "date": "2026-11-16 03:27",
+          "summary": "騰雲科技公告今年前三季合併營收 7.64 億元，年增 40%；營業毛利 5.21 億元，年增 34%，毛利率 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "廣達梁次震看 AI 後市：無懼黃仁勳風波與政策變數，投資建設「箭在弦上」",
-          "link": "https://technews.tw/2026/11/14/quanta-liang-cizhen-sees-no-impact-on-ai-from-jensen-huang-controversy/",
-          "date": "2026-11-14 06:30",
-          "summary": "廣達副董事長梁次震指出，台灣在全球 AI 供應鏈中仍具有競爭優勢，對於 AI 產業未來發展依舊抱持正面態度。尤 [&#8230;]",
+          "title": "AI 智慧眼鏡隱私爭議延燒，全球法院、校園與休閒場所祭出管制令",
+          "link": "https://infosecu.technews.tw/2026/11/16/ai-smart-glasses-ban-expanded/",
+          "date": "2026-11-16 03:20",
+          "summary": "具備攝影與錄影功能的 AI 眼鏡，正因隱私與安全疑慮在全球各地遭遇愈來愈多限制。雖然目前沒有任何國家宣布對 A [&#8230;]",
           "comments": ""
         }
       ]
@@ -342,87 +342,87 @@
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
         {
-          "title": "黃仁勳去職後首場輝達財報說明會，法人看 AI 展望牽動台股",
-          "link": "https://finance.technews.tw/2026/11/15/nvidia-earnings-call-post-jensen-huang-departure-ai-outlook-impacts-taiwan-stocks/",
-          "date": "2026-11-15 04:56",
-          "summary": "台股上週強勁彈升 3973.48 點，收在 43675.12點。法人表示，輝達即將於美國時間 11 月 17 [&#8230;]",
+          "title": "台股重挫 2,635.04 點史上第二大跌點，台積電跌 135 元",
+          "link": "https://finance.technews.tw/2026/11/16/taiwan-stock-market-plunges-2635-04-points-second-largest-drop-ever-tsmc-shares-fall-nt135/",
+          "date": "2026-11-16 06:35",
+          "summary": "黃仁勳辭輝達（NVIDIA）執行長後，市場對 AI 前景產生疑慮，美股費城半導體指數重挫，台股今天跌勢更深，收 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "台灣首顆 GPGPU 獲飛行履歷，捷揚太空代工轉攻研發拓商機",
-          "link": "https://technews.tw/2026/11/15/taiwan-first-gpgpu-flight-heritage-jasc-aerospace-shifts-oem-rd-business-expansion/",
-          "date": "2026-11-15 03:22",
-          "summary": "歷時3年，國家太空中心（TASA）與捷揚航電合作開發通用圖形處理器（GPGPU），完成在軌驗證，成為台灣首顆取 [&#8230;]",
+          "title": "法人富邦投顧：台廠短線承壓但具高度替代門檻、拉回迎布局良機",
+          "link": "https://finance.technews.tw/2026/11/16/taiwanese-manufacturers-face-short-term-pressure-but-have-a-high-barrier-to-entry-for-substitution/",
+          "date": "2026-11-16 04:40",
+          "summary": "全球人工智慧（AI）晶片龍頭輝達（NVIDIA）驚傳重大人事震盪，輝達董事會於 11 月 12 日宣布，創辦人 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 加劇記憶體供需失衡！擷發科：短缺是長期結構性問題，AI 只是觸發點",
-          "link": "https://technews.tw/2026/11/15/microip-talk-about-memory/",
-          "date": "2026-11-15 02:25",
-          "summary": "近期 AI 浪潮帶動記憶體需求快速攀升，然而記憶體價格短期內仍未見緩解訊號。擷發科董事長楊健盟認為，記憶體短缺 [&#8230;]",
+          "title": "SK 海力士計劃建半導體測試中心，助韓中小型廠商提升競爭力",
+          "link": "https://technews.tw/2026/11/16/sk-hynix-chip-testing-hub/",
+          "date": "2026-11-16 04:30",
+          "summary": "SK 海力士計劃與韓國政府合作，於明年設立半導體測試中心，藉此提升韓國中小型半導體設備商的全球競爭力。 根據 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "搶攻歐美邊緣 AI 市場！擷發科鎖定無人機、車載等應用，美 IPO 最快估明年 Q1 底上市",
-          "link": "https://technews.tw/2026/11/15/microip-us-and-eu-edge-ai-and-us-ipo/",
-          "date": "2026-11-15 01:08",
-          "summary": "今年可說是邊緣 AI 實質落地的一年，目前已看到許多企業展出多種相關應用，擷發科近年積極布局車載、無人機、機器 [&#8230;]",
+          "title": "楊金龍：黃仁勳事件是短期亂流，台灣 AI 供應鏈角色毋庸置疑",
+          "link": "https://technews.tw/2026/11/16/taiwan-role-in-the-ai-supply-chain-is-undisputed/",
+          "date": "2026-11-16 04:20",
+          "summary": "輝達前執行長黃仁勳請辭，相關爭議仍持續發酵，外界關注是否對台灣 AI 供應鏈產生影響。中央銀行總裁楊金龍今天表 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "光電整合進入「打群架」時代，聯發科侯上勇：CPO路線未定，良率才是關鍵",
-          "link": "https://technews.tw/2026/11/15/cpo-mediatek-hou-shang-yong-optoelectronic-integration-battleground-tech-choices-not-just-cost/",
-          "date": "2026-11-15 01:00",
-          "summary": "CPO（共同封裝光學）被視為 AI 突破資料傳輸與功耗瓶頸的重要技術，但未來是否由 CPO 主導，產業界仍有不 [&#8230;]",
+          "title": "中國情報網猛攻西方矽谷，FBI、MI5 齊聲警告：晶片與 AI 已成國安破口",
+          "link": "https://infosecu.technews.tw/2026/11/16/chinese-ai-espionage-heats-up/",
+          "date": "2026-11-16 03:40",
+          "summary": "根據美國媒體 14 日報導，中國針對西方科技與人工智慧（AI）產業的情報行動正引發國際高度警戒。報導指出，相關 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "「雨露均霑」時代終結！AI 狂潮首現明確減速訊號，專家示警：未來投資心臟要夠大",
-          "link": "https://finance.technews.tw/2026/11/15/ai-sector-shows-first-signs-of-slowdown-in-three-years/",
-          "date": "2026-11-15 00:00",
-          "summary": "一場美國期中選舉，讓整個金融市場對 AI 前景的審美觀驟然改變。 贏得史詩級勝選的，是主張「嚴控AI資料中心建 [&#8230;]",
+          "title": "股東控隱瞞 PC 銷售疲弱，英特爾遭集體訴訟",
+          "link": "https://finance.technews.tw/2026/11/16/intel-hit-with-class-action-lawsuit-over-alleged-concealment-of-weak-pc-sales/",
+          "date": "2026-11-16 03:25",
+          "summary": "英特爾（Intel）遭股東提起集體訴訟，原告指控這家美國晶片製造商隱瞞個人電腦（PC）銷售長期放緩及庫存過剩對 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "黃仁勳風波延燒！黃樂參與創立的 Megaspeed 是中國取得輝達 GPU 的祕密管道？",
-          "link": "https://finance.technews.tw/2026/11/14/what-is-megaspeed/",
-          "date": "2026-11-14 01:00",
-          "summary": "《財訊》報導，輝達執行長黃仁勳 8 日寄信給員工坦承有婚外情，並表達歉意；外媒報導指出，「女主角」是曾在新加坡 [&#8230;]",
+          "title": "再生晶圓廠 RS 純益增 2 成、台灣投資計畫不變",
+          "link": "https://finance.technews.tw/2026/11/16/rs-technologies-net-profit-rises-20-investment-plans-unchanged/",
+          "date": "2026-11-16 03:00",
+          "summary": "增產投資、銷量增加，全球再生晶圓大廠 RS Technologies 今年度前三季純益成長近兩成，不過 RS [&#8230;]",
           "comments": ""
         },
         {
-          "title": "輝達助攻矽品登峰！從 CoWoS 代工邁向 CPO 新藍海，研發老將揭密十年技術布局",
-          "link": "https://finance.technews.tw/2026/11/14/ase-tech-holding-growth-accelerates-nvidia-spil-cowos-cpo-strategic-planning-new-segments/",
-          "date": "2026-11-14 00:00",
-          "summary": "今年以來，封測龍頭日月光投控成長顯著，今年前三季營收再創高峰。 旗下矽品研發大將，在成功大學舉辦的成材論壇上， [&#8230;]",
+          "title": "防 AI 晶片轉運，馬來西亞擬要求資料中心申報 GPU 進口與用電量",
+          "link": "https://technews.tw/2026/11/16/malaysia-plans-new-law-using-data-center-power-consumption-to-catch-ai-gpu-smugglers/",
+          "date": "2026-11-16 02:55",
+          "summary": "馬來西亞正研擬新法，要求資料中心業者揭露 AI 加速器進口數量、用電情況、設施位置，以及營運商與大型雲端客戶身 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "跑起來，別用走的！皮衣黃仁勳再也不上台演講的 AI 時代就這樣跑步來臨",
-          "link": "https://finance.technews.tw/2026/11/13/the-ai-%e2%80%8b%e2%80%8bera-is-rapidly-approaching-with-jensen-huang-no-longer-giving-speeches-on-stage/",
-          "date": "2026-11-13 12:45",
-          "summary": "「跑起來，別用走的！」（Run, don&#8217;t walk!）曾是輝達（NVIDIA）創辦人黃仁勳最撼 [&#8230;]",
+          "title": "力晶小股東盼重新上市櫃！自救會成員喊話無意爭奪公司經營權",
+          "link": "https://finance.technews.tw/2026/11/16/relisting/",
+          "date": "2026-11-16 02:21",
+          "summary": "力晶投控經營權之爭持續延燒，股東臨時會預計 11 月 25 日全面改選董監事，長期持有力積電母公司力晶股票的小 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "黃仁勳傳奇造就身價 8 億研發人才，財務長臨危接棒留才成關鍵課題",
-          "link": "https://finance.technews.tw/2026/11/13/jensen-huangs-legendary-success-has-created-a-net-worth-of-800-million-for-nvidias-rd-talent/",
-          "date": "2026-11-13 12:00",
-          "summary": "全球 AI 運算霸主輝達（NVIDIA）創辦人黃仁勳辭職，為科技產業投下震撼彈。出乎市場意料的是，接任執行長（ [&#8230;]",
+          "title": "研究找到 DeepSeek、Kimi 等六款中國 AI 模型以受管制輝達 Blackwell 晶片訓練痕跡",
+          "link": "https://technews.tw/2026/11/16/top-chinese-frontier-ai-models-carry-the-fingerprint-of-export-controlled-nvidia-blackwell-gpus/",
+          "date": "2026-11-16 02:20",
+          "summary": "OpenAI 前工程師杜普（Will DePue）創辦的 AI 顧問公司 Unemployment Labs [&#8230;]",
           "comments": ""
         },
         {
-          "title": "輝達財務長克瑞斯臨危受命暫代執行長，曾質疑黃仁勳投資策略",
-          "link": "https://finance.technews.tw/2026/11/13/nvidia-cfo-colette-kress-appointed-acting-ceo-crisis-questioned-jensen-huang-investment-strategy/",
-          "date": "2026-11-13 09:50",
-          "summary": "人工智慧（AI）晶片大廠輝達（Nvidia）共同創辦人黃仁勳陷入多起婚外情風波正式請辭執行長後，59 歲的財務 [&#8230;]",
+          "title": "黃仁勳黯然下台，紐約時報：台灣社會錯愕又難以置信",
+          "link": "https://technews.tw/2026/11/16/jensen-huang-steps-down-new-york-times-taiwan-society-shocked-disbelief/",
+          "date": "2026-11-16 02:00",
+          "summary": "美國《紐約時報》報導，輝達執行長黃仁勳 12 日辭職，在他的出生地台灣引發震撼。黃仁勳在台灣成功地經營人脈關係 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "黃仁勳請辭引發輝達動盪，美媒：台積電、超微與博通有望受惠",
-          "link": "https://finance.technews.tw/2026/11/13/jensen-huang-resignation-nvidia-turmoil-tsmc-amd-broadcom-benefit/",
-          "date": "2026-11-13 09:40",
-          "summary": "輝達領導危機正為合作夥伴及最大競爭對手創造機會，台積電、超微與博通等企業有望受惠。投資人認為，黃仁勳辭去輝達執 [&#8230;]",
+          "title": "騏億鑫上櫃掛牌首日盤中飆近二成！宣示稱霸國際廠務工程跨系統整合",
+          "link": "https://finance.technews.tw/2026/11/16/factory-engineering/",
+          "date": "2026-11-16 01:58",
+          "summary": "騏億鑫今日以承銷價 252 元正式掛牌上櫃，截至目前為止，盤中最高觸及 262.5 元，漲幅近 2 成，主要受 [&#8230;]",
           "comments": ""
         }
       ]
@@ -432,87 +432,87 @@
       "site": "https://technews.tw/category/component/",
       "items": [
         {
-          "title": "特斯拉前能源主管創立 Lunar Energy，以可堆疊電池與雙向充電器挑戰 Powerwall",
-          "link": "https://technews.tw/2026/11/14/the-biggest-threat-to-teslas-home-battery-business-is-its-ex-chief/",
-          "date": "2026-11-14 09:00",
-          "summary": "特斯拉（Tesla）2015 年推出首款 Powerwall 電池以來，長期稱霸家用儲能市場，但如同電動車事業 [&#8230;]",
+          "title": "中國被控操縱鐵礦砂貿易，澳政府憂心恐衝擊經濟",
+          "link": "https://technews.tw/2026/11/16/australia-concerned-over-china-manipulation-of-the-iron-ore-trade/",
+          "date": "2026-11-16 06:50",
+          "summary": "澳洲今天表達憂慮，擔心最大買家中國對鐵礦砂貿易的「操縱」，將使這項澳洲最大宗出口商品受波及，並衝擊整體經濟。 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "美國期中選舉使美台股市劇烈震盪，專家揭三大訊號台股還有機會上 5 萬點",
-          "link": "https://finance.technews.tw/2026/11/14/ai-stocks-plunge-rebound-taiwan-stock-market-50000-points-experts-reveal-3-signals/",
-          "date": "2026-11-14 02:00",
-          "summary": "美國期中選舉讓高速狂飆的 AI 列車急煞，造成美台股宛如坐雲霄飛車。台股 6 日刷新最大跌點紀錄、一度跌破 4 [&#8230;]",
+          "title": "法人富邦投顧：台廠短線承壓但具高度替代門檻、拉回迎布局良機",
+          "link": "https://finance.technews.tw/2026/11/16/taiwanese-manufacturers-face-short-term-pressure-but-have-a-high-barrier-to-entry-for-substitution/",
+          "date": "2026-11-16 04:40",
+          "summary": "全球人工智慧（AI）晶片龍頭輝達（NVIDIA）驚傳重大人事震盪，輝達董事會於 11 月 12 日宣布，創辦人 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 晶片需求旺  應材 Q4 營收飆 53%、本季再戰新高",
-          "link": "https://finance.technews.tw/2026/11/13/applied-materials-q4-revenue-surges-53/",
-          "date": "2026-11-13 07:50",
-          "summary": "全球半導體設備大廠應用材料（Applied Materials）12 日公布最新財報，受惠 AI 晶片與高階記 [&#8230;]",
+          "title": "楊金龍：黃仁勳事件是短期亂流，台灣 AI 供應鏈角色毋庸置疑",
+          "link": "https://technews.tw/2026/11/16/taiwan-role-in-the-ai-supply-chain-is-undisputed/",
+          "date": "2026-11-16 04:20",
+          "summary": "輝達前執行長黃仁勳請辭，相關爭議仍持續發酵，外界關注是否對台灣 AI 供應鏈產生影響。中央銀行總裁楊金龍今天表 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "後黃仁勳時代不恐慌！戰略台灣投資論壇揭祕「台鏈安」台股順",
-          "link": "https://finance.technews.tw/2026/11/13/taiwans-supply-chain-is-stable/",
-          "date": "2026-11-13 06:51",
-          "summary": "面對全球供應鏈重組、地緣政治變化及 AI 技術快速變遷，台灣企業正處於關鍵轉型期，櫃買中心與黑石財經今日舉行第 [&#8230;]",
+          "title": "騰雲今年前三季每股大賺 4.41 元！結盟東南亞 Grab、打入日本零售",
+          "link": "https://finance.technews.tw/2026/11/16/grab/",
+          "date": "2026-11-16 03:27",
+          "summary": "騰雲科技公告今年前三季合併營收 7.64 億元，年增 40%；營業毛利 5.21 億元，年增 34%，毛利率 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "黃仁勳去職，日本政府關注 AI 產業及半導體供應鏈衝擊",
-          "link": "https://technews.tw/2026/11/13/jensen-huang-steps-down-japanese-government-monitors-ai-industry-semiconductor-supply-chain-impact/",
-          "date": "2026-11-13 06:40",
-          "summary": "美國半導體大廠輝達（NVIDIA）執行長黃仁勳辭職，引發全球科技業震撼。日本內閣官房副長官尾崎正直今天表示，輝 [&#8230;]",
+          "title": "飛捷前三季每股 8.65 元賺贏歷年！董座林大成：明年訂單已超前部署",
+          "link": "https://finance.technews.tw/2026/11/16/payment-products/",
+          "date": "2026-11-16 02:48",
+          "summary": "飛捷科技公告累計前三季合併營收 51.36 億元，年增 30%；歸屬母公司淨利 12.37 億元，每股盈餘（E [&#8230;]",
           "comments": ""
         },
         {
-          "title": "黃仁勳辭職，供應鏈：明年訂單無虞、AI 門檻高成護城河",
-          "link": "https://technews.tw/2026/11/13/jensen-huang-resigns-supply-chain-next-year-orders-secure-ai-moat-high-barrier/",
-          "date": "2026-11-13 06:10",
-          "summary": "黃仁勳辭去人工智慧 AI 晶片大廠輝達（NVIDIA）執行長等職，在全球科技業投下震撼彈。4 位半導體供應鏈台 [&#8230;]",
+          "title": "大摩下調貿聯-KY 目標價至 2,500 元，但仍維持優於大盤投資評等",
+          "link": "https://finance.technews.tw/2026/11/16/morgan-stanley-lowered-its-target-price-for-tradelink-ky-to-nt2500/",
+          "date": "2026-11-16 02:10",
+          "summary": "連接線束解決方案供應商貿聯-KY 公布最新營運成果，2026 年第三季獲利表現強勁並超越市場預期，主要受惠於產 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "傳獲三星青睞  AI 散熱廠 Modine 盤後暴漲近 27%",
-          "link": "https://finance.technews.tw/2026/11/13/samsung-reportedly-in-talks-to-acquire-modine/",
-          "date": "2026-11-13 05:30",
-          "summary": "三星電子（Samsung Electronics）傳出正洽談收購美國資料中心散熱設備製造商 Modine Ma [&#8230;]",
+          "title": "騏億鑫上櫃掛牌首日盤中飆近二成！宣示稱霸國際廠務工程跨系統整合",
+          "link": "https://finance.technews.tw/2026/11/16/factory-engineering/",
+          "date": "2026-11-16 01:58",
+          "summary": "騏億鑫今日以承銷價 252 元正式掛牌上櫃，截至目前為止，盤中最高觸及 262.5 元，漲幅近 2 成，主要受 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "終結抓寶電量焦慮！CHARGESPOT 全球借電站變身〈Pokémon GO〉補給站",
-          "link": "https://technews.tw/2026/11/13/inforich/",
-          "date": "2026-11-13 04:03",
-          "summary": "行動電源共享服務品牌 CHARGESPOT 營運商 INFORICH 株式會社今日宣布與由 Scopely E [&#8230;]",
+          "title": "SpaceX 首度完成太空船捕捉回收，星艦返回發射台",
+          "link": "https://technews.tw/2026/11/16/spacex-pulls-off-first-ever-spaceship-catch/",
+          "date": "2026-11-16 01:55",
+          "summary": "馬斯克（Elon Musk）旗下太空探索科技公司（SpaceX）15 日成功完成史上首次太空船捕捉回收作業，星 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "探針卡需求旺、提前擴產  MJC 上修財測 股價狂飆",
-          "link": "https://finance.technews.tw/2026/11/13/mjc-raises-forecast-shares-soar/",
-          "date": "2026-11-13 03:40",
-          "summary": "需求旺盛、提前擴產，探針卡大廠 MJC（Micronics Japan Co., Ltd.）上修今年度財測預估 [&#8230;]",
+          "title": "台達電 SST 新系統亮相 RE+，2027 年底啟動美國 PCS 生產",
+          "link": "https://technews.tw/2026/11/16/delta-electronics-new-sst-system-debuts-re-us-pcs-production-starts-end-2027/",
+          "date": "2026-11-16 01:41",
+          "summary": "台達電於 RE+ 2026 展示固態變壓器（SST）直流供電系統及電力轉換系統（PCS），其中全新預製式 SS [&#8230;]",
           "comments": ""
         },
         {
-          "title": "iPhone 18 延後推出另有隱情？日媒點名三星相機感測器供應成變數",
-          "link": "https://technews.tw/2026/11/13/iphone-18-samsung-cis/",
-          "date": "2026-11-13 03:16",
-          "summary": "蘋果今年秋季打破過往新機發布慣例，僅推出 iPhone 18 Pro、iPhone 18 Pro Max 及首 [&#8230;]",
+          "title": "黃仁勳辭輝達執行長，專家：AI 發展趨健康、台灣產業鏈「非紅」優勢不受影響",
+          "link": "https://technews.tw/2026/11/16/jensen-huang-resigns-nvidia-ceo-experts-ai-healthy-taiwan-non-red-advantage-unaffected/",
+          "date": "2026-11-16 01:10",
+          "summary": "黃仁勳辭去輝達（NVIDIA）執行長等職務震撼全球科技產業界，長期研究地緣政治的科技專家表示，美國勢必會加強對 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "輝達震撼啟動危機接班，法人指科技供應鏈面臨洗牌與估值修正",
-          "link": "https://finance.technews.tw/2026/11/13/nvidia-launches-a-shocking-crisis-succession-plan/",
-          "date": "2026-11-13 02:40",
-          "summary": "全球 AI 晶片龍頭輝達（Nvidia）爆發重大領導層危機，執行長黃仁勳確定去職，並一併辭去總裁與董事職位，此 [&#8230;]",
+          "title": "美台高科技論壇矽谷登場，輝達副總裁強調台灣為關鍵供應鏈",
+          "link": "https://technews.tw/2026/11/16/us-taiwan-high-tech-forum-silicon-valley-nvidia-vp-highlights-taiwan-critical-supply-chain/",
+          "date": "2026-11-16 01:00",
+          "summary": "國科會攜手科技社團 NATEA-SV 舉辦的美台高科技論壇 15 日在矽谷舉行，輝達副總裁塔拉（Deepu T [&#8230;]",
           "comments": ""
         },
         {
-          "title": "賓士宣布暫停投資德國工廠，勞資談判僵局恐致關廠",
-          "link": "https://technews.tw/2026/11/13/mercedes-benz-suspends-investment-german-plants-labor-talks-deadlock-threatens-closures/",
-          "date": "2026-11-13 02:20",
-          "summary": "德國汽車大廠賓士今天宣布，暫停進一步投資德國工廠，同時開始評估關閉部分廠房。近年中國市場獲利大幅下滑，賓士要求 [&#8230;]",
+          "title": "外資點出輝達股價復甦關鍵點，接班人、財報與美國監管力道",
+          "link": "https://finance.technews.tw/2026/11/16/foreign-investors-point-out-the-key-to-nvidias-stock-price-recovery/",
+          "date": "2026-11-16 00:00",
+          "summary": "半導體大廠輝達（Nvidia）近期遭遇劇烈市場震盪，在創辦人兼執行長黃仁勳（Jensen Huang）因個人關 [&#8230;]",
           "comments": ""
         }
       ]
