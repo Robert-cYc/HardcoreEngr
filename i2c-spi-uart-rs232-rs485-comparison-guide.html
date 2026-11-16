@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I2C、SPI、UART、RS232、RS485 差異全方位深度解析：從底層物理層電平、時序協定到工業匯流排架構實戰 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,⚡">
+  <meta name="description" content="全維度深度剖析五大經典串列通訊協定：I2C、SPI、UART、RS-232、RS-485。從板級晶片間通訊（On-board Chip-to-Chip）到長距離工業現場匯流排（Fieldbus），深入拆解開漏上拉電阻計算、推挽輸出時序、非同步波特率容差、雙極性負邏輯升壓電荷泵、差分信號共模消除與 120 歐姆終端抗反射阻抗匹配。內建互動式協定選型決策器與實體層時序動態示波器。">
+  <link rel="canonical" href="https://ai-hardcore-engineer.com/i2c-spi-uart-rs232-rs485-comparison-guide.html">
+  <meta property="og:title" content="I2C、SPI、UART、RS232、RS485 差異全方位深度解析：從底層物理層電平、時序協定到工業匯流排架構實戰 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="全維度硬核對比 I2C、SPI、UART、RS232、RS485：物理層電平、線路拓撲、速率與距離權衡、訊號完整性與選型指南。內建動態時序示波器與決策工具。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/i2c-spi-uart-rs232-rs485-comparison-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/i2c-spi-uart-rs232-rs485-guide.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="I2C、SPI、UART、RS232、RS485 差異全方位深度解析：底層原理與硬體架構">
+  <meta name="twitter:description" content="深度解析五大硬體串列協定：I2C 開漏上拉、SPI 四線全雙工、UART 非同步時序、RS232 負邏輯與 RS485 差分匯流排。">
+  <meta name="twitter:image" content="./images/i2c-spi-uart-rs232-rs485-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <style>
+    .article-hero { text-align: center; padding: 3.5rem 0 2rem; }
+    .article-hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.28; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.6rem; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.8rem; }
+    .hero-image-wrap { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 32px rgba(0,0,0,0.2); border: 1px solid var(--border); margin-bottom: 2.2rem; }
+    .hero-image-wrap img { width: 100%; max-height: 520px; object-fit: cover; display: block; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-body { max-width: 66em; margin: 0 auto; line-height: 1.88; font-size: 1.05rem; }
+    .article-body h2 { font-size: 2.15rem; font-weight: 700; margin: 3.2rem 0 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 0.6rem; }
+    .article-body h3 { font-size: 1.55rem; font-weight: 600; margin: 2.2rem 0 0.9rem; color: var(--text); }
+    .article-body h4 { font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.6rem; color: var(--text); }
+    .article-body p { margin-bottom: 1.25rem; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.2rem 0.45rem; border-radius: 4px; font-size: 0.94em; color: #06b6d4; border: 1px solid var(--border); }
+    .dark-mode .article-body code { color: #38bdf8; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; overflow-x: auto; margin: 1.6rem 0; position: relative; }
+    .article-body pre code { background: none; padding: 0; border: none; color: var(--text); font-size: 0.92rem; }
+    .article-body blockquote { border-left: 4px solid #06b6d4; background: var(--bg-alt); padding: 1.1rem 1.6rem; margin: 1.8rem 0; border-radius: 0 10px 10px 0; }
+    .article-body ul, .article-body ol { margin: 1.2rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.75; }
+
+    /* Tables */
+    .table-container { width: 100%; overflow-x: auto; margin: 2rem 0; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+    .article-body table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 900px; }
+    .article-body th, .article-body td { padding: 0.85rem 1.1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 700; color: var(--text); background: var(--bg-alt); white-space: nowrap; position: sticky; top: 0; z-index: 2; }
+    .article-body tr:hover td { background: rgba(6, 182, 212, 0.04); }
+
+    .badge-pill { display: inline-block; padding: 0.25rem 0.65rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+    .badge-cyan { background: #cffafe; color: #0e7490; border: 1px solid rgba(6, 182, 212, 0.4); }
+    .badge-emerald { background: #dcfce7; color: #15803d; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; border: 1px solid rgba(168, 85, 247, 0.4); }
+    .badge-amber { background: #fef3c7; color: #92400e; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .badge-blue { background: #dbeafe; color: #1e40af; border: 1px solid rgba(59, 130, 246, 0.4); }
+    
+    .dark-mode .badge-cyan { background: #164e63; color: #a5f3fc; border-color: #06b6d4; }
+    .dark-mode .badge-emerald { background: #064e3b; color: #a7f3d0; border-color: #10b981; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; border-color: #a855f7; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; border-color: #f59e0b; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; border-color: #3b82f6; }
+
+    /* Quick TOC */
+    .quick-nav-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.8rem; margin: 2.2rem 0; }
+    .quick-nav-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text); }
+    .quick-nav-list { list-style: none; padding-left: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem 1.5rem; }
+    .quick-nav-list li a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s ease, transform 0.2s ease; }
+    .quick-nav-list li a:hover { color: #06b6d4; transform: translateX(3px); }
+    .dark-mode .quick-nav-list li a:hover { color: #38bdf8; }
+
+    /* Protocol Overview Grid */
+    .proto-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+    .proto-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+      border-top: 4px solid var(--border);
+      transition: all 0.25s ease;
+    }
+    .proto-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .proto-card.i2c { border-top-color: #06b6d4; }
+    .proto-card.spi { border-top-color: #10b981; }
+    .proto-card.uart { border-top-color: #a855f7; }
+    .proto-card.rs232 { border-top-color: #3b82f6; }
+    .proto-card.rs485 { border-top-color: #f59e0b; }
+    .proto-card-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .proto-card-sub { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.8rem; }
+
+    /* Interactive Box Styles */
+    .interactive-card {
+      background: var(--bg-alt);
+      border: 2px solid #06b6d4;
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 2.8rem 0;
+      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.1);
+    }
+    .interactive-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .interactive-badge {
+      background: #06b6d4;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .interactive-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--text);
+    }
+    .interactive-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Oscilloscope Screen */
+    .scope-box {
+      background: #060e14;
+      border: 2px solid #164e63;
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin: 1.2rem 0;
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+      font-family: "Fira Code", monospace;
+      color: #e2e8f0;
+    }
+    .scope-screen {
+      width: 100%;
+      height: 260px;
+      position: relative;
+      background: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .scope-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+    .scope-btn {
+      background: #0e2433;
+      border: 1px solid #164e63;
+      color: #38bdf8;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .scope-btn:hover { background: #164e63; color: #fff; }
+    .scope-btn.active { background: #06b6d4; color: #fff; border-color: #06b6d4; }
+
+    /* Selection Filter Matrix */
+    .filter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .filter-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+    .filter-group select {
+      width: 100%;
+      padding: 0.55rem 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .filter-result-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div aria-hidden="true" class="waves">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button aria-expanded="false" aria-label="選單" class="menu-toggle"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a class="active" href="./articles.html">文章</a>
+        <a href="./about.html">關於</a>
+        <a aria-label="搜尋" class="nav-search-toggle" href="#">🔍</a>
+        <a aria-label="切換深淺色模式" class="theme-toggle" href="#" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input autocomplete="off" placeholder="搜尋文章..." type="text"/>
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main class="container">
+    <article class="article-container">
+      
+      <!-- Hero Header -->
+      <header class="article-hero">
+        <span class="badge-pill badge-cyan" style="font-size: 0.9rem; padding: 0.35rem 1rem; margin-bottom: 1.2rem;">EMBEDDED HARDWARE & SERIAL PROTOCOLS</span>
+        <h1>I2C、SPI、UART、RS232、RS485 差異全方位深度解析：從底層物理層電平、時序協定到工業匯流排架構實戰</h1>
+        <div class="article-meta">
+          <span>📅 2026-11-16</span>
+          <span>•</span>
+          <span>⏱️ 50 分鐘深度閱讀</span>
+          <span>•</span>
+          <span>✍️ 作者："AI" 硬核工程師</span>
+        </div>
+
+        <div class="article-tags">
+          <span class="tag">I2C (開漏匯流排)</span>
+          <span class="tag">SPI (高速同步)</span>
+          <span class="tag">UART (非同步序列)</span>
+          <span class="tag">RS-232 (雙極性負邏輯)</span>
+          <span class="tag">RS-485 (差分總線)</span>
+          <span class="tag">嵌入式硬體</span>
+          <span class="tag">訊號完整性</span>
+          <span class="tag">工業現場匯流排</span>
+        </div>
+
+        <div class="hero-image-wrap">
+          <img src="./images/i2c-spi-uart-rs232-rs485-guide.jpg" alt="I2C SPI UART RS232 RS485 協定波形與硬體全景架構圖" width="1200" height="630">
+        </div>
+      </header>
+
+      <!-- Quick TOC Box -->
+      <section class="quick-nav-box">
+        <div class="quick-nav-title">
+          <span>📑</span> 本文核心目錄導覽 (Quick Navigation)
+        </div>
+        <ul class="quick-nav-list">
+          <li><a href="#sec-1"><span>01.</span> 導論：嵌入式硬體神經網路分層</a></li>
+          <li><a href="#sec-2"><span>02.</span> UART：點對點非同步串列基石</a></li>
+          <li><a href="#sec-3"><span>03.</span> I2C：極簡雙線多主多從開漏匯流排</a></li>
+          <li><a href="#sec-4"><span>04.</span> SPI：追求極限吞吐量的高速四線全雙工</a></li>
+          <li><a href="#sec-5"><span>05.</span> RS-232：走向工業長距的雙極性負邏輯</a></li>
+          <li><a href="#sec-6"><span>06.</span> RS-485：工業現場匯流排王者（差分抗干擾）</a></li>
+          <li><a href="#sec-7"><span>07.</span> 終極橫向規格對比矩陣（Master Matrix）</a></li>
+          <li><a href="#sec-8"><span>08.</span> 互動硬核工具箱：選型決策器與動態示波器</a></li>
+          <li><a href="#sec-9"><span>09.</span> 硬體工程師實戰避坑與佈線指南</a></li>
+        </ul>
+      </section>
+
+      <!-- Article Body -->
+      <div class="article-body">
+
+        <!-- SECTION 1 -->
+        <h2 id="sec-1">一、導論：嵌入式硬體通訊的「神經網路」分層架構</h2>
+        
+        <p>在嵌入式系統（Embedded Systems）、物聯網（IoT）邊緣運算節點以及工業自動化（OT）場景中，微控制器（MCU / SoC）扮演著「大腦」的角色。然而，大腦若無法與周邊的傳感器、致動器、記憶體儲存器以及遠端上位機 PLC 通訊，系統便毫無價值。</p>
+
+        <p>工程師在進行硬體架構設計時，最常面臨的根本抉擇便是通訊介面：<strong>I2C、SPI、UART、RS-232、RS-485</strong>。許多初學者往往將這五者混為一談，但從 <strong>OSI 七層模型</strong> 的角度審視，它們所處的層級截然不同：</p>
+
+        <!-- Protocol Category Cards -->
+        <div class="proto-grid">
+          <div class="proto-card uart">
+            <div class="proto-card-title">UART</div>
+            <div class="proto-card-sub">邏輯控制器協定 (Controller Logic)</div>
+            <p>純粹的<strong>非同步序列數據格式規範</strong>（Start, Data, Parity, Stop）。它定義的是位元組傳輸的時序時鐘邏輯，在微控制器引腳上通常表現為 TTL 電平（0V/3.3V 或 0V/5V）。</p>
+          </div>
+
+          <div class="proto-card rs232">
+            <div class="proto-card-title">RS-232</div>
+            <div class="proto-card-sub">物理層電氣標準 (PHY Transceiver)</div>
+            <p>將 UART 的 TTL 電平透過電荷泵升壓轉化為<strong>雙極性負邏輯電平（$\pm 12\text{V}$）</strong>，用於克服長距離線路壓降，主要應用於早期 PC 串列埠與數據機點對點連接。</p>
+          </div>
+
+          <div class="proto-card rs485">
+            <div class="proto-card-title">RS-485</div>
+            <div class="proto-card-sub">差分長距匯流排 (Differential Bus)</div>
+            <p>將 UART 的 TTL 電平轉化為<strong>差分平衡電壓信號（$V_A - V_B$）</strong>，利用共模消除原理抵抗強電磁干擾，傳輸距離高達 1200 米，是 Modbus 與現場匯流排的基石。</p>
+          </div>
+
+          <div class="proto-card i2c">
+            <div class="proto-card-title">I2C</div>
+            <div class="proto-card-sub">板級開漏雙線匯流排 (Board-level Bus)</div>
+            <p>以兩條線（SDA, SCL）實現<strong>同步、半雙工、多主多從定址</strong>，依靠外部上拉電阻與開漏極特性達成線與（Wired-AND）硬體仲裁，接腳開銷最小。</p>
+          </div>
+
+          <div class="proto-card spi">
+            <div class="proto-card-title">SPI</div>
+            <div class="proto-card-sub">板級高速全雙工 (High-Speed Engine)</div>
+            <p>以四條線（SCLK, MOSI, MISO, CS）實現<strong>同步、推挽驅動、全雙工極速傳輸</strong>，時鐘頻率可達 50MHz~100MHz+，專為快閃記憶體與顯示螢幕而生。</p>
+          </div>
+        </div>
+
+        <blockquote>
+          <strong>核心架構分水嶺：</strong>
+          <ul>
+            <li><strong>板級晶片間通訊（Chip-to-Chip，距離 &lt; 30cm）</strong>：首選 <strong>I2C</strong>（追求極簡 Pin 數）或 <strong>SPI</strong>（追求極限吞吐量）。</li>
+            <li><strong>設備間 / 工業環境通訊（Inter-Device，距離 1m ~ 1200m）</strong>：以 <strong>UART</strong> 為核心邏輯，外掛 <strong>RS-232</strong> 收發器（短距儀表點對點）或 <strong>RS-485</strong> 收發器（強電磁環境多節點網絡）。</li>
+          </ul>
+        </blockquote>
+
+        <!-- SECTION 2 -->
+        <h2 id="sec-2">二、UART — 最質樸的點對點非同步串列基石</h2>
+
+        <p><strong>UART（Universal Asynchronous Receiver/Transmitter，通用非同步收發傳輸器）</strong> 是所有硬體工程師的第一個通訊 Hello World。它的最核心特徵是：<strong>沒有時鐘線（Asynchronous）</strong>。</p>
+
+        <h3>1. 點對點拓撲與引腳定義</h3>
+        <p>UART 是嚴格的點對點（Point-to-Point）通訊架構，兩個設備之間交叉互聯：</p>
+        <ul>
+          <li><strong>TXD（Transmit Data）</strong>：本機發送端，直連對端的 RXD。</li>
+          <li><strong>RXD（Receive Data）</strong>：本機接收端，直連對端的 TXD。</li>
+          <li><strong>GND（Ground）</strong>：<strong>絕對不可或缺的公共接地參考點</strong>！若無共地，兩端電壓參考基準漂移，將導致位元解碼全面崩潰。</li>
+        </ul>
+
+        <h3>2. 數據幀格式（Packet Framing）與過採樣解碼</h3>
+        <p>在沒有共享時鐘的情況下，發送端與接收端如何知道何時採樣數據？答案是<strong>事先約定相同的傳輸速率（Baud Rate，波特率）</strong>，例如 9600、115200、921600 bps。</p>
+
+        <pre><code class="language-text">閒置態 (IDLE: 高電平 1)
+  │
+  ├─ [起始位 START: 1 bit 恆為低電平 0] ──> 觸發接收端計時器啟動
+  ├─ [數據位 DATA: 5 ~ 8 bits (LSB 先出, 最低位在先)]
+  ├─ [校驗位 PARITY: 可選 None / Odd 奇 / Even 偶]
+  └─ [停止位 STOP: 1 / 1.5 / 2 bits 恆為高電平 1] ──> 讓線路回歸閒置狀態</code></pre>
+
+        <p><strong>接收端內部 16倍過採樣（16x Oversampling）原理：</strong></p>
+        <p>當接收端偵測到 RXD 線路上出現下降邊緣（Falling Edge）時，判定可能為 START 位元。內部硬體計時器會以波特率時脈的 16 倍頻率計數。當計數到第 <code>7, 8, 9</code> 次脈衝時連續採樣三次，若皆為低電平，確認為真實 START 位元，並將採樣基準點鎖定在<strong>位元週期的中央（50% 處）</strong>，從而將傳輸線抖動引起的誤碼率降至最低。</p>
+
+        <h3>3. 波特率時脈誤差容差限制（Baud Rate Tolerance）</h3>
+        <p>在非同步傳輸中，時脈誤差是累計的。以常見的 <code>8-N-1</code> 格式（1起始 + 8數據 + 1停止 = 10 bits）為例：</p>
+        <p>最後一個資料位元（第 8 位元）的採樣點落在第 <code>9.5</code> 個位元週期處。若要確保採樣不越界進入相鄰位元，最大累計相差必須小於 $\pm 0.5$ 個位元週期：</p>
+        <p>$$\text{Max Error} = \frac{\pm 0.5 \text{ bit}}{9.5 \text{ bits}} \approx \pm 5.26\%$$</p>
+        <p>考慮到訊號上升/下降沿延遲與雜訊干擾，工業界公認的<strong>雙端整體時鐘誤差安全閾值為 $\le \pm 2.5\%$ 到 $\pm 3\%$</strong>。這也是為什麼高速 UART 通訊必須使用精準的外部石英晶體振盪器（Crystal），而不可輕易使用內部溫飄劇烈的 RC 振盪器。</p>
+
+        <!-- SECTION 3 -->
+        <h3 id="sec-3">三、I2C — 極簡雙線多主多從開漏匯流排</h3>
+
+        <p><strong>I2C（Inter-Integrated Circuit，由 Philips / NXP 於 1982 年發明）</strong> 是現代板級感測器通訊的統治者。它的絕招在於<strong>僅憑兩條引腳即可掛載上百個不同元件</strong>。</p>
+
+        <h3>1. 開漏輸出（Open-Drain）與線與（Wired-AND）邏輯</h3>
+        <p>傳統推挽輸出（Push-Pull）引腳如果同時一個輸出 HIGH（3.3V）、一個輸出 LOW（0V），會直接造成電源對地短路燒毀晶片。而 I2C 的兩條線：</p>
+        <ul>
+          <li><strong>SDA（Serial Data Line）</strong>：雙向資料傳輸線。</li>
+          <li><strong>SCL（Serial Clock Line）</strong>：同步時鐘線。</li>
+        </ul>
+        <p>所有節點的內部驅動架構均為<strong>開漏極（Open-Drain MOSFET）</strong>：</p>
+        <ul>
+          <li><strong>輸出 0（LOW）</strong>：MOSFET 導通，引腳被拉至接地（0V）。</li>
+          <li><strong>輸出 1（HIGH）</strong>：MOSFET 截止呈高阻態（Hi-Z），引腳浮空。必須依賴<strong>外部上拉電阻（Pull-up Resistor $R_p$）</strong>將線路電位拉回 $V_{DD}$。</li>
+        </ul>
+
+        <blockquote>
+          <strong>線與（Wired-AND）仲裁原理：</strong>只要總線上<strong>任意一個元件</strong>輸出 LOW，整條線路就被拉低；只有當<strong>所有元件</strong>都放棄拉低（均輸出高阻態）時，電阻才會將電平拉至 HIGH。這天然賦予了 I2C 總線仲裁能力與多主機衝突保護！
+        </blockquote>
+
+        <h3>2. 關鍵工程公式：上拉電阻 $R_p$ 的精確計算</h3>
+        <p>上拉電阻 $R_p$ 絕不能隨意取 <code>4.7kΩ</code> 了事！在高速或長線佈線時，必須根據<strong>總線分佈電容 $C_b$</strong> 進行上下限嚴密校驗：</p>
+
+        <p><strong>(1) 下限限制（防止元件過載燒毀）：</strong></p>
+        <p>當節點輸出 LOW 時，必須能吸收通過 $R_p$ 流入的電流，且端電壓不得高於 $V_{OL(\max)} = 0.4\text{V}$：</p>
+        <p>$$R_{p(\min)} = \frac{V_{DD} - V_{OL(\max)}}{I_{OL}}$$</p>
+        <p>（例如 $V_{DD} = 3.3\text{V}$, $I_{OL} = 3\text{mA}$，則 $R_{p(\min)} = \frac{3.3 - 0.4}{0.003} \approx 966\,\Omega$）</p>
+
+        <p><strong>(2) 上限限制（防止上升時間過慢超標）：</strong></p>
+        <p>當釋放總線時，線路由 LOW 回升至 HIGH 的波形為典型 RC 充電曲線。規範要求上升時間 $t_r$（從 0.3 $V_{DD}$ 到 0.7 $V_{DD}$）不得超過限制（標準模式 $\le 1000\text{ns}$，快速模式 $\le 300\text{ns}$）：</p>
+        <p>$$t_r = 0.8473 \times R_p \times C_b \implies R_{p(\max)} = \frac{t_r}{0.8473 \times C_b}$$</p>
+        <p>若總線電容 $C_b = 200\text{pF}$，在 400kHz 快速模式下（$t_r \le 300\text{ns}$）：</p>
+        <p>$$R_{p(\max)} = \frac{300 \times 10^{-9}}{0.8473 \times 200 \times 10^{-12}} \approx 1770\,\Omega = 1.77\text{k}\Omega$$</p>
+
+        <h3>3. 協定層：START、定址、ACK 與時鐘拉伸（Clock Stretching）</h3>
+        <ul>
+          <li><strong>START / STOP 條件</strong>：在正常傳輸期間，SDA 只能在 SCL 為 LOW 時改變狀態；<strong>唯獨在 SCL 為 HIGH 時</strong>，SDA 的下降沿代表 START，SDA 的上升沿代表 STOP。</li>
+          <li><strong>7-bit / 10-bit 定址</strong>：首個位元組前 7 位為從機硬體位址，第 8 位為讀寫方向位（0=Write, 1=Read）。理論上限 128 個位址（保留 16 個特殊位址，實用 112 個）。</li>
+          <li><strong>第 9 時鐘 ACK/NACK</strong>：發送端釋放 SDA，由接收端在第 9 個 SCL 週期將 SDA 拉低視為確認（ACK，Acknowledge），拉高則為拒絕/未就緒（NACK）。</li>
+          <li><strong>時鐘拉伸（Clock Stretching）</strong>：當從機運算較慢來不及處理時，可利用開漏特性<strong>主動強行將 SCL 拉低</strong>，主機硬體偵測到 SCL 無法回彈便會自動暫停發送，直到從機釋放 SCL。</li>
+        </ul>
+
+        <!-- SECTION 4 -->
+        <h2 id="sec-4">四、SPI — 追求極限吞吐量的高速四線全雙工</h2>
+
+        <p><strong>SPI（Serial Peripheral Interface，由 Motorola 推出）</strong> 放棄了一切複雜的定址與仲裁協議，直奔硬體最底層的移位暫存器（Shift Register）本質，追求極致速度。</p>
+
+        <h3>1. 四線推挽架構（Push-Pull）</h3>
+        <p>SPI 採用主動推挽驅動電路，不需要任何上拉電阻，具有極陡峭的方波上升沿，訊號定義：</p>
+        <ul>
+          <li><strong>SCLK（Serial Clock）</strong>：主機發出的同步時鐘。</li>
+          <li><strong>MOSI（Master Out Slave In）</strong>：主機發送、從機接收資料線。</li>
+          <li><strong>MISO（Master In Slave Out）</strong>：從機發送、主機接收資料線。</li>
+          <li><strong>CS / SS（Chip Select / Slave Select）</strong>：片選線，通常低電平有效（Active LOW）。每個從機需佔用主機獨立的 GPIO 引腳。</li>
+        </ul>
+
+        <h3>2. 傳輸的本質：雙向環形移位暫存器（Circular Shift Registers）</h3>
+        <p>在 SPI 中，<strong>「發送」與「接收」是同時發生的絕對全雙工（Full-duplex）</strong>！</p>
+        <p>主機內部的 8 位元暫存器與從機內部的 8 位元暫存器透過 MOSI 和 MISO 串接成一個 16 位元的環狀迴路。每產生 8 個 SCLK 時脈，主機的 1 Byte 移入從機，從機原先的 1 Byte 同步被頂入主機。即使主機只是想「讀取」從機資料，也必須主動向外傳送一個虛擬位元組（Dummy Byte, 如 <code>0xFF</code>）以泵送時鐘。</p>
+
+        <h3>3. 四種時鐘極性與相位模式（CPOL 與 CPHA 矩陣）</h3>
+        <p>SPI 沒有統一的國際官方標準，各感測器與 Flash 晶片廠商依據 <strong>CPOL（時鐘極性）</strong> 與 <strong>CPHA（時鐘相位）</strong> 定義了四種模式：</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>SPI 模式</th>
+                <th>CPOL (時鐘極性)</th>
+                <th>CPHA (時鐘相位)</th>
+                <th>閒置時鐘電平</th>
+                <th>採樣資料邊緣 (Sample)</th>
+                <th>切換資料邊緣 (Setup)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge-pill badge-emerald">Mode 0 (最通用)</span></td>
+                <td>0</td>
+                <td>0</td>
+                <td>LOW (低電平)</td>
+                <td>第 1 邊緣（上升沿）</td>
+                <td>第 2 邊緣（下降沿）</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pill badge-cyan">Mode 1</span></td>
+                <td>0</td>
+                <td>1</td>
+                <td>LOW (低電平)</td>
+                <td>第 2 邊緣（下降沿）</td>
+                <td>第 1 邊緣（上升沿）</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pill badge-purple">Mode 2</span></td>
+                <td>1</td>
+                <td>0</td>
+                <td>HIGH (高電平)</td>
+                <td>第 1 邊緣（下降沿）</td>
+                <td>第 2 邊緣（上升沿）</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pill badge-amber">Mode 3 (常見)</span></td>
+                <td>1</td>
+                <td>1</td>
+                <td>HIGH (高電平)</td>
+                <td>第 2 邊緣（上升沿）</td>
+                <td>第 1 邊緣（下降沿）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SECTION 5 -->
+        <h2 id="sec-5">五、RS-232 — 走向工業長距的雙極性負邏輯</h2>
+
+        <p>當我們把微控制器的 UART TXD/RXD 直接拉出一條 2 米長的杜邦線時，往往會發現接收端全是亂碼。為什麼？因為 <strong>TTL 電平（0V/3.3V）的抗干擾能力極差</strong>，且長導線電容會嚴重濾波方波。為了解決設備間的可靠傳輸，1960 年代誕生了 <strong>EIA/TIA RS-232</strong> 標準。</p>
+
+        <h3>1. 雙極性負邏輯（Bipolar Inverted Logic）</h3>
+        <p>RS-232 徹底拋棄了以 0V 為基準的 TTL 邏輯，改用對地對稱的高壓負邏輯電平：</p>
+        <ul>
+          <li><strong>邏輯 1（MARK / 閒置狀態）</strong>：$-3\text{V} \sim -15\text{V}$（典型值為 $-12\text{V}$）。</li>
+          <li><strong>邏輯 0（SPACE / 觸發狀態）</strong>：$+3\text{V} \sim +15\text{V}$（典型值為 $+12\text{V}$）。</li>
+          <li><strong>過渡無效死區（Deadband）</strong>：$-3\text{V} \sim +3\text{V}$。任何落在該區間的雜訊信號都會被接收器硬體電路直接忽視。</li>
+        </ul>
+
+        <blockquote>
+          <strong>巨大雜訊容限（Noise Margin）：</strong>從 $-12\text{V}$ 到無效死區邊界 $-3\text{V}$ 擁有高達 <strong>9V 的雜訊防護裕量</strong>！相比 TTL 僅有不到 0.8V 的雜訊裕量，RS-232 能輕鬆抗拒早期工業現場繼電器引起的偶發性干擾。
+        </blockquote>
+
+        <h3>2. 核心轉換晶片：MAX232 電荷泵（Charge Pump）升壓電路</h3>
+        <p>在只有單一 <code>+5V</code> 或 <code>+3.3V</code> 供電的系統中，如何產生 $\pm 10\text{V}$ 的負邏輯高壓？</p>
+        <p>Maxim 於 1985 年推出的革命性 <strong>MAX232</strong> 晶片內建了<strong>雙電荷泵（Dual Charge Pump）</strong>。透過外接 4 顆 <code>0.1μF</code> 陶瓷電容：</p>
+        <ol>
+          <li>第一階電荷泵以開關電容網路對 $V_{CC}$ 倍頻倍壓，生成約 $+10\text{V}$。</li>
+          <li>第二階電荷泵將 $+10\text{V}$ 進行反相倒置，生成約 $-10\text{V}$。</li>
+        </ol>
+        <p>這徹底解放了硬體電路，不再需要額外設計笨重昂貴的 $\pm 12\text{V}$ 類比電源供應模組。</p>
+
+        <h3>3. RS-232 的硬體局限</h3>
+        <ul>
+          <li><strong>單端信號（Single-Ended）</strong>：TX 和 RX 都是以公共接地 GND 為參考基準。當兩台相隔 15 米的設備分別插在不同廠房的插座上時，兩端的<strong>接地電位差（Ground Potential Difference）</strong>可能高達數伏特，直接灌入通訊線燒毀收發晶片。</li>
+          <li><strong>點對點限制</strong>：一個發送器只能驅動一個接收器，無法形成總線。</li>
+        </ul>
+
+        <!-- SECTION 6 -->
+        <h2 id="sec-6">六、RS-485 — 工業現場匯流排王者（差分平衡抗干擾）</h2>
+
+        <p>在工廠車間、光伏逆變器、智慧電表、樓宇自控與機器人關節控制器中，環境充斥著數千伏特的大功率變頻器（VFD）電磁火花與長達數百公尺的線路。在這種極端環境下，<strong>RS-485（TIA/EIA-485-A）</strong> 是唯一的不朽傳奇。</p>
+
+        <h3>1. 差分平衡傳輸（Differential Signaling）消除共模雜訊的物理極限</h3>
+        <p>RS-485 徹底摒棄了單端對地電壓參考，採用一對緊密絞合的<strong>雙絞線（Twisted Pair）</strong>傳輸差分信號：</p>
+        <ul>
+          <li><strong>A 線（Non-Inverting, 常用標記 $D+$）</strong></li>
+          <li><strong>B 線（Inverting, 常用標記 $D-$）</strong></li>
+        </ul>
+
+        <p>邏輯判定依據為<strong>兩線之間的純電位差（$\Delta V = V_A - V_B$）</strong>：</p>
+        <p>$$\text{Logic 1 (Mark / Idle)} \implies V_A - V_B > +200\text{mV} \quad (\text{典型 } +2\text{V} \sim +6\text{V})$$</p>
+        <p>$$\text{Logic 0 (Space / Active)} \implies V_A - V_B < -200\text{mV} \quad (\text{典型 } -2\text{V} \sim -6\text{V})$$</p>
+
+        <blockquote>
+          <strong>共模抑制比（CMRR）物理原理：</strong>
+          當工業現場產生強大的電磁脈衝（EMI）時，由於 A 線與 B 線緊密物理雙絞，雜訊耦合至兩根導線上的感應電壓幾乎<strong>大小相等、極性相同（記為 $V_{\text{noise}}$）</strong>：
+          $$V_A' = V_A + V_{\text{noise}}, \quad V_B' = V_B + V_{\text{noise}}$$
+          在接收端差分放大器相減時：
+          $$(V_A' - V_B') = (V_A + V_{\text{noise}}) - (V_B + V_{\text{noise}}) = V_A - V_B$$
+          <strong>雜訊被完美減法相消！</strong> RS-485 接收端允許高達 $-7\text{V} \sim +12\text{V}$ 的巨大地電位差與共模電壓波動，依然能精準解碼出純淨信號。
+        </blockquote>
+
+        <h3>2. 多點匯流排（Multi-drop）與單位負載（Unit Load）</h3>
+        <p>RS-485 支援多點並聯匯流排拓撲：</p>
+        <ul>
+          <li><strong>標準 1 單位負載（1 UL, 相當於輸入阻抗 $12\text{k}\Omega$）</strong>：驅動器可在單一條總線上並聯掛載 <strong>32 個節點</strong>。</li>
+          <li><strong>現代高阻抗收發器（1/4 UL 或 1/8 UL, 如 MAX1487 / MAX3088）</strong>：輸入阻抗高達 $96\text{k}\Omega$，單條總線可輕鬆掛載 <strong>128 ~ 256 個節點</strong>！</li>
+        </ul>
+
+        <h3>3. 兩大必備硬體設計：120Ω 終端電阻與故障安全偏置（Failsafe Biasing）</h3>
+        
+        <p><strong>(1) $120\Omega$ 終端匹配電阻（Termination Resistor）：</strong></p>
+        <p>在高頻或長距離通訊時，導線必須視為<strong>分佈參數傳輸線（Transmission Line）</strong>。標準工業雙絞線的特徵阻抗（Characteristic Impedance）一般為 $Z_0 \approx 120\Omega$。若匯流排兩端開路，信號波傳遞至末端會產生同相位反射波，與後續數據疊加引發嚴重的波形過衝、下衝與眼圖閉合（Eye Diagram Closure）。</p>
+        <p><strong>工程規範：必須在匯流排最遠端的兩台設備（且僅限這兩台設備）並聯跨接 $120\Omega$ 電阻</strong>，吸收行波能量，徹底消除反射。</p>
+
+        <p><strong>(2) 故障安全偏置電阻（Failsafe Biasing）：</strong></p>
+        <p>當總線上所有節點均處於接收狀態（無人發送）時，所有驅動器呈高阻態，總線處於<strong>浮空（Floating）</strong>狀態。此時若有微小雜訊使 $V_A - V_B$ 落在 $-200\text{mV} \sim +200\text{mV}$ 閾值之間，接收器內部比較器會發生高頻隨機震盪，向 UART 送出大量錯誤亂碼（Ghost Bytes）。</p>
+        <p><strong>解法：在主節點處配置上下拉偏置電阻網：</strong></p>
+        <ul>
+          <li>A 線透過 $R_{\text{pull-up}}$（典型 $560\Omega \sim 1\text{k}\Omega$）接 $V_{CC}$。</li>
+          <li>B 線透過 $R_{\text{pull-down}}$（典型 $560\Omega \sim 1\text{k}\Omega$）接 GND。</li>
+          <li>這確保在總線無人發話時，強制維持 $V_A - V_B \ge +200\text{mV}$，鎖定在穩定的邏輯 1 閒置態。</li>
+        </ul>
+
+        <!-- SECTION 7 -->
+        <h2 id="sec-7">七、終極橫向規格對比矩陣（Master Comparison Matrix）</h2>
+
+        <p>下表全維度總結了五大串列協定的底層物理層與資料鏈結層規格指標：</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>比較維度</th>
+                <th>I2C</th>
+                <th>SPI</th>
+                <th>UART (TTL)</th>
+                <th>RS-232</th>
+                <th>RS-485</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>通訊同步性</strong></td>
+                <td><span class="badge-pill badge-cyan">同步 (有時鐘 SCL)</span></td>
+                <td><span class="badge-pill badge-emerald">同步 (有時鐘 SCLK)</span></td>
+                <td><span class="badge-pill badge-purple">非同步 (波特率約定)</span></td>
+                <td><span class="badge-pill badge-blue">非同步 (波特率約定)</span></td>
+                <td><span class="badge-pill badge-amber">非同步 (主從半雙工)</span></td>
+              </tr>
+              <tr>
+                <td><strong>傳輸雙工模式</strong></td>
+                <td>半雙工 (Half-Duplex)</td>
+                <td>全雙工 (Full-Duplex)</td>
+                <td>全雙工 (Full-Duplex)</td>
+                <td>全雙工 (Full-Duplex)</td>
+                <td>半雙工 (2線) / 全雙工 (4線)</td>
+              </tr>
+              <tr>
+                <td><strong>物理線路數量</strong></td>
+                <td><strong>2 條</strong> (SDA, SCL)</td>
+                <td><strong>4 條</strong> (MOSI, MISO, SCLK, CS)</td>
+                <td><strong>2 ~ 3 條</strong> (TX, RX, [GND])</td>
+                <td><strong>3 ~ 9 條</strong> (TX, RX, GND + 流控)</td>
+                <td><strong>2 條</strong> (A, B) 或 <strong>4 條</strong> (+GND屏蔽)</td>
+              </tr>
+              <tr>
+                <td><strong>電氣信號模式</strong></td>
+                <td>單端開漏 (Open-Drain + $R_p$)</td>
+                <td>單端推挽 (Push-Pull CMOS)</td>
+                <td>單端推挽 (0V / 3.3V / 5V)</td>
+                <td>單端雙極性負邏輯 ($\pm 12\text{V}$)</td>
+                <td><strong>差分平衡信號</strong> ($\Delta V_{A-B}$)</td>
+              </tr>
+              <tr>
+                <td><strong>典型傳輸速率</strong></td>
+                <td>100 kbps ~ 1 Mbps (上限 3.4M)</td>
+                <td><strong>10 Mbps ~ 50 Mbps+</strong></td>
+                <td>9600 bps ~ 921.6 kbps</td>
+                <td>上限約 115.2 kbps</td>
+                <td>100 kbps ~ 10 Mbps</td>
+              </tr>
+              <tr>
+                <td><strong>最遠傳輸距離</strong></td>
+                <td>板級約 <strong>1 ~ 2 公尺</strong> (電容 &lt; 400pF)</td>
+                <td>板級約 <strong>10 ~ 20 公分</strong></td>
+                <td>板級約 <strong>15 ~ 30 公分</strong></td>
+                <td>約 <strong>15 公尺</strong> (50 ft)</td>
+                <td><strong>高達 1200 公尺</strong> (4000 ft)</td>
+              </tr>
+              <tr>
+                <td><strong>拓撲結構與節點</strong></td>
+                <td>多主多從匯流排 (上百節點)</td>
+                <td>點對多點 (依賴獨立 CS 腳位)</td>
+                <td>嚴格 1 對 1 點對點</td>
+                <td>嚴格 1 對 1 點對點</td>
+                <td><strong>多點匯流排 (32 ~ 256 節點)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>抗電磁干擾能力</strong></td>
+                <td>較弱 (容易被高頻串擾)</td>
+                <td>弱 (缺乏防護，易輻射干擾)</td>
+                <td>極弱 (僅適用電路板內)</td>
+                <td>中等 (高壓死區具一定雜訊容限)</td>
+                <td><strong>極強 (共模雜訊抵消 + 屏蔽)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>核心殺手級應用</strong></td>
+                <td>感測器、RTC、EEPROM、OLED</td>
+                <td>NOR Flash、SD卡、TFT螢幕、ADC</td>
+                <td>微控制器 Debug、藍牙、GPS模組</td>
+                <td>舊型 PC 連接埠、醫療儀表控制台</td>
+                <td>Modbus 工業自控、光伏逆變、電表</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SECTION 8 -->
+        <h2 id="sec-8">八、互動硬核工具箱：選型決策器與實體波形示波器</h2>
+
+        <!-- Interactive 1: Protocol Selection Wizard -->
+        <div class="interactive-card">
+          <div class="interactive-header">
+            <span class="interactive-badge">INTERACTIVE TOOL 1</span>
+            <h3 class="interactive-title">嵌入式通訊協定全維度選型決策器 (Protocol Decision Matrix)</h3>
+          </div>
+          <p class="interactive-desc">
+            設定你的硬體專案需求指標，系統將結合距離、速度、線數與抗干擾能力，為你匹配最合適的通訊協定與推薦配套晶片：
+          </p>
+
+          <div class="filter-grid">
+            <div class="filter-group">
+              <label for="selDist">傳輸距離需求：</label>
+              <select id="selDist" onchange="evaluateProtocol()">
+                <option value="board_short">板級極短距 (&lt; 20 cm)</option>
+                <option value="board_med">設備內部跨板 (20 cm ~ 1.5 m)</option>
+                <option value="field_short">房間設備間 (1.5 m ~ 15 m)</option>
+                <option value="field_long">工廠戶外長距 (15 m ~ 1200 m)</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="selSpeed">資料傳輸速率需求：</label>
+              <select id="selSpeed" onchange="evaluateProtocol()">
+                <option value="low">低速 (&lt; 400 kbps, 傳感器數據)</option>
+                <option value="med">中速 (400 kbps ~ 2 Mbps, 串流日誌)</option>
+                <option value="high">極高速 (&gt; 10 Mbps, 螢幕/快閃記憶體)</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="selNodes">掛載節點數量：</label>
+              <select id="selNodes" onchange="evaluateProtocol()">
+                <option value="p2p">單一對點 (1 對 1)</option>
+                <option value="multi_few">多個節點 (2 ~ 8 個元件)</option>
+                <option value="multi_many">大量節點 (10 ~ 100+ 個節點)</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="selNoise">環境電磁雜訊強度：</label>
+              <select id="selNoise" onchange="evaluateProtocol()">
+                <option value="clean">實驗室 / 消費級純淨環境</option>
+                <option value="industrial">工業現場 / 變頻器強干擾</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-result-box" id="evalResult">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+
+        <!-- Interactive 2: Dynamic Waveform Oscilloscope -->
+        <div class="interactive-card" style="border-color: #10b981;">
+          <div class="interactive-header">
+            <span class="interactive-badge" style="background: #10b981;">INTERACTIVE TOOL 2</span>
+            <h3 class="interactive-title">串列協定物理層時序動態示波器 (Waveform Timing Simulator)</h3>
+          </div>
+          <p class="interactive-desc">
+            切換不同協定，觀察在傳輸相同位元組 <code>0x55 (0b01010101)</code> 或自訂位元時，時鐘線、數據線以及差分對的真實跳變波形：
+          </p>
+
+          <div class="scope-controls">
+            <span style="font-weight: 600; font-size: 0.9rem;">協定切換：</span>
+            <button class="scope-btn active" onclick="switchScopeMode('i2c', this)">I2C (SCL + SDA)</button>
+            <button class="scope-btn" onclick="switchScopeMode('spi', this)">SPI (SCLK + MOSI + CS)</button>
+            <button class="scope-btn" onclick="switchScopeMode('uart', this)">UART (8-N-1 TTL)</button>
+            <button class="scope-btn" onclick="switchScopeMode('rs232', this)">RS-232 (±12V 負邏輯)</button>
+            <button class="scope-btn" onclick="switchScopeMode('rs485', this)">RS-485 (A - B 差分對)</button>
+          </div>
+
+          <div class="scope-box">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.85rem; color: #38bdf8;">
+              <span id="scopeHeaderInfo">PROTOCOL: I2C (START + ADDR 0x55 + ACK)</span>
+              <span style="color: #64748b;">TIMEBASE: 10us/DIV | TRIG: CH1 FALLING</span>
+            </div>
+            
+            <div class="scope-screen">
+              <svg id="scopeSvg" width="100%" height="100%" viewBox="0 0 800 260" preserveAspectRatio="none">
+                <!-- Grid and waves dynamically drawn by JS -->
+              </svg>
+            </div>
+
+            <div style="margin-top: 0.8rem; font-size: 0.88rem; color: #94a3b8; display: flex; gap: 1.5rem;" id="scopeLegend">
+              <!-- Dynamically populated legends -->
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 9 -->
+        <h2 id="sec-9">九、硬體工程師實戰避坑與佈線指南（PCB & Layout Checklist）</h2>
+
+        <p>在實際電路板（PCB Layout）與工業施工中，細節決定成敗。以下是硬核工程師總結的保命守則：</p>
+
+        <ol>
+          <li><strong>I2C 串擾與走線寄生電容控制</strong>：
+            <ul>
+              <li>SDA 與 SCL 絕對<strong>不可平行長距離並排走線</strong>！平行走線產生的線間電容會讓 SCL 時鐘邊緣直接耦合進 SDA 觸發假 ACK。兩者之間應以 GND 地線隔離（Guard Trace）。</li>
+              <li>長線傳輸時改用帶有電流源加速的專用緩衝器（如 NXP P82B96 或 PCA9615 差分 I2C）。</li>
+            </ul>
+          </li>
+          <li><strong>SPI 傳輸線阻抗匹配與串聯電阻</strong>：
+            <ul>
+              <li>在高速（&gt; 25MHz）SPI SCLK 與 MOSI 引腳<strong>源端串聯一個 $22\Omega \sim 33\Omega$ 阻尼電阻</strong>，以匹配微控制器輸出阻抗，大幅減輕高速信號過衝振鈴（Ringing）。</li>
+            </ul>
+          </li>
+          <li><strong>RS-485 現場施工天條</strong>：
+            <ul>
+              <li><strong>拓撲嚴禁星形或樹狀發散！</strong> 所有節點必須嚴格遵循<strong>手牽手菊花鏈（Daisy-Chain）匯流排拓撲</strong>。分支引出線（Stub Length）長度必須小於 30cm，否則 stub 引發的多重反射會毀滅整條總線。</li>
+              <li><strong>防雷與 ESD 三級防護架構</strong>：氣體放電管（GDT）粗保護 $\to$ 兩側串聯 PTC 自恢復保險絲 $\to$ 雙向瞬態電壓抑制器（TVS，如 SMBJ6.0CA）細鉗位。</li>
+            </ul>
+          </li>
+          <li><strong>RS-232 電荷泵電容耐壓</strong>：
+            <ul>
+              <li>使用 MAX3232（3.3V 系統）時，外接電荷泵電容必須選用 $0.1\mu\text{F}$ 且<strong>耐壓值 $\ge 16\text{V}$ 的 X7R 陶瓷電容</strong>，嚴禁使用耐壓過低的電容導致擊穿發燙。</li>
+            </ul>
+          </li>
+        </ol>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div>"AI" 硬核工程師</div>
+        <div class="footer-tagline">Talk is cheap. Show me the code.</div>
+      </div>
+      <div class="footer-right">
+        <div>© 2026 "AI" 硬核工程師. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // --- Tool 1: Protocol Decision Wizard Logic ---
+    function evaluateProtocol() {
+      const dist = document.getElementById('selDist').value;
+      const speed = document.getElementById('selSpeed').value;
+      const nodes = document.getElementById('selNodes').value;
+      const noise = document.getElementById('selNoise').value;
+
+      let winner = "";
+      let title = "";
+      let reason = "";
+      let chips = "";
+      let warning = "";
+
+      // Evaluation rules
+      if (dist === "field_long" || (dist === "field_short" && noise === "industrial") || (dist === "field_short" && nodes === "multi_many")) {
+        winner = "rs485";
+        title = "🏆 首選方案：RS-485 差分總線 (搭配 UART 控制器)";
+        reason = "距離超過 15 米或處於強干擾工業環境，只有差分信號（$V_A - V_B$）能提供高共模抑制比（CMRR）。多節點菊花鏈拓撲支援最多 256 個設備。";
+        chips = "推薦收發晶片：MAX485, SP3485 (3.3V), ADM2587E (全隔離型收發器)";
+        warning = "⚠ 注意：總線兩端務必並聯 120Ω 終端電阻，嚴禁星形拓撲，確保配備故障安全偏置電阻。";
+      } else if (dist === "field_short" && nodes === "p2p" && noise === "clean") {
+        winner = "rs232";
+        title = "🏆 首選方案：RS-232 雙極性序列介面";
+        reason = "長度在 15 米以內且為一對一點對點儀表連線。±12V 雙極性高壓具備優良抗雜訊死區，相容標準 PC 序列埠與舊型控制箱。";
+        chips = "推薦電平轉換晶片：MAX232 (5V), MAX3232 (3.3V), SP3232";
+        warning = "⚠ 注意：兩台設備請注意接地電位差，傳輸速率上限通常約 115.2 kbps。";
+      } else if (dist === "board_short" && speed === "high") {
+        winner = "spi";
+        title = "🏆 首選方案：SPI 高速四線全雙工";
+        reason = "極致追求傳輸速率（10MHz ~ 80MHz+），適合大容量 NOR Flash、TF/SD 卡或彩色 TFT LCD 螢幕，無定址開銷。";
+        chips = "常見配套晶片：W25Q128 (Flash), ST7789 (LCD Controller), MCP2515 (CAN Controller)";
+        warning = "⚠ 注意：每增加一個從機需消耗主機 1 個獨立 GPIO 片選線；高速下時鐘線請串聯 22Ω 阻尼電阻。";
+      } else if (nodes === "multi_many" || (nodes === "multi_few" && speed !== "high")) {
+        winner = "i2c";
+        title = "🏆 首選方案：I2C 雙線開漏匯流排";
+        reason = "微控制器引腳極為寶貴時的最佳選擇。僅需 2 條線即可掛載數十個感測器與暫存器，硬體定址免除額外片選線。";
+        chips = "常見配套晶片：AT24C02 (EEPROM), DS3231 (RTC), BME280 (溫濕氣壓), SSD1306 (OLED)";
+        warning = "⚠ 注意：總線上拉電阻需依據節點電容計算（通常 2.2kΩ ~ 4.7kΩ），速率通常受限於 400kHz。";
+      } else {
+        winner = "uart";
+        title = "🏆 首選方案：原生 UART (TTL 電平)";
+        reason = "微控制器內部除錯（Debug Console）、直連板載 WiFi/BLE/GPS 模組的最輕量選擇。協定簡單，開銷最小。";
+        chips = "常見轉接晶片：CH340G, CP2102, FT232RL (USB to UART)";
+        warning = "⚠ 注意：非同步通訊要求晶振誤差 ≤ ±2.5%，走線距離通常建議不超過 30cm。";
+      }
+
+      const box = document.getElementById('evalResult');
+      box.innerHTML = `
+        <h4 style="margin: 0 0 0.6rem; font-size: 1.25rem; color: #06b6d4;">${title}</h4>
+        <p style="margin-bottom: 0.5rem; line-height: 1.6;">${reason}</p>
+        <p style="margin-bottom: 0.4rem; color: #10b981; font-weight: 600;">${chips}</p>
+        <p style="margin-bottom: 0; color: #f59e0b; font-size: 0.92rem;">${warning}</p>
+      `;
+    }
+    // Init evaluation
+    evaluateProtocol();
+
+    // --- Tool 2: Oscilloscope Waveform Drawer ---
+    let currentScopeMode = 'i2c';
+
+    function switchScopeMode(mode, btn) {
+      currentScopeMode = mode;
+      document.querySelectorAll('.scope-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      drawScopeWaveform();
+    }
+
+    function drawScopeWaveform() {
+      const svg = document.getElementById('scopeSvg');
+      const headerInfo = document.getElementById('scopeHeaderInfo');
+      const legend = document.getElementById('scopeLegend');
+
+      // Clear SVG
+      svg.innerHTML = '';
+
+      // Draw background grid lines
+      for (let y = 30; y < 260; y += 30) {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', '0'); line.setAttribute('y1', y);
+        line.setAttribute('x2', '800'); line.setAttribute('y2', y);
+        line.setAttribute('stroke', 'rgba(255,255,255,0.06)');
+        line.setAttribute('stroke-dasharray', '2 4');
+        svg.appendChild(line);
+      }
+      for (let x = 40; x < 800; x += 40) {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', x); line.setAttribute('y1', '0');
+        line.setAttribute('x2', x); line.setAttribute('y2', '260');
+        line.setAttribute('stroke', 'rgba(255,255,255,0.06)');
+        line.setAttribute('stroke-dasharray', '2 4');
+        svg.appendChild(line);
+      }
+
+      if (currentScopeMode === 'i2c') {
+        headerInfo.innerText = "PROTOCOL: I2C (START -> ADDR: 0x55 + W -> ACK -> STOP)";
+        legend.innerHTML = `
+          <span><strong style="color: #10b981;">― CH1 (SCL):</strong> 序列時鐘 (9 Clock Pulses)</span>
+          <span><strong style="color: #38bdf8;">― CH2 (SDA):</strong> 開漏數據 (START + 0101010 + 0 + ACK)</span>
+        `;
+
+        // SCL Waveform (CH1 - Green)
+        // High, then pulses 1..9, then High
+        let sclPath = "M 20 60 L 90 60";
+        for (let i = 0; i < 9; i++) {
+          const xStart = 90 + i * 65;
+          sclPath += ` L ${xStart} 110 L ${xStart + 30} 110 L ${xStart + 30} 60 L ${xStart + 60} 60 L ${xStart + 65} 110`;
+        }
+        sclPath += " L 720 60 L 780 60";
+        appendPath(svg, sclPath, "#10b981", 2.5);
+
+        // SDA Waveform (CH2 - Cyan)
+        // Start: SCL=High, SDA goes High->Low at x=60
+        // Data: 0, 1, 0, 1, 0, 1, 0, 0(W), ACK(0)
+        let sdaPath = "M 20 170 L 60 170 L 60 220 L 90 220"; 
+        const bits = [0, 1, 0, 1, 0, 1, 0, 0, 0]; // 9 bits
+        for (let i = 0; i < 9; i++) {
+          const y = bits[i] === 1 ? 170 : 220;
+          const x1 = 90 + i * 65;
+          const x2 = x1 + 65;
+          sdaPath += ` L ${x1 + 10} ${y} L ${x2} ${y}`;
+        }
+        // Stop condition: SCL is High at x=740, SDA goes Low->High at x=740
+        sdaPath += " L 740 220 L 740 170 L 780 170";
+        appendPath(svg, sdaPath, "#38bdf8", 2.5);
+
+        // Labels
+        appendText(svg, 50, 155, "START", "#fbbf24");
+        appendText(svg, 730, 155, "STOP", "#fbbf24");
+        appendText(svg, 615, 238, "ACK=0", "#34d399");
+
+      } else if (currentScopeMode === 'spi') {
+        headerInfo.innerText = "PROTOCOL: SPI Mode 0 (CPOL=0, CPHA=0 | Byte: 0x55)";
+        legend.innerHTML = `
+          <span><strong style="color: #c084fc;">― CH1 (CS):</strong> 片選主動低電平</span>
+          <span><strong style="color: #10b981;">― CH2 (SCLK):</strong> 序列時鐘 (8 週期)</span>
+          <span><strong style="color: #38bdf8;">― CH3 (MOSI):</strong> 數據 (0-1-0-1-0-1-0-1)</span>
+        `;
+
+        // CS (Purple) - Active Low from x=60 to x=720
+        let csPath = "M 20 40 L 60 40 L 60 80 L 720 80 L 720 40 L 780 40";
+        appendPath(svg, csPath, "#c084fc", 2.2);
+
+        // SCLK (Green) - Mode 0 Idle Low, 8 Pulses
+        let sclkPath = "M 20 140 L 90 140";
+        for (let i = 0; i < 8; i++) {
+          const x = 90 + i * 75;
+          sclkPath += ` L ${x} 140 L ${x} 100 L ${x + 35} 100 L ${x + 35} 140 L ${x + 75} 140`;
+        }
+        sclkPath += " L 780 140";
+        appendPath(svg, sclkPath, "#10b981", 2.2);
+
+        // MOSI (Cyan) - Data 0, 1, 0, 1, 0, 1, 0, 1
+        const bits = [0, 1, 0, 1, 0, 1, 0, 1];
+        let mosiPath = "M 20 230 L 90 230";
+        for (let i = 0; i < 8; i++) {
+          const y = bits[i] === 1 ? 190 : 230;
+          const x = 90 + i * 75;
+          mosiPath += ` L ${x} ${y} L ${x + 75} ${y}`;
+        }
+        mosiPath += " L 780 230";
+        appendPath(svg, mosiPath, "#38bdf8", 2.2);
+
+      } else if (currentScopeMode === 'uart') {
+        headerInfo.innerText = "PROTOCOL: UART 8-N-1 (Baud 115200 | Byte: 0x55 = 'U')";
+        legend.innerHTML = `
+          <span><strong style="color: #38bdf8;">― TX/RX (TTL):</strong> IDLE(1) -> START(0) -> 10101010 -> STOP(1)</span>
+        `;
+
+        // UART 8-N-1: Idle 1(70px), Start 0(130px), D0=1, D1=0, D2=1, D3=0, D4=1, D5=0, D6=1, D7=0, Stop=1
+        // (LSB first: for 0x55, bits are 1,0,1,0,1,0,1,0)
+        let uartPath = "M 20 70 L 70 70 L 70 150 L 140 150"; // Start bit at 70..140
+        const uartBits = [1, 0, 1, 0, 1, 0, 1, 0];
+        for (let i = 0; i < 8; i++) {
+          const y = uartBits[i] === 1 ? 70 : 150;
+          const x = 140 + i * 65;
+          uartPath += ` L ${x} ${y} L ${x + 65} ${y}`;
+        }
+        uartPath += " L 660 70 L 780 70"; // Stop bit & Idle
+        appendPath(svg, uartPath, "#38bdf8", 2.8);
+
+        appendText(svg, 85, 175, "START=0", "#f59e0b");
+        appendText(svg, 680, 55, "STOP=1", "#10b981");
+
+      } else if (currentScopeMode === 'rs232') {
+        headerInfo.innerText = "PROTOCOL: RS-232 Bipolar Negative Logic (±12V)";
+        legend.innerHTML = `
+          <span><strong style="color: #60a5fa;">― RS-232:</strong> 邏輯 1 = -12V (閒置), 邏輯 0 = +12V (觸發)</span>
+        `;
+
+        // RS-232: Bipolar logic. -12V is logic 1 (Y=210), +12V is logic 0 (Y=50)
+        // Idle is -12V (210). Start bit is logic 0 (+12V -> 50).
+        let rs232Path = "M 20 210 L 70 210 L 70 50 L 140 50";
+        const bits = [1, 0, 1, 0, 1, 0, 1, 0];
+        for (let i = 0; i < 8; i++) {
+          const y = bits[i] === 1 ? 210 : 50; // logic 1 is -12V, logic 0 is +12V
+          const x = 140 + i * 65;
+          rs232Path += ` L ${x} ${y} L ${x + 65} ${y}`;
+        }
+        rs232Path += " L 660 210 L 780 210";
+        appendPath(svg, rs232Path, "#60a5fa", 2.8);
+
+        // Center zero volt line
+        const zeroLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        zeroLine.setAttribute('x1', '20'); zeroLine.setAttribute('y1', '130');
+        zeroLine.setAttribute('x2', '780'); zeroLine.setAttribute('y2', '130');
+        zeroLine.setAttribute('stroke', '#ef4444'); zeroLine.setAttribute('stroke-dasharray', '4 4');
+        svg.appendChild(zeroLine);
+        appendText(svg, 25, 125, "0V REF", "#ef4444");
+        appendText(svg, 25, 45, "+12V (Logic 0)", "#60a5fa");
+        appendText(svg, 25, 225, "-12V (Logic 1)", "#60a5fa");
+
+      } else if (currentScopeMode === 'rs485') {
+        headerInfo.innerText = "PROTOCOL: RS-485 Differential Pair (Line A, Line B, Delta V)";
+        legend.innerHTML = `
+          <span><strong style="color: #fbbf24;">― Line A (D+):</strong> 正向端</span>
+          <span><strong style="color: #38bdf8;">― Line B (D-):</strong> 反向端</span>
+          <span><strong style="color: #10b981;">--- (A - B):</strong> 差模解碼電壓 (&gt;+200mV 為 1)</span>
+        `;
+
+        // Line A: Idle High (+3.5V, Y=60), Start Low (+1.5V, Y=100)
+        // Line B: Idle Low (+1.5V, Y=100), Start High (+3.5V, Y=60)
+        let aPath = "M 20 60 L 70 60 L 70 100 L 140 100";
+        let bPath = "M 20 100 L 70 100 L 70 60 L 140 60";
+        const bits = [1, 0, 1, 0, 1, 0, 1, 0];
+        for (let i = 0; i < 8; i++) {
+          const ya = bits[i] === 1 ? 60 : 100;
+          const yb = bits[i] === 1 ? 100 : 60;
+          const x = 140 + i * 65;
+          aPath += ` L ${x} ${ya} L ${x + 65} ${ya}`;
+          bPath += ` L ${x} ${yb} L ${x + 65} ${yb}`;
+        }
+        aPath += " L 660 60 L 780 60";
+        bPath += " L 660 100 L 780 100";
+
+        appendPath(svg, aPath, "#fbbf24", 2.2);
+        appendPath(svg, bPath, "#38bdf8", 2.2);
+
+        // Delta V (A - B) in Green (Y=190 for +2V, Y=240 for -2V)
+        let diffPath = "M 20 190 L 70 190 L 70 240 L 140 240";
+        for (let i = 0; i < 8; i++) {
+          const yd = bits[i] === 1 ? 190 : 240;
+          const x = 140 + i * 65;
+          diffPath += ` L ${x} ${yd} L ${x + 65} ${yd}`;
+        }
+        diffPath += " L 660 190 L 780 190";
+        appendPath(svg, diffPath, "#10b981", 2.5);
+
+        appendText(svg, 25, 75, "DIFF A/B", "#fbbf24");
+        appendText(svg, 25, 205, "(A-B) > 0", "#10b981");
+      }
+    }
+
+    function appendPath(svg, d, color, width) {
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', d);
+      path.setAttribute('stroke', color);
+      path.setAttribute('stroke-width', width);
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke-linejoin', 'round');
+      svg.appendChild(path);
+    }
+
+    function appendText(svg, x, y, text, color) {
+      const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      t.setAttribute('x', x);
+      t.setAttribute('y', y);
+      t.setAttribute('fill', color);
+      t.setAttribute('font-size', '10');
+      t.setAttribute('font-weight', 'bold');
+      t.setAttribute('font-family', "'Consolas', monospace");
+      t.textContent = text;
+      svg.appendChild(t);
+    }
+
+    // Initialize oscilloscope
+    drawScopeWaveform();
+  </script>
+
+</body>
+</html>

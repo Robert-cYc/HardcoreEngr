@@ -4,6 +4,7 @@ import json
 import bs4
 
 ARTICLE_BANNER_MAP = {
+    "i2c-spi-uart-rs232-rs485-comparison-guide.html": "i2c-spi-uart-rs232-rs485-guide.jpg",
     "windows-fluent-design-guide.html": "windows-fluent-design-guide.jpg",
     "ai-algorithms.html": "ai-algorithms-guide.jpg",
     "ai-and-harness-engineering-guide.html": "ai-and-harness-engineering-guide.jpg",
