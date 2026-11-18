@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18 03:42",
+  "updated": "2026-11-18 05:12",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -41,18 +41,11 @@
           "comments": "https://news.ycombinator.com/item?id=50538994"
         },
         {
-          "title": "GoGoGrandparent (YC S16) Is a Front End JavaScript / TypeScript Engineer",
-          "link": "https://www.ycombinator.com/companies/gogograndparent/jobs/05woouL-front-end-javascript-typescript-engineer",
-          "date": "2026-11-18 03:35",
+          "title": "Microsoft's ONNX Runtime has disappeared from GitHub",
+          "link": "https://github.com/microsoft/onnxruntime",
+          "date": "2026-11-17 23:18",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50541538"
-        },
-        {
-          "title": "Archive Team is archiving the Apple Support Community (closes November 20, 2026)",
-          "link": "https://wiki.archiveteam.org/index.php/Apple_Discussions",
-          "date": "2026-11-17 23:32",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50539747"
+          "comments": "https://news.ycombinator.com/item?id=50539610"
         },
         {
           "title": "Nvidia stopped disclosing Singapore sales as revenues hit $104B",
@@ -62,11 +55,25 @@
           "comments": "https://news.ycombinator.com/item?id=50534631"
         },
         {
-          "title": "Microsoft's ONNX Runtime has disappeared from GitHub",
-          "link": "https://github.com/microsoft/onnxruntime",
-          "date": "2026-11-17 23:18",
+          "title": "Archive Team is archiving the Apple Support Community (closes November 20, 2026)",
+          "link": "https://wiki.archiveteam.org/index.php/Apple_Discussions",
+          "date": "2026-11-17 23:32",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50539610"
+          "comments": "https://news.ycombinator.com/item?id=50539747"
+        },
+        {
+          "title": "GoGoGrandparent (YC S16) Is a Front End JavaScript / TypeScript Engineer",
+          "link": "https://www.ycombinator.com/companies/gogograndparent/jobs/05woouL-front-end-javascript-typescript-engineer",
+          "date": "2026-11-18 03:35",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50541538"
+        },
+        {
+          "title": "Highly classified US national security communications network goes down",
+          "link": "https://www.cnn.com/2026/11/17/politics/highly-classified-national-security-communications-network-goes-down",
+          "date": "2026-11-17 15:38",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50532849"
         },
         {
           "title": "jQuery 4.1.0",
@@ -81,13 +88,6 @@
           "date": "2026-11-17 18:25",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50535885"
-        },
-        {
-          "title": "Highly classified US national security communications network goes down",
-          "link": "https://www.cnn.com/2026/11/17/politics/highly-classified-national-security-communications-network-goes-down",
-          "date": "2026-11-17 15:38",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50532849"
         }
       ]
     },
@@ -174,13 +174,31 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "Google Gemini隱私設定大改！關閉聊天紀錄 資料仍保存2個月",
+          "link": "https://3c.ltn.com.tw/news/68322",
+          "date": "2026/11/18 12:31",
+          "summary": "Google宣布調整Gemini隱私設定，使用者可以保留聊天紀錄，同時拒絕讓Google將對話內容用於AI訓練。不過 ..."
+        },
+        {
+          "title": "小米18 Pro系列登台！背面多一塊螢幕 11月25日開賣",
+          "link": "https://3c.ltn.com.tw/news/68327",
+          "date": "2026/11/18 12:10",
+          "summary": "小米宣布在台推出全新旗艦手機小米18 Pro系列，包括小米18 Pro和小米18 Pro Max兩款機型，最大亮點就 ..."
+        },
+        {
+          "title": "LINE奪Google Play年度最佳創新App 網狂酸：一堆功能要收費",
+          "link": "https://3c.ltn.com.tw/news/68326",
+          "date": "2026/11/18 12:01",
+          "summary": "2026年即將進入尾聲，Google正式公布台灣Google Play年度最佳應用程式與遊戲榜單，其中，年度最佳Ap ..."
+        },
+        {
           "title": "LINE網頁版真的要關了！官方證實2027年停用 電腦版升級",
           "link": "https://3c.ltn.com.tw/news/68318",
           "date": "2026/11/18 11:00",
           "summary": "LINE網頁版真的要說再見了！LINE去年宣布將停止「Chrome版LINE」服務，消息一出引發大批上班族及視障使用 ..."
         },
         {
-          "title": "電動車導航怎麼找充電站？Google 地圖、Apple 地圖設定教學一次看",
+          "title": "如何用 Google 地圖、Apple 地圖找電動車充電站？設定教學一次看",
           "link": "https://3c.ltn.com.tw/news/68325",
           "date": "2026/11/18 10:20",
           "summary": "隨著電動車逐漸普及，如何在長途行駛過程中找到合適的充電站，成為車主規劃旅程的主要課題。除了透過充電業者 App 查詢 ..."
@@ -226,24 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68311",
           "date": "2026/11/17 18:20",
           "summary": "今年最受矚目的遊戲大作《俠盜獵車手 6》將於 11 月 19 日上線，官方已於 10 日開放預先下載，但是部分收到《 ..."
-        },
-        {
-          "title": "Instagram小盒子將成獨立通訊App！挑戰LINE霸主地位",
-          "link": "https://3c.ltn.com.tw/news/68310",
-          "date": "2026/11/17 18:07",
-          "summary": "Meta 宣布將 Instagram 俗稱「小盒子」的聊天功能獨立出來，將製作成名為「Direct」的通訊 App， ..."
-        },
-        {
-          "title": "全球打電動時間排行榜出爐！台灣排名第 40 日本倒數第 2",
-          "link": "https://3c.ltn.com.tw/news/68303",
-          "date": "2026/11/17 15:14",
-          "summary": "你每週花多少時間打電動？來自數據分析網站 Visual Capitalist 公布的全球遊戲時間排名，台灣 16 歲 ..."
-        },
-        {
-          "title": "蘋果首款智慧眼鏡規格曝光！不用拿 iPhone 就能導航 2027 年上市",
-          "link": "https://3c.ltn.com.tw/news/68302",
-          "date": "2026/11/17 11:30",
-          "summary": "蘋果（Apple）傳出正積極開發旗下首款智慧眼鏡，根據彭博（Bloomberg）記者 Mark Gurman 最新消 ..."
         }
       ]
     },
@@ -251,6 +251,20 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "微軟推 MAI Code 2 程式模型，稱以 Claude Opus 5.5 約 5% 價格達 96% 效能",
+          "link": "https://technews.tw/2026/11/18/microsoft-unveils-ai-models-for-coding-cybersecurity-as-it-takes-on-anthropic-openai/",
+          "date": "2026-11-18 03:50",
+          "summary": "微軟 Ignite 2026 大會推出一系列自研 AI 模型，包括程式設計模型 MAI Code 2 與資安專 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "台積電工程師征戰全球必備！大同「晶圓電鍋」奪 2026 金點設計獎",
+          "link": "https://finance.technews.tw/2026/11/18/golden-pin-design-award/",
+          "date": "2026-11-18 03:42",
+          "summary": "大同今日宣布台積電員工禮「11 人份全不鏽鋼電鍋（曜石灰）」，榮獲 2026 年金點設計獎「產品設計類」設計標 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "中國 AI 夢醒了，AI 明星企業股價暴跌七成",
           "link": "https://technews.tw/2026/11/18/chinas-ai-dream-has-hit-a-reality-check-with-the-share-prices-of-star-ai-companies-plunging-by-70/",
@@ -320,20 +334,6 @@
           "date": "2026-11-18 02:18",
           "summary": "美國商務部（BIS）11 月 16 日發布最新的 AI 晶片出口管制規定，這次最大的改變在於「防堵漏洞」，不只 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "Anthropic IPO 超搶手  傳最終定價高於 80 美元",
-          "link": "https://finance.technews.tw/2026/11/18/anthropic-plans-to-raise-ipo-price-after-strong-demand/",
-          "date": "2026-11-18 01:55",
-          "summary": "人工智慧（AI）新創公司 Anthropic 即將於 19 日登陸美國那斯達克交易所，市場認購反應熱烈。知情人 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "路透：川普政府擬限制中國資料中心設備，科技巨頭遊說未果",
-          "link": "https://technews.tw/2026/11/18/trumps-china-data-center-curb-advances-despite-amazon-google-meta-lobbying/",
-          "date": "2026-11-18 01:45",
-          "summary": "路透社獨家報導，知情人士透露，川普政府計劃推動限制中國資料中心設備進口，即便亞馬遜（Amazon）、Googl [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,13 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "台積電工程師征戰全球必備！大同「晶圓電鍋」奪 2026 金點設計獎",
+          "link": "https://finance.technews.tw/2026/11/18/golden-pin-design-award/",
+          "date": "2026-11-18 03:42",
+          "summary": "大同今日宣布台積電員工禮「11 人份全不鏽鋼電鍋（曜石灰）」，榮獲 2026 年金點設計獎「產品設計類」設計標 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "輝達發表 Rubin HPC：單顆 GPU 塞進逾 5 萬個 CUDA 核心，2028 年推出",
           "link": "https://technews.tw/2026/11/18/nvidia-announces-rubin-hpc/",
@@ -416,13 +423,6 @@
           "link": "https://finance.technews.tw/2026/11/18/three-factors-limit-aspeeds-room-for-upward-adjustment-of-operating-rates/",
           "date": "2026-11-18 01:00",
           "summary": "瑞銀證券（UBS）發布最新研究報告，將伺服器遠端管理晶片（BMC）龍頭信驊科技投資評等由「買進」調降至「中立」 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "傳輝達曾提醒客戶，美限制中企存取 AI 晶片法將帶來法律風險",
-          "link": "https://technews.tw/2026/11/18/nvidia-warns-chip-buyers-of-legal-risks-tied-to-china-ai-access/",
-          "date": "2026-11-18 00:35",
-          "summary": "CNBC 17 日報導，輝達（Nvidia）近幾個月曾提醒客戶，美國為限制中國企業使用其人工智慧（AI）晶片而 [&#8230;]",
           "comments": ""
         }
       ]
