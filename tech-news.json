@@ -1,93 +1,93 @@
 {
-  "updated": "2026-11-20 04:56",
+  "updated": "2026-11-20 19:26",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
-          "link": "https://git-aarvin.github.io/mei/",
-          "date": "2026-11-19 23:35",
+          "title": "Hurried Announcement: Alessandro Masullo GRH",
+          "link": "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
+          "date": "2026-11-20 18:33",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50568130"
+          "comments": "https://news.ycombinator.com/item?id=50579568"
         },
         {
-          "title": "Anthropic’s Nasdaq debut",
-          "link": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
-          "date": "2026-11-19 17:02",
+          "title": "Levent Alpöge claims proof of the Generalized Riemann Hypothesis [pdf]",
+          "link": "https://alpo.ge/remark.pdf",
+          "date": "2026-11-20 14:16",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50562754"
+          "comments": "https://news.ycombinator.com/item?id=50574968"
         },
         {
-          "title": "Pancreatic cancer halted by virus injection in three patients",
-          "link": "https://www.newscientist.com/article/2528235-pancreatic-cancer-halted-by-virus-injection-in-three-patients/",
-          "date": "2026-11-19 17:25",
+          "title": "Language Models Can Rewrite Their Own Weights",
+          "link": "https://arxiv.org/abs/2611.21885",
+          "date": "2026-11-20 16:29",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50563066"
+          "comments": "https://news.ycombinator.com/item?id=50577265"
         },
         {
-          "title": "OpenSSL: Buffer overflow in EVP_EncodeBlock() (CVE-2026-121481, CVSS 9.8)",
-          "link": "https://github.com/openssl/openssl/pull/33652",
-          "date": "2026-11-20 02:01",
+          "title": "I'll never buy Framework hardware again",
+          "link": "https://poolp.org/posts/2026-11-20/ill-never-buy-framework-hardware-again/",
+          "date": "2026-11-20 16:06",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50569226"
+          "comments": "https://news.ycombinator.com/item?id=50576855"
         },
         {
-          "title": "Postgres 19 Repack: Faster, Built-In Table Bloat Cleanup",
-          "link": "https://www.snowflake.com/en/blog/engineering/postgres-19-repack-table-bloat/",
-          "date": "2026-11-20 02:43",
+          "title": "Unforced Navier-Stokes Singularity and the Generalized Riemann Hypothesis",
+          "link": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/",
+          "date": "2026-11-20 17:21",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50569516"
+          "comments": "https://news.ycombinator.com/item?id=50578358"
         },
         {
-          "title": "GIMP now has UI tests",
-          "link": "https://www.gimp.org/news/2026/11/16/gimp-ui-tests/",
-          "date": "2026-11-20 04:00",
+          "title": "We promoted developers into architects without informing them",
+          "link": "https://manidoraisamy.com/developer-to-architect.html",
+          "date": "2026-11-20 18:17",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50569985"
+          "comments": "https://news.ycombinator.com/item?id=50579331"
         },
         {
-          "title": "Claude solves two open problems in the physics of black holes",
-          "link": "https://www.anthropic.com/research/claude-black-hole-physics",
-          "date": "2026-11-19 17:30",
+          "title": "Finite-time blow-up for the Navier–Stokes equations",
+          "link": "https://github.com/tristanbuckmaster/navier-stokes/",
+          "date": "2026-11-20 15:34",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50563148"
+          "comments": "https://news.ycombinator.com/item?id=50576232"
         },
         {
-          "title": "Vint Cerf on why TCP/IP was never patented",
-          "link": "https://seremot.com/p/vint-cerf-on-why-tcpip-was-never",
-          "date": "2026-11-20 01:06",
+          "title": "Vibecoding an Inference Chip",
+          "link": "https://ankitg.me/blog/vibecoding-inference-chip/",
+          "date": "2026-11-20 18:15",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50568861"
+          "comments": "https://news.ycombinator.com/item?id=50579297"
         },
         {
-          "title": "How to CAD Almost Anything",
-          "link": "https://ocw.mit.edu/courses/res-16-002-how-to-cad-almost-anything-january-iap-2024/",
-          "date": "2026-11-17 06:29",
+          "title": "If you can't explain something in simple terms, you don't understand it (2017)",
+          "link": "https://kottke.org/17/06/if-you-cant-explain-something-in-simple-terms-you-dont-understand-it",
+          "date": "2026-11-20 09:43",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50528119"
+          "comments": "https://news.ycombinator.com/item?id=50572355"
         },
         {
-          "title": "Garage Door Spam",
-          "link": "https://blog.harrison.page/garage-door-spam/",
-          "date": "2026-11-16 16:13",
+          "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+          "link": "https://architectlabs.com/blog/frostbite",
+          "date": "2026-11-20 10:01",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50519231"
+          "comments": "https://news.ycombinator.com/item?id=50572503"
         },
         {
-          "title": "The 98% Slot Machine: How Paid Advertising Became an Extraction Tax",
-          "link": "https://globalcommercegraph.com/writing/the-ninety-eight-percent-slot-machine",
-          "date": "2026-11-19 18:35",
+          "title": "ChurchTerminal – Christian News Dashboard Inspired by Hacker News",
+          "link": "https://churchterminal.com/",
+          "date": "2026-11-20 19:09",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50564159"
+          "comments": "https://news.ycombinator.com/item?id=50580176"
         },
         {
-          "title": "Launch HN: Onlook (YC W25) – An open-source developer tool for designers",
-          "link": "https://github.com/onlook-dev/onlook/",
-          "date": "2026-11-19 16:34",
+          "title": "Running two PSP emulators on one Switch 2 and sharing one via GameShare",
+          "link": "https://github.com/XITRIX/ppsspp-nx2/blob/master/SWITCH2-GAMESHARE.md",
+          "date": "2026-11-20 17:14",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50562320"
+          "comments": "https://news.ycombinator.com/item?id=50578233"
         }
       ]
     },
@@ -96,20 +96,26 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
-          "title": "The world is experiencing ‘GTA VI’ together — players and spectators alike",
-          "link": "https://edition.cnn.com/2026/11/19/media/grand-theft-auto-gta-vi-twitch-youtube-livestream",
-          "date": "2026-11-19",
+          "title": "Why Anthropic’s blockbuster debut didn’t ease Wall Street’s AI fears",
+          "link": "https://edition.cnn.com/2026/11/20/investing/anthropic-ai-stock-nasdaq",
+          "date": "2026-11-20",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Nasdaq wipes out gains for the year as Anthropic IPO fails to quell AI nerves",
+          "link": "https://edition.cnn.com/2026/11/20/investing/us-stocks-anthropic-ai",
+          "date": "2026-11-20",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Is Wonder the dinner company for our anti-social times?",
+          "link": "https://edition.cnn.com/2026/11/20/business/wonder-food-delivery-marc-lore",
+          "date": "2026-11-20",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
           "title": "Almost all of Anthropic’s employees are now millionaires",
           "link": "https://edition.cnn.com/2026/11/19/tech/anthropic-employees-now-millionaires",
-          "date": "2026-11-19",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Anthropic passed the IPO test. Now comes the hard part.",
-          "link": "https://edition.cnn.com/2026/11/19/business/anthropic-ipo-stock-test-ai",
           "date": "2026-11-19",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -160,12 +166,6 @@
           "link": "https://edition.cnn.com/2026/11/16/tech/nvidia-sex-spies-serious-problems",
           "date": "2026-11-16",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "As students rely on AI in college applications, admissions offices scramble to keep up",
-          "link": "https://edition.cnn.com/2026/11/15/tech/ai-students-college-admissions",
-          "date": "2026-11-15",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         }
       ]
     },
@@ -173,6 +173,24 @@
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "A-Lin最愛這款耳機配色！天后寵粉送福利 親筆簽名款將開抽",
+          "link": "https://3c.ltn.com.tw/news/68353",
+          "date": "2026/11/20 17:08",
+          "summary": "Anker宣布A-Lin擔任耳機品類代言人，主打旗下AeroClip 2開放式藍牙耳夾耳機。為慶祝雙方合作，Anke ..."
+        },
+        {
+          "title": "有線耳機又紅了！Sony復刻47年前經典設計 加碼《怪奇物語》聯名款",
+          "link": "https://3c.ltn.com.tw/news/68362",
+          "date": "2026/11/20 15:00",
+          "summary": "復古風潮正夯，Sony向經典MDR-3系列耳機致敬，推出全新有線耳機MDR-3R，重現當年的經典外型，並換上符合現代 ..."
+        },
+        {
+          "title": "微軟10年免費App退場！明年6月底停用 個人用戶得另找替代",
+          "link": "https://3c.ltn.com.tw/news/68352",
+          "date": "2026/11/20 14:30",
+          "summary": "微軟(Microsoft)又有一款App即將走入歷史！旗下免費待辦事項管理工具「Microsoft To Do」，確 ..."
+        },
         {
           "title": "安卓手機裝App變麻煩！Google明年推新規 這情況得先等24小時",
           "link": "https://3c.ltn.com.tw/news/68355",
@@ -226,24 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68328",
           "date": "2026/11/20 05:46",
           "summary": "近年無線音訊產品不再只拚音質、降噪和續航力，外型設計也越來越講究，從充滿個性的耳罩式耳機、輕巧有型的真無線耳機，到兼 ..."
-        },
-        {
-          "title": "《轉轉大冒險：合體強化》動作遊戲上市 Devolver Digital吉祥物出動 揮舞大手對抗關卡挑戰",
-          "link": "https://3c.ltn.com.tw/news/68350",
-          "date": "2026/11/20 05:36",
-          "summary": "全球知名獨立遊戲發行商Devolver Digital宣布，旗下超人氣吉祥物動作平台遊戲《轉轉大冒險（Volvy’s ..."
-        },
-        {
-          "title": "Instagram聽到喜歡歌可以直接存清單！新增整合Apple Music功能",
-          "link": "https://3c.ltn.com.tw/news/68348",
-          "date": "2026/11/19 17:55",
-          "summary": "Instagram 近期新增 Apple Music 功能，用戶可以將 Apple Music 帳戶連結至 Inst ..."
-        },
-        {
-          "title": "三星手機介面要大改版？新設計疑曝光 竟撞臉蘋果液態玻璃",
-          "link": "https://3c.ltn.com.tw/news/68334",
-          "date": "2026/11/19 17:51",
-          "summary": "三星手機介面也要跟進蘋果的「液態玻璃」（Liquid Glass）設計了嗎？三星下一代系統One UI 10近日遭提 ..."
         }
       ]
     },
@@ -251,27 +251,6 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
-        {
-          "title": "台積電盤中失守 2,000 元關卡，創 7 個月來新低",
-          "link": "https://finance.technews.tw/2026/11/20/tsmc-1990-stock-price/",
-          "date": "2026-11-20 04:10",
-          "summary": "美股主要指數全面收跌逾 2%，台股今天持續走弱，盤中一度重挫超過 2,40 0點，跌破 36,000 點關卡。 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 戰國時代才剛開始，蘋果徵才搶攻 AI 代理人",
-          "link": "https://technews.tw/2026/11/20/the-warring-states-era-of-ai-has-only-just-begun-apple-is-hiring-to-make-a-push-into-ai-agents/",
-          "date": "2026-11-20 03:57",
-          "summary": "蘋果正加速追趕 AI 競爭對手，正在開發一款能夠自主執行複雜任務的 AI 代理人，不僅能搜尋網路、操作應用程式 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Intel 甫獲微軟封裝合作  傳 Google 重新回頭找台積",
-          "link": "https://technews.tw/2026/11/20/intel-microsoft-packaging-partnership-google-return-tsmc/",
-          "date": "2026-11-20 03:20",
-          "summary": "AI 晶片先進封裝競爭再掀波瀾！英特爾（Intel）日前才宣布與微軟（Microsoft）擴大合作，微軟將採用 [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "不只會寫 Code還要懂脈絡，Slack 開放 AI 存取對話紀錄掌握開發意圖",
           "link": "https://technews.tw/2026/11/20/ai-software-engineering-collaborative-landscape/",
@@ -334,6 +313,27 @@
           "date": "2026-11-20 00:45",
           "summary": "美商半導體大廠超微半導體（AMD）在美股市場遭遇沉重賣壓，盤中股價一度重挫近 9%。市場震盪的核心導火索，源自 [&#8230;]",
           "comments": ""
+        },
+        {
+          "title": "AI 科學家自動完成上萬步驟實驗，設計、分析都能自己來",
+          "link": "https://technews.tw/2026/11/20/autodna-system-uses-ai-to-autonomously-perform-thousands-of-experimental-steps/",
+          "date": "2026-11-20 00:20",
+          "summary": "人工智慧（AI）已可協助科學家搜尋文獻、分析數據，甚至提出研究假說，但要真正完成一項實驗，仍需要研究人員親自操 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "別傻了，輝達不能沒有黃仁勳",
+          "link": "https://finance.technews.tw/2026/11/20/nvidia-jensen-huang-indispensable/",
+          "date": "2026-11-20 00:00",
+          "summary": "如果說 30 多年來，全球科技產業有哪位執行長最難取代，NVIDIA 創辦人黃仁勳絕對榜上有名。然而，黃仁勳近 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "台積電罕見入股 OpenAI、Anthropic，揭密護國神山「固樁兼獵獨角獸」兩手策略",
+          "link": "https://finance.technews.tw/2026/11/20/tsmc-invests-anthropic-openai-forms-investment-subsidiary/",
+          "date": "2026-11-19 23:50",
+          "summary": "台積電董事會近期公告，將入股美國兩大 AI 公司，並成立新的投資子公司。 在最後一刻宣布入股，台積電要以此穩住 [&#8230;]",
+          "comments": ""
         }
       ]
     },
@@ -341,41 +341,6 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
-        {
-          "title": "阿里在美遭股東提告  被指隱瞞與 Megaspeed 前高層關聯",
-          "link": "https://technews.tw/2026/11/20/alibaba-sued-shareholders-us-accused-concealing-ties-former-megaspeed-executives/",
-          "date": "2026-11-20 04:40",
-          "summary": "綜合港媒報導，阿里巴巴在美國紐約遭股東提告，指控阿里隱瞞與新加坡雲端運算公司 Megaspeed 前高層黃樂（ [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "台積電盤中失守 2,000 元關卡，創 7 個月來新低",
-          "link": "https://finance.technews.tw/2026/11/20/tsmc-1990-stock-price/",
-          "date": "2026-11-20 04:10",
-          "summary": "美股主要指數全面收跌逾 2%，台股今天持續走弱，盤中一度重挫超過 2,40 0點，跌破 36,000 點關卡。 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Soitec 財報優、上修矽光子展望  股價飆 12%",
-          "link": "https://finance.technews.tw/2026/11/20/soitec-reports-second-quarter-revenue-and-halfyear-results-of-fiscal-year-2027/",
-          "date": "2026-11-20 03:50",
-          "summary": "法國半導體材料大廠 Soitec 上半年度財報優於預期，受惠 AI 資料中心對矽光子基板需求激增，大幅上修相關 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "四位數 PIN 碼 40 小時內遭攻破，新型漏洞癱瘓 Windows Hello 與 BitLocker 錯誤鎖定",
-          "link": "https://technews.tw/2026/11/20/4-digit-pin-cracked-40-hours-new-vulnerability-disables-windows-hello-bitlocker-lockout/",
-          "date": "2026-11-20 03:40",
-          "summary": "柏林工業大學（Technische Universität Berlin）研究人員發現，在 AMD 平台與部分 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Intel 甫獲微軟封裝合作  傳 Google 重新回頭找台積",
-          "link": "https://technews.tw/2026/11/20/intel-microsoft-packaging-partnership-google-return-tsmc/",
-          "date": "2026-11-20 03:20",
-          "summary": "AI 晶片先進封裝競爭再掀波瀾！英特爾（Intel）日前才宣布與微軟（Microsoft）擴大合作，微軟將採用 [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "英特爾再掀裁員潮！全球 IT 部門傳大砍雙位數，陳立武接管兩年已砍近 2.8 萬人",
           "link": "https://technews.tw/2026/11/20/intel-ceo-lip-bu-tan-cuts-jobs/",
@@ -424,6 +389,41 @@
           "date": "2026-11-20 00:15",
           "summary": "英國《金融時報》引述知情人士報導，美國商務部推出一項出口管制新規定後，台積電與三星電子已暫停部分對中國客戶的晶 [&#8230;]",
           "comments": ""
+        },
+        {
+          "title": "別傻了，輝達不能沒有黃仁勳",
+          "link": "https://finance.technews.tw/2026/11/20/nvidia-jensen-huang-indispensable/",
+          "date": "2026-11-20 00:00",
+          "summary": "如果說 30 多年來，全球科技產業有哪位執行長最難取代，NVIDIA 創辦人黃仁勳絕對榜上有名。然而，黃仁勳近 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "台積電罕見入股 OpenAI、Anthropic，揭密護國神山「固樁兼獵獨角獸」兩手策略",
+          "link": "https://finance.technews.tw/2026/11/20/tsmc-invests-anthropic-openai-forms-investment-subsidiary/",
+          "date": "2026-11-19 23:50",
+          "summary": "台積電董事會近期公告，將入股美國兩大 AI 公司，並成立新的投資子公司。 在最後一刻宣布入股，台積電要以此穩住 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "美國擴大東南亞 AI 晶片出口管制，AI 伺服器出貨結構將依終端客戶重新調整",
+          "link": "https://finance.technews.tw/2026/11/20/us-expands-ai-chip-export-controls-southeast-asia-ai-server-shipment-structure-realigned-end-customers/",
+          "date": "2026-11-19 23:00",
+          "summary": "美國商務部工業暨安全局（BIS）16日公布新先進 AI 晶片出口管制，將新加坡、馬來西亞、泰國、印尼及巴西納入 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "美國商務部揭露已批准向中國出售 87.9 萬顆 AI 晶片，兩黨議員氣炸要嚴查",
+          "link": "https://technews.tw/2026/11/20/the-u-s-department-of-commerce-has-revealed-that-it-has-approved-the-sale-of-879000-ai-chips-to-china/",
+          "date": "2026-11-19 22:30",
+          "summary": "美國聯邦眾議院外交委員會於週四公布官方文件，揭露美國商務部轄下機構已批准向中國企業銷售超過 87.9 萬顆高階 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AMD 遭空頭機構指控與多家列實體清單中國企業往來，股價一度重挫 9%",
+          "link": "https://finance.technews.tw/2026/11/20/amd-accused-by-short-selling-firms-of-dealings-with-several-chinese-companies-listed-on-the-entity-list/",
+          "date": "2026-11-19 22:00",
+          "summary": "美商半導體大廠超微半導體（AMD）股價遭遇沉重賣壓，盤中重挫近 9%。主因為空頭機構 Hunterbrook [&#8230;]",
+          "comments": ""
         }
       ]
     },
@@ -431,13 +431,6 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
-        {
-          "title": "蘋果 OLED iMac 計畫生變  傳延後甚至喊卡",
-          "link": "https://technews.tw/2026/11/20/apple-weighs-scrapping-oled-imac-plans/",
-          "date": "2026-11-20 03:25",
-          "summary": "蘋果（Apple）原規劃 2029 至 2030 年推出搭載 OLED 面板的 iMac 桌機，如今計畫可能生 [&#8230;]",
-          "comments": ""
-        },
         {
           "title": "缺料、出貨延後疑慮？外資看台達電、光寶科後市",
           "link": "https://finance.technews.tw/2026/11/20/foreign-investors-assess-delta-lite-on-outlook-material-shortage-shipment-delay-concerns/",
@@ -514,6 +507,13 @@
           "date": "2026-11-19 03:40",
           "summary": "美國近一週接連發生多起重大科技服務中斷，電子信箱、航空交通和網路銀行都受波及，引發外界對數位基礎設施脆弱性的憂 [&#8230;]",
           "comments": ""
+        },
+        {
+          "title": "蓋 AI 資料中心，土地、水電怎麼找？加拿大亞伯達省擬加嚴開發條件",
+          "link": "https://technews.tw/2026/11/19/alberta-tightens-ai-data-center-development-land-water-power/",
+          "date": "2026-11-19 03:01",
+          "summary": "AI 資料中心加速興建，開發商面臨找地、接電與用水等難題。加拿大亞伯達省政府 11 月 18 日提出第 42 [&#8230;]",
+          "comments": ""
         }
       ]
     },
@@ -521,6 +521,13 @@
       "name": "CCC 追新聞",
       "site": "https://ccc.technews.tw/",
       "items": [
+        {
+          "title": "KDDI 推出極簡 4G 手機 INFOBAR ZERO，只能通話與傳簡訊",
+          "link": "https://ccc.technews.tw/2026/11/20/kddi-au-infobar-zero/",
+          "date": "2026-11-20 08:20",
+          "summary": "日本電信商 KDDI 與沖繩 Cellular 電話 18 日發表 au Design project 新機「 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "當網路不再可靠：美國接連大當機，數位末日準備族聲量暴漲",
           "link": "https://ccc.technews.tw/2026/11/20/theyre-prepping-for-a-world-where-the-internet-doesnt-work/",
@@ -596,13 +603,6 @@
           "link": "https://ccc.technews.tw/2026/11/11/sony-revives-the-original-walkman-headphones-adds-usb-c/",
           "date": "2026-11-11 08:20",
           "summary": "搭上近期有線耳機與實體媒體復甦的懷舊熱潮，Sony 重新推出 1979 年與初代 Walkman（TPS-L2 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "E Ink Spectra 6 電子紙技術六色升級九色，影像呈現更自然細緻",
-          "link": "https://ccc.technews.tw/2026/11/11/e-ink-introduces-spectra-6-9-color-display-technology-with-enhanced-image-quality/",
-          "date": "2026-11-11 07:09",
-          "summary": "E Ink 元太科技推出全新 E Ink Spectra 6 升級版，將 E Ink Spectra 6 平台 [&#8230;]",
           "comments": ""
         }
       ]
