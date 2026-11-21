@@ -1,16 +1,65 @@
 {
-  "updated": "2026-11-21 04:52",
+  "updated": "2026-11-21 18:28",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
+          "title": "Detonating a pile of lead azide",
+          "link": "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really",
+          "date": "2026-11-21 13:23",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50588982"
+        },
+        {
+          "title": "Lean verification of the Riemann Hypothesis",
+          "link": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+          "date": "2026-11-21 14:36",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50589618"
+        },
+        {
+          "title": "Brazil's tax authority open-sources its tax calculator on GitHub under MIT",
+          "link": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-publica-primeiro-codigo-fonte-aberto-no-github-e-amplia-transparencia-da-reforma-tributaria",
+          "date": "2026-11-17 15:22",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50532613"
+        },
+        {
+          "title": "PostgreSQL Extensions in Go",
+          "link": "https://jespino.github.io/gopgext/",
+          "date": "2026-11-21 17:08",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50591260"
+        },
+        {
+          "title": "Jensen Huang's fall is bad news for Silicon Valley's accelerationists",
+          "link": "https://www.economist.com/business/2026/11/19/jensen-huangs-fall-is-bad-news-for-silicon-valleys-accelerationists",
+          "date": "2026-11-21 17:59",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50591835"
+        },
+        {
+          "title": "My monitor was cutting my download speed by 75%",
+          "link": "https://blog.tymscar.com/posts/studiodisplayethernet/",
+          "date": "2026-11-21 10:36",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50587875"
+        },
+        {
           "title": "Hurried Announcement: Alessandro Masullo GRH",
           "link": "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
           "date": "2026-11-20 18:33",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50579568"
+        },
+        {
+          "title": "Show HN: Zero C#, Power of C# without any GC",
+          "link": "https://onurgumus.github.io/zero-csharp/index.html",
+          "date": "2026-11-21 15:39",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50590279"
         },
         {
           "title": "Levent Alpöge claims proof of the Generalized Riemann Hypothesis [pdf]",
@@ -20,6 +69,13 @@
           "comments": "https://news.ycombinator.com/item?id=50574968"
         },
         {
+          "title": "I'm quite pleased by the tech architecture of my art website",
+          "link": "https://klauria.tech/klauria-art/",
+          "date": "2026-11-20 17:03",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50577991"
+        },
+        {
           "title": "Inkling 2 Mini",
           "link": "https://thinkingmachines.ai/news/inkling-2-mini/",
           "date": "2026-11-20 20:12",
@@ -27,67 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50581260"
         },
         {
-          "title": "NINLIVE: The Nine Inch Nails live archive",
-          "link": "https://ninlive.com/",
-          "date": "2026-11-20 22:30",
+          "title": "RCE in Gnupg",
+          "link": "https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html",
+          "date": "2026-11-21 08:32",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50583274"
-        },
-        {
-          "title": "We promoted developers into architects without informing them",
-          "link": "https://manidoraisamy.com/developer-to-architect.html",
-          "date": "2026-11-20 18:17",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50579331"
-        },
-        {
-          "title": "Unforced Navier-Stokes Singularity and the Generalized Riemann Hypothesis",
-          "link": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/",
-          "date": "2026-11-20 17:21",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50578358"
-        },
-        {
-          "title": "Clojure will affect the way you think about programming (2017)",
-          "link": "https://eli.thegreenplace.net/2017/clojure-the-perfect-language-to-expand-your-brain/",
-          "date": "2026-11-21 02:40",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50585376"
-        },
-        {
-          "title": "Valkey kills the skiplist, cuts sorted set overhead by up to 43%",
-          "link": "https://valkey.io/blog/from-skiplist-to-b+tree/",
-          "date": "2026-11-17 16:58",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50534387"
-        },
-        {
-          "title": "Language Models Can Rewrite Their Own Weights",
-          "link": "https://arxiv.org/abs/2611.21885",
-          "date": "2026-11-20 16:29",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50577265"
-        },
-        {
-          "title": "Sir Brian May adds new dimension to Hera asteroid",
-          "link": "https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera/sir-brian-may-adds-new-dimension-to-hera-asteroid",
-          "date": "2026-11-20 23:19",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50583768"
-        },
-        {
-          "title": "DreamCoder: Coding harness and IDE from the author of Mastering Emacs",
-          "link": "https://www.masteringemacs.org/article/announcing-dreamcoder",
-          "date": "2026-11-20 20:03",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50581110"
-        },
-        {
-          "title": "Substrate: A Lisp for WebAssembly",
-          "link": "https://substrate-lang.com",
-          "date": "2026-11-17 17:44",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50535187"
+          "comments": "https://news.ycombinator.com/item?id=50587208"
         }
       ]
     },
@@ -96,21 +96,21 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
-          "title": "Zohran Mamdani makes surprise appearance on CNN’s ‘Have I Got News for You’",
-          "link": "https://edition.cnn.com/2026/11/20/media/zohran-mamdani-cnn-have-i-got-news-for-you",
-          "date": "2026-11-20",
+          "title": "Anthropic worker claims to have solved a Holy Grail of math problems with the help of AI",
+          "link": "https://edition.cnn.com/2026/11/21/tech/anthropic-math-problem-ai",
+          "date": "2026-11-21",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "Nasdaq wipes out gains for the year as Anthropic IPO fails to quell AI nerves",
-          "link": "https://edition.cnn.com/2026/11/20/investing/us-stocks-anthropic-ai",
-          "date": "2026-11-20",
+          "title": "Tennis coach takes on more work and cuts spending after expert advice",
+          "link": "https://edition.cnn.com/2026/11/21/business/savings-challenge-participant-third-update-jeff-kizer",
+          "date": "2026-11-21",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "Why Anthropic’s blockbuster debut didn’t ease Wall Street’s AI fears",
-          "link": "https://edition.cnn.com/2026/11/20/investing/anthropic-ai-stock-nasdaq",
-          "date": "2026-11-20",
+          "title": "How a young couple can become multimillionaires by retirement age, according to an expert",
+          "link": "https://edition.cnn.com/2026/11/21/business/savings-challenge-dont-be-afraid-to-ask-tip",
+          "date": "2026-11-21",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
@@ -174,6 +174,36 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "YouTube觀看次數新制上路！看一次不只算一次 官方揭原因",
+          "link": "https://3c.ltn.com.tw/news/68364",
+          "date": "2026/11/21 17:11",
+          "summary": "YouTube觀看次數的計算方式又改了！YouTube宣布，自今年11月起正式導入全新的「共視」（Co-Views） ..."
+        },
+        {
+          "title": "ChatGPT每月最高送1.6萬元點數！誰能領、怎麼領一次看",
+          "link": "https://3c.ltn.com.tw/news/68365",
+          "date": "2026/11/21 16:30",
+          "summary": "OpenAI針對符合資格的ChatGPT Pro訂閱用戶，提供每月最高500美元（約台幣1.6萬元）的免費API點數 ..."
+        },
+        {
+          "title": "Google宣布淘汰2大服務！明年陸續停用 舊資料快備份",
+          "link": "https://3c.ltn.com.tw/news/68374",
+          "date": "2026/11/21 15:00",
+          "summary": "Google宣布2027年陸續停用兩大服務，其中Google助理(Google Assistant)將全面退出旗下智 ..."
+        },
+        {
+          "title": "ChatGPT高階功能下放！Plus用戶迎2大新福利 台灣也有份",
+          "link": "https://3c.ltn.com.tw/news/68367",
+          "date": "2026/11/21 14:00",
+          "summary": "ChatGPT付費用戶有新福利了，OpenAI宣布，開始向部分ChatGPT Plus訂閱用戶開放Dots功能，這項 ..."
+        },
+        {
+          "title": "Google Gemini黑五大特價！老用戶最高5折、一年省3,250元",
+          "link": "https://3c.ltn.com.tw/news/68376",
+          "date": "2026/11/21 13:01",
+          "summary": "Google Gemini用戶注意，黑色星期五優惠提前開跑！Google宣布，即日起至11月26日，針對現有Goog ..."
+        },
+        {
           "title": "全球百萬張信用卡資料遭竊！約20國淪陷 台灣影響曝光",
           "link": "https://3c.ltn.com.tw/news/68379",
           "date": "2026/11/21 12:00",
@@ -210,40 +240,10 @@
           "summary": "Windows 11用戶注意，微軟宣布擴大推送最新Windows 11 26H2版本，符合條件的電腦將陸續自動下載並 ..."
         },
         {
-          "title": "退坑潮逼出皮克敏官方發聲了！強調個資安全 「中國台灣」卻沒解釋",
-          "link": "https://3c.ltn.com.tw/news/68373",
-          "date": "2026/11/21 08:00",
-          "summary": "在台灣掀起散步種花打菇風潮的《Pikmin Bloom》皮克敏手遊日前因官方公告出現「中國台灣」引起全台玩家不滿，紛 ..."
-        },
-        {
           "title": "A-Lin最愛這款耳機配色！天后寵粉送福利 親筆簽名款將開抽",
           "link": "https://3c.ltn.com.tw/news/68353",
           "date": "2026/11/20 17:08",
           "summary": "Anker宣布A-Lin擔任耳機品類代言人，主打旗下AeroClip 2開放式藍牙耳夾耳機。為慶祝雙方合作，Anke ..."
-        },
-        {
-          "title": "有線耳機又紅了！Sony復刻47年前經典設計 加碼《怪奇物語》聯名款",
-          "link": "https://3c.ltn.com.tw/news/68362",
-          "date": "2026/11/20 15:00",
-          "summary": "復古風潮正夯，Sony向經典MDR-3系列耳機致敬，推出全新有線耳機MDR-3R，重現當年的經典外型，並換上符合現代 ..."
-        },
-        {
-          "title": "微軟10年免費App退場！明年6月底停用 個人用戶得另找替代",
-          "link": "https://3c.ltn.com.tw/news/68352",
-          "date": "2026/11/20 14:30",
-          "summary": "微軟(Microsoft)又有一款App即將走入歷史！旗下免費待辦事項管理工具「Microsoft To Do」，確 ..."
-        },
-        {
-          "title": "安卓手機裝App變麻煩！Google明年推新規 這情況得先等24小時",
-          "link": "https://3c.ltn.com.tw/news/68355",
-          "date": "2026/11/20 12:20",
-          "summary": "Android手機一向以開放性著稱，除了Google Play商店，用戶也能自行下載APK檔案安裝App。不過，這項 ..."
-        },
-        {
-          "title": "三星Galaxy手機換人管了！盧泰文掌權近7年交棒 新掌門人是他",
-          "link": "https://3c.ltn.com.tw/news/68361",
-          "date": "2026/11/20 11:50",
-          "summary": "三星電子今(20日)宣布最新一波高層人事異動，其中最受矚目的就是Galaxy手機部門換帥，掌管手機業務近7年的盧泰文 ..."
         }
       ]
     },
@@ -252,7 +252,28 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "Anthropic 研究員宣稱利用 Claude，解開困擾數學界超過 150 年難題",
+          "title": "AI 評分也有「口音偏見」？研究：美英口音最吃香，中文、奈及利亞口音墊底",
+          "link": "https://technews.tw/2026/11/21/ai-voice-model-accent-bias/",
+          "date": "2026-11-21 07:30",
+          "summary": "華盛頓大學（University of Washington）最新研究指出，當人工智慧（AI）模型被用於面試、 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 也有雙面性格，研究：AI 得知受監控時會隱藏真實意圖",
+          "link": "https://technews.tw/2026/11/21/ai-surveillance-behavioral-differences-study/",
+          "date": "2026-11-21 06:30",
+          "summary": "一項最新研究揭露，人工智慧（AI）模型的表現並非始終如一，而是會強烈受到「是否被監看」的影響。研究團隊在針對 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "強鹿推免費 AI 助理「JD」告別繁瑣數據，一句話秒解農場大小事",
+          "link": "https://technews.tw/2026/11/21/john-deere-jd-ai-assistant/",
+          "date": "2026-11-21 05:30",
+          "summary": "農機大廠強鹿（John Deere）近期推出全新 AI 助理「JD」，讓農民能以自然對話的方式，輕鬆分析多年來 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Anthropic 研究員宣稱利用 Claude，解開困擾數學界超過 150 年黎曼猜想難題",
           "link": "https://technews.tw/2026/11/21/anthropic-solve-riemann-problem-with-claude/",
           "date": "2026-11-21 03:29",
           "summary": "Anthropic 於 11 月 19 日正式在美國那斯達克掛牌上市，創全球資本市場史上最大規模 IPO 紀錄 [&#8230;]",
@@ -312,27 +333,6 @@
           "link": "https://technews.tw/2026/11/20/gemini-for-mac-gains-computer-use-capabilities/",
           "date": "2026-11-20 09:49",
           "summary": "macOS 版 Gemini 將具備電腦使用（computer use）能力，意味著它能協助使用者「橫跨你的地 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "中國 B300 算力長約掀轉售潮，新雲端業者急尋歐美買家接手",
-          "link": "https://technews.tw/2026/11/20/us-ai-compute-neoclouds-china/",
-          "date": "2026-11-20 09:10",
-          "summary": "隨著美國擴大封殺中國海外算力，市場逐步出現連鎖反應。根據市場消息，近期美國公司執行長在社群平台 X 上表示，有 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "IEA：資料中心用電 2030 年恐倍增，十年內須新建至少 2,500 萬公里電網",
-          "link": "https://technews.tw/2026/11/20/iea-warned-data-center-power-use-could-double-by-2030-straining-grids/",
-          "date": "2026-11-20 09:10",
-          "summary": "國際能源總署警告，資料中心用電可能在 2030 年翻倍至約 1,000TWh，十年內須新建與升級數千萬公里輸電 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "10 月外銷訂單 1,238 億美元續創高，年增 78.3% 連 21 紅",
-          "link": "https://finance.technews.tw/2026/11/20/october-export-orders-new-record-123-8-billion-usd-up-78-3-percent-21-consecutive-months/",
-          "date": "2026-11-20 08:50",
-          "summary": "人工智慧（AI）需求續強，經濟部今天公布 10 月外銷訂單為 1,238.2 億美元，創歷年單月新高，年增 7 [&#8230;]",
           "comments": ""
         }
       ]
