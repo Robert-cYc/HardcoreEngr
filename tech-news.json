@@ -1,16 +1,16 @@
 {
-  "updated": "2026-11-21 18:28",
+  "updated": "2026-11-22 02:15",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "Detonating a pile of lead azide",
-          "link": "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really",
-          "date": "2026-11-21 13:23",
+          "title": "Pill to treat pancreatic cancer hailed as 'biggest breakthrough in decades'",
+          "link": "https://www.theguardian.com/society/2026/nov/20/pill-pancreatic-cancer-breakthrough-daraxonrasib",
+          "date": "2026-11-20 21:03",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50588982"
+          "comments": "https://news.ycombinator.com/item?id=50582069"
         },
         {
           "title": "Lean verification of the Riemann Hypothesis",
@@ -20,6 +20,13 @@
           "comments": "https://news.ycombinator.com/item?id=50589618"
         },
         {
+          "title": "Inkling-2-Mini in 5.4 GB Memory",
+          "link": "https://github.com/ShinMegamiBoson/lookatmyquant",
+          "date": "2026-11-21 18:02",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50591853"
+        },
+        {
           "title": "Brazil's tax authority open-sources its tax calculator on GitHub under MIT",
           "link": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-publica-primeiro-codigo-fonte-aberto-no-github-e-amplia-transparencia-da-reforma-tributaria",
           "date": "2026-11-17 15:22",
@@ -27,18 +34,32 @@
           "comments": "https://news.ycombinator.com/item?id=50532613"
         },
         {
-          "title": "PostgreSQL Extensions in Go",
-          "link": "https://jespino.github.io/gopgext/",
-          "date": "2026-11-21 17:08",
+          "title": "PcapAnalyzer – self-hosted pcap analyzer with 27 problem detectors",
+          "link": "https://github.com/sebaandrada-cell/PcapAnalyzer",
+          "date": "2026-11-21 22:09",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50591260"
+          "comments": "https://news.ycombinator.com/item?id=50594132"
         },
         {
-          "title": "Jensen Huang's fall is bad news for Silicon Valley's accelerationists",
-          "link": "https://www.economist.com/business/2026/11/19/jensen-huangs-fall-is-bad-news-for-silicon-valleys-accelerationists",
-          "date": "2026-11-21 17:59",
+          "title": "Detonating a pile of lead azide",
+          "link": "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really",
+          "date": "2026-11-21 13:23",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50591835"
+          "comments": "https://news.ycombinator.com/item?id=50588982"
+        },
+        {
+          "title": "Getting the mind to steer the body to steer you",
+          "link": "https://notnottalmud.substack.com/p/getting-the-mind-to-steer-the-body",
+          "date": "2026-11-20 22:11",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50583028"
+        },
+        {
+          "title": "Sandwich Simulator",
+          "link": "https://stulle.app/",
+          "date": "2026-11-22 00:07",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50594911"
         },
         {
           "title": "My monitor was cutting my download speed by 75%",
@@ -48,32 +69,11 @@
           "comments": "https://news.ycombinator.com/item?id=50587875"
         },
         {
-          "title": "Hurried Announcement: Alessandro Masullo GRH",
-          "link": "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
-          "date": "2026-11-20 18:33",
+          "title": "Advice for the next 100 Rust GUIs",
+          "link": "https://linebender.org/blog/next-100-guis/",
+          "date": "2026-11-21 21:17",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50579568"
-        },
-        {
-          "title": "Show HN: Zero C#, Power of C# without any GC",
-          "link": "https://onurgumus.github.io/zero-csharp/index.html",
-          "date": "2026-11-21 15:39",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50590279"
-        },
-        {
-          "title": "Levent Alpöge claims proof of the Generalized Riemann Hypothesis [pdf]",
-          "link": "https://alpo.ge/remark.pdf",
-          "date": "2026-11-20 14:16",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50574968"
-        },
-        {
-          "title": "I'm quite pleased by the tech architecture of my art website",
-          "link": "https://klauria.tech/klauria-art/",
-          "date": "2026-11-20 17:03",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50577991"
+          "comments": "https://news.ycombinator.com/item?id=50593737"
         },
         {
           "title": "Inkling 2 Mini",
@@ -83,11 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50581260"
         },
         {
-          "title": "RCE in Gnupg",
-          "link": "https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html",
-          "date": "2026-11-21 08:32",
+          "title": "Pandex – Official European Law for AI Agents, over MCP",
+          "link": "https://www.pandex.io",
+          "date": "2026-11-21 20:47",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50587208"
+          "comments": "https://news.ycombinator.com/item?id=50593481"
         }
       ]
     },
@@ -174,6 +174,12 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "Google Gemini降低使用門檻！2GB記憶體手機也能AI生圖",
+          "link": "https://3c.ltn.com.tw/news/68366",
+          "date": "2026/11/22 09:00",
+          "summary": "Google宣布，旗下AI助理Gemini正式擴大支援搭載Android Go系統的入門手機，最低只需2GB記憶體就 ..."
+        },
+        {
           "title": "YouTube觀看次數新制上路！看一次不只算一次 官方揭原因",
           "link": "https://3c.ltn.com.tw/news/68364",
           "date": "2026/11/21 17:11",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68370",
           "date": "2026/11/21 08:30",
           "summary": "Windows 11用戶注意，微軟宣布擴大推送最新Windows 11 26H2版本，符合條件的電腦將陸續自動下載並 ..."
-        },
-        {
-          "title": "A-Lin最愛這款耳機配色！天后寵粉送福利 親筆簽名款將開抽",
-          "link": "https://3c.ltn.com.tw/news/68353",
-          "date": "2026/11/20 17:08",
-          "summary": "Anker宣布A-Lin擔任耳機品類代言人，主打旗下AeroClip 2開放式藍牙耳夾耳機。為慶祝雙方合作，Anke ..."
         }
       ]
     },
@@ -252,28 +252,7 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "AI 評分也有「口音偏見」？研究：美英口音最吃香，中文、奈及利亞口音墊底",
-          "link": "https://technews.tw/2026/11/21/ai-voice-model-accent-bias/",
-          "date": "2026-11-21 07:30",
-          "summary": "華盛頓大學（University of Washington）最新研究指出，當人工智慧（AI）模型被用於面試、 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 也有雙面性格，研究：AI 得知受監控時會隱藏真實意圖",
-          "link": "https://technews.tw/2026/11/21/ai-surveillance-behavioral-differences-study/",
-          "date": "2026-11-21 06:30",
-          "summary": "一項最新研究揭露，人工智慧（AI）模型的表現並非始終如一，而是會強烈受到「是否被監看」的影響。研究團隊在針對 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "強鹿推免費 AI 助理「JD」告別繁瑣數據，一句話秒解農場大小事",
-          "link": "https://technews.tw/2026/11/21/john-deere-jd-ai-assistant/",
-          "date": "2026-11-21 05:30",
-          "summary": "農機大廠強鹿（John Deere）近期推出全新 AI 助理「JD」，讓農民能以自然對話的方式，輕鬆分析多年來 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Anthropic 研究員宣稱利用 Claude，解開困擾數學界超過 150 年黎曼猜想難題",
+          "title": "Anthropic 研究員宣稱利用 Claude，解開困擾數學界超過 150 年難題",
           "link": "https://technews.tw/2026/11/21/anthropic-solve-riemann-problem-with-claude/",
           "date": "2026-11-21 03:29",
           "summary": "Anthropic 於 11 月 19 日正式在美國那斯達克掛牌上市，創全球資本市場史上最大規模 IPO 紀錄 [&#8230;]",
@@ -333,6 +312,27 @@
           "link": "https://technews.tw/2026/11/20/gemini-for-mac-gains-computer-use-capabilities/",
           "date": "2026-11-20 09:49",
           "summary": "macOS 版 Gemini 將具備電腦使用（computer use）能力，意味著它能協助使用者「橫跨你的地 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "中國 B300 算力長約掀轉售潮，新雲端業者急尋歐美買家接手",
+          "link": "https://technews.tw/2026/11/20/us-ai-compute-neoclouds-china/",
+          "date": "2026-11-20 09:10",
+          "summary": "隨著美國擴大封殺中國海外算力，市場逐步出現連鎖反應。根據市場消息，近期美國公司執行長在社群平台 X 上表示，有 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "IEA：資料中心用電 2030 年恐倍增，十年內須新建至少 2,500 萬公里電網",
+          "link": "https://technews.tw/2026/11/20/iea-warned-data-center-power-use-could-double-by-2030-straining-grids/",
+          "date": "2026-11-20 09:10",
+          "summary": "國際能源總署警告，資料中心用電可能在 2030 年翻倍至約 1,000TWh，十年內須新建與升級數千萬公里輸電 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "10 月外銷訂單 1,238 億美元續創高，年增 78.3% 連 21 紅",
+          "link": "https://finance.technews.tw/2026/11/20/october-export-orders-new-record-123-8-billion-usd-up-78-3-percent-21-consecutive-months/",
+          "date": "2026-11-20 08:50",
+          "summary": "人工智慧（AI）需求續強，經濟部今天公布 10 月外銷訂單為 1,238.2 億美元，創歷年單月新高，年增 7 [&#8230;]",
           "comments": ""
         }
       ]
