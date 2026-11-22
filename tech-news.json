@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22 02:15",
+  "updated": "2026-11-22 04:08",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -27,18 +27,18 @@
           "comments": "https://news.ycombinator.com/item?id=50591853"
         },
         {
-          "title": "Brazil's tax authority open-sources its tax calculator on GitHub under MIT",
-          "link": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-publica-primeiro-codigo-fonte-aberto-no-github-e-amplia-transparencia-da-reforma-tributaria",
-          "date": "2026-11-17 15:22",
+          "title": "Sandwich Simulator",
+          "link": "https://stulle.app/",
+          "date": "2026-11-22 00:07",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50532613"
+          "comments": "https://news.ycombinator.com/item?id=50594911"
         },
         {
-          "title": "PcapAnalyzer – self-hosted pcap analyzer with 27 problem detectors",
-          "link": "https://github.com/sebaandrada-cell/PcapAnalyzer",
-          "date": "2026-11-21 22:09",
+          "title": "Data Processing Incidents on Inference Providers",
+          "link": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+          "date": "2026-11-22 02:14",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50594132"
+          "comments": "https://news.ycombinator.com/item?id=50595554"
         },
         {
           "title": "Detonating a pile of lead azide",
@@ -48,6 +48,20 @@
           "comments": "https://news.ycombinator.com/item?id=50588982"
         },
         {
+          "title": "PcapAnalyzer – self-hosted pcap analyzer with 27 problem detectors",
+          "link": "https://github.com/sebaandrada-cell/PcapAnalyzer",
+          "date": "2026-11-21 22:09",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50594132"
+        },
+        {
+          "title": "Leonida – PC Recompilation of the Xbox Version of GTA 6",
+          "link": "https://github.com/ItsNotRexed/Leonida",
+          "date": "2026-11-22 00:57",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50595168"
+        },
+        {
           "title": "Getting the mind to steer the body to steer you",
           "link": "https://notnottalmud.substack.com/p/getting-the-mind-to-steer-the-body",
           "date": "2026-11-20 22:11",
@@ -55,11 +69,11 @@
           "comments": "https://news.ycombinator.com/item?id=50583028"
         },
         {
-          "title": "Sandwich Simulator",
-          "link": "https://stulle.app/",
-          "date": "2026-11-22 00:07",
+          "title": "The Most Popular Car Colors in America",
+          "link": "https://www.iseecars.com/most-popular-car-colors-study",
+          "date": "2026-11-22 02:47",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50594911"
+          "comments": "https://news.ycombinator.com/item?id=50595725"
         },
         {
           "title": "My monitor was cutting my download speed by 75%",
@@ -69,25 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50587875"
         },
         {
-          "title": "Advice for the next 100 Rust GUIs",
-          "link": "https://linebender.org/blog/next-100-guis/",
-          "date": "2026-11-21 21:17",
+          "title": "The Mythology of Conscious AI",
+          "link": "https://www.noemamag.com/the-mythology-of-conscious-ai/",
+          "date": "2026-11-22 02:10",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50593737"
-        },
-        {
-          "title": "Inkling 2 Mini",
-          "link": "https://thinkingmachines.ai/news/inkling-2-mini/",
-          "date": "2026-11-20 20:12",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50581260"
-        },
-        {
-          "title": "Pandex – Official European Law for AI Agents, over MCP",
-          "link": "https://www.pandex.io",
-          "date": "2026-11-21 20:47",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50593481"
+          "comments": "https://news.ycombinator.com/item?id=50595537"
         }
       ]
     },
@@ -174,6 +174,18 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "手機借人不怕被偷看！LINE、相簿都能上鎖 Android新功能曝光",
+          "link": "https://3c.ltn.com.tw/news/68368",
+          "date": "2026/11/22 12:00",
+          "summary": "擔心手機借給別人，LINE聊天紀錄、私人照片被偷看？Google準備為Android手機加入原生「App鎖定」(Ap ..."
+        },
+        {
+          "title": "手機月租費別再傻傻繳！4G、5G怎麼選最省錢？5件事快檢查",
+          "link": "https://3c.ltn.com.tw/news/68382",
+          "date": "2026/11/22 11:00",
+          "summary": "每個月手機帳單一來，你有仔細看過自己到底花了多少錢嗎？不少人申辦手機門號時，習慣直接選擇吃到飽方案，或是合約到期就跟 ..."
+        },
+        {
           "title": "Google Gemini降低使用門檻！2GB記憶體手機也能AI生圖",
           "link": "https://3c.ltn.com.tw/news/68366",
           "date": "2026/11/22 09:00",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68369",
           "date": "2026/11/21 09:30",
           "summary": "WhatsApp群組聊天又要擴編了，WhatsApp正將群組人數上限從原本的1,024人提高至1,500人，一口氣增 ..."
-        },
-        {
-          "title": "網銀遭盜轉怕手機中毒？iPhone、Android安全檢查教學一次看",
-          "link": "https://3c.ltn.com.tw/news/68363",
-          "date": "2026/11/21 09:00",
-          "summary": "近期台灣接連傳出網路銀行及銀行App異常轉帳事件，引發民眾對帳戶安全的擔憂。除了銀行系統的資安問題，手機是否遭惡意程 ..."
-        },
-        {
-          "title": "Windows 11不用按也會更新！微軟擴大自動推送 這些用戶先收到",
-          "link": "https://3c.ltn.com.tw/news/68370",
-          "date": "2026/11/21 08:30",
-          "summary": "Windows 11用戶注意，微軟宣布擴大推送最新Windows 11 26H2版本，符合條件的電腦將陸續自動下載並 ..."
         }
       ]
     },
@@ -252,7 +252,63 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "Anthropic 研究員宣稱利用 Claude，解開困擾數學界超過 150 年難題",
+          "title": "玩美移動為何告別美股？訊連揭 4 大原因：市值太小、AI 衝擊 SaaS 估值",
+          "link": "https://finance.technews.tw/2026/11/22/perfect-corp-delists-us-stocks-cyberlink-reveals-4-reasons-small-market-cap-ai-saas-valuation-impact/",
+          "date": "2026-11-22 03:00",
+          "summary": "訊連旗下美妝 AI 公司玩美移動（Perfect Corp.）10 月 23 日完成私有化，正式從紐約證券交易 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Anthropic 史上最大 IPO 難救市！美股 AI 蒸發 4 兆美元背後投資人恐慌",
+          "link": "https://finance.technews.tw/2026/11/22/can-ai-deliver-returns/",
+          "date": "2026-11-22 02:56",
+          "summary": "自 2022 年 ChatGPT 問世，並開啟新一輪改變全球技術與資本市場的新週期以來，投資者首次展現出強烈的 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "美國 AI 大管制時代來臨！黃仁勳下台效應：打擊中國算力還是逼出紅色自主供應鏈？",
+          "link": "https://finance.technews.tw/2026/11/22/without-jensen-usa-ai-is-slower/",
+          "date": "2026-11-22 02:00",
+          "summary": "黃仁勳一宣布請辭，最先跳起來的不只輝達股東，還有中國的 AI 公司。路透 11 月 12 日引述知情人士報導， [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "台股上週崩跌 7,641 點！國安基金證實進場、金管會祭「全面禁空令」救市",
+          "link": "https://finance.technews.tw/2026/11/22/total-no-fly-zone/",
+          "date": "2026-11-22 01:03",
+          "summary": "輝達（NVIDIA）執行長黃仁勳辭任引發市場劇烈震盪，疊加美國 AI 監管趨嚴等利空夾擊，台股上週遭遇史詩級拋 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 加速科學研究，資料品質與驗證機制成新瓶頸",
+          "link": "https://technews.tw/2026/11/22/ai-raises-the-stakes-for-discovery-data/",
+          "date": "2026-11-22 00:30",
+          "summary": "人工智慧正快速改變科學研究的運作方式，也讓研究資料的價值與審視標準同步升高。最新觀點指出，AI 已從單純的分析 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 評分也有「口音偏見」？研究：美英口音最吃香，中文、奈及利亞口音墊底",
+          "link": "https://technews.tw/2026/11/21/ai-voice-model-accent-bias/",
+          "date": "2026-11-21 07:30",
+          "summary": "華盛頓大學（University of Washington）最新研究指出，當人工智慧（AI）模型被用於面試、 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 也有雙面性格，研究：AI 得知受監控時會隱藏真實意圖",
+          "link": "https://technews.tw/2026/11/21/ai-surveillance-behavioral-differences-study/",
+          "date": "2026-11-21 06:30",
+          "summary": "一項最新研究揭露，人工智慧（AI）模型的表現並非始終如一，而是會強烈受到「是否被監看」的影響。研究團隊在針對 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "強鹿推免費 AI 助理「JD」告別繁瑣數據，一句話秒解農場大小事",
+          "link": "https://technews.tw/2026/11/21/john-deere-jd-ai-assistant/",
+          "date": "2026-11-21 05:30",
+          "summary": "農機大廠強鹿（John Deere）近期推出全新 AI 助理「JD」，讓農民能以自然對話的方式，輕鬆分析多年來 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "Anthropic 研究員宣稱利用 Claude，解開困擾數學界超過 150 年黎曼猜想難題",
           "link": "https://technews.tw/2026/11/21/anthropic-solve-riemann-problem-with-claude/",
           "date": "2026-11-21 03:29",
           "summary": "Anthropic 於 11 月 19 日正式在美國那斯達克掛牌上市，創全球資本市場史上最大規模 IPO 紀錄 [&#8230;]",
@@ -278,62 +334,6 @@
           "date": "2026-11-21 01:30",
           "summary": "生成式 AI 並沒有替駭客開闢新入侵途徑，卻讓既有手法更便宜更快，也更難察覺。美國媒體 Quartz 近日整理 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "美曝 H200 出口許可申請量！中科技巨頭瘋搶百萬顆，實際獲批落差大",
-          "link": "https://technews.tw/2026/11/21/us-2026-h200-export-china/",
-          "date": "2026-11-21 01:12",
-          "summary": "美國近期依據《出口管制改革法案》（ECRA）行使法定權限，公開商務部工業與安全局（BIS）涉及輝達（NVIDI [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "被質疑就改口，UNESCO 研究：AI 回答氣候問題九成正確，卻很容易被說服",
-          "link": "https://technews.tw/2026/11/21/ai-models-mislead-on-climate-science/",
-          "date": "2026-11-21 00:30",
-          "summary": "聯合國教科文組織（UNESCO）與倫敦大學學院（UCL）最新發布的研究指出，人工智慧模型雖然能在氣候科學的基礎 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 前景疑慮罩頂族群重挫，法人：籌碼沉澱是止跌關鍵",
-          "link": "https://finance.technews.tw/2026/11/20/ai-prospects-doubts-sectors-plunge-institutional-investors-chip-consolidation-key-stop-decline/",
-          "date": "2026-11-20 10:30",
-          "summary": "AI 大廠 Anthropic 掛牌首日股價勁揚逾 17%，不過，並未消除市場對 AI 前景的疑慮，台股今天多 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "韓國 AI 作弊爭議，李在明：改革考試制度嚴懲違規",
-          "link": "https://technews.tw/2026/11/20/south-korea-ai-cheating-controversy-lee-jae-myung-urges-exam-system-reform-severe-punishment-violations/",
-          "date": "2026-11-20 09:50",
-          "summary": "韓國稅務師資格考試爆發作弊事件，加上一年一度的大學修學能力試驗，讓 AI 作弊議題浮上檯面。韓國總統李在明今天 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "macOS 版 Gemini 加入電腦使用功能，化身桌面助理代勞日常任務",
-          "link": "https://technews.tw/2026/11/20/gemini-for-mac-gains-computer-use-capabilities/",
-          "date": "2026-11-20 09:49",
-          "summary": "macOS 版 Gemini 將具備電腦使用（computer use）能力，意味著它能協助使用者「橫跨你的地 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "中國 B300 算力長約掀轉售潮，新雲端業者急尋歐美買家接手",
-          "link": "https://technews.tw/2026/11/20/us-ai-compute-neoclouds-china/",
-          "date": "2026-11-20 09:10",
-          "summary": "隨著美國擴大封殺中國海外算力，市場逐步出現連鎖反應。根據市場消息，近期美國公司執行長在社群平台 X 上表示，有 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "IEA：資料中心用電 2030 年恐倍增，十年內須新建至少 2,500 萬公里電網",
-          "link": "https://technews.tw/2026/11/20/iea-warned-data-center-power-use-could-double-by-2030-straining-grids/",
-          "date": "2026-11-20 09:10",
-          "summary": "國際能源總署警告，資料中心用電可能在 2030 年翻倍至約 1,000TWh，十年內須新建與升級數千萬公里輸電 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "10 月外銷訂單 1,238 億美元續創高，年增 78.3% 連 21 紅",
-          "link": "https://finance.technews.tw/2026/11/20/october-export-orders-new-record-123-8-billion-usd-up-78-3-percent-21-consecutive-months/",
-          "date": "2026-11-20 08:50",
-          "summary": "人工智慧（AI）需求續強，經濟部今天公布 10 月外銷訂單為 1,238.2 億美元，創歷年單月新高，年增 7 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,20 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "台股上週崩跌 7,641 點！國安基金證實進場、金管會祭「全面禁空令」救市",
+          "link": "https://finance.technews.tw/2026/11/22/total-no-fly-zone/",
+          "date": "2026-11-22 01:03",
+          "summary": "輝達（NVIDIA）執行長黃仁勳辭任引發市場劇烈震盪，疊加美國 AI 監管趨嚴等利空夾擊，台股上週遭遇史詩級拋 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "從報關行到跨入高科技物流，建新二代北上打造「超級冰箱」盤算曝光",
+          "link": "https://technews.tw/2026/11/22/chienshing/",
+          "date": "2026-11-22 00:00",
+          "summary": "今年滿 50 歲的建新國際，從傳統報關行跨足高科技物流。負責這場轉型戰的二代陳彥銘（首圖左），一手打造出北台灣 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "輝達再遭政府盯上！路透：美 SEC 正調查輝達會計處理方式",
           "link": "https://technews.tw/2026/11/21/nvidia-us-sec-investigation/",
@@ -410,20 +424,6 @@
           "date": "2026-11-20 05:55",
           "summary": "美國商務部先進晶片出口管制新規今天生效，路透社報導，根據台積電指引，受影響中國客戶原則上只能使用較成熟的 28 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "SpaceX 太空資料中心惹議  傳債權人憂晶片有去無回",
-          "link": "https://finance.technews.tw/2026/11/20/spacex-space-data-center-controversy-creditors-worry-chips-unrecoverable/",
-          "date": "2026-11-20 05:40",
-          "summary": "馬斯克（Elon Musk）旗下 SpaceX 計劃打造太空資料中心，卻引發債權人對抵押品安全的疑慮。 英國金 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "美國批准近 88 萬顆高階 AI 晶片輸中，廠商名單曝光促國安爭議升溫",
-          "link": "https://technews.tw/2026/11/20/list-of-companies-approved-by-the-u-s-for-exports-of-nearly-880000-high-end-ai-chips-to-china/",
-          "date": "2026-11-20 05:15",
-          "summary": "美國聯邦眾議院外交委員會於 11 月 19 日依據《出口管制改革法案》（ECRA）行使法定權限，公開商務部工業 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,13 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "從報關行到跨入高科技物流，建新二代北上打造「超級冰箱」盤算曝光",
+          "link": "https://technews.tw/2026/11/22/chienshing/",
+          "date": "2026-11-22 00:00",
+          "summary": "今年滿 50 歲的建新國際，從傳統報關行跨足高科技物流。負責這場轉型戰的二代陳彥銘（首圖左），一手打造出北台灣 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "麻州大學研發生物混合網狀採集器，讓細胞成為植入式醫材的電源",
           "link": "https://technews.tw/2026/11/21/energy-harvesting-mesh-could-replace-batteries-in-implantable-medical-devices/",
@@ -506,13 +513,6 @@
           "link": "https://ccc.technews.tw/2026/11/19/lenovo-legion-go-beam-leaks-as-affordable-gaming-handheld-with-fresh-design/",
           "date": "2026-11-19 05:30",
           "summary": "外媒 Windows Latest 報導聯想（Lenovo）Legion Go Beam 高解析產品圖，比 L [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 功耗攀升，雙鴻揭液冷升級路線",
-          "link": "https://finance.technews.tw/2026/11/19/auras-unveils-liquid-cooling-upgrade-roadmap/",
-          "date": "2026-11-19 05:10",
-          "summary": "AI 晶片功耗攀升，散熱廠雙鴻同步開發新材料與 Micro Channel Lid 方案。雙鴻表示，鑽石銅方案 [&#8230;]",
           "comments": ""
         }
       ]
