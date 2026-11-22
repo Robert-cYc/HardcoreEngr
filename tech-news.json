@@ -1,16 +1,72 @@
 {
-  "updated": "2026-11-22 04:08",
+  "updated": "2026-11-22 18:51",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
+          "title": "Perplexity and Intelligence",
+          "link": "https://openai.com/index/perplexity-and-intelligence/",
+          "date": "2026-11-22 17:06",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50601525"
+        },
+        {
+          "title": "Toyota, Nissan, and Honda to standardize parts to lower costs",
+          "link": "https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/",
+          "date": "2026-11-22 04:04",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50596133"
+        },
+        {
+          "title": "Open Social Web Alliance",
+          "link": "https://osw-alliance.net/en/",
+          "date": "2026-11-22 15:24",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50600511"
+        },
+        {
+          "title": "Show HN: I built a game where you are an LLM's subagent",
+          "link": "https://github.com/gulivan/worker755",
+          "date": "2026-11-22 13:56",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50599762"
+        },
+        {
+          "title": "I joined the NTP Pool, but not with my Stratum 1 Pi",
+          "link": "https://www.jeffgeerling.com/blog/2026/i-joined-the-ntp-pool/",
+          "date": "2026-11-22 15:35",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50600622"
+        },
+        {
           "title": "Pill to treat pancreatic cancer hailed as 'biggest breakthrough in decades'",
           "link": "https://www.theguardian.com/society/2026/nov/20/pill-pancreatic-cancer-breakthrough-daraxonrasib",
           "date": "2026-11-20 21:03",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50582069"
+        },
+        {
+          "title": "A Better Vocabulary for Testing",
+          "link": "https://alperenkeles.com/posts/vocab-for-testing/",
+          "date": "2026-11-21 22:15",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50594182"
+        },
+        {
+          "title": "Inside PyPy: First Contact with RPython",
+          "link": "https://bernsteinbear.com/blog/inside-pypy-first-contact-with-rpython/",
+          "date": "2026-11-19 16:26",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50562207"
+        },
+        {
+          "title": "Ask HN: Tips for transitioning from web development to embedded/firmware?",
+          "link": "https://news.ycombinator.com/item?id=50555002",
+          "date": "2026-11-19 01:37",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50555002"
         },
         {
           "title": "Lean verification of the Riemann Hypothesis",
@@ -20,11 +76,11 @@
           "comments": "https://news.ycombinator.com/item?id=50589618"
         },
         {
-          "title": "Inkling-2-Mini in 5.4 GB Memory",
-          "link": "https://github.com/ShinMegamiBoson/lookatmyquant",
-          "date": "2026-11-21 18:02",
+          "title": "Europe weakens chemical rules as science links them to 'lifestyle diseases'",
+          "link": "https://www.lemonde.fr/en/opinion/article/2026/11/22/as-science-increasingly-shows-the-role-chemical-substances-play-in-lifestyle-diseases-europe-weakens-its-regulations_6786595_23.html",
+          "date": "2026-11-22 15:42",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50591853"
+          "comments": "https://news.ycombinator.com/item?id=50600677"
         },
         {
           "title": "Sandwich Simulator",
@@ -32,62 +88,6 @@
           "date": "2026-11-22 00:07",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50594911"
-        },
-        {
-          "title": "Data Processing Incidents on Inference Providers",
-          "link": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
-          "date": "2026-11-22 02:14",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50595554"
-        },
-        {
-          "title": "Detonating a pile of lead azide",
-          "link": "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really",
-          "date": "2026-11-21 13:23",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50588982"
-        },
-        {
-          "title": "PcapAnalyzer – self-hosted pcap analyzer with 27 problem detectors",
-          "link": "https://github.com/sebaandrada-cell/PcapAnalyzer",
-          "date": "2026-11-21 22:09",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50594132"
-        },
-        {
-          "title": "Leonida – PC Recompilation of the Xbox Version of GTA 6",
-          "link": "https://github.com/ItsNotRexed/Leonida",
-          "date": "2026-11-22 00:57",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50595168"
-        },
-        {
-          "title": "Getting the mind to steer the body to steer you",
-          "link": "https://notnottalmud.substack.com/p/getting-the-mind-to-steer-the-body",
-          "date": "2026-11-20 22:11",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50583028"
-        },
-        {
-          "title": "The Most Popular Car Colors in America",
-          "link": "https://www.iseecars.com/most-popular-car-colors-study",
-          "date": "2026-11-22 02:47",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50595725"
-        },
-        {
-          "title": "My monitor was cutting my download speed by 75%",
-          "link": "https://blog.tymscar.com/posts/studiodisplayethernet/",
-          "date": "2026-11-21 10:36",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50587875"
-        },
-        {
-          "title": "The Mythology of Conscious AI",
-          "link": "https://www.noemamag.com/the-mythology-of-conscious-ai/",
-          "date": "2026-11-22 02:10",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50595537"
         }
       ]
     },
@@ -96,20 +96,20 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
+          "title": "What a wealth tax looks like in the age of AI billionaires",
+          "link": "https://edition.cnn.com/2026/11/22/tech/wealth-tax-ai-billionaires",
+          "date": "2026-11-22",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "In China’s tech mecca, Trump and Xi touted AI cooperation. Now comes the harsh reality",
+          "link": "https://edition.cnn.com/2026/11/22/business/trump-xi-apec-tech-rivalry-intl-hnk",
+          "date": "2026-11-22",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
           "title": "Anthropic worker claims to have solved a Holy Grail of math problems with the help of AI",
           "link": "https://edition.cnn.com/2026/11/21/tech/anthropic-math-problem-ai",
-          "date": "2026-11-21",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Tennis coach takes on more work and cuts spending after expert advice",
-          "link": "https://edition.cnn.com/2026/11/21/business/savings-challenge-participant-third-update-jeff-kizer",
-          "date": "2026-11-21",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "How a young couple can become multimillionaires by retirement age, according to an expert",
-          "link": "https://edition.cnn.com/2026/11/21/business/savings-challenge-dont-be-afraid-to-ask-tip",
           "date": "2026-11-21",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
@@ -174,6 +174,36 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "FB小帳12／14後大整頓！你的會被刪嗎？教你辨別與備份",
+          "link": "https://3c.ltn.com.tw/news/68378",
+          "date": "2026/11/22 17:01",
+          "summary": "Meta日前宣布，Facebook「其他個人檔案」功能將於12月14日後正式走入歷史，不過，這不代表所有俗稱「小帳」 ..."
+        },
+        {
+          "title": "全球電視五大品牌洗牌！三星第一快被追上 第二名換人當",
+          "link": "https://3c.ltn.com.tw/news/68371",
+          "date": "2026/11/22 16:02",
+          "summary": "全球電視市場五大品牌再度洗牌！市調機構Counterpoint Research公布2026年第三季全球電視出貨市占 ..."
+        },
+        {
+          "title": "iPhone 18 Pro系列降價有感！蘋果睽違半年再現跌價榜",
+          "link": "https://3c.ltn.com.tw/news/68380",
+          "date": "2026/11/22 15:08",
+          "summary": "傑昇通信公布2026年10月手機降價榜，睽違約半年後，再度有出現蘋果的身影，iPhone 18 Pro系列共有4個容 ..."
+        },
+        {
+          "title": "手機越用越耗電？外媒勸先別急著換新機 這招更省錢",
+          "link": "https://3c.ltn.com.tw/news/68381",
+          "date": "2026/11/22 14:00",
+          "summary": "手機用久了，電池越來越不耐用，明明早上才充飽電，下午就開始亮紅燈，讓不少人萌生換新機的念頭。不過，先別急著花大錢，外 ..."
+        },
+        {
+          "title": "美國手機最新排名出爐！Google Pixel市占翻倍 只差一步進前三",
+          "link": "https://3c.ltn.com.tw/news/68377",
+          "date": "2026/11/22 13:01",
+          "summary": "Google Pixel手機在美國市場急起直追，市調機構Counterpoint Research公布2026年第三 ..."
+        },
+        {
           "title": "手機借人不怕被偷看！LINE、相簿都能上鎖 Android新功能曝光",
           "link": "https://3c.ltn.com.tw/news/68368",
           "date": "2026/11/22 12:00",
@@ -214,36 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68367",
           "date": "2026/11/21 14:00",
           "summary": "ChatGPT付費用戶有新福利了，OpenAI宣布，開始向部分ChatGPT Plus訂閱用戶開放Dots功能，這項 ..."
-        },
-        {
-          "title": "Google Gemini黑五大特價！老用戶最高5折、一年省3,250元",
-          "link": "https://3c.ltn.com.tw/news/68376",
-          "date": "2026/11/21 13:01",
-          "summary": "Google Gemini用戶注意，黑色星期五優惠提前開跑！Google宣布，即日起至11月26日，針對現有Goog ..."
-        },
-        {
-          "title": "全球百萬張信用卡資料遭竊！約20國淪陷 台灣影響曝光",
-          "link": "https://3c.ltn.com.tw/news/68379",
-          "date": "2026/11/21 12:00",
-          "summary": "全球爆發大規模信用卡資料外洩事件，資安研究人員發現，駭客利用Windows系統的老舊漏洞，入侵全球約20個國家、超過 ..."
-        },
-        {
-          "title": "Google Gemini也能做GIF梗圖了！台灣實測可用 但有一限制",
-          "link": "https://3c.ltn.com.tw/news/68375",
-          "date": "2026/11/21 11:00",
-          "summary": "繼ChatGPT推出GIF動態圖片生成功能後，Google也正式宣布跟進，為Gemini加入GIF製作功能。只要輸入 ..."
-        },
-        {
-          "title": "3D表情符號也要高規格！Google公布安卓手機4大門檻 三星也沒份",
-          "link": "https://3c.ltn.com.tw/news/68360",
-          "date": "2026/11/21 10:00",
-          "summary": "Google今年推出全新3D表情符號，讓原本平面的笑臉、愛心等圖案變得更加立體生動。不過，想用上這套新表情符號，手機 ..."
-        },
-        {
-          "title": "WhatsApp群組大擴編！1500人新上限曝光 舊群組自動升級",
-          "link": "https://3c.ltn.com.tw/news/68369",
-          "date": "2026/11/21 09:30",
-          "summary": "WhatsApp群組聊天又要擴編了，WhatsApp正將群組人數上限從原本的1,024人提高至1,500人，一口氣增 ..."
         }
       ]
     },
@@ -251,6 +251,41 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "台股跌逾 17% 失守年線還未完？安聯投信：後市盯緊四大止穩訊號",
+          "link": "https://finance.technews.tw/2026/11/22/falling-below-the-annual-moving-average/",
+          "date": "2026-11-22 09:35",
+          "summary": "台股近期修正壓力快速升高，若自 11 月 13 日收盤 43,675.12 點計算，台股短短一週修正幅度已逾 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 顛覆航空收益管理，「訂票後最佳化」啟動營收與滿意度三贏革命",
+          "link": "https://technews.tw/2026/11/22/ai-boosts-post-booking-optimization-aviation-industry/",
+          "date": "2026-11-22 08:30",
+          "summary": "人工智慧（AI）正為航空業的收益管理帶來顛覆性的動態變革！最新產業分析指出，航空公司的營運焦點已不再侷限於「訂 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 文字偵測器學會邊用邊調整，識破偽裝文字準確率逾九成",
+          "link": "https://technews.tw/2026/11/22/helping-ai-text-detectors-keep-up-with-changing-conditions/",
+          "date": "2026-11-22 07:30",
+          "summary": "麻省理工學院（MIT）與康乃爾大學用「測試時調適」（test-time adaptation，TTA）技術，讓 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "KAIST 讀唇 AI 先抓最清楚的嘴型，無聲辨識詞錯誤率降至 19.4%",
+          "link": "https://technews.tw/2026/11/22/scientists-taught-ai-to-read-lips-in-total-silence-and-the-results-are-pretty-impressive/",
+          "date": "2026-11-22 06:30",
+          "summary": "韓國科學技術院（KAIST）教授 Yong Man Ro 團隊開發讀唇人工智慧系統 DLLM-VSR，不需要任 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "跨境匯款今年衝 500 億元！數位至匯 11/25 將以參考價 120 元登錄興櫃",
+          "link": "https://finance.technews.tw/2026/11/22/small-amount-foreign-exchange/",
+          "date": "2026-11-22 05:09",
+          "summary": "數位至匯 11 月 25 日將以每股參考價 120 元登錄興櫃，董事長暨執行長魏仁裕表示，2023 年取得金管 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "玩美移動為何告別美股？訊連揭 4 大原因：市值太小、AI 衝擊 SaaS 估值",
           "link": "https://finance.technews.tw/2026/11/22/perfect-corp-delists-us-stocks-cyberlink-reveals-4-reasons-small-market-cap-ai-saas-valuation-impact/",
@@ -299,41 +334,6 @@
           "date": "2026-11-21 06:30",
           "summary": "一項最新研究揭露，人工智慧（AI）模型的表現並非始終如一，而是會強烈受到「是否被監看」的影響。研究團隊在針對 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "強鹿推免費 AI 助理「JD」告別繁瑣數據，一句話秒解農場大小事",
-          "link": "https://technews.tw/2026/11/21/john-deere-jd-ai-assistant/",
-          "date": "2026-11-21 05:30",
-          "summary": "農機大廠強鹿（John Deere）近期推出全新 AI 助理「JD」，讓農民能以自然對話的方式，輕鬆分析多年來 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Anthropic 研究員宣稱利用 Claude，解開困擾數學界超過 150 年黎曼猜想難題",
-          "link": "https://technews.tw/2026/11/21/anthropic-solve-riemann-problem-with-claude/",
-          "date": "2026-11-21 03:29",
-          "summary": "Anthropic 於 11 月 19 日正式在美國那斯達克掛牌上市，創全球資本市場史上最大規模 IPO 紀錄 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "幾百元小單也不放過，華碩靠「客戶終身價值」將零碎需求變長尾商機",
-          "link": "https://technews.tw/2026/11/21/asus-customer-lifetime-value-small-orders-fragmented-demands-long-tail-opportunities/",
-          "date": "2026-11-21 03:00",
-          "summary": "對習慣做企業採購案的 B2B 業務來說，一筆每月只收幾百元的軟體訂閱，通常不值得投入太多人力。因為在成交前，業 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "堅持「算力留美」！川普揚言對海外建資料中心的美企課重稅",
-          "link": "https://technews.tw/2026/11/21/trump-data-centers-abroad-tax/",
-          "date": "2026-11-21 02:22",
-          "summary": "美國總統川普揚言將對前往海外興建資料中心的美國企業課徵高額稅負，但他並未詳細說明將如何執行這項措施，以及可能依 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 讓詐騙信件不再錯字連篇，資安防線轉向驗證流程",
-          "link": "https://infosecu.technews.tw/2026/11/21/ai-cybersecurity-terms-explained-10-definitions-to-know/",
-          "date": "2026-11-21 01:30",
-          "summary": "生成式 AI 並沒有替駭客開闢新入侵途徑，卻讓既有手法更便宜更快，也更難察覺。美國媒體 Quartz 近日整理 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,13 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "台股跌逾 17% 失守年線還未完？安聯投信：後市盯緊四大止穩訊號",
+          "link": "https://finance.technews.tw/2026/11/22/falling-below-the-annual-moving-average/",
+          "date": "2026-11-22 09:35",
+          "summary": "台股近期修正壓力快速升高，若自 11 月 13 日收盤 43,675.12 點計算，台股短短一週修正幅度已逾 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "台股上週崩跌 7,641 點！國安基金證實進場、金管會祭「全面禁空令」救市",
           "link": "https://finance.technews.tw/2026/11/22/total-no-fly-zone/",
@@ -417,13 +424,6 @@
           "date": "2026-11-20 06:30",
           "summary": "全球人工智慧（AI）晶片需求熱絡，帶動韓國出口額再創新高。韓國政府 19 日公布，今年累計出口額正式突破 1 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "傳暫停中國 16 奈米以下訂單，台積電：遵循適用法令",
-          "link": "https://technews.tw/2026/11/20/reportedly-china-sub-16nm-orders-suspended-tsmc-complying-applicable-laws/",
-          "date": "2026-11-20 05:55",
-          "summary": "美國商務部先進晶片出口管制新規今天生效，路透社報導，根據台積電指引，受影響中國客戶原則上只能使用較成熟的 28 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,20 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "台股跌逾 17% 失守年線還未完？安聯投信：後市盯緊四大止穩訊號",
+          "link": "https://finance.technews.tw/2026/11/22/falling-below-the-annual-moving-average/",
+          "date": "2026-11-22 09:35",
+          "summary": "台股近期修正壓力快速升高，若自 11 月 13 日收盤 43,675.12 點計算，台股短短一週修正幅度已逾 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "信紘科奪 49 億機電工程大單！攜手中工打造台塑大樓 220 億都更案",
+          "link": "https://finance.technews.tw/2026/11/22/mechanical-and-electrical-engineering/",
+          "date": "2026-11-22 07:21",
+          "summary": "信紘科與中華工程近日宣布共同投入台北市重大都市更新指標工程「台塑大樓都市更新新建工程」，全案由台塑建設擔任實施 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "從報關行到跨入高科技物流，建新二代北上打造「超級冰箱」盤算曝光",
           "link": "https://technews.tw/2026/11/22/chienshing/",
@@ -500,20 +514,6 @@
           "date": "2026-11-19 09:30",
           "summary": "群聯電子（Phison Electronics Corp.）宣布推出搭載生成式商業智慧（Generative [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "中系 CSP 下修訂單抵銷北美拉貨，2027 年 NAND Flash 供需將反轉走跌",
-          "link": "https://technews.tw/2026/11/19/nand-flash-supply-demand-reverse-decline-2027-chinese-csps-order-cuts-offset-north-america-demand/",
-          "date": "2026-11-19 07:15",
-          "summary": "根據 TrendForce 最新記憶體產業研究，2027 年全球 NAND Flash 產業將迎來供需反轉；在 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "聯想平價遊戲掌機 Legion Go Beam 產品圖曝光，拿掉觸控板、改 16:9 螢幕壓低成本",
-          "link": "https://ccc.technews.tw/2026/11/19/lenovo-legion-go-beam-leaks-as-affordable-gaming-handheld-with-fresh-design/",
-          "date": "2026-11-19 05:30",
-          "summary": "外媒 Windows Latest 報導聯想（Lenovo）Legion Go Beam 高解析產品圖，比 L [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -521,6 +521,13 @@
       "name": "CCC 追新聞",
       "site": "https://ccc.technews.tw/",
       "items": [
+        {
+          "title": "改變全球電腦操作卻沒賺大錢，揭密 1970 年首款「木製滑鼠」誕生史",
+          "link": "https://ccc.technews.tw/2026/11/22/why-mouse-called-mouse/",
+          "date": "2026-11-22 08:00",
+          "summary": "動動滑鼠、按幾個鍵，就能開啟檔案、瀏覽網頁，甚至完成各種複雜的工作。不過，在滑鼠出現之前，操作電腦可不像現在這 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "KDDI 推出極簡 4G 手機 INFOBAR ZERO，只能通話與傳簡訊",
           "link": "https://ccc.technews.tw/2026/11/20/kddi-au-infobar-zero/",
@@ -596,13 +603,6 @@
           "link": "https://ccc.technews.tw/2026/11/11/google-pixel-tag-launches-in-taiwan/",
           "date": "2026-11-11 11:34",
           "summary": "Google 在台推出首款藍牙定位器 Pixel Tag，可透過 Google 的尋找中心（Find Hub） [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "懷舊熱潮再起，Sony 復刻 1979 年 Walkman 耳機並升級 USB-C",
-          "link": "https://ccc.technews.tw/2026/11/11/sony-revives-the-original-walkman-headphones-adds-usb-c/",
-          "date": "2026-11-11 08:20",
-          "summary": "搭上近期有線耳機與實體媒體復甦的懷舊熱潮，Sony 重新推出 1979 年與初代 Walkman（TPS-L2 [&#8230;]",
           "comments": ""
         }
       ]
