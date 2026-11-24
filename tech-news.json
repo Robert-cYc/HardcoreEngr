@@ -1,93 +1,93 @@
 {
-  "updated": "2026-11-24 07:40",
+  "updated": "2026-11-24 21:44",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "India's opposition storms Meta's offices to get its Instagram accounts back",
-          "link": "https://korben.info/en/india-opposition-storms-meta-offices-instagram-accounts.html",
-          "date": "2026-11-24 06:28",
+          "title": "Ternary Bonsai 2.5 27B",
+          "link": "https://prismml.com/news/bonsai-2-5-27b",
+          "date": "2026-11-24 20:08",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50624487"
+          "comments": "https://news.ycombinator.com/item?id=50633922"
         },
         {
-          "title": "Nvidia Reinstates Jensen Huang as CEO",
-          "link": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html",
-          "date": "2026-11-23 14:00",
+          "title": "Active intrusion campaign against Check Point security management servers",
+          "link": "https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign",
+          "date": "2026-11-24 16:32",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50611576"
+          "comments": "https://news.ycombinator.com/item?id=50630594"
         },
         {
-          "title": "Stalwart is now a drop-in replacement for Microsoft Exchange",
-          "link": "https://stalw.art/blog/microsoft-exchange-replacement/",
-          "date": "2026-11-23 22:32",
+          "title": "The Spray Bottle",
+          "link": "https://mechanical-pencil.com/products/spray-bottle",
+          "date": "2026-11-22 11:16",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50620349"
+          "comments": "https://news.ycombinator.com/item?id=50598555"
         },
         {
-          "title": "Ladybird is now in alpha",
-          "link": "https://ladybird.org/posts/alpha/",
-          "date": "2026-11-23 16:13",
+          "title": "Launch HN: Versine (YC F26) – MCP to send and receive money",
+          "link": "https://news.ycombinator.com/item?id=50634426",
+          "date": "2026-11-24 20:44",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50614249"
+          "comments": "https://news.ycombinator.com/item?id=50634426"
         },
         {
-          "title": "Drone Maps of Salvage Yards",
-          "link": "https://salvageyarddrone.wordpress.com/",
-          "date": "2026-11-24 04:00",
+          "title": "From CUDA and Jax to TorchTPU: Lessons from a Cayley Graph Solver",
+          "link": "https://andlukyane.com/blog/cayley-graphs-and-torchtpu",
+          "date": "2026-11-24 19:40",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50623515"
+          "comments": "https://news.ycombinator.com/item?id=50633424"
         },
         {
-          "title": "Modernizing iperf/iperf3 and introducing fireperf",
-          "link": "https://blog.daniel-baumann.ch/posts/20261122-1.html",
-          "date": "2026-11-22 22:37",
+          "title": "Jetty Pro",
+          "link": "http://hypercritical.co/2026/11/23/jetty-pro",
+          "date": "2026-11-24 16:23",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50604710"
+          "comments": "https://news.ycombinator.com/item?id=50630462"
         },
         {
-          "title": "AMD EPYC Zen 6 vs. Zen 1 Performance: 12.1x Geo Mean in Less Than 10 Years",
-          "link": "https://www.phoronix.com/review/amd-epyc-9006-7601",
-          "date": "2026-11-24 05:15",
+          "title": "2035 came early",
+          "link": "https://fzakaria.com/2026/11/23/2035-came-early",
+          "date": "2026-11-24 06:30",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50624061"
+          "comments": "https://news.ycombinator.com/item?id=50624497"
         },
         {
-          "title": "Lowering Perplexity Without Scaling",
-          "link": "https://micjm.com/blog/lowering-perplexity-without-scaling/",
-          "date": "2026-11-23 04:33",
+          "title": "Calculate how many mesh radio nodes your city needs",
+          "link": "https://meshcoveragecalculator.lalala.ing/",
+          "date": "2026-11-23 09:46",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50607512"
+          "comments": "https://news.ycombinator.com/item?id=50609483"
         },
         {
-          "title": "New York Bans Subscription and Post-Purchase Fees on Cars",
-          "link": "https://www.governor.ny.gov/news/money-your-pockets-governor-hochul-signs-bill-restricting-exploitative-vehicle-subscription",
-          "date": "2026-11-24 02:27",
+          "title": "Working with AI",
+          "link": "https://www.anthropic.com/research/working-with-ai",
+          "date": "2026-11-24 21:07",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50622774"
+          "comments": "https://news.ycombinator.com/item?id=50634734"
         },
         {
-          "title": "GPUI is getting its own repository",
-          "link": "https://github.com/zed-industries/gpui",
-          "date": "2026-11-23 20:52",
+          "title": "Splitting USB-C: USB 3 and USB 2 on one port",
+          "link": "https://www.frankchiarulli.com/blog/splitting-usb-c/",
+          "date": "2026-11-24 14:54",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50619103"
+          "comments": "https://news.ycombinator.com/item?id=50629106"
         },
         {
-          "title": "Bored.com: Fun, interesting and cool websites to explore when bored",
-          "link": "https://www.bored.com/",
-          "date": "2026-11-23 21:01",
+          "title": "An Italian folding bicycle design that fits into a suitcase",
+          "link": "https://www.core77.com/posts/145766/An-Italian-Folding-Bicycle-Design-that-Fits-Into-a-Suitcase",
+          "date": "2026-11-23 12:40",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50619207"
+          "comments": "https://news.ycombinator.com/item?id=50610820"
         },
         {
-          "title": "Making a dumb TV just smart enough",
-          "link": "https://qsantos.fr/2026/11/19/making-a-dumb-tv-just-smart-enough/",
-          "date": "2026-11-24 02:46",
+          "title": "A training engine for your local model, using your idle compute",
+          "link": "https://github.com/sous-labs/songe",
+          "date": "2026-11-24 15:03",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50622934"
+          "comments": "https://news.ycombinator.com/item?id=50629231"
         }
       ]
     },
@@ -96,15 +96,21 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
-          "title": "Nvidia shares soar more than 30% after Huang reinstated as CEO",
-          "link": "https://edition.cnn.com/2026/11/23/markets/us-stocks-rebound-intl",
-          "date": "2026-11-23",
+          "title": "Jensen Huang apologizes to employees, says he’s in therapy",
+          "link": "https://edition.cnn.com/2026/11/24/tech/jensen-huang-apologies-employees-therapy",
+          "date": "2026-11-24",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
-          "title": "This cute 9-inch robot tour guide is operated by people with disabilities",
-          "link": "https://edition.cnn.com/2026/11/23/business/robot-tour-guide-operated-by-people-with-disabilities-spc",
-          "date": "2026-11-23",
+          "title": "Jensen Huang is a walking moral hazard",
+          "link": "https://edition.cnn.com/2026/11/24/business/jensen-huang-moral-hazard",
+          "date": "2026-11-24",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Turkey, cranberries and sweet potatoes are all more expensive this Thanksgiving",
+          "link": "https://edition.cnn.com/2026/11/24/economy/turkey-prices-thanksgiving-meal-inflation",
+          "date": "2026-11-24",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
@@ -160,12 +166,6 @@
           "link": "https://edition.cnn.com/2026/11/18/tech/anthropic-ipo-cofounders",
           "date": "2026-11-18",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Four takeaways from Nvidia’s first earnings report after Jensen Huang scandal",
-          "link": "https://edition.cnn.com/2026/11/18/tech/nvidias-earnings-report-jensen-huang-scandal-takeaways",
-          "date": "2026-11-18",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         }
       ]
     },
@@ -173,6 +173,42 @@
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "宏碁16吋電競筆電鎖定新手玩家 標配16GB記憶體與雙風扇 規格實用效能穩定不打折",
+          "link": "https://3c.ltn.com.tw/news/68411",
+          "date": "2026/11/25 05:36",
+          "summary": "鎖定學生族群及首次入手電競筆電的新手玩家，宏碁推出全新Nitro V 16，主打16吋大螢幕、獨立顯示晶片及雙風扇散 ..."
+        },
+        {
+          "title": "Android Auto版的Google Maps機車模式曝光！螢幕直接顯示導航更方便",
+          "link": "https://3c.ltn.com.tw/news/68409",
+          "date": "2026/11/24 18:26",
+          "summary": "對於開車或騎車的人來說，Google Maps 導航幾乎是必備，而機車模式也早已問世，能避開高速公路並規劃僅機車走的 ..."
+        },
+        {
+          "title": "《GTA 6》上線首日玩家平均玩超過 8 小時！貢獻全美四分之一流量",
+          "link": "https://3c.ltn.com.tw/news/68410",
+          "date": "2026/11/24 18:05",
+          "summary": "玩家苦等 13 年的《俠盜獵車手 6》於 11 月 19 日上線，全球玩家當天就陷入瘋狂，根據 Circana 網站 ..."
+        },
+        {
+          "title": "蘋果官方黑五11／27開跑！回饋加碼至近萬元 台灣又沒份",
+          "link": "https://3c.ltn.com.tw/news/68408",
+          "date": "2026/11/24 17:10",
+          "summary": "蘋果正式公布今年官方黑五優惠，活動將於11月27日至30日限時4天舉行，購買指定產品即可獲得蘋果禮品卡，今年最高回饋 ..."
+        },
+        {
+          "title": "「我不是機器人」驗證也能騙人！小心1個動作害電腦中毒",
+          "link": "https://3c.ltn.com.tw/news/68407",
+          "date": "2026/11/24 16:35",
+          "summary": "上網時經常遇到「我不是機器人」的驗證畫面，但小心，這個看似平常的操作也可能是駭客設下的陷阱。近日有網友在Thread ..."
+        },
+        {
+          "title": "電腦規格要縮水了？華碩鬆口記憶體恐砍半 8GB夠用嗎",
+          "link": "https://3c.ltn.com.tw/news/68405",
+          "date": "2026/11/24 16:12",
+          "summary": "受到記憶體價格持續飆漲影響，PC大廠的產品策略也開始轉變。華碩共同執行長許先越近日於第三季法說會上透露，考量消費者對 ..."
+        },
         {
           "title": "三星智慧錶傳明年不出新款！打破9年慣例 背後原因曝光",
           "link": "https://3c.ltn.com.tw/news/68395",
@@ -208,42 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68399",
           "date": "2026/11/24 10:37",
           "summary": "OpenAI宣布，ChatGPT一般聊天介面正式升級至GPT-6.2新模型，不僅強化圖片辨識、網路搜尋及理解複雜指令 ..."
-        },
-        {
-          "title": "LINE又傳災情！訊息沒通知、電話也不響 網友曝3招自救",
-          "link": "https://3c.ltn.com.tw/news/68401",
-          "date": "2026/11/24 10:16",
-          "summary": "你的LINE也突然「靜音」了嗎？近日不少網友在社群平台Threads反映，LINE疑似出現通知異常，明明有人傳訊息， ..."
-        },
-        {
-          "title": "24 吋螢幕不到 2000 元！燦坤黑五購物節起跑",
-          "link": "https://3c.ltn.com.tw/news/68390",
-          "date": "2026/11/24 09:55",
-          "summary": "迎接 11 月 27 日黑色星期五（Black Friday）購物熱潮，燦坤 3C 家電自 11 月 17 日至 1 ..."
-        },
-        {
-          "title": "蘋果經典紅色回來了！傳2款新品12月登場 iPhone沒在名單內",
-          "link": "https://3c.ltn.com.tw/news/68397",
-          "date": "2026/11/24 09:35",
-          "summary": "蘋果還有新品！經典的(PRODUCT)RED紅色系列有望回歸，根據《彭博社》報導，蘋果計畫為智慧揚聲器HomePod ..."
-        },
-        {
-          "title": "台灣人最愛用的爛密碼揭曉！「123456」居冠 第2名竟是這組",
-          "link": "https://3c.ltn.com.tw/news/68391",
-          "date": "2026/11/24 08:00",
-          "summary": "你的密碼安全嗎？密碼管理平台NordPass公布2026年全球及台灣十大最常見密碼排行榜，結果發現，不少人設定密碼還 ..."
-        },
-        {
-          "title": "iPhone 20 Pro螢幕樣品曝光！「四曲面」打造無邊框大螢幕",
-          "link": "https://3c.ltn.com.tw/news/68389",
-          "date": "2026/11/23 15:17",
-          "summary": "供應鏈樣品曝光，源自知名爆料者在社群平台發文，展示號稱 iPhone 20 Pro 採用的螢幕蓋板樣品，採用 3D ..."
-        },
-        {
-          "title": "Android 陣營最新摺疊手機照片曝光！挑戰 iPhone Duo、Galaxy Z Fold 8",
-          "link": "https://3c.ltn.com.tw/news/68387",
-          "date": "2026/11/23 14:00",
-          "summary": "Motorola 即將推出的新一代摺疊手機 Razr Flex，再傳最新消息，外觀設計與產品細節提前曝光。這款採用寬 ..."
         }
       ]
     },
@@ -252,87 +252,87 @@
       "site": "https://technews.tw/category/ai/",
       "items": [
         {
-          "title": "通吃半導體、人型機器人與 CPO！東佑達「全自製」攻高階設備商機",
-          "link": "https://technews.tw/2026/11/24/component-manufacturing/",
-          "date": "2026-11-24 05:03",
-          "summary": "東佑達自動化今年參與「2026 台中無人載具暨機器人應用展」，聚焦半導體自動化、人型機器人零組件及共同封裝光學 [&#8230;]",
+          "title": "北韓首公開自研 AI 聊天機器人：介面神似 ChatGPT、禁問政治與「不文明」話題",
+          "link": "https://technews.tw/2026/11/24/north-korea-unveils-first-self-developed-ai/",
+          "date": "2026-11-24 10:00",
+          "summary": "北韓近日透過官方電視畫面，首度公開一款本土開發的人工智慧（AI）聊天機器人，顯示這個長期封閉的國家也正積極切入 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "大摩看多美股  基本面穩、回檔帶來絕佳買點",
-          "link": "https://finance.technews.tw/2026/11/24/morgan-stanley-bullish-us-stocks-strong-fundamentals-pullbacks-excellent-buying-opportunities/",
-          "date": "2026-11-24 04:40",
-          "summary": "在輝達宣布創辦人黃仁勳回任執行長前，摩根士丹利（Morgan Stanley，大摩）即指出，美股上週已過度下跌 [&#8230;]",
+          "title": "馬來西亞防規避出口管制，籲資料中心勿服務美國列名企業",
+          "link": "https://technews.tw/2026/11/24/malaysia-prevents-export-control-evasion-data-centers-us-entities/",
+          "date": "2026-11-24 09:50",
+          "summary": "馬來西亞投資、貿易及工業部（MITI）今天發布聲明表示，馬來西亞投資發展局（MIDA）將通知資料中心營運業者， [&#8230;]",
           "comments": ""
         },
         {
-          "title": "黃仁勳回歸，供應鏈：AI「循環融資」更受約束、美監管不鬆手",
-          "link": "https://technews.tw/2026/11/24/jensen-huang-returns-supply-chain-ai-circular-financing-tighter-constraints-us-regulation-strict/",
-          "date": "2026-11-24 04:30",
-          "summary": "人工智慧（AI）晶片大廠輝達（NVIDIA）23 日恢復黃仁勳全部職務，國際股市和台股上演慶祝行情。3 名半導 [&#8230;]",
+          "title": "鎖定 AMR 機器人與邊緣視覺商機！博來科技預計明年 1 月中掛牌上櫃",
+          "link": "https://finance.technews.tw/2026/11/24/edge-vision/",
+          "date": "2026-11-24 09:42",
+          "summary": "博來科技明日將舉辦上櫃前業績發表會，預計 2027 年 1 月中掛牌交易，董事長蔣永慶表示，目前外銷占比達 8 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "「沒人開車只靠手煞車！」AWS 執行長批 AI 安全炒作，籲以系統工程取代緊急開關",
-          "link": "https://technews.tw/2026/11/24/aws-ceo-discusses-ai-safety/",
-          "date": "2026-11-24 04:20",
-          "summary": "亞馬遜（Amazon）旗下 AWS 執行長 Matt Garman 於 2026 年 11 月 23 日發表一 [&#8230;]",
+          "title": "黃仁勳回鍋掀白宮與國會裂痕，美兩黨議員同聲抨擊",
+          "link": "https://technews.tw/2026/11/24/jensen-huang-return-stirs-white-house-congress-rift-bipartisan-criticism-us-lawmakers/",
+          "date": "2026-11-24 09:40",
+          "summary": "輝達創辦人黃仁勳在美國總統川普介入下重掌執行長，兩黨議員今天同聲抨擊，強調他仍須赴國會說明；分析指出，風波凸顯 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "咖啡師也能蓋資料中心？馬斯克揭露 SpaceX「ArmyX」施工大軍的祕密",
-          "link": "https://technews.tw/2026/11/24/elon-musk-says-former-baristas-and-shelf-stockers-would-make-good-spacex-data-center-workers/",
-          "date": "2026-11-24 04:10",
-          "summary": "SpaceX 執行長馬斯克（Elon Musk）表示，公司內部名為「ArmyX」的團隊把資料中心建置工作拆成幾 [&#8230;]",
+          "title": "才剛拋售輝達！女股神扼腕，錯失黃仁勳回歸「32% 慶祝行情」",
+          "link": "https://finance.technews.tw/2026/11/24/cathie-wood-miss-nvidia-stock/",
+          "date": "2026-11-24 09:36",
+          "summary": "女股神 Cathie Wood 因擔憂黃仁勳離開後輝達的領導問題，決定賣出近 1.07 億美元的輝達股票，想不 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "動視 AI 專利擬蒐集玩家語音訓練 NPC，引發隱私與授權疑慮",
-          "link": "https://infosecu.technews.tw/2026/11/24/activision-ai-patent-privacy-controversy/",
-          "date": "2026-11-24 04:00",
-          "summary": "動視（Activision）一項新公開的專利申請，揭示公司正研究以人工智慧（AI）訓練遊戲中的非玩家角色（NP [&#8230;]",
+          "title": "黃仁勳回歸帶動韓股反彈，業者：AI 投資信心回升",
+          "link": "https://finance.technews.tw/2026/11/24/jensen-huang-return-boosts-korean-stocks-ai-investment-confidence-recovery/",
+          "date": "2026-11-24 09:10",
+          "summary": "輝達（NVIDIA）創辦人黃仁勳回歸，韓國股市今天大幅反彈，證券業界認為，這為 AI 投資生態系統恢復信心創造 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "狂吸 39 億美元創紀錄，中國 300 家 AI 新創靠「單點突破」力抗 DeepSeek",
-          "link": "https://technews.tw/2026/11/24/chinese-ai-startups-hit-record-high-fundraising/",
-          "date": "2026-11-24 03:50",
-          "summary": "中國人工智慧創業圈正掀起一波新的競逐潮。從阿里巴巴近期離職的 AI 架構師，到曾在字節跳動實習的研究人員，愈來 [&#8230;]",
+          "title": "台股有望挑戰 46,000 點？黃仁勳回歸輝達，分析師這樣看後市",
+          "link": "https://technews.tw/2026/11/24/market-see-jensen-comeback/",
+          "date": "2026-11-24 08:32",
+          "summary": "隨著輝達執行長黃仁勳光榮回歸，週二（24 日）科技股領漲、亞洲股市全面走揚，其中台股大漲 9%，韓國 KOSP [&#8230;]",
           "comments": ""
         },
         {
-          "title": "亞馬遜收購新創 Decart 核心 AI 優化技術，強化 Trainium 效能並延攬創辦團隊",
-          "link": "https://finance.technews.tw/2026/11/24/amazon-acquires-decart/",
-          "date": "2026-11-24 03:40",
-          "summary": "亞馬遜（Amazon）11 月 23 日宣布，已同意收購以色列新創公司 Decart 的核心 AI 加速與最佳 [&#8230;]",
+          "title": "黃仁勳重掌輝達股市狂飆，台廠 AI 供應鏈影響一次看",
+          "link": "https://technews.tw/2026/11/24/jensen-return-and-its-impact-on-taiwan-ai-supply-chain/",
+          "date": "2026-11-24 08:30",
+          "summary": "人工智慧 AI 晶片大廠輝達（NVIDIA）23 日恢復黃仁勳全部職務，重振台灣供應鏈信心，從半導體上游到下游 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "AI 需求能否續強？戴爾、惠普財報見真章",
-          "link": "https://finance.technews.tw/2026/11/24/dell-and-hp-earnings-emerge-as-key-indicators-for-ai-stocks/",
-          "date": "2026-11-24 03:30",
-          "summary": "近期 AI 概念股賣壓沉重，市場開始質疑 AI 投資熱潮能否持續。本週戴爾（Dell）、惠普（HP）及慧與科技 [&#8230;]",
+          "title": "子公司遭美列黑名單，阿里否認轉售受管制先進晶片",
+          "link": "https://technews.tw/2026/11/24/alibaba-denies-reselling-controlled-advanced-chips-us-blacklists-subsidiary/",
+          "date": "2026-11-24 08:20",
+          "summary": "綜合港媒報導，針對美國商務部將阿里巴巴旗下位於新加坡的子公司 Apex Enterprise Solution [&#8230;]",
           "comments": ""
         },
         {
-          "title": "黃仁勳回歸要買什麼？第一金投顧黃詣庭：短線 4.6 萬 、明年上看 5.5 萬",
-          "link": "https://finance.technews.tw/2026/11/24/consort-xun-returns-to-the-palace/",
-          "date": "2026-11-24 03:26",
-          "summary": "輝達（NVIDIA）執行長黃仁勳正式回歸，激勵台股今日大漲，第一金投顧董事長黃詣庭表示，壓抑股市的最大利空事件 [&#8230;]",
+          "title": "台股本益比回落 15 倍浮現買點！野村投信破除泡沫論「AI 無砍單」",
+          "link": "https://finance.technews.tw/2026/11/24/taiwan-stock-price-to-earnings-ratio/",
+          "date": "2026-11-24 07:36",
+          "summary": "台股衝回 4 萬點要怎麼操作？野村投信今日舉辦台股投資展望，國內股票投資部副總經理姚郁如表示，台股遠期本益比已 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "金融預測「小而美」完勝大模型！英國團隊訓練 600 多個模型，開源釋出獲央行與量化機構搶載",
-          "link": "https://finance.technews.tw/2026/11/24/isambard-ai-powers-600-finance-native-models-to-challenge-big-tech/",
-          "date": "2026-11-24 03:05",
-          "summary": "英國研究團隊利用布里斯托超級運算中心（Bristol Centre for Supercomputing）的 [&#8230;]",
+          "title": "黃仁勳回鍋有利開放模型？國安派若敗恐傷封閉 AI",
+          "link": "https://technews.tw/2026/11/24/jensen-huang-return-benefit-open-models-national-security-faction-loses-harm-closed-ai/",
+          "date": "2026-11-24 06:50",
+          "summary": "輝達（Nvidia Corp.）執行長黃仁勳（Jensen Huang）閃電復職，背後涉及的恐怕不只是企業經營 [&#8230;]",
           "comments": ""
         },
         {
-          "title": "蘋果加速推進 Siri AI，多年 100% 再生能源神話會破功嗎？",
-          "link": "https://technews.tw/2026/11/24/will-siri-ai-threaten-apples-environmental-target/",
-          "date": "2026-11-24 02:55",
-          "summary": "蘋果（Apple）長期以來被視為大型科技公司中環保表現最突出的企業之一。公司表示，自 2018 年起已達成自有 [&#8230;]",
+          "title": "黎曼猜想證明才獲驗證，另一位數學家卻質疑整套證明無效",
+          "link": "https://technews.tw/2026/11/24/riemann-hypothesis-levent-alpoge-jenny-lorraine-nielsen/",
+          "date": "2026-11-24 06:43",
+          "summary": "Anthropic 研究員兼數學家 Levent Alpöge 近日聲稱已提出黎曼猜想（Riemann hyp [&#8230;]",
           "comments": ""
         }
       ]
@@ -341,6 +341,48 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "川普受訪讚魏哲家是傑出人才，稱台積電將在德州建廠",
+          "link": "https://technews.tw/2026/11/24/trump-praises-cc-wei-exceptional-talent-tsmc-texas-factory-build/",
+          "date": "2026-11-24 10:20",
+          "summary": "美國總統川普（Donald Trump）接受美媒訪問，談到 AI 晶片巨頭輝達（NVIDIA）前執行長黃仁勳復 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "黃仁勳辭輝達執行長後 11 天復職，台積電股東人數創新高",
+          "link": "https://finance.technews.tw/2026/11/24/jensen-huang-controversy-drives-tsmc-shareholders-to-record-high/",
+          "date": "2026-11-24 08:50",
+          "summary": "輝達今天宣布創辦人黃仁勳復任執行長，距離他請辭僅 11 天。期間台股最低滑落至 35,442.41 點，累計大 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "黃仁勳重掌輝達股市狂飆，台廠 AI 供應鏈影響一次看",
+          "link": "https://technews.tw/2026/11/24/jensen-return-and-its-impact-on-taiwan-ai-supply-chain/",
+          "date": "2026-11-24 08:30",
+          "summary": "人工智慧 AI 晶片大廠輝達（NVIDIA）23 日恢復黃仁勳全部職務，重振台灣供應鏈信心，從半導體上游到下游 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "子公司遭美列黑名單，阿里否認轉售受管制先進晶片",
+          "link": "https://technews.tw/2026/11/24/alibaba-denies-reselling-controlled-advanced-chips-us-blacklists-subsidiary/",
+          "date": "2026-11-24 08:20",
+          "summary": "綜合港媒報導，針對美國商務部將阿里巴巴旗下位於新加坡的子公司 Apex Enterprise Solution [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "台股本益比回落 15 倍浮現買點！野村投信破除泡沫論「AI 無砍單」",
+          "link": "https://finance.technews.tw/2026/11/24/taiwan-stock-price-to-earnings-ratio/",
+          "date": "2026-11-24 07:36",
+          "summary": "台股衝回 4 萬點要怎麼操作？野村投信今日舉辦台股投資展望，國內股票投資部副總經理姚郁如表示，台股遠期本益比已 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "三星年度人事晉升縮減近兩成，半導體團隊占過半成最大贏家",
+          "link": "https://technews.tw/2026/11/24/samsung-puts-semiconductor-talent-at-forefront-of-2027-executive-reshuffle/",
+          "date": "2026-11-24 06:10",
+          "summary": "三星電子（Samsung Electronics）2026 年 11 月 24 日公布 2026 年例行高層人 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "三星搶攻 AI 商機  西安廠 V9 NAND 產能拚增四倍",
           "link": "https://technews.tw/2026/11/24/samsung-plans-to-expand-v9-nand-production-capacity-at-xi-an-plant/",
@@ -382,48 +424,6 @@
           "date": "2026-11-24 02:45",
           "summary": "輝達（Nvidia）、IBM 與費米國家加速器實驗室（Fermilab）正聯手打造一套模組化量子運算共設計平台 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "復職為輝達 10 大合作夥伴帶來 5,000 億美元效益，台積電為當中關鍵",
-          "link": "https://technews.tw/2026/11/24/reinstatement-generates-500-billion-in-value-for-nvidias-top-10-partners/",
-          "date": "2026-11-24 02:30",
-          "summary": "輝達（Nvidia）董事會正式恢復黃仁勳執行長職務，這項人事逆轉立即引爆市場行情，截至當日股市收盤，輝達股價大 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "黃仁勳回歸單日身價暴漲近 350 億美元，空頭卻遭血洗慘賠 120 億",
-          "link": "https://finance.technews.tw/2026/11/24/jensen-huangs-net-worth-surges-by-nearly-35-billion-in-a-single-day/",
-          "date": "2026-11-24 02:00",
-          "summary": "在卸任僅短短 11 天後，半導體大廠輝達（Nvidia）董事會於 23 日一致決議讓共同創辦人黃仁勳重返執行長 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "混合鍵合為何是 3D IC 關鍵？高成本下還有哪些無凸塊選項",
-          "link": "https://technews.tw/2026/11/24/apac-ic-chips-semicon/",
-          "date": "2026-11-24 02:00",
-          "summary": "從 8 月 OCP APAC、Hot Chips 到 9 月 Semicon Taiwan，先進封裝技術在半導 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "黃仁勳回鍋，分析：未消除 AI 生態系統或輝達嚴峻挑戰",
-          "link": "https://technews.tw/2026/11/24/jensen-huang-return-analysis-ai-ecosystem-nvidia-challenges-unresolved/",
-          "date": "2026-11-24 01:50",
-          "summary": "輝達共同創辦人黃仁勳因婚外情風波辭去執行長，短短 11 天就戲劇性回鍋。儘管美國總統川普表示，目前不擔心 AI [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "Megaspeed 遭美列黑名單，涉助中取得輝達 AI 晶片",
-          "link": "https://technews.tw/2026/11/24/us-blacklists-megaspeed-cloud-company-linked-to-nvidia-scandal/",
-          "date": "2026-11-24 01:45",
-          "summary": "美國今天將新加坡企業 Megaspeed International 列入貿易黑名單，禁止這家公司在未取得許可 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "川普稱若不讓黃仁勳重返輝達，中國可能會延攬他",
-          "link": "https://technews.tw/2026/11/24/trump-warns-china-poach-jensen-huang-barred-returning-nvidia/",
-          "date": "2026-11-24 01:40",
-          "summary": "輝達共同創辦人黃仁勳因婚外情風波日前辭去執行長，短短 11 天就戲劇性回鍋。美國總統川普今天接受美媒訪問表示， [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,41 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "鎖定 AMR 機器人與邊緣視覺商機！博來科技預計明年 1 月中掛牌上櫃",
+          "link": "https://finance.technews.tw/2026/11/24/edge-vision/",
+          "date": "2026-11-24 09:42",
+          "summary": "博來科技明日將舉辦上櫃前業績發表會，預計 2027 年 1 月中掛牌交易，董事長蔣永慶表示，目前外銷占比達 8 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 搶占玻纖布產能墊高 PCB 價格，4Q26 COB/SMD LED 顯示器成本季增 2%",
+          "link": "https://technews.tw/2026/11/24/ai-competition-fiberglass-fabric-capacity-pushes-up-pcb-prices-cob-smd-led-display-costs-rise-2-qoq-4q26/",
+          "date": "2026-11-24 07:40",
+          "summary": "根據 TrendForce 最新《LED 顯示器模組季度成本與市場分析》報告，2026 年第四季由於 PCB [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "台股本益比回落 15 倍浮現買點！野村投信破除泡沫論「AI 無砍單」",
+          "link": "https://finance.technews.tw/2026/11/24/taiwan-stock-price-to-earnings-ratio/",
+          "date": "2026-11-24 07:36",
+          "summary": "台股衝回 4 萬點要怎麼操作？野村投信今日舉辦台股投資展望，國內股票投資部副總經理姚郁如表示，台股遠期本益比已 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "HVDC 放量仍有變數，台達電兩大成長動能受矚目",
+          "link": "https://technews.tw/2026/11/24/hvdc-volume-uncertainties-delta-electronics-two-growth-drivers-focus/",
+          "date": "2026-11-24 06:59",
+          "summary": "AI 資料中心面臨電力與散熱雙重挑戰，儘管 HVDC 供電架構導入時程仍存在不確定性，外資最新報告指出，隨著零 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "黃仁勳回歸仍難解缺電困境，AI 資料中心建置模式生變",
+          "link": "https://technews.tw/2026/11/24/jensen-huang-return-power-shortage-ai-data-center-construction-model-changes/",
+          "date": "2026-11-24 06:12",
+          "summary": "輝達執行長黃仁勳回歸，天風國際證券分析師郭明錤指出，雖然公司策略、產品規劃、技術發展及供應鏈管理等不確定性降低 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "三星搶攻 AI 商機  西安廠 V9 NAND 產能拚增四倍",
           "link": "https://technews.tw/2026/11/24/samsung-plans-to-expand-v9-nand-production-capacity-at-xi-an-plant/",
@@ -478,41 +513,6 @@
           "link": "https://technews.tw/2026/11/24/optical-communication-upstream-integration-independent-manufacturers-transformation-major-player-expansion/",
           "date": "2026-11-23 23:00",
           "summary": "綜合 CPO 產業整合趨勢與台灣供應鏈現況觀察，大廠垂直整合對台灣廠商的實際影響，仍取決於各環節的技術門檻、供 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "鈉離子電池也能助攻 AI？LG 結合 SST 打造新一代供電架構",
-          "link": "https://technews.tw/2026/11/23/sodium-ion-batteries-power-ai-lg-combines-sst-create-new-generation-power-architecture/",
-          "date": "2026-11-23 08:15",
-          "summary": "AI 資料中心除了面臨電力供應不足的挑戰，GPU 運算所帶來的瞬間負載變化，也對供電系統提出更高要求。韓國電池 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "突破 AI 散熱瓶頸，12 吋碳化矽跨足先進封裝生態系",
-          "link": "https://technews.tw/2026/11/23/12-inch-silicon-carbide-enters-the-advanced-packaging-ecosystem/",
-          "date": "2026-11-23 06:45",
-          "summary": "隨著人工智慧（AI）運算需求爆發，高階處理器面臨嚴峻的散熱考驗。過去，以高壓功率元件為主的碳化矽（SiC）材料 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "三星 SDI 進攻 AI 資料中心，儲能、UPS、BBU 三路並進",
-          "link": "https://technews.tw/2026/11/23/samsung-sdi-targets-ai-data-centers-three-pronged-approach-energy-storage-ups-bbu/",
-          "date": "2026-11-23 06:22",
-          "summary": "AI 資料中心電力需求持續攀升，帶動儲能及備援電池市場發展。韓國電池大廠三星 SDI 於北美能源展 RE+ 2 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "南電 10 月獲利年增 389%，大摩喊加碼、目標價上看 2,000 元",
-          "link": "https://technews.tw/2026/11/23/morgan-stanley-2026-nan-ya-pcb/",
-          "date": "2026-11-23 05:24",
-          "summary": "美系外資摩根士丹利（大摩）出具最新報告指出，南電 10 月稅後淨利率升至 23.4%，高於第三季的 20.1% [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "記憶體股崩跌  超低本益比恐暗示獲利恐見頂",
-          "link": "https://finance.technews.tw/2026/11/23/memory-stocks-plunge-as-profit-growth-may-have-peaked/",
-          "date": "2026-11-23 03:50",
-          "summary": "AI 交易急轉直下，儲存、記憶體股從高點崩跌，儘管現價位看似便宜，專家示警，超低本益比可能暗示著獲利高峰已過。 [&#8230;]",
           "comments": ""
         }
       ]
