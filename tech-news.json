@@ -1,93 +1,93 @@
 {
-  "updated": "2026-11-26 06:00",
+  "updated": "2026-11-26 20:43",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
-          "title": "Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening",
-          "link": "https://scottaaronson.blog/?p=10379",
-          "date": "2026-11-25 19:11",
+          "title": "AMD Specific Patches for Llama.cpp",
+          "link": "https://devnull.land/amd-specific-llama-cpp",
+          "date": "2026-11-26 17:11",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50646108"
+          "comments": "https://news.ycombinator.com/item?id=50657265"
         },
         {
-          "title": "1Password Security Incident",
-          "link": "https://1password.com/blog/update-on-nov-2026-security-incident",
-          "date": "2026-11-25 17:18",
+          "title": "CTO of 'RansomwareHelp' Indicted for Wire Fraud",
+          "link": "https://krebsonsecurity.com/2026/11/cto-of-ransomwarehelp-indicted-for-wire-fraud/",
+          "date": "2026-11-26 17:47",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50644817"
+          "comments": "https://news.ycombinator.com/item?id=50657645"
         },
         {
-          "title": "Much shorter version of GRH Lean verification from Anthropic",
-          "link": "https://github.com/lsernau/grh-lean",
-          "date": "2026-11-25 21:48",
+          "title": "YouTube Ad Punisher – Auto-reloads YouTube pages when an ad plays",
+          "link": "https://github.com/antonpictures/youtube-punisher",
+          "date": "2026-11-26 17:36",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50648050"
+          "comments": "https://news.ycombinator.com/item?id=50657530"
         },
         {
-          "title": "What VP ≠ VNP Means (In 3 Minutes)",
-          "link": "https://www.friedgil.com/vpvnp",
-          "date": "2026-11-24 10:56",
+          "title": "OpenAI may be in cost control mode",
+          "link": "https://micjm.com/blog/openai-is-in-cost-control-mode/",
+          "date": "2026-11-26 07:33",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50626466"
+          "comments": "https://news.ycombinator.com/item?id=50652527"
         },
         {
-          "title": "Tell HN: Lots of Ask HNs again",
-          "link": "https://news.ycombinator.com/item?id=50649864",
-          "date": "2026-11-26 00:43",
+          "title": "Rvoip 0.5 the complete VoIP stack in Rust",
+          "link": "https://github.com/eisenzopf/rvoip",
+          "date": "2026-11-26 19:18",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50649864"
+          "comments": "https://news.ycombinator.com/item?id=50658632"
         },
         {
-          "title": "Collection of preserved UI style guides",
-          "link": "https://aresluna.org/ui-style-guides/",
-          "date": "2026-11-26 00:40",
+          "title": "The USA as a Civilizations-esque map",
+          "link": "https://karpathy.ai/usaciv/",
+          "date": "2026-11-26 19:53",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50649834"
+          "comments": "https://news.ycombinator.com/item?id=50658997"
         },
         {
-          "title": "Slow Ubuntu security response times",
-          "link": "https://www.openwall.com/lists/oss-security/2026/11/25/9",
-          "date": "2026-11-25 20:38",
+          "title": "Intel One Mono font (2023)",
+          "link": "https://github.com/intel/intel-one-mono",
+          "date": "2026-11-26 10:11",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50647181"
+          "comments": "https://news.ycombinator.com/item?id=50653667"
         },
         {
-          "title": "Minipg: PostgreSQL as a Single Executable",
-          "link": "https://progrium.github.io/minipg/",
-          "date": "2026-11-26 03:00",
+          "title": "Show HN: Three Linux VMs in a browser tab, each running a different browser",
+          "link": "https://michidk.github.io/sidebyside/",
+          "date": "2026-11-26 15:00",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50650892"
+          "comments": "https://news.ycombinator.com/item?id=50656036"
         },
         {
-          "title": "The Great Automatic Grammatizator (By Roald Dahl), 1954 [pdf]",
-          "link": "https://gwern.net/doc/fiction/science-fiction/1953-dahl-thegreatautomaticgrammatizator.pdf",
-          "date": "2026-11-22 11:29",
+          "title": "Curiosity Is No Solo Act",
+          "link": "https://thereader.mitpress.mit.edu/curiosity-is-no-solo-act/",
+          "date": "2026-11-25 00:37",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50598636"
+          "comments": "https://news.ycombinator.com/item?id=50636931"
         },
         {
-          "title": "GPT-6.2 Astra is the first model to beat Googlers' code golf records",
-          "link": "https://bjin.github.io/go-codegolf-benchmark/#leaderboard",
-          "date": "2026-11-22 16:44",
+          "title": "George Whitesides, 1939-2026",
+          "link": "https://www.science.org/content/blog-post/george-whitesides-1939-2026",
+          "date": "2026-11-26 18:13",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50601280"
+          "comments": "https://news.ycombinator.com/item?id=50657936"
         },
         {
-          "title": "A few questions for the guy who went snorkeling in a Home Depot retention pond",
-          "link": "https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts",
-          "date": "2026-11-25 15:14",
+          "title": "The New York Times warns photographers not to update Photoshop over AI features",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+          "date": "2026-11-25 21:18",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50643129"
+          "comments": "https://news.ycombinator.com/item?id=50647673"
         },
         {
-          "title": "How did pinwheel calculators work?",
-          "link": "https://blog.coredump.cx/p/how-did-pinwheel-calculators-work",
-          "date": "2026-11-25 02:00",
+          "title": "NormalScript: A perfectly normal scripting language",
+          "link": "https://psychoscript.com/",
+          "date": "2026-11-26 04:32",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50637448"
+          "comments": "https://news.ycombinator.com/item?id=50651430"
         }
       ]
     },
@@ -96,21 +96,39 @@
       "site": "https://edition.cnn.com/business/tech",
       "items": [
         {
-          "title": "Judge blocks Trump’s FCC from targeting ABC stations: ‘This is not a close case’",
-          "link": "https://edition.cnn.com/2026/11/25/media/trump-fcc-carr-disney-abc-stations-judge-blocked",
-          "date": "2026-11-25",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Tech stocks are volatile as AI fears overshadow Huang’s Nvidia return",
-          "link": "https://edition.cnn.com/2026/11/25/business/ai-sell-off-despite-huang-nvidia-return",
-          "date": "2026-11-25",
+          "title": "European Central Bank set to appoint its first Spanish leader",
+          "link": "https://edition.cnn.com/2026/11/26/business/ecb-president-pablo-hernandez-de-cos-intl",
+          "date": "2026-11-26",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
           "title": "Russian oil firm Lukoil’s overseas assets sold to investors led by US billionaire Todd Boehly",
           "link": "https://edition.cnn.com/2026/11/25/business/lukoil-sale-todd-boehly-intl",
           "date": "2026-11-25",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "US authorizes SpaceX to deploy 1 million satellites for AI data centers in space",
+          "link": "https://edition.cnn.com/2026/11/26/business/spacex-satellites-space-data-centers-intl",
+          "date": "2026-11-26",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "AI started here. Can this college survive it?",
+          "link": "https://edition.cnn.com/2026/11/26/business/video/ai-dartmouth-provost-scandal-digvid",
+          "date": "2026-11-26",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "Artists are quitting Instagram and Facebook over fears AI will steal their work",
+          "link": "https://edition.cnn.com/2026/11/26/tech/artists-meta-ai-slop-instagram-facebook",
+          "date": "2026-11-26",
+          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
+        },
+        {
+          "title": "How the Nvidia scandal lifted the curtain on a loophole that’s giving China access to US chips",
+          "link": "https://edition.cnn.com/2026/11/14/tech/china-megaspeed-nvidia-scandal-hnk-intl",
+          "date": "2026-11-14",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         },
         {
@@ -148,24 +166,6 @@
           "link": "https://edition.cnn.com/2026/11/21/tech/anthropic-math-problem-ai",
           "date": "2026-11-21",
           "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Almost all of Anthropic’s employees are now millionaires",
-          "link": "https://edition.cnn.com/2026/11/19/tech/anthropic-employees-now-millionaires",
-          "date": "2026-11-19",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Anthropic valued at $1.76 trillion after first day of trading",
-          "link": "https://edition.cnn.com/2026/11/19/business/live-news/anthropic-ipo",
-          "date": "2026-11-19",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
-        },
-        {
-          "title": "Fallout from former Nvidia CEO’s downfall hangs over US-China relations",
-          "link": "https://edition.cnn.com/2026/11/18/business/video/timeline-jensen-huang-nvidia-revelations-hnk-digvid",
-          "date": "2026-11-18",
-          "summary": "CNN Business Tech 全球科技與商業產業即時報導"
         }
       ]
     },
@@ -173,6 +173,30 @@
       "name": "自由 3C 科技",
       "site": "https://3c.ltn.com.tw/",
       "items": [
+        {
+          "title": "Google Play驚現山寨《賽馬娘》遊戲！玩家吐槽：廣告多到一場耗時5分鐘",
+          "link": "https://3c.ltn.com.tw/news/68438",
+          "date": "2026/11/26 18:25",
+          "summary": "近期 Google Play 上架一款《Anime Racing Academy》手機遊戲，由 HIFI PUBLI ..."
+        },
+        {
+          "title": "幫你管密碼的1Password竟遭駭！個資外洩 用戶該怎麼辦？",
+          "link": "https://3c.ltn.com.tw/news/68437",
+          "date": "2026/11/26 17:46",
+          "summary": "專門幫用戶保管密碼的App，自己竟成了駭客攻擊的目標。知名密碼管理服務1Password證實，近期遭駭客入侵後端系統 ..."
+        },
+        {
+          "title": "iOS 27 防詐功能必開！「冒充風險偵測」可辨識異常轉帳 3 步驟啟用",
+          "link": "https://3c.ltn.com.tw/news/68436",
+          "date": "2026/11/26 17:40",
+          "summary": "隨著假冒銀行、政府機關或親友的社交詐騙手法日益翻新，受害者往往在話術誘導下「親自」操作轉帳或修改密碼，使得傳統的雙重 ..."
+        },
+        {
+          "title": "除濕機的水不能倒洗手台？網瘋傳「溫馨提醒」 專家揭真相",
+          "link": "https://3c.ltn.com.tw/news/68426",
+          "date": "2026/11/26 15:30",
+          "summary": "除濕機集滿一桶水，你都倒在哪裡？近日有網友在Threads發文「溫馨提醒」，表示除濕機的水不要倒入洗手台，否則容易讓 ..."
+        },
         {
           "title": "ChatGPT到底有多懂你？「我是誰」指令爆紅 網友看完喊太催淚",
           "link": "https://3c.ltn.com.tw/news/68434",
@@ -220,30 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68431",
           "date": "2026/11/26 08:40",
           "summary": "蘋果（Apple）預計於下個月向所有用戶推送 iOS 27.3 正式版更新。除了功能擴充，本次更新將針對多款 iPh ..."
-        },
-        {
-          "title": "海外網購族注意！EZ WAY下月新制懶人包 誰要補驗證、怎麼做",
-          "link": "https://3c.ltn.com.tw/news/68429",
-          "date": "2026/11/26 08:00",
-          "summary": "海外網購族注意！為防止個資遭冒用，財政部關務署宣布，報關實名認證App「EZ WAY易利委」自12月3日起強化身分驗 ..."
-        },
-        {
-          "title": "萬代南夢宮、卡普空、Square Enix罕見聯手！打擊淘寶盜版貨 侵權市值破3000萬",
-          "link": "https://3c.ltn.com.tw/news/68425",
-          "date": "2026/11/25 18:21",
-          "summary": "有鑑於中國盜版日本動畫、漫畫及周邊商品的行為猖獗，日媒指出，萬代南夢宮、Square Enix 及卡普空罕見聯手，於 ..."
-        },
-        {
-          "title": "YouTube留言功能更新！電視版支援「語音留言」不用再辛苦打字",
-          "link": "https://3c.ltn.com.tw/news/68424",
-          "date": "2026/11/25 18:07",
-          "summary": "今年 9 月 YouTube 預告將升級留言功能，近日執行長 Neal Mohan 在社群平台指出，正式為全球電視版 ..."
-        },
-        {
-          "title": "三星S27 Ultra相機傳大改！3倍長焦鏡頭、雷射對焦都要砍了",
-          "link": "https://3c.ltn.com.tw/news/68412",
-          "date": "2026/11/25 16:15",
-          "summary": "三星預計明年初推出新一代旗艦Galaxy S27系列，其中頂規S27 Ultra的相機配置再傳重大變動。繼先前傳出將 ..."
         }
       ]
     },
@@ -251,6 +251,55 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "三年砸 3 億元攻智慧醫療，鴻海攜北榮秀 AI 機器人成果",
+          "link": "https://finance.technews.tw/2026/11/26/foxconn-smart-medicine/",
+          "date": "2026-11-26 11:42",
+          "summary": "鴻海加速拓展 AI 與機器人在醫療領域的應用，今日宣布與台北榮民總醫院合作打造的化療自動化智慧場域正式亮相，整 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 看指紋就能判斷血型？逾 10 篇論文遭質疑，資料集根本沒有血型資訊",
+          "link": "https://technews.tw/2026/11/26/over-a-dozen-studies-said-ai-can-read-your-blood-type-from-a-fingerprint/",
+          "date": "2026-11-26 09:00",
+          "summary": "多篇聲稱能透過指紋判斷血型的人工智慧研究，近日因資料真實性遭到嚴重質疑而引發學界關注。根據最新消息，愛思唯爾（ [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "美祭先進 AI 晶片新管制，亞洲資料中心融資市場急踩煞車",
+          "link": "https://finance.technews.tw/2026/11/26/us-chip-controls-impact-asian-financing/",
+          "date": "2026-11-26 08:50",
+          "summary": "美國針對先進 AI 晶片祭出最新出口限制，正讓亞洲資料中心融資市場急踩煞車。多家放款機構已著手重新檢視與字節跳 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "走著瞧明年「高機率」配息！AI 防詐拓新商機，海外市場扛成長重任",
+          "link": "https://infosecu.technews.tw/2026/11/26/gogolook-dividend/",
+          "date": "2026-11-26 07:53",
+          "summary": "台灣知名來電辨識 App「Whoscall」母公司走著瞧（Gogolook）今日舉辦媒體交流會，會中董事長鄭勝 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 解理論物理難題正確率 98%，每題成本不到 3 美元",
+          "link": "https://technews.tw/2026/11/26/ai-reshaping-theoretical-physics/",
+          "date": "2026-11-26 06:50",
+          "summary": "印度班加羅爾國際理論科學中心（ICTS）理論物理學教授蘇弗拉特·拉朱（Suvrat Raju）與研究團隊，近期 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "美 AI 資料中心擴張受阻  至少 4 州喊停機率達 57%",
+          "link": "https://technews.tw/2026/11/26/kalshi-traders-say-state-data-center-moratoriums-are-more-likely-than-not/",
+          "date": "2026-11-26 06:30",
+          "summary": "美國 AI 資料中心建設熱潮面臨愈來愈大的政治阻力，隨著民眾對電價上漲和環境衝擊的不滿日漸升高，市場預期更多州 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "CBS：中資美企獲輝達高階晶片，出口管制漏洞浮現",
+          "link": "https://technews.tw/2026/11/26/cbs-export-control-loopholes-chinese-funded-us-firms-nvidia-advanced-chips/",
+          "date": "2026-11-26 06:10",
+          "summary": "美國哥倫比亞廣播公司新聞網（CBS News）調查發現，輝達（Nvidia）正向至少兩家總部設在美國、實際由中 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "AI 逆風延燒  OpenAI 明年 6 月前 IPO 機率跌至 28%",
           "link": "https://finance.technews.tw/2026/11/26/openai-ipo-odds-by-june-next-year-fall-to-28/",
@@ -285,55 +334,6 @@
           "date": "2026-11-26 04:00",
           "summary": "Nothing 在正式發表前，進一步揭露旗下新款 AI 耳機 Ear (note) 的細節，這款產品預計將於 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "Epic 執行長研究數學遭 Claude 攔截批：偵測機制太敏感，隨後澄清肯定模型實力",
-          "link": "https://technews.tw/2026/11/26/epic-ceo-slams-claude-anti-distillation-mechanism/",
-          "date": "2026-11-26 03:50",
-          "summary": "Epic Games 執行長蒂姆·斯維尼（Tim Sweeney）25 日在 X 平台上公開批評 Anthro [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "華為成立半導體與 AI 專利團隊，劍指輝達全球霸主地位",
-          "link": "https://technews.tw/2026/11/26/huawei-forms-patent-teams-for-chips-and-ai-eyeing-ecosystem-to-rival-nvidia/",
-          "date": "2026-11-26 03:40",
-          "summary": "華為（Huawei）正加快在晶片與人工智慧領域的智慧財產權布局，成立專門的半導體與 AI 專利團隊，目標是為其 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "營收浮動、支出鎖死！Anthropic 股價跌破發行價，AI 價格戰考驗 9,000 億美元算力豪賭",
-          "link": "https://technews.tw/2026/11/26/anthropic-faces-ai-price-war-crisis/",
-          "date": "2026-11-26 03:20",
-          "summary": "Anthropic 上市後的股價走勢，正反映市場對 AI 商業模式的重新評估。這家 Claude 模型開發商上 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "鴻勁三大成長引擎點火！Mega Tray、CPO 設備接單升溫，花旗目標價喊上萬元",
-          "link": "https://technews.tw/2026/11/26/citi-see-hon-precision-2026/",
-          "date": "2026-11-26 03:18",
-          "summary": "美系外資花旗出具最新報告指出，Mega Tray（大型托盤）測試機台、CPO 設備及主動式溫度控制（ATC）系 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 不是用來裁員，Anthropic 研究：企業最大收穫是讓員工做更多事",
-          "link": "https://technews.tw/2026/11/26/ai-makes-every-end-user-a-developer-with-caveats/",
-          "date": "2026-11-26 03:05",
-          "summary": "Anthropic 最新研究顯示，企業導入 AI 後，最明顯的價值並非縮編省成本，而是透過提升與加速產出，讓既 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "記憶體飆漲壓縮毛利！傳全球手機大廠齊砍 2027 年出貨目標，vivo、小米降幅最深",
-          "link": "https://technews.tw/2026/11/26/soaring-memory-prices-impact-mobile-phone-shipments/",
-          "date": "2026-11-26 02:40",
-          "summary": "據供應鏈消息，由於記憶體價格居高不下，持續壓縮毛利並衝擊市場需求，多數主要智慧型手機品牌已陸續下修 2027 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "黃仁勳強勢回歸輝達總部，馬斯克攜子現身合體慶賀",
-          "link": "https://technews.tw/2026/11/26/jensen-huang-triumphant-return-nvidia-hq-elon-musk-son-celebrate/",
-          "date": "2026-11-26 02:10",
-          "summary": "輝達（Nvidia）執行長黃仁勳本週重返公司總部，引來媒體鏡頭捕捉的不只他一人，億萬富豪馬斯克（Elon Mu [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,55 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "美祭先進 AI 晶片新管制，亞洲資料中心融資市場急踩煞車",
+          "link": "https://finance.technews.tw/2026/11/26/us-chip-controls-impact-asian-financing/",
+          "date": "2026-11-26 08:50",
+          "summary": "美國針對先進 AI 晶片祭出最新出口限制，正讓亞洲資料中心融資市場急踩煞車。多家放款機構已著手重新檢視與字節跳 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "盧超群獲陽明交大名譽博士，憶張忠謀兩根青江菜勉青年共創 AI 半導體新局",
+          "link": "https://finance.technews.tw/2026/11/26/nicky-lu-receives-honorary-doctorate-from-nycu/",
+          "date": "2026-11-26 08:40",
+          "summary": "鈺創科技董事長盧超群在獲頒陽明交通大學名譽博士學位時發表專題演講，從自己 1981 至 1982 年於交大電子 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "美國封堵中國 AI 算力漏洞，輝達緊急喊停東南亞四國伺服器出貨",
+          "link": "https://technews.tw/2026/11/26/nvidia-halts-server-shipments-to-four-southeast-asian-countries/",
+          "date": "2026-11-26 08:15",
+          "summary": "根據外媒報導，輝達（Nvidia）已通知製造合作夥伴，暫停向馬來西亞、新加坡、泰國及印尼四個東南亞國家出貨搭載 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "穎崴董事長王嘉煌：上半年已發 10 個月獎金，2027 年拚兩位數成長",
+          "link": "https://finance.technews.tw/2026/11/26/winway-has-already-paid-out-10-months-worth-of-bonuses-in-the-first-half-of-the-year/",
+          "date": "2026-11-26 07:30",
+          "summary": "針對市場關注的人工智慧（AI）產業前景與產能規劃，穎崴科技董事長王嘉煌近日受訪時表示，AI 需求已成為各產業的 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "台積電傳擬建德州廠  Wedbush：暗示 AI 需求未放緩",
+          "link": "https://technews.tw/2026/11/26/tsmc-asking-for-tax-incentives-at-texas-fab-suggests-no-ai-slowdown/",
+          "date": "2026-11-26 07:00",
+          "summary": "台積電傳出已為計劃斥資 226 億美元興建的美國德州晶圓廠申請租稅優惠，該廠將生產 2 奈米及更先進製程晶片。 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "輝達前業務主管娶美超微高層，牽動對中晶片走私調查成焦點",
+          "link": "https://technews.tw/2026/11/26/nvidia-executive-romance-and-chip-smuggling-scandal/",
+          "date": "2026-11-26 06:40",
+          "summary": "外媒報導指出，輝達（Nvidia）前全球業務主管傑伊·普里（Jay Puri）與伺服器大廠美超微（Super [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "CBS：中資美企獲輝達高階晶片，出口管制漏洞浮現",
+          "link": "https://technews.tw/2026/11/26/cbs-export-control-loopholes-chinese-funded-us-firms-nvidia-advanced-chips/",
+          "date": "2026-11-26 06:10",
+          "summary": "美國哥倫比亞廣播公司新聞網（CBS News）調查發現，輝達（Nvidia）正向至少兩家總部設在美國、實際由中 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "突破美國封鎖！華為開發「韜 EDA」，中國產設計工具鏈首度整合",
           "link": "https://technews.tw/2026/11/26/huawei-phlexing-technology-tau-eda-tools/",
@@ -375,55 +424,6 @@
           "date": "2026-11-26 03:18",
           "summary": "美系外資花旗出具最新報告指出，Mega Tray（大型托盤）測試機台、CPO 設備及主動式溫度控制（ATC）系 [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "記憶體飆漲壓縮毛利！傳全球手機大廠齊砍 2027 年出貨目標，vivo、小米降幅最深",
-          "link": "https://technews.tw/2026/11/26/soaring-memory-prices-impact-mobile-phone-shipments/",
-          "date": "2026-11-26 02:40",
-          "summary": "據供應鏈消息，由於記憶體價格居高不下，持續壓縮毛利並衝擊市場需求，多數主要智慧型手機品牌已陸續下修 2027 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI ASIC 動能強勁，花旗維持聯發科買進評等目標價 6,800 元",
-          "link": "https://finance.technews.tw/2026/11/26/citi-maintains-buy-rating-on-mediatek-with-a-target-price-of-nt6800/",
-          "date": "2026-11-26 02:30",
-          "summary": "外資花旗（Citi）發布最新研究報告，指出 IC 設計大廠聯發科在「台灣企業日」展現強勁的 AI 客製化晶片（ [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "中介層、電源管理 IC 雙引擎助攻！花旗喊買世界先進，目標價 160 元",
-          "link": "https://technews.tw/2026/11/26/citi-see-vis-2026/",
-          "date": "2026-11-26 02:20",
-          "summary": "美系外資花旗出具最新報告指出，中介層與電源管理 IC 將成為世界先進主要成長動能，維持買進、目標價 160 元 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "先進封裝能見度強勁，花旗給日月光投控 908 元目標價",
-          "link": "https://finance.technews.tw/2026/11/26/citi-sets-a-target-price-of-nt908-for-ase-technology-holding/",
-          "date": "2026-11-26 02:15",
-          "summary": "外資花旗最新報告指出，封測龍頭日月光投控在「台灣企業日」展現強勁獲利能見度，其先進封測（LEAP）需求持續遠超 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "華爾街日報：美方證據顯示，黃仁勳婚外情屬戀愛關係非間諜",
-          "link": "https://technews.tw/2026/11/26/no-evidence-china-orchestrated-jensen-huangs-affair-officials-brief-congress/",
-          "date": "2026-11-26 02:00",
-          "summary": "美國官員昨天在高度機密簡報中告訴國會幕僚，目前沒有證據顯示與輝達（Nvidia）執行長黃仁勳發生婚外情的中國科 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "台積電亞利桑那廠 12/4 辦擴建典禮，彭博：川普將親自出席",
-          "link": "https://technews.tw/2026/11/26/trump-to-lead-tsmc-groundbreaking-in-arizona-after-nvidia-gambit/",
-          "date": "2026-11-26 01:45",
-          "summary": "美國總統川普下週將親自出席台積電美國亞利桑那州廠擴建慶祝典禮，在成功推動黃仁勳重掌輝達後，進一步加深他對半導體 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "范斯：未見黃仁勳犯罪證據，輝達晶片對 AI 領先至關重要",
-          "link": "https://technews.tw/2026/11/26/vance-no-criminal-evidence-found-jensen-huang-nvidia-chips-crucial-ai-leadership/",
-          "date": "2026-11-26 01:40",
-          "summary": "輝達創辦人黃仁勳因婚外情風波辭去執行長，據傳協調促成黃仁勳回鍋的美國副總統范斯今天表示，黃仁勳不需要特赦，沒有 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -431,6 +431,34 @@
       "name": "零組件",
       "site": "https://technews.tw/category/component/",
       "items": [
+        {
+          "title": "美國 301 關稅調查，電源供應器呢？台達、光寶這樣看",
+          "link": "https://technews.tw/2026/11/26/us-section-301-investigation-delta-lite-on-power-supplies/",
+          "date": "2026-11-26 11:00",
+          "summary": "美國貿易代表署（USTR）25 日公布「結構性產能過剩」301 條款調查結果，台灣擬議關稅最高為 15%，泰國 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "盧超群獲陽明交大名譽博士，憶張忠謀兩根青江菜勉青年共創 AI 半導體新局",
+          "link": "https://finance.technews.tw/2026/11/26/nicky-lu-receives-honorary-doctorate-from-nycu/",
+          "date": "2026-11-26 08:40",
+          "summary": "鈺創科技董事長盧超群在獲頒陽明交通大學名譽博士學位時發表專題演講，從自己 1981 至 1982 年於交大電子 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "穎崴董事長王嘉煌：上半年已發 10 個月獎金，2027 年拚兩位數成長",
+          "link": "https://finance.technews.tw/2026/11/26/winway-has-already-paid-out-10-months-worth-of-bonuses-in-the-first-half-of-the-year/",
+          "date": "2026-11-26 07:30",
+          "summary": "針對市場關注的人工智慧（AI）產業前景與產能規劃，穎崴科技董事長王嘉煌近日受訪時表示，AI 需求已成為各產業的 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "宏碁存貨逼近千億元，年增 81%、前三季跌價損失達 37 億元",
+          "link": "https://finance.technews.tw/2026/11/26/acer-stock/",
+          "date": "2026-11-26 07:22",
+          "summary": "宏碁今年營收及獲利表現同步走揚，不過存貨水位也較去年同期大幅攀升。據宏碁第三季合併財報，截至今年 9 月底，存 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "TEL 擴大南台灣布局！南科設台南研發中心，明年啟用高雄新辦公室",
           "link": "https://technews.tw/2026/11/26/tel-taiwan-kaohsiung-and-tainan/",
@@ -485,34 +513,6 @@
           "link": "https://technews.tw/2026/11/25/south-korea-new-materials-ar-glasses-thinner/",
           "date": "2026-11-25 07:00",
           "summary": "韓國研究團隊近日宣布，發現一種有望大幅縮小擴增實境（AR）眼鏡光學元件體積的新材料。這項研究由韓國科學技術院（ [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "增加矽光子晶圓級檢測設備產能，光焱科技斥資 10 億元路竹新廠動土",
-          "link": "https://technews.tw/2026/11/25/increase-production-capacity-for-wafer-level-inspection-equipment-for-silicon-photonics/",
-          "date": "2026-11-25 06:40",
-          "summary": "半導體光電檢測設備供應商光焱科技 25 日在南科高雄園區舉行路竹新廠動土典禮。本次建廠支出預估約，新廠將做為營 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "攻面板級封裝商機！Resonac 開發感光絕緣薄膜，鎖定 2027 年量產",
-          "link": "https://technews.tw/2026/11/25/resonac-develops-rr-x/",
-          "date": "2026-11-25 06:31",
-          "summary": "日本化學材料大廠 Resonac 近期宣布，成功開發面板級封裝（PLP）用新型感光層間絕緣薄膜「RR-X」，目 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "彭博：鴻海印度子公司拖欠款項，傳遭供應商聲請破產",
-          "link": "https://technews.tw/2026/11/25/foxconn-faces-india-insolvency-lawsuit-over-unpaid-vendor-dues/",
-          "date": "2026-11-25 06:10",
-          "summary": "台灣電子代工大廠鴻海的印度子公司傳出拖欠約 6 家供應商款項，其中一家出租員工宿舍的業者向法院聲請啟動破產程序 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "狗跑出去會再跑回來！家登邱銘乾看旺 AI 基本面強調計畫不變",
-          "link": "https://technews.tw/2026/11/25/gudeng-bullish-on-ai-fundamentals/",
-          "date": "2026-11-25 04:30",
-          "summary": "面對全球地緣政治角力與近期金融市場的劇烈波動，家登集團董事長邱銘乾受媒體聯訪時表示，企業海外設廠雖須審慎評估政 [&#8230;]",
           "comments": ""
         }
       ]
