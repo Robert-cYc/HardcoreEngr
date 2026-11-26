@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tesla FSD v15「街景」功能（Reality View）硬核全景解析：捨棄遊戲引擎、10 億參數擴散生成、UVE 通用視覺與 AI4 算力架構 — "AI" 硬核工程師</title>
+  <link rel="icon" href="data:,⚡">
+  <meta name="description" content="深度解析特斯拉 FSD v15（Supervised）震撼車壇的「街景」視覺化功能——Tesla Reality View（實景視圖）。破除 Unreal Engine 迷思，完整拆解 UVE（Universal Vision Encoder）通用視覺編碼器、10 億參數（1B）輕量化擴散／Mean-Flow 生成模型如何以 36 fps 即時生成《GTA》等級的動態實景影片；剖析 AI4（HW4）單顆 TRIP 加速器僅耗一半算力的極致效率、行車意圖透明化、AI 幻覺安全隔離與 AI5 未來展望。內建雙互動視覺對比與算力管線模擬器。">
+  <link rel="canonical" href="https://ai-hardcore-engineer.com/tesla-fsd-v15-reality-view-guide.html">
+  <meta property="og:title" content="Tesla FSD v15「街景」功能（Reality View）硬核全景解析：捨棄遊戲引擎、10 億參數擴散生成、UVE 通用視覺與 AI4 算力架構 — &quot;AI&quot; 硬核工程師">
+  <meta property="og:description" content="深度剖析 Tesla FSD v15 Reality View 實景視圖：為何完全不用 Unreal Engine？UVE 三端同源特徵、1B 擴散生成 36fps 街景、AI4 TRIP 算力開銷與安全邊界。">
+  <meta property="og:url" content="https://ai-hardcore-engineer.com/tesla-fsd-v15-reality-view-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./images/tesla-fsd-v15-reality-view-guide.jpg">
+  <meta property="og:site_name" content="&quot;AI&quot; 硬核工程師">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tesla FSD v15「街景」功能（Reality View）硬核技術全解析">
+  <meta name="twitter:description" content="解析 Tesla FSD v15 Reality View：Pixels-in, Pixels-out 生成式 AI 實景、UVE 視覺主幹、AI4 TRIP 加速器與傳統 SR 渲染引擎的世代對決。">
+  <meta name="twitter:image" content="./images/tesla-fsd-v15-reality-view-guide.jpg">
+  <script>if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-mode');</script>
+  <link rel="alternate" type="application/rss+xml" title="AI 硬核工程師 RSS" href="https://ai-hardcore-engineer.com/feed.xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <style>
+    .article-hero { text-align: center; padding: 3.5rem 0 2rem; }
+    .article-hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.28; }
+    .article-hero .article-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.6rem; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.8rem; }
+    .hero-image-wrap { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 32px rgba(0,0,0,0.2); border: 1px solid var(--border); margin-bottom: 2.2rem; }
+    .hero-image-wrap img { width: 100%; max-height: 520px; object-fit: cover; display: block; }
+    .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; }
+    .tag { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: var(--text-muted); }
+    .article-body { max-width: 66em; margin: 0 auto; line-height: 1.88; font-size: 1.05rem; }
+    .article-body h2 { font-size: 2.15rem; font-weight: 700; margin: 3.2rem 0 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 0.6rem; }
+    .article-body h3 { font-size: 1.55rem; font-weight: 600; margin: 2.2rem 0 0.9rem; color: var(--text); }
+    .article-body h4 { font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.6rem; color: var(--text); }
+    .article-body p { margin-bottom: 1.25rem; }
+    .article-body code { font-family: "Fira Code", "SF Mono", Consolas, monospace; background: var(--bg-alt); padding: 0.2rem 0.45rem; border-radius: 4px; font-size: 0.94em; color: #ef4444; border: 1px solid var(--border); }
+    .dark-mode .article-body code { color: #f87171; }
+    .article-body pre { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; overflow-x: auto; margin: 1.6rem 0; position: relative; }
+    .article-body pre code { background: none; padding: 0; border: none; color: var(--text); font-size: 0.92rem; }
+    .article-body blockquote { border-left: 4px solid #ef4444; background: var(--bg-alt); padding: 1.1rem 1.6rem; margin: 1.8rem 0; border-radius: 0 10px 10px 0; }
+    .article-body ul, .article-body ol { margin: 1.2rem 0; padding-left: 2rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.75; }
+
+    /* Tables */
+    .table-container { width: 100%; overflow-x: auto; margin: 2rem 0; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+    .article-body table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 860px; }
+    .article-body th, .article-body td { padding: 0.85rem 1.1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .article-body th { font-weight: 700; color: var(--text); background: var(--bg-alt); white-space: nowrap; position: sticky; top: 0; z-index: 2; }
+    .article-body tr:hover td { background: rgba(239, 68, 68, 0.04); }
+
+    .badge-pill { display: inline-block; padding: 0.25rem 0.65rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+    .badge-red { background: #fee2e2; color: #b91c1c; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .badge-blue { background: #dbeafe; color: #1e40af; border: 1px solid rgba(59, 130, 246, 0.4); }
+    .badge-emerald { background: #dcfce7; color: #15803d; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; border: 1px solid rgba(168, 85, 247, 0.4); }
+    .badge-amber { background: #fef3c7; color: #92400e; border: 1px solid rgba(245, 158, 11, 0.4); }
+    
+    .dark-mode .badge-red { background: #7f1d1d; color: #fecaca; border-color: #ef4444; }
+    .dark-mode .badge-blue { background: #1e3a8a; color: #bfdbfe; border-color: #3b82f6; }
+    .dark-mode .badge-emerald { background: #064e3b; color: #a7f3d0; border-color: #10b981; }
+    .dark-mode .badge-purple { background: #581c87; color: #e9d5ff; border-color: #a855f7; }
+    .dark-mode .badge-amber { background: #78350f; color: #fde68a; border-color: #f59e0b; }
+
+    /* Quick TOC */
+    .quick-nav-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.8rem; margin: 2.2rem 0; }
+    .quick-nav-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text); }
+    .quick-nav-list { list-style: none; padding-left: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem 1.5rem; }
+    .quick-nav-list li a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s ease, transform 0.2s ease; }
+    .quick-nav-list li a:hover { color: #ef4444; transform: translateX(3px); }
+    .dark-mode .quick-nav-list li a:hover { color: #f87171; }
+
+    /* Dual Comparison Cards */
+    .paradigm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2.2rem 0; }
+    @media (max-width: 768px) { .paradigm-grid { grid-template-columns: 1fr; } }
+    .paradigm-card { border-radius: 14px; padding: 1.8rem; border: 1.5px solid var(--border); background: var(--bg-alt); box-shadow: 0 6px 20px rgba(0,0,0,0.04); }
+    .paradigm-card.legacy { border-top: 5px solid #64748b; }
+    .paradigm-card.reality { border-top: 5px solid #ef4444; }
+    .paradigm-title { font-size: 1.35rem; font-weight: 700; margin: 0 0 0.4rem; }
+    .paradigm-sub { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
+
+    /* Interactive Cards */
+    .interactive-card { background: var(--bg-alt); border: 2px solid #ef4444; border-radius: 14px; padding: 2rem; margin: 2.8rem 0; box-shadow: 0 8px 30px rgba(239, 68, 68, 0.1); }
+    .interactive-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+    .interactive-badge { background: #ef4444; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 6px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .interactive-title { font-size: 1.45rem; font-weight: 700; margin: 0; color: var(--text); }
+    .interactive-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6; }
+
+    .ctrl-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.2rem; align-items: center; }
+    .ctrl-btn { padding: 0.55rem 1rem; border-radius: 8px; border: 1.5px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .ctrl-btn:hover { border-color: #ef4444; color: #ef4444; }
+    .ctrl-btn.active { background: #ef4444; color: #fff; border-color: #ef4444; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3); }
+
+    /* Reality View Interactive Canvas */
+    .rv-viewport { position: relative; width: 100%; height: 340px; border-radius: 12px; overflow: hidden; border: 2px solid #1e293b; background: #090d16; box-shadow: inset 0 0 50px rgba(0,0,0,0.7); }
+    .rv-hud-top { position: absolute; top: 12px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center; pointer-events: none; z-index: 3; font-family: "Fira Code", monospace; font-size: 0.8rem; }
+    .rv-pill { background: rgba(15, 23, 42, 0.82); border: 1px solid rgba(255,255,255,0.2); color: #e2e8f0; padding: 0.3rem 0.7rem; border-radius: 9999px; backdrop-filter: blur(8px); }
+    .rv-status-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.8rem; margin-top: 1.2rem; }
+    .rv-stat-box { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; }
+    .rv-stat-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+    .rv-stat-val { font-size: 1.15rem; font-weight: 700; color: var(--text); font-family: "Fira Code", monospace; }
+
+    /* Compute Simulator */
+    .slider-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-bottom: 1.4rem; background: var(--bg); padding: 1.2rem; border-radius: 10px; border: 1px solid var(--border); }
+    .slider-group label { display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); }
+    .slider-group input[type="range"] { width: 100%; accent-color: #3b82f6; }
+    .slider-group select { width: 100%; padding: 0.5rem 0.7rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-alt); color: var(--text); font-size: 0.9rem; }
+    .bar-track { width: 100%; height: 14px; background: rgba(148, 163, 184, 0.2); border-radius: 9999px; overflow: hidden; margin-top: 0.5rem; }
+    .bar-fill { height: 100%; border-radius: 9999px; transition: width 0.3s ease, background-color 0.3s ease; }
+  </style>
+</head>
+<body>
+
+  <!-- =============== Header =============== -->
+  <header class="site-header" id="top">
+    <div aria-hidden="true" class="waves">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <div>"AI" 硬核工程師</div>
+        <div class="tagline">Talk is cheap. Show me the code</div>
+      </div>
+      <button aria-expanded="false" aria-label="選單" class="menu-toggle"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="./index.html">首頁</a>
+        <a href="./tech-news.html">科技新知</a>
+        <a class="active" href="./articles.html">文章</a>
+        <a href="./about.html">關於</a>
+        <a aria-label="搜尋" class="nav-search-toggle" href="#">🔍</a>
+        <a aria-label="切換深淺色模式" class="theme-toggle" href="#" id="theme-toggle">🌙</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== Search Overlay =============== -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <input autocomplete="off" placeholder="搜尋文章..." type="text"/>
+      <div class="search-results"></div>
+      <div class="search-close">按 Esc 關閉</div>
+    </div>
+  </div>
+
+  <main class="container">
+    <article class="article-container">
+      
+      <!-- Hero Header -->
+      <header class="article-hero">
+        <span class="badge-pill badge-red" style="font-size: 0.9rem; padding: 0.35rem 1rem; margin-bottom: 1.2rem;">AUTONOMOUS DRIVING & GENERATIVE WORLD MODELS</span>
+        <h1>Tesla FSD v15「街景」功能（Reality View）硬核全景解析：捨棄遊戲引擎、10 億參數擴散生成、UVE 通用視覺與 AI4 算力架構</h1>
+        <div class="article-meta">
+          <span>📅 2026-11-26</span>
+          <span>•</span>
+          <span>⏱️ 40 分鐘深度閱讀</span>
+          <span>•</span>
+          <span>✍️ 作者："AI" 硬核工程師</span>
+        </div>
+
+        <div class="article-tags">
+          <span class="tag">Tesla FSD v15</span>
+          <span class="tag">Reality View</span>
+          <span class="tag">UVE 視覺編碼器</span>
+          <span class="tag">Diffusion Transformer</span>
+          <span class="tag">AI4 / HW4 TRIP</span>
+          <span class="tag">Pixels-in Pixels-out</span>
+          <span class="tag">自動駕駛視覺化</span>
+          <span class="tag">AI 幻覺隔離</span>
+        </div>
+
+        <div class="hero-image-wrap">
+          <img src="./images/tesla-fsd-v15-reality-view-guide.jpg" alt="Tesla FSD v15 Reality View 實景視圖與生成式 AI 街景架構" width="1200" height="630">
+        </div>
+      </header>
+
+      <!-- Quick TOC Box -->
+      <section class="quick-nav-box">
+        <div class="quick-nav-title">
+          <span>📑</span> 本文核心目錄導覽 (Quick Navigation)
+        </div>
+        <ul class="quick-nav-list">
+          <li><a href="#sec-1"><span>01.</span> 什麼是 Tesla Reality View？為何像《GTA》？</a></li>
+          <li><a href="#sec-2"><span>02.</span> 破除迷思：不是 Unreal Engine，也不是 Godot</a></li>
+          <li><a href="#sec-3"><span>03.</span> 核心技術：UVE 編碼器與 1B 擴散生成管線</a></li>
+          <li><a href="#sec-4"><span>04.</span> 算力奇蹟：AI4 單顆 TRIP 半載輸出 36 fps</a></li>
+          <li><a href="#sec-5"><span>05.</span> UI/UX 顯示模式與「行車意圖透明化」</a></li>
+          <li><a href="#sec-6"><span>06.</span> 爭議剖析：「AI 幻覺」會影響行車安全嗎？</a></li>
+          <li><a href="#sec-7"><span>07.</span> 互動硬核工具箱：視圖對比與算力模擬器</a></li>
+          <li><a href="#sec-8"><span>08.</span> 硬體支援（HW3 vs AI4 vs AI5）與未來展望</a></li>
+        </ul>
+      </section>
+
+      <!-- Article Body -->
+      <div class="article-body">
+
+        <!-- SECTION 1 -->
+        <h2 id="sec-1">一、什麼是 Tesla Reality View？為何車主直呼像《GTA》？</h2>
+
+        <p>當大家談論 Tesla 的「街景」功能時，核心指的正是隨 <strong>FSD v15（Supervised）</strong> 震撼登場的全新車載視覺化系統——<strong>Tesla Reality View（實景視圖）</strong>。</p>
+
+        <p>過去數年間，無論是特斯拉自家的 FSD v12/v13/v14，還是全球各大車廠的 ADAS 輔助駕駛介面，車內中控螢幕上的「周遭環境渲染（Surround Representation，簡稱 SR）」始終停留在<strong>抽象幾何模型時代</strong>：灰色單調的地面、方塊狀的汽車模型、線條拼湊的車道線，以及沒有五官的火柴人。雖然足以表達障礙物相對位置，卻永遠與真實街景格格不入。</p>
+
+        <p>FSD v15 的 <strong>Reality View</strong> 徹底顛覆了這項運行了十年的業界標準。它將車內螢幕變成了一個<strong>猶如無人機在車尾上方實時跟拍的第三人稱 3D 實景視角</strong>：道路上的柏油紋理、路邊建築立面、行道樹、路面積雪、動態車流光影、交通號誌以及路緣障礙物，全部以接近實拍的擬真畫質即時呈現，因此被首批體驗車主與科技媒體廣泛形容為<strong>「把真實世界即時變成《GTA》級別的 3D 遊戲畫面」</strong>。</p>
+
+        <blockquote>
+          <strong>核心設計初衷：</strong>特斯拉 AI 軟體副總裁 <strong>Ashok Elluswamy</strong> 強調，Reality View 絕非單純為了炫技或美觀；它的本質是將神經網路對周遭三維空間的理解「直接視覺化」，讓駕駛者一眼就能看懂 AI 眼中的世界與接下來的駕駛意圖，從而大幅建立人機信任（Human-AI Trust）。
+        </blockquote>
+
+        <!-- SECTION 2 -->
+        <h2 id="sec-2">二、破除最大技術迷思：不是 Unreal Engine，也不是 Godot！</h2>
+
+        <p>在 2025 年，曾有硬體駭客從特斯拉車機韌體中挖掘出 Unreal Engine（虛幻引擎）的測試代碼，當時外界普遍猜測特斯拉打算以 Unreal Engine 取代舊有的開源遊戲引擎 Godot，藉此把 3D 車模畫得更漂亮。</p>
+
+        <p>然而當 FSD v15 正式亮相後，真相讓整個圖形學與 AI 工程界大為震驚——<strong>Reality View 完全沒有使用 Unreal Engine，也沒有使用任何傳統 3D 遊戲引擎！</strong></p>
+
+        <div class="paradigm-grid">
+          <div class="paradigm-card legacy">
+            <h3 class="paradigm-title">傳統 SR 渲染（Godot / Unity / Unreal）</h3>
+            <div class="paradigm-sub">Explicit Perception → Asset Lookup → Rasterization</div>
+            <ul>
+              <li><strong>管線流程</strong>：神經網路先輸出離散的 Bounding Box（物件邊界框）、類別標籤（轎車/卡車/行人）與 3D 座標。</li>
+              <li><strong>資產依賴</strong>：由車機娛樂晶片（MCU / AMD Ryzen）呼叫遊戲引擎，從硬碟讀取預先建好的 3D 貼圖與模型進行光柵化拼湊。</li>
+              <li><strong>致命瓶頸</strong>：遇到預建資產庫裡沒有的奇特物體（如倒塌樹枝、特殊工程車、複雜積雪地形）時，要嘛畫成奇怪方塊，要嘛直接消失。</li>
+            </ul>
+          </div>
+
+          <div class="paradigm-card reality">
+            <h3 class="paradigm-title">FSD v15 Reality View（生成式 AI 影片）</h3>
+            <div class="paradigm-sub">Pixels-in → UVE Latent Trunk → Pixels-out Diffusion</div>
+            <ul>
+              <li><strong>管線流程</strong>：完全跳過顯式 3D 物件建模與多邊形光柵化，由 <strong>10 億參數（1B）輕量化生成模型</strong>直接從視覺特徵空間合成連續影片。</li>
+              <li><strong>零資產庫束縛</strong>：不需要任何預先建模的樹木、建築或車輛 Asset，所有像素皆由生成式神經網路即時「去噪繪製」。</li>
+              <li><strong>長尾場景泛化</strong>：道路積水反光、路旁特殊施工圍籬、奇形怪狀的障礙物，都能如實重現在虛擬俯視跟隨視角中。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <h2 id="sec-3">三、核心技術架構深潛：UVE 編碼器與 1B 擴散生成管線</h2>
+
+        <p>從系統架構的角度來看，Reality View 之所以能如此流暢且精準，歸功於 FSD v15 底層的兩大突破：<strong>UVE 統一視覺主幹</strong>與<strong>條件式擴散／Mean-Flow 影片生成分支</strong>。</p>
+
+        <h3>1. UVE（Universal Vision Encoder，通用視覺編碼器）</h3>
+        <p>FSD v15 全面換裝了全新的 <strong>UVE（Universal Vision Encoder）</strong>。這套視覺主幹網路透過數以百萬計的網際網路真實影片與全球車隊行車數據，進行大規模<strong>非監督式預訓練（Unsupervised Pre-training）</strong>。</p>
+        <p>更具戰略意義的是，UVE 實現了特斯拉實體 AI 生態的<strong>「三端同源共用」</strong>：</p>
+        <ul>
+          <li><strong>FSD（乘用車自動駕駛）</strong></li>
+          <li><strong>Cybercab / Robotaxi（無人駕駛計程車）</strong></li>
+          <li><strong>Optimus（特斯拉人形機器人）</strong></li>
+        </ul>
+        <p>這意味著車身多路高解析度攝影機捕捉到的原始光子（Raw Photons / Pixels），會先統一送入 UVE，壓縮為蘊含極豐富幾何深度、語意與時序動態的高維潛在特徵（Latent Features）。</p>
+
+        <h3>2. 雙分支共享特徵架構（Shared Latent Trunk）</h3>
+        <p>傳統做法會為「開車」與「畫面渲染」分別跑兩套獨立模型，造成嚴重的記憶體頻寬與算力浪費。FSD v15 採用極度優雅的<strong>雙分支分叉架構</strong>：</p>
+
+        <pre><code class="language-text">[車身多路攝影機 8x Cameras (Pixels-in)]
+                     │
+                     ▼
+   ┌────────────────────────────────────┐
+   │  UVE (Universal Vision Encoder)    │  ◄── FSD / Robotaxi / Optimus 三端共用主幹
+   │  輸出高維時空潛在特徵向量 (Latent)   │      更新頻率：~18 Hz
+   └─────────────────┬──────────────────┘
+                     │
+       ┌─────────────┴───────────────────────────┐
+       │ 分支 A：端到端駕駛決策 (Safety-Critical)  │ 分支 B：Reality View 視覺生成 (UI Branch)
+       ▼                                         ▼
+[End-to-End Driving Policy]          [1B Generative Video Model (DiT / Mean-Flow)]
+  • 預測軌跡與空間佔用                  • 輸入：上一幀畫面 + 雜訊 + 當前 UVE 特徵條件
+  • 輸出方向盤轉角 / 加減速              • 執行高速條件去噪 (Conditional Denoising)
+  • 直接控制底盤線控系統                 • 輸出：36 fps 影片區塊 (8-frame video chunk)
+                                                 │
+                                                 ▼
+                                     [疊加導航箭頭 / 停車圖釘 → 車載螢幕顯示]</code></pre>
+
+        <h3>3. 10 億參數（1B）擴散／Mean-Flow 生成機制</h3>
+        <p>Reality View 分支是一個規模約 <strong>10 億參數（1B）</strong>的輕量化生成式影片模型（結合 Diffusion Transformer 與高速一步／少步 Mean-Flow 去噪技術）。其數學運作邏輯可以精簡表示為條件去噪映射：</p>
+
+        <p>$$I_{t \to t+k} = \mathcal{G}_{\theta}\Big(I_{t-1} + \epsilon,\; \mathbf{z}^{\text{UVE}}_{t},\; \mathbf{p}_{\text{cam}}\Big)$$</p>
+
+        <p>其中 $I_{t-1}$ 為上一時刻已生成的實景影格（確保時間軸上的畫面連貫、建築物與車輛不閃爍），$\epsilon$ 為注入的雜訊分布，$\mathbf{z}^{\text{UVE}}_{t}$ 為當前時刻 UVE 提取的真實路況特徵作為強條件引導（Conditioning），$\mathbf{p}_{\text{cam}}$ 則定義了車輛後上方虛擬無人機的相機姿態。模型在極少步數內完成去噪，直接吐出連續的「像素輸出（Pixels-out）」！</p>
+
+        <!-- SECTION 4 -->
+        <h2 id="sec-4">四、反直覺的算力奇蹟：AI4 單顆 TRIP 半載輸出 36 fps</h2>
+
+        <p>一般工程師聽到「在車載邊緣晶片上即時運行 10 億參數的 AI 影片生成模型」，第一反應往往是：<em>「這不會把晶片算力吃乾抹淨嗎？」</em></p>
+
+        <p>根據 Elon Musk 與 Ashok Elluswamy 揭露的實測工程數據，結果恰恰相反：</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>工程指標</th>
+                <th>傳統 FSD 視覺化（SR + 3D 遊戲引擎）</th>
+                <th>FSD v15 Reality View（生成式 AI 影片）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>視覺管線本質</strong></td>
+                <td>多任務感知頭（物件/車道/深度）+ 顯式 3D 幾何渲染</td>
+                <td>共用 UVE 特徵 + 1B 擴散轉換器直接生成像素</td>
+              </tr>
+              <tr>
+                <td><strong>AI4 晶片算力佔用</strong></td>
+                <td>需額外維護大量顯式幾何解碼頭 + MCU GPU 渲染負載</td>
+                <td><span class="badge-pill badge-emerald">僅佔 AI4 單顆 TRIP 加速器的一半（50%）</span></td>
+              </tr>
+              <tr>
+                <td><strong>推論與輸出影格率</strong></td>
+                <td>依賴物件偵測刷新率與 3D 引擎插值</td>
+                <td><span class="badge-pill badge-blue">UVE 18 Hz 驅動 → DiT 輸出 36 fps（8 幀 Chunk）</span></td>
+              </tr>
+              <tr>
+                <td><strong>總體系統能耗</strong></td>
+                <td>基準（較高）</td>
+                <td><strong>反比舊版 3D 方框渲染方案更省算力</strong></td>
+              </tr>
+              <tr>
+                <td><strong>實測延遲表現</strong></td>
+                <td>極低，但物件常出現閃爍跳動（Jittering）</td>
+                <td>存在極輕微生成延遲（未來將於 AI5 晶片進一步壓縮）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>為什麼 AI 生成影片反而比畫 3D 方框更省算力？</strong></p>
+        <p>關鍵在於<strong>消除冗餘的「中間表示轉換（Intermediate Representation Overhead）」</strong>。在舊架構中，神經網路必須維持十幾個額外的專用解碼頭（偵測車門開合、轉向燈、交通錐種類、紅綠燈朝向、行人骨架姿態），再把海量結構化訊息序列化傳給車機 CPU/GPU 跑 3D 引擎。而 Reality View 直接「搭便車」讀取開車模型已經算好的 UVE 特徵張量，並利用專為矩陣乘法優化的 <strong>AI4 TRIP（Tesla Neural Processing Accelerator）</strong> 硬體脈動陣列一次吐出 8 幀連貫影像塊（Video Chunk），大幅壓低了總體計算與記憶體搬運成本。</p>
+
+        <!-- SECTION 5 -->
+        <h2 id="sec-5">五、UI/UX 顯示模式與「行車意圖透明化」</h2>
+
+        <p>除了震撼的 36 fps 擬真街景，FSD v15 也針對駕駛體驗重新設計了多層次資訊疊加（HUD Overlay）與版面切換：</p>
+
+        <ul>
+          <li><strong>全螢幕模式（Full-Screen Reality View）</strong>：最大化呈現周遭 360 度動態街景，提供最強的空間沉浸感，適合複雜市區與多車道交織路段。</li>
+          <li><strong>導航分割畫面（Split-Screen）</strong>：左側維持 Reality View 實景動態，右側保留傳統 2D/3D 衛星導航地圖與路線列表，兼顧宏觀路線與微觀路況。</li>
+          <li><strong>極簡安靜模式（Quiet Mode）</strong>：大幅精簡次要視覺雜訊，僅保留核心行車軌跡與關鍵預警，適合夜間長途巡航或偏好低干擾的駕駛者。</li>
+          <li><strong>行車意圖視覺化（Intent Transparency）</strong>：
+            <ul>
+              <li><strong>動態藍色指引箭頭</strong>：直接鋪設在實景路面上，提前預告 FSD 即將執行的變道、匯入或路口轉彎動作。</li>
+              <li><strong>方向燈與停車圖釘（Pin）聯動</strong>：在車輛準備靠邊停車或尋找車位時，畫面上會明確標示目標停車點圖釘，讓車主提早知曉系統意圖，不再因「不知道車子想幹嘛」而緊張接管。</li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- SECTION 6 -->
+        <h2 id="sec-6">六、爭議剖析：「AI 幻覺」會影響自動駕駛安全嗎？</h2>
+
+        <p>隨著早期體驗計畫（Early Access Program）的實測影片在社群平台爆紅，部分細心的車主與工程師發現了 Reality View 的有趣現象：路邊店家的招牌文字有時會出現像 AI 生圖一樣的輕微扭曲、建築物窗戶排列偶爾輕微變形，或者遠處車輛的輪廓細節出現短暫的<strong>「AI 幻覺（Hallucination）」</strong>。</p>
+
+        <p>這引發了外界最關心的安全拷問：<strong>「螢幕上的招牌和房子都破圖了，車子是不是也看錯路況、準備撞上去了？」</strong></p>
+
+        <blockquote style="border-left-color: #3b82f6;">
+          <strong>硬核架構釐清：視覺化分支 $\neq$ 駕駛決策邏輯！</strong><br>
+          從前面第三章的系統拓撲圖可以清楚看出：<strong>駕駛控制（Branch A）與 Reality View（Branch B）是完全平行且隔離的兩個輸出分支</strong>。
+          <ul>
+            <li>駕駛決策端只吃精確的 UVE 幾何與動態特徵，它並<strong>不會</strong>把 Reality View 生成出來的影片再餵回給自己當作開車依據。</li>
+            <li>招牌文字扭曲，是因為 1B 輕量生成模型為了追求 36 fps 的極速去噪，對不影響行車安全的「高頻背景紋理（High-Frequency Texture）」進行了機率性腦補填補。</li>
+            <li>儘管如此，特斯拉官方仍反覆重申：FSD v15 目前依然屬於 <strong>Supervised（受監督）</strong>階段，Reality View 是輔助理解 AI 意圖的窗口，駕駛者絕不可盯著中控螢幕「像打電動一樣開車」，雙眼仍須時刻專注於真實道路！</li>
+          </ul>
+        </blockquote>
+
+        <!-- SECTION 7 -->
+        <h2 id="sec-7">七、互動硬核工具箱：視圖演進對比與 AI4 算力管線模擬器</h2>
+
+        <!-- Interactive Tool 1: Legacy SR vs Reality View Simulator -->
+        <div class="interactive-card">
+          <div class="interactive-header">
+            <span class="interactive-badge">INTERACTIVE TOOL 1</span>
+            <h3 class="interactive-title">傳統 3D 引擎（SR）vs FSD v15 Reality View 即時視覺對比器</h3>
+          </div>
+          <p class="interactive-desc">
+            點擊切換渲染引擎架構、顯示模式與天氣路況，直觀感受從「幾何方框」躍升至「36 fps 生成式 AI 街景」的視覺與意圖表達差異：
+          </p>
+
+          <div class="ctrl-row">
+            <span style="font-weight: 600; font-size: 0.9rem;">渲染架構：</span>
+            <button class="ctrl-btn" id="btnLegacy" onclick="setViewMode('legacy')">📦 傳統 SR (Godot 幾何方框)</button>
+            <button class="ctrl-btn active" id="btnReality" onclick="setViewMode('reality')">✨ FSD v15 Reality View (1B AI 生成)</button>
+          </div>
+
+          <div class="ctrl-row">
+            <span style="font-weight: 600; font-size: 0.9rem;">路況與介面模式：</span>
+            <button class="ctrl-btn active" id="btnWeatherClear" onclick="setSceneState('clear')">☀️ 城市晴朗 (Full-Screen)</button>
+            <button class="ctrl-btn" id="btnWeatherSnow" onclick="setSceneState('snow')">❄️ 道路積雪 + 施工障礙</button>
+            <button class="ctrl-btn" id="btnWeatherQuiet" onclick="setSceneState('quiet')">🌙 夜間 Quiet Mode</button>
+          </div>
+
+          <div class="rv-viewport">
+            <div class="rv-hud-top">
+              <span class="rv-pill" id="hudModeLabel">MODE: FSD v15 REALITY VIEW (36 FPS)</span>
+              <span class="rv-pill" id="hudIntentLabel" style="color: #60a5fa;">INTENT: 準備右轉匯入主幹道 ↱</span>
+            </div>
+            <canvas id="rvCanvas" width="900" height="340" style="width: 100%; height: 100%; display: block;"></canvas>
+          </div>
+
+          <div class="rv-status-bar">
+            <div class="rv-stat-box">
+              <div class="rv-stat-label">底層渲染機制</div>
+              <div class="rv-stat-val" id="statEngine" style="color: #f87171;">1B Diffusion Video</div>
+            </div>
+            <div class="rv-stat-box">
+              <div class="rv-stat-label">未知障礙物重現能力</div>
+              <div class="rv-stat-val" id="statGeneralization" style="color: #10b981;">高 (像素級直接重構)</div>
+            </div>
+            <div class="rv-stat-box">
+              <div class="rv-stat-label">AI4 TRIP 算力負載</div>
+              <div class="rv-stat-val" id="statCompute" style="color: #38bdf8;">0.5x TRIP Core</div>
+            </div>
+            <div class="rv-stat-box">
+              <div class="rv-stat-label">招牌文字細節精準度</div>
+              <div class="rv-stat-val" id="statDetail" style="color: #fbbf24;">輕微生成腦補 (非決策依據)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Tool 2: Hardware Compute & Pipeline Simulator -->
+        <div class="interactive-card" style="border-color: #3b82f6;">
+          <div class="interactive-header">
+            <span class="interactive-badge" style="background: #3b82f6;">INTERACTIVE TOOL 2</span>
+            <h3 class="interactive-title">車載晶片算力與 Reality View 生成管線模擬器（HW3 / AI4 / AI5）</h3>
+          </div>
+          <p class="interactive-desc">
+            選擇不同世代的特斯拉自研 FSD 晶片，並調整 UVE 視覺採樣頻率與擴散影片區塊（Chunk）大小，估算即時輸出影格率（FPS）、管線延遲與晶片加速器負載：
+          </p>
+
+          <div class="slider-grid">
+            <div class="slider-group">
+              <label for="chipSelect">車載 FSD 運算平台：</label>
+              <select id="chipSelect" onchange="updateComputeSim()">
+                <option value="hw3">HW3 (AI3 · 2019 世代 · 144 TOPS)</option>
+                <option value="ai4" selected>HW4 (AI4 · 現今主力 · TRIP 雙核架構)</option>
+                <option value="ai5">AI5 (下一代旗艦 · 預期 5x~10x 算力躍升)</option>
+              </select>
+            </div>
+
+            <div class="slider-group">
+              <label for="uveFreq">UVE 特徵輸入頻率：<span id="uveFreqVal">18 Hz</span></label>
+              <input type="range" id="uveFreq" min="12" max="36" step="6" value="18" oninput="updateComputeSim()">
+            </div>
+
+            <div class="slider-group">
+              <label for="denoiseSteps">擴散／Mean-Flow 去噪步數：<span id="denoiseStepsVal">2 步</span></label>
+              <input type="range" id="denoiseSteps" min="1" max="8" step="1" value="2" oninput="updateComputeSim()">
+            </div>
+          </div>
+
+          <div class="rv-status-bar" style="margin-top: 0;">
+            <div class="rv-stat-box">
+              <div class="rv-stat-label">預估輸出影格率 (FPS)</div>
+              <div class="rv-stat-val" id="simFps" style="color: #10b981;">36 fps</div>
+            </div>
+            <div class="rv-stat-box">
+              <div class="rv-stat-label">視覺化端到端延遲</div>
+              <div class="rv-stat-val" id="simLatency" style="color: #38bdf8;">~55 ms</div>
+            </div>
+            <div class="rv-stat-box">
+              <div class="rv-stat-label">單顆 TRIP 加速器佔用率</div>
+              <div class="rv-stat-val" id="simLoad">50%</div>
+              <div class="bar-track"><div class="bar-fill" id="simLoadBar" style="width: 50%; background: #3b82f6;"></div></div>
+            </div>
+            <div class="rv-stat-box">
+              <div class="rv-stat-label">硬體部署可行性狀態</div>
+              <div class="rv-stat-val" id="simStatus" style="font-size: 0.95rem; color: #10b981;">✅ 穩定運行（實車首波推送）</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 8 -->
+        <h2 id="sec-8">八、硬體支援矩陣（HW3 vs AI4 vs AI5）與未來展望</h2>
+
+        <p>對於現有與潛在特斯拉車主而言，最務實的問題莫過於：<strong>「我的車能用上 FSD v15 Reality View 嗎？」</strong></p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>硬體世代</th>
+                <th>代表車型</th>
+                <th>Reality View 支援狀態</th>
+                <th>技術瓶頸與發展方向</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge-pill badge-amber">HW3 (AI3)</span></td>
+                <td>早期 Model 3 / Y / S / X</td>
+                <td>暫不支援完整 Reality View</td>
+                <td>記憶體頻寬與神經網路加速器算力受限，無法同時負荷 UVE 主幹與 1B 即時擴散影片生成；仍維持傳統輕量化 SR 視圖。</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pill badge-emerald">HW4 (AI4)</span></td>
+                <td>新款 Model 3 Highland / Model Y Juniper / Cybertruck</td>
+                <td><strong>首波主力推送支援（36 fps）</strong></td>
+                <td>配備高動態範圍 5MP 攝影機與強大 TRIP 加速器，以半顆 TRIP 算力即實現流暢實景渲染，僅存極輕微生成延遲。</td>
+              </tr>
+              <tr>
+                <td><span class="badge-pill badge-purple">AI5 (下一代)</span></td>
+                <td>未來 Cybercab / 新世代車型</td>
+                <td><strong>完全體旗艦支援</strong></td>
+                <td>算力預期呈倍數級躍升，可進一步壓縮去噪延遲至幾乎零感、提升解析度與高頻紋理一致性（大幅消除招牌文字幻覺），並支援更長時序的未來世界推演（World Simulator）。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>工程師總結：從「視覺化工具」邁向「即時神經世界模型」</h3>
+        <p>Tesla FSD v15 的 Reality View 表面上是一個讓人驚呼「好像在玩《GTA》」的華麗街景介面，但在 AI 系統工程史上，它代表了一個劃時代的里程碑——<strong>車載即時生成式世界模型（On-Device Real-Time Neural World Model）正式落地量產車</strong>。</p>
+        <p>當一台車不僅能「看見」路況，還能僅靠一半的邊緣加速器算力，以每秒 36 幀的速率把整個物理世界從潛在空間（Latent Space）即時重建出來，它就已經超越了傳統的 ADAS 圖形介面，成為人類窺見 <strong>Physical AI（物理人工智慧）</strong> 如何理解現實宇宙的第一扇透明之窗。</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div>"AI" 硬核工程師</div>
+        <div class="footer-tagline">Talk is cheap. Show me the code.</div>
+      </div>
+      <div class="footer-right">
+        <div>© 2026 "AI" 硬核工程師. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/wave.js"></script>
+  <script src="./js/script.js"></script>
+
+  <!-- Interactive Simulators Script -->
+  <script>
+    // --- Tool 1: Legacy SR vs Reality View Canvas Animation ---
+    let viewMode = 'reality'; // 'legacy' | 'reality'
+    let sceneState = 'clear'; // 'clear' | 'snow' | 'quiet'
+    let animOffset = 0;
+
+    function setViewMode(mode) {
+      viewMode = mode;
+      document.getElementById('btnLegacy').classList.toggle('active', mode === 'legacy');
+      document.getElementById('btnReality').classList.toggle('active', mode === 'reality');
+      updateViewStats();
+    }
+
+    function setSceneState(state) {
+      sceneState = state;
+      document.getElementById('btnWeatherClear').classList.toggle('active', state === 'clear');
+      document.getElementById('btnWeatherSnow').classList.toggle('active', state === 'snow');
+      document.getElementById('btnWeatherQuiet').classList.toggle('active', state === 'quiet');
+      updateViewStats();
+    }
+
+    function updateViewStats() {
+      const hudMode = document.getElementById('hudModeLabel');
+      const hudIntent = document.getElementById('hudIntentLabel');
+      const statEngine = document.getElementById('statEngine');
+      const statGen = document.getElementById('statGeneralization');
+      const statCompute = document.getElementById('statCompute');
+      const statDetail = document.getElementById('statDetail');
+
+      if (viewMode === 'legacy') {
+        hudMode.innerText = 'MODE: LEGACY SR (GODOT 3D ENGINE)';
+        statEngine.innerText = 'Explicit BBox + 3D Assets';
+        statEngine.style.color = '#94a3b8';
+        statGen.innerText = '受限 (未知物體顯示方塊)';
+        statGen.style.color = '#f59e0b';
+        statCompute.innerText = '多感知頭 + MCU GPU 負載';
+        statCompute.style.color = '#f59e0b';
+        statDetail.innerText = '無招牌／無真實紋理';
+        statDetail.style.color = '#94a3b8';
+      } else {
+        hudMode.innerText = sceneState === 'quiet'
+          ? 'MODE: FSD v15 REALITY VIEW · QUIET MODE (36 FPS)'
+          : 'MODE: FSD v15 REALITY VIEW · FULL-SCREEN (36 FPS)';
+        statEngine.innerText = '1B Diffusion / Mean-Flow';
+        statEngine.style.color = '#f87171';
+        statGen.innerText = '高 (像素級即時重構積雪/障礙)';
+        statGen.style.color = '#10b981';
+        statCompute.innerText = '0.5x AI4 TRIP Core (更省算力)';
+        statCompute.style.color = '#38bdf8';
+        statDetail.innerText = '輕微生成腦補 (與決策隔離)';
+        statDetail.style.color = '#fbbf24';
+      }
+
+      if (sceneState === 'snow') {
+        hudIntent.innerText = 'INTENT: 偵測路面積雪與施工圍籬 · 微幅左偏繞行 ↰';
+      } else if (sceneState === 'quiet') {
+        hudIntent.innerText = 'INTENT: 夜間定速巡航 · Quiet Mode 低干擾顯示 ↑';
+      } else {
+        hudIntent.innerText = 'INTENT: 動態藍色軌跡指引 · 前方路口準備右轉 ↱';
+      }
+    }
+
+    function drawRealityCanvas() {
+      const canvas = document.getElementById('rvCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width;
+      const h = canvas.height;
+      animOffset = (animOffset + 2.2) % 40;
+
+      // 1. Sky / Background
+      if (viewMode === 'legacy') {
+        ctx.fillStyle = sceneState === 'quiet' ? '#0f172a' : '#1e293b';
+        ctx.fillRect(0, 0, w, h);
+      } else {
+        const skyGrad = ctx.createLinearGradient(0, 0, 0, 120);
+        if (sceneState === 'quiet') {
+          skyGrad.addColorStop(0, '#020617');
+          skyGrad.addColorStop(1, '#0f172a');
+        } else if (sceneState === 'snow') {
+          skyGrad.addColorStop(0, '#334155');
+          skyGrad.addColorStop(1, '#64748b');
+        } else {
+          skyGrad.addColorStop(0, '#0f172a');
+          skyGrad.addColorStop(1, '#1d4ed8');
+        }
+        ctx.fillStyle = skyGrad;
+        ctx.fillRect(0, 0, w, 120);
+
+        // Ground side terrain
+        ctx.fillStyle = sceneState === 'snow' ? '#cbd5e1' : (sceneState === 'quiet' ? '#090d16' : '#1e293b');
+        ctx.fillRect(0, 120, w, h - 120);
+      }
+
+      // 2. Roadside Buildings & Trees (Only rich in Reality View)
+      if (viewMode === 'reality' && sceneState !== 'quiet') {
+        const bColors = sceneState === 'snow' ? ['#475569', '#64748b'] : ['#1e293b', '#334155'];
+        // Left buildings
+        for (let i = 0; i < 4; i++) {
+          const bx = 25 + i * 68;
+          const bh = 65 + (i % 2) * 28;
+          ctx.fillStyle = bColors[i % 2];
+          ctx.fillRect(bx, 120 - bh, 56, bh);
+          ctx.strokeStyle = 'rgba(148,163,184,0.35)';
+          ctx.strokeRect(bx, 120 - bh, 56, bh);
+          // Lit windows
+          ctx.fillStyle = 'rgba(253, 224, 71, 0.55)';
+          for (let wy = 128 - bh; wy < 110; wy += 16) {
+            ctx.fillRect(bx + 10, wy, 12, 8);
+            ctx.fillRect(bx + 32, wy, 12, 8);
+          }
+        }
+        // Right buildings
+        for (let i = 0; i < 4; i++) {
+          const bx = w - 85 - i * 68;
+          const bh = 55 + ((i + 1) % 2) * 34;
+          ctx.fillStyle = bColors[i % 2];
+          ctx.fillRect(bx, 120 - bh, 56, bh);
+          ctx.strokeStyle = 'rgba(148,163,184,0.35)';
+          ctx.strokeRect(bx, 120 - bh, 56, bh);
+          ctx.fillStyle = 'rgba(56, 189, 248, 0.45)';
+          for (let wy = 128 - bh; wy < 110; wy += 16) {
+            ctx.fillRect(bx + 10, wy, 12, 8);
+            ctx.fillRect(bx + 32, wy, 12, 8);
+          }
+        }
+      }
+
+      // 3. Perspective Road
+      ctx.beginPath();
+      ctx.moveTo(w * 0.36, 120);
+      ctx.lineTo(w * 0.64, 120);
+      ctx.lineTo(w * 0.92, h);
+      ctx.lineTo(w * 0.08, h);
+      ctx.closePath();
+      if (viewMode === 'legacy') {
+        ctx.fillStyle = '#334155';
+      } else {
+        const roadGrad = ctx.createLinearGradient(0, 120, 0, h);
+        roadGrad.addColorStop(0, sceneState === 'snow' ? '#475569' : '#1e293b');
+        roadGrad.addColorStop(1, sceneState === 'snow' ? '#64748b' : '#0f172a');
+        ctx.fillStyle = roadGrad;
+      }
+      ctx.fill();
+
+      // Animated dashed lane markings
+      ctx.strokeStyle = viewMode === 'legacy' ? 'rgba(255,255,255,0.4)' : 'rgba(226,232,240,0.65)';
+      ctx.lineWidth = 3;
+      ctx.setLineDash([18, 22]);
+      ctx.lineDashOffset = -animOffset;
+      ctx.beginPath();
+      ctx.moveTo(w * 0.45, 120);
+      ctx.lineTo(w * 0.33, h);
+      ctx.moveTo(w * 0.55, 120);
+      ctx.lineTo(w * 0.67, h);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Snow patches & construction barrier when snow mode is active
+      if (sceneState === 'snow') {
+        if (viewMode === 'reality') {
+          ctx.fillStyle = 'rgba(241, 245, 249, 0.45)';
+          ctx.beginPath();
+          ctx.ellipse(w * 0.66, 205, 58, 18, 0.1, 0, Math.PI * 2);
+          ctx.fill();
+          // Detailed orange-white barrier
+          ctx.fillStyle = '#f97316';
+          ctx.fillRect(w * 0.61, 182, 54, 18);
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(w * 0.625, 182, 12, 18);
+          ctx.fillRect(w * 0.65, 182, 12, 18);
+        } else {
+          // Legacy mode renders generic grey box
+          ctx.strokeStyle = '#94a3b8';
+          ctx.fillStyle = 'rgba(148,163,184,0.35)';
+          ctx.fillRect(w * 0.61, 182, 48, 22);
+          ctx.strokeRect(w * 0.61, 182, 48, 22);
+          ctx.fillStyle = '#e2e8f0';
+          ctx.font = '11px Consolas';
+          ctx.fillText('OBJ_BOX', w * 0.61, 178);
+        }
+      }
+
+      // 4. FSD Intent Trajectory Ribbon (Blue glowing path)
+      ctx.save();
+      ctx.strokeStyle = '#3b82f6';
+      ctx.lineWidth = viewMode === 'reality' ? 18 : 10;
+      ctx.lineCap = 'round';
+      ctx.shadowColor = '#3b82f6';
+      ctx.shadowBlur = viewMode === 'reality' ? 18 : 4;
+      ctx.beginPath();
+      ctx.moveTo(w * 0.5, h - 75);
+      if (sceneState === 'snow') {
+        ctx.quadraticCurveTo(w * 0.44, 210, w * 0.47, 138);
+      } else if (sceneState === 'clear') {
+        ctx.quadraticCurveTo(w * 0.51, 200, w * 0.56, 138);
+      } else {
+        ctx.lineTo(w * 0.5, 140);
+      }
+      ctx.stroke();
+
+      // Blue Turn / Path Arrow Head
+      const tipX = sceneState === 'snow' ? w * 0.47 : (sceneState === 'clear' ? w * 0.56 : w * 0.5);
+      ctx.fillStyle = '#93c5fd';
+      ctx.beginPath();
+      ctx.moveTo(tipX, 126);
+      ctx.lineTo(tipX - 12, 145);
+      ctx.lineTo(tipX + 12, 145);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+
+      // 5. Neighboring Vehicle (Left Lane)
+      const carY = 165 + Math.sin(Date.now() / 600) * 6;
+      if (viewMode === 'legacy') {
+        ctx.fillStyle = '#64748b';
+        ctx.strokeStyle = '#cbd5e1';
+        ctx.fillRect(w * 0.34, carY, 46, 26);
+        ctx.strokeRect(w * 0.34, carY, 46, 26);
+      } else {
+        ctx.fillStyle = '#e2e8f0';
+        ctx.beginPath();
+        ctx.roundRect(w * 0.34, carY, 48, 28, 6);
+        ctx.fill();
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(w * 0.34 + 6, carY + 5, 36, 10);
+        // Brake lights
+        ctx.fillStyle = '#ef4444';
+        ctx.fillRect(w * 0.34 + 4, carY + 23, 10, 3);
+        ctx.fillRect(w * 0.34 + 34, carY + 23, 10, 3);
+      }
+
+      // 6. Ego Tesla Vehicle
+      const egoX = w * 0.5 - 26;
+      const egoY = h - 92;
+      ctx.fillStyle = viewMode === 'legacy' ? '#cbd5e1' : '#f8fafc';
+      ctx.beginPath();
+      ctx.roundRect(egoX, egoY, 52, 74, 12);
+      ctx.fill();
+      ctx.fillStyle = '#0f172a';
+      ctx.beginPath();
+      ctx.roundRect(egoX + 7, egoY + 16, 38, 36, 6);
+      ctx.fill();
+      // Taillight glow
+      ctx.fillStyle = '#ef4444';
+      ctx.fillRect(egoX + 5, egoY + 66, 14, 4);
+      ctx.fillRect(egoX + 33, egoY + 66, 14, 4);
+
+      requestAnimationFrame(drawRealityCanvas);
+    }
+
+    // --- Tool 2: Compute & Pipeline Simulator ---
+    function updateComputeSim() {
+      const chip = document.getElementById('chipSelect').value;
+      const uveFreq = parseInt(document.getElementById('uveFreq').value, 10);
+      const steps = parseInt(document.getElementById('denoiseSteps').value, 10);
+
+      document.getElementById('uveFreqVal').innerText = uveFreq + ' Hz';
+      document.getElementById('denoiseStepsVal').innerText = steps + ' 步';
+
+      // Baseline AI4: 18Hz UVE + 2 steps => 50% of 1 TRIP core, 36fps, ~55ms
+      const chipScale = chip === 'hw3' ? 3.8 : (chip === 'ai4' ? 1.0 : 0.22);
+      const rawLoad = Math.round(50 * (uveFreq / 18) * (steps / 2) * chipScale);
+      const clampedBar = Math.min(rawLoad, 100);
+
+      const outputFps = rawLoad > 100 ? Math.max(8, Math.round((uveFreq * 2) * (100 / rawLoad))) : (uveFreq * 2);
+      const latencyMs = Math.round((1000 / uveFreq) * 0.75 + steps * 6.5 * chipScale);
+
+      document.getElementById('simFps').innerText = outputFps + ' fps';
+      document.getElementById('simLatency').innerText = '~' + latencyMs + ' ms';
+      document.getElementById('simLoad').innerText = rawLoad + '%';
+
+      const bar = document.getElementById('simLoadBar');
+      const status = document.getElementById('simStatus');
+      bar.style.width = clampedBar + '%';
+
+      if (rawLoad > 95) {
+        bar.style.backgroundColor = '#ef4444';
+        status.innerText = '❌ 算力過載（HW3 無法負荷即時生成）';
+        status.style.color = '#ef4444';
+      } else if (rawLoad > 75) {
+        bar.style.backgroundColor = '#f59e0b';
+        status.innerText = '⚠️ 高負載（可能出現輕微延遲）';
+        status.style.color = '#f59e0b';
+      } else {
+        bar.style.backgroundColor = chip === 'ai5' ? '#10b981' : '#3b82f6';
+        status.innerText = chip === 'ai5'
+          ? '🚀 極速餘裕（支援更高解析度與零感延遲）'
+          : '✅ 穩定運行（符合 AI4 實車 36fps 規格）';
+        status.style.color = '#10b981';
+      }
+    }
+
+    // Initialize both tools
+    updateViewStats();
+    updateComputeSim();
+    drawRealityCanvas();
+  </script>
+
+</body>
+</html>
+

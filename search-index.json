@@ -1,5 +1,21 @@
 [
   {
+    "url": "tesla-fsd-v15-reality-view-guide.html",
+    "title": "Tesla FSD v15「街景」功能（Reality View）硬核全景解析：捨棄遊戲引擎、10 億參數擴散生成、UVE 通用視覺與 AI4 算力架構",
+    "excerpt": "深度解析特斯拉 FSD v15（Supervised）震撼車壇的「街景」視覺化功能——Tesla Reality View（實景視圖）。破除 Unreal Engine 迷思，完整拆解 UVE（Universal Vision Encoder）通用視覺編碼器、10 億參數（1B）輕量化擴散／Mean-Flow 生成模型如何以 36 fps 即時生成《GTA》等級的動態實景影片；剖析 AI4（HW4）單顆 TRIP 加速器僅耗一半算力的極致效率、行車意圖透明化與 AI 幻覺安全隔離。內建雙互動模擬器。",
+    "tags": [
+      "Tesla FSD v15",
+      "Reality View",
+      "UVE 視覺編碼器",
+      "Diffusion Transformer",
+      "AI4 / HW4 TRIP",
+      "Pixels-in Pixels-out",
+      "自動駕駛視覺化",
+      "AI 幻覺隔離"
+    ],
+    "description": "深度解析特斯拉 FSD v15（Supervised）震撼車壇的「街景」視覺化功能——Tesla Reality View（實景視圖）。破除 Unreal Engine 迷思，完整拆解 UVE（Universal Vision Encoder）通用視覺編碼器、10 億參數（1B）輕量化擴散／Mean-Flow 生成模型如何以 36 fps 即時生成《GTA》等級的動態實景影片；剖析 AI4（HW4）單顆 TRIP 加速器僅耗一半算力的極致效率、行車意圖透明化與 AI 幻覺安全隔離。內建雙互動模擬器。"
+  },
+  {
     "url": "i2c-spi-uart-rs232-rs485-comparison-guide.html",
     "title": "I2C、SPI、UART、RS232、RS485 差異全方位深度解析：從底層物理層電平、時序協定到工業匯流排架構實戰",
     "excerpt": "全維度深度剖析五大經典串列通訊協定：I2C、SPI、UART、RS-232、RS-485。從板級晶片間通訊（On-board Chip-to-Chip）到長距離工業現場匯流排（Fieldbus），深入拆解開漏上拉電阻計算、推挽輸出時序、非同步波特率容差、雙極性負邏輯升壓電荷泵、差分信號共模消除與 120 歐姆終端抗反射阻抗匹配。內建互動式協定選型決策器與實體層時序動態示波器。",
