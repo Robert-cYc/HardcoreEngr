@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26 05:17",
+  "updated": "2026-11-26 06:00",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -27,11 +27,11 @@
           "comments": "https://news.ycombinator.com/item?id=50648050"
         },
         {
-          "title": "The Great Automatic Grammatizator (By Roald Dahl), 1954 [pdf]",
-          "link": "https://gwern.net/doc/fiction/science-fiction/1953-dahl-thegreatautomaticgrammatizator.pdf",
-          "date": "2026-11-22 11:29",
+          "title": "What VP ≠ VNP Means (In 3 Minutes)",
+          "link": "https://www.friedgil.com/vpvnp",
+          "date": "2026-11-24 10:56",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50598636"
+          "comments": "https://news.ycombinator.com/item?id=50626466"
         },
         {
           "title": "Tell HN: Lots of Ask HNs again",
@@ -41,13 +41,6 @@
           "comments": "https://news.ycombinator.com/item?id=50649864"
         },
         {
-          "title": "What VP ≠ VNP Means (In 3 Minutes)",
-          "link": "https://www.friedgil.com/vpvnp",
-          "date": "2026-11-24 10:56",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50626466"
-        },
-        {
           "title": "Collection of preserved UI style guides",
           "link": "https://aresluna.org/ui-style-guides/",
           "date": "2026-11-26 00:40",
@@ -55,18 +48,32 @@
           "comments": "https://news.ycombinator.com/item?id=50649834"
         },
         {
-          "title": "GPT-6.2 Astra is the first model to beat Googlers' code golf records",
-          "link": "https://bjin.github.io/go-codegolf-benchmark/#leaderboard",
-          "date": "2026-11-22 16:44",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50601280"
-        },
-        {
           "title": "Slow Ubuntu security response times",
           "link": "https://www.openwall.com/lists/oss-security/2026/11/25/9",
           "date": "2026-11-25 20:38",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50647181"
+        },
+        {
+          "title": "Minipg: PostgreSQL as a Single Executable",
+          "link": "https://progrium.github.io/minipg/",
+          "date": "2026-11-26 03:00",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50650892"
+        },
+        {
+          "title": "The Great Automatic Grammatizator (By Roald Dahl), 1954 [pdf]",
+          "link": "https://gwern.net/doc/fiction/science-fiction/1953-dahl-thegreatautomaticgrammatizator.pdf",
+          "date": "2026-11-22 11:29",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50598636"
+        },
+        {
+          "title": "GPT-6.2 Astra is the first model to beat Googlers' code golf records",
+          "link": "https://bjin.github.io/go-codegolf-benchmark/#leaderboard",
+          "date": "2026-11-22 16:44",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50601280"
         },
         {
           "title": "A few questions for the guy who went snorkeling in a Home Depot retention pond",
@@ -81,13 +88,6 @@
           "date": "2026-11-25 02:00",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50637448"
-        },
-        {
-          "title": "Minipg: PostgreSQL as a Single Executable",
-          "link": "https://progrium.github.io/minipg/",
-          "date": "2026-11-26 03:00",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50650892"
         }
       ]
     },
@@ -174,6 +174,12 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "ChatGPT到底有多懂你？「我是誰」指令爆紅 網友看完喊太催淚",
+          "link": "https://3c.ltn.com.tw/news/68434",
+          "date": "2026/11/26 13:30",
+          "summary": "平常都是我們向ChatGPT問問題，但你是否好奇，在AI眼中，自己究竟是怎樣的一個人？近日Threads瘋傳一組Ch ..."
+        },
+        {
           "title": "Google 地圖整合 Gemini 更聰明！5 種 Ask Maps 實用問法一次掌握",
           "link": "https://3c.ltn.com.tw/news/68432",
           "date": "2026/11/26 12:50",
@@ -238,12 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68412",
           "date": "2026/11/25 16:15",
           "summary": "三星預計明年初推出新一代旗艦Galaxy S27系列，其中頂規S27 Ultra的相機配置再傳重大變動。繼先前傳出將 ..."
-        },
-        {
-          "title": "安卓用戶笑了！舊手機折抵金額大漲27% 漲幅勝iPhone",
-          "link": "https://3c.ltn.com.tw/news/68419",
-          "date": "2026/11/25 15:04",
-          "summary": "家中舊手機比去年更值錢！美國裝置保障服務商Assurant公布2026年第三季美國手機舊換新市場最新報告，發現消費者 ..."
         }
       ]
     },
@@ -251,6 +251,34 @@
       "name": "AI 人工智慧",
       "site": "https://technews.tw/category/ai/",
       "items": [
+        {
+          "title": "AI 逆風延燒  OpenAI 明年 6 月前 IPO 機率跌至 28%",
+          "link": "https://finance.technews.tw/2026/11/26/openai-ipo-odds-by-june-next-year-fall-to-28/",
+          "date": "2026-11-26 06:00",
+          "summary": "美國科技股近期賣壓沉重，加上 AI 新創公司 Anthropic 掛牌後股價滑鐵盧，市場對 OpenAI IP [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "AI 金童基金 Q3 慘虧 65%  預言 2027 恐是最後正常年",
+          "link": "https://finance.technews.tw/2026/11/26/aschenbrenners-situational-awareness-tells-investors-it-lost-65-percent-in-third-quarter/",
+          "date": "2026-11-26 04:30",
+          "summary": "曾因槓桿押注 AI 概念股一度瀕臨崩潰的避險基金 Situational Awareness，其創辦人阿申布倫 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "確診前大腦就有跡象！史丹佛醫學院用 AI 找出 ADHD 與焦慮症三種腦型，有望成早期介入指標",
+          "link": "https://technews.tw/2026/11/26/httpsmed-stanford-edunewsall-news202611adhd-biotypes-html/",
+          "date": "2026-11-26 04:20",
+          "summary": "史丹佛醫學院（Stanford Medicine）主導的研究以 AI 模型分析數千名兒童的功能性磁振造影，在注 [&#8230;]",
+          "comments": ""
+        },
+        {
+          "title": "陶哲軒疾呼轉向「數學 2.0」：盲目追求解題已有害，人類應改為詮釋 AI 證明",
+          "link": "https://technews.tw/2026/11/26/terence-tao-on-ais-impact-on-mathematics/",
+          "date": "2026-11-26 04:10",
+          "summary": "加州大學洛杉磯分校（UCLA）數學教授陶哲軒在哈佛演講時表示，AI 解題效率已勝過人類，再一味最佳化解題能力對 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "Nothing 新款 AI 耳機 Ear (note) 12/8 亮相，整合錄音、轉錄與生成摘要",
           "link": "https://ccc.technews.tw/2026/11/26/nothing-offers-a-full-look-at-its-ai-earbuds-and-charging-case/",
@@ -306,34 +334,6 @@
           "date": "2026-11-26 02:10",
           "summary": "輝達（Nvidia）執行長黃仁勳本週重返公司總部，引來媒體鏡頭捕捉的不只他一人，億萬富豪馬斯克（Elon Mu [&#8230;]",
           "comments": ""
-        },
-        {
-          "title": "范斯：未見黃仁勳犯罪證據，輝達晶片對 AI 領先至關重要",
-          "link": "https://technews.tw/2026/11/26/vance-no-criminal-evidence-found-jensen-huang-nvidia-chips-crucial-ai-leadership/",
-          "date": "2026-11-26 01:40",
-          "summary": "輝達創辦人黃仁勳因婚外情風波辭去執行長，據傳協調促成黃仁勳回鍋的美國副總統范斯今天表示，黃仁勳不需要特赦，沒有 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "黃仁勳回鍋引分歧，標普列降級觀察、穆迪維持評等",
-          "link": "https://finance.technews.tw/2026/11/26/sp-global-places-nvidia-rating-on-creditwatch-negative-on-rising-management-and-governance-risks/",
-          "date": "2026-11-26 01:30",
-          "summary": "標普全球評級今天將輝達信用評等列入可能調降的觀察名單，認為執行長黃仁勳離職後又復職，暴露公司治理及董事會監督的 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "AI 舉債疑慮未消  甲骨文長債殖利率升至 9%",
-          "link": "https://finance.technews.tw/2026/11/26/oracle-bonds-yield-a-towering-9-on-debt-and-data-center-concerns/",
-          "date": "2026-11-26 01:20",
-          "summary": "美國資料庫與雲端服務大廠甲骨文（Oracle）債券賣壓湧現，公司雖仍維持投資級信評，長債殖利率已高達 9%、升 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "對 AI 說「請、謝謝」最燒錢，研究：提問語氣影響算力成本高達 44.3%",
-          "link": "https://technews.tw/2026/11/26/politeness-to-ai-increases-costs/",
-          "date": "2026-11-26 00:45",
-          "summary": "賓州州立大學研究團隊最新指出，使用者與 AI 聊天機器人互動時的語氣，除了會影響回答表現，對運算成本的衝擊甚至 [&#8230;]",
-          "comments": ""
         }
       ]
     },
@@ -341,6 +341,13 @@
       "name": "半導體",
       "site": "https://technews.tw/category/semiconductor/",
       "items": [
+        {
+          "title": "突破美國封鎖！華為開發「韜 EDA」，中國產設計工具鏈首度整合",
+          "link": "https://technews.tw/2026/11/26/huawei-phlexing-technology-tau-eda-tools/",
+          "date": "2026-11-26 04:41",
+          "summary": "美國持續透過出口管制限制中國取得先進半導體技術，華為正加速建立自主晶片設計生態系，試圖降低對美國電子設計自動化 [&#8230;]",
+          "comments": ""
+        },
         {
           "title": "iPad 跑 macOS 早已實現？但蘋果尚無產品開發計畫",
           "link": "https://technews.tw/2026/11/26/ipad-macos/",
@@ -416,13 +423,6 @@
           "link": "https://technews.tw/2026/11/26/vance-no-criminal-evidence-found-jensen-huang-nvidia-chips-crucial-ai-leadership/",
           "date": "2026-11-26 01:40",
           "summary": "輝達創辦人黃仁勳因婚外情風波辭去執行長，據傳協調促成黃仁勳回鍋的美國副總統范斯今天表示，黃仁勳不需要特赦，沒有 [&#8230;]",
-          "comments": ""
-        },
-        {
-          "title": "美國 301 調查點名台灣半導體成焦點，出口導向經濟模式面臨檢視",
-          "link": "https://finance.technews.tw/2026/11/26/us-section-301-investigation-singles-out-taiwans-semiconductor-sector/",
-          "date": "2026-11-26 00:40",
-          "summary": "美國貿易代表署（USTR）針對台灣製造業「結構性產能過剩與過度生產」問題完成 301 條款調查並發布報告，認為 [&#8230;]",
           "comments": ""
         }
       ]
