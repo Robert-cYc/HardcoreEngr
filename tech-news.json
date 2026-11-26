@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26 04:10",
+  "updated": "2026-11-26 05:17",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -27,6 +27,13 @@
           "comments": "https://news.ycombinator.com/item?id=50648050"
         },
         {
+          "title": "The Great Automatic Grammatizator (By Roald Dahl), 1954 [pdf]",
+          "link": "https://gwern.net/doc/fiction/science-fiction/1953-dahl-thegreatautomaticgrammatizator.pdf",
+          "date": "2026-11-22 11:29",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50598636"
+        },
+        {
           "title": "Tell HN: Lots of Ask HNs again",
           "link": "https://news.ycombinator.com/item?id=50649864",
           "date": "2026-11-26 00:43",
@@ -34,11 +41,18 @@
           "comments": "https://news.ycombinator.com/item?id=50649864"
         },
         {
-          "title": "The Great Automatic Grammatizator (By Roald Dahl), 1954 [pdf]",
-          "link": "https://gwern.net/doc/fiction/science-fiction/1953-dahl-thegreatautomaticgrammatizator.pdf",
-          "date": "2026-11-22 11:29",
+          "title": "What VP ≠ VNP Means (In 3 Minutes)",
+          "link": "https://www.friedgil.com/vpvnp",
+          "date": "2026-11-24 10:56",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50598636"
+          "comments": "https://news.ycombinator.com/item?id=50626466"
+        },
+        {
+          "title": "Collection of preserved UI style guides",
+          "link": "https://aresluna.org/ui-style-guides/",
+          "date": "2026-11-26 00:40",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50649834"
         },
         {
           "title": "GPT-6.2 Astra is the first model to beat Googlers' code golf records",
@@ -55,13 +69,6 @@
           "comments": "https://news.ycombinator.com/item?id=50647181"
         },
         {
-          "title": "The New York Times warns photographers not to update Photoshop over AI features",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
-          "date": "2026-11-25 21:18",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50647673"
-        },
-        {
           "title": "A few questions for the guy who went snorkeling in a Home Depot retention pond",
           "link": "https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts",
           "date": "2026-11-25 15:14",
@@ -76,18 +83,11 @@
           "comments": "https://news.ycombinator.com/item?id=50637448"
         },
         {
-          "title": "Collection of preserved UI style guides",
-          "link": "https://aresluna.org/ui-style-guides/",
-          "date": "2026-11-26 00:40",
+          "title": "Minipg: PostgreSQL as a Single Executable",
+          "link": "https://progrium.github.io/minipg/",
+          "date": "2026-11-26 03:00",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50649834"
-        },
-        {
-          "title": "What VP ≠ VNP Means (In 3 Minutes)",
-          "link": "https://www.friedgil.com/vpvnp",
-          "date": "2026-11-24 10:56",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50626466"
+          "comments": "https://news.ycombinator.com/item?id=50650892"
         }
       ]
     },
@@ -174,6 +174,18 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "Google 地圖整合 Gemini 更聰明！5 種 Ask Maps 實用問法一次掌握",
+          "link": "https://3c.ltn.com.tw/news/68432",
+          "date": "2026/11/26 12:50",
+          "summary": "除了整合 Android 作業系統及旗下各項服務，也進一步將 AI 對話能力導入 Google 地圖，推出 Ask ..."
+        },
+        {
+          "title": "LINE未來要收費！WhatsApp也推預約訊息 免費用、關機照樣傳",
+          "link": "https://3c.ltn.com.tw/news/68433",
+          "date": "2026/11/26 12:35",
+          "summary": "不只LINE有「預約訊息」功能，Meta旗下WhatsApp也推出「排定訊息」功能，讓使用者能事先設定訊息傳送時間， ..."
+        },
+        {
           "title": "安卓終於要跟進！Google隱藏新功能曝光 iPhone用戶超熟悉",
           "link": "https://3c.ltn.com.tw/news/68418",
           "date": "2026/11/26 12:02",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68419",
           "date": "2026/11/25 15:04",
           "summary": "家中舊手機比去年更值錢！美國裝置保障服務商Assurant公布2026年第三季美國手機舊換新市場最新報告，發現消費者 ..."
-        },
-        {
-          "title": "Threads終於有iPad版！大螢幕「聊脆」更爽 加碼1實用功能",
-          "link": "https://3c.ltn.com.tw/news/68417",
-          "date": "2026/11/25 14:25",
-          "summary": "Meta旗下社群平台Threads昨(24日)才預告即將推出iPad專屬App，沒想到今(25日)就立刻上線了，現已 ..."
-        },
-        {
-          "title": "小米18 Pro系列開賣了！39,999元起、免加價直升512GB",
-          "link": "https://3c.ltn.com.tw/news/68422",
-          "date": "2026/11/25 12:00",
-          "summary": "小米18 Pro系列旗艦手機於今(25日)正式在台開賣，共推出小米18 Pro及小米18 Pro Max兩款機型，售 ..."
         }
       ]
     },
