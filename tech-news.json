@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27 04:15",
+  "updated": "2026-11-27 05:54",
   "sources": [
     {
       "name": "Hacker News 熱門",
@@ -20,6 +20,13 @@
           "comments": "https://news.ycombinator.com/item?id=50660180"
         },
         {
+          "title": "\"What's Claude's Fursona?\" and Other Questions",
+          "link": "https://herecomesthemoon.net/2026/11/whats-claudes-fursona/",
+          "date": "2026-11-27 04:56",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50662933"
+        },
+        {
           "title": "Kamil Khan Mumtaz: Pakistani architect, admired at home, almost invisible abroad",
           "link": "https://worksinprogress.co/issue/the-greatest-architect-youve-never-heard-of-is-in-pakistan/",
           "date": "2026-11-26 21:08",
@@ -34,13 +41,6 @@
           "comments": "https://news.ycombinator.com/item?id=50657530"
         },
         {
-          "title": "New AI research suggests AI bubble bursting and to expect major market collapse",
-          "link": "https://www.london.edu/think/ai-bubble-about-to-burst",
-          "date": "2026-11-27 02:44",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50662153"
-        },
-        {
           "title": "AMD-specific fork of llama.cpp",
           "link": "https://devnull.land/amd-specific-llama-cpp",
           "date": "2026-11-26 17:11",
@@ -53,13 +53,6 @@
           "date": "2026-11-26 17:47",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50657645"
-        },
-        {
-          "title": "Show HN: Sqrin – A better screen share for Mac",
-          "link": "https://sqrin.app",
-          "date": "2026-11-27 02:53",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50662217"
         },
         {
           "title": "Company Culture = Slack Emoji ÷ √Headcount",
@@ -88,6 +81,13 @@
           "date": "2026-11-26 19:04",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50658498"
+        },
+        {
+          "title": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
+          "link": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
+          "date": "2026-11-26 09:44",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50653477"
         }
       ]
     },
