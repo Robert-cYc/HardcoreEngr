@@ -1,30 +1,23 @@
 {
-  "updated": "2026-11-28 03:54",
+  "updated": "2026-11-28 05:35",
   "sources": [
     {
       "name": "Hacker News 熱門",
       "site": "https://news.ycombinator.com/",
       "items": [
         {
+          "title": "Unkernel: Real Linux kernel, compiled to WebAssembly",
+          "link": "https://unkernel.dev",
+          "date": "2026-11-28 03:19",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50674218"
+        },
+        {
           "title": "Google's DeepCrossAttention achieves comparable model quality up to 3x faster",
           "link": "https://research.google/blog/supercharging-transformer-residual-connections/",
           "date": "2026-11-27 23:06",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50672565"
-        },
-        {
-          "title": "GPT 6.2 Astra Solves a Historical Mystery",
-          "link": "https://generativehistory.substack.com/p/gpt-62-astra-solves-a-historical",
-          "date": "2026-11-25 15:16",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50643158"
-        },
-        {
-          "title": "Atari Homebrew Awards Cancelled",
-          "link": "https://forums.atariage.com/topic/394894-atari-homebrew-awards-cancelled/",
-          "date": "2026-11-28 02:03",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50673688"
         },
         {
           "title": "The Balatro Timeline",
@@ -34,18 +27,11 @@
           "comments": "https://news.ycombinator.com/item?id=50657346"
         },
         {
-          "title": "Unkernel: Real Linux kernel, compiled to WebAssembly",
-          "link": "https://unkernel.dev",
-          "date": "2026-11-28 03:19",
+          "title": "GPT 6.2 Astra Solves a Historical Mystery",
+          "link": "https://generativehistory.substack.com/p/gpt-62-astra-solves-a-historical",
+          "date": "2026-11-25 15:16",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50674218"
-        },
-        {
-          "title": "Cyberpunk Television Shows",
-          "link": "https://shellzine.net/cyberpunk-television/",
-          "date": "2026-11-25 16:32",
-          "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50644213"
+          "comments": "https://news.ycombinator.com/item?id=50643158"
         },
         {
           "title": "Credit card skimming scripts using WebRTC found on popular shopping sites",
@@ -62,11 +48,11 @@
           "comments": "https://news.ycombinator.com/item?id=50669765"
         },
         {
-          "title": "9/UX: a Macintosh-inspired desktop for 9front",
-          "link": "https://progrium.github.io/9ux/",
-          "date": "2026-11-27 21:48",
+          "title": "Sydney Fire Ant Infestation",
+          "link": "https://www.abc.net.au/news/2026-11-25/nsw-government-ramps-up-efforts-to-respond-to-fire-ants-/107424812",
+          "date": "2026-11-26 01:33",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50672008"
+          "comments": "https://news.ycombinator.com/item?id=50650253"
         },
         {
           "title": "Citroën Hydraulic System",
@@ -76,11 +62,11 @@
           "comments": "https://news.ycombinator.com/item?id=50662313"
         },
         {
-          "title": "How WinHelp Files Work",
-          "link": "https://quin.fyi/posts/how-winhelp-files-work.html",
-          "date": "2026-11-26 12:51",
+          "title": "9/UX: a Macintosh-inspired desktop for 9front",
+          "link": "https://progrium.github.io/9ux/",
+          "date": "2026-11-27 21:48",
           "summary": "Hacker News 全球技術社群熱門熱議",
-          "comments": "https://news.ycombinator.com/item?id=50654773"
+          "comments": "https://news.ycombinator.com/item?id=50672008"
         },
         {
           "title": "Build your own amp modeler: $78 DIY pedal kit from TONE3000",
@@ -88,6 +74,20 @@
           "date": "2026-11-24 17:55",
           "summary": "Hacker News 全球技術社群熱門熱議",
           "comments": "https://news.ycombinator.com/item?id=50631823"
+        },
+        {
+          "title": "Atari Homebrew Awards Cancelled",
+          "link": "https://forums.atariage.com/topic/394894-atari-homebrew-awards-cancelled/",
+          "date": "2026-11-28 02:03",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50673688"
+        },
+        {
+          "title": "Cyberpunk Television Shows",
+          "link": "https://shellzine.net/cyberpunk-television/",
+          "date": "2026-11-25 16:32",
+          "summary": "Hacker News 全球技術社群熱門熱議",
+          "comments": "https://news.ycombinator.com/item?id=50644213"
         }
       ]
     },
@@ -174,6 +174,18 @@
       "site": "https://3c.ltn.com.tw/",
       "items": [
         {
+          "title": "Windows 12何時來？微軟高層表態 先救Windows 11",
+          "link": "https://3c.ltn.com.tw/news/68464",
+          "date": "2026/11/28 13:02",
+          "summary": "Windows 11問世已滿5年，下一代Windows 12究竟何時登場？微軟Windows部門執行副總裁Pavan ..."
+        },
+        {
+          "title": "在等便宜版iPhone 18？明年開賣恐難搶 最新爆料曝光",
+          "link": "https://3c.ltn.com.tw/news/68462",
+          "date": "2026/11/28 12:00",
+          "summary": "不想花大錢買iPhone 18 Pro系列，打算等明年春季推出的標準版iPhone 18或平價版iPhone 18e ..."
+        },
+        {
           "title": "Google優惠又來了！100GB雲端空間只要4元 AI訂閱也打折",
           "link": "https://3c.ltn.com.tw/news/68467",
           "date": "2026/11/28 11:20",
@@ -232,18 +244,6 @@
           "link": "https://3c.ltn.com.tw/news/68445",
           "date": "2026/11/27 12:01",
           "summary": "在家開發App賺錢，未來竟可能得向全球公開自己的住家地址！Google新制將自明年上路，許多Android獨立App ..."
-        },
-        {
-          "title": "比摺疊iPhone Duo還貴？蘋果iPhone 20 Pro傳推陶瓷限量版",
-          "link": "https://3c.ltn.com.tw/news/68446",
-          "date": "2026/11/27 10:50",
-          "summary": "蘋果明年將迎來iPhone問世20週年，外界盛傳蘋果將推出大幅改版的iPhone 20 Pro系列，如今又有新消息指 ..."
-        },
-        {
-          "title": "LINE免費貼圖族悲報！11／30起「領完秒封鎖」這招沒用了",
-          "link": "https://3c.ltn.com.tw/news/68447",
-          "date": "2026/11/27 10:15",
-          "summary": "不少品牌會透過LINE推出免費貼圖，吸引用戶加入官方帳號好友，但許多人習慣領完貼圖就立刻封鎖官方帳號，避免收到一堆廣 ..."
         }
       ]
     },
